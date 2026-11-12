@@ -33,6 +33,8 @@ class JobRunArgs:
                  job_infrastructure_configuration_override_details: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsArgs']] = None,
                  job_log_configuration_override_details: pulumi.Input[Optional['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
                  job_node_configuration_override_details: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsArgs']] = None,
+                 job_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
+                 job_storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]]] = None,
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a JobRun resource.
@@ -52,6 +54,8 @@ class JobRunArgs:
         :param pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsArgs'] job_infrastructure_configuration_override_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs'] job_log_configuration_override_details: Logging configuration for resource.
         :param pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsArgs'] job_node_configuration_override_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days_override: Retention period in days for job run.
+        :param pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]] job_storage_mount_configuration_override_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -75,6 +79,10 @@ class JobRunArgs:
             pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
         if job_node_configuration_override_details is not None:
             pulumi.set(__self__, "job_node_configuration_override_details", job_node_configuration_override_details)
+        if job_run_retention_period_in_days_override is not None:
+            pulumi.set(__self__, "job_run_retention_period_in_days_override", job_run_retention_period_in_days_override)
+        if job_storage_mount_configuration_override_details_lists is not None:
+            pulumi.set(__self__, "job_storage_mount_configuration_override_details_lists", job_storage_mount_configuration_override_details_lists)
         if opc_parent_rpt_url is not None:
             pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
 
@@ -226,6 +234,30 @@ class JobRunArgs:
         pulumi.set(self, "job_node_configuration_override_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDaysOverride")
+    def job_run_retention_period_in_days_override(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for job run.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days_override")
+
+    @job_run_retention_period_in_days_override.setter
+    def job_run_retention_period_in_days_override(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "job_run_retention_period_in_days_override", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jobStorageMountConfigurationOverrideDetailsLists")
+    def job_storage_mount_configuration_override_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]]]:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_override_details_lists")
+
+    @job_storage_mount_configuration_override_details_lists.setter
+    def job_storage_mount_configuration_override_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]]]):
+        pulumi.set(self, "job_storage_mount_configuration_override_details_lists", value)
+
+    @_builtins.property
     @pulumi.getter(name="opcParentRptUrl")
     def opc_parent_rpt_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -254,7 +286,9 @@ class _JobRunState:
                  job_infrastructure_configuration_override_details: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsArgs']] = None,
                  job_log_configuration_override_details: pulumi.Input[Optional['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
                  job_node_configuration_override_details: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsArgs']] = None,
+                 job_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
                  job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]] = None,
+                 job_storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  log_details: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunLogDetailArgs']]]] = None,
                  node_group_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunNodeGroupDetailsListArgs']]]] = None,
@@ -280,7 +314,9 @@ class _JobRunState:
         :param pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsArgs'] job_infrastructure_configuration_override_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs'] job_log_configuration_override_details: Logging configuration for resource.
         :param pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsArgs'] job_node_configuration_override_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days_override: Retention period in days for job run.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
+        :param pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]] job_storage_mount_configuration_override_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] lifecycle_details: The state details of the node group.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunLogDetailArgs']]] log_details: Customer logging details for job run.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunNodeGroupDetailsListArgs']]] node_group_details_lists: Collection of NodeGroupDetails
@@ -320,8 +356,12 @@ class _JobRunState:
             pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
         if job_node_configuration_override_details is not None:
             pulumi.set(__self__, "job_node_configuration_override_details", job_node_configuration_override_details)
+        if job_run_retention_period_in_days_override is not None:
+            pulumi.set(__self__, "job_run_retention_period_in_days_override", job_run_retention_period_in_days_override)
         if job_storage_mount_configuration_details_lists is not None:
             pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
+        if job_storage_mount_configuration_override_details_lists is not None:
+            pulumi.set(__self__, "job_storage_mount_configuration_override_details_lists", job_storage_mount_configuration_override_details_lists)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if log_details is not None:
@@ -498,6 +538,18 @@ class _JobRunState:
         pulumi.set(self, "job_node_configuration_override_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDaysOverride")
+    def job_run_retention_period_in_days_override(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for job run.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days_override")
+
+    @job_run_retention_period_in_days_override.setter
+    def job_run_retention_period_in_days_override(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "job_run_retention_period_in_days_override", value)
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]]:
         """
@@ -508,6 +560,18 @@ class _JobRunState:
     @job_storage_mount_configuration_details_lists.setter
     def job_storage_mount_configuration_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]]):
         pulumi.set(self, "job_storage_mount_configuration_details_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jobStorageMountConfigurationOverrideDetailsLists")
+    def job_storage_mount_configuration_override_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]]]:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_override_details_lists")
+
+    @job_storage_mount_configuration_override_details_lists.setter
+    def job_storage_mount_configuration_override_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationOverrideDetailsListArgs']]]]):
+        pulumi.set(self, "job_storage_mount_configuration_override_details_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -638,6 +702,8 @@ class JobRun(pulumi.CustomResource):
                  job_infrastructure_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobInfrastructureConfigurationOverrideDetailsArgs', 'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobInfrastructureConfigurationOverrideDetails']]] = None,
                  job_log_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobLogConfigurationOverrideDetails']]] = None,
                  job_node_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobNodeConfigurationOverrideDetailsArgs', 'JobRunJobNodeConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobNodeConfigurationOverrideDetails']]] = None,
+                 job_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
+                 job_storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationOverrideDetailsListArgs', 'JobRunJobStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationOverrideDetailsList']]]]] = None,
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -696,6 +762,10 @@ class JobRun(pulumi.CustomResource):
                     "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_ocpus,
                 },
+                "network_configuration": {
+                    "network_type": job_run_job_infrastructure_configuration_override_details_network_configuration_network_type,
+                    "subnet_id": test_subnet["id"],
+                },
                 "resource_configuration": {
                     "resource_limit_configuration": {
                         "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -753,6 +823,10 @@ class JobRun(pulumi.CustomResource):
                             "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                         },
+                        "network_configuration": {
+                            "network_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_network_configuration_network_type,
+                            "subnet_id": test_subnet["id"],
+                        },
                         "resource_configuration": {
                             "resource_limit_configuration": {
                                 "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -773,13 +847,14 @@ class JobRun(pulumi.CustomResource):
                 "maximum_runtime_in_minutes": job_run_job_node_configuration_override_details_maximum_runtime_in_minutes,
                 "startup_order": job_run_job_node_configuration_override_details_startup_order,
             },
-            job_storage_mount_configuration_override_details_list=[{
-                "destinationDirectoryName": job_run_job_storage_mount_configuration_override_details_list_destination_directory_name,
-                "storageType": job_run_job_storage_mount_configuration_override_details_list_storage_type,
+            job_run_retention_period_in_days_override=job_run_job_run_retention_period_in_days_override,
+            job_storage_mount_configuration_override_details_lists=[{
+                "destination_directory_name": job_run_job_storage_mount_configuration_override_details_list_destination_directory_name,
+                "storage_type": job_run_job_storage_mount_configuration_override_details_list_storage_type,
                 "bucket": job_run_job_storage_mount_configuration_override_details_list_bucket,
-                "destinationPath": job_run_job_storage_mount_configuration_override_details_list_destination_path,
-                "exportId": test_export["id"],
-                "mountTargetId": test_mount_target["id"],
+                "destination_path": job_run_job_storage_mount_configuration_override_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
                 "namespace": job_run_job_storage_mount_configuration_override_details_list_namespace,
                 "prefix": job_run_job_storage_mount_configuration_override_details_list_prefix,
             }],
@@ -808,6 +883,8 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[Union['JobRunJobInfrastructureConfigurationOverrideDetailsArgs', 'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobInfrastructureConfigurationOverrideDetails']] job_infrastructure_configuration_override_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobLogConfigurationOverrideDetails']] job_log_configuration_override_details: Logging configuration for resource.
         :param pulumi.Input[Union['JobRunJobNodeConfigurationOverrideDetailsArgs', 'JobRunJobNodeConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobNodeConfigurationOverrideDetails']] job_node_configuration_override_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days_override: Retention period in days for job run.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationOverrideDetailsListArgs', 'JobRunJobStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationOverrideDetailsList']]]] job_storage_mount_configuration_override_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
                
@@ -875,6 +952,10 @@ class JobRun(pulumi.CustomResource):
                     "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_ocpus,
                 },
+                "network_configuration": {
+                    "network_type": job_run_job_infrastructure_configuration_override_details_network_configuration_network_type,
+                    "subnet_id": test_subnet["id"],
+                },
                 "resource_configuration": {
                     "resource_limit_configuration": {
                         "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -932,6 +1013,10 @@ class JobRun(pulumi.CustomResource):
                             "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                         },
+                        "network_configuration": {
+                            "network_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_network_configuration_network_type,
+                            "subnet_id": test_subnet["id"],
+                        },
                         "resource_configuration": {
                             "resource_limit_configuration": {
                                 "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -952,13 +1037,14 @@ class JobRun(pulumi.CustomResource):
                 "maximum_runtime_in_minutes": job_run_job_node_configuration_override_details_maximum_runtime_in_minutes,
                 "startup_order": job_run_job_node_configuration_override_details_startup_order,
             },
-            job_storage_mount_configuration_override_details_list=[{
-                "destinationDirectoryName": job_run_job_storage_mount_configuration_override_details_list_destination_directory_name,
-                "storageType": job_run_job_storage_mount_configuration_override_details_list_storage_type,
+            job_run_retention_period_in_days_override=job_run_job_run_retention_period_in_days_override,
+            job_storage_mount_configuration_override_details_lists=[{
+                "destination_directory_name": job_run_job_storage_mount_configuration_override_details_list_destination_directory_name,
+                "storage_type": job_run_job_storage_mount_configuration_override_details_list_storage_type,
                 "bucket": job_run_job_storage_mount_configuration_override_details_list_bucket,
-                "destinationPath": job_run_job_storage_mount_configuration_override_details_list_destination_path,
-                "exportId": test_export["id"],
-                "mountTargetId": test_mount_target["id"],
+                "destination_path": job_run_job_storage_mount_configuration_override_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
                 "namespace": job_run_job_storage_mount_configuration_override_details_list_namespace,
                 "prefix": job_run_job_storage_mount_configuration_override_details_list_prefix,
             }],
@@ -1000,6 +1086,8 @@ class JobRun(pulumi.CustomResource):
                  job_infrastructure_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobInfrastructureConfigurationOverrideDetailsArgs', 'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobInfrastructureConfigurationOverrideDetails']]] = None,
                  job_log_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobLogConfigurationOverrideDetails']]] = None,
                  job_node_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobNodeConfigurationOverrideDetailsArgs', 'JobRunJobNodeConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobNodeConfigurationOverrideDetails']]] = None,
+                 job_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
+                 job_storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationOverrideDetailsListArgs', 'JobRunJobStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationOverrideDetailsList']]]]] = None,
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -1026,6 +1114,8 @@ class JobRun(pulumi.CustomResource):
             __props__.__dict__["job_infrastructure_configuration_override_details"] = job_infrastructure_configuration_override_details
             __props__.__dict__["job_log_configuration_override_details"] = job_log_configuration_override_details
             __props__.__dict__["job_node_configuration_override_details"] = job_node_configuration_override_details
+            __props__.__dict__["job_run_retention_period_in_days_override"] = job_run_retention_period_in_days_override
+            __props__.__dict__["job_storage_mount_configuration_override_details_lists"] = job_storage_mount_configuration_override_details_lists
             __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
@@ -1063,7 +1153,9 @@ class JobRun(pulumi.CustomResource):
             job_infrastructure_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobInfrastructureConfigurationOverrideDetailsArgs', 'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobInfrastructureConfigurationOverrideDetails']]] = None,
             job_log_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobLogConfigurationOverrideDetails']]] = None,
             job_node_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobNodeConfigurationOverrideDetailsArgs', 'JobRunJobNodeConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobNodeConfigurationOverrideDetails']]] = None,
+            job_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
             job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationDetailsListArgs', 'JobRunJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationDetailsList']]]]] = None,
+            job_storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationOverrideDetailsListArgs', 'JobRunJobStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationOverrideDetailsList']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             log_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunLogDetailArgs', 'JobRunLogDetailArgsDict', 'outputs.JobRunLogDetail']]]]] = None,
             node_group_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunNodeGroupDetailsListArgs', 'JobRunNodeGroupDetailsListArgsDict', 'outputs.JobRunNodeGroupDetailsList']]]]] = None,
@@ -1093,7 +1185,9 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[Union['JobRunJobInfrastructureConfigurationOverrideDetailsArgs', 'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobInfrastructureConfigurationOverrideDetails']] job_infrastructure_configuration_override_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobLogConfigurationOverrideDetails']] job_log_configuration_override_details: Logging configuration for resource.
         :param pulumi.Input[Union['JobRunJobNodeConfigurationOverrideDetailsArgs', 'JobRunJobNodeConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobNodeConfigurationOverrideDetails']] job_node_configuration_override_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days_override: Retention period in days for job run.
         :param pulumi.Input[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationDetailsListArgs', 'JobRunJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationDetailsList']]]] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationOverrideDetailsListArgs', 'JobRunJobStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationOverrideDetailsList']]]] job_storage_mount_configuration_override_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] lifecycle_details: The state details of the node group.
         :param pulumi.Input[Sequence[pulumi.Input[Union['JobRunLogDetailArgs', 'JobRunLogDetailArgsDict', 'outputs.JobRunLogDetail']]]] log_details: Customer logging details for job run.
         :param pulumi.Input[Sequence[pulumi.Input[Union['JobRunNodeGroupDetailsListArgs', 'JobRunNodeGroupDetailsListArgsDict', 'outputs.JobRunNodeGroupDetailsList']]]] node_group_details_lists: Collection of NodeGroupDetails
@@ -1124,7 +1218,9 @@ class JobRun(pulumi.CustomResource):
         __props__.__dict__["job_infrastructure_configuration_override_details"] = job_infrastructure_configuration_override_details
         __props__.__dict__["job_log_configuration_override_details"] = job_log_configuration_override_details
         __props__.__dict__["job_node_configuration_override_details"] = job_node_configuration_override_details
+        __props__.__dict__["job_run_retention_period_in_days_override"] = job_run_retention_period_in_days_override
         __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
+        __props__.__dict__["job_storage_mount_configuration_override_details_lists"] = job_storage_mount_configuration_override_details_lists
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_details"] = log_details
         __props__.__dict__["node_group_details_lists"] = node_group_details_lists
@@ -1152,7 +1248,9 @@ class JobRun(pulumi.CustomResource):
             job_infrastructure_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobInfrastructureConfigurationOverrideDetailsArgs', 'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobInfrastructureConfigurationOverrideDetails']]] = None,
             job_log_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobLogConfigurationOverrideDetails']]] = None,
             job_node_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobNodeConfigurationOverrideDetailsArgs', 'JobRunJobNodeConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobNodeConfigurationOverrideDetails']]] = None,
+            job_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
             job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationDetailsListArgs', 'JobRunJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationDetailsList']]]]] = None,
+            job_storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationOverrideDetailsListArgs', 'JobRunJobStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationOverrideDetailsList']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             log_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunLogDetailArgs', 'JobRunLogDetailArgsDict', 'outputs.JobRunLogDetail']]]]] = None,
             node_group_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunNodeGroupDetailsListArgs', 'JobRunNodeGroupDetailsListArgsDict', 'outputs.JobRunNodeGroupDetailsList']]]]] = None,
@@ -1176,7 +1274,9 @@ class JobRun(pulumi.CustomResource):
         __props__["jobInfrastructureConfigurationOverrideDetails"] = job_infrastructure_configuration_override_details
         __props__["jobLogConfigurationOverrideDetails"] = job_log_configuration_override_details
         __props__["jobNodeConfigurationOverrideDetails"] = job_node_configuration_override_details
+        __props__["jobRunRetentionPeriodInDaysOverride"] = job_run_retention_period_in_days_override
         __props__["jobStorageMountConfigurationDetailsLists"] = job_storage_mount_configuration_details_lists
+        __props__["jobStorageMountConfigurationOverrideDetailsLists"] = job_storage_mount_configuration_override_details_lists
         __props__["lifecycleDetails"] = lifecycle_details
         __props__["logDetails"] = log_details
         __props__["nodeGroupDetailsLists"] = node_group_details_lists
@@ -1293,12 +1393,28 @@ class JobRun(pulumi.CustomResource):
         return pulumi.get(self, "job_node_configuration_override_details")
 
     @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDaysOverride")
+    def job_run_retention_period_in_days_override(self) -> pulumi.Output[_builtins.int]:
+        """
+        Retention period in days for job run.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days_override")
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> pulumi.Output[Sequence['outputs.JobRunJobStorageMountConfigurationDetailsList']]:
         """
         Collection of JobStorageMountConfigurationDetails.
         """
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="jobStorageMountConfigurationOverrideDetailsLists")
+    def job_storage_mount_configuration_override_details_lists(self) -> pulumi.Output[Sequence['outputs.JobRunJobStorageMountConfigurationOverrideDetailsList']]:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_override_details_lists")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

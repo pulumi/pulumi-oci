@@ -63,6 +63,10 @@ import * as utilities from "../utilities";
  *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
  *         },
+ *         networkConfiguration: {
+ *             networkType: jobJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType,
+ *             subnetId: testSubnet.id,
+ *         },
  *         resourceConfiguration: {
  *             resourceLimitConfiguration: {
  *                 memoryInGbs: jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
@@ -120,6 +124,10 @@ import * as utilities from "../utilities";
  *                     memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
  *                 },
+ *                 networkConfiguration: {
+ *                     networkType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType,
+ *                     subnetId: testSubnet.id,
+ *                 },
  *                 resourceConfiguration: {
  *                     resourceLimitConfiguration: {
  *                         memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
@@ -140,6 +148,7 @@ import * as utilities from "../utilities";
  *         maximumRuntimeInMinutes: jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes,
  *         startupOrder: jobJobNodeConfigurationDetailsStartupOrder,
  *     },
+ *     jobRunRetentionPeriodInDays: jobJobRunRetentionPeriodInDays,
  *     jobStorageMountConfigurationDetailsLists: [{
  *         destinationDirectoryName: jobJobStorageMountConfigurationDetailsListDestinationDirectoryName,
  *         storageType: jobJobStorageMountConfigurationDetailsListStorageType,
@@ -267,6 +276,10 @@ export class Job extends pulumi.CustomResource {
      */
     declare public readonly jobNodeConfigurationDetails: pulumi.Output<outputs.DataScience.JobJobNodeConfigurationDetails>;
     /**
+     * Retention period in days for job runs.
+     */
+    declare public readonly jobRunRetentionPeriodInDays: pulumi.Output<number>;
+    /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
     declare public readonly jobStorageMountConfigurationDetailsLists: pulumi.Output<outputs.DataScience.JobJobStorageMountConfigurationDetailsList[]>;
@@ -318,6 +331,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["jobInfrastructureConfigurationDetails"] = state?.jobInfrastructureConfigurationDetails;
             resourceInputs["jobLogConfigurationDetails"] = state?.jobLogConfigurationDetails;
             resourceInputs["jobNodeConfigurationDetails"] = state?.jobNodeConfigurationDetails;
+            resourceInputs["jobRunRetentionPeriodInDays"] = state?.jobRunRetentionPeriodInDays;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = state?.jobStorageMountConfigurationDetailsLists;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["projectId"] = state?.projectId;
@@ -345,6 +359,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["jobInfrastructureConfigurationDetails"] = args?.jobInfrastructureConfigurationDetails;
             resourceInputs["jobLogConfigurationDetails"] = args?.jobLogConfigurationDetails;
             resourceInputs["jobNodeConfigurationDetails"] = args?.jobNodeConfigurationDetails;
+            resourceInputs["jobRunRetentionPeriodInDays"] = args?.jobRunRetentionPeriodInDays;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = args?.jobStorageMountConfigurationDetailsLists;
             resourceInputs["projectId"] = args?.projectId;
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
@@ -431,6 +446,10 @@ export interface JobState {
      */
     jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails | undefined>;
     /**
+     * Retention period in days for job runs.
+     */
+    jobRunRetentionPeriodInDays?: pulumi.Input<number | undefined>;
+    /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
     jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[] | undefined>;
@@ -515,6 +534,10 @@ export interface JobArgs {
      * The job node configuration details
      */
     jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails | undefined>;
+    /**
+     * Retention period in days for job runs.
+     */
+    jobRunRetentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */

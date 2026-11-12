@@ -12,6 +12,7 @@ import com.pulumi.oci.DataScience.outputs.GetJobsJobJobLogConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobNodeConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -86,6 +87,11 @@ public final class GetJobsJob {
      * 
      */
     private List<GetJobsJobJobNodeConfigurationDetail> jobNodeConfigurationDetails;
+    /**
+     * @return Retention period in days for job runs.
+     * 
+     */
+    private Integer jobRunRetentionPeriodInDays;
     /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
@@ -219,6 +225,13 @@ public final class GetJobsJob {
         return this.jobNodeConfigurationDetails;
     }
     /**
+     * @return Retention period in days for job runs.
+     * 
+     */
+    public Integer jobRunRetentionPeriodInDays() {
+        return this.jobRunRetentionPeriodInDays;
+    }
+    /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
@@ -282,6 +295,7 @@ public final class GetJobsJob {
         private List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
         private List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
         private List<GetJobsJobJobNodeConfigurationDetail> jobNodeConfigurationDetails;
+        private Integer jobRunRetentionPeriodInDays;
         private List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
         private String lifecycleDetails;
         private String projectId;
@@ -309,6 +323,7 @@ public final class GetJobsJob {
     	      this.jobInfrastructureConfigurationDetails = defaults.jobInfrastructureConfigurationDetails;
     	      this.jobLogConfigurationDetails = defaults.jobLogConfigurationDetails;
     	      this.jobNodeConfigurationDetails = defaults.jobNodeConfigurationDetails;
+    	      this.jobRunRetentionPeriodInDays = defaults.jobRunRetentionPeriodInDays;
     	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.projectId = defaults.projectId;
@@ -484,6 +499,14 @@ public final class GetJobsJob {
             return jobNodeConfigurationDetails(List.of(jobNodeConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder jobRunRetentionPeriodInDays(Integer jobRunRetentionPeriodInDays) {
+            if (jobRunRetentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobRunRetentionPeriodInDays");
+            }
+            this.jobRunRetentionPeriodInDays = jobRunRetentionPeriodInDays;
+            return this;
+        }
+        @CustomType.Setter
         public Builder jobStorageMountConfigurationDetailsLists(List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
             if (jobStorageMountConfigurationDetailsLists == null) {
               throw new MissingRequiredPropertyException("GetJobsJob", "jobStorageMountConfigurationDetailsLists");
@@ -547,6 +570,7 @@ public final class GetJobsJob {
             _resultValue.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             _resultValue.jobLogConfigurationDetails = jobLogConfigurationDetails;
             _resultValue.jobNodeConfigurationDetails = jobNodeConfigurationDetails;
+            _resultValue.jobRunRetentionPeriodInDays = jobRunRetentionPeriodInDays;
             _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.projectId = projectId;

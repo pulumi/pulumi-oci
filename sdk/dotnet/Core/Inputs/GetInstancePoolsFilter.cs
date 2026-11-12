@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class GetInstancePoolsFilterArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A user-friendly name for the override option.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 

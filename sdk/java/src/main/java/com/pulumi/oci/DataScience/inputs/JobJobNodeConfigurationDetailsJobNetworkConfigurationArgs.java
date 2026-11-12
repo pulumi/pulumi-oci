@@ -17,14 +17,14 @@ public final class JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs ext
     public static final JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs Empty = new JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs();
 
     /**
-     * job network type
+     * The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
      * 
      */
     @Import(name="jobNetworkType", required=true)
     private Output<String> jobNetworkType;
 
     /**
-     * @return job network type
+     * @return The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
      * 
      */
     public Output<String> jobNetworkType() {
@@ -72,7 +72,7 @@ public final class JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs ext
         }
 
         /**
-         * @param jobNetworkType job network type
+         * @param jobNetworkType The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs ext
         }
 
         /**
-         * @param jobNetworkType job network type
+         * @param jobNetworkType The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
          * 
          * @return builder
          * 

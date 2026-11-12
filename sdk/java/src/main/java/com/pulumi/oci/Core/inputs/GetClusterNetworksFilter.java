@@ -17,9 +17,17 @@ public final class GetClusterNetworksFilter extends com.pulumi.resources.InvokeA
 
     public static final GetClusterNetworksFilter Empty = new GetClusterNetworksFilter();
 
+    /**
+     * A user-friendly name for the override option.
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return A user-friendly name for the override option.
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetClusterNetworksFilter extends com.pulumi.resources.InvokeA
             $ = new GetClusterNetworksFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name A user-friendly name for the override option.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

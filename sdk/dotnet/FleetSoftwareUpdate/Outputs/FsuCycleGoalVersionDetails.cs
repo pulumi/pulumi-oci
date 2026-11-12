@@ -22,6 +22,10 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string? HomePolicy;
         /// <summary>
+        /// (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        public readonly bool? IsOlderVersionAcknowledged;
+        /// <summary>
         /// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: &lt;specified_prefix&gt;_&lt;timestamp&gt; If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
         /// </summary>
         public readonly string? NewHomePrefix;
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string? homePolicy,
 
+            bool? isOlderVersionAcknowledged,
+
             string? newHomePrefix,
 
             string? softwareImageId,
@@ -54,6 +60,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         {
             Components = components;
             HomePolicy = homePolicy;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             NewHomePrefix = newHomePrefix;
             SoftwareImageId = softwareImageId;
             Type = type;

@@ -17,6 +17,8 @@ import * as utilities from "../utilities";
  * To determine whether capacity is available for a specific shape before you create an instance pool,
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
+ * You can optionally include `overridePolicy` to define availability domain-scoped
+ * launch overrides for future launches. Existing pool members are not modified.
  *
  * ## Example Usage
  *
@@ -76,6 +78,30 @@ import * as utilities from "../utilities";
  *         port: instancePoolLoadBalancersPort,
  *         vnicSelection: instancePoolLoadBalancersVnicSelection,
  *     }],
+ *     overridePolicy: {
+ *         overrideStatements: [{
+ *             name: instancePoolOverridePolicyOverrideStatementsName,
+ *             overrideOptions: [{
+ *                 name: instancePoolOverridePolicyOverrideStatementsOverrideOptionsName,
+ *                 override: {
+ *                     capacityReservationId: testCapacityReservation.id,
+ *                     shape: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShape,
+ *                     shapeConfigDetails: {
+ *                         baselineOcpuUtilization: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsBaselineOcpuUtilization,
+ *                         localVolumeSizeInGbs: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsLocalVolumeSizeInGbs,
+ *                         memoryInGbs: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsMemoryInGbs,
+ *                         nvmes: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsNvmes,
+ *                         ocpus: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsOcpus,
+ *                         resourceManagement: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsResourceManagement,
+ *                         vcpus: instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsVcpus,
+ *                     },
+ *                 },
+ *             }],
+ *             selector: {
+ *                 availabilityDomain: instancePoolOverridePolicyOverrideStatementsSelectorAvailabilityDomain,
+ *             },
+ *         }],
+ *     },
  * });
  * ```
  *
@@ -171,6 +197,16 @@ export class InstancePool extends pulumi.CustomResource {
      */
     declare public readonly loadBalancers: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[] | undefined>;
     /**
+     * (Updatable) Optional pool-level launch override policy for future instance launches.
+     *
+     * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+     *
+     * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+     *
+     * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+     */
+    declare public readonly overridePolicy: pulumi.Output<outputs.Core.InstancePoolOverridePolicy>;
+    /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
      * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -220,6 +256,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["instanceHostnameFormatter"] = state?.instanceHostnameFormatter;
             resourceInputs["lifecycleManagement"] = state?.lifecycleManagement;
             resourceInputs["loadBalancers"] = state?.loadBalancers;
+            resourceInputs["overridePolicy"] = state?.overridePolicy;
             resourceInputs["placementConfigurations"] = state?.placementConfigurations;
             resourceInputs["poolType"] = state?.poolType;
             resourceInputs["size"] = state?.size;
@@ -248,6 +285,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["instanceHostnameFormatter"] = args?.instanceHostnameFormatter;
             resourceInputs["lifecycleManagement"] = args?.lifecycleManagement;
             resourceInputs["loadBalancers"] = args?.loadBalancers;
+            resourceInputs["overridePolicy"] = args?.overridePolicy;
             resourceInputs["placementConfigurations"] = args?.placementConfigurations;
             resourceInputs["size"] = args?.size;
             resourceInputs["state"] = args?.state;
@@ -309,6 +347,16 @@ export interface InstancePoolState {
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
     loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[] | undefined>;
+    /**
+     * (Updatable) Optional pool-level launch override policy for future instance launches.
+     *
+     * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+     *
+     * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+     *
+     * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+     */
+    overridePolicy?: pulumi.Input<inputs.Core.InstancePoolOverridePolicy | undefined>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
@@ -376,6 +424,16 @@ export interface InstancePoolArgs {
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
     loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[] | undefined>;
+    /**
+     * (Updatable) Optional pool-level launch override policy for future instance launches.
+     *
+     * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+     *
+     * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+     *
+     * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+     */
+    overridePolicy?: pulumi.Input<inputs.Core.InstancePoolOverridePolicy | undefined>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *

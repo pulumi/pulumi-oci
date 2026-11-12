@@ -93,6 +93,10 @@ export interface GetInstancePoolResult {
      */
     readonly loadBalancers: outputs.Core.GetInstancePoolLoadBalancer[];
     /**
+     * Optional pool-level launch override policy for future instance launches.
+     */
+    readonly overridePolicies: outputs.Core.GetInstancePoolOverridePolicy[];
+    /**
      * The placement configurations for the instance pool.
      */
     readonly placementConfigurations: outputs.Core.GetInstancePoolPlacementConfiguration[];

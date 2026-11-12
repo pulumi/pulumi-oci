@@ -41,6 +41,12 @@ __all__ = [
     'ClusterNetworkClusterConfiguration',
     'ClusterNetworkInstancePool',
     'ClusterNetworkInstancePoolLoadBalancer',
+    'ClusterNetworkInstancePoolOverridePolicy',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatement',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector',
     'ClusterNetworkInstancePoolPlacementConfiguration',
     'ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet',
     'ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail',
@@ -167,6 +173,12 @@ __all__ = [
     'InstancePoolLifecycleManagementLifecycleActionsPreTermination',
     'InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeout',
     'InstancePoolLoadBalancer',
+    'InstancePoolOverridePolicy',
+    'InstancePoolOverridePolicyOverrideStatement',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOption',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails',
+    'InstancePoolOverridePolicyOverrideStatementSelector',
     'InstancePoolPlacementConfiguration',
     'InstancePoolPlacementConfigurationPrimaryVnicSubnets',
     'InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail',
@@ -301,6 +313,12 @@ __all__ = [
     'GetClusterNetworkClusterConfigurationResult',
     'GetClusterNetworkInstancePoolResult',
     'GetClusterNetworkInstancePoolLoadBalancerResult',
+    'GetClusterNetworkInstancePoolOverridePolicyResult',
+    'GetClusterNetworkInstancePoolOverridePolicyOverrideStatementResult',
+    'GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult',
+    'GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult',
+    'GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult',
+    'GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult',
     'GetClusterNetworkInstancePoolPlacementConfigurationResult',
     'GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetResult',
     'GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult',
@@ -318,6 +336,12 @@ __all__ = [
     'GetClusterNetworksClusterNetworkClusterConfigurationResult',
     'GetClusterNetworksClusterNetworkInstancePoolResult',
     'GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult',
+    'GetClusterNetworksClusterNetworkInstancePoolOverridePolicyResult',
+    'GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementResult',
+    'GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult',
+    'GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult',
+    'GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult',
+    'GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult',
     'GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult',
     'GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetResult',
     'GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult',
@@ -622,6 +646,12 @@ __all__ = [
     'GetInstancePoolLifecycleManagementLifecycleActionPreTerminationResult',
     'GetInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult',
     'GetInstancePoolLoadBalancerResult',
+    'GetInstancePoolOverridePolicyResult',
+    'GetInstancePoolOverridePolicyOverrideStatementResult',
+    'GetInstancePoolOverridePolicyOverrideStatementOverrideOptionResult',
+    'GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult',
+    'GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult',
+    'GetInstancePoolOverridePolicyOverrideStatementSelectorResult',
     'GetInstancePoolPlacementConfigurationResult',
     'GetInstancePoolPlacementConfigurationPrimaryVnicSubnetResult',
     'GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult',
@@ -634,6 +664,12 @@ __all__ = [
     'GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationResult',
     'GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationOnTimeoutResult',
     'GetInstancePoolsInstancePoolLoadBalancerResult',
+    'GetInstancePoolsInstancePoolOverridePolicyResult',
+    'GetInstancePoolsInstancePoolOverridePolicyOverrideStatementResult',
+    'GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionResult',
+    'GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult',
+    'GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult',
+    'GetInstancePoolsInstancePoolOverridePolicyOverrideStatementSelectorResult',
     'GetInstancePoolsInstancePoolPlacementConfigurationResult',
     'GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetResult',
     'GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult',
@@ -2159,6 +2195,8 @@ class ClusterNetworkInstancePool(dict):
             suggest = "instance_hostname_formatter"
         elif key == "loadBalancers":
             suggest = "load_balancers"
+        elif key == "overridePolicies":
+            suggest = "override_policies"
         elif key == "placementConfigurations":
             suggest = "placement_configurations"
         elif key == "poolType":
@@ -2189,6 +2227,7 @@ class ClusterNetworkInstancePool(dict):
                  instance_display_name_formatter: Optional[_builtins.str] = None,
                  instance_hostname_formatter: Optional[_builtins.str] = None,
                  load_balancers: Optional[Sequence['outputs.ClusterNetworkInstancePoolLoadBalancer']] = None,
+                 override_policies: Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicy']] = None,
                  placement_configurations: Optional[Sequence['outputs.ClusterNetworkInstancePoolPlacementConfiguration']] = None,
                  pool_type: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
@@ -2203,6 +2242,7 @@ class ClusterNetworkInstancePool(dict):
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param Sequence['ClusterNetworkInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
+        :param Sequence['ClusterNetworkInstancePoolOverridePolicyArgs'] override_policies: Optional pool-level launch override policy for future instance launches.
         :param Sequence['ClusterNetworkInstancePoolPlacementConfigurationArgs'] placement_configurations: The placement configurations for the instance pool.
         :param _builtins.str pool_type: The type of resources managed by the pool.
         :param _builtins.str state: The current state of the cluster network.
@@ -2228,6 +2268,8 @@ class ClusterNetworkInstancePool(dict):
             pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
+        if override_policies is not None:
+            pulumi.set(__self__, "override_policies", override_policies)
         if placement_configurations is not None:
             pulumi.set(__self__, "placement_configurations", placement_configurations)
         if pool_type is not None:
@@ -2320,6 +2362,14 @@ class ClusterNetworkInstancePool(dict):
         return pulumi.get(self, "load_balancers")
 
     @_builtins.property
+    @pulumi.getter(name="overridePolicies")
+    def override_policies(self) -> Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicy']]:
+        """
+        Optional pool-level launch override policy for future instance launches.
+        """
+        return pulumi.get(self, "override_policies")
+
+    @_builtins.property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> Optional[Sequence['outputs.ClusterNetworkInstancePoolPlacementConfiguration']]:
         """
@@ -2392,7 +2442,6 @@ class ClusterNetworkInstancePoolLoadBalancer(dict):
         :param _builtins.str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
         :param _builtins.int port: The port value used for the backends.
         :param _builtins.str state: The current state of the cluster network.
-        :param _builtins.str vnic_selection: Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
         """
         if backend_set_name is not None:
             pulumi.set(__self__, "backend_set_name", backend_set_name)
@@ -2460,10 +2509,346 @@ class ClusterNetworkInstancePoolLoadBalancer(dict):
     @_builtins.property
     @pulumi.getter(name="vnicSelection")
     def vnic_selection(self) -> Optional[_builtins.str]:
-        """
-        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
         return pulumi.get(self, "vnic_selection")
+
+
+@pulumi.output_type
+class ClusterNetworkInstancePoolOverridePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overrideStatements":
+            suggest = "override_statements"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterNetworkInstancePoolOverridePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterNetworkInstancePoolOverridePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterNetworkInstancePoolOverridePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 override_statements: Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatement']] = None):
+        """
+        :param Sequence['ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs'] override_statements: The ordered set of availability domain-scoped override statements for this policy.
+        """
+        if override_statements is not None:
+            pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatement']]:
+        """
+        The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+
+@pulumi.output_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatement(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overrideOptions":
+            suggest = "override_options"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterNetworkInstancePoolOverridePolicyOverrideStatement. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatement.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatement.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None,
+                 override_options: Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption']] = None,
+                 selectors: Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector']] = None):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs'] override_options: The ordered list of candidate override options for the matched availability domain.
+        :param Sequence['ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs'] selectors: The selector for an override statement.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if override_options is not None:
+            pulumi.set(__self__, "override_options", override_options)
+        if selectors is not None:
+            pulumi.set(__self__, "selectors", selectors)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption']]:
+        """
+        The ordered list of candidate override options for the matched availability domain.
+        """
+        return pulumi.get(self, "override_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def selectors(self) -> Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector']]:
+        """
+        The selector for an override statement.
+        """
+        return pulumi.get(self, "selectors")
+
+
+@pulumi.output_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None,
+                 overrides: Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride']] = None):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs'] overrides: The concrete launch mutation payload for an override option.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if overrides is not None:
+            pulumi.set(__self__, "overrides", overrides)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def overrides(self) -> Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride']]:
+        """
+        The concrete launch mutation payload for an override option.
+        """
+        return pulumi.get(self, "overrides")
+
+
+@pulumi.output_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "capacityReservationId":
+            suggest = "capacity_reservation_id"
+        elif key == "shapeConfigDetails":
+            suggest = "shape_config_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capacity_reservation_id: Optional[_builtins.str] = None,
+                 shape: Optional[_builtins.str] = None,
+                 shape_config_details: Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail']] = None):
+        """
+        :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation to use for the override option.
+        :param _builtins.str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        :param Sequence['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs'] shape_config_details: The shape configuration requested for the override option.
+        """
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> Optional[_builtins.str]:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Optional[Sequence['outputs.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail']]:
+        """
+        The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baselineOcpuUtilization":
+            suggest = "baseline_ocpu_utilization"
+        elif key == "localVolumeSizeInGbs":
+            suggest = "local_volume_size_in_gbs"
+        elif key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+        elif key == "resourceManagement":
+            suggest = "resource_management"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: Optional[_builtins.str] = None,
+                 local_volume_size_in_gbs: Optional[_builtins.int] = None,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 nvmes: Optional[_builtins.int] = None,
+                 ocpus: Optional[_builtins.float] = None,
+                 resource_management: Optional[_builtins.str] = None,
+                 vcpus: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param _builtins.float ocpus: The total number of OCPUs available to the instance.
+        :param _builtins.str resource_management: This field is reserved for internal use.
+        :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> Optional[_builtins.int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> Optional[_builtins.str]:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> Optional[_builtins.int]:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+
+@pulumi.output_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability_domain: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[_builtins.str]:
+        """
+        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
 
 
 @pulumi.output_type
@@ -13744,6 +14129,365 @@ class InstancePoolLoadBalancer(dict):
 
 
 @pulumi.output_type
+class InstancePoolOverridePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overrideStatements":
+            suggest = "override_statements"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolOverridePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolOverridePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolOverridePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 override_statements: Sequence['outputs.InstancePoolOverridePolicyOverrideStatement']):
+        """
+        :param Sequence['InstancePoolOverridePolicyOverrideStatementArgs'] override_statements: (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+        """
+        pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> Sequence['outputs.InstancePoolOverridePolicyOverrideStatement']:
+        """
+        (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+
+@pulumi.output_type
+class InstancePoolOverridePolicyOverrideStatement(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overrideOptions":
+            suggest = "override_options"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolOverridePolicyOverrideStatement. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolOverridePolicyOverrideStatement.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolOverridePolicyOverrideStatement.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 override_options: Sequence['outputs.InstancePoolOverridePolicyOverrideStatementOverrideOption'],
+                 selector: 'outputs.InstancePoolOverridePolicyOverrideStatementSelector'):
+        """
+        :param Sequence['InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs'] override_options: (Updatable) The ordered list of candidate override options for the matched availability domain.
+               
+               Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+        :param 'InstancePoolOverridePolicyOverrideStatementSelectorArgs' selector: (Updatable) The selector for an override statement.
+               
+               In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+        """
+        pulumi.set(__self__, "override_options", override_options)
+        pulumi.set(__self__, "selector", selector)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> Sequence['outputs.InstancePoolOverridePolicyOverrideStatementOverrideOption']:
+        """
+        (Updatable) The ordered list of candidate override options for the matched availability domain.
+
+        Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+        """
+        return pulumi.get(self, "override_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def selector(self) -> 'outputs.InstancePoolOverridePolicyOverrideStatementSelector':
+        """
+        (Updatable) The selector for an override statement.
+
+        In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+        """
+        return pulumi.get(self, "selector")
+
+
+@pulumi.output_type
+class InstancePoolOverridePolicyOverrideStatementOverrideOption(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 override: 'outputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride'):
+        """
+        :param _builtins.str name: (Updatable) A user-friendly name for the override option.
+        :param 'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs' override: (Updatable) The concrete launch mutation payload for an override option.
+               
+               In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+               
+               Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+               
+               Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "override", override)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def override(self) -> 'outputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride':
+        """
+        (Updatable) The concrete launch mutation payload for an override option.
+
+        In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+
+        Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+
+        Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+        """
+        return pulumi.get(self, "override")
+
+
+@pulumi.output_type
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "capacityReservationId":
+            suggest = "capacity_reservation_id"
+        elif key == "shapeConfigDetails":
+            suggest = "shape_config_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capacity_reservation_id: Optional[_builtins.str] = None,
+                 shape: Optional[_builtins.str] = None,
+                 shape_config_details: Optional['outputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails'] = None):
+        """
+        :param _builtins.str capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation to use for the override option.
+        :param _builtins.str shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        :param 'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs' shape_config_details: (Updatable) The shape configuration requested for the override option.
+        """
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Optional['outputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails']:
+        """
+        (Updatable) The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baselineOcpuUtilization":
+            suggest = "baseline_ocpu_utilization"
+        elif key == "localVolumeSizeInGbs":
+            suggest = "local_volume_size_in_gbs"
+        elif key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+        elif key == "resourceManagement":
+            suggest = "resource_management"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: Optional[_builtins.str] = None,
+                 local_volume_size_in_gbs: Optional[_builtins.int] = None,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 nvmes: Optional[_builtins.int] = None,
+                 ocpus: Optional[_builtins.float] = None,
+                 resource_management: Optional[_builtins.str] = None,
+                 vcpus: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.int local_volume_size_in_gbs: (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param _builtins.float memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
+        :param _builtins.int nvmes: (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param _builtins.float ocpus: (Updatable) The total number of OCPUs available to the instance.
+        :param _builtins.str resource_management: (Updatable) This field is reserved for internal use.
+        :param _builtins.int vcpus: (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        (Updatable) The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        (Updatable) The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+
+@pulumi.output_type
+class InstancePoolOverridePolicyOverrideStatementSelector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolOverridePolicyOverrideStatementSelector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolOverridePolicyOverrideStatementSelector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolOverridePolicyOverrideStatementSelector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str):
+        """
+        :param _builtins.str availability_domain: (Updatable) The availability domain that this statement applies to.
+               
+               The value must match an availability domain present in the pool's `placementConfigurations`.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        (Updatable) The availability domain that this statement applies to.
+
+        The value must match an availability domain present in the pool's `placementConfigurations`.
+        """
+        return pulumi.get(self, "availability_domain")
+
+
+@pulumi.output_type
 class InstancePoolPlacementConfiguration(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -22267,6 +23011,7 @@ class GetClusterNetworkInstancePoolResult(dict):
                  instance_display_name_formatter: _builtins.str,
                  instance_hostname_formatter: _builtins.str,
                  load_balancers: Sequence['outputs.GetClusterNetworkInstancePoolLoadBalancerResult'],
+                 override_policies: Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyResult'],
                  placement_configurations: Sequence['outputs.GetClusterNetworkInstancePoolPlacementConfigurationResult'],
                  pool_type: _builtins.str,
                  size: _builtins.int,
@@ -22281,6 +23026,7 @@ class GetClusterNetworkInstancePoolResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param _builtins.str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param Sequence['GetClusterNetworkInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
+        :param Sequence['GetClusterNetworkInstancePoolOverridePolicyArgs'] override_policies: Optional pool-level launch override policy for future instance launches.
         :param Sequence['GetClusterNetworkInstancePoolPlacementConfigurationArgs'] placement_configurations: The placement configurations for the instance pool.
         :param _builtins.str pool_type: The type of resources managed by the pool.
         :param _builtins.int size: The number of instances that should be in the instance pool.
@@ -22297,6 +23043,7 @@ class GetClusterNetworkInstancePoolResult(dict):
         pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
         pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         pulumi.set(__self__, "load_balancers", load_balancers)
+        pulumi.set(__self__, "override_policies", override_policies)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "pool_type", pool_type)
         pulumi.set(__self__, "size", size)
@@ -22378,6 +23125,14 @@ class GetClusterNetworkInstancePoolResult(dict):
         return pulumi.get(self, "load_balancers")
 
     @_builtins.property
+    @pulumi.getter(name="overridePolicies")
+    def override_policies(self) -> Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyResult']:
+        """
+        Optional pool-level launch override policy for future instance launches.
+        """
+        return pulumi.get(self, "override_policies")
+
+    @_builtins.property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> Sequence['outputs.GetClusterNetworkInstancePoolPlacementConfigurationResult']:
         """
@@ -22435,7 +23190,6 @@ class GetClusterNetworkInstancePoolLoadBalancerResult(dict):
         :param _builtins.str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
         :param _builtins.int port: The port value used for the backends.
         :param _builtins.str state: The current state of the cluster network.
-        :param _builtins.str vnic_selection: Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
         """
         pulumi.set(__self__, "backend_set_name", backend_set_name)
         pulumi.set(__self__, "id", id)
@@ -22496,10 +23250,236 @@ class GetClusterNetworkInstancePoolLoadBalancerResult(dict):
     @_builtins.property
     @pulumi.getter(name="vnicSelection")
     def vnic_selection(self) -> _builtins.str:
-        """
-        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
         return pulumi.get(self, "vnic_selection")
+
+
+@pulumi.output_type
+class GetClusterNetworkInstancePoolOverridePolicyResult(dict):
+    def __init__(__self__, *,
+                 override_statements: Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementResult']):
+        """
+        :param Sequence['GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs'] override_statements: The ordered set of availability domain-scoped override statements for this policy.
+        """
+        pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementResult']:
+        """
+        The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+
+@pulumi.output_type
+class GetClusterNetworkInstancePoolOverridePolicyOverrideStatementResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 override_options: Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult'],
+                 selectors: Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult']):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs'] override_options: The ordered list of candidate override options for the matched availability domain.
+        :param Sequence['GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs'] selectors: The selector for an override statement.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "override_options", override_options)
+        pulumi.set(__self__, "selectors", selectors)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult']:
+        """
+        The ordered list of candidate override options for the matched availability domain.
+        """
+        return pulumi.get(self, "override_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def selectors(self) -> Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult']:
+        """
+        The selector for an override statement.
+        """
+        return pulumi.get(self, "selectors")
+
+
+@pulumi.output_type
+class GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 overrides: Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs'] overrides: The concrete launch mutation payload for an override option.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "overrides", overrides)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def overrides(self) -> Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']:
+        """
+        The concrete launch mutation payload for an override option.
+        """
+        return pulumi.get(self, "overrides")
+
+
+@pulumi.output_type
+class GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult(dict):
+    def __init__(__self__, *,
+                 capacity_reservation_id: _builtins.str,
+                 shape: _builtins.str,
+                 shape_config_details: Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']):
+        """
+        :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation to use for the override option.
+        :param _builtins.str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        :param Sequence['GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs'] shape_config_details: The shape configuration requested for the override option.
+        """
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']:
+        """
+        The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
+                 memory_in_gbs: _builtins.float,
+                 nvmes: _builtins.int,
+                 ocpus: _builtins.float,
+                 resource_management: _builtins.str,
+                 vcpus: _builtins.int):
+        """
+        :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param _builtins.float ocpus: The total number of OCPUs available to the instance.
+        :param _builtins.str resource_management: This field is reserved for internal use.
+        :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "resource_management", resource_management)
+        pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> _builtins.int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> _builtins.str:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> _builtins.int:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+
+@pulumi.output_type
+class GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str):
+        """
+        :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
 
 
 @pulumi.output_type
@@ -23292,6 +24272,7 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
                  instance_display_name_formatter: _builtins.str,
                  instance_hostname_formatter: _builtins.str,
                  load_balancers: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult'],
+                 override_policies: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyResult'],
                  placement_configurations: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult'],
                  pool_type: _builtins.str,
                  size: _builtins.int,
@@ -23306,6 +24287,7 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param _builtins.str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param Sequence['GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
+        :param Sequence['GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs'] override_policies: Optional pool-level launch override policy for future instance launches.
         :param Sequence['GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationArgs'] placement_configurations: The placement configurations for the instance pool.
         :param _builtins.str pool_type: The type of resources managed by the pool.
         :param _builtins.int size: The number of instances that should be in the instance pool.
@@ -23322,6 +24304,7 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
         pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
         pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         pulumi.set(__self__, "load_balancers", load_balancers)
+        pulumi.set(__self__, "override_policies", override_policies)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "pool_type", pool_type)
         pulumi.set(__self__, "size", size)
@@ -23403,6 +24386,14 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
         return pulumi.get(self, "load_balancers")
 
     @_builtins.property
+    @pulumi.getter(name="overridePolicies")
+    def override_policies(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyResult']:
+        """
+        Optional pool-level launch override policy for future instance launches.
+        """
+        return pulumi.get(self, "override_policies")
+
+    @_builtins.property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult']:
         """
@@ -23460,7 +24451,6 @@ class GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult(dict):
         :param _builtins.str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
         :param _builtins.int port: The port value used for the backends.
         :param _builtins.str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-        :param _builtins.str vnic_selection: Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
         """
         pulumi.set(__self__, "backend_set_name", backend_set_name)
         pulumi.set(__self__, "id", id)
@@ -23521,10 +24511,236 @@ class GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult(dict):
     @_builtins.property
     @pulumi.getter(name="vnicSelection")
     def vnic_selection(self) -> _builtins.str:
-        """
-        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
         return pulumi.get(self, "vnic_selection")
+
+
+@pulumi.output_type
+class GetClusterNetworksClusterNetworkInstancePoolOverridePolicyResult(dict):
+    def __init__(__self__, *,
+                 override_statements: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementResult']):
+        """
+        :param Sequence['GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs'] override_statements: The ordered set of availability domain-scoped override statements for this policy.
+        """
+        pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementResult']:
+        """
+        The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+
+@pulumi.output_type
+class GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 override_options: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult'],
+                 selectors: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult']):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs'] override_options: The ordered list of candidate override options for the matched availability domain.
+        :param Sequence['GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs'] selectors: The selector for an override statement.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "override_options", override_options)
+        pulumi.set(__self__, "selectors", selectors)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult']:
+        """
+        The ordered list of candidate override options for the matched availability domain.
+        """
+        return pulumi.get(self, "override_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def selectors(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult']:
+        """
+        The selector for an override statement.
+        """
+        return pulumi.get(self, "selectors")
+
+
+@pulumi.output_type
+class GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 overrides: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs'] overrides: The concrete launch mutation payload for an override option.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "overrides", overrides)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def overrides(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']:
+        """
+        The concrete launch mutation payload for an override option.
+        """
+        return pulumi.get(self, "overrides")
+
+
+@pulumi.output_type
+class GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult(dict):
+    def __init__(__self__, *,
+                 capacity_reservation_id: _builtins.str,
+                 shape: _builtins.str,
+                 shape_config_details: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']):
+        """
+        :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation to use for the override option.
+        :param _builtins.str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        :param Sequence['GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs'] shape_config_details: The shape configuration requested for the override option.
+        """
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']:
+        """
+        The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
+                 memory_in_gbs: _builtins.float,
+                 nvmes: _builtins.int,
+                 ocpus: _builtins.float,
+                 resource_management: _builtins.str,
+                 vcpus: _builtins.int):
+        """
+        :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param _builtins.float ocpus: The total number of OCPUs available to the instance.
+        :param _builtins.str resource_management: This field is reserved for internal use.
+        :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "resource_management", resource_management)
+        pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> _builtins.int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> _builtins.str:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> _builtins.int:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+
+@pulumi.output_type
+class GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str):
+        """
+        :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
 
 
 @pulumi.output_type
@@ -23918,6 +25134,9 @@ class GetClusterNetworksFilterResult(dict):
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -23926,6 +25145,9 @@ class GetClusterNetworksFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -42851,6 +44073,224 @@ class GetInstancePoolLoadBalancerResult(dict):
 
 
 @pulumi.output_type
+class GetInstancePoolOverridePolicyResult(dict):
+    def __init__(__self__, *,
+                 override_statements: Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementResult']):
+        """
+        :param Sequence['GetInstancePoolOverridePolicyOverrideStatementArgs'] override_statements: The ordered set of availability domain-scoped override statements for this policy.
+        """
+        pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementResult']:
+        """
+        The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+
+@pulumi.output_type
+class GetInstancePoolOverridePolicyOverrideStatementResult(dict):
+    def __init__(__self__, *,
+                 override_options: Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionResult'],
+                 selectors: Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementSelectorResult']):
+        """
+        :param Sequence['GetInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs'] override_options: The ordered list of candidate override options for the matched availability domain.
+        :param Sequence['GetInstancePoolOverridePolicyOverrideStatementSelectorArgs'] selectors: The selector for an override statement.
+        """
+        pulumi.set(__self__, "override_options", override_options)
+        pulumi.set(__self__, "selectors", selectors)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionResult']:
+        """
+        The ordered list of candidate override options for the matched availability domain.
+        """
+        return pulumi.get(self, "override_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def selectors(self) -> Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementSelectorResult']:
+        """
+        The selector for an override statement.
+        """
+        return pulumi.get(self, "selectors")
+
+
+@pulumi.output_type
+class GetInstancePoolOverridePolicyOverrideStatementOverrideOptionResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 overrides: Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs'] overrides: The concrete launch mutation payload for an override option.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "overrides", overrides)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def overrides(self) -> Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']:
+        """
+        The concrete launch mutation payload for an override option.
+        """
+        return pulumi.get(self, "overrides")
+
+
+@pulumi.output_type
+class GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult(dict):
+    def __init__(__self__, *,
+                 capacity_reservation_id: _builtins.str,
+                 shape: _builtins.str,
+                 shape_config_details: Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']):
+        """
+        :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation to use for the override option.
+        :param _builtins.str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        :param Sequence['GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs'] shape_config_details: The shape configuration requested for the override option.
+        """
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']:
+        """
+        The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
+                 memory_in_gbs: _builtins.float,
+                 nvmes: _builtins.int,
+                 ocpus: _builtins.float,
+                 resource_management: _builtins.str,
+                 vcpus: _builtins.int):
+        """
+        :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param _builtins.float ocpus: The total number of OCPUs available to the instance.
+        :param _builtins.str resource_management: This field is reserved for internal use.
+        :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "resource_management", resource_management)
+        pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> _builtins.int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> _builtins.str:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> _builtins.int:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+
+@pulumi.output_type
+class GetInstancePoolOverridePolicyOverrideStatementSelectorResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str):
+        """
+        :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+
+@pulumi.output_type
 class GetInstancePoolPlacementConfigurationResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
@@ -43056,6 +44496,9 @@ class GetInstancePoolsFilterResult(dict):
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -43064,6 +44507,9 @@ class GetInstancePoolsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -43092,6 +44538,7 @@ class GetInstancePoolsInstancePoolResult(dict):
                  instance_hostname_formatter: _builtins.str,
                  lifecycle_managements: Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementResult'],
                  load_balancers: Sequence['outputs.GetInstancePoolsInstancePoolLoadBalancerResult'],
+                 override_policies: Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyResult'],
                  placement_configurations: Sequence['outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult'],
                  pool_type: _builtins.str,
                  size: _builtins.int,
@@ -43109,6 +44556,7 @@ class GetInstancePoolsInstancePoolResult(dict):
         :param _builtins.str instance_hostname_formatter: A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param Sequence['GetInstancePoolsInstancePoolLifecycleManagementArgs'] lifecycle_managements: The lifecycle management options for the instance pool.
         :param Sequence['GetInstancePoolsInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
+        :param Sequence['GetInstancePoolsInstancePoolOverridePolicyArgs'] override_policies: Optional pool-level launch override policy for future instance launches.
         :param Sequence['GetInstancePoolsInstancePoolPlacementConfigurationArgs'] placement_configurations: The placement configurations for the instance pool.
         :param _builtins.str pool_type: The type of resources managed by the pool.
         :param _builtins.int size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
@@ -43127,6 +44575,7 @@ class GetInstancePoolsInstancePoolResult(dict):
         pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         pulumi.set(__self__, "lifecycle_managements", lifecycle_managements)
         pulumi.set(__self__, "load_balancers", load_balancers)
+        pulumi.set(__self__, "override_policies", override_policies)
         pulumi.set(__self__, "placement_configurations", placement_configurations)
         pulumi.set(__self__, "pool_type", pool_type)
         pulumi.set(__self__, "size", size)
@@ -43225,6 +44674,14 @@ class GetInstancePoolsInstancePoolResult(dict):
         The load balancers attached to the instance pool.
         """
         return pulumi.get(self, "load_balancers")
+
+    @_builtins.property
+    @pulumi.getter(name="overridePolicies")
+    def override_policies(self) -> Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyResult']:
+        """
+        Optional pool-level launch override policy for future instance launches.
+        """
+        return pulumi.get(self, "override_policies")
 
     @_builtins.property
     @pulumi.getter(name="placementConfigurations")
@@ -43454,6 +44911,224 @@ class GetInstancePoolsInstancePoolLoadBalancerResult(dict):
         Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
         """
         return pulumi.get(self, "vnic_selection")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolOverridePolicyResult(dict):
+    def __init__(__self__, *,
+                 override_statements: Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementResult']):
+        """
+        :param Sequence['GetInstancePoolsInstancePoolOverridePolicyOverrideStatementArgs'] override_statements: The ordered set of availability domain-scoped override statements for this policy.
+        """
+        pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementResult']:
+        """
+        The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolOverridePolicyOverrideStatementResult(dict):
+    def __init__(__self__, *,
+                 override_options: Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionResult'],
+                 selectors: Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementSelectorResult']):
+        """
+        :param Sequence['GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs'] override_options: The ordered list of candidate override options for the matched availability domain.
+        :param Sequence['GetInstancePoolsInstancePoolOverridePolicyOverrideStatementSelectorArgs'] selectors: The selector for an override statement.
+        """
+        pulumi.set(__self__, "override_options", override_options)
+        pulumi.set(__self__, "selectors", selectors)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionResult']:
+        """
+        The ordered list of candidate override options for the matched availability domain.
+        """
+        return pulumi.get(self, "override_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def selectors(self) -> Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementSelectorResult']:
+        """
+        The selector for an override statement.
+        """
+        return pulumi.get(self, "selectors")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 overrides: Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        :param Sequence['GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs'] overrides: The concrete launch mutation payload for an override option.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "overrides", overrides)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def overrides(self) -> Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult']:
+        """
+        The concrete launch mutation payload for an override option.
+        """
+        return pulumi.get(self, "overrides")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideResult(dict):
+    def __init__(__self__, *,
+                 capacity_reservation_id: _builtins.str,
+                 shape: _builtins.str,
+                 shape_config_details: Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']):
+        """
+        :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation to use for the override option.
+        :param _builtins.str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        :param Sequence['GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs'] shape_config_details: The shape configuration requested for the override option.
+        """
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult']:
+        """
+        The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
+                 memory_in_gbs: _builtins.float,
+                 nvmes: _builtins.int,
+                 ocpus: _builtins.float,
+                 resource_management: _builtins.str,
+                 vcpus: _builtins.int):
+        """
+        :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param _builtins.float ocpus: The total number of OCPUs available to the instance.
+        :param _builtins.str resource_management: This field is reserved for internal use.
+        :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "resource_management", resource_management)
+        pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> _builtins.int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> _builtins.str:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> _builtins.int:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolOverridePolicyOverrideStatementSelectorResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str):
+        """
+        :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
 
 
 @pulumi.output_type

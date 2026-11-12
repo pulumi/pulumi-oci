@@ -76,7 +76,7 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				InitialCommitment:                  pulumi.Any(clusterInitialCommitment),
-//				InitialFaultDomainHostDistribution: pulumi.Any(clusterInitialFaultDomainHostDistribution),
+//				InitialFaultDomainHostDistribution: clusterInitialFaultDomainHostDistribution,
 //				InitialHostOcpuCount:               pulumi.Any(clusterInitialHostOcpuCount),
 //				InitialHostShapeName:               pulumi.Any(testShape.Name),
 //				InitialVcfByolAllocationId:         pulumi.Any(testByolAllocation.Id),
@@ -133,8 +133,6 @@ type Cluster struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringOutput `pulumi:"initialCommitment"`
-	// The initial fault domain host distribution mode for the Cluster.
-	InitialFaultDomainHostDistribution pulumi.StringOutput `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64Output `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -245,8 +243,6 @@ type clusterState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment *string `pulumi:"initialCommitment"`
-	// The initial fault domain host distribution mode for the Cluster.
-	InitialFaultDomainHostDistribution *string `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -316,8 +312,6 @@ type ClusterState struct {
 	FreeformTags pulumi.StringMapInput
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringPtrInput
-	// The initial fault domain host distribution mode for the Cluster.
-	InitialFaultDomainHostDistribution pulumi.StringPtrInput
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64PtrInput
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -394,8 +388,6 @@ type clusterArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment *string `pulumi:"initialCommitment"`
-	// The initial fault domain host distribution mode for the Cluster.
-	InitialFaultDomainHostDistribution *string `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -449,8 +441,6 @@ type ClusterArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringPtrInput
-	// The initial fault domain host distribution mode for the Cluster.
-	InitialFaultDomainHostDistribution pulumi.StringPtrInput
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64PtrInput
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -635,11 +625,6 @@ func (o ClusterOutput) FreeformTags() pulumi.StringMapOutput {
 // The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o ClusterOutput) InitialCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.InitialCommitment }).(pulumi.StringOutput)
-}
-
-// The initial fault domain host distribution mode for the Cluster.
-func (o ClusterOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.InitialFaultDomainHostDistribution }).(pulumi.StringOutput)
 }
 
 // The initial OCPU count of the Cluster's ESXi hosts.

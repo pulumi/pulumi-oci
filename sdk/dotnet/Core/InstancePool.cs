@@ -20,6 +20,8 @@ namespace Pulumi.Oci.Core
     /// To determine whether capacity is available for a specific shape before you create an instance pool,
     /// use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
     /// operation.
+    /// You can optionally include `overridePolicy` to define availability domain-scoped
+    /// launch overrides for future launches. Existing pool members are not modified.
     /// 
     /// ## Example Usage
     /// 
@@ -111,6 +113,42 @@ namespace Pulumi.Oci.Core
     ///                 VnicSelection = instancePoolLoadBalancersVnicSelection,
     ///             },
     ///         },
+    ///         OverridePolicy = new Oci.Core.Inputs.InstancePoolOverridePolicyArgs
+    ///         {
+    ///             OverrideStatements = new[]
+    ///             {
+    ///                 new Oci.Core.Inputs.InstancePoolOverridePolicyOverrideStatementArgs
+    ///                 {
+    ///                     Name = instancePoolOverridePolicyOverrideStatementsName,
+    ///                     OverrideOptions = new[]
+    ///                     {
+    ///                         new Oci.Core.Inputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs
+    ///                         {
+    ///                             Name = instancePoolOverridePolicyOverrideStatementsOverrideOptionsName,
+    ///                             Override = new Oci.Core.Inputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs
+    ///                             {
+    ///                                 CapacityReservationId = testCapacityReservation.Id,
+    ///                                 Shape = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShape,
+    ///                                 ShapeConfigDetails = new Oci.Core.Inputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs
+    ///                                 {
+    ///                                     BaselineOcpuUtilization = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsBaselineOcpuUtilization,
+    ///                                     LocalVolumeSizeInGbs = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsLocalVolumeSizeInGbs,
+    ///                                     MemoryInGbs = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsMemoryInGbs,
+    ///                                     Nvmes = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsNvmes,
+    ///                                     Ocpus = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsOcpus,
+    ///                                     ResourceManagement = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsResourceManagement,
+    ///                                     Vcpus = instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsVcpus,
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     Selector = new Oci.Core.Inputs.InstancePoolOverridePolicyOverrideStatementSelectorArgs
+    ///                     {
+    ///                         AvailabilityDomain = instancePoolOverridePolicyOverrideStatementsSelectorAvailabilityDomain,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -192,6 +230,18 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("loadBalancers")]
         public Output<ImmutableArray<Outputs.InstancePoolLoadBalancer>> LoadBalancers { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Optional pool-level launch override policy for future instance launches.
+        /// 
+        /// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+        /// 
+        /// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+        /// 
+        /// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `Null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+        /// </summary>
+        [Output("overridePolicy")]
+        public Output<Outputs.InstancePoolOverridePolicy> OverridePolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -346,6 +396,18 @@ namespace Pulumi.Oci.Core
             set => _loadBalancers = value;
         }
 
+        /// <summary>
+        /// (Updatable) Optional pool-level launch override policy for future instance launches.
+        /// 
+        /// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+        /// 
+        /// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+        /// 
+        /// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `Null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+        /// </summary>
+        [Input("overridePolicy")]
+        public Input<Inputs.InstancePoolOverridePolicyArgs>? OverridePolicy { get; set; }
+
         [Input("placementConfigurations", required: true)]
         private InputList<Inputs.InstancePoolPlacementConfigurationArgs>? _placementConfigurations;
 
@@ -466,6 +528,18 @@ namespace Pulumi.Oci.Core
             get => _loadBalancers ?? (_loadBalancers = new InputList<Inputs.InstancePoolLoadBalancerGetArgs>());
             set => _loadBalancers = value;
         }
+
+        /// <summary>
+        /// (Updatable) Optional pool-level launch override policy for future instance launches.
+        /// 
+        /// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+        /// 
+        /// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+        /// 
+        /// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `Null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+        /// </summary>
+        [Input("overridePolicy")]
+        public Input<Inputs.InstancePoolOverridePolicyGetArgs>? OverridePolicy { get; set; }
 
         [Input("placementConfigurations")]
         private InputList<Inputs.InstancePoolPlacementConfigurationGetArgs>? _placementConfigurations;

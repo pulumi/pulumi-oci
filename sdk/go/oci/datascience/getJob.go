@@ -90,6 +90,8 @@ type LookupJobResult struct {
 	JobLogConfigurationDetails []GetJobJobLogConfigurationDetail `pulumi:"jobLogConfigurationDetails"`
 	// The job node configuration details
 	JobNodeConfigurationDetails []GetJobJobNodeConfigurationDetail `pulumi:"jobNodeConfigurationDetails"`
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays int `pulumi:"jobRunRetentionPeriodInDays"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -226,6 +228,11 @@ func (o LookupJobResultOutput) JobLogConfigurationDetails() GetJobJobLogConfigur
 // The job node configuration details
 func (o LookupJobResultOutput) JobNodeConfigurationDetails() GetJobJobNodeConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupJobResult) []GetJobJobNodeConfigurationDetail { return v.JobNodeConfigurationDetails }).(GetJobJobNodeConfigurationDetailArrayOutput)
+}
+
+// Retention period in days for job runs.
+func (o LookupJobResultOutput) JobRunRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupJobResult) int { return v.JobRunRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // Collection of JobStorageMountConfigurationDetails.

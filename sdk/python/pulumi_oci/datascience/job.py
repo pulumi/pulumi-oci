@@ -36,6 +36,7 @@ class JobArgs:
                  job_infrastructure_configuration_details: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']] = None,
                  job_log_configuration_details: pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']] = None,
                  job_node_configuration_details: pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']] = None,
+                 job_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None):
         """
         The set of arguments for constructing a Job resource.
@@ -58,6 +59,7 @@ class JobArgs:
         :param pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs'] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input['JobJobLogConfigurationDetailsArgs'] job_log_configuration_details: Logging configuration for resource.
         :param pulumi.Input['JobJobNodeConfigurationDetailsArgs'] job_node_configuration_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days: Retention period in days for job runs.
         :param pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -88,6 +90,8 @@ class JobArgs:
             pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
         if job_node_configuration_details is not None:
             pulumi.set(__self__, "job_node_configuration_details", job_node_configuration_details)
+        if job_run_retention_period_in_days is not None:
+            pulumi.set(__self__, "job_run_retention_period_in_days", job_run_retention_period_in_days)
         if job_storage_mount_configuration_details_lists is not None:
             pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
 
@@ -275,6 +279,18 @@ class JobArgs:
         pulumi.set(self, "job_node_configuration_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDays")
+    def job_run_retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for job runs.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days")
+
+    @job_run_retention_period_in_days.setter
+    def job_run_retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "job_run_retention_period_in_days", value)
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
         """
@@ -308,6 +324,7 @@ class _JobState:
                  job_infrastructure_configuration_details: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsArgs']] = None,
                  job_log_configuration_details: pulumi.Input[Optional['JobJobLogConfigurationDetailsArgs']] = None,
                  job_node_configuration_details: pulumi.Input[Optional['JobJobNodeConfigurationDetailsArgs']] = None,
+                 job_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -334,6 +351,7 @@ class _JobState:
         :param pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs'] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input['JobJobLogConfigurationDetailsArgs'] job_log_configuration_details: Logging configuration for resource.
         :param pulumi.Input['JobJobNodeConfigurationDetailsArgs'] job_node_configuration_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days: Retention period in days for job runs.
         :param pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] lifecycle_details: The state of the job.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -376,6 +394,8 @@ class _JobState:
             pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
         if job_node_configuration_details is not None:
             pulumi.set(__self__, "job_node_configuration_details", job_node_configuration_details)
+        if job_run_retention_period_in_days is not None:
+            pulumi.set(__self__, "job_run_retention_period_in_days", job_run_retention_period_in_days)
         if job_storage_mount_configuration_details_lists is not None:
             pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         if lifecycle_details is not None:
@@ -598,6 +618,18 @@ class _JobState:
         pulumi.set(self, "job_node_configuration_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDays")
+    def job_run_retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for job runs.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days")
+
+    @job_run_retention_period_in_days.setter
+    def job_run_retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "job_run_retention_period_in_days", value)
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
         """
@@ -678,6 +710,7 @@ class Job(pulumi.CustomResource):
                  job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
                  job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
                  job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+                 job_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -738,6 +771,10 @@ class Job(pulumi.CustomResource):
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                 },
+                "network_configuration": {
+                    "network_type": job_job_infrastructure_configuration_details_network_configuration_network_type,
+                    "subnet_id": test_subnet["id"],
+                },
                 "resource_configuration": {
                     "resource_limit_configuration": {
                         "memory_in_gbs": job_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -795,6 +832,10 @@ class Job(pulumi.CustomResource):
                             "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                         },
+                        "network_configuration": {
+                            "network_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_network_configuration_network_type,
+                            "subnet_id": test_subnet["id"],
+                        },
                         "resource_configuration": {
                             "resource_limit_configuration": {
                                 "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -815,6 +856,7 @@ class Job(pulumi.CustomResource):
                 "maximum_runtime_in_minutes": job_job_node_configuration_details_maximum_runtime_in_minutes,
                 "startup_order": job_job_node_configuration_details_startup_order,
             },
+            job_run_retention_period_in_days=job_job_run_retention_period_in_days,
             job_storage_mount_configuration_details_lists=[{
                 "destination_directory_name": job_job_storage_mount_configuration_details_list_destination_directory_name,
                 "storage_type": job_job_storage_mount_configuration_details_list_storage_type,
@@ -855,6 +897,7 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']] job_log_configuration_details: Logging configuration for resource.
         :param pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']] job_node_configuration_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days: Retention period in days for job runs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         """
@@ -921,6 +964,10 @@ class Job(pulumi.CustomResource):
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                 },
+                "network_configuration": {
+                    "network_type": job_job_infrastructure_configuration_details_network_configuration_network_type,
+                    "subnet_id": test_subnet["id"],
+                },
                 "resource_configuration": {
                     "resource_limit_configuration": {
                         "memory_in_gbs": job_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -978,6 +1025,10 @@ class Job(pulumi.CustomResource):
                             "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                         },
+                        "network_configuration": {
+                            "network_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_network_configuration_network_type,
+                            "subnet_id": test_subnet["id"],
+                        },
                         "resource_configuration": {
                             "resource_limit_configuration": {
                                 "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
@@ -998,6 +1049,7 @@ class Job(pulumi.CustomResource):
                 "maximum_runtime_in_minutes": job_job_node_configuration_details_maximum_runtime_in_minutes,
                 "startup_order": job_job_node_configuration_details_startup_order,
             },
+            job_run_retention_period_in_days=job_job_run_retention_period_in_days,
             job_storage_mount_configuration_details_lists=[{
                 "destination_directory_name": job_job_storage_mount_configuration_details_list_destination_directory_name,
                 "storage_type": job_job_storage_mount_configuration_details_list_storage_type,
@@ -1048,6 +1100,7 @@ class Job(pulumi.CustomResource):
                  job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
                  job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
                  job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+                 job_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -1075,6 +1128,7 @@ class Job(pulumi.CustomResource):
             __props__.__dict__["job_infrastructure_configuration_details"] = job_infrastructure_configuration_details
             __props__.__dict__["job_log_configuration_details"] = job_log_configuration_details
             __props__.__dict__["job_node_configuration_details"] = job_node_configuration_details
+            __props__.__dict__["job_run_retention_period_in_days"] = job_run_retention_period_in_days
             __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
@@ -1114,6 +1168,7 @@ class Job(pulumi.CustomResource):
             job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
             job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
             job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+            job_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1144,6 +1199,7 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']] job_log_configuration_details: Logging configuration for resource.
         :param pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']] job_node_configuration_details: The job node configuration details
+        :param pulumi.Input[_builtins.int] job_run_retention_period_in_days: Retention period in days for job runs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] lifecycle_details: The state of the job.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -1172,6 +1228,7 @@ class Job(pulumi.CustomResource):
         __props__.__dict__["job_infrastructure_configuration_details"] = job_infrastructure_configuration_details
         __props__.__dict__["job_log_configuration_details"] = job_log_configuration_details
         __props__.__dict__["job_node_configuration_details"] = job_node_configuration_details
+        __props__.__dict__["job_run_retention_period_in_days"] = job_run_retention_period_in_days
         __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["project_id"] = project_id
@@ -1200,6 +1257,7 @@ class Job(pulumi.CustomResource):
             job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
             job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
             job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+            job_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1224,6 +1282,7 @@ class Job(pulumi.CustomResource):
         __props__["jobInfrastructureConfigurationDetails"] = job_infrastructure_configuration_details
         __props__["jobLogConfigurationDetails"] = job_log_configuration_details
         __props__["jobNodeConfigurationDetails"] = job_node_configuration_details
+        __props__["jobRunRetentionPeriodInDays"] = job_run_retention_period_in_days
         __props__["jobStorageMountConfigurationDetailsLists"] = job_storage_mount_configuration_details_lists
         __props__["lifecycleDetails"] = lifecycle_details
         __props__["projectId"] = project_id
@@ -1368,6 +1427,14 @@ class Job(pulumi.CustomResource):
         The job node configuration details
         """
         return pulumi.get(self, "job_node_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDays")
+    def job_run_retention_period_in_days(self) -> pulumi.Output[_builtins.int]:
+        """
+        Retention period in days for job runs.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days")
 
     @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")

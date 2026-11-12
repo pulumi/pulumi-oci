@@ -39,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsScalingPolicyArgs;
  * import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs;
  * import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs;
@@ -67,6 +68,10 @@ import javax.annotation.Nullable;
  *                     .instanceShapeDetails(ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs.builder()
  *                         .memoryInGbs(computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsMemoryInGbs)
  *                         .ocpus(computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsOcpus)
+ *                         .build())
+ *                     .networkConfigurationDetails(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs.builder()
+ *                         .networkType(computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsNetworkType)
+ *                         .subnetIds(computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsSubnetIds)
  *                         .build())
  *                     .build())
  *                 .scalingPolicy(ComputeTargetComputeConfigurationDetailsScalingPolicyArgs.builder()

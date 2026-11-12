@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataScience.Inputs
     {
         [Input("capacityReservationIds")]
         private InputList<string>? _capacityReservationIds;
+
+        /// <summary>
+        /// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        /// </summary>
         public InputList<string> CapacityReservationIds
         {
             get => _capacityReservationIds ?? (_capacityReservationIds = new InputList<string>());

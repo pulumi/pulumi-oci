@@ -98,6 +98,12 @@ namespace Pulumi.Oci.DataScience
         public Output<ImmutableDictionary<string, string>> Parameters { get; private set; } = null!;
 
         /// <summary>
+        /// Retention period in days for pipeline runs.
+        /// </summary>
+        [Output("pipelineRunRetentionPeriodInDays")]
+        public Output<int> PipelineRunRetentionPeriodInDays { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         /// </summary>
         [Output("projectId")]
@@ -264,6 +270,12 @@ namespace Pulumi.Oci.DataScience
         }
 
         /// <summary>
+        /// Retention period in days for pipeline runs.
+        /// </summary>
+        [Input("pipelineRunRetentionPeriodInDays")]
+        public Input<int>? PipelineRunRetentionPeriodInDays { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         /// </summary>
         [Input("projectId", required: true)]
@@ -395,6 +407,12 @@ namespace Pulumi.Oci.DataScience
             get => _parameters ?? (_parameters = new InputMap<string>());
             set => _parameters = value;
         }
+
+        /// <summary>
+        /// Retention period in days for pipeline runs.
+        /// </summary>
+        [Input("pipelineRunRetentionPeriodInDays")]
+        public Input<int>? PipelineRunRetentionPeriodInDays { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

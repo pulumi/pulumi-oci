@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetInstancePoolsFilterResult
     {
+        /// <summary>
+        /// A user-friendly name for the override option.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

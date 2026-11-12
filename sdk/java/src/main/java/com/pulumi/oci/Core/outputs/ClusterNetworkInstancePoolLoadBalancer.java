@@ -42,10 +42,6 @@ public final class ClusterNetworkInstancePoolLoadBalancer {
      * 
      */
     private @Nullable String state;
-    /**
-     * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-     * 
-     */
     private @Nullable String vnicSelection;
 
     private ClusterNetworkInstancePoolLoadBalancer() {}
@@ -91,10 +87,6 @@ public final class ClusterNetworkInstancePoolLoadBalancer {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
-    /**
-     * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-     * 
-     */
     public Optional<String> vnicSelection() {
         return Optional.ofNullable(this.vnicSelection);
     }

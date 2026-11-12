@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int? BlockStorageSizeInGbs;
         /// <summary>
+        /// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        /// </summary>
+        public readonly string? CapacityReservationId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         /// </summary>
         public readonly string? ComputeTargetId;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Details for the job run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
         public readonly Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails? JobShapeConfigDetails;
+        /// <summary>
+        /// The network configuration details for the compute target job.
+        /// </summary>
+        public readonly Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration? NetworkConfiguration;
         /// <summary>
         /// Details for the compute target job resource configuration.
         /// </summary>
@@ -46,11 +54,15 @@ namespace Pulumi.Oci.DataScience.Outputs
         private JobRunJobInfrastructureConfigurationOverrideDetails(
             int? blockStorageSizeInGbs,
 
+            string? capacityReservationId,
+
             string? computeTargetId,
 
             string jobInfrastructureType,
 
             Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails? jobShapeConfigDetails,
+
+            Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration? networkConfiguration,
 
             Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration? resourceConfiguration,
 
@@ -59,9 +71,11 @@ namespace Pulumi.Oci.DataScience.Outputs
             string? subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
+            CapacityReservationId = capacityReservationId;
             ComputeTargetId = computeTargetId;
             JobInfrastructureType = jobInfrastructureType;
             JobShapeConfigDetails = jobShapeConfigDetails;
+            NetworkConfiguration = networkConfiguration;
             ResourceConfiguration = resourceConfiguration;
             ShapeName = shapeName;
             SubnetId = subnetId;

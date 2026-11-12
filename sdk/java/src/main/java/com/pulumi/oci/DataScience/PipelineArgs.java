@@ -13,6 +13,7 @@ import com.pulumi.oci.DataScience.inputs.PipelineStepArtifactArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -168,6 +169,21 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Retention period in days for pipeline runs.
+     * 
+     */
+    @Import(name="pipelineRunRetentionPeriodInDays")
+    private @Nullable Output<Integer> pipelineRunRetentionPeriodInDays;
+
+    /**
+     * @return Retention period in days for pipeline runs.
+     * 
+     */
+    public Optional<Output<Integer>> pipelineRunRetentionPeriodInDays() {
+        return Optional.ofNullable(this.pipelineRunRetentionPeriodInDays);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      * 
      */
@@ -232,6 +248,7 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
         this.infrastructureConfigurationDetails = $.infrastructureConfigurationDetails;
         this.logConfigurationDetails = $.logConfigurationDetails;
         this.parameters = $.parameters;
+        this.pipelineRunRetentionPeriodInDays = $.pipelineRunRetentionPeriodInDays;
         this.projectId = $.projectId;
         this.stepArtifacts = $.stepArtifacts;
         this.stepDetails = $.stepDetails;
@@ -452,6 +469,27 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder parameters(Map<String,String> parameters) {
             return parameters(Output.of(parameters));
+        }
+
+        /**
+         * @param pipelineRunRetentionPeriodInDays Retention period in days for pipeline runs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pipelineRunRetentionPeriodInDays(@Nullable Output<Integer> pipelineRunRetentionPeriodInDays) {
+            $.pipelineRunRetentionPeriodInDays = pipelineRunRetentionPeriodInDays;
+            return this;
+        }
+
+        /**
+         * @param pipelineRunRetentionPeriodInDays Retention period in days for pipeline runs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pipelineRunRetentionPeriodInDays(Integer pipelineRunRetentionPeriodInDays) {
+            return pipelineRunRetentionPeriodInDays(Output.of(pipelineRunRetentionPeriodInDays));
         }
 
         /**

@@ -7,8 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -31,6 +33,21 @@ public final class ComputeTargetComputeConfigurationDetailsInstanceConfiguration
      */
     public Optional<Output<Integer>> bootVolumeSizeInGbs() {
         return Optional.ofNullable(this.bootVolumeSizeInGbs);
+    }
+
+    /**
+     * (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+     * 
+     */
+    @Import(name="capacityReservationIds")
+    private @Nullable Output<List<String>> capacityReservationIds;
+
+    /**
+     * @return (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+     * 
+     */
+    public Optional<Output<List<String>>> capacityReservationIds() {
+        return Optional.ofNullable(this.capacityReservationIds);
     }
 
     /**
@@ -63,12 +80,29 @@ public final class ComputeTargetComputeConfigurationDetailsInstanceConfiguration
         return Optional.ofNullable(this.instanceShapeDetails);
     }
 
+    /**
+     * The network configuration details for managed compute cluster type resource.
+     * 
+     */
+    @Import(name="networkConfigurationDetails")
+    private @Nullable Output<ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs> networkConfigurationDetails;
+
+    /**
+     * @return The network configuration details for managed compute cluster type resource.
+     * 
+     */
+    public Optional<Output<ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs>> networkConfigurationDetails() {
+        return Optional.ofNullable(this.networkConfigurationDetails);
+    }
+
     private ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs() {}
 
     private ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs(ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs $) {
         this.bootVolumeSizeInGbs = $.bootVolumeSizeInGbs;
+        this.capacityReservationIds = $.capacityReservationIds;
         this.instanceShape = $.instanceShape;
         this.instanceShapeDetails = $.instanceShapeDetails;
+        this.networkConfigurationDetails = $.networkConfigurationDetails;
     }
 
     public static Builder builder() {
@@ -111,6 +145,37 @@ public final class ComputeTargetComputeConfigurationDetailsInstanceConfiguration
         }
 
         /**
+         * @param capacityReservationIds (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationIds(@Nullable Output<List<String>> capacityReservationIds) {
+            $.capacityReservationIds = capacityReservationIds;
+            return this;
+        }
+
+        /**
+         * @param capacityReservationIds (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationIds(List<String> capacityReservationIds) {
+            return capacityReservationIds(Output.of(capacityReservationIds));
+        }
+
+        /**
+         * @param capacityReservationIds (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationIds(String... capacityReservationIds) {
+            return capacityReservationIds(List.of(capacityReservationIds));
+        }
+
+        /**
          * @param instanceShape (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
          * 
          * @return builder
@@ -150,6 +215,27 @@ public final class ComputeTargetComputeConfigurationDetailsInstanceConfiguration
          */
         public Builder instanceShapeDetails(ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs instanceShapeDetails) {
             return instanceShapeDetails(Output.of(instanceShapeDetails));
+        }
+
+        /**
+         * @param networkConfigurationDetails The network configuration details for managed compute cluster type resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkConfigurationDetails(@Nullable Output<ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs> networkConfigurationDetails) {
+            $.networkConfigurationDetails = networkConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param networkConfigurationDetails The network configuration details for managed compute cluster type resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkConfigurationDetails(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs networkConfigurationDetails) {
+            return networkConfigurationDetails(Output.of(networkConfigurationDetails));
         }
 
         public ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs build() {

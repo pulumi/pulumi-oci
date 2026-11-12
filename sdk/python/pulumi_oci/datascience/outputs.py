@@ -19,6 +19,7 @@ __all__ = [
     'ComputeTargetComputeConfigurationDetails',
     'ComputeTargetComputeConfigurationDetailsInstanceConfiguration',
     'ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails',
+    'ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails',
     'ComputeTargetComputeConfigurationDetailsScalingPolicy',
     'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicy',
     'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRule',
@@ -30,6 +31,7 @@ __all__ = [
     'JobJobEnvironmentConfigurationDetails',
     'JobJobInfrastructureConfigurationDetails',
     'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
+    'JobJobInfrastructureConfigurationDetailsNetworkConfiguration',
     'JobJobInfrastructureConfigurationDetailsResourceConfiguration',
     'JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfiguration',
     'JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfiguration',
@@ -42,6 +44,7 @@ __all__ = [
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails',
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails',
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration',
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration',
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfiguration',
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfiguration',
@@ -51,11 +54,13 @@ __all__ = [
     'JobRunJobEnvironmentConfigurationOverrideDetails',
     'JobRunJobInfrastructureConfigurationDetail',
     'JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail',
+    'JobRunJobInfrastructureConfigurationDetailNetworkConfiguration',
     'JobRunJobInfrastructureConfigurationDetailResourceConfiguration',
     'JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfiguration',
     'JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfiguration',
     'JobRunJobInfrastructureConfigurationOverrideDetails',
     'JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration',
     'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration',
     'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfiguration',
     'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfiguration',
@@ -68,10 +73,12 @@ __all__ = [
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails',
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails',
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration',
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration',
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfiguration',
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfiguration',
     'JobRunJobStorageMountConfigurationDetailsList',
+    'JobRunJobStorageMountConfigurationOverrideDetailsList',
     'JobRunLogDetail',
     'JobRunNodeGroupDetailsList',
     'MlApplicationImplementationApplicationComponent',
@@ -102,6 +109,7 @@ __all__ = [
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule',
@@ -194,6 +202,7 @@ __all__ = [
     'GetComputeTargetComputeConfigurationDetailResult',
     'GetComputeTargetComputeConfigurationDetailInstanceConfigurationResult',
     'GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailResult',
+    'GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult',
     'GetComputeTargetComputeConfigurationDetailScalingPolicyResult',
     'GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyResult',
     'GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
@@ -206,6 +215,7 @@ __all__ = [
     'GetComputeTargetsComputeTargetComputeConfigurationDetailResult',
     'GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationResult',
     'GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailResult',
+    'GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult',
     'GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyResult',
     'GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyResult',
     'GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
@@ -225,6 +235,7 @@ __all__ = [
     'GetJobJobEnvironmentConfigurationDetailResult',
     'GetJobJobInfrastructureConfigurationDetailResult',
     'GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
@@ -237,6 +248,7 @@ __all__ = [
     'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
     'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
     'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
@@ -246,11 +258,13 @@ __all__ = [
     'GetJobRunJobEnvironmentConfigurationOverrideDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
     'GetJobRunJobInfrastructureConfigurationOverrideDetailResult',
     'GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult',
+    'GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult',
     'GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResult',
     'GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceRequestConfigurationResult',
@@ -263,10 +277,12 @@ __all__ = [
     'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
     'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
     'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
     'GetJobRunJobStorageMountConfigurationDetailsListResult',
+    'GetJobRunJobStorageMountConfigurationOverrideDetailsListResult',
     'GetJobRunLogDetailResult',
     'GetJobRunNodeGroupDetailsListResult',
     'GetJobRunsFilterResult',
@@ -276,11 +292,13 @@ __all__ = [
     'GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult',
+    'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceRequestConfigurationResult',
@@ -293,10 +311,12 @@ __all__ = [
     'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
     'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
     'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
     'GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult',
+    'GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListResult',
     'GetJobRunsJobRunLogDetailResult',
     'GetJobRunsJobRunNodeGroupDetailsListResult',
     'GetJobShapesFilterResult',
@@ -308,6 +328,7 @@ __all__ = [
     'GetJobsJobJobEnvironmentConfigurationDetailResult',
     'GetJobsJobJobInfrastructureConfigurationDetailResult',
     'GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
@@ -320,6 +341,7 @@ __all__ = [
     'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
     'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
     'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult',
     'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationResult',
     'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationResult',
@@ -386,6 +408,7 @@ __all__ = [
     'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
@@ -422,6 +445,7 @@ __all__ = [
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
@@ -683,8 +707,12 @@ class ComputeTargetComputeConfigurationDetailsInstanceConfiguration(dict):
             suggest = "instance_shape"
         elif key == "bootVolumeSizeInGbs":
             suggest = "boot_volume_size_in_gbs"
+        elif key == "capacityReservationIds":
+            suggest = "capacity_reservation_ids"
         elif key == "instanceShapeDetails":
             suggest = "instance_shape_details"
+        elif key == "networkConfigurationDetails":
+            suggest = "network_configuration_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ComputeTargetComputeConfigurationDetailsInstanceConfiguration. Access the value via the '{suggest}' property getter instead.")
@@ -700,17 +728,25 @@ class ComputeTargetComputeConfigurationDetailsInstanceConfiguration(dict):
     def __init__(__self__, *,
                  instance_shape: _builtins.str,
                  boot_volume_size_in_gbs: Optional[_builtins.int] = None,
-                 instance_shape_details: Optional['outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails'] = None):
+                 capacity_reservation_ids: Optional[Sequence[_builtins.str]] = None,
+                 instance_shape_details: Optional['outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails'] = None,
+                 network_configuration_details: Optional['outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails'] = None):
         """
         :param _builtins.str instance_shape: (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
         :param _builtins.int boot_volume_size_in_gbs: (Updatable) The size of the boot volume to attach to the instance.
+        :param Sequence[_builtins.str] capacity_reservation_ids: (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
         :param 'ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs' instance_shape_details: (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
+        :param 'ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs' network_configuration_details: The network configuration details for managed compute cluster type resource.
         """
         pulumi.set(__self__, "instance_shape", instance_shape)
         if boot_volume_size_in_gbs is not None:
             pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        if capacity_reservation_ids is not None:
+            pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         if instance_shape_details is not None:
             pulumi.set(__self__, "instance_shape_details", instance_shape_details)
+        if network_configuration_details is not None:
+            pulumi.set(__self__, "network_configuration_details", network_configuration_details)
 
     @_builtins.property
     @pulumi.getter(name="instanceShape")
@@ -729,12 +765,28 @@ class ComputeTargetComputeConfigurationDetailsInstanceConfiguration(dict):
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+        """
+        return pulumi.get(self, "capacity_reservation_ids")
+
+    @_builtins.property
     @pulumi.getter(name="instanceShapeDetails")
     def instance_shape_details(self) -> Optional['outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails']:
         """
         (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "instance_shape_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurationDetails")
+    def network_configuration_details(self) -> Optional['outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails']:
+        """
+        The network configuration details for managed compute cluster type resource.
+        """
+        return pulumi.get(self, "network_configuration_details")
 
 
 @pulumi.output_type
@@ -783,6 +835,55 @@ class ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShape
         (Updatable) The total number of OCPUs allocated to the instance.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetIds":
+            suggest = "subnet_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_ids: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str network_type: The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        :param Sequence[_builtins.str] subnet_ids: The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if subnet_ids is not None:
+            pulumi.set(__self__, "subnet_ids", subnet_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetIds")
+    def subnet_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "subnet_ids")
 
 
 @pulumi.output_type
@@ -1548,10 +1649,14 @@ class JobJobInfrastructureConfigurationDetails(dict):
             suggest = "job_infrastructure_type"
         elif key == "blockStorageSizeInGbs":
             suggest = "block_storage_size_in_gbs"
+        elif key == "capacityReservationId":
+            suggest = "capacity_reservation_id"
         elif key == "computeTargetId":
             suggest = "compute_target_id"
         elif key == "jobShapeConfigDetails":
             suggest = "job_shape_config_details"
+        elif key == "networkConfiguration":
+            suggest = "network_configuration"
         elif key == "resourceConfiguration":
             suggest = "resource_configuration"
         elif key == "shapeName":
@@ -1573,16 +1678,20 @@ class JobJobInfrastructureConfigurationDetails(dict):
     def __init__(__self__, *,
                  job_infrastructure_type: _builtins.str,
                  block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 capacity_reservation_id: Optional[_builtins.str] = None,
                  compute_target_id: Optional[_builtins.str] = None,
                  job_shape_config_details: Optional['outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+                 network_configuration: Optional['outputs.JobJobInfrastructureConfigurationDetailsNetworkConfiguration'] = None,
                  resource_configuration: Optional['outputs.JobJobInfrastructureConfigurationDetailsResourceConfiguration'] = None,
                  shape_name: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str job_infrastructure_type: (Updatable) The infrastructure type used for job run.
         :param _builtins.int block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param 'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param 'JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs' network_configuration: (Updatable) The network configuration details for the compute target job.
         :param 'JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs' resource_configuration: (Updatable) Details for the compute target job resource configuration.
         :param _builtins.str shape_name: (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
@@ -1590,10 +1699,14 @@ class JobJobInfrastructureConfigurationDetails(dict):
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_target_id is not None:
             pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if network_configuration is not None:
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if resource_configuration is not None:
             pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
@@ -1618,6 +1731,14 @@ class JobJobInfrastructureConfigurationDetails(dict):
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
     @pulumi.getter(name="computeTargetId")
     def compute_target_id(self) -> Optional[_builtins.str]:
         """
@@ -1632,6 +1753,14 @@ class JobJobInfrastructureConfigurationDetails(dict):
         (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfiguration")
+    def network_configuration(self) -> Optional['outputs.JobJobInfrastructureConfigurationDetailsNetworkConfiguration']:
+        """
+        (Updatable) The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configuration")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfiguration")
@@ -1718,6 +1847,55 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
         (Updatable) The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class JobJobInfrastructureConfigurationDetailsNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobInfrastructureConfigurationDetailsNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str network_type: (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        :param _builtins.str subnet_id: (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -2072,7 +2250,7 @@ class JobJobNodeConfigurationDetailsJobNetworkConfiguration(dict):
                  job_network_type: _builtins.str,
                  subnet_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str job_network_type: job network type
+        :param _builtins.str job_network_type: The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
         :param _builtins.str subnet_id: The custom subnet id
         """
         pulumi.set(__self__, "job_network_type", job_network_type)
@@ -2083,7 +2261,7 @@ class JobJobNodeConfigurationDetailsJobNetworkConfiguration(dict):
     @pulumi.getter(name="jobNetworkType")
     def job_network_type(self) -> _builtins.str:
         """
-        job network type
+        The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
         """
         return pulumi.get(self, "job_network_type")
 
@@ -2483,10 +2661,14 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
             suggest = "job_infrastructure_type"
         elif key == "blockStorageSizeInGbs":
             suggest = "block_storage_size_in_gbs"
+        elif key == "capacityReservationId":
+            suggest = "capacity_reservation_id"
         elif key == "computeTargetId":
             suggest = "compute_target_id"
         elif key == "jobShapeConfigDetails":
             suggest = "job_shape_config_details"
+        elif key == "networkConfiguration":
+            suggest = "network_configuration"
         elif key == "resourceConfiguration":
             suggest = "resource_configuration"
         elif key == "shapeName":
@@ -2508,16 +2690,20 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
     def __init__(__self__, *,
                  job_infrastructure_type: _builtins.str,
                  block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 capacity_reservation_id: Optional[_builtins.str] = None,
                  compute_target_id: Optional[_builtins.str] = None,
                  job_shape_config_details: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+                 network_configuration: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration'] = None,
                  resource_configuration: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration'] = None,
                  shape_name: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs' network_configuration: The network configuration details for the compute target job.
         :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs' resource_configuration: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
@@ -2525,10 +2711,14 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_target_id is not None:
             pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if network_configuration is not None:
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if resource_configuration is not None:
             pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
@@ -2553,6 +2743,14 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
     @pulumi.getter(name="computeTargetId")
     def compute_target_id(self) -> Optional[_builtins.str]:
         """
@@ -2567,6 +2765,14 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfiguration")
+    def network_configuration(self) -> Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configuration")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfiguration")
@@ -2653,6 +2859,55 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
         The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str network_type: The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        :param _builtins.str subnet_id: The OCID of the customer-supplied subnet for VNIC attach
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the customer-supplied subnet for VNIC attach
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -3223,12 +3478,16 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
         suggest = None
         if key == "blockStorageSizeInGbs":
             suggest = "block_storage_size_in_gbs"
+        elif key == "capacityReservationId":
+            suggest = "capacity_reservation_id"
         elif key == "computeTargetId":
             suggest = "compute_target_id"
         elif key == "jobInfrastructureType":
             suggest = "job_infrastructure_type"
         elif key == "jobShapeConfigDetails":
             suggest = "job_shape_config_details"
+        elif key == "networkConfigurations":
+            suggest = "network_configurations"
         elif key == "resourceConfigurations":
             suggest = "resource_configurations"
         elif key == "shapeName":
@@ -3249,29 +3508,37 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
 
     def __init__(__self__, *,
                  block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 capacity_reservation_id: Optional[_builtins.str] = None,
                  compute_target_id: Optional[_builtins.str] = None,
                  job_infrastructure_type: Optional[_builtins.str] = None,
                  job_shape_config_details: Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail']] = None,
+                 network_configurations: Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailNetworkConfiguration']] = None,
                  resource_configurations: Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailResourceConfiguration']] = None,
                  shape_name: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_target_id is not None:
             pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_infrastructure_type is not None:
             pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if network_configurations is not None:
+            pulumi.set(__self__, "network_configurations", network_configurations)
         if resource_configurations is not None:
             pulumi.set(__self__, "resource_configurations", resource_configurations)
         if shape_name is not None:
@@ -3286,6 +3553,14 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -3310,6 +3585,14 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailNetworkConfiguration']]:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -3396,6 +3679,56 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class JobRunJobInfrastructureConfigurationDetailNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobInfrastructureConfigurationDetailNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobInfrastructureConfigurationDetailNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobInfrastructureConfigurationDetailNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: Optional[_builtins.str] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[_builtins.str]:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -3565,10 +3898,14 @@ class JobRunJobInfrastructureConfigurationOverrideDetails(dict):
             suggest = "job_infrastructure_type"
         elif key == "blockStorageSizeInGbs":
             suggest = "block_storage_size_in_gbs"
+        elif key == "capacityReservationId":
+            suggest = "capacity_reservation_id"
         elif key == "computeTargetId":
             suggest = "compute_target_id"
         elif key == "jobShapeConfigDetails":
             suggest = "job_shape_config_details"
+        elif key == "networkConfiguration":
+            suggest = "network_configuration"
         elif key == "resourceConfiguration":
             suggest = "resource_configuration"
         elif key == "shapeName":
@@ -3590,16 +3927,20 @@ class JobRunJobInfrastructureConfigurationOverrideDetails(dict):
     def __init__(__self__, *,
                  job_infrastructure_type: _builtins.str,
                  block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 capacity_reservation_id: Optional[_builtins.str] = None,
                  compute_target_id: Optional[_builtins.str] = None,
                  job_shape_config_details: Optional['outputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails'] = None,
+                 network_configuration: Optional['outputs.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration'] = None,
                  resource_configuration: Optional['outputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration'] = None,
                  shape_name: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param 'JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs' job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param 'JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs' network_configuration: The network configuration details for the compute target job.
         :param 'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs' resource_configuration: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
@@ -3607,10 +3948,14 @@ class JobRunJobInfrastructureConfigurationOverrideDetails(dict):
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_target_id is not None:
             pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if network_configuration is not None:
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if resource_configuration is not None:
             pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
@@ -3635,6 +3980,14 @@ class JobRunJobInfrastructureConfigurationOverrideDetails(dict):
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
     @pulumi.getter(name="computeTargetId")
     def compute_target_id(self) -> Optional[_builtins.str]:
         """
@@ -3649,6 +4002,14 @@ class JobRunJobInfrastructureConfigurationOverrideDetails(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfiguration")
+    def network_configuration(self) -> Optional['outputs.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configuration")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfiguration")
@@ -3680,7 +4041,9 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails(d
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -3695,16 +4058,28 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails(d
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -3721,6 +4096,55 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails(d
         The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str network_type: The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        :param _builtins.str subnet_id: The OCID of the customer-supplied subnet for VNIC attach
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the customer-supplied subnet for VNIC attach
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -4075,7 +4499,7 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration(dict):
                  job_network_type: _builtins.str,
                  subnet_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str job_network_type: job network type
+        :param _builtins.str job_network_type: The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
         :param _builtins.str subnet_id: The custom subnet id
         """
         pulumi.set(__self__, "job_network_type", job_network_type)
@@ -4086,7 +4510,7 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration(dict):
     @pulumi.getter(name="jobNetworkType")
     def job_network_type(self) -> _builtins.str:
         """
-        job network type
+        The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
         """
         return pulumi.get(self, "job_network_type")
 
@@ -4486,10 +4910,14 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
             suggest = "job_infrastructure_type"
         elif key == "blockStorageSizeInGbs":
             suggest = "block_storage_size_in_gbs"
+        elif key == "capacityReservationId":
+            suggest = "capacity_reservation_id"
         elif key == "computeTargetId":
             suggest = "compute_target_id"
         elif key == "jobShapeConfigDetails":
             suggest = "job_shape_config_details"
+        elif key == "networkConfiguration":
+            suggest = "network_configuration"
         elif key == "resourceConfiguration":
             suggest = "resource_configuration"
         elif key == "shapeName":
@@ -4511,16 +4939,20 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     def __init__(__self__, *,
                  job_infrastructure_type: _builtins.str,
                  block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 capacity_reservation_id: Optional[_builtins.str] = None,
                  compute_target_id: Optional[_builtins.str] = None,
                  job_shape_config_details: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+                 network_configuration: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration'] = None,
                  resource_configuration: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration'] = None,
                  shape_name: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs' network_configuration: The network configuration details for the compute target job.
         :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs' resource_configuration: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
@@ -4528,10 +4960,14 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_target_id is not None:
             pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if network_configuration is not None:
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if resource_configuration is not None:
             pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
@@ -4556,6 +4992,14 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
     @pulumi.getter(name="computeTargetId")
     def compute_target_id(self) -> Optional[_builtins.str]:
         """
@@ -4570,6 +5014,14 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfiguration")
+    def network_configuration(self) -> Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configuration")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfiguration")
@@ -4601,7 +5053,9 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -4616,16 +5070,28 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -4642,6 +5108,55 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str network_type: The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        :param _builtins.str subnet_id: The OCID of the customer-supplied subnet for VNIC attach
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the customer-supplied subnet for VNIC attach
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -4928,6 +5443,132 @@ class JobRunJobStorageMountConfigurationDetailsList(dict):
         The type of storage.
         """
         return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
+class JobRunJobStorageMountConfigurationOverrideDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationDirectoryName":
+            suggest = "destination_directory_name"
+        elif key == "storageType":
+            suggest = "storage_type"
+        elif key == "destinationPath":
+            suggest = "destination_path"
+        elif key == "exportId":
+            suggest = "export_id"
+        elif key == "mountTargetId":
+            suggest = "mount_target_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobStorageMountConfigurationOverrideDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobStorageMountConfigurationOverrideDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobStorageMountConfigurationOverrideDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_directory_name: _builtins.str,
+                 storage_type: _builtins.str,
+                 bucket: Optional[_builtins.str] = None,
+                 destination_path: Optional[_builtins.str] = None,
+                 export_id: Optional[_builtins.str] = None,
+                 mount_target_id: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 prefix: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str destination_directory_name: The local directory name to be mounted
+        :param _builtins.str storage_type: The type of storage.
+        :param _builtins.str bucket: The object storage bucket
+        :param _builtins.str destination_path: The local path of the mounted directory, excluding directory name.
+        :param _builtins.str export_id: OCID of the export
+        :param _builtins.str mount_target_id: OCID of the mount target
+        :param _builtins.str namespace: The object storage namespace
+        :param _builtins.str prefix: Prefix in the bucket to mount
+        """
+        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        pulumi.set(__self__, "storage_type", storage_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> _builtins.str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> _builtins.str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional[_builtins.str]:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[_builtins.str]:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @_builtins.property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[_builtins.str]:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
 
 
 @pulumi.output_type
@@ -6655,6 +7296,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
             suggest = "maximum_bandwidth_mbps"
         elif key == "modelDeploymentResourceConfiguration":
             suggest = "model_deployment_resource_configuration"
+        elif key == "networkConfiguration":
+            suggest = "network_configuration"
         elif key == "scalingPolicy":
             suggest = "scaling_policy"
 
@@ -6676,13 +7319,15 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
                  instance_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration'] = None,
                  maximum_bandwidth_mbps: Optional[_builtins.int] = None,
                  model_deployment_resource_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration'] = None,
+                 network_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration'] = None,
                  scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy'] = None):
         """
         :param _builtins.str infrastructure_type: The type of the model deployment infrastructure.
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs' instance_configuration: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs' model_deployment_resource_configuration: (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs' model_deployment_resource_configuration: Resource configuration details for model deploy on managed compute cluster type compute target.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs' network_configuration: The network configuration details for model deploy on managed compute cluster type compute target.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs' scaling_policy: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
@@ -6696,6 +7341,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
             pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
         if model_deployment_resource_configuration is not None:
             pulumi.set(__self__, "model_deployment_resource_configuration", model_deployment_resource_configuration)
+        if network_configuration is not None:
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if scaling_policy is not None:
             pulumi.set(__self__, "scaling_policy", scaling_policy)
 
@@ -6740,9 +7387,17 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @pulumi.getter(name="modelDeploymentResourceConfiguration")
     def model_deployment_resource_configuration(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration']:
         """
-        (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+        Resource configuration details for model deploy on managed compute cluster type compute target.
         """
         return pulumi.get(self, "model_deployment_resource_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfiguration")
+    def network_configuration(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration']:
+        """
+        The network configuration details for model deploy on managed compute cluster type compute target.
+        """
+        return pulumi.get(self, "network_configuration")
 
     @_builtins.property
     @pulumi.getter(name="scalingPolicy")
@@ -6791,6 +7446,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
+        :param Sequence[_builtins.str] capacity_reservation_ids: This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str network_access_type: Network Access type of model deployment.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
@@ -6819,6 +7475,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @_builtins.property
     @pulumi.getter(name="capacityReservationIds")
     def capacity_reservation_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        """
         return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
@@ -6941,8 +7600,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
                  resource_request_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration',
                  resource_limit_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration'] = None):
         """
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs' resource_request_configuration: (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs' resource_limit_configuration: (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs' resource_request_configuration: Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs' resource_limit_configuration: Resource limit configuration details for workload on managed compute cluster type compute target
         """
         pulumi.set(__self__, "resource_request_configuration", resource_request_configuration)
         if resource_limit_configuration is not None:
@@ -6952,7 +7611,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @pulumi.getter(name="resourceRequestConfiguration")
     def resource_request_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration':
         """
-        (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        Resource request configuration to run workload on managed compute cluster type compute target compute target.
         """
         return pulumi.get(self, "resource_request_configuration")
 
@@ -6960,7 +7619,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @pulumi.getter(name="resourceLimitConfiguration")
     def resource_limit_configuration(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration']:
         """
-        (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+        Resource limit configuration details for workload on managed compute cluster type compute target
         """
         return pulumi.get(self, "resource_limit_configuration")
 
@@ -7037,7 +7696,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         """
         :param _builtins.float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param _builtins.float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        :param _builtins.int gpus: (Updatable) The total number of gpus required to be allocated to the workload.
+        :param _builtins.int gpus: The total number of gpus required to be allocated to the workload.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -7064,9 +7723,58 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @pulumi.getter
     def gpus(self) -> Optional[_builtins.int]:
         """
-        (Updatable) The total number of gpus required to be allocated to the workload.
+        The total number of gpus required to be allocated to the workload.
         """
         return pulumi.get(self, "gpus")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -7865,6 +8573,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  private_endpoint_id: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
+        :param Sequence[_builtins.str] capacity_reservation_ids: (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
         :param _builtins.str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
         :param _builtins.str network_access_type: (Updatable) Network Access type of model deployment.
@@ -7887,6 +8596,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @_builtins.property
     @pulumi.getter(name="capacityReservationIds")
     def capacity_reservation_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        """
         return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
@@ -14512,16 +15224,22 @@ class GetComputeTargetComputeConfigurationDetailResult(dict):
 class GetComputeTargetComputeConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
                  boot_volume_size_in_gbs: _builtins.int,
+                 capacity_reservation_ids: Sequence[_builtins.str],
                  instance_shape: _builtins.str,
-                 instance_shape_details: Sequence['outputs.GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailResult']):
+                 instance_shape_details: Sequence['outputs.GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailResult'],
+                 network_configuration_details: Sequence['outputs.GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult']):
         """
         :param _builtins.int boot_volume_size_in_gbs: The size of the boot volume to attach to the instance.
+        :param Sequence[_builtins.str] capacity_reservation_ids: The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
         :param _builtins.str instance_shape: The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
         :param Sequence['GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArgs'] instance_shape_details: Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
+        :param Sequence['GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs'] network_configuration_details: The network configuration details for managed compute cluster type resource.
         """
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         pulumi.set(__self__, "instance_shape", instance_shape)
         pulumi.set(__self__, "instance_shape_details", instance_shape_details)
+        pulumi.set(__self__, "network_configuration_details", network_configuration_details)
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeSizeInGbs")
@@ -14530,6 +15248,14 @@ class GetComputeTargetComputeConfigurationDetailInstanceConfigurationResult(dict
         The size of the boot volume to attach to the instance.
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+        """
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="instanceShape")
@@ -14546,6 +15272,14 @@ class GetComputeTargetComputeConfigurationDetailInstanceConfigurationResult(dict
         Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "instance_shape_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurationDetails")
+    def network_configuration_details(self) -> Sequence['outputs.GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult']:
+        """
+        The network configuration details for managed compute cluster type resource.
+        """
+        return pulumi.get(self, "network_configuration_details")
 
 
 @pulumi.output_type
@@ -14575,6 +15309,35 @@ class GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceSha
         The total number of OCPUs allocated to the instance.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_ids: Sequence[_builtins.str]):
+        """
+        :param _builtins.str network_type: network type
+        :param Sequence[_builtins.str] subnet_ids: The list of [OCID] of customer subnetIds.
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_ids", subnet_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetIds")
+    def subnet_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCID] of customer subnetIds.
+        """
+        return pulumi.get(self, "subnet_ids")
 
 
 @pulumi.output_type
@@ -15183,16 +15946,22 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailResult(dict):
 class GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
                  boot_volume_size_in_gbs: _builtins.int,
+                 capacity_reservation_ids: Sequence[_builtins.str],
                  instance_shape: _builtins.str,
-                 instance_shape_details: Sequence['outputs.GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailResult']):
+                 instance_shape_details: Sequence['outputs.GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailResult'],
+                 network_configuration_details: Sequence['outputs.GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult']):
         """
         :param _builtins.int boot_volume_size_in_gbs: The size of the boot volume to attach to the instance.
+        :param Sequence[_builtins.str] capacity_reservation_ids: The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
         :param _builtins.str instance_shape: The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
         :param Sequence['GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArgs'] instance_shape_details: Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
+        :param Sequence['GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs'] network_configuration_details: The network configuration details for managed compute cluster type resource.
         """
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         pulumi.set(__self__, "instance_shape", instance_shape)
         pulumi.set(__self__, "instance_shape_details", instance_shape_details)
+        pulumi.set(__self__, "network_configuration_details", network_configuration_details)
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeSizeInGbs")
@@ -15201,6 +15970,14 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurat
         The size of the boot volume to attach to the instance.
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+        """
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="instanceShape")
@@ -15217,6 +15994,14 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurat
         Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "instance_shape_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurationDetails")
+    def network_configuration_details(self) -> Sequence['outputs.GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult']:
+        """
+        The network configuration details for managed compute cluster type resource.
+        """
+        return pulumi.get(self, "network_configuration_details")
 
 
 @pulumi.output_type
@@ -15246,6 +16031,35 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurat
         The total number of OCPUs allocated to the instance.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_ids: Sequence[_builtins.str]):
+        """
+        :param _builtins.str network_type: network type
+        :param Sequence[_builtins.str] subnet_ids: The list of [OCID] of customer subnetIds.
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_ids", subnet_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetIds")
+    def subnet_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCID] of customer subnetIds.
+        """
+        return pulumi.get(self, "subnet_ids")
 
 
 @pulumi.output_type
@@ -16218,25 +17032,31 @@ class GetJobJobEnvironmentConfigurationDetailResult(dict):
 class GetJobJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -16248,6 +17068,14 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -16272,6 +17100,14 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -16336,6 +17172,35 @@ class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict)
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -16852,25 +17717,31 @@ class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnv
 class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -16882,6 +17753,14 @@ class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInf
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -16906,6 +17785,14 @@ class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInf
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -16970,6 +17857,35 @@ class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInf
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -17366,25 +18282,31 @@ class GetJobRunJobEnvironmentConfigurationOverrideDetailResult(dict):
 class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -17396,6 +18318,14 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -17420,6 +18350,14 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -17484,6 +18422,35 @@ class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(di
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -17588,25 +18555,31 @@ class GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResource
 class GetJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -17618,6 +18591,14 @@ class GetJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -17642,6 +18623,14 @@ class GetJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -17671,14 +18660,25 @@ class GetJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
 @pulumi.output_type
 class GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
         :param _builtins.float ocpus: The ocpus required to be allocated to run the workload.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -17695,6 +18695,35 @@ class GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailR
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -18211,25 +19240,31 @@ class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetail
 class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -18241,6 +19276,14 @@ class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetail
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -18265,6 +19308,14 @@ class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetail
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -18294,14 +19345,25 @@ class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetail
 @pulumi.output_type
 class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
         :param _builtins.float ocpus: The ocpus required to be allocated to run the workload.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -18318,6 +19380,35 @@ class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetail
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -18420,6 +19511,101 @@ class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetail
 
 @pulumi.output_type
 class GetJobRunJobStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 destination_directory_name: _builtins.str,
+                 destination_path: _builtins.str,
+                 export_id: _builtins.str,
+                 mount_target_id: _builtins.str,
+                 namespace: _builtins.str,
+                 prefix: _builtins.str,
+                 storage_type: _builtins.str):
+        """
+        :param _builtins.str bucket: The object storage bucket
+        :param _builtins.str destination_directory_name: The local directory name to be mounted
+        :param _builtins.str destination_path: The local path of the mounted directory, excluding directory name.
+        :param _builtins.str export_id: OCID of the export
+        :param _builtins.str mount_target_id: OCID of the mount target
+        :param _builtins.str namespace: The object storage namespace
+        :param _builtins.str prefix: Prefix in the bucket to mount
+        :param _builtins.str storage_type: The type of storage.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        pulumi.set(__self__, "destination_path", destination_path)
+        pulumi.set(__self__, "export_id", export_id)
+        pulumi.set(__self__, "mount_target_id", mount_target_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+        pulumi.set(__self__, "storage_type", storage_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> _builtins.str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> _builtins.str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @_builtins.property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> _builtins.str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> _builtins.str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> _builtins.str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
+class GetJobRunJobStorageMountConfigurationOverrideDetailsListResult(dict):
     def __init__(__self__, *,
                  bucket: _builtins.str,
                  destination_directory_name: _builtins.str,
@@ -18632,7 +19818,9 @@ class GetJobRunsJobRunResult(dict):
                  job_infrastructure_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult'],
                  job_log_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult'],
                  job_node_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailResult'],
+                 job_run_retention_period_in_days_override: _builtins.int,
                  job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult'],
+                 job_storage_mount_configuration_override_details_lists: Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListResult'],
                  lifecycle_details: _builtins.str,
                  log_details: Sequence['outputs.GetJobRunsJobRunLogDetailResult'],
                  node_group_details_lists: Sequence['outputs.GetJobRunsJobRunNodeGroupDetailsListResult'],
@@ -18656,7 +19844,9 @@ class GetJobRunsJobRunResult(dict):
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailArgs'] job_infrastructure_configuration_override_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs'] job_log_configuration_override_details: Logging configuration for resource.
         :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailArgs'] job_node_configuration_override_details: The job node configuration details
+        :param _builtins.int job_run_retention_period_in_days_override: Retention period in days for job run.
         :param Sequence['GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
+        :param Sequence['GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs'] job_storage_mount_configuration_override_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param _builtins.str lifecycle_details: The state details of the node group.
         :param Sequence['GetJobRunsJobRunLogDetailArgs'] log_details: Customer logging details for job run.
         :param Sequence['GetJobRunsJobRunNodeGroupDetailsListArgs'] node_group_details_lists: Collection of NodeGroupDetails
@@ -18680,7 +19870,9 @@ class GetJobRunsJobRunResult(dict):
         pulumi.set(__self__, "job_infrastructure_configuration_override_details", job_infrastructure_configuration_override_details)
         pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
         pulumi.set(__self__, "job_node_configuration_override_details", job_node_configuration_override_details)
+        pulumi.set(__self__, "job_run_retention_period_in_days_override", job_run_retention_period_in_days_override)
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
+        pulumi.set(__self__, "job_storage_mount_configuration_override_details_lists", job_storage_mount_configuration_override_details_lists)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_details", log_details)
         pulumi.set(__self__, "node_group_details_lists", node_group_details_lists)
@@ -18801,12 +19993,28 @@ class GetJobRunsJobRunResult(dict):
         return pulumi.get(self, "job_node_configuration_override_details")
 
     @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDaysOverride")
+    def job_run_retention_period_in_days_override(self) -> _builtins.int:
+        """
+        Retention period in days for job run.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days_override")
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult']:
         """
         Collection of JobStorageMountConfigurationDetails.
         """
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="jobStorageMountConfigurationOverrideDetailsLists")
+    def job_storage_mount_configuration_override_details_lists(self) -> Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListResult']:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_override_details_lists")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -19079,25 +20287,31 @@ class GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult(dict):
 class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -19109,6 +20323,14 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -19133,6 +20355,14 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -19197,6 +20427,35 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailRe
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -19301,25 +20560,31 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationR
 class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -19331,6 +20596,14 @@ class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -19355,6 +20628,14 @@ class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -19384,14 +20665,25 @@ class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
 @pulumi.output_type
 class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
         :param _builtins.float ocpus: The ocpus required to be allocated to run the workload.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -19408,6 +20700,35 @@ class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfig
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -19924,25 +21245,31 @@ class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguratio
 class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -19954,6 +21281,14 @@ class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguratio
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -19978,6 +21313,14 @@ class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguratio
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -20007,14 +21350,25 @@ class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguratio
 @pulumi.output_type
 class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
         :param _builtins.float ocpus: The ocpus required to be allocated to run the workload.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -20031,6 +21385,35 @@ class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguratio
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -20133,6 +21516,101 @@ class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguratio
 
 @pulumi.output_type
 class GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 destination_directory_name: _builtins.str,
+                 destination_path: _builtins.str,
+                 export_id: _builtins.str,
+                 mount_target_id: _builtins.str,
+                 namespace: _builtins.str,
+                 prefix: _builtins.str,
+                 storage_type: _builtins.str):
+        """
+        :param _builtins.str bucket: The object storage bucket
+        :param _builtins.str destination_directory_name: The local directory name to be mounted
+        :param _builtins.str destination_path: The local path of the mounted directory, excluding directory name.
+        :param _builtins.str export_id: OCID of the export
+        :param _builtins.str mount_target_id: OCID of the mount target
+        :param _builtins.str namespace: The object storage namespace
+        :param _builtins.str prefix: Prefix in the bucket to mount
+        :param _builtins.str storage_type: The type of storage.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        pulumi.set(__self__, "destination_path", destination_path)
+        pulumi.set(__self__, "export_id", export_id)
+        pulumi.set(__self__, "mount_target_id", mount_target_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+        pulumi.set(__self__, "storage_type", storage_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> _builtins.str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> _builtins.str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @_builtins.property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> _builtins.str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> _builtins.str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> _builtins.str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListResult(dict):
     def __init__(__self__, *,
                  bucket: _builtins.str,
                  destination_directory_name: _builtins.str,
@@ -20434,6 +21912,7 @@ class GetJobsJobResult(dict):
                  job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult'],
                  job_log_configuration_details: Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult'],
                  job_node_configuration_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailResult'],
+                 job_run_retention_period_in_days: _builtins.int,
                  job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult'],
                  lifecycle_details: _builtins.str,
                  project_id: _builtins.str,
@@ -20452,6 +21931,7 @@ class GetJobsJobResult(dict):
         :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobsJobJobLogConfigurationDetailArgs'] job_log_configuration_details: Logging configuration for resource.
         :param Sequence['GetJobsJobJobNodeConfigurationDetailArgs'] job_node_configuration_details: The job node configuration details
+        :param _builtins.int job_run_retention_period_in_days: Retention period in days for job runs.
         :param Sequence['GetJobsJobJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param _builtins.str lifecycle_details: The state of the job.
         :param _builtins.str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -20477,6 +21957,7 @@ class GetJobsJobResult(dict):
         pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
         pulumi.set(__self__, "job_node_configuration_details", job_node_configuration_details)
+        pulumi.set(__self__, "job_run_retention_period_in_days", job_run_retention_period_in_days)
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "project_id", project_id)
@@ -20613,6 +22094,14 @@ class GetJobsJobResult(dict):
         The job node configuration details
         """
         return pulumi.get(self, "job_node_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDays")
+    def job_run_retention_period_in_days(self) -> _builtins.int:
+        """
+        Retention period in days for job runs.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days")
 
     @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
@@ -20856,25 +22345,31 @@ class GetJobsJobJobEnvironmentConfigurationDetailResult(dict):
 class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -20886,6 +22381,14 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -20910,6 +22413,14 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -20974,6 +22485,35 @@ class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(d
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -21490,25 +23030,31 @@ class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJo
 class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: _builtins.int,
+                 capacity_reservation_id: _builtins.str,
                  compute_target_id: _builtins.str,
                  job_infrastructure_type: _builtins.str,
                  job_shape_config_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 network_configurations: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  resource_configurations: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResult'],
                  shape_name: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str capacity_reservation_id: This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
         :param _builtins.str compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for the compute target job.
         :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs'] resource_configurations: Details for the compute target job resource configuration.
         :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compute_target_id", compute_target_id)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "resource_configurations", resource_configurations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -21520,6 +23066,14 @@ class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJo
         The size of the block storage volume to attach to the instance running the job
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="computeTargetId")
@@ -21544,6 +23098,14 @@ class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJo
         Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for the compute target job.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigurations")
@@ -21608,6 +23170,35 @@ class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJo
         The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -25172,12 +26763,15 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
                  instance_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult'],
                  maximum_bandwidth_mbps: _builtins.int,
                  model_deployment_resource_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult'],
+                 network_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult']):
         """
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param _builtins.str infrastructure_type: The type of the model deployment infrastructure.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArgs'] model_deployment_resource_configurations: Resource configuration details for model deploy on managed compute cluster type compute target.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for model deploy on managed compute cluster type compute target.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
@@ -25186,6 +26780,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
         pulumi.set(__self__, "instance_configurations", instance_configurations)
         pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
         pulumi.set(__self__, "model_deployment_resource_configurations", model_deployment_resource_configurations)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "scaling_policies", scaling_policies)
 
     @_builtins.property
@@ -25228,7 +26823,18 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
     @_builtins.property
     @pulumi.getter(name="modelDeploymentResourceConfigurations")
     def model_deployment_resource_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult']:
+        """
+        Resource configuration details for model deploy on managed compute cluster type compute target.
+        """
         return pulumi.get(self, "model_deployment_resource_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for model deploy on managed compute cluster type compute target.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="scalingPolicies")
@@ -25249,6 +26855,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
+        :param Sequence[_builtins.str] capacity_reservation_ids: This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str network_access_type: Network Access type of model deployment.
@@ -25265,6 +26872,9 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
     @_builtins.property
     @pulumi.getter(name="capacityReservationIds")
     def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        """
+        This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        """
         return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
@@ -25353,17 +26963,27 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
     def __init__(__self__, *,
                  resource_limit_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationResult'],
                  resource_request_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult']):
+        """
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArgs'] resource_limit_configurations: Resource limit configuration details for workload on managed compute cluster type compute target
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArgs'] resource_request_configurations: Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
         pulumi.set(__self__, "resource_limit_configurations", resource_limit_configurations)
         pulumi.set(__self__, "resource_request_configurations", resource_request_configurations)
 
     @_builtins.property
     @pulumi.getter(name="resourceLimitConfigurations")
     def resource_limit_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationResult']:
+        """
+        Resource limit configuration details for workload on managed compute cluster type compute target
+        """
         return pulumi.get(self, "resource_limit_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceRequestConfigurations")
     def resource_request_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult']:
+        """
+        Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
         return pulumi.get(self, "resource_request_configurations")
 
 
@@ -25403,6 +27023,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.int gpus: The total number of gpus required to be allocated to the workload.
         :param _builtins.float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param _builtins.float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
@@ -25413,6 +27034,9 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
     @_builtins.property
     @pulumi.getter
     def gpus(self) -> _builtins.int:
+        """
+        The total number of gpus required to be allocated to the workload.
+        """
         return pulumi.get(self, "gpus")
 
     @_builtins.property
@@ -25430,6 +27054,35 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
         A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -25958,6 +27611,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
+        :param Sequence[_builtins.str] capacity_reservation_ids: This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str network_access_type: Network Access type of model deployment.
@@ -25974,6 +27628,9 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @_builtins.property
     @pulumi.getter(name="capacityReservationIds")
     def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        """
+        This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        """
         return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
@@ -27152,12 +28809,15 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
                  instance_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult'],
                  maximum_bandwidth_mbps: _builtins.int,
                  model_deployment_resource_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult'],
+                 network_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult'],
                  scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult']):
         """
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param _builtins.str infrastructure_type: The type of the model deployment infrastructure.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArgs'] model_deployment_resource_configurations: Resource configuration details for model deploy on managed compute cluster type compute target.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs'] network_configurations: The network configuration details for model deploy on managed compute cluster type compute target.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
@@ -27166,6 +28826,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
         pulumi.set(__self__, "instance_configurations", instance_configurations)
         pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
         pulumi.set(__self__, "model_deployment_resource_configurations", model_deployment_resource_configurations)
+        pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "scaling_policies", scaling_policies)
 
     @_builtins.property
@@ -27208,7 +28869,18 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
     @_builtins.property
     @pulumi.getter(name="modelDeploymentResourceConfigurations")
     def model_deployment_resource_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult']:
+        """
+        Resource configuration details for model deploy on managed compute cluster type compute target.
+        """
         return pulumi.get(self, "model_deployment_resource_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult']:
+        """
+        The network configuration details for model deploy on managed compute cluster type compute target.
+        """
+        return pulumi.get(self, "network_configurations")
 
     @_builtins.property
     @pulumi.getter(name="scalingPolicies")
@@ -27229,6 +28901,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
+        :param Sequence[_builtins.str] capacity_reservation_ids: This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str network_access_type: Network Access type of model deployment.
@@ -27245,6 +28918,9 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
     @_builtins.property
     @pulumi.getter(name="capacityReservationIds")
     def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        """
+        This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        """
         return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
@@ -27333,17 +29009,27 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
     def __init__(__self__, *,
                  resource_limit_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationResult'],
                  resource_request_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult']):
+        """
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArgs'] resource_limit_configurations: Resource limit configuration details for workload on managed compute cluster type compute target
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArgs'] resource_request_configurations: Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
         pulumi.set(__self__, "resource_limit_configurations", resource_limit_configurations)
         pulumi.set(__self__, "resource_request_configurations", resource_request_configurations)
 
     @_builtins.property
     @pulumi.getter(name="resourceLimitConfigurations")
     def resource_limit_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationResult']:
+        """
+        Resource limit configuration details for workload on managed compute cluster type compute target
+        """
         return pulumi.get(self, "resource_limit_configurations")
 
     @_builtins.property
     @pulumi.getter(name="resourceRequestConfigurations")
     def resource_request_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult']:
+        """
+        Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
         return pulumi.get(self, "resource_request_configurations")
 
 
@@ -27383,6 +29069,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.int gpus: The total number of gpus required to be allocated to the workload.
         :param _builtins.float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param _builtins.float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
@@ -27393,6 +29080,9 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
     @_builtins.property
     @pulumi.getter
     def gpus(self) -> _builtins.int:
+        """
+        The total number of gpus required to be allocated to the workload.
+        """
         return pulumi.get(self, "gpus")
 
     @_builtins.property
@@ -27410,6 +29100,35 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
         A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str network_type: network type
+        :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -27938,6 +29657,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
+        :param Sequence[_builtins.str] capacity_reservation_ids: This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str network_access_type: Network Access type of model deployment.
@@ -27954,6 +29674,9 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @_builtins.property
     @pulumi.getter(name="capacityReservationIds")
     def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        """
+        This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        """
         return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
@@ -33327,6 +35050,7 @@ class GetPipelineRunsPipelineRunResult(dict):
                  opc_parent_rpt_url: _builtins.str,
                  parameters_override: Mapping[str, _builtins.str],
                  pipeline_id: _builtins.str,
+                 pipeline_run_retention_period_in_days_override: _builtins.int,
                  project_id: _builtins.str,
                  state: _builtins.str,
                  step_override_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult'],
@@ -33352,6 +35076,7 @@ class GetPipelineRunsPipelineRunResult(dict):
         :param Sequence['GetPipelineRunsPipelineRunLogDetailArgs'] log_details: Customer logging details for pipeline run.
         :param Mapping[str, _builtins.str] parameters_override: Parameters override used in the pipeline run.
         :param _builtins.str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+        :param _builtins.int pipeline_run_retention_period_in_days_override: Retention period in days for pipeline run.
         :param _builtins.str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param _builtins.str state: The current state of the PipelineRun.
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailArgs'] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -33379,6 +35104,7 @@ class GetPipelineRunsPipelineRunResult(dict):
         pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         pulumi.set(__self__, "parameters_override", parameters_override)
         pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "pipeline_run_retention_period_in_days_override", pipeline_run_retention_period_in_days_override)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "step_override_details", step_override_details)
@@ -33511,6 +35237,14 @@ class GetPipelineRunsPipelineRunResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
         """
         return pulumi.get(self, "pipeline_id")
+
+    @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDaysOverride")
+    def pipeline_run_retention_period_in_days_override(self) -> _builtins.int:
+        """
+        Retention period in days for pipeline run.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days_override")
 
     @_builtins.property
     @pulumi.getter(name="projectId")
@@ -35652,6 +37386,7 @@ class GetPipelinesPipelineResult(dict):
                  lifecycle_details: _builtins.str,
                  log_configuration_details: Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult'],
                  parameters: Mapping[str, _builtins.str],
+                 pipeline_run_retention_period_in_days: _builtins.int,
                  project_id: _builtins.str,
                  state: _builtins.str,
                  step_artifacts: Sequence['outputs.GetPipelinesPipelineStepArtifactResult'],
@@ -35673,6 +37408,7 @@ class GetPipelinesPipelineResult(dict):
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param Sequence['GetPipelinesPipelineLogConfigurationDetailArgs'] log_configuration_details: The pipeline log configuration details.
         :param Mapping[str, _builtins.str] parameters: Parameters used in the pipeline.
+        :param _builtins.int pipeline_run_retention_period_in_days: Retention period in days for pipeline runs.
         :param _builtins.str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         :param _builtins.str state: The current state of the Pipeline.
         :param Sequence['GetPipelinesPipelineStepDetailArgs'] step_details: Array of step details for each step.
@@ -35694,6 +37430,7 @@ class GetPipelinesPipelineResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_configuration_details", log_configuration_details)
         pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "pipeline_run_retention_period_in_days", pipeline_run_retention_period_in_days)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "step_artifacts", step_artifacts)
@@ -35803,6 +37540,14 @@ class GetPipelinesPipelineResult(dict):
         Parameters used in the pipeline.
         """
         return pulumi.get(self, "parameters")
+
+    @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDays")
+    def pipeline_run_retention_period_in_days(self) -> _builtins.int:
+        """
+        Retention period in days for pipeline runs.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days")
 
     @_builtins.property
     @pulumi.getter(name="projectId")

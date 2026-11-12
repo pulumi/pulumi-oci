@@ -86,8 +86,12 @@ type LookupJobRunResult struct {
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails []GetJobRunJobNodeConfigurationOverrideDetail `pulumi:"jobNodeConfigurationOverrideDetails"`
 	JobRunId                            string                                        `pulumi:"jobRunId"`
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride int `pulumi:"jobRunRetentionPeriodInDaysOverride"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists []GetJobRunJobStorageMountConfigurationOverrideDetailsList `pulumi:"jobStorageMountConfigurationOverrideDetailsLists"`
 	// The state details of the node group.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -222,11 +226,23 @@ func (o LookupJobRunResultOutput) JobRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJobRunResult) string { return v.JobRunId }).(pulumi.StringOutput)
 }
 
+// Retention period in days for job run.
+func (o LookupJobRunResultOutput) JobRunRetentionPeriodInDaysOverride() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupJobRunResult) int { return v.JobRunRetentionPeriodInDaysOverride }).(pulumi.IntOutput)
+}
+
 // Collection of JobStorageMountConfigurationDetails.
 func (o LookupJobRunResultOutput) JobStorageMountConfigurationDetailsLists() GetJobRunJobStorageMountConfigurationDetailsListArrayOutput {
 	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobStorageMountConfigurationDetailsList {
 		return v.JobStorageMountConfigurationDetailsLists
 	}).(GetJobRunJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o LookupJobRunResultOutput) JobStorageMountConfigurationOverrideDetailsLists() GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobStorageMountConfigurationOverrideDetailsList {
+		return v.JobStorageMountConfigurationOverrideDetailsLists
+	}).(GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput)
 }
 
 // The state details of the node group.

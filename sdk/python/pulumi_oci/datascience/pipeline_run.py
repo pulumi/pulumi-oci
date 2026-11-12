@@ -33,6 +33,7 @@ class PipelineRunArgs:
                  log_configuration_override_details: pulumi.Input[Optional['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
                  step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
                  storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
@@ -50,6 +51,7 @@ class PipelineRunArgs:
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters_override: Parameters override used in the pipeline run.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days_override: Retention period in days for pipeline run.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]] storage_mount_configuration_override_details_lists: The storage mount override details to mount to the instance running the pipeline step.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -78,6 +80,8 @@ class PipelineRunArgs:
             pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if parameters_override is not None:
             pulumi.set(__self__, "parameters_override", parameters_override)
+        if pipeline_run_retention_period_in_days_override is not None:
+            pulumi.set(__self__, "pipeline_run_retention_period_in_days_override", pipeline_run_retention_period_in_days_override)
         if step_override_details is not None:
             pulumi.set(__self__, "step_override_details", step_override_details)
         if storage_mount_configuration_override_details_lists is not None:
@@ -227,6 +231,18 @@ class PipelineRunArgs:
         pulumi.set(self, "parameters_override", value)
 
     @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDaysOverride")
+    def pipeline_run_retention_period_in_days_override(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for pipeline run.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days_override")
+
+    @pipeline_run_retention_period_in_days_override.setter
+    def pipeline_run_retention_period_in_days_override(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "pipeline_run_retention_period_in_days_override", value)
+
+    @_builtins.property
     @pulumi.getter(name="stepOverrideDetails")
     def step_override_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]:
         """
@@ -284,6 +300,7 @@ class _PipelineRunState:
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pipeline_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
@@ -311,6 +328,7 @@ class _PipelineRunState:
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters_override: Parameters override used in the pipeline run.
         :param pulumi.Input[_builtins.str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days_override: Retention period in days for pipeline run.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[_builtins.str] state: The state of the step run.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -355,6 +373,8 @@ class _PipelineRunState:
             pulumi.set(__self__, "parameters_override", parameters_override)
         if pipeline_id is not None:
             pulumi.set(__self__, "pipeline_id", pipeline_id)
+        if pipeline_run_retention_period_in_days_override is not None:
+            pulumi.set(__self__, "pipeline_run_retention_period_in_days_override", pipeline_run_retention_period_in_days_override)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
         if state is not None:
@@ -554,6 +574,18 @@ class _PipelineRunState:
         pulumi.set(self, "pipeline_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDaysOverride")
+    def pipeline_run_retention_period_in_days_override(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for pipeline run.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days_override")
+
+    @pipeline_run_retention_period_in_days_override.setter
+    def pipeline_run_retention_period_in_days_override(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "pipeline_run_retention_period_in_days_override", value)
+
+    @_builtins.property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -694,6 +726,7 @@ class PipelineRun(pulumi.CustomResource):
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pipeline_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict', 'outputs.PipelineRunStepOverrideDetail']]]]] = None,
                  storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.PipelineRunStorageMountConfigurationOverrideDetailsList']]]]] = None,
@@ -749,6 +782,7 @@ class PipelineRun(pulumi.CustomResource):
             },
             opc_parent_rpt_url=pipeline_run_opc_parent_rpt_url,
             parameters_override=pipeline_run_parameters_override,
+            pipeline_run_retention_period_in_days_override=pipeline_run_pipeline_run_retention_period_in_days_override,
             project_id=test_project["id"],
             step_override_details=[{
                 "step_configuration_details": {
@@ -844,6 +878,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters_override: Parameters override used in the pipeline run.
         :param pulumi.Input[_builtins.str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days_override: Retention period in days for pipeline run.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict', 'outputs.PipelineRunStepOverrideDetail']]]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.PipelineRunStorageMountConfigurationOverrideDetailsList']]]] storage_mount_configuration_override_details_lists: The storage mount override details to mount to the instance running the pipeline step.
@@ -908,6 +943,7 @@ class PipelineRun(pulumi.CustomResource):
             },
             opc_parent_rpt_url=pipeline_run_opc_parent_rpt_url,
             parameters_override=pipeline_run_parameters_override,
+            pipeline_run_retention_period_in_days_override=pipeline_run_pipeline_run_retention_period_in_days_override,
             project_id=test_project["id"],
             step_override_details=[{
                 "step_configuration_details": {
@@ -1017,6 +1053,7 @@ class PipelineRun(pulumi.CustomResource):
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pipeline_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict', 'outputs.PipelineRunStepOverrideDetail']]]]] = None,
                  storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.PipelineRunStorageMountConfigurationOverrideDetailsList']]]]] = None,
@@ -1045,6 +1082,7 @@ class PipelineRun(pulumi.CustomResource):
             if pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'pipeline_id'")
             __props__.__dict__["pipeline_id"] = pipeline_id
+            __props__.__dict__["pipeline_run_retention_period_in_days_override"] = pipeline_run_retention_period_in_days_override
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
@@ -1086,6 +1124,7 @@ class PipelineRun(pulumi.CustomResource):
             opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
             parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pipeline_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict', 'outputs.PipelineRunStepOverrideDetail']]]]] = None,
@@ -1117,6 +1156,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters_override: Parameters override used in the pipeline run.
         :param pulumi.Input[_builtins.str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days_override: Retention period in days for pipeline run.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[_builtins.str] state: The state of the step run.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict', 'outputs.PipelineRunStepOverrideDetail']]]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -1150,6 +1190,7 @@ class PipelineRun(pulumi.CustomResource):
         __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
         __props__.__dict__["parameters_override"] = parameters_override
         __props__.__dict__["pipeline_id"] = pipeline_id
+        __props__.__dict__["pipeline_run_retention_period_in_days_override"] = pipeline_run_retention_period_in_days_override
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
         __props__.__dict__["step_override_details"] = step_override_details
@@ -1180,6 +1221,7 @@ class PipelineRun(pulumi.CustomResource):
             opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
             parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pipeline_run_retention_period_in_days_override: pulumi.Input[Optional[_builtins.int]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict', 'outputs.PipelineRunStepOverrideDetail']]]]] = None,
@@ -1206,6 +1248,7 @@ class PipelineRun(pulumi.CustomResource):
         __props__["opcParentRptUrl"] = opc_parent_rpt_url
         __props__["parametersOverride"] = parameters_override
         __props__["pipelineId"] = pipeline_id
+        __props__["pipelineRunRetentionPeriodInDaysOverride"] = pipeline_run_retention_period_in_days_override
         __props__["projectId"] = project_id
         __props__["state"] = state
         __props__["stepOverrideDetails"] = step_override_details
@@ -1334,6 +1377,14 @@ class PipelineRun(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         """
         return pulumi.get(self, "pipeline_id")
+
+    @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDaysOverride")
+    def pipeline_run_retention_period_in_days_override(self) -> pulumi.Output[_builtins.int]:
+        """
+        Retention period in days for pipeline run.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days_override")
 
     @_builtins.property
     @pulumi.getter(name="projectId")

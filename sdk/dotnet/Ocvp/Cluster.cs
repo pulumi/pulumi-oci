@@ -185,12 +185,6 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> InitialCommitment { get; private set; } = null!;
 
         /// <summary>
-        /// The initial fault domain host distribution mode for the Cluster.
-        /// </summary>
-        [Output("initialFaultDomainHostDistribution")]
-        public Output<string> InitialFaultDomainHostDistribution { get; private set; } = null!;
-
-        /// <summary>
         /// The initial OCPU count of the Cluster's ESXi hosts.
         /// </summary>
         [Output("initialHostOcpuCount")]
@@ -446,12 +440,6 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? InitialCommitment { get; set; }
 
         /// <summary>
-        /// The initial fault domain host distribution mode for the Cluster.
-        /// </summary>
-        [Input("initialFaultDomainHostDistribution")]
-        public Input<string>? InitialFaultDomainHostDistribution { get; set; }
-
-        /// <summary>
         /// The initial OCPU count of the Cluster's ESXi hosts.
         /// </summary>
         [Input("initialHostOcpuCount")]
@@ -634,12 +622,6 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("initialCommitment")]
         public Input<string>? InitialCommitment { get; set; }
-
-        /// <summary>
-        /// The initial fault domain host distribution mode for the Cluster.
-        /// </summary>
-        [Input("initialFaultDomainHostDistribution")]
-        public Input<string>? InitialFaultDomainHostDistribution { get; set; }
 
         /// <summary>
         /// The initial OCPU count of the Cluster's ESXi hosts.

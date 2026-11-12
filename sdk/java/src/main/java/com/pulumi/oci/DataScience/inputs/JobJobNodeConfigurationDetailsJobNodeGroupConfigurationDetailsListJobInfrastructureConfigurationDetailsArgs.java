@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -32,6 +33,21 @@ public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetail
      */
     public Optional<Output<Integer>> blockStorageSizeInGbs() {
         return Optional.ofNullable(this.blockStorageSizeInGbs);
+    }
+
+    /**
+     * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+     * 
+     */
+    @Import(name="capacityReservationId")
+    private @Nullable Output<String> capacityReservationId;
+
+    /**
+     * @return This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+     * 
+     */
+    public Optional<Output<String>> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
     }
 
     /**
@@ -77,6 +93,21 @@ public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetail
      */
     public Optional<Output<JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs>> jobShapeConfigDetails() {
         return Optional.ofNullable(this.jobShapeConfigDetails);
+    }
+
+    /**
+     * The network configuration details for the compute target job.
+     * 
+     */
+    @Import(name="networkConfiguration")
+    private @Nullable Output<JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs> networkConfiguration;
+
+    /**
+     * @return The network configuration details for the compute target job.
+     * 
+     */
+    public Optional<Output<JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs>> networkConfiguration() {
+        return Optional.ofNullable(this.networkConfiguration);
     }
 
     /**
@@ -128,9 +159,11 @@ public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetail
 
     private JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs $) {
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
+        this.capacityReservationId = $.capacityReservationId;
         this.computeTargetId = $.computeTargetId;
         this.jobInfrastructureType = $.jobInfrastructureType;
         this.jobShapeConfigDetails = $.jobShapeConfigDetails;
+        this.networkConfiguration = $.networkConfiguration;
         this.resourceConfiguration = $.resourceConfiguration;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
@@ -173,6 +206,27 @@ public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetail
          */
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
             return blockStorageSizeInGbs(Output.of(blockStorageSizeInGbs));
+        }
+
+        /**
+         * @param capacityReservationId This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
+            $.capacityReservationId = capacityReservationId;
+            return this;
+        }
+
+        /**
+         * @param capacityReservationId This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            return capacityReservationId(Output.of(capacityReservationId));
         }
 
         /**
@@ -236,6 +290,27 @@ public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetail
          */
         public Builder jobShapeConfigDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs jobShapeConfigDetails) {
             return jobShapeConfigDetails(Output.of(jobShapeConfigDetails));
+        }
+
+        /**
+         * @param networkConfiguration The network configuration details for the compute target job.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkConfiguration(@Nullable Output<JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs> networkConfiguration) {
+            $.networkConfiguration = networkConfiguration;
+            return this;
+        }
+
+        /**
+         * @param networkConfiguration The network configuration details for the compute target job.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkConfiguration(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs networkConfiguration) {
+            return networkConfiguration(Output.of(networkConfiguration));
         }
 
         /**

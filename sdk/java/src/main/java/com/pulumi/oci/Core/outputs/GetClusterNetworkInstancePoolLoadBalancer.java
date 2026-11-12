@@ -41,10 +41,6 @@ public final class GetClusterNetworkInstancePoolLoadBalancer {
      * 
      */
     private String state;
-    /**
-     * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-     * 
-     */
     private String vnicSelection;
 
     private GetClusterNetworkInstancePoolLoadBalancer() {}
@@ -90,10 +86,6 @@ public final class GetClusterNetworkInstancePoolLoadBalancer {
     public String state() {
         return this.state;
     }
-    /**
-     * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-     * 
-     */
     public String vnicSelection() {
         return this.vnicSelection;
     }

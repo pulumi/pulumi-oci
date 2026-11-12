@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolLoadBalancer;
+import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolOverridePolicy;
 import com.pulumi.oci.Core.outputs.ClusterNetworkInstancePoolPlacementConfiguration;
 import java.lang.Integer;
 import java.lang.String;
@@ -59,6 +60,11 @@ public final class ClusterNetworkInstancePool {
      * 
      */
     private @Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers;
+    /**
+     * @return Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    private @Nullable List<ClusterNetworkInstancePoolOverridePolicy> overridePolicies;
     /**
      * @return The placement configurations for the instance pool.
      * 
@@ -149,6 +155,13 @@ public final class ClusterNetworkInstancePool {
         return this.loadBalancers == null ? List.of() : this.loadBalancers;
     }
     /**
+     * @return Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    public List<ClusterNetworkInstancePoolOverridePolicy> overridePolicies() {
+        return this.overridePolicies == null ? List.of() : this.overridePolicies;
+    }
+    /**
      * @return The placement configurations for the instance pool.
      * 
      */
@@ -203,6 +216,7 @@ public final class ClusterNetworkInstancePool {
         private @Nullable String instanceDisplayNameFormatter;
         private @Nullable String instanceHostnameFormatter;
         private @Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers;
+        private @Nullable List<ClusterNetworkInstancePoolOverridePolicy> overridePolicies;
         private @Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
         private @Nullable String poolType;
         private Integer size;
@@ -221,6 +235,7 @@ public final class ClusterNetworkInstancePool {
     	      this.instanceDisplayNameFormatter = defaults.instanceDisplayNameFormatter;
     	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
     	      this.loadBalancers = defaults.loadBalancers;
+    	      this.overridePolicies = defaults.overridePolicies;
     	      this.placementConfigurations = defaults.placementConfigurations;
     	      this.poolType = defaults.poolType;
     	      this.size = defaults.size;
@@ -294,6 +309,15 @@ public final class ClusterNetworkInstancePool {
             return loadBalancers(List.of(loadBalancers));
         }
         @CustomType.Setter
+        public Builder overridePolicies(@Nullable List<ClusterNetworkInstancePoolOverridePolicy> overridePolicies) {
+
+            this.overridePolicies = overridePolicies;
+            return this;
+        }
+        public Builder overridePolicies(ClusterNetworkInstancePoolOverridePolicy... overridePolicies) {
+            return overridePolicies(List.of(overridePolicies));
+        }
+        @CustomType.Setter
         public Builder placementConfigurations(@Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations) {
 
             this.placementConfigurations = placementConfigurations;
@@ -340,6 +364,7 @@ public final class ClusterNetworkInstancePool {
             _resultValue.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
             _resultValue.loadBalancers = loadBalancers;
+            _resultValue.overridePolicies = overridePolicies;
             _resultValue.placementConfigurations = placementConfigurations;
             _resultValue.poolType = poolType;
             _resultValue.size = size;

@@ -17,6 +17,7 @@ import com.pulumi.oci.DataScience.outputs.JobJobNodeConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobStorageMountConfigurationDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +48,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs;
@@ -59,6 +61,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs;
@@ -114,6 +117,10 @@ import javax.annotation.Nullable;
  *                 .jobShapeConfigDetails(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
  *                     .memoryInGbs(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
  *                     .ocpus(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                     .build())
+ *                 .networkConfiguration(JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs.builder()
+ *                     .networkType(jobJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType)
+ *                     .subnetId(testSubnet.get("id"))
  *                     .build())
  *                 .resourceConfiguration(JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs.builder()
  *                     .resourceLimitConfiguration(JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
@@ -172,6 +179,10 @@ import javax.annotation.Nullable;
  *                             .memoryInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
  *                             .ocpus(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
  *                             .build())
+ *                         .networkConfiguration(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs.builder()
+ *                             .networkType(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType)
+ *                             .subnetId(testSubnet.get("id"))
+ *                             .build())
  *                         .resourceConfiguration(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs.builder()
  *                             .resourceLimitConfiguration(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
  *                                 .memoryInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs)
@@ -192,6 +203,7 @@ import javax.annotation.Nullable;
  *                 .maximumRuntimeInMinutes(jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes)
  *                 .startupOrder(jobJobNodeConfigurationDetailsStartupOrder)
  *                 .build())
+ *             .jobRunRetentionPeriodInDays(jobJobRunRetentionPeriodInDays)
  *             .jobStorageMountConfigurationDetailsLists(JobJobStorageMountConfigurationDetailsListArgs.builder()
  *                 .destinationDirectoryName(jobJobStorageMountConfigurationDetailsListDestinationDirectoryName)
  *                 .storageType(jobJobStorageMountConfigurationDetailsListStorageType)
@@ -453,6 +465,20 @@ public class Job extends com.pulumi.resources.CustomResource {
      */
     public Output<JobJobNodeConfigurationDetails> jobNodeConfigurationDetails() {
         return this.jobNodeConfigurationDetails;
+    }
+    /**
+     * Retention period in days for job runs.
+     * 
+     */
+    @Export(name="jobRunRetentionPeriodInDays", refs={Integer.class}, tree="[0]")
+    private Output<Integer> jobRunRetentionPeriodInDays;
+
+    /**
+     * @return Retention period in days for job runs.
+     * 
+     */
+    public Output<Integer> jobRunRetentionPeriodInDays() {
+        return this.jobRunRetentionPeriodInDays;
     }
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.

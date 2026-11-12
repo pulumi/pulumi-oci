@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration
     {
         /// <summary>
-        /// job network type
+        /// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
         /// </summary>
         public readonly string JobNetworkType;
         /// <summary>

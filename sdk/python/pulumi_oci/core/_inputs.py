@@ -65,6 +65,18 @@ __all__ = [
     'ClusterNetworkInstancePoolArgsDict',
     'ClusterNetworkInstancePoolLoadBalancerArgs',
     'ClusterNetworkInstancePoolLoadBalancerArgsDict',
+    'ClusterNetworkInstancePoolOverridePolicyArgs',
+    'ClusterNetworkInstancePoolOverridePolicyArgsDict',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgsDict',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgsDict',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgsDict',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgsDict',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs',
+    'ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgsDict',
     'ClusterNetworkInstancePoolPlacementConfigurationArgs',
     'ClusterNetworkInstancePoolPlacementConfigurationArgsDict',
     'ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs',
@@ -317,6 +329,18 @@ __all__ = [
     'InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgsDict',
     'InstancePoolLoadBalancerArgs',
     'InstancePoolLoadBalancerArgsDict',
+    'InstancePoolOverridePolicyArgs',
+    'InstancePoolOverridePolicyArgsDict',
+    'InstancePoolOverridePolicyOverrideStatementArgs',
+    'InstancePoolOverridePolicyOverrideStatementArgsDict',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionArgsDict',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgsDict',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs',
+    'InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgsDict',
+    'InstancePoolOverridePolicyOverrideStatementSelectorArgs',
+    'InstancePoolOverridePolicyOverrideStatementSelectorArgsDict',
     'InstancePoolPlacementConfigurationArgs',
     'InstancePoolPlacementConfigurationArgsDict',
     'InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs',
@@ -2295,6 +2319,10 @@ class ClusterNetworkInstancePoolArgsDict(TypedDict):
     """
     The load balancers attached to the instance pool.
     """
+    override_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyArgsDict']]]]]
+    """
+    Optional pool-level launch override policy for future instance launches.
+    """
     placement_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgsDict']]]]]
     """
     The placement configurations for the instance pool.
@@ -2326,6 +2354,7 @@ class ClusterNetworkInstancePoolArgs:
                  instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]]] = None,
+                 override_policies: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyArgs']]]] = None,
                  placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]] = None,
                  pool_type: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2340,6 +2369,7 @@ class ClusterNetworkInstancePoolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]] load_balancers: The load balancers attached to the instance pool.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyArgs']]] override_policies: Optional pool-level launch override policy for future instance launches.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]] placement_configurations: The placement configurations for the instance pool.
         :param pulumi.Input[_builtins.str] pool_type: The type of resources managed by the pool.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster network.
@@ -2365,6 +2395,8 @@ class ClusterNetworkInstancePoolArgs:
             pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
+        if override_policies is not None:
+            pulumi.set(__self__, "override_policies", override_policies)
         if placement_configurations is not None:
             pulumi.set(__self__, "placement_configurations", placement_configurations)
         if pool_type is not None:
@@ -2501,6 +2533,18 @@ class ClusterNetworkInstancePoolArgs:
         pulumi.set(self, "load_balancers", value)
 
     @_builtins.property
+    @pulumi.getter(name="overridePolicies")
+    def override_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyArgs']]]]:
+        """
+        Optional pool-level launch override policy for future instance launches.
+        """
+        return pulumi.get(self, "override_policies")
+
+    @override_policies.setter
+    def override_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyArgs']]]]):
+        pulumi.set(self, "override_policies", value)
+
+    @_builtins.property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]]:
         """
@@ -2575,9 +2619,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgsDict(TypedDict):
     The current state of the cluster network.
     """
     vnic_selection: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-    """
 
 @pulumi.input_type
 class ClusterNetworkInstancePoolLoadBalancerArgs:
@@ -2596,7 +2637,6 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
         :param pulumi.Input[_builtins.int] port: The port value used for the backends.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster network.
-        :param pulumi.Input[_builtins.str] vnic_selection: Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
         """
         if backend_set_name is not None:
             pulumi.set(__self__, "backend_set_name", backend_set_name)
@@ -2688,14 +2728,405 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
     @_builtins.property
     @pulumi.getter(name="vnicSelection")
     def vnic_selection(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
         return pulumi.get(self, "vnic_selection")
 
     @vnic_selection.setter
     def vnic_selection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vnic_selection", value)
+
+
+class ClusterNetworkInstancePoolOverridePolicyArgsDict(TypedDict):
+    override_statements: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgsDict']]]]]
+    """
+    The ordered set of availability domain-scoped override statements for this policy.
+    """
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolOverridePolicyArgs:
+    def __init__(__self__, *,
+                 override_statements: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs']]] override_statements: The ordered set of availability domain-scoped override statements for this policy.
+        """
+        if override_statements is not None:
+            pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs']]]]:
+        """
+        The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+    @override_statements.setter
+    def override_statements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs']]]]):
+        pulumi.set(self, "override_statements", value)
+
+
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A user-friendly name for the override option.
+    """
+    override_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgsDict']]]]]
+    """
+    The ordered list of candidate override options for the matched availability domain.
+    """
+    selectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgsDict']]]]]
+    """
+    The selector for an override statement.
+    """
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 override_options: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]]] = None,
+                 selectors: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: A user-friendly name for the override option.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]] override_options: The ordered list of candidate override options for the matched availability domain.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs']]] selectors: The selector for an override statement.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if override_options is not None:
+            pulumi.set(__self__, "override_options", override_options)
+        if selectors is not None:
+            pulumi.set(__self__, "selectors", selectors)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]]]:
+        """
+        The ordered list of candidate override options for the matched availability domain.
+        """
+        return pulumi.get(self, "override_options")
+
+    @override_options.setter
+    def override_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]]]):
+        pulumi.set(self, "override_options", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def selectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs']]]]:
+        """
+        The selector for an override statement.
+        """
+        return pulumi.get(self, "selectors")
+
+    @selectors.setter
+    def selectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs']]]]):
+        pulumi.set(self, "selectors", value)
+
+
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A user-friendly name for the override option.
+    """
+    overrides: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgsDict']]]]]
+    """
+    The concrete launch mutation payload for an override option.
+    """
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: A user-friendly name for the override option.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs']]] overrides: The concrete launch mutation payload for an override option.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if overrides is not None:
+            pulumi.set(__self__, "overrides", overrides)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs']]]]:
+        """
+        The concrete launch mutation payload for an override option.
+        """
+        return pulumi.get(self, "overrides")
+
+    @overrides.setter
+    def overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs']]]]):
+        pulumi.set(self, "overrides", value)
+
+
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgsDict(TypedDict):
+    capacity_reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OCID of the compute capacity reservation to use for the override option.
+    """
+    shape: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+    """
+    shape_config_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgsDict']]]]]
+    """
+    The shape configuration requested for the override option.
+    """
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs:
+    def __init__(__self__, *,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_config_details: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: The OCID of the compute capacity reservation to use for the override option.
+        :param pulumi.Input[_builtins.str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs']]] shape_config_details: The shape configuration requested for the override option.
+        """
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs']]]]:
+        """
+        The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @shape_config_details.setter
+    def shape_config_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs']]]]):
+        pulumi.set(self, "shape_config_details", value)
+
+
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgsDict(TypedDict):
+    baseline_ocpu_utilization: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+    """
+    local_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The total amount of memory available to the instance, in gigabytes.
+    """
+    nvmes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The total number of OCPUs available to the instance.
+    """
+    resource_management: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    This field is reserved for internal use.
+    """
+    vcpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+    """
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs:
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 nvmes: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 resource_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcpus: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param pulumi.Input[_builtins.int] local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance.
+        :param pulumi.Input[_builtins.str] resource_management: This field is reserved for internal use.
+        :param pulumi.Input[_builtins.int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @baseline_ocpu_utilization.setter
+    def baseline_ocpu_utilization(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "baseline_ocpu_utilization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @local_volume_size_in_gbs.setter
+    def local_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "local_volume_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "nvmes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @resource_management.setter
+    def resource_management(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_management", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+    @vcpus.setter
+    def vcpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "vcpus", value)
+
+
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgsDict(TypedDict):
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+    """
+
+@pulumi.input_type
+class ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs:
+    def __init__(__self__, *,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
 
 
 class ClusterNetworkInstancePoolPlacementConfigurationArgsDict(TypedDict):
@@ -16495,6 +16926,431 @@ class InstancePoolLoadBalancerArgs:
         pulumi.set(self, "state", value)
 
 
+class InstancePoolOverridePolicyArgsDict(TypedDict):
+    override_statements: pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementArgsDict']]]
+    """
+    (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+    """
+
+@pulumi.input_type
+class InstancePoolOverridePolicyArgs:
+    def __init__(__self__, *,
+                 override_statements: pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementArgs']]] override_statements: (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+        """
+        pulumi.set(__self__, "override_statements", override_statements)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideStatements")
+    def override_statements(self) -> pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementArgs']]]:
+        """
+        (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+        """
+        return pulumi.get(self, "override_statements")
+
+    @override_statements.setter
+    def override_statements(self, value: pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementArgs']]]):
+        pulumi.set(self, "override_statements", value)
+
+
+class InstancePoolOverridePolicyOverrideStatementArgsDict(TypedDict):
+    override_options: pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionArgsDict']]]
+    """
+    (Updatable) The ordered list of candidate override options for the matched availability domain.
+
+    Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+    """
+    selector: pulumi.Input['InstancePoolOverridePolicyOverrideStatementSelectorArgsDict']
+    """
+    (Updatable) The selector for an override statement.
+
+    In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+    """
+
+@pulumi.input_type
+class InstancePoolOverridePolicyOverrideStatementArgs:
+    def __init__(__self__, *,
+                 override_options: pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]],
+                 selector: pulumi.Input['InstancePoolOverridePolicyOverrideStatementSelectorArgs']):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]] override_options: (Updatable) The ordered list of candidate override options for the matched availability domain.
+               
+               Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+        :param pulumi.Input['InstancePoolOverridePolicyOverrideStatementSelectorArgs'] selector: (Updatable) The selector for an override statement.
+               
+               In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+        """
+        pulumi.set(__self__, "override_options", override_options)
+        pulumi.set(__self__, "selector", selector)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideOptions")
+    def override_options(self) -> pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]]:
+        """
+        (Updatable) The ordered list of candidate override options for the matched availability domain.
+
+        Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+        """
+        return pulumi.get(self, "override_options")
+
+    @override_options.setter
+    def override_options(self, value: pulumi.Input[Sequence[pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs']]]):
+        pulumi.set(self, "override_options", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def selector(self) -> pulumi.Input['InstancePoolOverridePolicyOverrideStatementSelectorArgs']:
+        """
+        (Updatable) The selector for an override statement.
+
+        In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+        """
+        return pulumi.get(self, "selector")
+
+    @selector.setter
+    def selector(self, value: pulumi.Input['InstancePoolOverridePolicyOverrideStatementSelectorArgs']):
+        pulumi.set(self, "selector", value)
+
+
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A user-friendly name for the override option.
+    """
+    override: pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgsDict']
+    """
+    (Updatable) The concrete launch mutation payload for an override option.
+
+    In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+
+    Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+
+    Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+    """
+
+@pulumi.input_type
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 override: pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs']):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) A user-friendly name for the override option.
+        :param pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs'] override: (Updatable) The concrete launch mutation payload for an override option.
+               
+               In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+               
+               Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+               
+               Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "override", override)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) A user-friendly name for the override option.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def override(self) -> pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs']:
+        """
+        (Updatable) The concrete launch mutation payload for an override option.
+
+        In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+
+        Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+
+        Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+        """
+        return pulumi.get(self, "override")
+
+    @override.setter
+    def override(self, value: pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs']):
+        pulumi.set(self, "override", value)
+
+
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgsDict(TypedDict):
+    capacity_reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of the compute capacity reservation to use for the override option.
+    """
+    shape: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+    You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+    """
+    shape_config_details: NotRequired[pulumi.Input[Optional['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgsDict']]]
+    """
+    (Updatable) The shape configuration requested for the override option.
+    """
+
+@pulumi.input_type
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs:
+    def __init__(__self__, *,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_config_details: pulumi.Input[Optional['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation to use for the override option.
+        :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        :param pulumi.Input['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs'] shape_config_details: (Updatable) The shape configuration requested for the override option.
+        """
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the compute capacity reservation to use for the override option.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> pulumi.Input[Optional['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs']]:
+        """
+        (Updatable) The shape configuration requested for the override option.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @shape_config_details.setter
+    def shape_config_details(self, value: pulumi.Input[Optional['InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs']]):
+        pulumi.set(self, "shape_config_details", value)
+
+
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgsDict(TypedDict):
+    baseline_ocpu_utilization: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+    The following values are supported:
+    * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+    * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+    * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    local_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) The total amount of memory available to the instance, in gigabytes.
+    """
+    nvmes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) The total number of OCPUs available to the instance.
+    """
+    resource_management: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) This field is reserved for internal use.
+    """
+    vcpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+    """
+
+@pulumi.input_type
+class InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs:
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 nvmes: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 resource_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcpus: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param pulumi.Input[_builtins.int] local_volume_size_in_gbs: (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
+        :param pulumi.Input[_builtins.int] nvmes: (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs available to the instance.
+        :param pulumi.Input[_builtins.str] resource_management: (Updatable) This field is reserved for internal use.
+        :param pulumi.Input[_builtins.int] vcpus: (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @baseline_ocpu_utilization.setter
+    def baseline_ocpu_utilization(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "baseline_ocpu_utilization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @local_volume_size_in_gbs.setter
+    def local_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "local_volume_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "nvmes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @resource_management.setter
+    def resource_management(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_management", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+    @vcpus.setter
+    def vcpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "vcpus", value)
+
+
+class InstancePoolOverridePolicyOverrideStatementSelectorArgsDict(TypedDict):
+    availability_domain: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The availability domain that this statement applies to.
+
+    The value must match an availability domain present in the pool's `placementConfigurations`.
+    """
+
+@pulumi.input_type
+class InstancePoolOverridePolicyOverrideStatementSelectorArgs:
+    def __init__(__self__, *,
+                 availability_domain: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The availability domain that this statement applies to.
+               
+               The value must match an availability domain present in the pool's `placementConfigurations`.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The availability domain that this statement applies to.
+
+        The value must match an availability domain present in the pool's `placementConfigurations`.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "availability_domain", value)
+
+
 class InstancePoolPlacementConfigurationArgsDict(TypedDict):
     availability_domain: pulumi.Input[_builtins.str]
     """
@@ -22568,6 +23424,9 @@ class GetClusterNetworkInstancesFilterArgs:
 
 class GetClusterNetworksFilterArgsDict(TypedDict):
     name: _builtins.str
+    """
+    A user-friendly name for the override option.
+    """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
 
@@ -22577,6 +23436,9 @@ class GetClusterNetworksFilterArgs:
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -22585,6 +23447,9 @@ class GetClusterNetworksFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -24653,6 +25518,9 @@ class GetInstancePoolInstancesFilterArgs:
 
 class GetInstancePoolsFilterArgsDict(TypedDict):
     name: _builtins.str
+    """
+    A user-friendly name for the override option.
+    """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
 
@@ -24662,6 +25530,9 @@ class GetInstancePoolsFilterArgs:
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A user-friendly name for the override option.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -24670,6 +25541,9 @@ class GetInstancePoolsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        A user-friendly name for the override option.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

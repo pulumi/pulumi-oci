@@ -69,6 +69,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobsJobJobNodeConfigurationDetailResult> JobNodeConfigurationDetails;
         /// <summary>
+        /// Retention period in days for job runs.
+        /// </summary>
+        public readonly int JobRunRetentionPeriodInDays;
+        /// <summary>
         /// Collection of JobStorageMountConfigurationDetails.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult> JobStorageMountConfigurationDetailsLists;
@@ -129,6 +133,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetJobsJobJobNodeConfigurationDetailResult> jobNodeConfigurationDetails,
 
+            int jobRunRetentionPeriodInDays,
+
             ImmutableArray<Outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult> jobStorageMountConfigurationDetailsLists,
 
             string lifecycleDetails,
@@ -158,6 +164,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             JobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             JobLogConfigurationDetails = jobLogConfigurationDetails;
             JobNodeConfigurationDetails = jobNodeConfigurationDetails;
+            JobRunRetentionPeriodInDays = jobRunRetentionPeriodInDays;
             JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             LifecycleDetails = lifecycleDetails;
             ProjectId = projectId;

@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DataScience.Outputs
     [OutputType]
     public sealed class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult
     {
+        /// <summary>
+        /// The total number of gpus required to be allocated to the workload.
+        /// </summary>
         public readonly int Gpus;
         /// <summary>
         /// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.

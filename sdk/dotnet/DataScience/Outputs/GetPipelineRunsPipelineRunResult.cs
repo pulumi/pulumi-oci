@@ -72,6 +72,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string PipelineId;
         /// <summary>
+        /// Retention period in days for pipeline run.
+        /// </summary>
+        public readonly int PipelineRunRetentionPeriodInDaysOverride;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         /// </summary>
         public readonly string ProjectId;
@@ -146,6 +150,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string pipelineId,
 
+            int pipelineRunRetentionPeriodInDaysOverride,
+
             string projectId,
 
             string state,
@@ -182,6 +188,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             OpcParentRptUrl = opcParentRptUrl;
             ParametersOverride = parametersOverride;
             PipelineId = pipelineId;
+            PipelineRunRetentionPeriodInDaysOverride = pipelineRunRetentionPeriodInDaysOverride;
             ProjectId = projectId;
             State = state;
             StepOverrideDetails = stepOverrideDetails;

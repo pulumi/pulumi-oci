@@ -76,6 +76,11 @@ namespace Pulumi.Oci.DataScience
     ///                 MemoryInGbs = jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
     ///             },
+    ///             NetworkConfiguration = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs
+    ///             {
+    ///                 NetworkType = jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationNetworkType,
+    ///                 SubnetId = testSubnet.Id,
+    ///             },
     ///             ResourceConfiguration = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs
     ///             {
     ///                 ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs
@@ -147,6 +152,11 @@ namespace Pulumi.Oci.DataScience
     ///                             MemoryInGbs = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                             Ocpus = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
     ///                         },
+    ///                         NetworkConfiguration = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs
+    ///                         {
+    ///                             NetworkType = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType,
+    ///                             SubnetId = testSubnet.Id,
+    ///                         },
     ///                         ResourceConfiguration = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs
     ///                         {
     ///                             ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs
@@ -171,18 +181,19 @@ namespace Pulumi.Oci.DataScience
     ///             MaximumRuntimeInMinutes = jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes,
     ///             StartupOrder = jobRunJobNodeConfigurationOverrideDetailsStartupOrder,
     ///         },
-    ///         JobStorageMountConfigurationOverrideDetailsList = new[]
+    ///         JobRunRetentionPeriodInDaysOverride = jobRunJobRunRetentionPeriodInDaysOverride,
+    ///         JobStorageMountConfigurationOverrideDetailsLists = new[]
     ///         {
-    ///             
+    ///             new Oci.DataScience.Inputs.JobRunJobStorageMountConfigurationOverrideDetailsListArgs
     ///             {
-    ///                 { "destinationDirectoryName", jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName },
-    ///                 { "storageType", jobRunJobStorageMountConfigurationOverrideDetailsListStorageType },
-    ///                 { "bucket", jobRunJobStorageMountConfigurationOverrideDetailsListBucket },
-    ///                 { "destinationPath", jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath },
-    ///                 { "exportId", testExport.Id },
-    ///                 { "mountTargetId", testMountTarget.Id },
-    ///                 { "namespace", jobRunJobStorageMountConfigurationOverrideDetailsListNamespace },
-    ///                 { "prefix", jobRunJobStorageMountConfigurationOverrideDetailsListPrefix },
+    ///                 DestinationDirectoryName = jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName,
+    ///                 StorageType = jobRunJobStorageMountConfigurationOverrideDetailsListStorageType,
+    ///                 Bucket = jobRunJobStorageMountConfigurationOverrideDetailsListBucket,
+    ///                 DestinationPath = jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath,
+    ///                 ExportId = testExport.Id,
+    ///                 MountTargetId = testMountTarget.Id,
+    ///                 Namespace = jobRunJobStorageMountConfigurationOverrideDetailsListNamespace,
+    ///                 Prefix = jobRunJobStorageMountConfigurationOverrideDetailsListPrefix,
     ///             },
     ///         },
     ///         OpcParentRptUrl = jobRunOpcParentRptUrl,
@@ -281,10 +292,22 @@ namespace Pulumi.Oci.DataScience
         public Output<Outputs.JobRunJobNodeConfigurationOverrideDetails> JobNodeConfigurationOverrideDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Retention period in days for job run.
+        /// </summary>
+        [Output("jobRunRetentionPeriodInDaysOverride")]
+        public Output<int> JobRunRetentionPeriodInDaysOverride { get; private set; } = null!;
+
+        /// <summary>
         /// Collection of JobStorageMountConfigurationDetails.
         /// </summary>
         [Output("jobStorageMountConfigurationDetailsLists")]
         public Output<ImmutableArray<Outputs.JobRunJobStorageMountConfigurationDetailsList>> JobStorageMountConfigurationDetailsLists { get; private set; } = null!;
+
+        /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        [Output("jobStorageMountConfigurationOverrideDetailsLists")]
+        public Output<ImmutableArray<Outputs.JobRunJobStorageMountConfigurationOverrideDetailsList>> JobStorageMountConfigurationOverrideDetailsLists { get; private set; } = null!;
 
         /// <summary>
         /// The state details of the node group.
@@ -468,6 +491,24 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.JobRunJobNodeConfigurationOverrideDetailsArgs>? JobNodeConfigurationOverrideDetails { get; set; }
 
         /// <summary>
+        /// Retention period in days for job run.
+        /// </summary>
+        [Input("jobRunRetentionPeriodInDaysOverride")]
+        public Input<int>? JobRunRetentionPeriodInDaysOverride { get; set; }
+
+        [Input("jobStorageMountConfigurationOverrideDetailsLists")]
+        private InputList<Inputs.JobRunJobStorageMountConfigurationOverrideDetailsListArgs>? _jobStorageMountConfigurationOverrideDetailsLists;
+
+        /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public InputList<Inputs.JobRunJobStorageMountConfigurationOverrideDetailsListArgs> JobStorageMountConfigurationOverrideDetailsLists
+        {
+            get => _jobStorageMountConfigurationOverrideDetailsLists ?? (_jobStorageMountConfigurationOverrideDetailsLists = new InputList<Inputs.JobRunJobStorageMountConfigurationOverrideDetailsListArgs>());
+            set => _jobStorageMountConfigurationOverrideDetailsLists = value;
+        }
+
+        /// <summary>
         /// URL to fetch the Resource Principal Token from the parent resource.
         /// </summary>
         [Input("opcParentRptUrl")]
@@ -586,6 +627,12 @@ namespace Pulumi.Oci.DataScience
         [Input("jobNodeConfigurationOverrideDetails")]
         public Input<Inputs.JobRunJobNodeConfigurationOverrideDetailsGetArgs>? JobNodeConfigurationOverrideDetails { get; set; }
 
+        /// <summary>
+        /// Retention period in days for job run.
+        /// </summary>
+        [Input("jobRunRetentionPeriodInDaysOverride")]
+        public Input<int>? JobRunRetentionPeriodInDaysOverride { get; set; }
+
         [Input("jobStorageMountConfigurationDetailsLists")]
         private InputList<Inputs.JobRunJobStorageMountConfigurationDetailsListGetArgs>? _jobStorageMountConfigurationDetailsLists;
 
@@ -596,6 +643,18 @@ namespace Pulumi.Oci.DataScience
         {
             get => _jobStorageMountConfigurationDetailsLists ?? (_jobStorageMountConfigurationDetailsLists = new InputList<Inputs.JobRunJobStorageMountConfigurationDetailsListGetArgs>());
             set => _jobStorageMountConfigurationDetailsLists = value;
+        }
+
+        [Input("jobStorageMountConfigurationOverrideDetailsLists")]
+        private InputList<Inputs.JobRunJobStorageMountConfigurationOverrideDetailsListGetArgs>? _jobStorageMountConfigurationOverrideDetailsLists;
+
+        /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public InputList<Inputs.JobRunJobStorageMountConfigurationOverrideDetailsListGetArgs> JobStorageMountConfigurationOverrideDetailsLists
+        {
+            get => _jobStorageMountConfigurationOverrideDetailsLists ?? (_jobStorageMountConfigurationOverrideDetailsLists = new InputList<Inputs.JobRunJobStorageMountConfigurationOverrideDetailsListGetArgs>());
+            set => _jobStorageMountConfigurationOverrideDetailsLists = value;
         }
 
         /// <summary>

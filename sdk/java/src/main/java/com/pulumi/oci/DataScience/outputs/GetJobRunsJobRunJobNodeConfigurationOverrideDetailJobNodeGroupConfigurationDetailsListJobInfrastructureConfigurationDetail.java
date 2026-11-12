@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration;
 import java.lang.Integer;
 import java.lang.String;
@@ -19,6 +20,11 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
      * 
      */
     private Integer blockStorageSizeInGbs;
+    /**
+     * @return This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+     * 
+     */
+    private String capacityReservationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
      * 
@@ -34,6 +40,11 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
      * 
      */
     private List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+    /**
+     * @return The network configuration details for the compute target job.
+     * 
+     */
+    private List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations;
     /**
      * @return Details for the compute target job resource configuration.
      * 
@@ -59,6 +70,13 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
         return this.blockStorageSizeInGbs;
     }
     /**
+     * @return This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+     * 
+     */
+    public String capacityReservationId() {
+        return this.capacityReservationId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
      * 
      */
@@ -78,6 +96,13 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
      */
     public List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails() {
         return this.jobShapeConfigDetails;
+    }
+    /**
+     * @return The network configuration details for the compute target job.
+     * 
+     */
+    public List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations() {
+        return this.networkConfigurations;
     }
     /**
      * @return Details for the compute target job resource configuration.
@@ -111,9 +136,11 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
     @CustomType.Builder
     public static final class Builder {
         private Integer blockStorageSizeInGbs;
+        private String capacityReservationId;
         private String computeTargetId;
         private String jobInfrastructureType;
         private List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+        private List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations;
         private List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
         private String shapeName;
         private String subnetId;
@@ -121,9 +148,11 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
         public Builder(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.computeTargetId = defaults.computeTargetId;
     	      this.jobInfrastructureType = defaults.jobInfrastructureType;
     	      this.jobShapeConfigDetails = defaults.jobShapeConfigDetails;
+    	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.resourceConfigurations = defaults.resourceConfigurations;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
@@ -135,6 +164,14 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
               throw new MissingRequiredPropertyException("GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail", "blockStorageSizeInGbs");
             }
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder capacityReservationId(String capacityReservationId) {
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
@@ -163,6 +200,17 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
         }
         public Builder jobShapeConfigDetails(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail... jobShapeConfigDetails) {
             return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
+        }
+        @CustomType.Setter
+        public Builder networkConfigurations(List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations) {
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
+            return this;
+        }
+        public Builder networkConfigurations(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration... networkConfigurations) {
+            return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
         public Builder resourceConfigurations(List<GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations) {
@@ -194,9 +242,11 @@ public final class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGrou
         public GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail build() {
             final var _resultValue = new GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.computeTargetId = computeTargetId;
             _resultValue.jobInfrastructureType = jobInfrastructureType;
             _resultValue.jobShapeConfigDetails = jobShapeConfigDetails;
+            _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.resourceConfigurations = resourceConfigurations;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;

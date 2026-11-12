@@ -177,6 +177,10 @@ namespace Pulumi.Oci.DataScience
         public readonly ImmutableDictionary<string, string> Parameters;
         public readonly string PipelineId;
         /// <summary>
+        /// Retention period in days for pipeline runs.
+        /// </summary>
+        public readonly int PipelineRunRetentionPeriodInDays;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         /// </summary>
         public readonly string ProjectId;
@@ -236,6 +240,8 @@ namespace Pulumi.Oci.DataScience
 
             string pipelineId,
 
+            int pipelineRunRetentionPeriodInDays,
+
             string projectId,
 
             string state,
@@ -266,6 +272,7 @@ namespace Pulumi.Oci.DataScience
             LogConfigurationDetails = logConfigurationDetails;
             Parameters = parameters;
             PipelineId = pipelineId;
+            PipelineRunRetentionPeriodInDays = pipelineRunRetentionPeriodInDays;
             ProjectId = projectId;
             State = state;
             StepArtifacts = stepArtifacts;

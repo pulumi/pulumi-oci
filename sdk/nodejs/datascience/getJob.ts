@@ -100,6 +100,10 @@ export interface GetJobResult {
      */
     readonly jobNodeConfigurationDetails: outputs.DataScience.GetJobJobNodeConfigurationDetail[];
     /**
+     * Retention period in days for job runs.
+     */
+    readonly jobRunRetentionPeriodInDays: number;
+    /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     readonly jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobJobStorageMountConfigurationDetailsList[];

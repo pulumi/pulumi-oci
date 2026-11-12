@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int? BootVolumeSizeInGbs;
         /// <summary>
+        /// (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+        /// </summary>
+        public readonly ImmutableArray<string> CapacityReservationIds;
+        /// <summary>
         /// (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
         /// </summary>
         public readonly string InstanceShape;
@@ -25,18 +29,28 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
         /// </summary>
         public readonly Outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails? InstanceShapeDetails;
+        /// <summary>
+        /// The network configuration details for managed compute cluster type resource.
+        /// </summary>
+        public readonly Outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails? NetworkConfigurationDetails;
 
         [OutputConstructor]
         private ComputeTargetComputeConfigurationDetailsInstanceConfiguration(
             int? bootVolumeSizeInGbs,
 
+            ImmutableArray<string> capacityReservationIds,
+
             string instanceShape,
 
-            Outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails? instanceShapeDetails)
+            Outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails? instanceShapeDetails,
+
+            Outputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails? networkConfigurationDetails)
         {
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            CapacityReservationIds = capacityReservationIds;
             InstanceShape = instanceShape;
             InstanceShapeDetails = instanceShapeDetails;
+            NetworkConfigurationDetails = networkConfigurationDetails;
         }
     }
 }

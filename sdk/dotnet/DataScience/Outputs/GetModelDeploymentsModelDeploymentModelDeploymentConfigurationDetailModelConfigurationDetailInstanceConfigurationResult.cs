@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DataScience.Outputs
     [OutputType]
     public sealed class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult
     {
+        /// <summary>
+        /// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+        /// </summary>
         public readonly ImmutableArray<string> CapacityReservationIds;
         /// <summary>
         /// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.

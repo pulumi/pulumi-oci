@@ -12,6 +12,7 @@ import com.pulumi.oci.DataScience.inputs.PipelineRunLogConfigurationOverrideDeta
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStorageMountConfigurationOverrideDetailsListArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -182,6 +183,21 @@ public final class PipelineRunArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Retention period in days for pipeline run.
+     * 
+     */
+    @Import(name="pipelineRunRetentionPeriodInDaysOverride")
+    private @Nullable Output<Integer> pipelineRunRetentionPeriodInDaysOverride;
+
+    /**
+     * @return Retention period in days for pipeline run.
+     * 
+     */
+    public Optional<Output<Integer>> pipelineRunRetentionPeriodInDaysOverride() {
+        return Optional.ofNullable(this.pipelineRunRetentionPeriodInDaysOverride);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      * 
      */
@@ -261,6 +277,7 @@ public final class PipelineRunArgs extends com.pulumi.resources.ResourceArgs {
         this.opcParentRptUrl = $.opcParentRptUrl;
         this.parametersOverride = $.parametersOverride;
         this.pipelineId = $.pipelineId;
+        this.pipelineRunRetentionPeriodInDaysOverride = $.pipelineRunRetentionPeriodInDaysOverride;
         this.projectId = $.projectId;
         this.stepOverrideDetails = $.stepOverrideDetails;
         this.storageMountConfigurationOverrideDetailsLists = $.storageMountConfigurationOverrideDetailsLists;
@@ -502,6 +519,27 @@ public final class PipelineRunArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder pipelineId(String pipelineId) {
             return pipelineId(Output.of(pipelineId));
+        }
+
+        /**
+         * @param pipelineRunRetentionPeriodInDaysOverride Retention period in days for pipeline run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pipelineRunRetentionPeriodInDaysOverride(@Nullable Output<Integer> pipelineRunRetentionPeriodInDaysOverride) {
+            $.pipelineRunRetentionPeriodInDaysOverride = pipelineRunRetentionPeriodInDaysOverride;
+            return this;
+        }
+
+        /**
+         * @param pipelineRunRetentionPeriodInDaysOverride Retention period in days for pipeline run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pipelineRunRetentionPeriodInDaysOverride(Integer pipelineRunRetentionPeriodInDaysOverride) {
+            return pipelineRunRetentionPeriodInDaysOverride(Output.of(pipelineRunRetentionPeriodInDaysOverride));
         }
 
         /**

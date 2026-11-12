@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstancePoolsFilter {
+    /**
+     * @return A user-friendly name for the override option.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetInstancePoolsFilter() {}
+    /**
+     * @return A user-friendly name for the override option.
+     * 
+     */
     public String name() {
         return this.name;
     }

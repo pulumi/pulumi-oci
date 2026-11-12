@@ -14,6 +14,7 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverride
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepRun;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStorageMountConfigurationOverrideDetailsList;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -93,6 +94,11 @@ public final class GetPipelineRunsPipelineRun {
      * 
      */
     private String pipelineId;
+    /**
+     * @return Retention period in days for pipeline run.
+     * 
+     */
+    private Integer pipelineRunRetentionPeriodInDaysOverride;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      * 
@@ -250,6 +256,13 @@ public final class GetPipelineRunsPipelineRun {
         return this.pipelineId;
     }
     /**
+     * @return Retention period in days for pipeline run.
+     * 
+     */
+    public Integer pipelineRunRetentionPeriodInDaysOverride() {
+        return this.pipelineRunRetentionPeriodInDaysOverride;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      * 
      */
@@ -345,6 +358,7 @@ public final class GetPipelineRunsPipelineRun {
         private String opcParentRptUrl;
         private Map<String,String> parametersOverride;
         private String pipelineId;
+        private Integer pipelineRunRetentionPeriodInDaysOverride;
         private String projectId;
         private String state;
         private List<GetPipelineRunsPipelineRunStepOverrideDetail> stepOverrideDetails;
@@ -374,6 +388,7 @@ public final class GetPipelineRunsPipelineRun {
     	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.parametersOverride = defaults.parametersOverride;
     	      this.pipelineId = defaults.pipelineId;
+    	      this.pipelineRunRetentionPeriodInDaysOverride = defaults.pipelineRunRetentionPeriodInDaysOverride;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.stepOverrideDetails = defaults.stepOverrideDetails;
@@ -530,6 +545,14 @@ public final class GetPipelineRunsPipelineRun {
             return this;
         }
         @CustomType.Setter
+        public Builder pipelineRunRetentionPeriodInDaysOverride(Integer pipelineRunRetentionPeriodInDaysOverride) {
+            if (pipelineRunRetentionPeriodInDaysOverride == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "pipelineRunRetentionPeriodInDaysOverride");
+            }
+            this.pipelineRunRetentionPeriodInDaysOverride = pipelineRunRetentionPeriodInDaysOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "projectId");
@@ -636,6 +659,7 @@ public final class GetPipelineRunsPipelineRun {
             _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.parametersOverride = parametersOverride;
             _resultValue.pipelineId = pipelineId;
+            _resultValue.pipelineRunRetentionPeriodInDaysOverride = pipelineRunRetentionPeriodInDaysOverride;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
             _resultValue.stepOverrideDetails = stepOverrideDetails;

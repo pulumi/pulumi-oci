@@ -12,13 +12,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration {
+    /**
+     * @return Resource limit configuration details for workload on managed compute cluster type compute target
+     * 
+     */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration> resourceLimitConfigurations;
+    /**
+     * @return Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     * 
+     */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration> resourceRequestConfigurations;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration() {}
+    /**
+     * @return Resource limit configuration details for workload on managed compute cluster type compute target
+     * 
+     */
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration> resourceLimitConfigurations() {
         return this.resourceLimitConfigurations;
     }
+    /**
+     * @return Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     * 
+     */
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration> resourceRequestConfigurations() {
         return this.resourceRequestConfigurations;
     }

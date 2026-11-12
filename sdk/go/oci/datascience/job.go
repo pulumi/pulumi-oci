@@ -76,6 +76,10 @@ import (
 //						MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
 //					},
+//					NetworkConfiguration: &datascience.JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{
+//						NetworkType: pulumi.Any(jobJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType),
+//						SubnetId:    pulumi.Any(testSubnet.Id),
+//					},
 //					ResourceConfiguration: &datascience.JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs{
 //						ResourceLimitConfiguration: &datascience.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{
 //							MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
@@ -134,6 +138,10 @@ import (
 //									MemoryInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
 //									Ocpus:       pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
 //								},
+//								NetworkConfiguration: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{
+//									NetworkType: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType),
+//									SubnetId:    pulumi.Any(testSubnet.Id),
+//								},
 //								ResourceConfiguration: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{
 //									ResourceLimitConfiguration: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{
 //										MemoryInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
@@ -155,6 +163,7 @@ import (
 //					MaximumRuntimeInMinutes: pulumi.Any(jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes),
 //					StartupOrder:            pulumi.Any(jobJobNodeConfigurationDetailsStartupOrder),
 //				},
+//				JobRunRetentionPeriodInDays: pulumi.Any(jobJobRunRetentionPeriodInDays),
 //				JobStorageMountConfigurationDetailsLists: datascience.JobJobStorageMountConfigurationDetailsListArray{
 //					&datascience.JobJobStorageMountConfigurationDetailsListArgs{
 //						DestinationDirectoryName: pulumi.Any(jobJobStorageMountConfigurationDetailsListDestinationDirectoryName),
@@ -223,6 +232,8 @@ type Job struct {
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsOutput `pulumi:"jobLogConfigurationDetails"`
 	// The job node configuration details
 	JobNodeConfigurationDetails JobJobNodeConfigurationDetailsOutput `pulumi:"jobNodeConfigurationDetails"`
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays pulumi.IntOutput `pulumi:"jobRunRetentionPeriodInDays"`
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -307,6 +318,8 @@ type jobState struct {
 	JobLogConfigurationDetails *JobJobLogConfigurationDetails `pulumi:"jobLogConfigurationDetails"`
 	// The job node configuration details
 	JobNodeConfigurationDetails *JobJobNodeConfigurationDetails `pulumi:"jobNodeConfigurationDetails"`
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays *int `pulumi:"jobRunRetentionPeriodInDays"`
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []JobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -356,6 +369,8 @@ type JobState struct {
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsPtrInput
 	// The job node configuration details
 	JobNodeConfigurationDetails JobJobNodeConfigurationDetailsPtrInput
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays pulumi.IntPtrInput
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayInput
 	// The state of the job.
@@ -410,6 +425,8 @@ type jobArgs struct {
 	JobLogConfigurationDetails *JobJobLogConfigurationDetails `pulumi:"jobLogConfigurationDetails"`
 	// The job node configuration details
 	JobNodeConfigurationDetails *JobJobNodeConfigurationDetails `pulumi:"jobNodeConfigurationDetails"`
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays *int `pulumi:"jobRunRetentionPeriodInDays"`
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []JobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -449,6 +466,8 @@ type JobArgs struct {
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsPtrInput
 	// The job node configuration details
 	JobNodeConfigurationDetails JobJobNodeConfigurationDetailsPtrInput
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays pulumi.IntPtrInput
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -634,6 +653,11 @@ func (o JobOutput) JobLogConfigurationDetails() JobJobLogConfigurationDetailsOut
 // The job node configuration details
 func (o JobOutput) JobNodeConfigurationDetails() JobJobNodeConfigurationDetailsOutput {
 	return o.ApplyT(func(v *Job) JobJobNodeConfigurationDetailsOutput { return v.JobNodeConfigurationDetails }).(JobJobNodeConfigurationDetailsOutput)
+}
+
+// Retention period in days for job runs.
+func (o JobOutput) JobRunRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v *Job) pulumi.IntOutput { return v.JobRunRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // (Updatable) Collection of JobStorageMountConfigurationDetails.

@@ -13,6 +13,7 @@ import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -242,6 +243,21 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Retention period in days for job runs.
+     * 
+     */
+    @Import(name="jobRunRetentionPeriodInDays")
+    private @Nullable Output<Integer> jobRunRetentionPeriodInDays;
+
+    /**
+     * @return Retention period in days for job runs.
+     * 
+     */
+    public Optional<Output<Integer>> jobRunRetentionPeriodInDays() {
+        return Optional.ofNullable(this.jobRunRetentionPeriodInDays);
+    }
+
+    /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      * 
      */
@@ -288,6 +304,7 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationDetails = $.jobLogConfigurationDetails;
         this.jobNodeConfigurationDetails = $.jobNodeConfigurationDetails;
+        this.jobRunRetentionPeriodInDays = $.jobRunRetentionPeriodInDays;
         this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
         this.projectId = $.projectId;
     }
@@ -608,6 +625,27 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobNodeConfigurationDetails(JobJobNodeConfigurationDetailsArgs jobNodeConfigurationDetails) {
             return jobNodeConfigurationDetails(Output.of(jobNodeConfigurationDetails));
+        }
+
+        /**
+         * @param jobRunRetentionPeriodInDays Retention period in days for job runs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobRunRetentionPeriodInDays(@Nullable Output<Integer> jobRunRetentionPeriodInDays) {
+            $.jobRunRetentionPeriodInDays = jobRunRetentionPeriodInDays;
+            return this;
+        }
+
+        /**
+         * @param jobRunRetentionPeriodInDays Retention period in days for job runs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobRunRetentionPeriodInDays(Integer jobRunRetentionPeriodInDays) {
+            return jobRunRetentionPeriodInDays(Output.of(jobRunRetentionPeriodInDays));
         }
 
         /**

@@ -22,6 +22,8 @@ import (
 // To determine whether capacity is available for a specific shape before you create an instance pool,
 // use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
 // operation.
+// You can optionally include `overridePolicy` to define availability domain-scoped
+// launch overrides for future launches. Existing pool members are not modified.
 //
 // ## Example Usage
 //
@@ -99,6 +101,34 @@ import (
 //						VnicSelection:  pulumi.Any(instancePoolLoadBalancersVnicSelection),
 //					},
 //				},
+//				OverridePolicy: &core.InstancePoolOverridePolicyArgs{
+//					OverrideStatements: core.InstancePoolOverridePolicyOverrideStatementArray{
+//						&core.InstancePoolOverridePolicyOverrideStatementArgs{
+//							Name: instancePoolOverridePolicyOverrideStatementsName,
+//							OverrideOptions: core.InstancePoolOverridePolicyOverrideStatementOverrideOptionArray{
+//								&core.InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{
+//									Name: pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsName),
+//									Override: &core.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{
+//										CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
+//										Shape:                 pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShape),
+//										ShapeConfigDetails: &core.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs{
+//											BaselineOcpuUtilization: pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsBaselineOcpuUtilization),
+//											LocalVolumeSizeInGbs:    pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsLocalVolumeSizeInGbs),
+//											MemoryInGbs:             pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsMemoryInGbs),
+//											Nvmes:                   pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsNvmes),
+//											Ocpus:                   pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsOcpus),
+//											ResourceManagement:      pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsResourceManagement),
+//											Vcpus:                   pulumi.Any(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsVcpus),
+//										},
+//									},
+//								},
+//							},
+//							Selector: &core.InstancePoolOverridePolicyOverrideStatementSelectorArgs{
+//								AvailabilityDomain: pulumi.Any(instancePoolOverridePolicyOverrideStatementsSelectorAvailabilityDomain),
+//							},
+//						},
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -141,6 +171,14 @@ type InstancePool struct {
 	LifecycleManagement InstancePoolLifecycleManagementOutput `pulumi:"lifecycleManagement"`
 	// The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers InstancePoolLoadBalancerArrayOutput `pulumi:"loadBalancers"`
+	// (Updatable) Optional pool-level launch override policy for future instance launches.
+	//
+	// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+	//
+	// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+	//
+	// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+	OverridePolicy InstancePoolOverridePolicyOutput `pulumi:"overridePolicy"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
 	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -222,6 +260,14 @@ type instancePoolState struct {
 	LifecycleManagement *InstancePoolLifecycleManagement `pulumi:"lifecycleManagement"`
 	// The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
+	// (Updatable) Optional pool-level launch override policy for future instance launches.
+	//
+	// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+	//
+	// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+	//
+	// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+	OverridePolicy *InstancePoolOverridePolicy `pulumi:"overridePolicy"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
 	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -262,6 +308,14 @@ type InstancePoolState struct {
 	LifecycleManagement InstancePoolLifecycleManagementPtrInput
 	// The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers InstancePoolLoadBalancerArrayInput
+	// (Updatable) Optional pool-level launch override policy for future instance launches.
+	//
+	// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+	//
+	// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+	//
+	// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+	OverridePolicy InstancePoolOverridePolicyPtrInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
 	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -308,6 +362,14 @@ type instancePoolArgs struct {
 	LifecycleManagement *InstancePoolLifecycleManagement `pulumi:"lifecycleManagement"`
 	// The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
+	// (Updatable) Optional pool-level launch override policy for future instance launches.
+	//
+	// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+	//
+	// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+	//
+	// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+	OverridePolicy *InstancePoolOverridePolicy `pulumi:"overridePolicy"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
 	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -341,6 +403,14 @@ type InstancePoolArgs struct {
 	LifecycleManagement InstancePoolLifecycleManagementPtrInput
 	// The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers InstancePoolLoadBalancerArrayInput
+	// (Updatable) Optional pool-level launch override policy for future instance launches.
+	//
+	// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+	//
+	// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+	//
+	// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+	OverridePolicy InstancePoolOverridePolicyPtrInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
 	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -494,6 +564,17 @@ func (o InstancePoolOutput) LifecycleManagement() InstancePoolLifecycleManagemen
 // The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 func (o InstancePoolOutput) LoadBalancers() InstancePoolLoadBalancerArrayOutput {
 	return o.ApplyT(func(v *InstancePool) InstancePoolLoadBalancerArrayOutput { return v.LoadBalancers }).(InstancePoolLoadBalancerArrayOutput)
+}
+
+// (Updatable) Optional pool-level launch override policy for future instance launches.
+//
+// The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+//
+// For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+//
+// When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+func (o InstancePoolOutput) OverridePolicy() InstancePoolOverridePolicyOutput {
+	return o.ApplyT(func(v *InstancePool) InstancePoolOverridePolicyOutput { return v.OverridePolicy }).(InstancePoolOverridePolicyOutput)
 }
 
 // (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.

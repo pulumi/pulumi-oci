@@ -3695,6 +3695,8 @@ type ClusterNetworkInstancePool struct {
 	InstanceHostnameFormatter    *string `pulumi:"instanceHostnameFormatter"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers []ClusterNetworkInstancePoolLoadBalancer `pulumi:"loadBalancers"`
+	// Optional pool-level launch override policy for future instance launches.
+	OverridePolicies []ClusterNetworkInstancePoolOverridePolicy `pulumi:"overridePolicies"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations []ClusterNetworkInstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// The type of resources managed by the pool.
@@ -3737,6 +3739,8 @@ type ClusterNetworkInstancePoolArgs struct {
 	InstanceHostnameFormatter    pulumi.StringPtrInput `pulumi:"instanceHostnameFormatter"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers ClusterNetworkInstancePoolLoadBalancerArrayInput `pulumi:"loadBalancers"`
+	// Optional pool-level launch override policy for future instance launches.
+	OverridePolicies ClusterNetworkInstancePoolOverridePolicyArrayInput `pulumi:"overridePolicies"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations ClusterNetworkInstancePoolPlacementConfigurationArrayInput `pulumi:"placementConfigurations"`
 	// The type of resources managed by the pool.
@@ -3848,6 +3852,13 @@ func (o ClusterNetworkInstancePoolOutput) LoadBalancers() ClusterNetworkInstance
 	return o.ApplyT(func(v ClusterNetworkInstancePool) []ClusterNetworkInstancePoolLoadBalancer { return v.LoadBalancers }).(ClusterNetworkInstancePoolLoadBalancerArrayOutput)
 }
 
+// Optional pool-level launch override policy for future instance launches.
+func (o ClusterNetworkInstancePoolOutput) OverridePolicies() ClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePool) []ClusterNetworkInstancePoolOverridePolicy {
+		return v.OverridePolicies
+	}).(ClusterNetworkInstancePoolOverridePolicyArrayOutput)
+}
+
 // The placement configurations for the instance pool.
 func (o ClusterNetworkInstancePoolOutput) PlacementConfigurations() ClusterNetworkInstancePoolPlacementConfigurationArrayOutput {
 	return o.ApplyT(func(v ClusterNetworkInstancePool) []ClusterNetworkInstancePoolPlacementConfiguration {
@@ -3907,8 +3918,7 @@ type ClusterNetworkInstancePoolLoadBalancer struct {
 	// The port value used for the backends.
 	Port *int `pulumi:"port"`
 	// The current state of the cluster network.
-	State *string `pulumi:"state"`
-	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	State         *string `pulumi:"state"`
 	VnicSelection *string `pulumi:"vnicSelection"`
 }
 
@@ -3935,8 +3945,7 @@ type ClusterNetworkInstancePoolLoadBalancerArgs struct {
 	// The port value used for the backends.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The current state of the cluster network.
-	State pulumi.StringPtrInput `pulumi:"state"`
-	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	State         pulumi.StringPtrInput `pulumi:"state"`
 	VnicSelection pulumi.StringPtrInput `pulumi:"vnicSelection"`
 }
 
@@ -4021,7 +4030,6 @@ func (o ClusterNetworkInstancePoolLoadBalancerOutput) State() pulumi.StringPtrOu
 	return o.ApplyT(func(v ClusterNetworkInstancePoolLoadBalancer) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
 func (o ClusterNetworkInstancePoolLoadBalancerOutput) VnicSelection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNetworkInstancePoolLoadBalancer) *string { return v.VnicSelection }).(pulumi.StringPtrOutput)
 }
@@ -4044,6 +4052,717 @@ func (o ClusterNetworkInstancePoolLoadBalancerArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterNetworkInstancePoolLoadBalancer {
 		return vs[0].([]ClusterNetworkInstancePoolLoadBalancer)[vs[1].(int)]
 	}).(ClusterNetworkInstancePoolLoadBalancerOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicy struct {
+	// The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements []ClusterNetworkInstancePoolOverridePolicyOverrideStatement `pulumi:"overrideStatements"`
+}
+
+// ClusterNetworkInstancePoolOverridePolicyInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyArgs and ClusterNetworkInstancePoolOverridePolicyOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyArgs{...}
+type ClusterNetworkInstancePoolOverridePolicyInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOutput() ClusterNetworkInstancePoolOverridePolicyOutput
+	ToClusterNetworkInstancePoolOverridePolicyOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyArgs struct {
+	// The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput `pulumi:"overrideStatements"`
+}
+
+func (ClusterNetworkInstancePoolOverridePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyArgs) ToClusterNetworkInstancePoolOverridePolicyOutput() ClusterNetworkInstancePoolOverridePolicyOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyArgs) ToClusterNetworkInstancePoolOverridePolicyOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOutput)
+}
+
+// ClusterNetworkInstancePoolOverridePolicyArrayInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyArray and ClusterNetworkInstancePoolOverridePolicyArrayOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyArrayInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyArray{ ClusterNetworkInstancePoolOverridePolicyArgs{...} }
+type ClusterNetworkInstancePoolOverridePolicyArrayInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyArrayOutput() ClusterNetworkInstancePoolOverridePolicyArrayOutput
+	ToClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyArrayOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyArray []ClusterNetworkInstancePoolOverridePolicyInput
+
+func (ClusterNetworkInstancePoolOverridePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyArray) ToClusterNetworkInstancePoolOverridePolicyArrayOutput() ClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyArray) ToClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOutput) ToClusterNetworkInstancePoolOverridePolicyOutput() ClusterNetworkInstancePoolOverridePolicyOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOutput) ToClusterNetworkInstancePoolOverridePolicyOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOutput {
+	return o
+}
+
+// The ordered set of availability domain-scoped override statements for this policy.
+func (o ClusterNetworkInstancePoolOverridePolicyOutput) OverrideStatements() ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicy) []ClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+		return v.OverrideStatements
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyArrayOutput) ToClusterNetworkInstancePoolOverridePolicyArrayOutput() ClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyArrayOutput) ToClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyArrayOutput) Index(i pulumi.IntInput) ClusterNetworkInstancePoolOverridePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterNetworkInstancePoolOverridePolicy {
+		return vs[0].([]ClusterNetworkInstancePoolOverridePolicy)[vs[1].(int)]
+	}).(ClusterNetworkInstancePoolOverridePolicyOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatement struct {
+	// A user-friendly name for the override option.
+	Name *string `pulumi:"name"`
+	// The ordered list of candidate override options for the matched availability domain.
+	OverrideOptions []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption `pulumi:"overrideOptions"`
+	// The selector for an override statement.
+	Selectors []ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector `pulumi:"selectors"`
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs and ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{...}
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs struct {
+	// A user-friendly name for the override option.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The ordered list of candidate override options for the matched availability domain.
+	OverrideOptions ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput `pulumi:"overrideOptions"`
+	// The selector for an override statement.
+	Selectors ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput `pulumi:"selectors"`
+}
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementArray and ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementArray{ ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{...} }
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementArray []ClusterNetworkInstancePoolOverridePolicyOverrideStatementInput
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+// A user-friendly name for the override option.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatement) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The ordered list of candidate override options for the matched availability domain.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) OverrideOptions() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatement) []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return v.OverrideOptions
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+// The selector for an override statement.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) Selectors() ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatement) []ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+		return v.Selectors
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) Index(i pulumi.IntInput) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+		return vs[0].([]ClusterNetworkInstancePoolOverridePolicyOverrideStatement)[vs[1].(int)]
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption struct {
+	// A user-friendly name for the override option.
+	Name *string `pulumi:"name"`
+	// The concrete launch mutation payload for an override option.
+	Overrides []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride `pulumi:"overrides"`
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs and ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...}
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs struct {
+	// A user-friendly name for the override option.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The concrete launch mutation payload for an override option.
+	Overrides ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput `pulumi:"overrides"`
+}
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray and ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray{ ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...} }
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+// A user-friendly name for the override option.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The concrete launch mutation payload for an override option.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Overrides() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption) []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+		return v.Overrides
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) Index(i pulumi.IntInput) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return vs[0].([]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)[vs[1].(int)]
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride struct {
+	// The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape *string `pulumi:"shape"`
+	// The shape configuration requested for the override option.
+	ShapeConfigDetails []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail `pulumi:"shapeConfigDetails"`
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs and ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{...}
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs struct {
+	// The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
+	// The shape configuration requested for the override option.
+	ShapeConfigDetails ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
+}
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray and ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray{ ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{...} }
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+// The OCID of the compute capacity reservation to use for the override option.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) *string {
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) *string {
+		return v.Shape
+	}).(pulumi.StringPtrOutput)
+}
+
+// The shape configuration requested for the override option.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ShapeConfigDetails() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+		return v.ShapeConfigDetails
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) Index(i pulumi.IntInput) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+		return vs[0].([]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)[vs[1].(int)]
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization *string `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs *int `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus *float64 `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement *string `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus *int `pulumi:"vcpus"`
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs and ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{...}
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization pulumi.StringPtrInput `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs pulumi.IntPtrInput `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringPtrInput `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus pulumi.IntPtrInput `pulumi:"vcpus"`
+}
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput)
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray and ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray{ ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{...} }
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray []ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) *string {
+		return v.BaselineOcpuUtilization
+	}).(pulumi.StringPtrOutput)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) LocalVolumeSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) *int {
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) *float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) *int {
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the instance.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) *float64 {
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+// This field is reserved for internal use.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ResourceManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) *string {
+		return v.ResourceManagement
+	}).(pulumi.StringPtrOutput)
+}
+
+// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Vcpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) *int {
+		return v.Vcpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+		return vs[0].([]ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)[vs[1].(int)]
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs and ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{...}
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+}
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput)
+}
+
+// ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput is an input type that accepts ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray and ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput values.
+// You can construct a concrete instance of `ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput` via:
+//
+//	ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray{ ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{...} }
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput interface {
+	pulumi.Input
+
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput
+	ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray []ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return i.ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector) *string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ToClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(ctx context.Context) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o
+}
+
+func (o ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) Index(i pulumi.IntInput) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+		return vs[0].([]ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)[vs[1].(int)]
+	}).(ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput)
 }
 
 type ClusterNetworkInstancePoolPlacementConfiguration struct {
@@ -29238,6 +29957,816 @@ func (o InstancePoolLoadBalancerArrayOutput) Index(i pulumi.IntInput) InstancePo
 	}).(InstancePoolLoadBalancerOutput)
 }
 
+type InstancePoolOverridePolicy struct {
+	// (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements []InstancePoolOverridePolicyOverrideStatement `pulumi:"overrideStatements"`
+}
+
+// InstancePoolOverridePolicyInput is an input type that accepts InstancePoolOverridePolicyArgs and InstancePoolOverridePolicyOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyInput` via:
+//
+//	InstancePoolOverridePolicyArgs{...}
+type InstancePoolOverridePolicyInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOutput() InstancePoolOverridePolicyOutput
+	ToInstancePoolOverridePolicyOutputWithContext(context.Context) InstancePoolOverridePolicyOutput
+}
+
+type InstancePoolOverridePolicyArgs struct {
+	// (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements InstancePoolOverridePolicyOverrideStatementArrayInput `pulumi:"overrideStatements"`
+}
+
+func (InstancePoolOverridePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyArgs) ToInstancePoolOverridePolicyOutput() InstancePoolOverridePolicyOutput {
+	return i.ToInstancePoolOverridePolicyOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyArgs) ToInstancePoolOverridePolicyOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOutput)
+}
+
+func (i InstancePoolOverridePolicyArgs) ToInstancePoolOverridePolicyPtrOutput() InstancePoolOverridePolicyPtrOutput {
+	return i.ToInstancePoolOverridePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyArgs) ToInstancePoolOverridePolicyPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOutput).ToInstancePoolOverridePolicyPtrOutputWithContext(ctx)
+}
+
+// InstancePoolOverridePolicyPtrInput is an input type that accepts InstancePoolOverridePolicyArgs, InstancePoolOverridePolicyPtr and InstancePoolOverridePolicyPtrOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyPtrInput` via:
+//
+//	        InstancePoolOverridePolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstancePoolOverridePolicyPtrInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyPtrOutput() InstancePoolOverridePolicyPtrOutput
+	ToInstancePoolOverridePolicyPtrOutputWithContext(context.Context) InstancePoolOverridePolicyPtrOutput
+}
+
+type instancePoolOverridePolicyPtrType InstancePoolOverridePolicyArgs
+
+func InstancePoolOverridePolicyPtr(v *InstancePoolOverridePolicyArgs) InstancePoolOverridePolicyPtrInput {
+	return (*instancePoolOverridePolicyPtrType)(v)
+}
+
+func (*instancePoolOverridePolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i *instancePoolOverridePolicyPtrType) ToInstancePoolOverridePolicyPtrOutput() InstancePoolOverridePolicyPtrOutput {
+	return i.ToInstancePoolOverridePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *instancePoolOverridePolicyPtrType) ToInstancePoolOverridePolicyPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyPtrOutput)
+}
+
+type InstancePoolOverridePolicyOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOutput) ToInstancePoolOverridePolicyOutput() InstancePoolOverridePolicyOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOutput) ToInstancePoolOverridePolicyOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOutput) ToInstancePoolOverridePolicyPtrOutput() InstancePoolOverridePolicyPtrOutput {
+	return o.ToInstancePoolOverridePolicyPtrOutputWithContext(context.Background())
+}
+
+func (o InstancePoolOverridePolicyOutput) ToInstancePoolOverridePolicyPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstancePoolOverridePolicy) *InstancePoolOverridePolicy {
+		return &v
+	}).(InstancePoolOverridePolicyPtrOutput)
+}
+
+// (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+func (o InstancePoolOverridePolicyOutput) OverrideStatements() InstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicy) []InstancePoolOverridePolicyOverrideStatement {
+		return v.OverrideStatements
+	}).(InstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type InstancePoolOverridePolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyPtrOutput) ToInstancePoolOverridePolicyPtrOutput() InstancePoolOverridePolicyPtrOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyPtrOutput) ToInstancePoolOverridePolicyPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyPtrOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyPtrOutput) Elem() InstancePoolOverridePolicyOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicy) InstancePoolOverridePolicy {
+		if v != nil {
+			return *v
+		}
+		var ret InstancePoolOverridePolicy
+		return ret
+	}).(InstancePoolOverridePolicyOutput)
+}
+
+// (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+func (o InstancePoolOverridePolicyPtrOutput) OverrideStatements() InstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicy) []InstancePoolOverridePolicyOverrideStatement {
+		if v == nil {
+			return nil
+		}
+		return v.OverrideStatements
+	}).(InstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatement struct {
+	// (Updatable) The ordered list of candidate override options for the matched availability domain.
+	//
+	// Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+	OverrideOptions []InstancePoolOverridePolicyOverrideStatementOverrideOption `pulumi:"overrideOptions"`
+	// (Updatable) The selector for an override statement.
+	//
+	// In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+	Selector InstancePoolOverridePolicyOverrideStatementSelector `pulumi:"selector"`
+}
+
+// InstancePoolOverridePolicyOverrideStatementInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementArgs and InstancePoolOverridePolicyOverrideStatementOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementInput` via:
+//
+//	InstancePoolOverridePolicyOverrideStatementArgs{...}
+type InstancePoolOverridePolicyOverrideStatementInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementOutput() InstancePoolOverridePolicyOverrideStatementOutput
+	ToInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementOutput
+}
+
+type InstancePoolOverridePolicyOverrideStatementArgs struct {
+	// (Updatable) The ordered list of candidate override options for the matched availability domain.
+	//
+	// Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+	OverrideOptions InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput `pulumi:"overrideOptions"`
+	// (Updatable) The selector for an override statement.
+	//
+	// In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+	Selector InstancePoolOverridePolicyOverrideStatementSelectorInput `pulumi:"selector"`
+}
+
+func (InstancePoolOverridePolicyOverrideStatementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementArgs) ToInstancePoolOverridePolicyOverrideStatementOutput() InstancePoolOverridePolicyOverrideStatementOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementArgs) ToInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+// InstancePoolOverridePolicyOverrideStatementArrayInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementArray and InstancePoolOverridePolicyOverrideStatementArrayOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementArrayInput` via:
+//
+//	InstancePoolOverridePolicyOverrideStatementArray{ InstancePoolOverridePolicyOverrideStatementArgs{...} }
+type InstancePoolOverridePolicyOverrideStatementArrayInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementArrayOutput() InstancePoolOverridePolicyOverrideStatementArrayOutput
+	ToInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementArrayOutput
+}
+
+type InstancePoolOverridePolicyOverrideStatementArray []InstancePoolOverridePolicyOverrideStatementInput
+
+func (InstancePoolOverridePolicyOverrideStatementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementArray) ToInstancePoolOverridePolicyOverrideStatementArrayOutput() InstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementArray) ToInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOutput) ToInstancePoolOverridePolicyOverrideStatementOutput() InstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOutput) ToInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+// (Updatable) The ordered list of candidate override options for the matched availability domain.
+//
+// Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+func (o InstancePoolOverridePolicyOverrideStatementOutput) OverrideOptions() InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatement) []InstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return v.OverrideOptions
+	}).(InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+// (Updatable) The selector for an override statement.
+//
+// In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+func (o InstancePoolOverridePolicyOverrideStatementOutput) Selector() InstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatement) InstancePoolOverridePolicyOverrideStatementSelector {
+		return v.Selector
+	}).(InstancePoolOverridePolicyOverrideStatementSelectorOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementArrayOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementArrayOutput) ToInstancePoolOverridePolicyOverrideStatementArrayOutput() InstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementArrayOutput) ToInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementArrayOutput) Index(i pulumi.IntInput) InstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstancePoolOverridePolicyOverrideStatement {
+		return vs[0].([]InstancePoolOverridePolicyOverrideStatement)[vs[1].(int)]
+	}).(InstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOption struct {
+	// (Updatable) A user-friendly name for the override option.
+	Name string `pulumi:"name"`
+	// (Updatable) The concrete launch mutation payload for an override option.
+	//
+	// In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+	//
+	// Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+	//
+	// Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+	Override InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride `pulumi:"override"`
+}
+
+// InstancePoolOverridePolicyOverrideStatementOverrideOptionInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs and InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementOverrideOptionInput` via:
+//
+//	InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...}
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs struct {
+	// (Updatable) A user-friendly name for the override option.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The concrete launch mutation payload for an override option.
+	//
+	// In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+	//
+	// Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+	//
+	// Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+	Override InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput `pulumi:"override"`
+}
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+// InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementOverrideOptionArray and InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput` via:
+//
+//	InstancePoolOverridePolicyOverrideStatementOverrideOptionArray{ InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...} }
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionArray []InstancePoolOverridePolicyOverrideStatementOverrideOptionInput
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+// (Updatable) A user-friendly name for the override option.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOption) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The concrete launch mutation payload for an override option.
+//
+// In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+//
+// Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+//
+// Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Override() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOption) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+		return v.Override
+	}).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) Index(i pulumi.IntInput) InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return vs[0].([]InstancePoolOverridePolicyOverrideStatementOverrideOption)[vs[1].(int)]
+	}).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride struct {
+	// (Updatable) The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
+	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	//
+	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Shape *string `pulumi:"shape"`
+	// (Updatable) The shape configuration requested for the override option.
+	ShapeConfigDetails *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails `pulumi:"shapeConfigDetails"`
+}
+
+// InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs and InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput` via:
+//
+//	InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{...}
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs struct {
+	// (Updatable) The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
+	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	//
+	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
+	// (Updatable) The shape configuration requested for the override option.
+	ShapeConfigDetails InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrInput `pulumi:"shapeConfigDetails"`
+}
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+// (Updatable) The OCID of the compute capacity reservation to use for the override option.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) *string {
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+//
+// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) *string { return v.Shape }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The shape configuration requested for the override option.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ShapeConfigDetails() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails {
+		return v.ShapeConfigDetails
+	}).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails struct {
+	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	//
+	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization *string `pulumi:"baselineOcpuUtilization"`
+	// (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs *int `pulumi:"localVolumeSizeInGbs"`
+	// (Updatable) The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
+	// (Updatable) The total number of OCPUs available to the instance.
+	Ocpus *float64 `pulumi:"ocpus"`
+	// (Updatable) This field is reserved for internal use.
+	ResourceManagement *string `pulumi:"resourceManagement"`
+	// (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus *int `pulumi:"vcpus"`
+}
+
+// InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs and InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsInput` via:
+//
+//	InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs{...}
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs struct {
+	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	//
+	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization pulumi.StringPtrInput `pulumi:"baselineOcpuUtilization"`
+	// (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs pulumi.IntPtrInput `pulumi:"localVolumeSizeInGbs"`
+	// (Updatable) The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
+	// (Updatable) The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+	// (Updatable) This field is reserved for internal use.
+	ResourceManagement pulumi.StringPtrInput `pulumi:"resourceManagement"`
+	// (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus pulumi.IntPtrInput `pulumi:"vcpus"`
+}
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput)
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput).ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(ctx)
+}
+
+// InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs, InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtr and InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrInput` via:
+//
+//	        InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput
+	ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput
+}
+
+type instancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrType InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs
+
+func InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtr(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrInput {
+	return (*instancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrType)(v)
+}
+
+func (*instancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails)(nil)).Elem()
+}
+
+func (i *instancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrType) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *instancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrType) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return o.ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails {
+		return &v
+	}).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+//
+// The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *string {
+		return v.BaselineOcpuUtilization
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) LocalVolumeSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *int {
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total amount of memory available to the instance, in gigabytes.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *int {
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total number of OCPUs available to the instance.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *float64 {
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) This field is reserved for internal use.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) ResourceManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *string {
+		return v.ResourceManagement
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput) Vcpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *int {
+		return v.Vcpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) ToInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) Elem() InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails {
+		if v != nil {
+			return *v
+		}
+		var ret InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails
+		return ret
+	}).(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput)
+}
+
+// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+//
+// The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BaselineOcpuUtilization
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) LocalVolumeSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total amount of memory available to the instance, in gigabytes.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The total number of OCPUs available to the instance.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) This field is reserved for internal use.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) ResourceManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceManagement
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+func (o InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput) Vcpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Vcpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementSelector struct {
+	// (Updatable) The availability domain that this statement applies to.
+	//
+	// The value must match an availability domain present in the pool's `placementConfigurations`.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+}
+
+// InstancePoolOverridePolicyOverrideStatementSelectorInput is an input type that accepts InstancePoolOverridePolicyOverrideStatementSelectorArgs and InstancePoolOverridePolicyOverrideStatementSelectorOutput values.
+// You can construct a concrete instance of `InstancePoolOverridePolicyOverrideStatementSelectorInput` via:
+//
+//	InstancePoolOverridePolicyOverrideStatementSelectorArgs{...}
+type InstancePoolOverridePolicyOverrideStatementSelectorInput interface {
+	pulumi.Input
+
+	ToInstancePoolOverridePolicyOverrideStatementSelectorOutput() InstancePoolOverridePolicyOverrideStatementSelectorOutput
+	ToInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Context) InstancePoolOverridePolicyOverrideStatementSelectorOutput
+}
+
+type InstancePoolOverridePolicyOverrideStatementSelectorArgs struct {
+	// (Updatable) The availability domain that this statement applies to.
+	//
+	// The value must match an availability domain present in the pool's `placementConfigurations`.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+}
+
+func (InstancePoolOverridePolicyOverrideStatementSelectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementSelectorArgs) ToInstancePoolOverridePolicyOverrideStatementSelectorOutput() InstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return i.ToInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Background())
+}
+
+func (i InstancePoolOverridePolicyOverrideStatementSelectorArgs) ToInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOverridePolicyOverrideStatementSelectorOutput)
+}
+
+type InstancePoolOverridePolicyOverrideStatementSelectorOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolOverridePolicyOverrideStatementSelectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementSelectorOutput) ToInstancePoolOverridePolicyOverrideStatementSelectorOutput() InstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+func (o InstancePoolOverridePolicyOverrideStatementSelectorOutput) ToInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) InstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+// (Updatable) The availability domain that this statement applies to.
+//
+// The value must match an availability domain present in the pool's `placementConfigurations`.
+func (o InstancePoolOverridePolicyOverrideStatementSelectorOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v InstancePoolOverridePolicyOverrideStatementSelector) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
 type InstancePoolPlacementConfiguration struct {
 	// (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -49206,6 +50735,8 @@ type GetClusterNetworkInstancePool struct {
 	InstanceHostnameFormatter    string `pulumi:"instanceHostnameFormatter"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers []GetClusterNetworkInstancePoolLoadBalancer `pulumi:"loadBalancers"`
+	// Optional pool-level launch override policy for future instance launches.
+	OverridePolicies []GetClusterNetworkInstancePoolOverridePolicy `pulumi:"overridePolicies"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations []GetClusterNetworkInstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// The type of resources managed by the pool.
@@ -49248,6 +50779,8 @@ type GetClusterNetworkInstancePoolArgs struct {
 	InstanceHostnameFormatter    pulumi.StringInput `pulumi:"instanceHostnameFormatter"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers GetClusterNetworkInstancePoolLoadBalancerArrayInput `pulumi:"loadBalancers"`
+	// Optional pool-level launch override policy for future instance launches.
+	OverridePolicies GetClusterNetworkInstancePoolOverridePolicyArrayInput `pulumi:"overridePolicies"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations GetClusterNetworkInstancePoolPlacementConfigurationArrayInput `pulumi:"placementConfigurations"`
 	// The type of resources managed by the pool.
@@ -49361,6 +50894,13 @@ func (o GetClusterNetworkInstancePoolOutput) LoadBalancers() GetClusterNetworkIn
 	}).(GetClusterNetworkInstancePoolLoadBalancerArrayOutput)
 }
 
+// Optional pool-level launch override policy for future instance launches.
+func (o GetClusterNetworkInstancePoolOutput) OverridePolicies() GetClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePool) []GetClusterNetworkInstancePoolOverridePolicy {
+		return v.OverridePolicies
+	}).(GetClusterNetworkInstancePoolOverridePolicyArrayOutput)
+}
+
 // The placement configurations for the instance pool.
 func (o GetClusterNetworkInstancePoolOutput) PlacementConfigurations() GetClusterNetworkInstancePoolPlacementConfigurationArrayOutput {
 	return o.ApplyT(func(v GetClusterNetworkInstancePool) []GetClusterNetworkInstancePoolPlacementConfiguration {
@@ -49420,8 +50960,7 @@ type GetClusterNetworkInstancePoolLoadBalancer struct {
 	// The port value used for the backends.
 	Port int `pulumi:"port"`
 	// The current state of the cluster network.
-	State string `pulumi:"state"`
-	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	State         string `pulumi:"state"`
 	VnicSelection string `pulumi:"vnicSelection"`
 }
 
@@ -49448,8 +50987,7 @@ type GetClusterNetworkInstancePoolLoadBalancerArgs struct {
 	// The port value used for the backends.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The current state of the cluster network.
-	State pulumi.StringInput `pulumi:"state"`
-	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	State         pulumi.StringInput `pulumi:"state"`
 	VnicSelection pulumi.StringInput `pulumi:"vnicSelection"`
 }
 
@@ -49534,7 +51072,6 @@ func (o GetClusterNetworkInstancePoolLoadBalancerOutput) State() pulumi.StringOu
 	return o.ApplyT(func(v GetClusterNetworkInstancePoolLoadBalancer) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
 func (o GetClusterNetworkInstancePoolLoadBalancerOutput) VnicSelection() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNetworkInstancePoolLoadBalancer) string { return v.VnicSelection }).(pulumi.StringOutput)
 }
@@ -49557,6 +51094,719 @@ func (o GetClusterNetworkInstancePoolLoadBalancerArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkInstancePoolLoadBalancer {
 		return vs[0].([]GetClusterNetworkInstancePoolLoadBalancer)[vs[1].(int)]
 	}).(GetClusterNetworkInstancePoolLoadBalancerOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicy struct {
+	// The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements []GetClusterNetworkInstancePoolOverridePolicyOverrideStatement `pulumi:"overrideStatements"`
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyArgs and GetClusterNetworkInstancePoolOverridePolicyOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyArgs{...}
+type GetClusterNetworkInstancePoolOverridePolicyInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOutput() GetClusterNetworkInstancePoolOverridePolicyOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyArgs struct {
+	// The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput `pulumi:"overrideStatements"`
+}
+
+func (GetClusterNetworkInstancePoolOverridePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyArgs) ToGetClusterNetworkInstancePoolOverridePolicyOutput() GetClusterNetworkInstancePoolOverridePolicyOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyArgs) ToGetClusterNetworkInstancePoolOverridePolicyOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOutput)
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyArrayInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyArray and GetClusterNetworkInstancePoolOverridePolicyArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyArrayInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyArray{ GetClusterNetworkInstancePoolOverridePolicyArgs{...} }
+type GetClusterNetworkInstancePoolOverridePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyArrayOutput() GetClusterNetworkInstancePoolOverridePolicyArrayOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyArrayOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyArray []GetClusterNetworkInstancePoolOverridePolicyInput
+
+func (GetClusterNetworkInstancePoolOverridePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyArray) ToGetClusterNetworkInstancePoolOverridePolicyArrayOutput() GetClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyArray) ToGetClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOutput) ToGetClusterNetworkInstancePoolOverridePolicyOutput() GetClusterNetworkInstancePoolOverridePolicyOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOutput) ToGetClusterNetworkInstancePoolOverridePolicyOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOutput {
+	return o
+}
+
+// The ordered set of availability domain-scoped override statements for this policy.
+func (o GetClusterNetworkInstancePoolOverridePolicyOutput) OverrideStatements() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicy) []GetClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+		return v.OverrideStatements
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyArrayOutput() GetClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyArrayOutput) Index(i pulumi.IntInput) GetClusterNetworkInstancePoolOverridePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkInstancePoolOverridePolicy {
+		return vs[0].([]GetClusterNetworkInstancePoolOverridePolicy)[vs[1].(int)]
+	}).(GetClusterNetworkInstancePoolOverridePolicyOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatement struct {
+	// A user-friendly name for the override option.
+	Name string `pulumi:"name"`
+	// The ordered list of candidate override options for the matched availability domain.
+	OverrideOptions []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption `pulumi:"overrideOptions"`
+	// The selector for an override statement.
+	Selectors []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector `pulumi:"selectors"`
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{...}
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs struct {
+	// A user-friendly name for the override option.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The ordered list of candidate override options for the matched availability domain.
+	OverrideOptions GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput `pulumi:"overrideOptions"`
+	// The selector for an override statement.
+	Selectors GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput `pulumi:"selectors"`
+}
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArray and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArray{ GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{...} }
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArray []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementInput
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+// A user-friendly name for the override option.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatement) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The ordered list of candidate override options for the matched availability domain.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) OverrideOptions() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatement) []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return v.OverrideOptions
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+// The selector for an override statement.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) Selectors() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatement) []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+		return v.Selectors
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) Index(i pulumi.IntInput) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+		return vs[0].([]GetClusterNetworkInstancePoolOverridePolicyOverrideStatement)[vs[1].(int)]
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption struct {
+	// A user-friendly name for the override option.
+	Name string `pulumi:"name"`
+	// The concrete launch mutation payload for an override option.
+	Overrides []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride `pulumi:"overrides"`
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...}
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs struct {
+	// A user-friendly name for the override option.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The concrete launch mutation payload for an override option.
+	Overrides GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput `pulumi:"overrides"`
+}
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray{ GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...} }
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+// A user-friendly name for the override option.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The concrete launch mutation payload for an override option.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Overrides() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption) []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+		return v.Overrides
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) Index(i pulumi.IntInput) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return vs[0].([]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)[vs[1].(int)]
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride struct {
+	// The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the override option.
+	ShapeConfigDetails []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail `pulumi:"shapeConfigDetails"`
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{...}
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs struct {
+	// The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the override option.
+	ShapeConfigDetails GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
+}
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray{ GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{...} }
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+// The OCID of the compute capacity reservation to use for the override option.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) string {
+		return v.Shape
+	}).(pulumi.StringOutput)
+}
+
+// The shape configuration requested for the override option.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ShapeConfigDetails() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+		return v.ShapeConfigDetails
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) Index(i pulumi.IntInput) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+		return vs[0].([]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)[vs[1].(int)]
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement string `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus int `pulumi:"vcpus"`
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{...}
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus pulumi.IntInput `pulumi:"vcpus"`
+}
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput)
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray{ GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{...} }
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) BaselineOcpuUtilization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) string {
+		return v.BaselineOcpuUtilization
+	}).(pulumi.StringOutput)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) int {
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) int {
+		return v.Nvmes
+	}).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the instance.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+// This field is reserved for internal use.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ResourceManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) string {
+		return v.ResourceManagement
+	}).(pulumi.StringOutput)
+}
+
+// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Vcpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) int {
+		return v.Vcpus
+	}).(pulumi.IntOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+		return vs[0].([]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)[vs[1].(int)]
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{...}
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+}
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput)
+}
+
+// GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput is an input type that accepts GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray and GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput` via:
+//
+//	GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray{ GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{...} }
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput
+	ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray []GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return i.ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+type GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ToGetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(ctx context.Context) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) Index(i pulumi.IntInput) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+		return vs[0].([]GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)[vs[1].(int)]
+	}).(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput)
 }
 
 type GetClusterNetworkInstancePoolPlacementConfiguration struct {
@@ -51490,6 +53740,8 @@ type GetClusterNetworksClusterNetworkInstancePool struct {
 	InstanceHostnameFormatter    string `pulumi:"instanceHostnameFormatter"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers []GetClusterNetworksClusterNetworkInstancePoolLoadBalancer `pulumi:"loadBalancers"`
+	// Optional pool-level launch override policy for future instance launches.
+	OverridePolicies []GetClusterNetworksClusterNetworkInstancePoolOverridePolicy `pulumi:"overridePolicies"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations []GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// The type of resources managed by the pool.
@@ -51532,6 +53784,8 @@ type GetClusterNetworksClusterNetworkInstancePoolArgs struct {
 	InstanceHostnameFormatter    pulumi.StringInput `pulumi:"instanceHostnameFormatter"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArrayInput `pulumi:"loadBalancers"`
+	// Optional pool-level launch override policy for future instance launches.
+	OverridePolicies GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayInput `pulumi:"overridePolicies"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationArrayInput `pulumi:"placementConfigurations"`
 	// The type of resources managed by the pool.
@@ -51645,6 +53899,13 @@ func (o GetClusterNetworksClusterNetworkInstancePoolOutput) LoadBalancers() GetC
 	}).(GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArrayOutput)
 }
 
+// Optional pool-level launch override policy for future instance launches.
+func (o GetClusterNetworksClusterNetworkInstancePoolOutput) OverridePolicies() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePool) []GetClusterNetworksClusterNetworkInstancePoolOverridePolicy {
+		return v.OverridePolicies
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput)
+}
+
 // The placement configurations for the instance pool.
 func (o GetClusterNetworksClusterNetworkInstancePoolOutput) PlacementConfigurations() GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationArrayOutput {
 	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePool) []GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration {
@@ -51704,8 +53965,7 @@ type GetClusterNetworksClusterNetworkInstancePoolLoadBalancer struct {
 	// The port value used for the backends.
 	Port int `pulumi:"port"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
-	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	State         string `pulumi:"state"`
 	VnicSelection string `pulumi:"vnicSelection"`
 }
 
@@ -51732,8 +53992,7 @@ type GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArgs struct {
 	// The port value used for the backends.
 	Port pulumi.IntInput `pulumi:"port"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
-	// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
+	State         pulumi.StringInput `pulumi:"state"`
 	VnicSelection pulumi.StringInput `pulumi:"vnicSelection"`
 }
 
@@ -51818,7 +54077,6 @@ func (o GetClusterNetworksClusterNetworkInstancePoolLoadBalancerOutput) State() 
 	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolLoadBalancer) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
 func (o GetClusterNetworksClusterNetworkInstancePoolLoadBalancerOutput) VnicSelection() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolLoadBalancer) string { return v.VnicSelection }).(pulumi.StringOutput)
 }
@@ -51841,6 +54099,721 @@ func (o GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArrayOutput) Ind
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworksClusterNetworkInstancePoolLoadBalancer {
 		return vs[0].([]GetClusterNetworksClusterNetworkInstancePoolLoadBalancer)[vs[1].(int)]
 	}).(GetClusterNetworksClusterNetworkInstancePoolLoadBalancerOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicy struct {
+	// The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement `pulumi:"overrideStatements"`
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs{...}
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs struct {
+	// The ordered set of availability domain-scoped override statements for this policy.
+	OverrideStatements GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput `pulumi:"overrideStatements"`
+}
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput)
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArray and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArray{ GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs{...} }
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArray []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyInput
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput {
+	return o
+}
+
+// The ordered set of availability domain-scoped override statements for this policy.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput) OverrideStatements() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicy) []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+		return v.OverrideStatements
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicy)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput) Index(i pulumi.IntInput) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworksClusterNetworkInstancePoolOverridePolicy {
+		return vs[0].([]GetClusterNetworksClusterNetworkInstancePoolOverridePolicy)[vs[1].(int)]
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement struct {
+	// A user-friendly name for the override option.
+	Name string `pulumi:"name"`
+	// The ordered list of candidate override options for the matched availability domain.
+	OverrideOptions []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption `pulumi:"overrideOptions"`
+	// The selector for an override statement.
+	Selectors []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector `pulumi:"selectors"`
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{...}
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs struct {
+	// A user-friendly name for the override option.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The ordered list of candidate override options for the matched availability domain.
+	OverrideOptions GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput `pulumi:"overrideOptions"`
+	// The selector for an override statement.
+	Selectors GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput `pulumi:"selectors"`
+}
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArray and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArray{ GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{...} }
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArray []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementInput
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return o
+}
+
+// A user-friendly name for the override option.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The ordered list of candidate override options for the matched availability domain.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) OverrideOptions() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement) []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return v.OverrideOptions
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+// The selector for an override statement.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput) Selectors() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement) []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+		return v.Selectors
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput) Index(i pulumi.IntInput) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+		return vs[0].([]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement)[vs[1].(int)]
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption struct {
+	// A user-friendly name for the override option.
+	Name string `pulumi:"name"`
+	// The concrete launch mutation payload for an override option.
+	Overrides []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride `pulumi:"overrides"`
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...}
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs struct {
+	// A user-friendly name for the override option.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The concrete launch mutation payload for an override option.
+	Overrides GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput `pulumi:"overrides"`
+}
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray{ GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{...} }
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return o
+}
+
+// A user-friendly name for the override option.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The concrete launch mutation payload for an override option.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput) Overrides() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption) []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+		return v.Overrides
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput) Index(i pulumi.IntInput) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+		return vs[0].([]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption)[vs[1].(int)]
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride struct {
+	// The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the override option.
+	ShapeConfigDetails []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail `pulumi:"shapeConfigDetails"`
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{...}
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs struct {
+	// The OCID of the compute capacity reservation to use for the override option.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the override option.
+	ShapeConfigDetails GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
+}
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray{ GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{...} }
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return o
+}
+
+// The OCID of the compute capacity reservation to use for the override option.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) string {
+		return v.Shape
+	}).(pulumi.StringOutput)
+}
+
+// The shape configuration requested for the override option.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput) ShapeConfigDetails() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride) []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+		return v.ShapeConfigDetails
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput) Index(i pulumi.IntInput) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+		return vs[0].([]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride)[vs[1].(int)]
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement string `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus int `pulumi:"vcpus"`
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{...}
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus pulumi.IntInput `pulumi:"vcpus"`
+}
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput)
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray{ GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{...} }
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) BaselineOcpuUtilization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) string {
+		return v.BaselineOcpuUtilization
+	}).(pulumi.StringOutput)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) int {
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) int {
+		return v.Nvmes
+	}).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the instance.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+// This field is reserved for internal use.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) ResourceManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) string {
+		return v.ResourceManagement
+	}).(pulumi.StringOutput)
+}
+
+// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput) Vcpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail) int {
+		return v.Vcpus
+	}).(pulumi.IntOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+		return vs[0].([]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail)[vs[1].(int)]
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{...}
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+}
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput)
+}
+
+// GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput is an input type that accepts GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray and GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput` via:
+//
+//	GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray{ GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{...} }
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput
+	ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray []GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return i.ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return o
+}
+
+// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+type GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)(nil)).Elem()
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput() GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) ToGetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutputWithContext(ctx context.Context) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput) Index(i pulumi.IntInput) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+		return vs[0].([]GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector)[vs[1].(int)]
+	}).(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput)
 }
 
 type GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration struct {
@@ -53034,6 +56007,7 @@ func (o GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubne
 }
 
 type GetClusterNetworksFilter struct {
+	// A user-friendly name for the override option.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -53051,6 +56025,7 @@ type GetClusterNetworksFilterInput interface {
 }
 
 type GetClusterNetworksFilterArgs struct {
+	// A user-friendly name for the override option.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -53107,6 +56082,7 @@ func (o GetClusterNetworksFilterOutput) ToGetClusterNetworksFilterOutputWithCont
 	return o
 }
 
+// A user-friendly name for the override option.
 func (o GetClusterNetworksFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNetworksFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -74779,3630 +77755,6 @@ func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput
 	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput)
 }
 
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy struct {
-	// This specifies the type of autotunes supported by OCI.
-	AutotuneType string `pulumi:"autotuneType"`
-	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-	MaxVpusPerGb string `pulumi:"maxVpusPerGb"`
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs{...}
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs struct {
-	// This specifies the type of autotunes supported by OCI.
-	AutotuneType pulumi.StringInput `pulumi:"autotuneType"`
-	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-	MaxVpusPerGb pulumi.StringInput `pulumi:"maxVpusPerGb"`
-}
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArray and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArray{ GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs{...} }
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArray []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyInput
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput {
-	return o
-}
-
-// This specifies the type of autotunes supported by OCI.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput) AutotuneType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy) string {
-		return v.AutotuneType
-	}).(pulumi.StringOutput)
-}
-
-// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput) MaxVpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy) string {
-		return v.MaxVpusPerGb
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica struct {
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs{...}
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs struct {
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-}
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArray and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArray{ GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs{...} }
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArray []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaInput
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return o
-}
-
-// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica) string {
-		return v.AvailabilityDomain
-	}).(pulumi.StringOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail struct {
-	// The OCID of the volume backup.
-	Id string `pulumi:"id"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs struct {
-	// The OCID of the volume backup.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArray and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArray{ GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArray []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailInput
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput {
-	return o
-}
-
-// The OCID of the volume backup.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetail struct {
-	// Configuration options for the Oracle Cloud Agent software running on the instance.
-	AgentConfigs []GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig `pulumi:"agentConfigs"`
-	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-	AvailabilityConfigs []GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig `pulumi:"availabilityConfigs"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The OCID of the compute capacity reservation this instance is launched under.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId string `pulumi:"compartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-	ComputeClusterId string `pulumi:"computeClusterId"`
-	// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-	CreateVnicDetails []GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail `pulumi:"createVnicDetails"`
-	// The OCID of the dedicated virtual machine host to place the instance on.
-	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
-	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-	FaultDomain string `pulumi:"faultDomain"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-	InstanceOptions []GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption `pulumi:"instanceOptions"`
-	// This is an advanced option.
-	IpxeScript string `pulumi:"ipxeScript"`
-	// Whether to enable AI enterprise on the instance.
-	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-	LaunchMode string `pulumi:"launchMode"`
-	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-	LaunchOptions []GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption `pulumi:"launchOptions"`
-	// List of licensing configurations associated with target launch values.
-	LicensingConfigs []GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig `pulumi:"licensingConfigs"`
-	// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-	Metadata map[string]string `pulumi:"metadata"`
-	// The details for providing placement constraints.
-	PlacementConstraintDetails []GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail `pulumi:"placementConstraintDetails"`
-	// The platform configuration requested for the instance.
-	PlatformConfigs []GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig `pulumi:"platformConfigs"`
-	// Configuration options for preemptible instances.
-	PreemptibleInstanceConfigs []GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfigs"`
-	// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-	// * `LIVE_MIGRATE` - Run maintenance using a live migration.
-	// * `REBOOT` - Run maintenance using a reboot.
-	PreferredMaintenanceAction string `pulumi:"preferredMaintenanceAction"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-	Shape string `pulumi:"shape"`
-	// The shape configuration requested for the instance.
-	ShapeConfigs  []GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig  `pulumi:"shapeConfigs"`
-	SourceDetails []GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail `pulumi:"sourceDetails"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailArgs and GetInstanceConfigurationInstanceDetailLaunchDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailArgs struct {
-	// Configuration options for the Oracle Cloud Agent software running on the instance.
-	AgentConfigs GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayInput `pulumi:"agentConfigs"`
-	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-	AvailabilityConfigs GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput `pulumi:"availabilityConfigs"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// The OCID of the compute capacity reservation this instance is launched under.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-	ComputeClusterId pulumi.StringInput `pulumi:"computeClusterId"`
-	// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-	CreateVnicDetails GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput `pulumi:"createVnicDetails"`
-	// The OCID of the dedicated virtual machine host to place the instance on.
-	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata pulumi.StringMapInput `pulumi:"extendedMetadata"`
-	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-	InstanceOptions GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput `pulumi:"instanceOptions"`
-	// This is an advanced option.
-	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
-	// Whether to enable AI enterprise on the instance.
-	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
-	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-	LaunchOptions GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput `pulumi:"launchOptions"`
-	// List of licensing configurations associated with target launch values.
-	LicensingConfigs GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput `pulumi:"licensingConfigs"`
-	// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-	Metadata pulumi.StringMapInput `pulumi:"metadata"`
-	// The details for providing placement constraints.
-	PlacementConstraintDetails GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput `pulumi:"placementConstraintDetails"`
-	// The platform configuration requested for the instance.
-	PlatformConfigs GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput `pulumi:"platformConfigs"`
-	// Configuration options for preemptible instances.
-	PreemptibleInstanceConfigs GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput `pulumi:"preemptibleInstanceConfigs"`
-	// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-	// * `LIVE_MIGRATE` - Run maintenance using a live migration.
-	// * `REBOOT` - Run maintenance using a reboot.
-	PreferredMaintenanceAction pulumi.StringInput `pulumi:"preferredMaintenanceAction"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
-	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// The shape configuration requested for the instance.
-	ShapeConfigs  GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayInput  `pulumi:"shapeConfigs"`
-	SourceDetails GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayInput `pulumi:"sourceDetails"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailArray and GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailArray{ GetInstanceConfigurationInstanceDetailLaunchDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailArray []GetInstanceConfigurationInstanceDetailLaunchDetailInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailOutput {
-	return o
-}
-
-// Configuration options for the Oracle Cloud Agent software running on the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) AgentConfigs() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig {
-		return v.AgentConfigs
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput)
-}
-
-// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) AvailabilityConfigs() GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig {
-		return v.AvailabilityConfigs
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput)
-}
-
-// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
-}
-
-// The OCID of the compute capacity reservation this instance is launched under.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
-}
-
-// The OCID of the cluster placement group of the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) ClusterPlacementGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
-}
-
-// The OCID of the compartment containing images to search
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) ComputeClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.ComputeClusterId }).(pulumi.StringOutput)
-}
-
-// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) CreateVnicDetails() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail {
-		return v.CreateVnicDetails
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput)
-}
-
-// The OCID of the dedicated virtual machine host to place the instance on.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) DedicatedVmHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.DedicatedVmHostId }).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) ExtendedMetadata() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) map[string]string {
-		return v.ExtendedMetadata
-	}).(pulumi.StringMapOutput)
-}
-
-// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.FaultDomain }).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
-}
-
-// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) InstanceOptions() GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption {
-		return v.InstanceOptions
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput)
-}
-
-// This is an advanced option.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) IpxeScript() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.IpxeScript }).(pulumi.StringOutput)
-}
-
-// Whether to enable AI enterprise on the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) IsAiEnterpriseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) bool { return v.IsAiEnterpriseEnabled }).(pulumi.BoolOutput)
-}
-
-// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) bool {
-		return v.IsPvEncryptionInTransitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
-// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) LaunchMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.LaunchMode }).(pulumi.StringOutput)
-}
-
-// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) LaunchOptions() GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption {
-		return v.LaunchOptions
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput)
-}
-
-// List of licensing configurations associated with target launch values.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) LicensingConfigs() GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig {
-		return v.LicensingConfigs
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput)
-}
-
-// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) Metadata() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
-}
-
-// The details for providing placement constraints.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) PlacementConstraintDetails() GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail {
-		return v.PlacementConstraintDetails
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput)
-}
-
-// The platform configuration requested for the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) PlatformConfigs() GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig {
-		return v.PlatformConfigs
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput)
-}
-
-// Configuration options for preemptible instances.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) PreemptibleInstanceConfigs() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig {
-		return v.PreemptibleInstanceConfigs
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput)
-}
-
-// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
-// * `LIVE_MIGRATE` - Run maintenance using a live migration.
-// * `REBOOT` - Run maintenance using a reboot.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) PreferredMaintenanceAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.PreferredMaintenanceAction }).(pulumi.StringOutput)
-}
-
-// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) map[string]string {
-		return v.SecurityAttributes
-	}).(pulumi.StringMapOutput)
-}
-
-// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// The shape configuration requested for the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) ShapeConfigs() GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig {
-		return v.ShapeConfigs
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput)
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailOutput) SourceDetails() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail {
-		return v.SourceDetails
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig struct {
-	// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-	AreAllPluginsDisabled bool `pulumi:"areAllPluginsDisabled"`
-	// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-	IsManagementDisabled bool `pulumi:"isManagementDisabled"`
-	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-	IsMonitoringDisabled bool `pulumi:"isMonitoringDisabled"`
-	// The configuration of plugins associated with this instance.
-	PluginsConfigs []GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig `pulumi:"pluginsConfigs"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs and GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs struct {
-	// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-	AreAllPluginsDisabled pulumi.BoolInput `pulumi:"areAllPluginsDisabled"`
-	// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-	IsManagementDisabled pulumi.BoolInput `pulumi:"isManagementDisabled"`
-	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-	IsMonitoringDisabled pulumi.BoolInput `pulumi:"isMonitoringDisabled"`
-	// The configuration of plugins associated with this instance.
-	PluginsConfigs GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput `pulumi:"pluginsConfigs"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArray and GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArray{ GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArray []GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput {
-	return o
-}
-
-// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput) AreAllPluginsDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig) bool {
-		return v.AreAllPluginsDisabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput) IsManagementDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig) bool {
-		return v.IsManagementDisabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput) IsMonitoringDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig) bool {
-		return v.IsMonitoringDisabled
-	}).(pulumi.BoolOutput)
-}
-
-// The configuration of plugins associated with this instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput) PluginsConfigs() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig) []GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig {
-		return v.PluginsConfigs
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig struct {
-	// Whether the plugin should be enabled or disabled.
-	DesiredState string `pulumi:"desiredState"`
-	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-	Name string `pulumi:"name"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs and GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs struct {
-	// Whether the plugin should be enabled or disabled.
-	DesiredState pulumi.StringInput `pulumi:"desiredState"`
-	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray and GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray{ GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray []GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
-	return o
-}
-
-// Whether the plugin should be enabled or disabled.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) DesiredState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig) string {
-		return v.DesiredState
-	}).(pulumi.StringOutput)
-}
-
-// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig) string {
-		return v.Name
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig struct {
-	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-	IsLiveMigrationPreferred bool `pulumi:"isLiveMigrationPreferred"`
-	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
-	RecoveryAction string `pulumi:"recoveryAction"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs and GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs struct {
-	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-	IsLiveMigrationPreferred pulumi.BoolInput `pulumi:"isLiveMigrationPreferred"`
-	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
-	RecoveryAction pulumi.StringInput `pulumi:"recoveryAction"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray and GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray{ GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray []GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
-	return o
-}
-
-// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) IsLiveMigrationPreferred() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig) bool {
-		return v.IsLiveMigrationPreferred
-	}).(pulumi.BoolOutput)
-}
-
-// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput) RecoveryAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig) string {
-		return v.RecoveryAction
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail struct {
-	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-	AssignIpv6ip bool `pulumi:"assignIpv6ip"`
-	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPrivateDnsRecord bool `pulumi:"assignPrivateDnsRecord"`
-	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPublicIp bool `pulumi:"assignPublicIp"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	HostnameLabel string `pulumi:"hostnameLabel"`
-	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-	Ipv6addressIpv6subnetCidrPairDetails []GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
-	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-	NsgIds []string `pulumi:"nsgIds"`
-	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIp string `pulumi:"privateIp"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIpId string `pulumi:"privateIpId"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
-	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetCidr string `pulumi:"subnetCidr"`
-	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs and GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs struct {
-	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-	AssignIpv6ip pulumi.BoolInput `pulumi:"assignIpv6ip"`
-	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPrivateDnsRecord pulumi.BoolInput `pulumi:"assignPrivateDnsRecord"`
-	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
-	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-	Ipv6addressIpv6subnetCidrPairDetails GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
-	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
-	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
-	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetCidr pulumi.StringInput `pulumi:"subnetCidr"`
-	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray and GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray{ GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray []GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
-	return o
-}
-
-// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool { return v.AssignIpv6ip }).(pulumi.BoolOutput)
-}
-
-// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) AssignPrivateDnsRecord() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool {
-		return v.AssignPrivateDnsRecord
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) AssignPublicIp() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool {
-		return v.AssignPublicIp
-	}).(pulumi.BoolOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
-		return v.HostnameLabel
-	}).(pulumi.StringOutput)
-}
-
-// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) Ipv6addressIpv6subnetCidrPairDetails() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
-		return v.Ipv6addressIpv6subnetCidrPairDetails
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
-}
-
-// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
-}
-
-// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
-}
-
-// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
-		return v.PrivateIpId
-	}).(pulumi.StringOutput)
-}
-
-// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) map[string]string {
-		return v.SecurityAttributes
-	}).(pulumi.StringMapOutput)
-}
-
-// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) bool {
-		return v.SkipSourceDestCheck
-	}).(pulumi.BoolOutput)
-}
-
-// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string { return v.SubnetCidr }).(pulumi.StringOutput)
-}
-
-// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
-	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-	Ipv6address string `pulumi:"ipv6address"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
-	Ipv6id string `pulumi:"ipv6id"`
-	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
-	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
-	Ipv6id pulumi.StringInput `pulumi:"ipv6id"`
-	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{ GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray []GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return o
-}
-
-// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6address
-	}).(pulumi.StringOutput)
-}
-
-// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6id
-	}).(pulumi.StringOutput)
-}
-
-// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6subnetCidr
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption struct {
-	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-	AreLegacyImdsEndpointsDisabled bool `pulumi:"areLegacyImdsEndpointsDisabled"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs and GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs struct {
-	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-	AreLegacyImdsEndpointsDisabled pulumi.BoolInput `pulumi:"areLegacyImdsEndpointsDisabled"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray and GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray{ GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray []GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
-	return o
-}
-
-// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput) AreLegacyImdsEndpointsDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption) bool {
-		return v.AreLegacyImdsEndpointsDisabled
-	}).(pulumi.BoolOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOption)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption struct {
-	// Emulation type for the boot volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	// * `NVME` - NVMe attached remote block storage device.
-	BootVolumeType string `pulumi:"bootVolumeType"`
-	// Firmware used to boot VM. Select the option that matches your operating system.
-	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
-	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
-	Firmware string `pulumi:"firmware"`
-	// Whether to enable consistent volume naming feature. Defaults to false.
-	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Whether in-transit encryption for the data volume's attachment is enabled or not.
-	IsEncryptionInTransitEnabled bool `pulumi:"isEncryptionInTransitEnabled"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Emulation type for the physical network interface card (NIC).
-	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
-	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	NetworkType string `pulumi:"networkType"`
-	// Emulation type for volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	// * `NVME` - NVMe attached remote block storage device.
-	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs and GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs struct {
-	// Emulation type for the boot volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	// * `NVME` - NVMe attached remote block storage device.
-	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
-	// Firmware used to boot VM. Select the option that matches your operating system.
-	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
-	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
-	Firmware pulumi.StringInput `pulumi:"firmware"`
-	// Whether to enable consistent volume naming feature. Defaults to false.
-	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Whether in-transit encryption for the data volume's attachment is enabled or not.
-	IsEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isEncryptionInTransitEnabled"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Emulation type for the physical network interface card (NIC).
-	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
-	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// Emulation type for volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	// * `NVME` - NVMe attached remote block storage device.
-	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray and GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray{ GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray []GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
-	return o
-}
-
-// Emulation type for the boot volume.
-// * `ISCSI` - ISCSI attached block storage device.
-// * `SCSI` - Emulated SCSI disk.
-// * `IDE` - Emulated IDE disk.
-// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-// * `NVME` - NVMe attached remote block storage device.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string { return v.BootVolumeType }).(pulumi.StringOutput)
-}
-
-// Firmware used to boot VM. Select the option that matches your operating system.
-// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
-// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) Firmware() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string { return v.Firmware }).(pulumi.StringOutput)
-}
-
-// Whether to enable consistent volume naming feature. Defaults to false.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) IsConsistentVolumeNamingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) bool {
-		return v.IsConsistentVolumeNamingEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether in-transit encryption for the data volume's attachment is enabled or not.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) IsEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) bool {
-		return v.IsEncryptionInTransitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) bool {
-		return v.IsPvEncryptionInTransitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Emulation type for the physical network interface card (NIC).
-// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
-// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
-// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string { return v.NetworkType }).(pulumi.StringOutput)
-}
-
-// Emulation type for volume.
-// * `ISCSI` - ISCSI attached block storage device.
-// * `SCSI` - Emulated SCSI disk.
-// * `IDE` - Emulated IDE disk.
-// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-// * `NVME` - NVMe attached remote block storage device.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
-		return v.RemoteDataVolumeType
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOption)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig struct {
-	// License Type for the OS license.
-	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
-	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
-	// * `PARTNER_PROVIDED` - Partner provided license.
-	LicenseType string `pulumi:"licenseType"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs and GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs struct {
-	// License Type for the OS license.
-	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
-	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
-	// * `PARTNER_PROVIDED` - Partner provided license.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray and GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray{ GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray []GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
-	return o
-}
-
-// License Type for the OS license.
-// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
-// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
-// * `PARTNER_PROVIDED` - Partner provided license.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig) string { return v.LicenseType }).(pulumi.StringOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail struct {
-	// The OCID of the compute host group. This is only available for dedicated capacity customers.
-	ComputeHostGroupId string `pulumi:"computeHostGroupId"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs and GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs struct {
-	// The OCID of the compute host group. This is only available for dedicated capacity customers.
-	ComputeHostGroupId pulumi.StringInput `pulumi:"computeHostGroupId"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray and GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray{ GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray []GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
-	return o
-}
-
-// The OCID of the compute host group. This is only available for dedicated capacity customers.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) ComputeHostGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail) string {
-		return v.ComputeHostGroupId
-	}).(pulumi.StringOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig struct {
-	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-	AreVirtualInstructionsEnabled bool `pulumi:"areVirtualInstructionsEnabled"`
-	// Instance Platform Configuration Configuration Map for flexible setting input.
-	ConfigMap map[string]string `pulumi:"configMap"`
-	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-	IsAccessControlServiceEnabled bool `pulumi:"isAccessControlServiceEnabled"`
-	// Whether the input-output memory management unit is enabled.
-	IsInputOutputMemoryManagementUnitEnabled bool `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
-	// Whether the Measured Boot feature is enabled on the instance.
-	IsMeasuredBootEnabled bool `pulumi:"isMeasuredBootEnabled"`
-	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-	IsMemoryEncryptionEnabled bool `pulumi:"isMemoryEncryptionEnabled"`
-	// Whether Secure Boot is enabled on the instance.
-	IsSecureBootEnabled bool `pulumi:"isSecureBootEnabled"`
-	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-	IsSymmetricMultiThreadingEnabled bool `pulumi:"isSymmetricMultiThreadingEnabled"`
-	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
-	IsTrustedPlatformModuleEnabled bool `pulumi:"isTrustedPlatformModuleEnabled"`
-	// The number of NUMA nodes per socket (NPS).
-	NumaNodesPerSocket string `pulumi:"numaNodesPerSocket"`
-	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-	PercentageOfCoresEnabled int `pulumi:"percentageOfCoresEnabled"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs and GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs struct {
-	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-	AreVirtualInstructionsEnabled pulumi.BoolInput `pulumi:"areVirtualInstructionsEnabled"`
-	// Instance Platform Configuration Configuration Map for flexible setting input.
-	ConfigMap pulumi.StringMapInput `pulumi:"configMap"`
-	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-	IsAccessControlServiceEnabled pulumi.BoolInput `pulumi:"isAccessControlServiceEnabled"`
-	// Whether the input-output memory management unit is enabled.
-	IsInputOutputMemoryManagementUnitEnabled pulumi.BoolInput `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
-	// Whether the Measured Boot feature is enabled on the instance.
-	IsMeasuredBootEnabled pulumi.BoolInput `pulumi:"isMeasuredBootEnabled"`
-	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-	IsMemoryEncryptionEnabled pulumi.BoolInput `pulumi:"isMemoryEncryptionEnabled"`
-	// Whether Secure Boot is enabled on the instance.
-	IsSecureBootEnabled pulumi.BoolInput `pulumi:"isSecureBootEnabled"`
-	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-	IsSymmetricMultiThreadingEnabled pulumi.BoolInput `pulumi:"isSymmetricMultiThreadingEnabled"`
-	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
-	IsTrustedPlatformModuleEnabled pulumi.BoolInput `pulumi:"isTrustedPlatformModuleEnabled"`
-	// The number of NUMA nodes per socket (NPS).
-	NumaNodesPerSocket pulumi.StringInput `pulumi:"numaNodesPerSocket"`
-	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-	PercentageOfCoresEnabled pulumi.IntInput `pulumi:"percentageOfCoresEnabled"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray and GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray{ GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray []GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
-	return o
-}
-
-// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) AreVirtualInstructionsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.AreVirtualInstructionsEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Instance Platform Configuration Configuration Map for flexible setting input.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) ConfigMap() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) map[string]string {
-		return v.ConfigMap
-	}).(pulumi.StringMapOutput)
-}
-
-// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsAccessControlServiceEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.IsAccessControlServiceEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the input-output memory management unit is enabled.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsInputOutputMemoryManagementUnitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.IsInputOutputMemoryManagementUnitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the Measured Boot feature is enabled on the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsMeasuredBootEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.IsMeasuredBootEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsMemoryEncryptionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.IsMemoryEncryptionEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether Secure Boot is enabled on the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsSecureBootEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.IsSecureBootEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsSymmetricMultiThreadingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.IsSymmetricMultiThreadingEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the Trusted Platform Module (TPM) is enabled on the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) IsTrustedPlatformModuleEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) bool {
-		return v.IsTrustedPlatformModuleEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// The number of NUMA nodes per socket (NPS).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) NumaNodesPerSocket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) string {
-		return v.NumaNodesPerSocket
-	}).(pulumi.StringOutput)
-}
-
-// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) PercentageOfCoresEnabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) int {
-		return v.PercentageOfCoresEnabled
-	}).(pulumi.IntOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig struct {
-	// The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionActions []GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionActions"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs and GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs struct {
-	// The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionActions GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray and GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray{ GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray []GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
-	return o
-}
-
-// The action to run when the preemptible instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput) PreemptionActions() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig) []GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction {
-		return v.PreemptionActions
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction struct {
-	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs and GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs struct {
-	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume pulumi.BoolInput `pulumi:"preserveBootVolume"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray and GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{ GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray []GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return o
-}
-
-// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) PreserveBootVolume() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction) bool {
-		return v.PreserveBootVolume
-	}).(pulumi.BoolOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionAction)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
-	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
-	// The total amount of memory available to the instance, in gigabytes.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-	Nvmes int `pulumi:"nvmes"`
-	// The total number of OCPUs available to the instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// This field is reserved for internal use.
-	ResourceManagement string `pulumi:"resourceManagement"`
-	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-	Vcpus int `pulumi:"vcpus"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs and GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
-	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
-	// The total amount of memory available to the instance, in gigabytes.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-	Nvmes pulumi.IntInput `pulumi:"nvmes"`
-	// The total number of OCPUs available to the instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// This field is reserved for internal use.
-	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
-	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-	Vcpus pulumi.IntInput `pulumi:"vcpus"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray and GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray{ GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray []GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) string {
-		return v.BaselineOcpuUtilization
-	}).(pulumi.StringOutput)
-}
-
-// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) int {
-		return v.LocalVolumeSizeInGbs
-	}).(pulumi.IntOutput)
-}
-
-// The total amount of memory available to the instance, in gigabytes.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
-}
-
-// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) Nvmes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
-}
-
-// The total number of OCPUs available to the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
-}
-
-// This field is reserved for internal use.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) string {
-		return v.ResourceManagement
-	}).(pulumi.StringOutput)
-}
-
-// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) Vcpus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) int { return v.Vcpus }).(pulumi.IntOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail struct {
-	// The OCID of the boot volume used to boot the instance.
-	BootVolumeId string `pulumi:"bootVolumeId"`
-	// The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
-	BootVolumeSizeInGbs string `pulumi:"bootVolumeSizeInGbs"`
-	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	BootVolumeVpusPerGb string `pulumi:"bootVolumeVpusPerGb"`
-	// The OCID of the image used to boot the instance.
-	ImageId string `pulumi:"imageId"`
-	// These are the criteria for selecting an image. This is required if imageId is not specified.
-	InstanceSourceImageFilterDetails []GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail `pulumi:"instanceSourceImageFilterDetails"`
-	// The OCID of the Vault service key to assign as the master encryption key for the volume.
-	KmsKeyId string `pulumi:"kmsKeyId"`
-	// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-	SourceType string `pulumi:"sourceType"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs and GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs struct {
-	// The OCID of the boot volume used to boot the instance.
-	BootVolumeId pulumi.StringInput `pulumi:"bootVolumeId"`
-	// The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
-	BootVolumeSizeInGbs pulumi.StringInput `pulumi:"bootVolumeSizeInGbs"`
-	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	BootVolumeVpusPerGb pulumi.StringInput `pulumi:"bootVolumeVpusPerGb"`
-	// The OCID of the image used to boot the instance.
-	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// These are the criteria for selecting an image. This is required if imageId is not specified.
-	InstanceSourceImageFilterDetails GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayInput `pulumi:"instanceSourceImageFilterDetails"`
-	// The OCID of the Vault service key to assign as the master encryption key for the volume.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
-	// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArray and GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArray{ GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArray []GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput {
-	return o
-}
-
-// The OCID of the boot volume used to boot the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) BootVolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail) string { return v.BootVolumeId }).(pulumi.StringOutput)
-}
-
-// The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) BootVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail) string {
-		return v.BootVolumeSizeInGbs
-	}).(pulumi.StringOutput)
-}
-
-// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) BootVolumeVpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail) string {
-		return v.BootVolumeVpusPerGb
-	}).(pulumi.StringOutput)
-}
-
-// The OCID of the image used to boot the instance.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail) string { return v.ImageId }).(pulumi.StringOutput)
-}
-
-// These are the criteria for selecting an image. This is required if imageId is not specified.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) InstanceSourceImageFilterDetails() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail) []GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail {
-		return v.InstanceSourceImageFilterDetails
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput)
-}
-
-// The OCID of the Vault service key to assign as the master encryption key for the volume.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
-}
-
-// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail struct {
-	// The OCID of the compartment containing images to search
-	CompartmentId string `pulumi:"compartmentId"`
-	// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTagsFilter map[string]string `pulumi:"definedTagsFilter"`
-	// The image's operating system.  Example: `Oracle Linux`
-	OperatingSystem string `pulumi:"operatingSystem"`
-	// The image's operating system version.  Example: `7.2`
-	OperatingSystemVersion string `pulumi:"operatingSystemVersion"`
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs and GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs struct {
-	// The OCID of the compartment containing images to search
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTagsFilter pulumi.StringMapInput `pulumi:"definedTagsFilter"`
-	// The image's operating system.  Example: `Oracle Linux`
-	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
-	// The image's operating system version.  Example: `7.2`
-	OperatingSystemVersion pulumi.StringInput `pulumi:"operatingSystemVersion"`
-}
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArray and GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArray{ GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArray []GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailInput
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArray) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput {
-	return o
-}
-
-// The OCID of the compartment containing images to search
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail) string {
-		return v.CompartmentId
-	}).(pulumi.StringOutput)
-}
-
-// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput) DefinedTagsFilter() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail) map[string]string {
-		return v.DefinedTagsFilter
-	}).(pulumi.StringMapOutput)
-}
-
-// The image's operating system.  Example: `Oracle Linux`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput) OperatingSystem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail) string {
-		return v.OperatingSystem
-	}).(pulumi.StringOutput)
-}
-
-// The image's operating system version.  Example: `7.2`
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput) OperatingSystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail) string {
-		return v.OperatingSystemVersion
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput() GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOption struct {
-	// Block volume parameters.
-	BlockVolumes []GetInstanceConfigurationInstanceDetailOptionBlockVolume `pulumi:"blockVolumes"`
-	// Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-	LaunchDetails []GetInstanceConfigurationInstanceDetailOptionLaunchDetail `pulumi:"launchDetails"`
-	// Secondary VNIC parameters.
-	SecondaryVnics []GetInstanceConfigurationInstanceDetailOptionSecondaryVnic `pulumi:"secondaryVnics"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionArgs and GetInstanceConfigurationInstanceDetailOptionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionOutput() GetInstanceConfigurationInstanceDetailOptionOutput
-	ToGetInstanceConfigurationInstanceDetailOptionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionArgs struct {
-	// Block volume parameters.
-	BlockVolumes GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayInput `pulumi:"blockVolumes"`
-	// Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-	LaunchDetails GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput `pulumi:"launchDetails"`
-	// Secondary VNIC parameters.
-	SecondaryVnics GetInstanceConfigurationInstanceDetailOptionSecondaryVnicArrayInput `pulumi:"secondaryVnics"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionArgs) ToGetInstanceConfigurationInstanceDetailOptionOutput() GetInstanceConfigurationInstanceDetailOptionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionArgs) ToGetInstanceConfigurationInstanceDetailOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionArray and GetInstanceConfigurationInstanceDetailOptionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionArray{ GetInstanceConfigurationInstanceDetailOptionArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionArray []GetInstanceConfigurationInstanceDetailOptionInput
-
-func (GetInstanceConfigurationInstanceDetailOptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionArray) ToGetInstanceConfigurationInstanceDetailOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionArray) ToGetInstanceConfigurationInstanceDetailOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionOutput) ToGetInstanceConfigurationInstanceDetailOptionOutput() GetInstanceConfigurationInstanceDetailOptionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionOutput) ToGetInstanceConfigurationInstanceDetailOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionOutput {
-	return o
-}
-
-// Block volume parameters.
-func (o GetInstanceConfigurationInstanceDetailOptionOutput) BlockVolumes() GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOption) []GetInstanceConfigurationInstanceDetailOptionBlockVolume {
-		return v.BlockVolumes
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput)
-}
-
-// Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-func (o GetInstanceConfigurationInstanceDetailOptionOutput) LaunchDetails() GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOption) []GetInstanceConfigurationInstanceDetailOptionLaunchDetail {
-		return v.LaunchDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput)
-}
-
-// Secondary VNIC parameters.
-func (o GetInstanceConfigurationInstanceDetailOptionOutput) SecondaryVnics() GetInstanceConfigurationInstanceDetailOptionSecondaryVnicArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOption) []GetInstanceConfigurationInstanceDetailOptionSecondaryVnic {
-		return v.SecondaryVnics
-	}).(GetInstanceConfigurationInstanceDetailOptionSecondaryVnicArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOption {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOption)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolume struct {
-	// Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
-	AttachDetails []GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail `pulumi:"attachDetails"`
-	// Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
-	CreateDetails []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail `pulumi:"createDetails"`
-	// The OCID of the volume.
-	VolumeId string `pulumi:"volumeId"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs and GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs struct {
-	// Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
-	AttachDetails GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput `pulumi:"attachDetails"`
-	// Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
-	CreateDetails GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput `pulumi:"createDetails"`
-	// The OCID of the volume.
-	VolumeId pulumi.StringInput `pulumi:"volumeId"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolume)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeArray and GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeArray{ GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeArray []GetInstanceConfigurationInstanceDetailOptionBlockVolumeInput
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolume)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolume)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput {
-	return o
-}
-
-// Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput) AttachDetails() GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolume) []GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail {
-		return v.AttachDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput)
-}
-
-// Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput) CreateDetails() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolume) []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail {
-		return v.CreateDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput)
-}
-
-// The OCID of the volume.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput) VolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolume) string { return v.VolumeId }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolume)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionBlockVolume {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionBlockVolume)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail struct {
-	// The device name.
-	Device string `pulumi:"device"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Whether the attachment should be created in read-only mode.
-	IsReadOnly bool `pulumi:"isReadOnly"`
-	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-	IsShareable bool `pulumi:"isShareable"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
-	UseChap bool `pulumi:"useChap"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs and GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs struct {
-	// The device name.
-	Device pulumi.StringInput `pulumi:"device"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Whether the attachment should be created in read-only mode.
-	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
-	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-	IsShareable pulumi.BoolInput `pulumi:"isShareable"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
-	UseChap pulumi.BoolInput `pulumi:"useChap"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray and GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray{ GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray []GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
-	return o
-}
-
-// The device name.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) Device() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) string { return v.Device }).(pulumi.StringOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool {
-		return v.IsPvEncryptionInTransitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the attachment should be created in read-only mode.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) IsReadOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool { return v.IsReadOnly }).(pulumi.BoolOutput)
-}
-
-// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) IsShareable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool { return v.IsShareable }).(pulumi.BoolOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// Whether to use CHAP authentication for the volume attachment. Defaults to false.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) UseChap() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool { return v.UseChap }).(pulumi.BoolOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail struct {
-	// The list of autotune policies enabled for this volume.
-	AutotunePolicies []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy `pulumi:"autotunePolicies"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-	BackupPolicyId string `pulumi:"backupPolicyId"`
-	// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-	BlockVolumeReplicas []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
-	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
-	IsReservationsEnabled bool `pulumi:"isReservationsEnabled"`
-	// The OCID of the Vault service key to assign as the master encryption key for the volume.
-	KmsKeyId string `pulumi:"kmsKeyId"`
-	// The size of the volume in GBs.
-	SizeInGbs     string                                                                            `pulumi:"sizeInGbs"`
-	SourceDetails []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail `pulumi:"sourceDetails"`
-	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb string `pulumi:"vpusPerGb"`
-	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-	XrcKmsKeyId string `pulumi:"xrcKmsKeyId"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs struct {
-	// The list of autotune policies enabled for this volume.
-	AutotunePolicies GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput `pulumi:"autotunePolicies"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-	BackupPolicyId pulumi.StringInput `pulumi:"backupPolicyId"`
-	// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-	BlockVolumeReplicas GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput `pulumi:"blockVolumeReplicas"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
-	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
-	IsReservationsEnabled pulumi.BoolInput `pulumi:"isReservationsEnabled"`
-	// The OCID of the Vault service key to assign as the master encryption key for the volume.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
-	// The size of the volume in GBs.
-	SizeInGbs     pulumi.StringInput                                                                        `pulumi:"sizeInGbs"`
-	SourceDetails GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput `pulumi:"sourceDetails"`
-	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb pulumi.StringInput `pulumi:"vpusPerGb"`
-	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-	XrcKmsKeyId pulumi.StringInput `pulumi:"xrcKmsKeyId"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray{ GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
-	return o
-}
-
-// The list of autotune policies enabled for this volume.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) AutotunePolicies() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy {
-		return v.AutotunePolicies
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput)
-}
-
-// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
-		return v.AvailabilityDomain
-	}).(pulumi.StringOutput)
-}
-
-// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) BackupPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
-		return v.BackupPolicyId
-	}).(pulumi.StringOutput)
-}
-
-// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) BlockVolumeReplicas() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica {
-		return v.BlockVolumeReplicas
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput)
-}
-
-// The OCID of the cluster placement group of the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ClusterPlacementGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
-		return v.ClusterPlacementGroupId
-	}).(pulumi.StringOutput)
-}
-
-// The OCID of the compartment containing images to search
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
-		return v.CompartmentId
-	}).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) bool {
-		return v.IsAutoTuneEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) IsReservationsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) bool {
-		return v.IsReservationsEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// The OCID of the Vault service key to assign as the master encryption key for the volume.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
-}
-
-// The size of the volume in GBs.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string { return v.SizeInGbs }).(pulumi.StringOutput)
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) SourceDetails() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail {
-		return v.SourceDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput)
-}
-
-// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) VpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string { return v.VpusPerGb }).(pulumi.StringOutput)
-}
-
-// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) XrcKmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
-		return v.XrcKmsKeyId
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy struct {
-	// This specifies the type of autotunes supported by OCI.
-	AutotuneType string `pulumi:"autotuneType"`
-	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-	MaxVpusPerGb string `pulumi:"maxVpusPerGb"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs struct {
-	// This specifies the type of autotunes supported by OCI.
-	AutotuneType pulumi.StringInput `pulumi:"autotuneType"`
-	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-	MaxVpusPerGb pulumi.StringInput `pulumi:"maxVpusPerGb"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray and GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray{ GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray []GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
-	return o
-}
-
-// This specifies the type of autotunes supported by OCI.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) AutotuneType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy) string {
-		return v.AutotuneType
-	}).(pulumi.StringOutput)
-}
-
-// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) MaxVpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy) string {
-		return v.MaxVpusPerGb
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyInput)(nil)).Elem(), BootVolumeAutotunePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyArrayInput)(nil)).Elem(), BootVolumeAutotunePolicyArray{})
@@ -78454,6 +77806,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolLoadBalancerInput)(nil)).Elem(), ClusterNetworkInstancePoolLoadBalancerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolLoadBalancerArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolLoadBalancerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolPlacementConfigurationInput)(nil)).Elem(), ClusterNetworkInstancePoolPlacementConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolPlacementConfigurationArrayInput)(nil)).Elem(), ClusterNetworkInstancePoolPlacementConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetInput)(nil)).Elem(), ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{})
@@ -78706,6 +78070,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPtrInput)(nil)).Elem(), InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolLoadBalancerInput)(nil)).Elem(), InstancePoolLoadBalancerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolLoadBalancerArrayInput)(nil)).Elem(), InstancePoolLoadBalancerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyInput)(nil)).Elem(), InstancePoolOverridePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyPtrInput)(nil)).Elem(), InstancePoolOverridePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementArrayInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementOverrideOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolOverridePolicyOverrideStatementSelectorInput)(nil)).Elem(), InstancePoolOverridePolicyOverrideStatementSelectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolPlacementConfigurationInput)(nil)).Elem(), InstancePoolPlacementConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolPlacementConfigurationArrayInput)(nil)).Elem(), InstancePoolPlacementConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolPlacementConfigurationPrimaryVnicSubnetsInput)(nil)).Elem(), InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs{})
@@ -78974,6 +78348,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolLoadBalancerInput)(nil)).Elem(), GetClusterNetworkInstancePoolLoadBalancerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolLoadBalancerArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolLoadBalancerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolPlacementConfigurationInput)(nil)).Elem(), GetClusterNetworkInstancePoolPlacementConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolPlacementConfigurationArrayInput)(nil)).Elem(), GetClusterNetworkInstancePoolPlacementConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetInput)(nil)).Elem(), GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{})
@@ -79008,6 +78394,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolLoadBalancerInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationArrayInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetInput)(nil)).Elem(), GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{})
@@ -79356,54 +78754,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyOutput{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyArrayOutput{})
 	pulumi.RegisterOutputType(BootVolumeBackupRetentionPeriodOutput{})
@@ -79454,6 +78804,18 @@ func init() {
 	pulumi.RegisterOutputType(ClusterNetworkInstancePoolArrayOutput{})
 	pulumi.RegisterOutputType(ClusterNetworkInstancePoolLoadBalancerOutput{})
 	pulumi.RegisterOutputType(ClusterNetworkInstancePoolLoadBalancerArrayOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyArrayOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput{})
 	pulumi.RegisterOutputType(ClusterNetworkInstancePoolPlacementConfigurationOutput{})
 	pulumi.RegisterOutputType(ClusterNetworkInstancePoolPlacementConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput{})
@@ -79706,6 +79068,16 @@ func init() {
 	pulumi.RegisterOutputType(InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPtrOutput{})
 	pulumi.RegisterOutputType(InstancePoolLoadBalancerOutput{})
 	pulumi.RegisterOutputType(InstancePoolLoadBalancerArrayOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyPtrOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementArrayOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementOverrideOptionOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(InstancePoolOverridePolicyOverrideStatementSelectorOutput{})
 	pulumi.RegisterOutputType(InstancePoolPlacementConfigurationOutput{})
 	pulumi.RegisterOutputType(InstancePoolPlacementConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(InstancePoolPlacementConfigurationPrimaryVnicSubnetsOutput{})
@@ -79974,6 +79346,18 @@ func init() {
 	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolLoadBalancerOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolLoadBalancerArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolPlacementConfigurationOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolPlacementConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput{})
@@ -80008,6 +79392,18 @@ func init() {
 	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolLoadBalancerOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelectorArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput{})
@@ -80356,52 +79752,4 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput{})
 }

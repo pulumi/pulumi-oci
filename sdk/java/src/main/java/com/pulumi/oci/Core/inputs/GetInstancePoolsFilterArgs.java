@@ -18,9 +18,17 @@ public final class GetInstancePoolsFilterArgs extends com.pulumi.resources.Resou
 
     public static final GetInstancePoolsFilterArgs Empty = new GetInstancePoolsFilterArgs();
 
+    /**
+     * A user-friendly name for the override option.
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return A user-friendly name for the override option.
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -65,11 +73,23 @@ public final class GetInstancePoolsFilterArgs extends com.pulumi.resources.Resou
             $ = new GetInstancePoolsFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name A user-friendly name for the override option.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name A user-friendly name for the override option.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleGoalVersionDetailsComponent;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +25,11 @@ public final class FsuCycleGoalVersionDetails {
      * 
      */
     private @Nullable String homePolicy;
+    /**
+     * @return (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    private @Nullable Boolean isOlderVersionAcknowledged;
     /**
      * @return (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: &lt;specified_prefix&gt;_&lt;timestamp&gt; If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
      * 
@@ -59,6 +65,13 @@ public final class FsuCycleGoalVersionDetails {
      */
     public Optional<String> homePolicy() {
         return Optional.ofNullable(this.homePolicy);
+    }
+    /**
+     * @return (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Boolean> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
     }
     /**
      * @return (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: &lt;specified_prefix&gt;_&lt;timestamp&gt; If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
@@ -100,6 +113,7 @@ public final class FsuCycleGoalVersionDetails {
     public static final class Builder {
         private @Nullable List<FsuCycleGoalVersionDetailsComponent> components;
         private @Nullable String homePolicy;
+        private @Nullable Boolean isOlderVersionAcknowledged;
         private @Nullable String newHomePrefix;
         private @Nullable String softwareImageId;
         private String type;
@@ -109,6 +123,7 @@ public final class FsuCycleGoalVersionDetails {
     	      Objects.requireNonNull(defaults);
     	      this.components = defaults.components;
     	      this.homePolicy = defaults.homePolicy;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.newHomePrefix = defaults.newHomePrefix;
     	      this.softwareImageId = defaults.softwareImageId;
     	      this.type = defaults.type;
@@ -128,6 +143,12 @@ public final class FsuCycleGoalVersionDetails {
         public Builder homePolicy(@Nullable String homePolicy) {
 
             this.homePolicy = homePolicy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(@Nullable Boolean isOlderVersionAcknowledged) {
+
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             return this;
         }
         @CustomType.Setter
@@ -160,6 +181,7 @@ public final class FsuCycleGoalVersionDetails {
             final var _resultValue = new FsuCycleGoalVersionDetails();
             _resultValue.components = components;
             _resultValue.homePolicy = homePolicy;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.newHomePrefix = newHomePrefix;
             _resultValue.softwareImageId = softwareImageId;
             _resultValue.type = type;

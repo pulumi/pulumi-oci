@@ -12,9 +12,11 @@ import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOve
 import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobStorageMountConfigurationDetailsListArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobStorageMountConfigurationOverrideDetailsListArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunLogDetailArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunNodeGroupDetailsListArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -223,6 +225,21 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Retention period in days for job run.
+     * 
+     */
+    @Import(name="jobRunRetentionPeriodInDaysOverride")
+    private @Nullable Output<Integer> jobRunRetentionPeriodInDaysOverride;
+
+    /**
+     * @return Retention period in days for job run.
+     * 
+     */
+    public Optional<Output<Integer>> jobRunRetentionPeriodInDaysOverride() {
+        return Optional.ofNullable(this.jobRunRetentionPeriodInDaysOverride);
+    }
+
+    /**
      * Collection of JobStorageMountConfigurationDetails.
      * 
      */
@@ -235,6 +252,21 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<JobRunJobStorageMountConfigurationDetailsListArgs>>> jobStorageMountConfigurationDetailsLists() {
         return Optional.ofNullable(this.jobStorageMountConfigurationDetailsLists);
+    }
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    @Import(name="jobStorageMountConfigurationOverrideDetailsLists")
+    private @Nullable Output<List<JobRunJobStorageMountConfigurationOverrideDetailsListArgs>> jobStorageMountConfigurationOverrideDetailsLists;
+
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public Optional<Output<List<JobRunJobStorageMountConfigurationOverrideDetailsListArgs>>> jobStorageMountConfigurationOverrideDetailsLists() {
+        return Optional.ofNullable(this.jobStorageMountConfigurationOverrideDetailsLists);
     }
 
     /**
@@ -394,7 +426,9 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         this.jobInfrastructureConfigurationOverrideDetails = $.jobInfrastructureConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = $.jobLogConfigurationOverrideDetails;
         this.jobNodeConfigurationOverrideDetails = $.jobNodeConfigurationOverrideDetails;
+        this.jobRunRetentionPeriodInDaysOverride = $.jobRunRetentionPeriodInDaysOverride;
         this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
+        this.jobStorageMountConfigurationOverrideDetailsLists = $.jobStorageMountConfigurationOverrideDetailsLists;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logDetails = $.logDetails;
         this.nodeGroupDetailsLists = $.nodeGroupDetailsLists;
@@ -708,6 +742,27 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param jobRunRetentionPeriodInDaysOverride Retention period in days for job run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobRunRetentionPeriodInDaysOverride(@Nullable Output<Integer> jobRunRetentionPeriodInDaysOverride) {
+            $.jobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
+            return this;
+        }
+
+        /**
+         * @param jobRunRetentionPeriodInDaysOverride Retention period in days for job run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobRunRetentionPeriodInDaysOverride(Integer jobRunRetentionPeriodInDaysOverride) {
+            return jobRunRetentionPeriodInDaysOverride(Output.of(jobRunRetentionPeriodInDaysOverride));
+        }
+
+        /**
          * @param jobStorageMountConfigurationDetailsLists Collection of JobStorageMountConfigurationDetails.
          * 
          * @return builder
@@ -736,6 +791,37 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobStorageMountConfigurationDetailsLists(JobRunJobStorageMountConfigurationDetailsListArgs... jobStorageMountConfigurationDetailsLists) {
             return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param jobStorageMountConfigurationOverrideDetailsLists Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationOverrideDetailsLists(@Nullable Output<List<JobRunJobStorageMountConfigurationOverrideDetailsListArgs>> jobStorageMountConfigurationOverrideDetailsLists) {
+            $.jobStorageMountConfigurationOverrideDetailsLists = jobStorageMountConfigurationOverrideDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param jobStorageMountConfigurationOverrideDetailsLists Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationOverrideDetailsLists(List<JobRunJobStorageMountConfigurationOverrideDetailsListArgs> jobStorageMountConfigurationOverrideDetailsLists) {
+            return jobStorageMountConfigurationOverrideDetailsLists(Output.of(jobStorageMountConfigurationOverrideDetailsLists));
+        }
+
+        /**
+         * @param jobStorageMountConfigurationOverrideDetailsLists Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationOverrideDetailsLists(JobRunJobStorageMountConfigurationOverrideDetailsListArgs... jobStorageMountConfigurationOverrideDetailsLists) {
+            return jobStorageMountConfigurationOverrideDetailsLists(List.of(jobStorageMountConfigurationOverrideDetailsLists));
         }
 
         /**

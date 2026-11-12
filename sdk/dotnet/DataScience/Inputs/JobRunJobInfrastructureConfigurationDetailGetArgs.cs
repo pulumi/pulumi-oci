@@ -19,6 +19,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? BlockStorageSizeInGbs { get; set; }
 
         /// <summary>
+        /// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         /// </summary>
         [Input("computeTargetId")]
@@ -40,6 +46,18 @@ namespace Pulumi.Oci.DataScience.Inputs
         {
             get => _jobShapeConfigDetails ?? (_jobShapeConfigDetails = new InputList<Inputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailGetArgs>());
             set => _jobShapeConfigDetails = value;
+        }
+
+        [Input("networkConfigurations")]
+        private InputList<Inputs.JobRunJobInfrastructureConfigurationDetailNetworkConfigurationGetArgs>? _networkConfigurations;
+
+        /// <summary>
+        /// The network configuration details for the compute target job.
+        /// </summary>
+        public InputList<Inputs.JobRunJobInfrastructureConfigurationDetailNetworkConfigurationGetArgs> NetworkConfigurations
+        {
+            get => _networkConfigurations ?? (_networkConfigurations = new InputList<Inputs.JobRunJobInfrastructureConfigurationDetailNetworkConfigurationGetArgs>());
+            set => _networkConfigurations = value;
         }
 
         [Input("resourceConfigurations")]

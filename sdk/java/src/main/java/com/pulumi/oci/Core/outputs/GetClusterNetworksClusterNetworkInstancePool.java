@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePoolLoadBalancer;
+import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicy;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration;
 import java.lang.Integer;
 import java.lang.String;
@@ -57,6 +58,11 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
      * 
      */
     private List<GetClusterNetworksClusterNetworkInstancePoolLoadBalancer> loadBalancers;
+    /**
+     * @return Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    private List<GetClusterNetworksClusterNetworkInstancePoolOverridePolicy> overridePolicies;
     /**
      * @return The placement configurations for the instance pool.
      * 
@@ -147,6 +153,13 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
         return this.loadBalancers;
     }
     /**
+     * @return Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    public List<GetClusterNetworksClusterNetworkInstancePoolOverridePolicy> overridePolicies() {
+        return this.overridePolicies;
+    }
+    /**
      * @return The placement configurations for the instance pool.
      * 
      */
@@ -201,6 +214,7 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
         private String instanceDisplayNameFormatter;
         private String instanceHostnameFormatter;
         private List<GetClusterNetworksClusterNetworkInstancePoolLoadBalancer> loadBalancers;
+        private List<GetClusterNetworksClusterNetworkInstancePoolOverridePolicy> overridePolicies;
         private List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
         private String poolType;
         private Integer size;
@@ -219,6 +233,7 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
     	      this.instanceDisplayNameFormatter = defaults.instanceDisplayNameFormatter;
     	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
     	      this.loadBalancers = defaults.loadBalancers;
+    	      this.overridePolicies = defaults.overridePolicies;
     	      this.placementConfigurations = defaults.placementConfigurations;
     	      this.poolType = defaults.poolType;
     	      this.size = defaults.size;
@@ -310,6 +325,17 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
             return loadBalancers(List.of(loadBalancers));
         }
         @CustomType.Setter
+        public Builder overridePolicies(List<GetClusterNetworksClusterNetworkInstancePoolOverridePolicy> overridePolicies) {
+            if (overridePolicies == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "overridePolicies");
+            }
+            this.overridePolicies = overridePolicies;
+            return this;
+        }
+        public Builder overridePolicies(GetClusterNetworksClusterNetworkInstancePoolOverridePolicy... overridePolicies) {
+            return overridePolicies(List.of(overridePolicies));
+        }
+        @CustomType.Setter
         public Builder placementConfigurations(List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations) {
             if (placementConfigurations == null) {
               throw new MissingRequiredPropertyException("GetClusterNetworksClusterNetworkInstancePool", "placementConfigurations");
@@ -364,6 +390,7 @@ public final class GetClusterNetworksClusterNetworkInstancePool {
             _resultValue.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
             _resultValue.loadBalancers = loadBalancers;
+            _resultValue.overridePolicies = overridePolicies;
             _resultValue.placementConfigurations = placementConfigurations;
             _resultValue.poolType = poolType;
             _resultValue.size = size;

@@ -389,6 +389,10 @@ class ComputeTarget(pulumi.CustomResource):
                         "memory_in_gbs": compute_target_compute_configuration_details_instance_configuration_instance_shape_details_memory_in_gbs,
                         "ocpus": compute_target_compute_configuration_details_instance_configuration_instance_shape_details_ocpus,
                     },
+                    "network_configuration_details": {
+                        "network_type": compute_target_compute_configuration_details_instance_configuration_network_configuration_details_network_type,
+                        "subnet_ids": compute_target_compute_configuration_details_instance_configuration_network_configuration_details_subnet_ids,
+                    },
                 },
                 "scaling_policy": {
                     "policy_type": compute_target_compute_configuration_details_scaling_policy_policy_type,
@@ -484,6 +488,10 @@ class ComputeTarget(pulumi.CustomResource):
                     "instance_shape_details": {
                         "memory_in_gbs": compute_target_compute_configuration_details_instance_configuration_instance_shape_details_memory_in_gbs,
                         "ocpus": compute_target_compute_configuration_details_instance_configuration_instance_shape_details_ocpus,
+                    },
+                    "network_configuration_details": {
+                        "network_type": compute_target_compute_configuration_details_instance_configuration_network_configuration_details_network_type,
+                        "subnet_ids": compute_target_compute_configuration_details_instance_configuration_network_configuration_details_subnet_ids,
                     },
                 },
                 "scaling_policy": {

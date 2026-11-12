@@ -13,7 +13,13 @@ namespace Pulumi.Oci.DataScience.Outputs
     [OutputType]
     public sealed class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult
     {
+        /// <summary>
+        /// Resource limit configuration details for workload on managed compute cluster type compute target
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationResult> ResourceLimitConfigurations;
+        /// <summary>
+        /// Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationResult> ResourceRequestConfigurations;
 
         [OutputConstructor]

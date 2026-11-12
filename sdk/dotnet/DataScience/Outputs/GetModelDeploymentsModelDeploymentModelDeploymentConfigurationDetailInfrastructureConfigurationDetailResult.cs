@@ -30,7 +30,14 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The maximum network bandwidth for the model deployment.
         /// </summary>
         public readonly int MaximumBandwidthMbps;
+        /// <summary>
+        /// Resource configuration details for model deploy on managed compute cluster type compute target.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult> ModelDeploymentResourceConfigurations;
+        /// <summary>
+        /// The network configuration details for model deploy on managed compute cluster type compute target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult> NetworkConfigurations;
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.
         /// </summary>
@@ -50,6 +57,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult> modelDeploymentResourceConfigurations,
 
+            ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationResult> networkConfigurations,
+
             ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult> scalingPolicies)
         {
             BandwidthMbps = bandwidthMbps;
@@ -58,6 +67,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             InstanceConfigurations = instanceConfigurations;
             MaximumBandwidthMbps = maximumBandwidthMbps;
             ModelDeploymentResourceConfigurations = modelDeploymentResourceConfigurations;
+            NetworkConfigurations = networkConfigurations;
             ScalingPolicies = scalingPolicies;
         }
     }

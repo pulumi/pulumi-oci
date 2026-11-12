@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration
     {
         /// <summary>
-        /// (Updatable) The total number of gpus required to be allocated to the workload.
+        /// The total number of gpus required to be allocated to the workload.
         /// </summary>
         public readonly int? Gpus;
         /// <summary>

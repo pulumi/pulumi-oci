@@ -59,6 +59,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancePoolsInstancePoolLoadBalancerResult> LoadBalancers;
         /// <summary>
+        /// Optional pool-level launch override policy for future instance launches.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstancePoolsInstancePoolOverridePolicyResult> OverridePolicies;
+        /// <summary>
         /// The placement configurations for the instance pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult> PlacementConfigurations;
@@ -105,6 +109,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolLoadBalancerResult> loadBalancers,
 
+            ImmutableArray<Outputs.GetInstancePoolsInstancePoolOverridePolicyResult> overridePolicies,
+
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult> placementConfigurations,
 
             string poolType,
@@ -127,6 +133,7 @@ namespace Pulumi.Oci.Core.Outputs
             InstanceHostnameFormatter = instanceHostnameFormatter;
             LifecycleManagements = lifecycleManagements;
             LoadBalancers = loadBalancers;
+            OverridePolicies = overridePolicies;
             PlacementConfigurations = placementConfigurations;
             PoolType = poolType;
             Size = size;

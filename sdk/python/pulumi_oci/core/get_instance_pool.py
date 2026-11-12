@@ -27,7 +27,7 @@ class GetInstancePoolResult:
     """
     A collection of values returned by getInstancePool.
     """
-    def __init__(__self__, actual_size=None, compartment_id=None, current_size=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, lifecycle_managements=None, load_balancers=None, placement_configurations=None, pool_type=None, size=None, state=None, time_created=None):
+    def __init__(__self__, actual_size=None, compartment_id=None, current_size=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, lifecycle_managements=None, load_balancers=None, override_policies=None, placement_configurations=None, pool_type=None, size=None, state=None, time_created=None):
         if actual_size and not isinstance(actual_size, int):
             raise TypeError("Expected argument 'actual_size' to be a int")
         pulumi.set(__self__, "actual_size", actual_size)
@@ -67,6 +67,9 @@ class GetInstancePoolResult:
         if load_balancers and not isinstance(load_balancers, list):
             raise TypeError("Expected argument 'load_balancers' to be a list")
         pulumi.set(__self__, "load_balancers", load_balancers)
+        if override_policies and not isinstance(override_policies, list):
+            raise TypeError("Expected argument 'override_policies' to be a list")
+        pulumi.set(__self__, "override_policies", override_policies)
         if placement_configurations and not isinstance(placement_configurations, list):
             raise TypeError("Expected argument 'placement_configurations' to be a list")
         pulumi.set(__self__, "placement_configurations", placement_configurations)
@@ -185,6 +188,14 @@ class GetInstancePoolResult:
         return pulumi.get(self, "load_balancers")
 
     @_builtins.property
+    @pulumi.getter(name="overridePolicies")
+    def override_policies(self) -> Sequence['outputs.GetInstancePoolOverridePolicyResult']:
+        """
+        Optional pool-level launch override policy for future instance launches.
+        """
+        return pulumi.get(self, "override_policies")
+
+    @_builtins.property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> Sequence['outputs.GetInstancePoolPlacementConfigurationResult']:
         """
@@ -244,6 +255,7 @@ class AwaitableGetInstancePoolResult(GetInstancePoolResult):
             instance_pool_id=self.instance_pool_id,
             lifecycle_managements=self.lifecycle_managements,
             load_balancers=self.load_balancers,
+            override_policies=self.override_policies,
             placement_configurations=self.placement_configurations,
             pool_type=self.pool_type,
             size=self.size,
@@ -289,6 +301,7 @@ def get_instance_pool(instance_pool_id: Optional[_builtins.str] = None,
         instance_pool_id=pulumi.get(__ret__, 'instance_pool_id'),
         lifecycle_managements=pulumi.get(__ret__, 'lifecycle_managements'),
         load_balancers=pulumi.get(__ret__, 'load_balancers'),
+        override_policies=pulumi.get(__ret__, 'override_policies'),
         placement_configurations=pulumi.get(__ret__, 'placement_configurations'),
         pool_type=pulumi.get(__ret__, 'pool_type'),
         size=pulumi.get(__ret__, 'size'),
@@ -331,6 +344,7 @@ def get_instance_pool_output(instance_pool_id: pulumi.Input[Optional[_builtins.s
         instance_pool_id=pulumi.get(__response__, 'instance_pool_id'),
         lifecycle_managements=pulumi.get(__response__, 'lifecycle_managements'),
         load_balancers=pulumi.get(__response__, 'load_balancers'),
+        override_policies=pulumi.get(__response__, 'override_policies'),
         placement_configurations=pulumi.get(__response__, 'placement_configurations'),
         pool_type=pulumi.get(__response__, 'pool_type'),
         size=pulumi.get(__response__, 'size'),

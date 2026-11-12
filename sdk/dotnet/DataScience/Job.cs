@@ -78,6 +78,11 @@ namespace Pulumi.Oci.DataScience
     ///                 MemoryInGbs = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
     ///             },
+    ///             NetworkConfiguration = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs
+    ///             {
+    ///                 NetworkType = jobJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType,
+    ///                 SubnetId = testSubnet.Id,
+    ///             },
     ///             ResourceConfiguration = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs
     ///             {
     ///                 ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs
@@ -149,6 +154,11 @@ namespace Pulumi.Oci.DataScience
     ///                             MemoryInGbs = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                             Ocpus = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
     ///                         },
+    ///                         NetworkConfiguration = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs
+    ///                         {
+    ///                             NetworkType = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType,
+    ///                             SubnetId = testSubnet.Id,
+    ///                         },
     ///                         ResourceConfiguration = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs
     ///                         {
     ///                             ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs
@@ -173,6 +183,7 @@ namespace Pulumi.Oci.DataScience
     ///             MaximumRuntimeInMinutes = jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes,
     ///             StartupOrder = jobJobNodeConfigurationDetailsStartupOrder,
     ///         },
+    ///         JobRunRetentionPeriodInDays = jobJobRunRetentionPeriodInDays,
     ///         JobStorageMountConfigurationDetailsLists = new[]
     ///         {
     ///             new Oci.DataScience.Inputs.JobJobStorageMountConfigurationDetailsListArgs
@@ -304,6 +315,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("jobNodeConfigurationDetails")]
         public Output<Outputs.JobJobNodeConfigurationDetails> JobNodeConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Retention period in days for job runs.
+        /// </summary>
+        [Output("jobRunRetentionPeriodInDays")]
+        public Output<int> JobRunRetentionPeriodInDays { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of JobStorageMountConfigurationDetails.
@@ -480,6 +497,12 @@ namespace Pulumi.Oci.DataScience
         [Input("jobNodeConfigurationDetails")]
         public Input<Inputs.JobJobNodeConfigurationDetailsArgs>? JobNodeConfigurationDetails { get; set; }
 
+        /// <summary>
+        /// Retention period in days for job runs.
+        /// </summary>
+        [Input("jobRunRetentionPeriodInDays")]
+        public Input<int>? JobRunRetentionPeriodInDays { get; set; }
+
         [Input("jobStorageMountConfigurationDetailsLists")]
         private InputList<Inputs.JobJobStorageMountConfigurationDetailsListArgs>? _jobStorageMountConfigurationDetailsLists;
 
@@ -619,6 +642,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("jobNodeConfigurationDetails")]
         public Input<Inputs.JobJobNodeConfigurationDetailsGetArgs>? JobNodeConfigurationDetails { get; set; }
+
+        /// <summary>
+        /// Retention period in days for job runs.
+        /// </summary>
+        [Input("jobRunRetentionPeriodInDays")]
+        public Input<int>? JobRunRetentionPeriodInDays { get; set; }
 
         [Input("jobStorageMountConfigurationDetailsLists")]
         private InputList<Inputs.JobJobStorageMountConfigurationDetailsListGetArgs>? _jobStorageMountConfigurationDetailsLists;

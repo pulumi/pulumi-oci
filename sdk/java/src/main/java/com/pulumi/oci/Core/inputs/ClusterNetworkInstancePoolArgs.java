@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolLoadBalancerArgs;
+import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolOverridePolicyArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolPlacementConfigurationArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -156,6 +157,21 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
     }
 
     /**
+     * Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    @Import(name="overridePolicies")
+    private @Nullable Output<List<ClusterNetworkInstancePoolOverridePolicyArgs>> overridePolicies;
+
+    /**
+     * @return Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    public Optional<Output<List<ClusterNetworkInstancePoolOverridePolicyArgs>>> overridePolicies() {
+        return Optional.ofNullable(this.overridePolicies);
+    }
+
+    /**
      * The placement configurations for the instance pool.
      * 
      */
@@ -243,6 +259,7 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
         this.instanceDisplayNameFormatter = $.instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = $.instanceHostnameFormatter;
         this.loadBalancers = $.loadBalancers;
+        this.overridePolicies = $.overridePolicies;
         this.placementConfigurations = $.placementConfigurations;
         this.poolType = $.poolType;
         this.size = $.size;
@@ -462,6 +479,37 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
          */
         public Builder loadBalancers(ClusterNetworkInstancePoolLoadBalancerArgs... loadBalancers) {
             return loadBalancers(List.of(loadBalancers));
+        }
+
+        /**
+         * @param overridePolicies Optional pool-level launch override policy for future instance launches.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overridePolicies(@Nullable Output<List<ClusterNetworkInstancePoolOverridePolicyArgs>> overridePolicies) {
+            $.overridePolicies = overridePolicies;
+            return this;
+        }
+
+        /**
+         * @param overridePolicies Optional pool-level launch override policy for future instance launches.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overridePolicies(List<ClusterNetworkInstancePoolOverridePolicyArgs> overridePolicies) {
+            return overridePolicies(Output.of(overridePolicies));
+        }
+
+        /**
+         * @param overridePolicies Optional pool-level launch override policy for future instance launches.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overridePolicies(ClusterNetworkInstancePoolOverridePolicyArgs... overridePolicies) {
+            return overridePolicies(List.of(overridePolicies));
         }
 
         /**

@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleGoalVersionDetailComponent;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +23,11 @@ public final class GetFsuCycleGoalVersionDetail {
      * 
      */
     private String homePolicy;
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return Prefix name used for new DB home resources created as part of the Stage Action. Format: &lt;specified_prefix&gt;_&lt;timestamp&gt; If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
      * 
@@ -57,6 +63,13 @@ public final class GetFsuCycleGoalVersionDetail {
      */
     public String homePolicy() {
         return this.homePolicy;
+    }
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
     }
     /**
      * @return Prefix name used for new DB home resources created as part of the Stage Action. Format: &lt;specified_prefix&gt;_&lt;timestamp&gt; If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
@@ -98,6 +111,7 @@ public final class GetFsuCycleGoalVersionDetail {
     public static final class Builder {
         private List<GetFsuCycleGoalVersionDetailComponent> components;
         private String homePolicy;
+        private Boolean isOlderVersionAcknowledged;
         private String newHomePrefix;
         private String softwareImageId;
         private String type;
@@ -107,6 +121,7 @@ public final class GetFsuCycleGoalVersionDetail {
     	      Objects.requireNonNull(defaults);
     	      this.components = defaults.components;
     	      this.homePolicy = defaults.homePolicy;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.newHomePrefix = defaults.newHomePrefix;
     	      this.softwareImageId = defaults.softwareImageId;
     	      this.type = defaults.type;
@@ -130,6 +145,14 @@ public final class GetFsuCycleGoalVersionDetail {
               throw new MissingRequiredPropertyException("GetFsuCycleGoalVersionDetail", "homePolicy");
             }
             this.homePolicy = homePolicy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetFsuCycleGoalVersionDetail", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             return this;
         }
         @CustomType.Setter
@@ -168,6 +191,7 @@ public final class GetFsuCycleGoalVersionDetail {
             final var _resultValue = new GetFsuCycleGoalVersionDetail();
             _resultValue.components = components;
             _resultValue.homePolicy = homePolicy;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.newHomePrefix = newHomePrefix;
             _resultValue.softwareImageId = softwareImageId;
             _resultValue.type = type;

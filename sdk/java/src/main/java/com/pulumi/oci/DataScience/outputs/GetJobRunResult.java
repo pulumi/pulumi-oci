@@ -12,9 +12,11 @@ import com.pulumi.oci.DataScience.outputs.GetJobRunJobInfrastructureConfiguratio
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobLogConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobNodeConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobStorageMountConfigurationDetailsList;
+import com.pulumi.oci.DataScience.outputs.GetJobRunJobStorageMountConfigurationOverrideDetailsList;
 import com.pulumi.oci.DataScience.outputs.GetJobRunLogDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunNodeGroupDetailsList;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -90,10 +92,20 @@ public final class GetJobRunResult {
     private List<GetJobRunJobNodeConfigurationOverrideDetail> jobNodeConfigurationOverrideDetails;
     private String jobRunId;
     /**
+     * @return Retention period in days for job run.
+     * 
+     */
+    private Integer jobRunRetentionPeriodInDaysOverride;
+    /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
     private List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    private List<GetJobRunJobStorageMountConfigurationOverrideDetailsList> jobStorageMountConfigurationOverrideDetailsLists;
     /**
      * @return The state details of the node group.
      * 
@@ -235,11 +247,25 @@ public final class GetJobRunResult {
         return this.jobRunId;
     }
     /**
+     * @return Retention period in days for job run.
+     * 
+     */
+    public Integer jobRunRetentionPeriodInDaysOverride() {
+        return this.jobRunRetentionPeriodInDaysOverride;
+    }
+    /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
     public List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists() {
         return this.jobStorageMountConfigurationDetailsLists;
+    }
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public List<GetJobRunJobStorageMountConfigurationOverrideDetailsList> jobStorageMountConfigurationOverrideDetailsLists() {
+        return this.jobStorageMountConfigurationOverrideDetailsLists;
     }
     /**
      * @return The state details of the node group.
@@ -325,7 +351,9 @@ public final class GetJobRunResult {
         private List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
         private List<GetJobRunJobNodeConfigurationOverrideDetail> jobNodeConfigurationOverrideDetails;
         private String jobRunId;
+        private Integer jobRunRetentionPeriodInDaysOverride;
         private List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
+        private List<GetJobRunJobStorageMountConfigurationOverrideDetailsList> jobStorageMountConfigurationOverrideDetailsLists;
         private String lifecycleDetails;
         private List<GetJobRunLogDetail> logDetails;
         private List<GetJobRunNodeGroupDetailsList> nodeGroupDetailsLists;
@@ -353,7 +381,9 @@ public final class GetJobRunResult {
     	      this.jobLogConfigurationOverrideDetails = defaults.jobLogConfigurationOverrideDetails;
     	      this.jobNodeConfigurationOverrideDetails = defaults.jobNodeConfigurationOverrideDetails;
     	      this.jobRunId = defaults.jobRunId;
+    	      this.jobRunRetentionPeriodInDaysOverride = defaults.jobRunRetentionPeriodInDaysOverride;
     	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
+    	      this.jobStorageMountConfigurationOverrideDetailsLists = defaults.jobStorageMountConfigurationOverrideDetailsLists;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logDetails = defaults.logDetails;
     	      this.nodeGroupDetailsLists = defaults.nodeGroupDetailsLists;
@@ -504,6 +534,14 @@ public final class GetJobRunResult {
             return this;
         }
         @CustomType.Setter
+        public Builder jobRunRetentionPeriodInDaysOverride(Integer jobRunRetentionPeriodInDaysOverride) {
+            if (jobRunRetentionPeriodInDaysOverride == null) {
+              throw new MissingRequiredPropertyException("GetJobRunResult", "jobRunRetentionPeriodInDaysOverride");
+            }
+            this.jobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder jobStorageMountConfigurationDetailsLists(List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
             if (jobStorageMountConfigurationDetailsLists == null) {
               throw new MissingRequiredPropertyException("GetJobRunResult", "jobStorageMountConfigurationDetailsLists");
@@ -513,6 +551,17 @@ public final class GetJobRunResult {
         }
         public Builder jobStorageMountConfigurationDetailsLists(GetJobRunJobStorageMountConfigurationDetailsList... jobStorageMountConfigurationDetailsLists) {
             return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
+        }
+        @CustomType.Setter
+        public Builder jobStorageMountConfigurationOverrideDetailsLists(List<GetJobRunJobStorageMountConfigurationOverrideDetailsList> jobStorageMountConfigurationOverrideDetailsLists) {
+            if (jobStorageMountConfigurationOverrideDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetJobRunResult", "jobStorageMountConfigurationOverrideDetailsLists");
+            }
+            this.jobStorageMountConfigurationOverrideDetailsLists = jobStorageMountConfigurationOverrideDetailsLists;
+            return this;
+        }
+        public Builder jobStorageMountConfigurationOverrideDetailsLists(GetJobRunJobStorageMountConfigurationOverrideDetailsList... jobStorageMountConfigurationOverrideDetailsLists) {
+            return jobStorageMountConfigurationOverrideDetailsLists(List.of(jobStorageMountConfigurationOverrideDetailsLists));
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
@@ -609,7 +658,9 @@ public final class GetJobRunResult {
             _resultValue.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
             _resultValue.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
             _resultValue.jobRunId = jobRunId;
+            _resultValue.jobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
             _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
+            _resultValue.jobStorageMountConfigurationOverrideDetailsLists = jobStorageMountConfigurationOverrideDetailsLists;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logDetails = logDetails;
             _resultValue.nodeGroupDetailsLists = nodeGroupDetailsLists;

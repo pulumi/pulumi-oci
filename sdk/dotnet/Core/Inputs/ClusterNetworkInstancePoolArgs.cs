@@ -84,6 +84,18 @@ namespace Pulumi.Oci.Core.Inputs
             set => _loadBalancers = value;
         }
 
+        [Input("overridePolicies")]
+        private InputList<Inputs.ClusterNetworkInstancePoolOverridePolicyArgs>? _overridePolicies;
+
+        /// <summary>
+        /// Optional pool-level launch override policy for future instance launches.
+        /// </summary>
+        public InputList<Inputs.ClusterNetworkInstancePoolOverridePolicyArgs> OverridePolicies
+        {
+            get => _overridePolicies ?? (_overridePolicies = new InputList<Inputs.ClusterNetworkInstancePoolOverridePolicyArgs>());
+            set => _overridePolicies = value;
+        }
+
         [Input("placementConfigurations")]
         private InputList<Inputs.ClusterNetworkInstancePoolPlacementConfigurationArgs>? _placementConfigurations;
 

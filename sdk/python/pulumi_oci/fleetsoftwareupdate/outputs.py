@@ -863,6 +863,8 @@ class FsuCycleGoalVersionDetails(dict):
         suggest = None
         if key == "homePolicy":
             suggest = "home_policy"
+        elif key == "isOlderVersionAcknowledged":
+            suggest = "is_older_version_acknowledged"
         elif key == "newHomePrefix":
             suggest = "new_home_prefix"
         elif key == "softwareImageId":
@@ -883,6 +885,7 @@ class FsuCycleGoalVersionDetails(dict):
                  type: _builtins.str,
                  components: Optional[Sequence['outputs.FsuCycleGoalVersionDetailsComponent']] = None,
                  home_policy: Optional[_builtins.str] = None,
+                 is_older_version_acknowledged: Optional[_builtins.bool] = None,
                  new_home_prefix: Optional[_builtins.str] = None,
                  software_image_id: Optional[_builtins.str] = None,
                  version: Optional[_builtins.str] = None):
@@ -890,6 +893,7 @@ class FsuCycleGoalVersionDetails(dict):
         :param _builtins.str type: (Updatable) Type of goal version specified
         :param Sequence['FsuCycleGoalVersionDetailsComponentArgs'] components: (Updatable) Details of goal versions for components in an Exadata software stack.
         :param _builtins.str home_policy: (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+        :param _builtins.bool is_older_version_acknowledged: (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param _builtins.str new_home_prefix: (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
         :param _builtins.str software_image_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
         :param _builtins.str version: (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
@@ -899,6 +903,8 @@ class FsuCycleGoalVersionDetails(dict):
             pulumi.set(__self__, "components", components)
         if home_policy is not None:
             pulumi.set(__self__, "home_policy", home_policy)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if new_home_prefix is not None:
             pulumi.set(__self__, "new_home_prefix", new_home_prefix)
         if software_image_id is not None:
@@ -929,6 +935,14 @@ class FsuCycleGoalVersionDetails(dict):
         (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
         """
         return pulumi.get(self, "home_policy")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="newHomePrefix")
@@ -2715,6 +2729,7 @@ class GetFsuCycleGoalVersionDetailResult(dict):
     def __init__(__self__, *,
                  components: Sequence['outputs.GetFsuCycleGoalVersionDetailComponentResult'],
                  home_policy: _builtins.str,
+                 is_older_version_acknowledged: _builtins.bool,
                  new_home_prefix: _builtins.str,
                  software_image_id: _builtins.str,
                  type: _builtins.str,
@@ -2722,6 +2737,7 @@ class GetFsuCycleGoalVersionDetailResult(dict):
         """
         :param Sequence['GetFsuCycleGoalVersionDetailComponentArgs'] components: Details of goal versions for components in an Exadata software stack.
         :param _builtins.str home_policy: Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+        :param _builtins.bool is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param _builtins.str new_home_prefix: Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
         :param _builtins.str software_image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
         :param _builtins.str type: Type of Exadata Fleet Update Cycle.
@@ -2729,6 +2745,7 @@ class GetFsuCycleGoalVersionDetailResult(dict):
         """
         pulumi.set(__self__, "components", components)
         pulumi.set(__self__, "home_policy", home_policy)
+        pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         pulumi.set(__self__, "new_home_prefix", new_home_prefix)
         pulumi.set(__self__, "software_image_id", software_image_id)
         pulumi.set(__self__, "type", type)
@@ -2749,6 +2766,14 @@ class GetFsuCycleGoalVersionDetailResult(dict):
         Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
         """
         return pulumi.get(self, "home_policy")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> _builtins.bool:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="newHomePrefix")
@@ -3473,6 +3498,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult(dict):
     def __init__(__self__, *,
                  components: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentResult'],
                  home_policy: _builtins.str,
+                 is_older_version_acknowledged: _builtins.bool,
                  new_home_prefix: _builtins.str,
                  software_image_id: _builtins.str,
                  type: _builtins.str,
@@ -3480,6 +3506,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult(dict):
         """
         :param Sequence['GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs'] components: Details of goal versions for components in an Exadata software stack.
         :param _builtins.str home_policy: Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+        :param _builtins.bool is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param _builtins.str new_home_prefix: Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
         :param _builtins.str software_image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
         :param _builtins.str type: Type of Exadata Fleet Update Cycle.
@@ -3487,6 +3514,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult(dict):
         """
         pulumi.set(__self__, "components", components)
         pulumi.set(__self__, "home_policy", home_policy)
+        pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         pulumi.set(__self__, "new_home_prefix", new_home_prefix)
         pulumi.set(__self__, "software_image_id", software_image_id)
         pulumi.set(__self__, "type", type)
@@ -3507,6 +3535,14 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult(dict):
         Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
         """
         return pulumi.get(self, "home_policy")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> _builtins.bool:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="newHomePrefix")

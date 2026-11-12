@@ -2592,7 +2592,6 @@ class GetClustersClusterCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  initial_commitment: _builtins.str,
-                 initial_fault_domain_host_distribution: _builtins.str,
                  initial_host_ocpu_count: _builtins.float,
                  initial_host_shape_name: _builtins.str,
                  initial_vcf_byol_allocation_id: _builtins.str,
@@ -2623,7 +2622,6 @@ class GetClustersClusterCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
-        :param _builtins.str initial_fault_domain_host_distribution: The initial fault domain host distribution mode for the Cluster.
         :param _builtins.float initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param _builtins.str initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -2657,7 +2655,6 @@ class GetClustersClusterCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "initial_commitment", initial_commitment)
-        pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
         pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
@@ -2793,14 +2790,6 @@ class GetClustersClusterCollectionItemResult(dict):
         The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "initial_commitment")
-
-    @_builtins.property
-    @pulumi.getter(name="initialFaultDomainHostDistribution")
-    def initial_fault_domain_host_distribution(self) -> _builtins.str:
-        """
-        The initial fault domain host distribution mode for the Cluster.
-        """
-        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")

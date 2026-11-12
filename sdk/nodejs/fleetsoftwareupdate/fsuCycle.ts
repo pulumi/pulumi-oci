@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *             newHomePrefix: fsuCycleGoalVersionDetailsComponentsNewHomePrefix,
  *         }],
  *         homePolicy: fsuCycleGoalVersionDetailsHomePolicy,
+ *         isOlderVersionAcknowledged: fsuCycleGoalVersionDetailsIsOlderVersionAcknowledged,
  *         newHomePrefix: fsuCycleGoalVersionDetailsNewHomePrefix,
  *         softwareImageId: testImage.id,
  *         version: fsuCycleGoalVersionDetailsVersion,

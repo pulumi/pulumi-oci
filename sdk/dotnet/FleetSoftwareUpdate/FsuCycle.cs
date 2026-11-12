@@ -50,6 +50,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///                 },
     ///             },
     ///             HomePolicy = fsuCycleGoalVersionDetailsHomePolicy,
+    ///             IsOlderVersionAcknowledged = fsuCycleGoalVersionDetailsIsOlderVersionAcknowledged,
     ///             NewHomePrefix = fsuCycleGoalVersionDetailsNewHomePrefix,
     ///             SoftwareImageId = testImage.Id,
     ///             Version = fsuCycleGoalVersionDetailsVersion,

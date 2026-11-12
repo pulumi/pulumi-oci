@@ -44,6 +44,10 @@ import (
 //							MemoryInGbs: pulumi.Any(computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsMemoryInGbs),
 //							Ocpus:       pulumi.Any(computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsOcpus),
 //						},
+//						NetworkConfigurationDetails: &datascience.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs{
+//							NetworkType: pulumi.Any(computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsNetworkType),
+//							SubnetIds:   pulumi.Any(computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsSubnetIds),
+//						},
 //					},
 //					ScalingPolicy: &datascience.ComputeTargetComputeConfigurationDetailsScalingPolicyArgs{
 //						PolicyType: pulumi.Any(computeTargetComputeConfigurationDetailsScalingPolicyPolicyType),

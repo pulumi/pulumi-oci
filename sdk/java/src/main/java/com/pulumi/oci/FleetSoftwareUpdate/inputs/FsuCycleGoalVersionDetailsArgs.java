@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleGoalVersionDetailsComponentArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -46,6 +47,21 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
      */
     public Optional<Output<String>> homePolicy() {
         return Optional.ofNullable(this.homePolicy);
+    }
+
+    /**
+     * (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
     }
 
     /**
@@ -113,6 +129,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
     private FsuCycleGoalVersionDetailsArgs(FsuCycleGoalVersionDetailsArgs $) {
         this.components = $.components;
         this.homePolicy = $.homePolicy;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.newHomePrefix = $.newHomePrefix;
         this.softwareImageId = $.softwareImageId;
         this.type = $.type;
@@ -187,6 +204,27 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
          */
         public Builder homePolicy(String homePolicy) {
             return homePolicy(Output.of(homePolicy));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The total number of gpus required to be allocated to the workload.
+        /// The total number of gpus required to be allocated to the workload.
         /// </summary>
         [Input("gpus")]
         public Input<int>? Gpus { get; set; }

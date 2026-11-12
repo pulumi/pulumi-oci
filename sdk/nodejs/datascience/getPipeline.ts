@@ -97,6 +97,10 @@ export interface GetPipelineResult {
     readonly parameters: {[key: string]: string};
     readonly pipelineId: string;
     /**
+     * Retention period in days for pipeline runs.
+     */
+    readonly pipelineRunRetentionPeriodInDays: number;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
     readonly projectId: string;

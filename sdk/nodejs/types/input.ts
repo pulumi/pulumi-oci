@@ -14374,6 +14374,10 @@ export namespace Core {
          */
         loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolLoadBalancer>[] | undefined>;
         /**
+         * Optional pool-level launch override policy for future instance launches.
+         */
+        overridePolicies?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolOverridePolicy>[] | undefined>;
+        /**
          * The placement configurations for the instance pool.
          */
         placementConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolPlacementConfiguration>[] | undefined>;
@@ -14420,10 +14424,93 @@ export namespace Core {
          * The current state of the cluster network.
          */
         state?: pulumi.Input<string | undefined>;
-        /**
-         * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-         */
         vnicSelection?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicy {
+        /**
+         * The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatement>[] | undefined>;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The ordered list of candidate override options for the matched availability domain.
+         */
+        overrideOptions?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption>[] | undefined>;
+        /**
+         * The selector for an override statement.
+         */
+        selectors?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector>[] | undefined>;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The concrete launch mutation payload for an override option.
+         */
+        overrides?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride>[] | undefined>;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         */
+        shape?: pulumi.Input<string | undefined>;
+        /**
+         * The shape configuration requested for the override option.
+         */
+        shapeConfigDetails?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail>[] | undefined>;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         */
+        baselineOcpuUtilization?: pulumi.Input<string | undefined>;
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes?: pulumi.Input<number | undefined>;
+        /**
+         * The total number of OCPUs available to the instance.
+         */
+        ocpus?: pulumi.Input<number | undefined>;
+        /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement?: pulumi.Input<string | undefined>;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
     }
 
     export interface ClusterNetworkInstancePoolPlacementConfiguration {
@@ -15364,12 +15451,18 @@ export namespace Core {
     }
 
     export interface GetClusterNetworksFilter {
+        /**
+         * A user-friendly name for the override option.
+         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetClusterNetworksFilterArgs {
+        /**
+         * A user-friendly name for the override option.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -15958,12 +16051,18 @@ export namespace Core {
     }
 
     export interface GetInstancePoolsFilter {
+        /**
+         * A user-friendly name for the override option.
+         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetInstancePoolsFilterArgs {
+        /**
+         * A user-friendly name for the override option.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -18729,6 +18828,107 @@ export namespace Core {
          * Indicates which VNIC on each instance in the pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
          */
         vnicSelection: pulumi.Input<string>;
+    }
+
+    export interface InstancePoolOverridePolicy {
+        /**
+         * (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolOverridePolicyOverrideStatement>[]>;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatement {
+        /**
+         * (Updatable) The ordered list of candidate override options for the matched availability domain.
+         *
+         * Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+         */
+        overrideOptions: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolOverridePolicyOverrideStatementOverrideOption>[]>;
+        /**
+         * (Updatable) The selector for an override statement.
+         *
+         * In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+         */
+        selector: pulumi.Input<inputs.Core.InstancePoolOverridePolicyOverrideStatementSelector>;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * (Updatable) A user-friendly name for the override option.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) The concrete launch mutation payload for an override option.
+         *
+         * In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+         *
+         * Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+         *
+         * Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+         */
+        override: pulumi.Input<inputs.Core.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride>;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * (Updatable) The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         */
+        shape?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The shape configuration requested for the override option.
+         */
+        shapeConfigDetails?: pulumi.Input<inputs.Core.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails | undefined>;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails {
+        /**
+         * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        baselineOcpuUtilization?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The total number of OCPUs available to the instance.
+         */
+        ocpus?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) This field is reserved for internal use.
+         */
+        resourceManagement?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * (Updatable) The availability domain that this statement applies to.
+         *
+         * The value must match an availability domain present in the pool's `placementConfigurations`.
+         */
+        availabilityDomain: pulumi.Input<string>;
     }
 
     export interface InstancePoolPlacementConfiguration {
@@ -26980,6 +27180,10 @@ export namespace DataScience {
          */
         bootVolumeSizeInGbs?: pulumi.Input<number | undefined>;
         /**
+         * (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+         */
+        capacityReservationIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
          * (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
          */
         instanceShape: pulumi.Input<string>;
@@ -26987,6 +27191,10 @@ export namespace DataScience {
          * (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
          */
         instanceShapeDetails?: pulumi.Input<inputs.DataScience.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails | undefined>;
+        /**
+         * The network configuration details for managed compute cluster type resource.
+         */
+        networkConfigurationDetails?: pulumi.Input<inputs.DataScience.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails | undefined>;
     }
 
     export interface ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails {
@@ -26998,6 +27206,17 @@ export namespace DataScience {
          * (Updatable) The total number of OCPUs allocated to the instance.
          */
         ocpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        subnetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     }
 
     export interface ComputeTargetComputeConfigurationDetailsScalingPolicy {
@@ -27597,6 +27816,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs?: pulumi.Input<number | undefined>;
         /**
+         * (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId?: pulumi.Input<string | undefined>;
@@ -27608,6 +27831,10 @@ export namespace DataScience {
          * (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails | undefined>;
+        /**
+         * (Updatable) The network configuration details for the compute target job.
+         */
+        networkConfiguration?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetailsNetworkConfiguration | undefined>;
         /**
          * (Updatable) Details for the compute target job resource configuration.
          */
@@ -27635,6 +27862,17 @@ export namespace DataScience {
          * (Updatable) The total number of OCPUs available to the job run instance.
          */
         ocpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface JobJobInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId?: pulumi.Input<string | undefined>;
     }
 
     export interface JobJobInfrastructureConfigurationDetailsResourceConfiguration {
@@ -27718,7 +27956,7 @@ export namespace DataScience {
 
     export interface JobJobNodeConfigurationDetailsJobNetworkConfiguration {
         /**
-         * job network type
+         * The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
          */
         jobNetworkType: pulumi.Input<string>;
         /**
@@ -27833,6 +28071,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs?: pulumi.Input<number | undefined>;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId?: pulumi.Input<string | undefined>;
@@ -27844,6 +28086,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails | undefined>;
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfiguration?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration | undefined>;
         /**
          * Details for the compute target job resource configuration.
          */
@@ -27871,6 +28117,17 @@ export namespace DataScience {
          * The total number of OCPUs available to the job run instance.
          */
         ocpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId?: pulumi.Input<string | undefined>;
     }
 
     export interface JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration {
@@ -28024,6 +28281,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs?: pulumi.Input<number | undefined>;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId?: pulumi.Input<string | undefined>;
@@ -28035,6 +28296,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail>[] | undefined>;
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationDetailNetworkConfiguration>[] | undefined>;
         /**
          * Details for the compute target job resource configuration.
          */
@@ -28062,6 +28327,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface JobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType?: pulumi.Input<string | undefined>;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId?: pulumi.Input<string | undefined>;
     }
 
     export interface JobRunJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -28107,6 +28383,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs?: pulumi.Input<number | undefined>;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId?: pulumi.Input<string | undefined>;
@@ -28118,6 +28398,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails | undefined>;
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfiguration?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration | undefined>;
         /**
          * Details for the compute target job resource configuration.
          */
@@ -28134,6 +28418,10 @@ export namespace DataScience {
 
     export interface JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline?: pulumi.Input<string | undefined>;
+        /**
          * The total amount of memory available to the job run instance, in gigabytes.
          */
         memoryInGbs?: pulumi.Input<number | undefined>;
@@ -28141,6 +28429,17 @@ export namespace DataScience {
          * The total number of OCPUs available to the job run instance.
          */
         ocpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId?: pulumi.Input<string | undefined>;
     }
 
     export interface JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration {
@@ -28224,7 +28523,7 @@ export namespace DataScience {
 
     export interface JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration {
         /**
-         * job network type
+         * The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
          */
         jobNetworkType: pulumi.Input<string>;
         /**
@@ -28339,6 +28638,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs?: pulumi.Input<number | undefined>;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId?: pulumi.Input<string | undefined>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId?: pulumi.Input<string | undefined>;
@@ -28350,6 +28653,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails | undefined>;
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfiguration?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration | undefined>;
         /**
          * Details for the compute target job resource configuration.
          */
@@ -28366,6 +28673,10 @@ export namespace DataScience {
 
     export interface JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline?: pulumi.Input<string | undefined>;
+        /**
          * The total amount of memory available to the job run instance, in gigabytes.
          */
         memoryInGbs?: pulumi.Input<number | undefined>;
@@ -28373,6 +28684,17 @@ export namespace DataScience {
          * The total number of OCPUs available to the job run instance.
          */
         ocpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId?: pulumi.Input<string | undefined>;
     }
 
     export interface JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration {
@@ -28445,6 +28767,41 @@ export namespace DataScience {
          * The type of storage.
          */
         storageType?: pulumi.Input<string | undefined>;
+    }
+
+    export interface JobRunJobStorageMountConfigurationOverrideDetailsList {
+        /**
+         * The object storage bucket
+         */
+        bucket?: pulumi.Input<string | undefined>;
+        /**
+         * The local directory name to be mounted
+         */
+        destinationDirectoryName: pulumi.Input<string>;
+        /**
+         * The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string | undefined>;
+        /**
+         * OCID of the export
+         */
+        exportId?: pulumi.Input<string | undefined>;
+        /**
+         * OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string | undefined>;
+        /**
+         * The object storage namespace
+         */
+        namespace?: pulumi.Input<string | undefined>;
+        /**
+         * Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string | undefined>;
+        /**
+         * The type of storage.
+         */
+        storageType: pulumi.Input<string>;
     }
 
     export interface JobRunLogDetail {
@@ -28926,9 +29283,13 @@ export namespace DataScience {
          */
         maximumBandwidthMbps?: pulumi.Input<number | undefined>;
         /**
-         * (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         * Resource configuration details for model deploy on managed compute cluster type compute target.
          */
         modelDeploymentResourceConfiguration?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration | undefined>;
+        /**
+         * The network configuration details for model deploy on managed compute cluster type compute target.
+         */
+        networkConfiguration?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration | undefined>;
         /**
          * The scaling policy to apply to each model of the deployment.
          */
@@ -28936,6 +29297,9 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration {
+        /**
+         * This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -28976,11 +29340,11 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
         /**
-         * (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+         * Resource limit configuration details for workload on managed compute cluster type compute target
          */
         resourceLimitConfiguration?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration | undefined>;
         /**
-         * (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         * Resource request configuration to run workload on managed compute cluster type compute target compute target.
          */
         resourceRequestConfiguration: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration>;
     }
@@ -28998,7 +29362,7 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
         /**
-         * (Updatable) The total number of gpus required to be allocated to the workload.
+         * The total number of gpus required to be allocated to the workload.
          */
         gpus?: pulumi.Input<number | undefined>;
         /**
@@ -29009,6 +29373,17 @@ export namespace DataScience {
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
          */
         ocpus: pulumi.Input<number>;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy {
@@ -29196,6 +29571,9 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
+        /**
+         * (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
          * (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -51875,6 +52253,10 @@ export namespace FleetSoftwareUpdate {
          * (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
          */
         homePolicy?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
         /**
          * (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
          */

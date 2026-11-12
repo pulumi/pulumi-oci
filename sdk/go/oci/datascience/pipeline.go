@@ -52,6 +52,8 @@ type Pipeline struct {
 	LogConfigurationDetails PipelineLogConfigurationDetailsOutput `pulumi:"logConfigurationDetails"`
 	// (Updatable) Parameters used in the pipeline.
 	Parameters pulumi.StringMapOutput `pulumi:"parameters"`
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays pulumi.IntOutput `pulumi:"pipelineRunRetentionPeriodInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the pipeline.
@@ -131,6 +133,8 @@ type pipelineState struct {
 	LogConfigurationDetails *PipelineLogConfigurationDetails `pulumi:"logConfigurationDetails"`
 	// (Updatable) Parameters used in the pipeline.
 	Parameters map[string]string `pulumi:"parameters"`
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays *int `pulumi:"pipelineRunRetentionPeriodInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId *string `pulumi:"projectId"`
 	// The current state of the pipeline.
@@ -172,6 +176,8 @@ type PipelineState struct {
 	LogConfigurationDetails PipelineLogConfigurationDetailsPtrInput
 	// (Updatable) Parameters used in the pipeline.
 	Parameters pulumi.StringMapInput
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId pulumi.StringPtrInput
 	// The current state of the pipeline.
@@ -219,6 +225,8 @@ type pipelineArgs struct {
 	LogConfigurationDetails *PipelineLogConfigurationDetails `pulumi:"logConfigurationDetails"`
 	// (Updatable) Parameters used in the pipeline.
 	Parameters map[string]string `pulumi:"parameters"`
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays *int `pulumi:"pipelineRunRetentionPeriodInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId     string                 `pulumi:"projectId"`
 	StepArtifacts []PipelineStepArtifact `pulumi:"stepArtifacts"`
@@ -249,6 +257,8 @@ type PipelineArgs struct {
 	LogConfigurationDetails PipelineLogConfigurationDetailsPtrInput
 	// (Updatable) Parameters used in the pipeline.
 	Parameters pulumi.StringMapInput
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId     pulumi.StringInput
 	StepArtifacts PipelineStepArtifactArrayInput
@@ -404,6 +414,11 @@ func (o PipelineOutput) LogConfigurationDetails() PipelineLogConfigurationDetail
 // (Updatable) Parameters used in the pipeline.
 func (o PipelineOutput) Parameters() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.StringMapOutput { return v.Parameters }).(pulumi.StringMapOutput)
+}
+
+// Retention period in days for pipeline runs.
+func (o PipelineOutput) PipelineRunRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.IntOutput { return v.PipelineRunRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

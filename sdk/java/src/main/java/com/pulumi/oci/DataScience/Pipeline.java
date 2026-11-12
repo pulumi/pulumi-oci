@@ -17,6 +17,7 @@ import com.pulumi.oci.DataScience.outputs.PipelineStepDetail;
 import com.pulumi.oci.DataScience.outputs.PipelineStorageMountConfigurationDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -201,6 +202,20 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> parameters() {
         return this.parameters;
+    }
+    /**
+     * Retention period in days for pipeline runs.
+     * 
+     */
+    @Export(name="pipelineRunRetentionPeriodInDays", refs={Integer.class}, tree="[0]")
+    private Output<Integer> pipelineRunRetentionPeriodInDays;
+
+    /**
+     * @return Retention period in days for pipeline runs.
+     * 
+     */
+    public Output<Integer> pipelineRunRetentionPeriodInDays() {
+        return this.pipelineRunRetentionPeriodInDays;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

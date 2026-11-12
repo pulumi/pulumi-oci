@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstancePoolLifecycleManagement;
 import com.pulumi.oci.Core.outputs.GetInstancePoolLoadBalancer;
+import com.pulumi.oci.Core.outputs.GetInstancePoolOverridePolicy;
 import com.pulumi.oci.Core.outputs.GetInstancePoolPlacementConfiguration;
 import java.lang.Integer;
 import java.lang.String;
@@ -77,6 +78,11 @@ public final class GetInstancePoolResult {
      * 
      */
     private List<GetInstancePoolLoadBalancer> loadBalancers;
+    /**
+     * @return Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    private List<GetInstancePoolOverridePolicy> overridePolicies;
     /**
      * @return The placement configurations for the instance pool.
      * 
@@ -192,6 +198,13 @@ public final class GetInstancePoolResult {
         return this.loadBalancers;
     }
     /**
+     * @return Optional pool-level launch override policy for future instance launches.
+     * 
+     */
+    public List<GetInstancePoolOverridePolicy> overridePolicies() {
+        return this.overridePolicies;
+    }
+    /**
      * @return The placement configurations for the instance pool.
      * 
      */
@@ -249,6 +262,7 @@ public final class GetInstancePoolResult {
         private String instancePoolId;
         private List<GetInstancePoolLifecycleManagement> lifecycleManagements;
         private List<GetInstancePoolLoadBalancer> loadBalancers;
+        private List<GetInstancePoolOverridePolicy> overridePolicies;
         private List<GetInstancePoolPlacementConfiguration> placementConfigurations;
         private String poolType;
         private Integer size;
@@ -270,6 +284,7 @@ public final class GetInstancePoolResult {
     	      this.instancePoolId = defaults.instancePoolId;
     	      this.lifecycleManagements = defaults.lifecycleManagements;
     	      this.loadBalancers = defaults.loadBalancers;
+    	      this.overridePolicies = defaults.overridePolicies;
     	      this.placementConfigurations = defaults.placementConfigurations;
     	      this.poolType = defaults.poolType;
     	      this.size = defaults.size;
@@ -388,6 +403,17 @@ public final class GetInstancePoolResult {
             return loadBalancers(List.of(loadBalancers));
         }
         @CustomType.Setter
+        public Builder overridePolicies(List<GetInstancePoolOverridePolicy> overridePolicies) {
+            if (overridePolicies == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "overridePolicies");
+            }
+            this.overridePolicies = overridePolicies;
+            return this;
+        }
+        public Builder overridePolicies(GetInstancePoolOverridePolicy... overridePolicies) {
+            return overridePolicies(List.of(overridePolicies));
+        }
+        @CustomType.Setter
         public Builder placementConfigurations(List<GetInstancePoolPlacementConfiguration> placementConfigurations) {
             if (placementConfigurations == null) {
               throw new MissingRequiredPropertyException("GetInstancePoolResult", "placementConfigurations");
@@ -445,6 +471,7 @@ public final class GetInstancePoolResult {
             _resultValue.instancePoolId = instancePoolId;
             _resultValue.lifecycleManagements = lifecycleManagements;
             _resultValue.loadBalancers = loadBalancers;
+            _resultValue.overridePolicies = overridePolicies;
             _resultValue.placementConfigurations = placementConfigurations;
             _resultValue.poolType = poolType;
             _resultValue.size = size;

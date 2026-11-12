@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration {
     /**
-     * @return job network type
+     * @return The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
      * 
      */
     private String jobNetworkType;
@@ -25,7 +25,7 @@ public final class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurat
 
     private JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration() {}
     /**
-     * @return job network type
+     * @return The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
      * 
      */
     public String jobNetworkType() {

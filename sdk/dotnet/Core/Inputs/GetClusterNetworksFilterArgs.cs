@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class GetClusterNetworksFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A user-friendly name for the override option.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

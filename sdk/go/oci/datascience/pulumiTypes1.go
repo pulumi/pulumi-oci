@@ -13,6 +13,3163 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail struct {
+	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// Details for the notebook session shape configuration.
+	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+	Shape string `pulumi:"shape"`
+	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs struct {
+	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// Details for the notebook session shape configuration.
+	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
+	return o
+}
+
+// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) int {
+		return v.BlockStorageSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// Details for the notebook session shape configuration.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) NotebookSessionShapeConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail {
+		return v.NotebookSessionShapeConfigDetails
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the notebook session instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the notebook session instance.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the notebook session instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the notebook session instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
+// The total amount of memory available to the notebook session instance, in gigabytes.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the notebook session instance.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail struct {
+	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// Details for the notebook session shape configuration.
+	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+	Shape string `pulumi:"shape"`
+	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs struct {
+	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// Details for the notebook session shape configuration.
+	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
+	return o
+}
+
+// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) int {
+		return v.BlockStorageSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// Details for the notebook session shape configuration.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) NotebookSessionShapeConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail {
+		return v.NotebookSessionShapeConfigDetails
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the notebook session instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the notebook session instance.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the notebook session instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the notebook session instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
+// The total amount of memory available to the notebook session instance, in gigabytes.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the notebook session instance.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail struct {
+	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables map[string]string `pulumi:"customEnvironmentVariables"`
+	// Git configuration Details.
+	NotebookSessionGitConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs struct {
+	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables pulumi.StringMapInput `pulumi:"customEnvironmentVariables"`
+	// Git configuration Details.
+	NotebookSessionGitConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return o
+}
+
+// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]string {
+		return v.CustomEnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// Git configuration Details.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) NotebookSessionGitConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+		return v.NotebookSessionGitConfigDetails
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail struct {
+	// A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs struct {
+	// A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return o
+}
+
+// A collection of Git repository configurations.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) NotebookSessionGitRepoConfigCollections() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+		return v.NotebookSessionGitRepoConfigCollections
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection struct {
+	// The repository URL
+	Url string `pulumi:"url"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs struct {
+	// The repository URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+// The repository URL
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection) string {
+		return v.Url
+	}).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs and GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray and GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{ GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray []GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.DestinationPath
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.ExportId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.MountTargetId
+	}).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.Prefix
+	}).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
+		return v.StorageType
+	}).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
+}
+
+type GetPipelineConfigurationDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type string `pulumi:"type"`
+}
+
+// GetPipelineConfigurationDetailInput is an input type that accepts GetPipelineConfigurationDetailArgs and GetPipelineConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineConfigurationDetailInput` via:
+//
+//	GetPipelineConfigurationDetailArgs{...}
+type GetPipelineConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineConfigurationDetailOutput() GetPipelineConfigurationDetailOutput
+	ToGetPipelineConfigurationDetailOutputWithContext(context.Context) GetPipelineConfigurationDetailOutput
+}
+
+type GetPipelineConfigurationDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetPipelineConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineConfigurationDetailArgs) ToGetPipelineConfigurationDetailOutput() GetPipelineConfigurationDetailOutput {
+	return i.ToGetPipelineConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineConfigurationDetailArgs) ToGetPipelineConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineConfigurationDetailOutput)
+}
+
+// GetPipelineConfigurationDetailArrayInput is an input type that accepts GetPipelineConfigurationDetailArray and GetPipelineConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineConfigurationDetailArrayInput` via:
+//
+//	GetPipelineConfigurationDetailArray{ GetPipelineConfigurationDetailArgs{...} }
+type GetPipelineConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineConfigurationDetailArrayOutput() GetPipelineConfigurationDetailArrayOutput
+	ToGetPipelineConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineConfigurationDetailArrayOutput
+}
+
+type GetPipelineConfigurationDetailArray []GetPipelineConfigurationDetailInput
+
+func (GetPipelineConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineConfigurationDetailArray) ToGetPipelineConfigurationDetailArrayOutput() GetPipelineConfigurationDetailArrayOutput {
+	return i.ToGetPipelineConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineConfigurationDetailArray) ToGetPipelineConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineConfigurationDetailArrayOutput)
+}
+
+type GetPipelineConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineConfigurationDetailOutput) ToGetPipelineConfigurationDetailOutput() GetPipelineConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineConfigurationDetailOutput) ToGetPipelineConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetPipelineConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineConfigurationDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetPipelineConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetPipelineConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineConfigurationDetail) string { return v.MaximumRuntimeInMinutes }).(pulumi.StringOutput)
+}
+
+// The type of pipeline.
+func (o GetPipelineConfigurationDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineConfigurationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetPipelineConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineConfigurationDetailArrayOutput) ToGetPipelineConfigurationDetailArrayOutput() GetPipelineConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineConfigurationDetailArrayOutput) ToGetPipelineConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineConfigurationDetail {
+		return vs[0].([]GetPipelineConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineConfigurationDetailOutput)
+}
+
+type GetPipelineInfrastructureConfigurationDetail struct {
+	// The size of the block storage volume to attach to the instance.
+	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+	BlockStorageSizeInGbsParameterized string `pulumi:"blockStorageSizeInGbsParameterized"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ShapeConfigDetails []GetPipelineInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
+	// The shape used to launch the instance for all step runs in the pipeline.
+	ShapeName string `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetPipelineInfrastructureConfigurationDetailInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailArgs and GetPipelineInfrastructureConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailInput` via:
+//
+//	GetPipelineInfrastructureConfigurationDetailArgs{...}
+type GetPipelineInfrastructureConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineInfrastructureConfigurationDetailOutput() GetPipelineInfrastructureConfigurationDetailOutput
+	ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailOutput
+}
+
+type GetPipelineInfrastructureConfigurationDetailArgs struct {
+	// The size of the block storage volume to attach to the instance.
+	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+	BlockStorageSizeInGbsParameterized pulumi.StringInput `pulumi:"blockStorageSizeInGbsParameterized"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ShapeConfigDetails GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
+	// The shape used to launch the instance for all step runs in the pipeline.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetPipelineInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailArgs) ToGetPipelineInfrastructureConfigurationDetailOutput() GetPipelineInfrastructureConfigurationDetailOutput {
+	return i.ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailArgs) ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailOutput)
+}
+
+// GetPipelineInfrastructureConfigurationDetailArrayInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailArray and GetPipelineInfrastructureConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailArrayInput` via:
+//
+//	GetPipelineInfrastructureConfigurationDetailArray{ GetPipelineInfrastructureConfigurationDetailArgs{...} }
+type GetPipelineInfrastructureConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineInfrastructureConfigurationDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailArrayOutput
+	ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailArrayOutput
+}
+
+type GetPipelineInfrastructureConfigurationDetailArray []GetPipelineInfrastructureConfigurationDetailInput
+
+func (GetPipelineInfrastructureConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailArray) ToGetPipelineInfrastructureConfigurationDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailArrayOutput {
+	return i.ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailArray) ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailArrayOutput)
+}
+
+type GetPipelineInfrastructureConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineInfrastructureConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailOutput) ToGetPipelineInfrastructureConfigurationDetailOutput() GetPipelineInfrastructureConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailOutput) ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailOutput {
+	return o
+}
+
+// The size of the block storage volume to attach to the instance.
+func (o GetPipelineInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string {
+		return v.BlockStorageSizeInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineInfrastructureConfigurationDetailOutput) ShapeConfigDetails() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) []GetPipelineInfrastructureConfigurationDetailShapeConfigDetail {
+		return v.ShapeConfigDetails
+	}).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
+}
+
+// The shape used to launch the instance for all step runs in the pipeline.
+func (o GetPipelineInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o GetPipelineInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetPipelineInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineInfrastructureConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineInfrastructureConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineInfrastructureConfigurationDetail {
+		return vs[0].([]GetPipelineInfrastructureConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineInfrastructureConfigurationDetailOutput)
+}
+
+type GetPipelineInfrastructureConfigurationDetailShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized string `pulumi:"ocpusParameterized"`
+}
+
+// GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs and GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput` via:
+//
+//	GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs{...}
+type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput
+	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput
+}
+
+type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
+}
+
+func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return i.ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput)
+}
+
+// GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray and GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray{ GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs{...} }
+type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
+	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
+}
+
+type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray []GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput
+
+func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) string { return v.CpuBaseline }).(pulumi.StringOutput)
+}
+
+// The total amount of memory available to the pipeline step run instance GBs.
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) string {
+		return v.MemoryInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available to the pipeline step run instance.
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) string {
+		return v.OcpusParameterized
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineInfrastructureConfigurationDetailShapeConfigDetail {
+		return vs[0].([]GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput)
+}
+
+type GetPipelineLogConfigurationDetail struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetPipelineLogConfigurationDetailInput is an input type that accepts GetPipelineLogConfigurationDetailArgs and GetPipelineLogConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineLogConfigurationDetailInput` via:
+//
+//	GetPipelineLogConfigurationDetailArgs{...}
+type GetPipelineLogConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineLogConfigurationDetailOutput() GetPipelineLogConfigurationDetailOutput
+	ToGetPipelineLogConfigurationDetailOutputWithContext(context.Context) GetPipelineLogConfigurationDetailOutput
+}
+
+type GetPipelineLogConfigurationDetailArgs struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetPipelineLogConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineLogConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineLogConfigurationDetailArgs) ToGetPipelineLogConfigurationDetailOutput() GetPipelineLogConfigurationDetailOutput {
+	return i.ToGetPipelineLogConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineLogConfigurationDetailArgs) ToGetPipelineLogConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineLogConfigurationDetailOutput)
+}
+
+// GetPipelineLogConfigurationDetailArrayInput is an input type that accepts GetPipelineLogConfigurationDetailArray and GetPipelineLogConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineLogConfigurationDetailArrayInput` via:
+//
+//	GetPipelineLogConfigurationDetailArray{ GetPipelineLogConfigurationDetailArgs{...} }
+type GetPipelineLogConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineLogConfigurationDetailArrayOutput() GetPipelineLogConfigurationDetailArrayOutput
+	ToGetPipelineLogConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineLogConfigurationDetailArrayOutput
+}
+
+type GetPipelineLogConfigurationDetailArray []GetPipelineLogConfigurationDetailInput
+
+func (GetPipelineLogConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineLogConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineLogConfigurationDetailArray) ToGetPipelineLogConfigurationDetailArrayOutput() GetPipelineLogConfigurationDetailArrayOutput {
+	return i.ToGetPipelineLogConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineLogConfigurationDetailArray) ToGetPipelineLogConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineLogConfigurationDetailArrayOutput)
+}
+
+type GetPipelineLogConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineLogConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineLogConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineLogConfigurationDetailOutput) ToGetPipelineLogConfigurationDetailOutput() GetPipelineLogConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineLogConfigurationDetailOutput) ToGetPipelineLogConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailOutput {
+	return o
+}
+
+// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o GetPipelineLogConfigurationDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) bool { return v.EnableAutoLogCreation }).(pulumi.BoolOutput)
+}
+
+// If customer logging is enabled for pipeline.
+func (o GetPipelineLogConfigurationDetailOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) bool { return v.EnableLogging }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetPipelineLogConfigurationDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetPipelineLogConfigurationDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetPipelineLogConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineLogConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineLogConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineLogConfigurationDetailArrayOutput) ToGetPipelineLogConfigurationDetailArrayOutput() GetPipelineLogConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineLogConfigurationDetailArrayOutput) ToGetPipelineLogConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineLogConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineLogConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineLogConfigurationDetail {
+		return vs[0].([]GetPipelineLogConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineLogConfigurationDetailOutput)
+}
+
+type GetPipelineRunConfigurationDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type string `pulumi:"type"`
+}
+
+// GetPipelineRunConfigurationDetailInput is an input type that accepts GetPipelineRunConfigurationDetailArgs and GetPipelineRunConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunConfigurationDetailInput` via:
+//
+//	GetPipelineRunConfigurationDetailArgs{...}
+type GetPipelineRunConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunConfigurationDetailOutput() GetPipelineRunConfigurationDetailOutput
+	ToGetPipelineRunConfigurationDetailOutputWithContext(context.Context) GetPipelineRunConfigurationDetailOutput
+}
+
+type GetPipelineRunConfigurationDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetPipelineRunConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunConfigurationDetailArgs) ToGetPipelineRunConfigurationDetailOutput() GetPipelineRunConfigurationDetailOutput {
+	return i.ToGetPipelineRunConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunConfigurationDetailArgs) ToGetPipelineRunConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationDetailOutput)
+}
+
+// GetPipelineRunConfigurationDetailArrayInput is an input type that accepts GetPipelineRunConfigurationDetailArray and GetPipelineRunConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunConfigurationDetailArray{ GetPipelineRunConfigurationDetailArgs{...} }
+type GetPipelineRunConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunConfigurationDetailArrayOutput() GetPipelineRunConfigurationDetailArrayOutput
+	ToGetPipelineRunConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunConfigurationDetailArray []GetPipelineRunConfigurationDetailInput
+
+func (GetPipelineRunConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunConfigurationDetailArray) ToGetPipelineRunConfigurationDetailArrayOutput() GetPipelineRunConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunConfigurationDetailArray) ToGetPipelineRunConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunConfigurationDetailOutput) ToGetPipelineRunConfigurationDetailOutput() GetPipelineRunConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunConfigurationDetailOutput) ToGetPipelineRunConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetPipelineRunConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetPipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetPipelineRunConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) string { return v.MaximumRuntimeInMinutes }).(pulumi.StringOutput)
+}
+
+// The type of pipeline.
+func (o GetPipelineRunConfigurationDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetPipelineRunConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunConfigurationDetailArrayOutput) ToGetPipelineRunConfigurationDetailArrayOutput() GetPipelineRunConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunConfigurationDetailArrayOutput) ToGetPipelineRunConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunConfigurationDetail {
+		return vs[0].([]GetPipelineRunConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunConfigurationDetailOutput)
+}
+
+type GetPipelineRunConfigurationOverrideDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type string `pulumi:"type"`
+}
+
+// GetPipelineRunConfigurationOverrideDetailInput is an input type that accepts GetPipelineRunConfigurationOverrideDetailArgs and GetPipelineRunConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunConfigurationOverrideDetailInput` via:
+//
+//	GetPipelineRunConfigurationOverrideDetailArgs{...}
+type GetPipelineRunConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunConfigurationOverrideDetailOutput() GetPipelineRunConfigurationOverrideDetailOutput
+	ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(context.Context) GetPipelineRunConfigurationOverrideDetailOutput
+}
+
+type GetPipelineRunConfigurationOverrideDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+	// The type of pipeline.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetPipelineRunConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunConfigurationOverrideDetailArgs) ToGetPipelineRunConfigurationOverrideDetailOutput() GetPipelineRunConfigurationOverrideDetailOutput {
+	return i.ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunConfigurationOverrideDetailArgs) ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationOverrideDetailOutput)
+}
+
+// GetPipelineRunConfigurationOverrideDetailArrayInput is an input type that accepts GetPipelineRunConfigurationOverrideDetailArray and GetPipelineRunConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunConfigurationOverrideDetailArrayInput` via:
+//
+//	GetPipelineRunConfigurationOverrideDetailArray{ GetPipelineRunConfigurationOverrideDetailArgs{...} }
+type GetPipelineRunConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunConfigurationOverrideDetailArrayOutput() GetPipelineRunConfigurationOverrideDetailArrayOutput
+	ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunConfigurationOverrideDetailArrayOutput
+}
+
+type GetPipelineRunConfigurationOverrideDetailArray []GetPipelineRunConfigurationOverrideDetailInput
+
+func (GetPipelineRunConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunConfigurationOverrideDetailArray) ToGetPipelineRunConfigurationOverrideDetailArrayOutput() GetPipelineRunConfigurationOverrideDetailArrayOutput {
+	return i.ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunConfigurationOverrideDetailArray) ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationOverrideDetailArrayOutput)
+}
+
+type GetPipelineRunConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunConfigurationOverrideDetailOutput) ToGetPipelineRunConfigurationOverrideDetailOutput() GetPipelineRunConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunConfigurationOverrideDetailOutput) ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetPipelineRunConfigurationOverrideDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetPipelineRunConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetPipelineRunConfigurationOverrideDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) string { return v.MaximumRuntimeInMinutes }).(pulumi.StringOutput)
+}
+
+// The type of pipeline.
+func (o GetPipelineRunConfigurationOverrideDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetPipelineRunConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunConfigurationOverrideDetailArrayOutput) ToGetPipelineRunConfigurationOverrideDetailArrayOutput() GetPipelineRunConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunConfigurationOverrideDetailArrayOutput) ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunConfigurationOverrideDetail {
+		return vs[0].([]GetPipelineRunConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetPipelineRunConfigurationOverrideDetailOutput)
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetail struct {
+	// The size of the block storage volume to attach to the instance.
+	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+	BlockStorageSizeInGbsParameterized string `pulumi:"blockStorageSizeInGbsParameterized"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ShapeConfigDetails []GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
+	// The shape used to launch the instance for all step runs in the pipeline.
+	ShapeName string `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetPipelineRunInfrastructureConfigurationOverrideDetailInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailArgs and GetPipelineRunInfrastructureConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailInput` via:
+//
+//	GetPipelineRunInfrastructureConfigurationOverrideDetailArgs{...}
+type GetPipelineRunInfrastructureConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailOutput
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailArgs struct {
+	// The size of the block storage volume to attach to the instance.
+	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+	BlockStorageSizeInGbsParameterized pulumi.StringInput `pulumi:"blockStorageSizeInGbsParameterized"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ShapeConfigDetails GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
+	// The shape used to launch the instance for all step runs in the pipeline.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
+	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailOutput)
+}
+
+// GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailArray and GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput` via:
+//
+//	GetPipelineRunInfrastructureConfigurationOverrideDetailArray{ GetPipelineRunInfrastructureConfigurationOverrideDetailArgs{...} }
+type GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailArray []GetPipelineRunInfrastructureConfigurationOverrideDetailInput
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
+	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput)
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
+	return o
+}
+
+// The size of the block storage volume to attach to the instance.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) BlockStorageSizeInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) string {
+		return v.BlockStorageSizeInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ShapeConfigDetails() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) []GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail {
+		return v.ShapeConfigDetails
+	}).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput)
+}
+
+// The shape used to launch the instance for all step runs in the pipeline.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunInfrastructureConfigurationOverrideDetail {
+		return vs[0].([]GetPipelineRunInfrastructureConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetPipelineRunInfrastructureConfigurationOverrideDetailOutput)
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized string `pulumi:"ocpusParameterized"`
+}
+
+// GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs and GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput` via:
+//
+//	GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs{...}
+type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
+}
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
+	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput)
+}
+
+// GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray and GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray{ GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs{...} }
+type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput
+	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray []GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
+// The total amount of memory available to the pipeline step run instance GBs.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) string {
+		return v.MemoryInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available to the pipeline step run instance.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) string {
+		return v.OcpusParameterized
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail {
+		return vs[0].([]GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput)
+}
+
+type GetPipelineRunLogConfigurationOverrideDetail struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The log group id for where log objects will be for pipeline runs.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The log id of the log object the pipeline run logs will be shipped to.
+	LogId string `pulumi:"logId"`
+}
+
+// GetPipelineRunLogConfigurationOverrideDetailInput is an input type that accepts GetPipelineRunLogConfigurationOverrideDetailArgs and GetPipelineRunLogConfigurationOverrideDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunLogConfigurationOverrideDetailInput` via:
+//
+//	GetPipelineRunLogConfigurationOverrideDetailArgs{...}
+type GetPipelineRunLogConfigurationOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunLogConfigurationOverrideDetailOutput() GetPipelineRunLogConfigurationOverrideDetailOutput
+	ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(context.Context) GetPipelineRunLogConfigurationOverrideDetailOutput
+}
+
+type GetPipelineRunLogConfigurationOverrideDetailArgs struct {
+	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
+	// If customer logging is enabled for pipeline.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The log group id for where log objects will be for pipeline runs.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The log id of the log object the pipeline run logs will be shipped to.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetPipelineRunLogConfigurationOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunLogConfigurationOverrideDetailArgs) ToGetPipelineRunLogConfigurationOverrideDetailOutput() GetPipelineRunLogConfigurationOverrideDetailOutput {
+	return i.ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunLogConfigurationOverrideDetailArgs) ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogConfigurationOverrideDetailOutput)
+}
+
+// GetPipelineRunLogConfigurationOverrideDetailArrayInput is an input type that accepts GetPipelineRunLogConfigurationOverrideDetailArray and GetPipelineRunLogConfigurationOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunLogConfigurationOverrideDetailArrayInput` via:
+//
+//	GetPipelineRunLogConfigurationOverrideDetailArray{ GetPipelineRunLogConfigurationOverrideDetailArgs{...} }
+type GetPipelineRunLogConfigurationOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunLogConfigurationOverrideDetailArrayOutput() GetPipelineRunLogConfigurationOverrideDetailArrayOutput
+	ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunLogConfigurationOverrideDetailArrayOutput
+}
+
+type GetPipelineRunLogConfigurationOverrideDetailArray []GetPipelineRunLogConfigurationOverrideDetailInput
+
+func (GetPipelineRunLogConfigurationOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunLogConfigurationOverrideDetailArray) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutput() GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
+	return i.ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunLogConfigurationOverrideDetailArray) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogConfigurationOverrideDetailArrayOutput)
+}
+
+type GetPipelineRunLogConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunLogConfigurationOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunLogConfigurationOverrideDetailOutput) ToGetPipelineRunLogConfigurationOverrideDetailOutput() GetPipelineRunLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunLogConfigurationOverrideDetailOutput) ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailOutput {
+	return o
+}
+
+// If automatic on-behalf-of log object creation is enabled for pipeline runs.
+func (o GetPipelineRunLogConfigurationOverrideDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) bool { return v.EnableAutoLogCreation }).(pulumi.BoolOutput)
+}
+
+// If customer logging is enabled for pipeline.
+func (o GetPipelineRunLogConfigurationOverrideDetailOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) bool { return v.EnableLogging }).(pulumi.BoolOutput)
+}
+
+// The log group id for where log objects will be for pipeline runs.
+func (o GetPipelineRunLogConfigurationOverrideDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The log id of the log object the pipeline run logs will be shipped to.
+func (o GetPipelineRunLogConfigurationOverrideDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetPipelineRunLogConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunLogConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunLogConfigurationOverrideDetailArrayOutput) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutput() GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunLogConfigurationOverrideDetailArrayOutput) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunLogConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunLogConfigurationOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunLogConfigurationOverrideDetail {
+		return vs[0].([]GetPipelineRunLogConfigurationOverrideDetail)[vs[1].(int)]
+	}).(GetPipelineRunLogConfigurationOverrideDetailOutput)
+}
+
+type GetPipelineRunLogDetail struct {
+	// The log group id for where log objects will be for pipeline runs.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The log id of the log object the pipeline run logs will be shipped to.
+	LogId string `pulumi:"logId"`
+}
+
+// GetPipelineRunLogDetailInput is an input type that accepts GetPipelineRunLogDetailArgs and GetPipelineRunLogDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunLogDetailInput` via:
+//
+//	GetPipelineRunLogDetailArgs{...}
+type GetPipelineRunLogDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunLogDetailOutput() GetPipelineRunLogDetailOutput
+	ToGetPipelineRunLogDetailOutputWithContext(context.Context) GetPipelineRunLogDetailOutput
+}
+
+type GetPipelineRunLogDetailArgs struct {
+	// The log group id for where log objects will be for pipeline runs.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The log id of the log object the pipeline run logs will be shipped to.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetPipelineRunLogDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunLogDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunLogDetailArgs) ToGetPipelineRunLogDetailOutput() GetPipelineRunLogDetailOutput {
+	return i.ToGetPipelineRunLogDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunLogDetailArgs) ToGetPipelineRunLogDetailOutputWithContext(ctx context.Context) GetPipelineRunLogDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogDetailOutput)
+}
+
+// GetPipelineRunLogDetailArrayInput is an input type that accepts GetPipelineRunLogDetailArray and GetPipelineRunLogDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunLogDetailArrayInput` via:
+//
+//	GetPipelineRunLogDetailArray{ GetPipelineRunLogDetailArgs{...} }
+type GetPipelineRunLogDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunLogDetailArrayOutput() GetPipelineRunLogDetailArrayOutput
+	ToGetPipelineRunLogDetailArrayOutputWithContext(context.Context) GetPipelineRunLogDetailArrayOutput
+}
+
+type GetPipelineRunLogDetailArray []GetPipelineRunLogDetailInput
+
+func (GetPipelineRunLogDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunLogDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunLogDetailArray) ToGetPipelineRunLogDetailArrayOutput() GetPipelineRunLogDetailArrayOutput {
+	return i.ToGetPipelineRunLogDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunLogDetailArray) ToGetPipelineRunLogDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogDetailArrayOutput)
+}
+
+type GetPipelineRunLogDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunLogDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunLogDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunLogDetailOutput) ToGetPipelineRunLogDetailOutput() GetPipelineRunLogDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunLogDetailOutput) ToGetPipelineRunLogDetailOutputWithContext(ctx context.Context) GetPipelineRunLogDetailOutput {
+	return o
+}
+
+// The log group id for where log objects will be for pipeline runs.
+func (o GetPipelineRunLogDetailOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunLogDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The log id of the log object the pipeline run logs will be shipped to.
+func (o GetPipelineRunLogDetailOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunLogDetail) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetPipelineRunLogDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunLogDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunLogDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunLogDetailArrayOutput) ToGetPipelineRunLogDetailArrayOutput() GetPipelineRunLogDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunLogDetailArrayOutput) ToGetPipelineRunLogDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunLogDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunLogDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunLogDetail {
+		return vs[0].([]GetPipelineRunLogDetail)[vs[1].(int)]
+	}).(GetPipelineRunLogDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetail struct {
+	// The configuration details of a step.
+	StepConfigurationDetails []GetPipelineRunStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail `pulumi:"stepDataflowConfigurationDetails"`
+	// The infrastructure configuration details of a pipeline or a step.
+	StepInfrastructureConfigurationDetails []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail `pulumi:"stepInfrastructureConfigurationDetails"`
+	// The name of the step.
+	StepName string `pulumi:"stepName"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists []GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList `pulumi:"stepStorageMountConfigurationDetailsLists"`
+}
+
+// GetPipelineRunStepOverrideDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailArgs and GetPipelineRunStepOverrideDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailArgs{...}
+type GetPipelineRunStepOverrideDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailOutput() GetPipelineRunStepOverrideDetailOutput
+	ToGetPipelineRunStepOverrideDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailArgs struct {
+	// The configuration details of a step.
+	StepConfigurationDetails GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
+	// The configuration details of a Dataflow step.
+	StepDataflowConfigurationDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput `pulumi:"stepDataflowConfigurationDetails"`
+	// The infrastructure configuration details of a pipeline or a step.
+	StepInfrastructureConfigurationDetails GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput `pulumi:"stepInfrastructureConfigurationDetails"`
+	// The name of the step.
+	StepName pulumi.StringInput `pulumi:"stepName"`
+	// The storage mount details to mount to the instance running the pipeline step.
+	StepStorageMountConfigurationDetailsLists GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayInput `pulumi:"stepStorageMountConfigurationDetailsLists"`
+}
+
+func (GetPipelineRunStepOverrideDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailArgs) ToGetPipelineRunStepOverrideDetailOutput() GetPipelineRunStepOverrideDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailArgs) ToGetPipelineRunStepOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailArray and GetPipelineRunStepOverrideDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailArray{ GetPipelineRunStepOverrideDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailArrayOutput() GetPipelineRunStepOverrideDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailArray []GetPipelineRunStepOverrideDetailInput
+
+func (GetPipelineRunStepOverrideDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailArray) ToGetPipelineRunStepOverrideDetailArrayOutput() GetPipelineRunStepOverrideDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailArray) ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailOutput) ToGetPipelineRunStepOverrideDetailOutput() GetPipelineRunStepOverrideDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailOutput) ToGetPipelineRunStepOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailOutput {
+	return o
+}
+
+// The configuration details of a step.
+func (o GetPipelineRunStepOverrideDetailOutput) StepConfigurationDetails() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepConfigurationDetail {
+		return v.StepConfigurationDetails
+	}).(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o GetPipelineRunStepOverrideDetailOutput) StepContainerConfigurationDetails() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
+		return v.StepContainerConfigurationDetails
+	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+// The configuration details of a Dataflow step.
+func (o GetPipelineRunStepOverrideDetailOutput) StepDataflowConfigurationDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
+		return v.StepDataflowConfigurationDetails
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
+// The infrastructure configuration details of a pipeline or a step.
+func (o GetPipelineRunStepOverrideDetailOutput) StepInfrastructureConfigurationDetails() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail {
+		return v.StepInfrastructureConfigurationDetails
+	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput)
+}
+
+// The name of the step.
+func (o GetPipelineRunStepOverrideDetailOutput) StepName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) string { return v.StepName }).(pulumi.StringOutput)
+}
+
+// The storage mount details to mount to the instance running the pipeline step.
+func (o GetPipelineRunStepOverrideDetailOutput) StepStorageMountConfigurationDetailsLists() GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList {
+		return v.StepStorageMountConfigurationDetailsLists
+	}).(GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailArrayOutput) ToGetPipelineRunStepOverrideDetailArrayOutput() GetPipelineRunStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailArrayOutput) ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepConfigurationDetail struct {
+	// The command line arguments to set for step.
+	CommandLineArguments string `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
+}
+
+// GetPipelineRunStepOverrideDetailStepConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepConfigurationDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs struct {
+	// The command line arguments to set for step.
+	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
+	// Environment variables to set for step.
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	// A time bound for the execution of the step.
+	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepConfigurationDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
+	return o
+}
+
+// The command line arguments to set for step.
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
+}
+
+// Environment variables to set for step.
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) map[string]string {
+		return v.EnvironmentVariables
+	}).(pulumi.StringMapOutput)
+}
+
+// A time bound for the execution of the step.
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) string {
+		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepConfigurationDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+}
+
+// GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ContainerType
+	}).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail struct {
+	// The Spark configuration passed to the running process.
+	Configuration map[string]string `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape string `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape string `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors int `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs struct {
+	// The Spark configuration passed to the running process.
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
+	// The VM shape for the driver.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	DriverShapeConfigDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput `pulumi:"driverShapeConfigDetails"`
+	// The VM shape for the executors.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ExecutorShapeConfigDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput `pulumi:"executorShapeConfigDetails"`
+	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	// The number of executor VMs requested.
+	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return o
+}
+
+// The Spark configuration passed to the running process.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) map[string]string {
+		return v.Configuration
+	}).(pulumi.StringMapOutput)
+}
+
+// The VM shape for the driver.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShapeConfigDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return v.DriverShapeConfigDetails
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+// The VM shape for the executors.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShapeConfigDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return v.ExecutorShapeConfigDetails
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) LogsBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+}
+
+// The number of executor VMs requested.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) NumExecutors() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) WarehouseBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string {
+		return v.WarehouseBucketUri
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail struct {
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized string `pulumi:"ocpusParameterized"`
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs struct {
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return o
+}
+
+// The total amount of memory available to the pipeline step run instance GBs.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) string {
+		return v.MemoryInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available to the pipeline step run instance.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) string {
+		return v.OcpusParameterized
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail struct {
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized string `pulumi:"ocpusParameterized"`
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs struct {
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return o
+}
+
+// The total amount of memory available to the pipeline step run instance GBs.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) string {
+		return v.MemoryInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available to the pipeline step run instance.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) string {
+		return v.OcpusParameterized
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
+}
+
 type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -943,6 +4100,8 @@ type GetPipelineRunsPipelineRun struct {
 	ParametersOverride map[string]string `pulumi:"parametersOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
 	PipelineId string `pulumi:"pipelineId"`
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride int `pulumi:"pipelineRunRetentionPeriodInDaysOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId string `pulumi:"projectId"`
 	// The current state of the PipelineRun.
@@ -1007,6 +4166,8 @@ type GetPipelineRunsPipelineRunArgs struct {
 	ParametersOverride pulumi.StringMapInput `pulumi:"parametersOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
 	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride pulumi.IntInput `pulumi:"pipelineRunRetentionPeriodInDaysOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// The current state of the PipelineRun.
@@ -1164,6 +4325,11 @@ func (o GetPipelineRunsPipelineRunOutput) ParametersOverride() pulumi.StringMapO
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
 func (o GetPipelineRunsPipelineRunOutput) PipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineRunsPipelineRun) string { return v.PipelineId }).(pulumi.StringOutput)
+}
+
+// Retention period in days for pipeline run.
+func (o GetPipelineRunsPipelineRunOutput) PipelineRunRetentionPeriodInDaysOverride() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRun) int { return v.PipelineRunRetentionPeriodInDaysOverride }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -5665,6 +8831,8 @@ type GetPipelinesPipeline struct {
 	LogConfigurationDetails []GetPipelinesPipelineLogConfigurationDetail `pulumi:"logConfigurationDetails"`
 	// Parameters used in the pipeline.
 	Parameters map[string]string `pulumi:"parameters"`
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays int `pulumi:"pipelineRunRetentionPeriodInDays"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId string `pulumi:"projectId"`
 	// The current state of the Pipeline.
@@ -5719,6 +8887,8 @@ type GetPipelinesPipelineArgs struct {
 	LogConfigurationDetails GetPipelinesPipelineLogConfigurationDetailArrayInput `pulumi:"logConfigurationDetails"`
 	// Parameters used in the pipeline.
 	Parameters pulumi.StringMapInput `pulumi:"parameters"`
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays pulumi.IntInput `pulumi:"pipelineRunRetentionPeriodInDays"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// The current state of the Pipeline.
@@ -5853,6 +9023,11 @@ func (o GetPipelinesPipelineOutput) LogConfigurationDetails() GetPipelinesPipeli
 // Parameters used in the pipeline.
 func (o GetPipelinesPipelineOutput) Parameters() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetPipelinesPipeline) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
+}
+
+// Retention period in days for pipeline runs.
+func (o GetPipelinesPipelineOutput) PipelineRunRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelinesPipeline) int { return v.PipelineRunRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -13688,6 +16863,54 @@ func (o GetSchedulesScheduleTriggerArrayOutput) Index(i pulumi.IntInput) GetSche
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineConfigurationDetailInput)(nil)).Elem(), GetPipelineConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLogConfigurationDetailInput)(nil)).Elem(), GetPipelineLogConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLogConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineLogConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationDetailInput)(nil)).Elem(), GetPipelineRunConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetailInput)(nil)).Elem(), GetPipelineRunConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetailInput)(nil)).Elem(), GetPipelineRunLogConfigurationOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunLogConfigurationOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogDetailInput)(nil)).Elem(), GetPipelineRunLogDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogDetailArrayInput)(nil)).Elem(), GetPipelineRunLogDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
@@ -13876,6 +17099,54 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleLogDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleTriggerInput)(nil)).Elem(), GetSchedulesScheduleTriggerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleTriggerArrayInput)(nil)).Elem(), GetSchedulesScheduleTriggerArray{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineLogConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineLogConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunLogConfigurationOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunLogConfigurationOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunLogDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunLogDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})

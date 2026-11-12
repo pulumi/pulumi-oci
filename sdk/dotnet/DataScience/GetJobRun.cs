@@ -178,9 +178,17 @@ namespace Pulumi.Oci.DataScience
         public readonly ImmutableArray<Outputs.GetJobRunJobNodeConfigurationOverrideDetailResult> JobNodeConfigurationOverrideDetails;
         public readonly string JobRunId;
         /// <summary>
+        /// Retention period in days for job run.
+        /// </summary>
+        public readonly int JobRunRetentionPeriodInDaysOverride;
+        /// <summary>
         /// Collection of JobStorageMountConfigurationDetails.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunJobStorageMountConfigurationDetailsListResult> JobStorageMountConfigurationDetailsLists;
+        /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobRunJobStorageMountConfigurationOverrideDetailsListResult> JobStorageMountConfigurationOverrideDetailsLists;
         /// <summary>
         /// The state details of the node group.
         /// </summary>
@@ -247,7 +255,11 @@ namespace Pulumi.Oci.DataScience
 
             string jobRunId,
 
+            int jobRunRetentionPeriodInDaysOverride,
+
             ImmutableArray<Outputs.GetJobRunJobStorageMountConfigurationDetailsListResult> jobStorageMountConfigurationDetailsLists,
+
+            ImmutableArray<Outputs.GetJobRunJobStorageMountConfigurationOverrideDetailsListResult> jobStorageMountConfigurationOverrideDetailsLists,
 
             string lifecycleDetails,
 
@@ -282,7 +294,9 @@ namespace Pulumi.Oci.DataScience
             JobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
             JobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
             JobRunId = jobRunId;
+            JobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
             JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
+            JobStorageMountConfigurationOverrideDetailsLists = jobStorageMountConfigurationOverrideDetailsLists;
             LifecycleDetails = lifecycleDetails;
             LogDetails = logDetails;
             NodeGroupDetailsLists = nodeGroupDetailsLists;

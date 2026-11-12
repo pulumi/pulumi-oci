@@ -12,6 +12,7 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineStepArtifact;
 import com.pulumi.oci.DataScience.outputs.GetPipelineStepDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -85,6 +86,11 @@ public final class GetPipelineResult {
      */
     private Map<String,String> parameters;
     private String pipelineId;
+    /**
+     * @return Retention period in days for pipeline runs.
+     * 
+     */
+    private Integer pipelineRunRetentionPeriodInDays;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      * 
@@ -218,6 +224,13 @@ public final class GetPipelineResult {
         return this.pipelineId;
     }
     /**
+     * @return Retention period in days for pipeline runs.
+     * 
+     */
+    public Integer pipelineRunRetentionPeriodInDays() {
+        return this.pipelineRunRetentionPeriodInDays;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      * 
      */
@@ -293,6 +306,7 @@ public final class GetPipelineResult {
         private List<GetPipelineLogConfigurationDetail> logConfigurationDetails;
         private Map<String,String> parameters;
         private String pipelineId;
+        private Integer pipelineRunRetentionPeriodInDays;
         private String projectId;
         private String state;
         private List<GetPipelineStepArtifact> stepArtifacts;
@@ -318,6 +332,7 @@ public final class GetPipelineResult {
     	      this.logConfigurationDetails = defaults.logConfigurationDetails;
     	      this.parameters = defaults.parameters;
     	      this.pipelineId = defaults.pipelineId;
+    	      this.pipelineRunRetentionPeriodInDays = defaults.pipelineRunRetentionPeriodInDays;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.stepArtifacts = defaults.stepArtifacts;
@@ -450,6 +465,14 @@ public final class GetPipelineResult {
             return this;
         }
         @CustomType.Setter
+        public Builder pipelineRunRetentionPeriodInDays(Integer pipelineRunRetentionPeriodInDays) {
+            if (pipelineRunRetentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetPipelineResult", "pipelineRunRetentionPeriodInDays");
+            }
+            this.pipelineRunRetentionPeriodInDays = pipelineRunRetentionPeriodInDays;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetPipelineResult", "projectId");
@@ -538,6 +561,7 @@ public final class GetPipelineResult {
             _resultValue.logConfigurationDetails = logConfigurationDetails;
             _resultValue.parameters = parameters;
             _resultValue.pipelineId = pipelineId;
+            _resultValue.pipelineRunRetentionPeriodInDays = pipelineRunRetentionPeriodInDays;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
             _resultValue.stepArtifacts = stepArtifacts;

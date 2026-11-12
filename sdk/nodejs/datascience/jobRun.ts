@@ -61,6 +61,10 @@ import * as utilities from "../utilities";
  *             memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
  *         },
+ *         networkConfiguration: {
+ *             networkType: jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationNetworkType,
+ *             subnetId: testSubnet.id,
+ *         },
  *         resourceConfiguration: {
  *             resourceLimitConfiguration: {
  *                 memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
@@ -118,6 +122,10 @@ import * as utilities from "../utilities";
  *                     memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
  *                 },
+ *                 networkConfiguration: {
+ *                     networkType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType,
+ *                     subnetId: testSubnet.id,
+ *                 },
  *                 resourceConfiguration: {
  *                     resourceLimitConfiguration: {
  *                         memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
@@ -138,7 +146,8 @@ import * as utilities from "../utilities";
  *         maximumRuntimeInMinutes: jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes,
  *         startupOrder: jobRunJobNodeConfigurationOverrideDetailsStartupOrder,
  *     },
- *     jobStorageMountConfigurationOverrideDetailsList: [{
+ *     jobRunRetentionPeriodInDaysOverride: jobRunJobRunRetentionPeriodInDaysOverride,
+ *     jobStorageMountConfigurationOverrideDetailsLists: [{
  *         destinationDirectoryName: jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName,
  *         storageType: jobRunJobStorageMountConfigurationOverrideDetailsListStorageType,
  *         bucket: jobRunJobStorageMountConfigurationOverrideDetailsListBucket,
@@ -252,9 +261,17 @@ export class JobRun extends pulumi.CustomResource {
      */
     declare public readonly jobNodeConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
     /**
+     * Retention period in days for job run.
+     */
+    declare public readonly jobRunRetentionPeriodInDaysOverride: pulumi.Output<number>;
+    /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     declare public /*out*/ readonly jobStorageMountConfigurationDetailsLists: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationDetailsList[]>;
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    declare public readonly jobStorageMountConfigurationOverrideDetailsLists: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationOverrideDetailsList[]>;
     /**
      * The state details of the node group.
      */
@@ -321,7 +338,9 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = state?.jobInfrastructureConfigurationOverrideDetails;
             resourceInputs["jobLogConfigurationOverrideDetails"] = state?.jobLogConfigurationOverrideDetails;
             resourceInputs["jobNodeConfigurationOverrideDetails"] = state?.jobNodeConfigurationOverrideDetails;
+            resourceInputs["jobRunRetentionPeriodInDaysOverride"] = state?.jobRunRetentionPeriodInDaysOverride;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = state?.jobStorageMountConfigurationDetailsLists;
+            resourceInputs["jobStorageMountConfigurationOverrideDetailsLists"] = state?.jobStorageMountConfigurationOverrideDetailsLists;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["logDetails"] = state?.logDetails;
             resourceInputs["nodeGroupDetailsLists"] = state?.nodeGroupDetailsLists;
@@ -353,6 +372,8 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = args?.jobInfrastructureConfigurationOverrideDetails;
             resourceInputs["jobLogConfigurationOverrideDetails"] = args?.jobLogConfigurationOverrideDetails;
             resourceInputs["jobNodeConfigurationOverrideDetails"] = args?.jobNodeConfigurationOverrideDetails;
+            resourceInputs["jobRunRetentionPeriodInDaysOverride"] = args?.jobRunRetentionPeriodInDaysOverride;
+            resourceInputs["jobStorageMountConfigurationOverrideDetailsLists"] = args?.jobStorageMountConfigurationOverrideDetailsLists;
             resourceInputs["opcParentRptUrl"] = args?.opcParentRptUrl;
             resourceInputs["projectId"] = args?.projectId;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -428,9 +449,17 @@ export interface JobRunState {
      */
     jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails | undefined>;
     /**
+     * Retention period in days for job run.
+     */
+    jobRunRetentionPeriodInDaysOverride?: pulumi.Input<number | undefined>;
+    /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobStorageMountConfigurationDetailsList>[] | undefined>;
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    jobStorageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobStorageMountConfigurationOverrideDetailsList>[] | undefined>;
     /**
      * The state details of the node group.
      */
@@ -520,6 +549,14 @@ export interface JobRunArgs {
      * The job node configuration details
      */
     jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails | undefined>;
+    /**
+     * Retention period in days for job run.
+     */
+    jobRunRetentionPeriodInDaysOverride?: pulumi.Input<number | undefined>;
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    jobStorageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobStorageMountConfigurationOverrideDetailsList>[] | undefined>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */

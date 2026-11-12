@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail;
+import com.pulumi.oci.DataScience.outputs.GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +20,11 @@ public final class GetComputeTargetComputeConfigurationDetailInstanceConfigurati
      */
     private Integer bootVolumeSizeInGbs;
     /**
+     * @return The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+     * 
+     */
+    private List<String> capacityReservationIds;
+    /**
      * @return The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
      * 
      */
@@ -28,6 +34,11 @@ public final class GetComputeTargetComputeConfigurationDetailInstanceConfigurati
      * 
      */
     private List<GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail> instanceShapeDetails;
+    /**
+     * @return The network configuration details for managed compute cluster type resource.
+     * 
+     */
+    private List<GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail> networkConfigurationDetails;
 
     private GetComputeTargetComputeConfigurationDetailInstanceConfiguration() {}
     /**
@@ -36,6 +47,13 @@ public final class GetComputeTargetComputeConfigurationDetailInstanceConfigurati
      */
     public Integer bootVolumeSizeInGbs() {
         return this.bootVolumeSizeInGbs;
+    }
+    /**
+     * @return The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+     * 
+     */
+    public List<String> capacityReservationIds() {
+        return this.capacityReservationIds;
     }
     /**
      * @return The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
@@ -51,6 +69,13 @@ public final class GetComputeTargetComputeConfigurationDetailInstanceConfigurati
     public List<GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail> instanceShapeDetails() {
         return this.instanceShapeDetails;
     }
+    /**
+     * @return The network configuration details for managed compute cluster type resource.
+     * 
+     */
+    public List<GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail> networkConfigurationDetails() {
+        return this.networkConfigurationDetails;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -62,14 +87,18 @@ public final class GetComputeTargetComputeConfigurationDetailInstanceConfigurati
     @CustomType.Builder
     public static final class Builder {
         private Integer bootVolumeSizeInGbs;
+        private List<String> capacityReservationIds;
         private String instanceShape;
         private List<GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail> instanceShapeDetails;
+        private List<GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail> networkConfigurationDetails;
         public Builder() {}
         public Builder(GetComputeTargetComputeConfigurationDetailInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
+    	      this.capacityReservationIds = defaults.capacityReservationIds;
     	      this.instanceShape = defaults.instanceShape;
     	      this.instanceShapeDetails = defaults.instanceShapeDetails;
+    	      this.networkConfigurationDetails = defaults.networkConfigurationDetails;
         }
 
         @CustomType.Setter
@@ -79,6 +108,17 @@ public final class GetComputeTargetComputeConfigurationDetailInstanceConfigurati
             }
             this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
+        }
+        @CustomType.Setter
+        public Builder capacityReservationIds(List<String> capacityReservationIds) {
+            if (capacityReservationIds == null) {
+              throw new MissingRequiredPropertyException("GetComputeTargetComputeConfigurationDetailInstanceConfiguration", "capacityReservationIds");
+            }
+            this.capacityReservationIds = capacityReservationIds;
+            return this;
+        }
+        public Builder capacityReservationIds(String... capacityReservationIds) {
+            return capacityReservationIds(List.of(capacityReservationIds));
         }
         @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
@@ -99,11 +139,24 @@ public final class GetComputeTargetComputeConfigurationDetailInstanceConfigurati
         public Builder instanceShapeDetails(GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail... instanceShapeDetails) {
             return instanceShapeDetails(List.of(instanceShapeDetails));
         }
+        @CustomType.Setter
+        public Builder networkConfigurationDetails(List<GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail> networkConfigurationDetails) {
+            if (networkConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetComputeTargetComputeConfigurationDetailInstanceConfiguration", "networkConfigurationDetails");
+            }
+            this.networkConfigurationDetails = networkConfigurationDetails;
+            return this;
+        }
+        public Builder networkConfigurationDetails(GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail... networkConfigurationDetails) {
+            return networkConfigurationDetails(List.of(networkConfigurationDetails));
+        }
         public GetComputeTargetComputeConfigurationDetailInstanceConfiguration build() {
             final var _resultValue = new GetComputeTargetComputeConfigurationDetailInstanceConfiguration();
             _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            _resultValue.capacityReservationIds = capacityReservationIds;
             _resultValue.instanceShape = instanceShape;
             _resultValue.instanceShapeDetails = instanceShapeDetails;
+            _resultValue.networkConfigurationDetails = networkConfigurationDetails;
             return _resultValue;
         }
     }

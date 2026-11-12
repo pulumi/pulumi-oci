@@ -33,6 +33,7 @@ class PipelineArgs:
                  infrastructure_configuration_details: pulumi.Input[Optional['PipelineInfrastructureConfigurationDetailsArgs']] = None,
                  log_configuration_details: pulumi.Input[Optional['PipelineLogConfigurationDetailsArgs']] = None,
                  parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]] = None,
                  storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineStorageMountConfigurationDetailsListArgs']]]] = None):
         """
@@ -49,6 +50,7 @@ class PipelineArgs:
         :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input['PipelineLogConfigurationDetailsArgs'] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Parameters used in the pipeline.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days: Retention period in days for pipeline runs.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineStorageMountConfigurationDetailsListArgs']]] storage_mount_configuration_details_lists: (Updatable) The storage mount details to mount to the instance running the pipeline step.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -72,6 +74,8 @@ class PipelineArgs:
             pulumi.set(__self__, "log_configuration_details", log_configuration_details)
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
+        if pipeline_run_retention_period_in_days is not None:
+            pulumi.set(__self__, "pipeline_run_retention_period_in_days", pipeline_run_retention_period_in_days)
         if step_artifacts is not None:
             pulumi.set(__self__, "step_artifacts", step_artifacts)
         if storage_mount_configuration_details_lists is not None:
@@ -219,6 +223,18 @@ class PipelineArgs:
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDays")
+    def pipeline_run_retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for pipeline runs.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days")
+
+    @pipeline_run_retention_period_in_days.setter
+    def pipeline_run_retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "pipeline_run_retention_period_in_days", value)
+
+    @_builtins.property
     @pulumi.getter(name="stepArtifacts")
     def step_artifacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]]:
         return pulumi.get(self, "step_artifacts")
@@ -255,6 +271,7 @@ class _PipelineState:
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  log_configuration_details: pulumi.Input[Optional['PipelineLogConfigurationDetailsArgs']] = None,
                  parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]] = None,
@@ -277,6 +294,7 @@ class _PipelineState:
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input['PipelineLogConfigurationDetailsArgs'] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Parameters used in the pipeline.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days: Retention period in days for pipeline runs.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         :param pulumi.Input[_builtins.str] state: The current state of the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]] step_details: (Updatable) Array of step details for each step.
@@ -309,6 +327,8 @@ class _PipelineState:
             pulumi.set(__self__, "log_configuration_details", log_configuration_details)
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
+        if pipeline_run_retention_period_in_days is not None:
+            pulumi.set(__self__, "pipeline_run_retention_period_in_days", pipeline_run_retention_period_in_days)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
         if state is not None:
@@ -468,6 +488,18 @@ class _PipelineState:
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDays")
+    def pipeline_run_retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Retention period in days for pipeline runs.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days")
+
+    @pipeline_run_retention_period_in_days.setter
+    def pipeline_run_retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "pipeline_run_retention_period_in_days", value)
+
+    @_builtins.property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -577,6 +609,7 @@ class Pipeline(pulumi.CustomResource):
                  infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']]] = None,
                  log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
                  parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
                  step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]]] = None,
@@ -610,6 +643,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Parameters used in the pipeline.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days: Retention period in days for pipeline runs.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]] step_details: (Updatable) Array of step details for each step.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict', 'outputs.PipelineStorageMountConfigurationDetailsList']]]] storage_mount_configuration_details_lists: (Updatable) The storage mount details to mount to the instance running the pipeline step.
@@ -662,6 +696,7 @@ class Pipeline(pulumi.CustomResource):
                  infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']]] = None,
                  log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
                  parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
                  step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]]] = None,
@@ -687,6 +722,7 @@ class Pipeline(pulumi.CustomResource):
             __props__.__dict__["infrastructure_configuration_details"] = infrastructure_configuration_details
             __props__.__dict__["log_configuration_details"] = log_configuration_details
             __props__.__dict__["parameters"] = parameters
+            __props__.__dict__["pipeline_run_retention_period_in_days"] = pipeline_run_retention_period_in_days
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
@@ -723,6 +759,7 @@ class Pipeline(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
             parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            pipeline_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
@@ -749,6 +786,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Parameters used in the pipeline.
+        :param pulumi.Input[_builtins.int] pipeline_run_retention_period_in_days: Retention period in days for pipeline runs.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         :param pulumi.Input[_builtins.str] state: The current state of the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]] step_details: (Updatable) Array of step details for each step.
@@ -773,6 +811,7 @@ class Pipeline(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_configuration_details"] = log_configuration_details
         __props__.__dict__["parameters"] = parameters
+        __props__.__dict__["pipeline_run_retention_period_in_days"] = pipeline_run_retention_period_in_days
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
         __props__.__dict__["step_artifacts"] = step_artifacts
@@ -798,6 +837,7 @@ class Pipeline(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
             parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            pipeline_run_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
@@ -819,6 +859,7 @@ class Pipeline(pulumi.CustomResource):
         __props__["lifecycleDetails"] = lifecycle_details
         __props__["logConfigurationDetails"] = log_configuration_details
         __props__["parameters"] = parameters
+        __props__["pipelineRunRetentionPeriodInDays"] = pipeline_run_retention_period_in_days
         __props__["projectId"] = project_id
         __props__["state"] = state
         __props__["stepArtifacts"] = step_artifacts
@@ -921,6 +962,14 @@ class Pipeline(pulumi.CustomResource):
         (Updatable) Parameters used in the pipeline.
         """
         return pulumi.get(self, "parameters")
+
+    @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDays")
+    def pipeline_run_retention_period_in_days(self) -> pulumi.Output[_builtins.int]:
+        """
+        Retention period in days for pipeline runs.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days")
 
     @_builtins.property
     @pulumi.getter(name="projectId")

@@ -18,14 +18,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     public static final ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs Empty = new ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs();
 
     /**
-     * (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+     * Resource limit configuration details for workload on managed compute cluster type compute target
      * 
      */
     @Import(name="resourceLimitConfiguration")
     private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs> resourceLimitConfiguration;
 
     /**
-     * @return (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+     * @return Resource limit configuration details for workload on managed compute cluster type compute target
      * 
      */
     public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs>> resourceLimitConfiguration() {
@@ -33,14 +33,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     }
 
     /**
-     * (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     * Resource request configuration to run workload on managed compute cluster type compute target compute target.
      * 
      */
     @Import(name="resourceRequestConfiguration", required=true)
     private Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs> resourceRequestConfiguration;
 
     /**
-     * @return (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     * @return Resource request configuration to run workload on managed compute cluster type compute target compute target.
      * 
      */
     public Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs> resourceRequestConfiguration() {
@@ -73,7 +73,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         }
 
         /**
-         * @param resourceLimitConfiguration (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+         * @param resourceLimitConfiguration Resource limit configuration details for workload on managed compute cluster type compute target
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         }
 
         /**
-         * @param resourceLimitConfiguration (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+         * @param resourceLimitConfiguration Resource limit configuration details for workload on managed compute cluster type compute target
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         }
 
         /**
-         * @param resourceRequestConfiguration (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         * @param resourceRequestConfiguration Resource request configuration to run workload on managed compute cluster type compute target compute target.
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         }
 
         /**
-         * @param resourceRequestConfiguration (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         * @param resourceRequestConfiguration Resource request configuration to run workload on managed compute cluster type compute target compute target.
          * 
          * @return builder
          * 

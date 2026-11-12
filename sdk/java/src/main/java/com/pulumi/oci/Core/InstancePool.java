@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.InstancePoolArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolState;
 import com.pulumi.oci.Core.outputs.InstancePoolLifecycleManagement;
 import com.pulumi.oci.Core.outputs.InstancePoolLoadBalancer;
+import com.pulumi.oci.Core.outputs.InstancePoolOverridePolicy;
 import com.pulumi.oci.Core.outputs.InstancePoolPlacementConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -31,6 +32,8 @@ import javax.annotation.Nullable;
  * To determine whether capacity is available for a specific shape before you create an instance pool,
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
+ * You can optionally include `overridePolicy` to define availability domain-scoped
+ * launch overrides for future launches. Existing pool members are not modified.
  * 
  * ## Example Usage
  * 
@@ -53,6 +56,12 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyOverrideStatementArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyOverrideStatementSelectorArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -113,6 +122,30 @@ import javax.annotation.Nullable;
  *                 .loadBalancerId(testLoadBalancer.get("id"))
  *                 .port(instancePoolLoadBalancersPort)
  *                 .vnicSelection(instancePoolLoadBalancersVnicSelection)
+ *                 .build())
+ *             .overridePolicy(InstancePoolOverridePolicyArgs.builder()
+ *                 .overrideStatements(InstancePoolOverridePolicyOverrideStatementArgs.builder()
+ *                     .name(instancePoolOverridePolicyOverrideStatementsName)
+ *                     .overrideOptions(InstancePoolOverridePolicyOverrideStatementOverrideOptionArgs.builder()
+ *                         .name(instancePoolOverridePolicyOverrideStatementsOverrideOptionsName)
+ *                         .override(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideArgs.builder()
+ *                             .capacityReservationId(testCapacityReservation.get("id"))
+ *                             .shape(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShape)
+ *                             .shapeConfigDetails(InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetailsArgs.builder()
+ *                                 .baselineOcpuUtilization(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsBaselineOcpuUtilization)
+ *                                 .localVolumeSizeInGbs(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsLocalVolumeSizeInGbs)
+ *                                 .memoryInGbs(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsMemoryInGbs)
+ *                                 .nvmes(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsNvmes)
+ *                                 .ocpus(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsOcpus)
+ *                                 .resourceManagement(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsResourceManagement)
+ *                                 .vcpus(instancePoolOverridePolicyOverrideStatementsOverrideOptionsOverrideShapeConfigDetailsVcpus)
+ *                                 .build())
+ *                             .build())
+ *                         .build())
+ *                     .selector(InstancePoolOverridePolicyOverrideStatementSelectorArgs.builder()
+ *                         .availabilityDomain(instancePoolOverridePolicyOverrideStatementsSelectorAvailabilityDomain)
+ *                         .build())
+ *                     .build())
  *                 .build())
  *             .build());
  * 
@@ -285,6 +318,32 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<List<InstancePoolLoadBalancer>>> loadBalancers() {
         return Codegen.optional(this.loadBalancers);
+    }
+    /**
+     * (Updatable) Optional pool-level launch override policy for future instance launches.
+     * 
+     * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+     * 
+     * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+     * 
+     * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+     * 
+     */
+    @Export(name="overridePolicy", refs={InstancePoolOverridePolicy.class}, tree="[0]")
+    private Output<InstancePoolOverridePolicy> overridePolicy;
+
+    /**
+     * @return (Updatable) Optional pool-level launch override policy for future instance launches.
+     * 
+     * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+     * 
+     * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+     * 
+     * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+     * 
+     */
+    public Output<InstancePoolOverridePolicy> overridePolicy() {
+        return this.overridePolicy;
     }
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.

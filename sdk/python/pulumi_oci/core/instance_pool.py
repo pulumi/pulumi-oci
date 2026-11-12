@@ -32,6 +32,7 @@ class InstancePoolArgs:
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_management: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
+                 override_policy: pulumi.Input[Optional['InstancePoolOverridePolicyArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InstancePool resource.
@@ -49,6 +50,13 @@ class InstancePoolArgs:
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input['InstancePoolLifecycleManagementArgs'] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+        :param pulumi.Input['InstancePoolOverridePolicyArgs'] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
+               
+               The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+               
+               For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+               
+               When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
                ** IMPORTANT **
@@ -72,6 +80,8 @@ class InstancePoolArgs:
             pulumi.set(__self__, "lifecycle_management", lifecycle_management)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
+        if override_policy is not None:
+            pulumi.set(__self__, "override_policy", override_policy)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -210,6 +220,24 @@ class InstancePoolArgs:
         pulumi.set(self, "load_balancers", value)
 
     @_builtins.property
+    @pulumi.getter(name="overridePolicy")
+    def override_policy(self) -> pulumi.Input[Optional['InstancePoolOverridePolicyArgs']]:
+        """
+        (Updatable) Optional pool-level launch override policy for future instance launches.
+
+        The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+
+        For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+
+        When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+        """
+        return pulumi.get(self, "override_policy")
+
+    @override_policy.setter
+    def override_policy(self, value: pulumi.Input[Optional['InstancePoolOverridePolicyArgs']]):
+        pulumi.set(self, "override_policy", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -239,6 +267,7 @@ class _InstancePoolState:
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_management: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
+                 override_policy: pulumi.Input[Optional['InstancePoolOverridePolicyArgs']] = None,
                  placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]] = None,
                  pool_type: pulumi.Input[Optional[_builtins.str]] = None,
                  size: pulumi.Input[Optional[_builtins.int]] = None,
@@ -258,6 +287,13 @@ class _InstancePoolState:
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input['InstancePoolLifecycleManagementArgs'] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+        :param pulumi.Input['InstancePoolOverridePolicyArgs'] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
+               
+               The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+               
+               For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+               
+               When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -291,6 +327,8 @@ class _InstancePoolState:
             pulumi.set(__self__, "lifecycle_management", lifecycle_management)
         if load_balancers is not None:
             pulumi.set(__self__, "load_balancers", load_balancers)
+        if override_policy is not None:
+            pulumi.set(__self__, "override_policy", override_policy)
         if placement_configurations is not None:
             pulumi.set(__self__, "placement_configurations", placement_configurations)
         if pool_type is not None:
@@ -435,6 +473,24 @@ class _InstancePoolState:
         pulumi.set(self, "load_balancers", value)
 
     @_builtins.property
+    @pulumi.getter(name="overridePolicy")
+    def override_policy(self) -> pulumi.Input[Optional['InstancePoolOverridePolicyArgs']]:
+        """
+        (Updatable) Optional pool-level launch override policy for future instance launches.
+
+        The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+
+        For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+
+        When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+        """
+        return pulumi.get(self, "override_policy")
+
+    @override_policy.setter
+    def override_policy(self, value: pulumi.Input[Optional['InstancePoolOverridePolicyArgs']]):
+        pulumi.set(self, "override_policy", value)
+
+    @_builtins.property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]]:
         """
@@ -515,6 +571,7 @@ class InstancePool(pulumi.CustomResource):
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
+                 override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
                  placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict', 'outputs.InstancePoolPlacementConfiguration']]]]] = None,
                  size: pulumi.Input[Optional[_builtins.int]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -530,6 +587,8 @@ class InstancePool(pulumi.CustomResource):
         To determine whether capacity is available for a specific shape before you create an instance pool,
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
         operation.
+        You can optionally include `overridePolicy` to define availability domain-scoped
+        launch overrides for future launches. Existing pool members are not modified.
 
         ## Example Usage
 
@@ -588,7 +647,31 @@ class InstancePool(pulumi.CustomResource):
                 "load_balancer_id": test_load_balancer["id"],
                 "port": instance_pool_load_balancers_port,
                 "vnic_selection": instance_pool_load_balancers_vnic_selection,
-            }])
+            }],
+            override_policy={
+                "override_statements": [{
+                    "name": instance_pool_override_policy_override_statements_name,
+                    "override_options": [{
+                        "name": instance_pool_override_policy_override_statements_override_options_name,
+                        "override": {
+                            "capacity_reservation_id": test_capacity_reservation["id"],
+                            "shape": instance_pool_override_policy_override_statements_override_options_override_shape,
+                            "shape_config_details": {
+                                "baseline_ocpu_utilization": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_baseline_ocpu_utilization,
+                                "local_volume_size_in_gbs": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_local_volume_size_in_gbs,
+                                "memory_in_gbs": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_memory_in_gbs,
+                                "nvmes": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_nvmes,
+                                "ocpus": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_ocpus,
+                                "resource_management": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_resource_management,
+                                "vcpus": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_vcpus,
+                            },
+                        },
+                    }],
+                    "selector": {
+                        "availability_domain": instance_pool_override_policy_override_statements_selector_availability_domain,
+                    },
+                }],
+            })
         ```
 
         ## Import
@@ -611,6 +694,13 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+        :param pulumi.Input[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
+               
+               The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+               
+               For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+               
+               When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict', 'outputs.InstancePoolPlacementConfiguration']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -637,6 +727,8 @@ class InstancePool(pulumi.CustomResource):
         To determine whether capacity is available for a specific shape before you create an instance pool,
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
         operation.
+        You can optionally include `overridePolicy` to define availability domain-scoped
+        launch overrides for future launches. Existing pool members are not modified.
 
         ## Example Usage
 
@@ -695,7 +787,31 @@ class InstancePool(pulumi.CustomResource):
                 "load_balancer_id": test_load_balancer["id"],
                 "port": instance_pool_load_balancers_port,
                 "vnic_selection": instance_pool_load_balancers_vnic_selection,
-            }])
+            }],
+            override_policy={
+                "override_statements": [{
+                    "name": instance_pool_override_policy_override_statements_name,
+                    "override_options": [{
+                        "name": instance_pool_override_policy_override_statements_override_options_name,
+                        "override": {
+                            "capacity_reservation_id": test_capacity_reservation["id"],
+                            "shape": instance_pool_override_policy_override_statements_override_options_override_shape,
+                            "shape_config_details": {
+                                "baseline_ocpu_utilization": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_baseline_ocpu_utilization,
+                                "local_volume_size_in_gbs": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_local_volume_size_in_gbs,
+                                "memory_in_gbs": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_memory_in_gbs,
+                                "nvmes": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_nvmes,
+                                "ocpus": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_ocpus,
+                                "resource_management": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_resource_management,
+                                "vcpus": instance_pool_override_policy_override_statements_override_options_override_shape_config_details_vcpus,
+                            },
+                        },
+                    }],
+                    "selector": {
+                        "availability_domain": instance_pool_override_policy_override_statements_selector_availability_domain,
+                    },
+                }],
+            })
         ```
 
         ## Import
@@ -731,6 +847,7 @@ class InstancePool(pulumi.CustomResource):
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
+                 override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
                  placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict', 'outputs.InstancePoolPlacementConfiguration']]]]] = None,
                  size: pulumi.Input[Optional[_builtins.int]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -756,6 +873,7 @@ class InstancePool(pulumi.CustomResource):
             __props__.__dict__["instance_hostname_formatter"] = instance_hostname_formatter
             __props__.__dict__["lifecycle_management"] = lifecycle_management
             __props__.__dict__["load_balancers"] = load_balancers
+            __props__.__dict__["override_policy"] = override_policy
             if placement_configurations is None and not opts.urn:
                 raise TypeError("Missing required property 'placement_configurations'")
             __props__.__dict__["placement_configurations"] = placement_configurations
@@ -788,6 +906,7 @@ class InstancePool(pulumi.CustomResource):
             instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
             load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
+            override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
             placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict', 'outputs.InstancePoolPlacementConfiguration']]]]] = None,
             pool_type: pulumi.Input[Optional[_builtins.str]] = None,
             size: pulumi.Input[Optional[_builtins.int]] = None,
@@ -811,6 +930,13 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         :param pulumi.Input[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+        :param pulumi.Input[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
+               
+               The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+               
+               For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+               
+               When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict', 'outputs.InstancePoolPlacementConfiguration']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -837,6 +963,7 @@ class InstancePool(pulumi.CustomResource):
         __props__.__dict__["instance_hostname_formatter"] = instance_hostname_formatter
         __props__.__dict__["lifecycle_management"] = lifecycle_management
         __props__.__dict__["load_balancers"] = load_balancers
+        __props__.__dict__["override_policy"] = override_policy
         __props__.__dict__["placement_configurations"] = placement_configurations
         __props__.__dict__["pool_type"] = pool_type
         __props__.__dict__["size"] = size
@@ -858,6 +985,7 @@ class InstancePool(pulumi.CustomResource):
             instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
             load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
+            override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
             placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict', 'outputs.InstancePoolPlacementConfiguration']]]]] = None,
             pool_type: pulumi.Input[Optional[_builtins.str]] = None,
             size: pulumi.Input[Optional[_builtins.int]] = None,
@@ -875,6 +1003,7 @@ class InstancePool(pulumi.CustomResource):
         __props__["instanceHostnameFormatter"] = instance_hostname_formatter
         __props__["lifecycleManagement"] = lifecycle_management
         __props__["loadBalancers"] = load_balancers
+        __props__["overridePolicy"] = override_policy
         __props__["placementConfigurations"] = placement_configurations
         __props__["poolType"] = pool_type
         __props__["size"] = size
@@ -969,6 +1098,20 @@ class InstancePool(pulumi.CustomResource):
         The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         """
         return pulumi.get(self, "load_balancers")
+
+    @_builtins.property
+    @pulumi.getter(name="overridePolicy")
+    def override_policy(self) -> pulumi.Output['outputs.InstancePoolOverridePolicy']:
+        """
+        (Updatable) Optional pool-level launch override policy for future instance launches.
+
+        The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+
+        For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+
+        When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+        """
+        return pulumi.get(self, "override_policy")
 
     @_builtins.property
     @pulumi.getter(name="placementConfigurations")

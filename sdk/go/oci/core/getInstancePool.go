@@ -83,6 +83,8 @@ type LookupInstancePoolResult struct {
 	LifecycleManagements []GetInstancePoolLifecycleManagement `pulumi:"lifecycleManagements"`
 	// The load balancers attached to the instance pool.
 	LoadBalancers []GetInstancePoolLoadBalancer `pulumi:"loadBalancers"`
+	// Optional pool-level launch override policy for future instance launches.
+	OverridePolicies []GetInstancePoolOverridePolicy `pulumi:"overridePolicies"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations []GetInstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// The type of resources managed by the pool.
@@ -187,6 +189,11 @@ func (o LookupInstancePoolResultOutput) LifecycleManagements() GetInstancePoolLi
 // The load balancers attached to the instance pool.
 func (o LookupInstancePoolResultOutput) LoadBalancers() GetInstancePoolLoadBalancerArrayOutput {
 	return o.ApplyT(func(v LookupInstancePoolResult) []GetInstancePoolLoadBalancer { return v.LoadBalancers }).(GetInstancePoolLoadBalancerArrayOutput)
+}
+
+// Optional pool-level launch override policy for future instance launches.
+func (o LookupInstancePoolResultOutput) OverridePolicies() GetInstancePoolOverridePolicyArrayOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) []GetInstancePoolOverridePolicy { return v.OverridePolicies }).(GetInstancePoolOverridePolicyArrayOutput)
 }
 
 // The placement configurations for the instance pool.

@@ -74,6 +74,10 @@ import (
 //						MemoryInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus),
 //					},
+//					NetworkConfiguration: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs{
+//						NetworkType: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationNetworkType),
+//						SubnetId:    pulumi.Any(testSubnet.Id),
+//					},
 //					ResourceConfiguration: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs{
 //						ResourceLimitConfiguration: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs{
 //							MemoryInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
@@ -132,6 +136,10 @@ import (
 //									MemoryInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
 //									Ocpus:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
 //								},
+//								NetworkConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{
+//									NetworkType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType),
+//									SubnetId:    pulumi.Any(testSubnet.Id),
+//								},
 //								ResourceConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{
 //									ResourceLimitConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{
 //										MemoryInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
@@ -153,16 +161,17 @@ import (
 //					MaximumRuntimeInMinutes: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes),
 //					StartupOrder:            pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsStartupOrder),
 //				},
-//				JobStorageMountConfigurationOverrideDetailsList: []map[string]interface{}{
-//					map[string]interface{}{
-//						"destinationDirectoryName": jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName,
-//						"storageType":              jobRunJobStorageMountConfigurationOverrideDetailsListStorageType,
-//						"bucket":                   jobRunJobStorageMountConfigurationOverrideDetailsListBucket,
-//						"destinationPath":          jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath,
-//						"exportId":                 testExport.Id,
-//						"mountTargetId":            testMountTarget.Id,
-//						"namespace":                jobRunJobStorageMountConfigurationOverrideDetailsListNamespace,
-//						"prefix":                   jobRunJobStorageMountConfigurationOverrideDetailsListPrefix,
+//				JobRunRetentionPeriodInDaysOverride: pulumi.Any(jobRunJobRunRetentionPeriodInDaysOverride),
+//				JobStorageMountConfigurationOverrideDetailsLists: datascience.JobRunJobStorageMountConfigurationOverrideDetailsListArray{
+//					&datascience.JobRunJobStorageMountConfigurationOverrideDetailsListArgs{
+//						DestinationDirectoryName: pulumi.Any(jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName),
+//						StorageType:              pulumi.Any(jobRunJobStorageMountConfigurationOverrideDetailsListStorageType),
+//						Bucket:                   pulumi.Any(jobRunJobStorageMountConfigurationOverrideDetailsListBucket),
+//						DestinationPath:          pulumi.Any(jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath),
+//						ExportId:                 pulumi.Any(testExport.Id),
+//						MountTargetId:            pulumi.Any(testMountTarget.Id),
+//						Namespace:                pulumi.Any(jobRunJobStorageMountConfigurationOverrideDetailsListNamespace),
+//						Prefix:                   pulumi.Any(jobRunJobStorageMountConfigurationOverrideDetailsListPrefix),
 //					},
 //				},
 //				OpcParentRptUrl: pulumi.Any(jobRunOpcParentRptUrl),
@@ -212,8 +221,12 @@ type JobRun struct {
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsOutput `pulumi:"jobLogConfigurationOverrideDetails"`
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails JobRunJobNodeConfigurationOverrideDetailsOutput `pulumi:"jobNodeConfigurationOverrideDetails"`
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride pulumi.IntOutput `pulumi:"jobRunRetentionPeriodInDaysOverride"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobRunJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationOverrideDetailsLists"`
 	// The state details of the node group.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -302,8 +315,12 @@ type jobRunState struct {
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails *JobRunJobNodeConfigurationOverrideDetails `pulumi:"jobNodeConfigurationOverrideDetails"`
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride *int `pulumi:"jobRunRetentionPeriodInDaysOverride"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []JobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists []JobRunJobStorageMountConfigurationOverrideDetailsList `pulumi:"jobStorageMountConfigurationOverrideDetailsLists"`
 	// The state details of the node group.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -354,8 +371,12 @@ type JobRunState struct {
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails JobRunJobNodeConfigurationOverrideDetailsPtrInput
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride pulumi.IntPtrInput
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobRunJobStorageMountConfigurationDetailsListArrayInput
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists JobRunJobStorageMountConfigurationOverrideDetailsListArrayInput
 	// The state details of the node group.
 	LifecycleDetails pulumi.StringPtrInput
 	// Customer logging details for job run.
@@ -412,6 +433,10 @@ type jobRunArgs struct {
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails *JobRunJobNodeConfigurationOverrideDetails `pulumi:"jobNodeConfigurationOverrideDetails"`
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride *int `pulumi:"jobRunRetentionPeriodInDaysOverride"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists []JobRunJobStorageMountConfigurationOverrideDetailsList `pulumi:"jobStorageMountConfigurationOverrideDetailsLists"`
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -445,6 +470,10 @@ type JobRunArgs struct {
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails JobRunJobNodeConfigurationOverrideDetailsPtrInput
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride pulumi.IntPtrInput
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists JobRunJobStorageMountConfigurationOverrideDetailsListArrayInput
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -616,11 +645,23 @@ func (o JobRunOutput) JobNodeConfigurationOverrideDetails() JobRunJobNodeConfigu
 	}).(JobRunJobNodeConfigurationOverrideDetailsOutput)
 }
 
+// Retention period in days for job run.
+func (o JobRunOutput) JobRunRetentionPeriodInDaysOverride() pulumi.IntOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.IntOutput { return v.JobRunRetentionPeriodInDaysOverride }).(pulumi.IntOutput)
+}
+
 // Collection of JobStorageMountConfigurationDetails.
 func (o JobRunOutput) JobStorageMountConfigurationDetailsLists() JobRunJobStorageMountConfigurationDetailsListArrayOutput {
 	return o.ApplyT(func(v *JobRun) JobRunJobStorageMountConfigurationDetailsListArrayOutput {
 		return v.JobStorageMountConfigurationDetailsLists
 	}).(JobRunJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o JobRunOutput) JobStorageMountConfigurationOverrideDetailsLists() JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o.ApplyT(func(v *JobRun) JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+		return v.JobStorageMountConfigurationOverrideDetailsLists
+	}).(JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput)
 }
 
 // The state details of the node group.

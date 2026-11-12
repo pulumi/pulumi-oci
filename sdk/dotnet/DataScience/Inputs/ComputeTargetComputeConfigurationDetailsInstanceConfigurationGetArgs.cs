@@ -18,6 +18,18 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("bootVolumeSizeInGbs")]
         public Input<int>? BootVolumeSizeInGbs { get; set; }
 
+        [Input("capacityReservationIds")]
+        private InputList<string>? _capacityReservationIds;
+
+        /// <summary>
+        /// (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+        /// </summary>
+        public InputList<string> CapacityReservationIds
+        {
+            get => _capacityReservationIds ?? (_capacityReservationIds = new InputList<string>());
+            set => _capacityReservationIds = value;
+        }
+
         /// <summary>
         /// (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
         /// </summary>
@@ -29,6 +41,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// </summary>
         [Input("instanceShapeDetails")]
         public Input<Inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsGetArgs>? InstanceShapeDetails { get; set; }
+
+        /// <summary>
+        /// The network configuration details for managed compute cluster type resource.
+        /// </summary>
+        [Input("networkConfigurationDetails")]
+        public Input<Inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsGetArgs>? NetworkConfigurationDetails { get; set; }
 
         public ComputeTargetComputeConfigurationDetailsInstanceConfigurationGetArgs()
         {

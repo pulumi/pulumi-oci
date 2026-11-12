@@ -19,6 +19,7 @@ import com.pulumi.oci.DataScience.outputs.PipelineRunStepRun;
 import com.pulumi.oci.DataScience.outputs.PipelineRunStorageMountConfigurationOverrideDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -103,6 +104,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .opcParentRptUrl(pipelineRunOpcParentRptUrl)
  *             .parametersOverride(pipelineRunParametersOverride)
+ *             .pipelineRunRetentionPeriodInDaysOverride(pipelineRunPipelineRunRetentionPeriodInDaysOverride)
  *             .projectId(testProject.get("id"))
  *             .stepOverrideDetails(PipelineRunStepOverrideDetailArgs.builder()
  *                 .stepConfigurationDetails(PipelineRunStepOverrideDetailStepConfigurationDetailsArgs.builder()
@@ -394,6 +396,20 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      */
     public Output<String> pipelineId() {
         return this.pipelineId;
+    }
+    /**
+     * Retention period in days for pipeline run.
+     * 
+     */
+    @Export(name="pipelineRunRetentionPeriodInDaysOverride", refs={Integer.class}, tree="[0]")
+    private Output<Integer> pipelineRunRetentionPeriodInDaysOverride;
+
+    /**
+     * @return Retention period in days for pipeline run.
+     * 
+     */
+    public Output<Integer> pipelineRunRetentionPeriodInDaysOverride() {
+        return this.pipelineRunRetentionPeriodInDaysOverride;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.

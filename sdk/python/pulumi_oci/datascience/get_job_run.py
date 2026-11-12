@@ -27,7 +27,7 @@ class GetJobRunResult:
     """
     A collection of values returned by getJobRun.
     """
-    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_environment_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_infrastructure_configuration_override_details=None, job_log_configuration_override_details=None, job_node_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, node_group_details_lists=None, opc_parent_rpt_url=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
+    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_environment_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_infrastructure_configuration_override_details=None, job_log_configuration_override_details=None, job_node_configuration_override_details=None, job_run_id=None, job_run_retention_period_in_days_override=None, job_storage_mount_configuration_details_lists=None, job_storage_mount_configuration_override_details_lists=None, lifecycle_details=None, log_details=None, node_group_details_lists=None, opc_parent_rpt_url=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
         if asynchronous and not isinstance(asynchronous, bool):
             raise TypeError("Expected argument 'asynchronous' to be a bool")
         pulumi.set(__self__, "asynchronous", asynchronous)
@@ -73,9 +73,15 @@ class GetJobRunResult:
         if job_run_id and not isinstance(job_run_id, str):
             raise TypeError("Expected argument 'job_run_id' to be a str")
         pulumi.set(__self__, "job_run_id", job_run_id)
+        if job_run_retention_period_in_days_override and not isinstance(job_run_retention_period_in_days_override, int):
+            raise TypeError("Expected argument 'job_run_retention_period_in_days_override' to be a int")
+        pulumi.set(__self__, "job_run_retention_period_in_days_override", job_run_retention_period_in_days_override)
         if job_storage_mount_configuration_details_lists and not isinstance(job_storage_mount_configuration_details_lists, list):
             raise TypeError("Expected argument 'job_storage_mount_configuration_details_lists' to be a list")
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
+        if job_storage_mount_configuration_override_details_lists and not isinstance(job_storage_mount_configuration_override_details_lists, list):
+            raise TypeError("Expected argument 'job_storage_mount_configuration_override_details_lists' to be a list")
+        pulumi.set(__self__, "job_storage_mount_configuration_override_details_lists", job_storage_mount_configuration_override_details_lists)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -219,12 +225,28 @@ class GetJobRunResult:
         return pulumi.get(self, "job_run_id")
 
     @_builtins.property
+    @pulumi.getter(name="jobRunRetentionPeriodInDaysOverride")
+    def job_run_retention_period_in_days_override(self) -> _builtins.int:
+        """
+        Retention period in days for job run.
+        """
+        return pulumi.get(self, "job_run_retention_period_in_days_override")
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobRunJobStorageMountConfigurationDetailsListResult']:
         """
         Collection of JobStorageMountConfigurationDetails.
         """
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="jobStorageMountConfigurationOverrideDetailsLists")
+    def job_storage_mount_configuration_override_details_lists(self) -> Sequence['outputs.GetJobRunJobStorageMountConfigurationOverrideDetailsListResult']:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_override_details_lists")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -317,7 +339,9 @@ class AwaitableGetJobRunResult(GetJobRunResult):
             job_log_configuration_override_details=self.job_log_configuration_override_details,
             job_node_configuration_override_details=self.job_node_configuration_override_details,
             job_run_id=self.job_run_id,
+            job_run_retention_period_in_days_override=self.job_run_retention_period_in_days_override,
             job_storage_mount_configuration_details_lists=self.job_storage_mount_configuration_details_lists,
+            job_storage_mount_configuration_override_details_lists=self.job_storage_mount_configuration_override_details_lists,
             lifecycle_details=self.lifecycle_details,
             log_details=self.log_details,
             node_group_details_lists=self.node_group_details_lists,
@@ -369,7 +393,9 @@ def get_job_run(job_run_id: Optional[_builtins.str] = None,
         job_log_configuration_override_details=pulumi.get(__ret__, 'job_log_configuration_override_details'),
         job_node_configuration_override_details=pulumi.get(__ret__, 'job_node_configuration_override_details'),
         job_run_id=pulumi.get(__ret__, 'job_run_id'),
+        job_run_retention_period_in_days_override=pulumi.get(__ret__, 'job_run_retention_period_in_days_override'),
         job_storage_mount_configuration_details_lists=pulumi.get(__ret__, 'job_storage_mount_configuration_details_lists'),
+        job_storage_mount_configuration_override_details_lists=pulumi.get(__ret__, 'job_storage_mount_configuration_override_details_lists'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_details=pulumi.get(__ret__, 'log_details'),
         node_group_details_lists=pulumi.get(__ret__, 'node_group_details_lists'),
@@ -418,7 +444,9 @@ def get_job_run_output(job_run_id: pulumi.Input[Optional[_builtins.str]] = None,
         job_log_configuration_override_details=pulumi.get(__response__, 'job_log_configuration_override_details'),
         job_node_configuration_override_details=pulumi.get(__response__, 'job_node_configuration_override_details'),
         job_run_id=pulumi.get(__response__, 'job_run_id'),
+        job_run_retention_period_in_days_override=pulumi.get(__response__, 'job_run_retention_period_in_days_override'),
         job_storage_mount_configuration_details_lists=pulumi.get(__response__, 'job_storage_mount_configuration_details_lists'),
+        job_storage_mount_configuration_override_details_lists=pulumi.get(__response__, 'job_storage_mount_configuration_override_details_lists'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         log_details=pulumi.get(__response__, 'log_details'),
         node_group_details_lists=pulumi.get(__response__, 'node_group_details_lists'),

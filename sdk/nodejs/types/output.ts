@@ -46908,6 +46908,10 @@ export namespace Core {
          */
         loadBalancers: outputs.Core.ClusterNetworkInstancePoolLoadBalancer[];
         /**
+         * Optional pool-level launch override policy for future instance launches.
+         */
+        overridePolicies: outputs.Core.ClusterNetworkInstancePoolOverridePolicy[];
+        /**
          * The placement configurations for the instance pool.
          */
         placementConfigurations: outputs.Core.ClusterNetworkInstancePoolPlacementConfiguration[];
@@ -46954,10 +46958,93 @@ export namespace Core {
          * The current state of the cluster network.
          */
         state: string;
-        /**
-         * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-         */
         vnicSelection: string;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicy {
+        /**
+         * The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements: outputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatement[];
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The ordered list of candidate override options for the matched availability domain.
+         */
+        overrideOptions: outputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption[];
+        /**
+         * The selector for an override statement.
+         */
+        selectors: outputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector[];
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The concrete launch mutation payload for an override option.
+         */
+        overrides: outputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride[];
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId: string;
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         */
+        shape: string;
+        /**
+         * The shape configuration requested for the override option.
+         */
+        shapeConfigDetails: outputs.Core.ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail[];
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         */
+        baselineOcpuUtilization: string;
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs: number;
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
+         * The total number of OCPUs available to the instance.
+         */
+        ocpus: number;
+        /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement: string;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus: number;
+    }
+
+    export interface ClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: string;
     }
 
     export interface ClusterNetworkInstancePoolPlacementConfiguration {
@@ -49218,6 +49305,10 @@ export namespace Core {
          */
         loadBalancers: outputs.Core.GetClusterNetworkInstancePoolLoadBalancer[];
         /**
+         * Optional pool-level launch override policy for future instance launches.
+         */
+        overridePolicies: outputs.Core.GetClusterNetworkInstancePoolOverridePolicy[];
+        /**
          * The placement configurations for the instance pool.
          */
         placementConfigurations: outputs.Core.GetClusterNetworkInstancePoolPlacementConfiguration[];
@@ -49264,10 +49355,93 @@ export namespace Core {
          * The current state of the cluster network.
          */
         state: string;
-        /**
-         * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-         */
         vnicSelection: string;
+    }
+
+    export interface GetClusterNetworkInstancePoolOverridePolicy {
+        /**
+         * The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements: outputs.Core.GetClusterNetworkInstancePoolOverridePolicyOverrideStatement[];
+    }
+
+    export interface GetClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The ordered list of candidate override options for the matched availability domain.
+         */
+        overrideOptions: outputs.Core.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption[];
+        /**
+         * The selector for an override statement.
+         */
+        selectors: outputs.Core.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector[];
+    }
+
+    export interface GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The concrete launch mutation payload for an override option.
+         */
+        overrides: outputs.Core.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride[];
+    }
+
+    export interface GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId: string;
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         */
+        shape: string;
+        /**
+         * The shape configuration requested for the override option.
+         */
+        shapeConfigDetails: outputs.Core.GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail[];
+    }
+
+    export interface GetClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         */
+        baselineOcpuUtilization: string;
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs: number;
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
+         * The total number of OCPUs available to the instance.
+         */
+        ocpus: number;
+        /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement: string;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus: number;
+    }
+
+    export interface GetClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: string;
     }
 
     export interface GetClusterNetworkInstancePoolPlacementConfiguration {
@@ -49588,6 +49762,10 @@ export namespace Core {
          */
         loadBalancers: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolLoadBalancer[];
         /**
+         * Optional pool-level launch override policy for future instance launches.
+         */
+        overridePolicies: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolOverridePolicy[];
+        /**
          * The placement configurations for the instance pool.
          */
         placementConfigurations: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration[];
@@ -49634,10 +49812,93 @@ export namespace Core {
          * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
          */
         state: string;
-        /**
-         * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-         */
         vnicSelection: string;
+    }
+
+    export interface GetClusterNetworksClusterNetworkInstancePoolOverridePolicy {
+        /**
+         * The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement[];
+    }
+
+    export interface GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatement {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The ordered list of candidate override options for the matched availability domain.
+         */
+        overrideOptions: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption[];
+        /**
+         * The selector for an override statement.
+         */
+        selectors: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector[];
+    }
+
+    export interface GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The concrete launch mutation payload for an override option.
+         */
+        overrides: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride[];
+    }
+
+    export interface GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId: string;
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         */
+        shape: string;
+        /**
+         * The shape configuration requested for the override option.
+         */
+        shapeConfigDetails: outputs.Core.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail[];
+    }
+
+    export interface GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         */
+        baselineOcpuUtilization: string;
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs: number;
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
+         * The total number of OCPUs available to the instance.
+         */
+        ocpus: number;
+        /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement: string;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus: number;
+    }
+
+    export interface GetClusterNetworksClusterNetworkInstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: string;
     }
 
     export interface GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration {
@@ -49784,6 +50045,9 @@ export namespace Core {
     }
 
     export interface GetClusterNetworksFilter {
+        /**
+         * A user-friendly name for the override option.
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -56551,6 +56815,88 @@ export namespace Core {
         vnicSelection: string;
     }
 
+    export interface GetInstancePoolOverridePolicy {
+        /**
+         * The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements: outputs.Core.GetInstancePoolOverridePolicyOverrideStatement[];
+    }
+
+    export interface GetInstancePoolOverridePolicyOverrideStatement {
+        /**
+         * The ordered list of candidate override options for the matched availability domain.
+         */
+        overrideOptions: outputs.Core.GetInstancePoolOverridePolicyOverrideStatementOverrideOption[];
+        /**
+         * The selector for an override statement.
+         */
+        selectors: outputs.Core.GetInstancePoolOverridePolicyOverrideStatementSelector[];
+    }
+
+    export interface GetInstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The concrete launch mutation payload for an override option.
+         */
+        overrides: outputs.Core.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride[];
+    }
+
+    export interface GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId: string;
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         */
+        shape: string;
+        /**
+         * The shape configuration requested for the override option.
+         */
+        shapeConfigDetails: outputs.Core.GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail[];
+    }
+
+    export interface GetInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         */
+        baselineOcpuUtilization: string;
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs: number;
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
+         * The total number of OCPUs available to the instance.
+         */
+        ocpus: number;
+        /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement: string;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus: number;
+    }
+
+    export interface GetInstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: string;
+    }
+
     export interface GetInstancePoolPlacementConfiguration {
         /**
          * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
@@ -56627,6 +56973,9 @@ export namespace Core {
     }
 
     export interface GetInstancePoolsFilter {
+        /**
+         * A user-friendly name for the override option.
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -56678,6 +57027,10 @@ export namespace Core {
          * The load balancers attached to the instance pool.
          */
         loadBalancers: outputs.Core.GetInstancePoolsInstancePoolLoadBalancer[];
+        /**
+         * Optional pool-level launch override policy for future instance launches.
+         */
+        overridePolicies: outputs.Core.GetInstancePoolsInstancePoolOverridePolicy[];
         /**
          * The placement configurations for the instance pool.
          */
@@ -56769,6 +57122,88 @@ export namespace Core {
          * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
          */
         vnicSelection: string;
+    }
+
+    export interface GetInstancePoolsInstancePoolOverridePolicy {
+        /**
+         * The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements: outputs.Core.GetInstancePoolsInstancePoolOverridePolicyOverrideStatement[];
+    }
+
+    export interface GetInstancePoolsInstancePoolOverridePolicyOverrideStatement {
+        /**
+         * The ordered list of candidate override options for the matched availability domain.
+         */
+        overrideOptions: outputs.Core.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOption[];
+        /**
+         * The selector for an override statement.
+         */
+        selectors: outputs.Core.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementSelector[];
+    }
+
+    export interface GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * The concrete launch mutation payload for an override option.
+         */
+        overrides: outputs.Core.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride[];
+    }
+
+    export interface GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId: string;
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         */
+        shape: string;
+        /**
+         * The shape configuration requested for the override option.
+         */
+        shapeConfigDetails: outputs.Core.GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail[];
+    }
+
+    export interface GetInstancePoolsInstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetail {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         */
+        baselineOcpuUtilization: string;
+        /**
+         * The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs: number;
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
+         * The total number of OCPUs available to the instance.
+         */
+        ocpus: number;
+        /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement: string;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus: number;
+    }
+
+    export interface GetInstancePoolsInstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: string;
     }
 
     export interface GetInstancePoolsInstancePoolPlacementConfiguration {
@@ -63903,6 +64338,107 @@ export namespace Core {
          * Indicates which VNIC on each instance in the pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
          */
         vnicSelection: string;
+    }
+
+    export interface InstancePoolOverridePolicy {
+        /**
+         * (Updatable) The ordered set of availability domain-scoped override statements for this policy.
+         */
+        overrideStatements: outputs.Core.InstancePoolOverridePolicyOverrideStatement[];
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatement {
+        /**
+         * (Updatable) The ordered list of candidate override options for the matched availability domain.
+         *
+         * Request order defines the canonical candidate sequence. Override options within the same statement must normalize to distinct override payloads.
+         */
+        overrideOptions: outputs.Core.InstancePoolOverridePolicyOverrideStatementOverrideOption[];
+        /**
+         * (Updatable) The selector for an override statement.
+         *
+         * In V1, the selector contains only the scalar `availabilityDomain`. Additional selector fields are rejected.
+         */
+        selector: outputs.Core.InstancePoolOverridePolicyOverrideStatementSelector;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementOverrideOption {
+        /**
+         * (Updatable) A user-friendly name for the override option.
+         */
+        name: string;
+        /**
+         * (Updatable) The concrete launch mutation payload for an override option.
+         *
+         * In V1, the override payload is limited to `shape`, `shapeConfigDetails`, and `capacityReservationId`.
+         *
+         * Each override option must include at least one of `shape` or `capacityReservationId`, so a `capacityReservationId`-only override is valid. `shapeConfigDetails` may be supplied only when `shape` is supplied. If `shape` is a Flex or Fungible shape, `shapeConfigDetails` is required.
+         *
+         * Placement-owned and system-owned fields are not supported in this payload. Any field outside this V1 payload shape is rejected.
+         */
+        override: outputs.Core.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementOverrideOptionOverride {
+        /**
+         * (Updatable) The OCID of the compute capacity reservation to use for the override option.
+         */
+        capacityReservationId?: string;
+        /**
+         * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         */
+        shape?: string;
+        /**
+         * (Updatable) The shape configuration requested for the override option.
+         */
+        shapeConfigDetails?: outputs.Core.InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementOverrideOptionOverrideShapeConfigDetails {
+        /**
+         * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        baselineOcpuUtilization?: string;
+        /**
+         * (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         */
+        localVolumeSizeInGbs?: number;
+        /**
+         * (Updatable) The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs?: number;
+        /**
+         * (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes?: number;
+        /**
+         * (Updatable) The total number of OCPUs available to the instance.
+         */
+        ocpus?: number;
+        /**
+         * (Updatable) This field is reserved for internal use.
+         */
+        resourceManagement?: string;
+        /**
+         * (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus?: number;
+    }
+
+    export interface InstancePoolOverridePolicyOverrideStatementSelector {
+        /**
+         * (Updatable) The availability domain that this statement applies to.
+         *
+         * The value must match an availability domain present in the pool's `placementConfigurations`.
+         */
+        availabilityDomain: string;
     }
 
     export interface InstancePoolPlacementConfiguration {
@@ -92389,6 +92925,10 @@ export namespace DataScience {
          */
         bootVolumeSizeInGbs: number;
         /**
+         * (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+         */
+        capacityReservationIds: string[];
+        /**
          * (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
          */
         instanceShape: string;
@@ -92396,6 +92936,10 @@ export namespace DataScience {
          * (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
          */
         instanceShapeDetails: outputs.DataScience.ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails;
+        /**
+         * The network configuration details for managed compute cluster type resource.
+         */
+        networkConfigurationDetails: outputs.DataScience.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails;
     }
 
     export interface ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails {
@@ -92407,6 +92951,17 @@ export namespace DataScience {
          * (Updatable) The total number of OCPUs allocated to the instance.
          */
         ocpus: number;
+    }
+
+    export interface ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: string;
+        /**
+         * The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        subnetIds: string[];
     }
 
     export interface ComputeTargetComputeConfigurationDetailsScalingPolicy {
@@ -92552,6 +93107,10 @@ export namespace DataScience {
          */
         bootVolumeSizeInGbs: number;
         /**
+         * The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+         */
+        capacityReservationIds: string[];
+        /**
          * The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
          */
         instanceShape: string;
@@ -92559,6 +93118,10 @@ export namespace DataScience {
          * Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
          */
         instanceShapeDetails: outputs.DataScience.GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail[];
+        /**
+         * The network configuration details for managed compute cluster type resource.
+         */
+        networkConfigurationDetails: outputs.DataScience.GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail[];
     }
 
     export interface GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail {
@@ -92570,6 +93133,17 @@ export namespace DataScience {
          * The total number of OCPUs allocated to the instance.
          */
         ocpus: number;
+    }
+
+    export interface GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The list of [OCID] of customer subnetIds.
+         */
+        subnetIds: string[];
     }
 
     export interface GetComputeTargetComputeConfigurationDetailScalingPolicy {
@@ -92798,6 +93372,10 @@ export namespace DataScience {
          */
         bootVolumeSizeInGbs: number;
         /**
+         * The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+         */
+        capacityReservationIds: string[];
+        /**
          * The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
          */
         instanceShape: string;
@@ -92805,6 +93383,10 @@ export namespace DataScience {
          * Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
          */
         instanceShapeDetails: outputs.DataScience.GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail[];
+        /**
+         * The network configuration details for managed compute cluster type resource.
+         */
+        networkConfigurationDetails: outputs.DataScience.GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail[];
     }
 
     export interface GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail {
@@ -92816,6 +93398,17 @@ export namespace DataScience {
          * The total number of OCPUs allocated to the instance.
          */
         ocpus: number;
+    }
+
+    export interface GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The list of [OCID] of customer subnetIds.
+         */
+        subnetIds: string[];
     }
 
     export interface GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicy {
@@ -93171,6 +93764,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -93182,6 +93779,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -93209,6 +93810,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -93407,6 +94019,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -93418,6 +94034,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -93445,6 +94065,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -93598,6 +94229,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -93609,6 +94244,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -93636,6 +94275,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobRunJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -93681,6 +94331,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -93692,6 +94346,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -93708,6 +94366,10 @@ export namespace DataScience {
 
     export interface GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline: string;
+        /**
          * The memory in Gbs required to be allocated to run the workload.
          */
         memoryInGbs: number;
@@ -93715,6 +94377,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfiguration {
@@ -93913,6 +94586,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -93924,6 +94601,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -93940,6 +94621,10 @@ export namespace DataScience {
 
     export interface GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline: string;
+        /**
          * The memory in Gbs required to be allocated to run the workload.
          */
         memoryInGbs: number;
@@ -93947,6 +94632,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -93987,6 +94683,41 @@ export namespace DataScience {
     }
 
     export interface GetJobRunJobStorageMountConfigurationDetailsList {
+        /**
+         * The object storage bucket
+         */
+        bucket: string;
+        /**
+         * The local directory name to be mounted
+         */
+        destinationDirectoryName: string;
+        /**
+         * The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath: string;
+        /**
+         * OCID of the export
+         */
+        exportId: string;
+        /**
+         * OCID of the mount target
+         */
+        mountTargetId: string;
+        /**
+         * The object storage namespace
+         */
+        namespace: string;
+        /**
+         * Prefix in the bucket to mount
+         */
+        prefix: string;
+        /**
+         * The type of storage.
+         */
+        storageType: string;
+    }
+
+    export interface GetJobRunJobStorageMountConfigurationOverrideDetailsList {
         /**
          * The object storage bucket
          */
@@ -94111,9 +94842,17 @@ export namespace DataScience {
          */
         jobNodeConfigurationOverrideDetails: outputs.DataScience.GetJobRunsJobRunJobNodeConfigurationOverrideDetail[];
         /**
+         * Retention period in days for job run.
+         */
+        jobRunRetentionPeriodInDaysOverride: number;
+        /**
          * Collection of JobStorageMountConfigurationDetails.
          */
         jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobRunsJobRunJobStorageMountConfigurationDetailsList[];
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         */
+        jobStorageMountConfigurationOverrideDetailsLists: outputs.DataScience.GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList[];
         /**
          * The state details of the node group.
          */
@@ -94228,6 +94967,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -94239,6 +94982,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -94266,6 +95013,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -94311,6 +95069,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -94322,6 +95084,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -94338,6 +95104,10 @@ export namespace DataScience {
 
     export interface GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline: string;
+        /**
          * The memory in Gbs required to be allocated to run the workload.
          */
         memoryInGbs: number;
@@ -94345,6 +95115,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfiguration {
@@ -94543,6 +95324,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -94554,6 +95339,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -94570,6 +95359,10 @@ export namespace DataScience {
 
     export interface GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline: string;
+        /**
          * The memory in Gbs required to be allocated to run the workload.
          */
         memoryInGbs: number;
@@ -94577,6 +95370,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -94617,6 +95421,41 @@ export namespace DataScience {
     }
 
     export interface GetJobRunsJobRunJobStorageMountConfigurationDetailsList {
+        /**
+         * The object storage bucket
+         */
+        bucket: string;
+        /**
+         * The local directory name to be mounted
+         */
+        destinationDirectoryName: string;
+        /**
+         * The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath: string;
+        /**
+         * OCID of the export
+         */
+        exportId: string;
+        /**
+         * OCID of the mount target
+         */
+        mountTargetId: string;
+        /**
+         * The object storage namespace
+         */
+        namespace: string;
+        /**
+         * Prefix in the bucket to mount
+         */
+        prefix: string;
+        /**
+         * The type of storage.
+         */
+        storageType: string;
+    }
+
+    export interface GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList {
         /**
          * The object storage bucket
          */
@@ -94771,6 +95610,10 @@ export namespace DataScience {
          */
         jobNodeConfigurationDetails: outputs.DataScience.GetJobsJobJobNodeConfigurationDetail[];
         /**
+         * Retention period in days for job runs.
+         */
+        jobRunRetentionPeriodInDays: number;
+        /**
          * Collection of JobStorageMountConfigurationDetails.
          */
         jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobsJobJobStorageMountConfigurationDetailsList[];
@@ -94871,6 +95714,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -94882,6 +95729,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -94909,6 +95760,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobsJobJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -95107,6 +95969,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -95118,6 +95984,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -95145,6 +96015,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -96465,7 +97346,14 @@ export namespace DataScience {
          * The maximum network bandwidth for the model deployment.
          */
         maximumBandwidthMbps: number;
+        /**
+         * Resource configuration details for model deploy on managed compute cluster type compute target.
+         */
         modelDeploymentResourceConfigurations: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration[];
+        /**
+         * The network configuration details for model deploy on managed compute cluster type compute target.
+         */
+        networkConfigurations: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * The scaling policy to apply to each model of the deployment.
          */
@@ -96473,6 +97361,9 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration {
+        /**
+         * This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -96512,7 +97403,13 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration {
+        /**
+         * Resource limit configuration details for workload on managed compute cluster type compute target
+         */
         resourceLimitConfigurations: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration[];
+        /**
+         * Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         */
         resourceRequestConfigurations: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration[];
     }
 
@@ -96528,6 +97425,9 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration {
+        /**
+         * The total number of gpus required to be allocated to the workload.
+         */
         gpus: number;
         /**
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
@@ -96537,6 +97437,17 @@ export namespace DataScience {
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
          */
         ocpus: number;
+    }
+
+    export interface GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         */
+        subnetId: string;
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy {
@@ -96724,6 +97635,9 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
+        /**
+         * This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -97170,7 +98084,14 @@ export namespace DataScience {
          * The maximum network bandwidth for the model deployment.
          */
         maximumBandwidthMbps: number;
+        /**
+         * Resource configuration details for model deploy on managed compute cluster type compute target.
+         */
         modelDeploymentResourceConfigurations: outputs.DataScience.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration[];
+        /**
+         * The network configuration details for model deploy on managed compute cluster type compute target.
+         */
+        networkConfigurations: outputs.DataScience.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * The scaling policy to apply to each model of the deployment.
          */
@@ -97178,6 +98099,9 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration {
+        /**
+         * This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -97217,7 +98141,13 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration {
+        /**
+         * Resource limit configuration details for workload on managed compute cluster type compute target
+         */
         resourceLimitConfigurations: outputs.DataScience.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration[];
+        /**
+         * Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         */
         resourceRequestConfigurations: outputs.DataScience.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration[];
     }
 
@@ -97233,6 +98163,9 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration {
+        /**
+         * The total number of gpus required to be allocated to the workload.
+         */
         gpus: number;
         /**
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
@@ -97242,6 +98175,17 @@ export namespace DataScience {
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
          */
         ocpus: number;
+    }
+
+    export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         */
+        subnetId: string;
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy {
@@ -97429,6 +98373,9 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
+        /**
+         * This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -99428,6 +100375,10 @@ export namespace DataScience {
          */
         pipelineId: string;
         /**
+         * Retention period in days for pipeline run.
+         */
+        pipelineRunRetentionPeriodInDaysOverride: number;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
          */
         projectId: string;
@@ -100264,6 +101215,10 @@ export namespace DataScience {
          * Parameters used in the pipeline.
          */
         parameters: {[key: string]: string};
+        /**
+         * Retention period in days for pipeline runs.
+         */
+        pipelineRunRetentionPeriodInDays: number;
         /**
          * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
          */
@@ -101693,6 +102648,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -101704,6 +102663,10 @@ export namespace DataScience {
          * (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails;
+        /**
+         * (Updatable) The network configuration details for the compute target job.
+         */
+        networkConfiguration: outputs.DataScience.JobJobInfrastructureConfigurationDetailsNetworkConfiguration;
         /**
          * (Updatable) Details for the compute target job resource configuration.
          */
@@ -101731,6 +102694,17 @@ export namespace DataScience {
          * (Updatable) The total number of OCPUs available to the job run instance.
          */
         ocpus: number;
+    }
+
+    export interface JobJobInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: string;
+        /**
+         * (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId: string;
     }
 
     export interface JobJobInfrastructureConfigurationDetailsResourceConfiguration {
@@ -101814,7 +102788,7 @@ export namespace DataScience {
 
     export interface JobJobNodeConfigurationDetailsJobNetworkConfiguration {
         /**
-         * job network type
+         * The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
          */
         jobNetworkType: string;
         /**
@@ -101929,6 +102903,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -101940,6 +102918,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails;
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfiguration: outputs.DataScience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration;
         /**
          * Details for the compute target job resource configuration.
          */
@@ -101967,6 +102949,17 @@ export namespace DataScience {
          * The total number of OCPUs available to the job run instance.
          */
         ocpus: number;
+    }
+
+    export interface JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: string;
+        /**
+         * The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId: string;
     }
 
     export interface JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration {
@@ -102120,6 +103113,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -102131,6 +103128,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfigurations: outputs.DataScience.JobRunJobInfrastructureConfigurationDetailNetworkConfiguration[];
         /**
          * Details for the compute target job resource configuration.
          */
@@ -102158,6 +103159,17 @@ export namespace DataScience {
          * The ocpus required to be allocated to run the workload.
          */
         ocpus: number;
+    }
+
+    export interface JobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the job
+         */
+        subnetId: string;
     }
 
     export interface JobRunJobInfrastructureConfigurationDetailResourceConfiguration {
@@ -102203,6 +103215,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -102214,6 +103230,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails;
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfiguration: outputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration;
         /**
          * Details for the compute target job resource configuration.
          */
@@ -102230,6 +103250,10 @@ export namespace DataScience {
 
     export interface JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline: string;
+        /**
          * The total amount of memory available to the job run instance, in gigabytes.
          */
         memoryInGbs: number;
@@ -102237,6 +103261,17 @@ export namespace DataScience {
          * The total number of OCPUs available to the job run instance.
          */
         ocpus: number;
+    }
+
+    export interface JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: string;
+        /**
+         * The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId: string;
     }
 
     export interface JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration {
@@ -102320,7 +103355,7 @@ export namespace DataScience {
 
     export interface JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration {
         /**
-         * job network type
+         * The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
          */
         jobNetworkType: string;
         /**
@@ -102435,6 +103470,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: number;
         /**
+         * This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
          */
         computeTargetId: string;
@@ -102446,6 +103485,10 @@ export namespace DataScience {
          * Details for the job run shape configuration. Specify only when a flex shape is selected.
          */
         jobShapeConfigDetails: outputs.DataScience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails;
+        /**
+         * The network configuration details for the compute target job.
+         */
+        networkConfiguration: outputs.DataScience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration;
         /**
          * Details for the compute target job resource configuration.
          */
@@ -102462,6 +103505,10 @@ export namespace DataScience {
 
     export interface JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
         /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline: string;
+        /**
          * The total amount of memory available to the job run instance, in gigabytes.
          */
         memoryInGbs: number;
@@ -102469,6 +103516,17 @@ export namespace DataScience {
          * The total number of OCPUs available to the job run instance.
          */
         ocpus: number;
+    }
+
+    export interface JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+         */
+        networkType: string;
+        /**
+         * The OCID of the customer-supplied subnet for VNIC attach
+         */
+        subnetId: string;
     }
 
     export interface JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration {
@@ -102509,6 +103567,41 @@ export namespace DataScience {
     }
 
     export interface JobRunJobStorageMountConfigurationDetailsList {
+        /**
+         * The object storage bucket
+         */
+        bucket: string;
+        /**
+         * The local directory name to be mounted
+         */
+        destinationDirectoryName: string;
+        /**
+         * The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath: string;
+        /**
+         * OCID of the export
+         */
+        exportId: string;
+        /**
+         * OCID of the mount target
+         */
+        mountTargetId: string;
+        /**
+         * The object storage namespace
+         */
+        namespace: string;
+        /**
+         * Prefix in the bucket to mount
+         */
+        prefix: string;
+        /**
+         * The type of storage.
+         */
+        storageType: string;
+    }
+
+    export interface JobRunJobStorageMountConfigurationOverrideDetailsList {
         /**
          * The object storage bucket
          */
@@ -103022,9 +104115,13 @@ export namespace DataScience {
          */
         maximumBandwidthMbps: number;
         /**
-         * (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         * Resource configuration details for model deploy on managed compute cluster type compute target.
          */
         modelDeploymentResourceConfiguration: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration;
+        /**
+         * The network configuration details for model deploy on managed compute cluster type compute target.
+         */
+        networkConfiguration: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration;
         /**
          * The scaling policy to apply to each model of the deployment.
          */
@@ -103032,6 +104129,9 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration {
+        /**
+         * This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -103072,11 +104172,11 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
         /**
-         * (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+         * Resource limit configuration details for workload on managed compute cluster type compute target
          */
         resourceLimitConfiguration: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration;
         /**
-         * (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         * Resource request configuration to run workload on managed compute cluster type compute target compute target.
          */
         resourceRequestConfiguration: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration;
     }
@@ -103094,7 +104194,7 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
         /**
-         * (Updatable) The total number of gpus required to be allocated to the workload.
+         * The total number of gpus required to be allocated to the workload.
          */
         gpus: number;
         /**
@@ -103105,6 +104205,17 @@ export namespace DataScience {
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
          */
         ocpus: number;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration {
+        /**
+         * network type
+         */
+        networkType: string;
+        /**
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         */
+        subnetId: string;
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy {
@@ -103292,6 +104403,9 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
+        /**
+         * (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         */
         capacityReservationIds: string[];
         /**
          * (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -177112,6 +178226,10 @@ export namespace FleetSoftwareUpdate {
          */
         homePolicy: string;
         /**
+         * (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged: boolean;
+        /**
          * (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
          */
         newHomePrefix: string;
@@ -177729,6 +178847,10 @@ export namespace FleetSoftwareUpdate {
          */
         homePolicy: string;
         /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged: boolean;
+        /**
          * Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
          */
         newHomePrefix: string;
@@ -178004,6 +179126,10 @@ export namespace FleetSoftwareUpdate {
          * Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
          */
         homePolicy: string;
+        /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged: boolean;
         /**
          * Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
          */
@@ -278619,10 +279745,6 @@ export namespace Ocvp {
          * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
          */
         initialCommitment: string;
-        /**
-         * The initial fault domain host distribution mode for the Cluster.
-         */
-        initialFaultDomainHostDistribution: string;
         /**
          * The initial OCPU count of the Cluster's ESXi hosts.
          */

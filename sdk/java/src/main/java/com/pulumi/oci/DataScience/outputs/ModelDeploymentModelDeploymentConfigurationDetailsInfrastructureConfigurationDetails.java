@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy;
 import java.lang.Integer;
 import java.lang.String;
@@ -38,10 +39,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      */
     private @Nullable Integer maximumBandwidthMbps;
     /**
-     * @return (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * @return Resource configuration details for model deploy on managed compute cluster type compute target.
      * 
      */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration modelDeploymentResourceConfiguration;
+    /**
+     * @return The network configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration networkConfiguration;
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
@@ -81,11 +87,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         return Optional.ofNullable(this.maximumBandwidthMbps);
     }
     /**
-     * @return (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * @return Resource configuration details for model deploy on managed compute cluster type compute target.
      * 
      */
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration> modelDeploymentResourceConfiguration() {
         return Optional.ofNullable(this.modelDeploymentResourceConfiguration);
+    }
+    /**
+     * @return The network configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration> networkConfiguration() {
+        return Optional.ofNullable(this.networkConfiguration);
     }
     /**
      * @return The scaling policy to apply to each model of the deployment.
@@ -110,6 +123,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration;
         private @Nullable Integer maximumBandwidthMbps;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration modelDeploymentResourceConfiguration;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration networkConfiguration;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy scalingPolicy;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails defaults) {
@@ -120,6 +134,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     	      this.instanceConfiguration = defaults.instanceConfiguration;
     	      this.maximumBandwidthMbps = defaults.maximumBandwidthMbps;
     	      this.modelDeploymentResourceConfiguration = defaults.modelDeploymentResourceConfiguration;
+    	      this.networkConfiguration = defaults.networkConfiguration;
     	      this.scalingPolicy = defaults.scalingPolicy;
         }
 
@@ -162,6 +177,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return this;
         }
         @CustomType.Setter
+        public Builder networkConfiguration(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration networkConfiguration) {
+
+            this.networkConfiguration = networkConfiguration;
+            return this;
+        }
+        @CustomType.Setter
         public Builder scalingPolicy(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy scalingPolicy) {
 
             this.scalingPolicy = scalingPolicy;
@@ -175,6 +196,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             _resultValue.instanceConfiguration = instanceConfiguration;
             _resultValue.maximumBandwidthMbps = maximumBandwidthMbps;
             _resultValue.modelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
+            _resultValue.networkConfiguration = networkConfiguration;
             _resultValue.scalingPolicy = scalingPolicy;
             return _resultValue;
         }

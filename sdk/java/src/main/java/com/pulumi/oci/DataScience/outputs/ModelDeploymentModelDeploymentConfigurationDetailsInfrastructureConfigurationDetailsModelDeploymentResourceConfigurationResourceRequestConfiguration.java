@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
     /**
-     * @return (Updatable) The total number of gpus required to be allocated to the workload.
+     * @return The total number of gpus required to be allocated to the workload.
      * 
      */
     private @Nullable Integer gpus;
@@ -31,7 +31,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
 
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration() {}
     /**
-     * @return (Updatable) The total number of gpus required to be allocated to the workload.
+     * @return The total number of gpus required to be allocated to the workload.
      * 
      */
     public Optional<Integer> gpus() {

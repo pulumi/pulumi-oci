@@ -56,6 +56,7 @@ import * as utilities from "../utilities";
  *     },
  *     opcParentRptUrl: pipelineRunOpcParentRptUrl,
  *     parametersOverride: pipelineRunParametersOverride,
+ *     pipelineRunRetentionPeriodInDaysOverride: pipelineRunPipelineRunRetentionPeriodInDaysOverride,
  *     projectId: testProject.id,
  *     stepOverrideDetails: [{
  *         stepConfigurationDetails: {
@@ -236,6 +237,10 @@ export class PipelineRun extends pulumi.CustomResource {
      */
     declare public readonly pipelineId: pulumi.Output<string>;
     /**
+     * Retention period in days for pipeline run.
+     */
+    declare public readonly pipelineRunRetentionPeriodInDaysOverride: pulumi.Output<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      */
     declare public readonly projectId: pulumi.Output<string>;
@@ -307,6 +312,7 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["opcParentRptUrl"] = state?.opcParentRptUrl;
             resourceInputs["parametersOverride"] = state?.parametersOverride;
             resourceInputs["pipelineId"] = state?.pipelineId;
+            resourceInputs["pipelineRunRetentionPeriodInDaysOverride"] = state?.pipelineRunRetentionPeriodInDaysOverride;
             resourceInputs["projectId"] = state?.projectId;
             resourceInputs["state"] = state?.state;
             resourceInputs["stepOverrideDetails"] = state?.stepOverrideDetails;
@@ -339,6 +345,7 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["opcParentRptUrl"] = args?.opcParentRptUrl;
             resourceInputs["parametersOverride"] = args?.parametersOverride;
             resourceInputs["pipelineId"] = args?.pipelineId;
+            resourceInputs["pipelineRunRetentionPeriodInDaysOverride"] = args?.pipelineRunRetentionPeriodInDaysOverride;
             resourceInputs["projectId"] = args?.projectId;
             resourceInputs["stepOverrideDetails"] = args?.stepOverrideDetails;
             resourceInputs["storageMountConfigurationOverrideDetailsLists"] = args?.storageMountConfigurationOverrideDetailsLists;
@@ -420,6 +427,10 @@ export interface PipelineRunState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
     pipelineId?: pulumi.Input<string | undefined>;
+    /**
+     * Retention period in days for pipeline run.
+     */
+    pipelineRunRetentionPeriodInDaysOverride?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      */
@@ -510,6 +521,10 @@ export interface PipelineRunArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
     pipelineId: pulumi.Input<string>;
+    /**
+     * Retention period in days for pipeline run.
+     */
+    pipelineRunRetentionPeriodInDaysOverride?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      */

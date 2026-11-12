@@ -16,10 +16,12 @@ import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationOv
 import com.pulumi.oci.DataScience.outputs.JobRunJobLogConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobNodeConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobStorageMountConfigurationDetailsList;
+import com.pulumi.oci.DataScience.outputs.JobRunJobStorageMountConfigurationOverrideDetailsList;
 import com.pulumi.oci.DataScience.outputs.JobRunLogDetail;
 import com.pulumi.oci.DataScience.outputs.JobRunNodeGroupDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -50,6 +52,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs;
@@ -62,9 +65,11 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobStorageMountConfigurationOverrideDetailsListArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -114,6 +119,10 @@ import javax.annotation.Nullable;
  *                 .jobShapeConfigDetails(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs.builder()
  *                     .memoryInGbs(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs)
  *                     .ocpus(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus)
+ *                     .build())
+ *                 .networkConfiguration(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs.builder()
+ *                     .networkType(jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationNetworkType)
+ *                     .subnetId(testSubnet.get("id"))
  *                     .build())
  *                 .resourceConfiguration(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs.builder()
  *                     .resourceLimitConfiguration(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
@@ -172,6 +181,10 @@ import javax.annotation.Nullable;
  *                             .memoryInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
  *                             .ocpus(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
  *                             .build())
+ *                         .networkConfiguration(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs.builder()
+ *                             .networkType(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationNetworkType)
+ *                             .subnetId(testSubnet.get("id"))
+ *                             .build())
  *                         .resourceConfiguration(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs.builder()
  *                             .resourceLimitConfiguration(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
  *                                 .memoryInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs)
@@ -192,16 +205,17 @@ import javax.annotation.Nullable;
  *                 .maximumRuntimeInMinutes(jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes)
  *                 .startupOrder(jobRunJobNodeConfigurationOverrideDetailsStartupOrder)
  *                 .build())
- *             .jobStorageMountConfigurationOverrideDetailsList(Arrays.asList(Map.ofEntries(
- *                 Map.entry("destinationDirectoryName", jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName),
- *                 Map.entry("storageType", jobRunJobStorageMountConfigurationOverrideDetailsListStorageType),
- *                 Map.entry("bucket", jobRunJobStorageMountConfigurationOverrideDetailsListBucket),
- *                 Map.entry("destinationPath", jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath),
- *                 Map.entry("exportId", testExport.get("id")),
- *                 Map.entry("mountTargetId", testMountTarget.get("id")),
- *                 Map.entry("namespace", jobRunJobStorageMountConfigurationOverrideDetailsListNamespace),
- *                 Map.entry("prefix", jobRunJobStorageMountConfigurationOverrideDetailsListPrefix)
- *             )))
+ *             .jobRunRetentionPeriodInDaysOverride(jobRunJobRunRetentionPeriodInDaysOverride)
+ *             .jobStorageMountConfigurationOverrideDetailsLists(JobRunJobStorageMountConfigurationOverrideDetailsListArgs.builder()
+ *                 .destinationDirectoryName(jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName)
+ *                 .storageType(jobRunJobStorageMountConfigurationOverrideDetailsListStorageType)
+ *                 .bucket(jobRunJobStorageMountConfigurationOverrideDetailsListBucket)
+ *                 .destinationPath(jobRunJobStorageMountConfigurationOverrideDetailsListDestinationPath)
+ *                 .exportId(testExport.get("id"))
+ *                 .mountTargetId(testMountTarget.get("id"))
+ *                 .namespace(jobRunJobStorageMountConfigurationOverrideDetailsListNamespace)
+ *                 .prefix(jobRunJobStorageMountConfigurationOverrideDetailsListPrefix)
+ *                 .build())
  *             .opcParentRptUrl(jobRunOpcParentRptUrl)
  *             .build());
  * 
@@ -404,6 +418,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
         return this.jobNodeConfigurationOverrideDetails;
     }
     /**
+     * Retention period in days for job run.
+     * 
+     */
+    @Export(name="jobRunRetentionPeriodInDaysOverride", refs={Integer.class}, tree="[0]")
+    private Output<Integer> jobRunRetentionPeriodInDaysOverride;
+
+    /**
+     * @return Retention period in days for job run.
+     * 
+     */
+    public Output<Integer> jobRunRetentionPeriodInDaysOverride() {
+        return this.jobRunRetentionPeriodInDaysOverride;
+    }
+    /**
      * Collection of JobStorageMountConfigurationDetails.
      * 
      */
@@ -416,6 +444,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      */
     public Output<List<JobRunJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists() {
         return this.jobStorageMountConfigurationDetailsLists;
+    }
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    @Export(name="jobStorageMountConfigurationOverrideDetailsLists", refs={List.class,JobRunJobStorageMountConfigurationOverrideDetailsList.class}, tree="[0,1]")
+    private Output<List<JobRunJobStorageMountConfigurationOverrideDetailsList>> jobStorageMountConfigurationOverrideDetailsLists;
+
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public Output<List<JobRunJobStorageMountConfigurationOverrideDetailsList>> jobStorageMountConfigurationOverrideDetailsLists() {
+        return this.jobStorageMountConfigurationOverrideDetailsLists;
     }
     /**
      * The state details of the node group.

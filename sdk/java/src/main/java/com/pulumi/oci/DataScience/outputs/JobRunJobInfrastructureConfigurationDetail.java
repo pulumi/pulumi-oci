@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail;
+import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetailNetworkConfiguration;
 import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetailResourceConfiguration;
 import java.lang.Integer;
 import java.lang.String;
@@ -21,6 +22,11 @@ public final class JobRunJobInfrastructureConfigurationDetail {
      */
     private @Nullable Integer blockStorageSizeInGbs;
     /**
+     * @return This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+     * 
+     */
+    private @Nullable String capacityReservationId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
      * 
      */
@@ -35,6 +41,11 @@ public final class JobRunJobInfrastructureConfigurationDetail {
      * 
      */
     private @Nullable List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+    /**
+     * @return The network configuration details for the compute target job.
+     * 
+     */
+    private @Nullable List<JobRunJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations;
     /**
      * @return Details for the compute target job resource configuration.
      * 
@@ -60,6 +71,13 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         return Optional.ofNullable(this.blockStorageSizeInGbs);
     }
     /**
+     * @return This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+     * 
+     */
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
      * 
      */
@@ -79,6 +97,13 @@ public final class JobRunJobInfrastructureConfigurationDetail {
      */
     public List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails() {
         return this.jobShapeConfigDetails == null ? List.of() : this.jobShapeConfigDetails;
+    }
+    /**
+     * @return The network configuration details for the compute target job.
+     * 
+     */
+    public List<JobRunJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations() {
+        return this.networkConfigurations == null ? List.of() : this.networkConfigurations;
     }
     /**
      * @return Details for the compute target job resource configuration.
@@ -112,9 +137,11 @@ public final class JobRunJobInfrastructureConfigurationDetail {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer blockStorageSizeInGbs;
+        private @Nullable String capacityReservationId;
         private @Nullable String computeTargetId;
         private @Nullable String jobInfrastructureType;
         private @Nullable List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+        private @Nullable List<JobRunJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations;
         private @Nullable List<JobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
         private @Nullable String shapeName;
         private @Nullable String subnetId;
@@ -122,9 +149,11 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         public Builder(JobRunJobInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.computeTargetId = defaults.computeTargetId;
     	      this.jobInfrastructureType = defaults.jobInfrastructureType;
     	      this.jobShapeConfigDetails = defaults.jobShapeConfigDetails;
+    	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.resourceConfigurations = defaults.resourceConfigurations;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
@@ -134,6 +163,12 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
 
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
@@ -156,6 +191,15 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         }
         public Builder jobShapeConfigDetails(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail... jobShapeConfigDetails) {
             return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
+        }
+        @CustomType.Setter
+        public Builder networkConfigurations(@Nullable List<JobRunJobInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations) {
+
+            this.networkConfigurations = networkConfigurations;
+            return this;
+        }
+        public Builder networkConfigurations(JobRunJobInfrastructureConfigurationDetailNetworkConfiguration... networkConfigurations) {
+            return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
         public Builder resourceConfigurations(@Nullable List<JobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations) {
@@ -181,9 +225,11 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         public JobRunJobInfrastructureConfigurationDetail build() {
             final var _resultValue = new JobRunJobInfrastructureConfigurationDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.computeTargetId = computeTargetId;
             _resultValue.jobInfrastructureType = jobInfrastructureType;
             _resultValue.jobShapeConfigDetails = jobShapeConfigDetails;
+            _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.resourceConfigurations = resourceConfigurations;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;

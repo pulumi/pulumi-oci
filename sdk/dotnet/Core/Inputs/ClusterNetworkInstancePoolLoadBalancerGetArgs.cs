@@ -48,9 +48,6 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("state")]
         public Input<string>? State { get; set; }
 
-        /// <summary>
-        /// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        /// </summary>
         [Input("vnicSelection")]
         public Input<string>? VnicSelection { get; set; }
 

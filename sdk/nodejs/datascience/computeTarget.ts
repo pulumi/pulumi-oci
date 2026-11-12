@@ -31,6 +31,10 @@ import * as utilities from "../utilities";
  *                 memoryInGbs: computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsMemoryInGbs,
  *                 ocpus: computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsOcpus,
  *             },
+ *             networkConfigurationDetails: {
+ *                 networkType: computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsNetworkType,
+ *                 subnetIds: computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsSubnetIds,
+ *             },
  *         },
  *         scalingPolicy: {
  *             policyType: computeTargetComputeConfigurationDetailsScalingPolicyPolicyType,

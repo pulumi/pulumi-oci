@@ -42,6 +42,11 @@ namespace Pulumi.Oci.DataScience
     ///                     MemoryInGbs = computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsMemoryInGbs,
     ///                     Ocpus = computeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsOcpus,
     ///                 },
+    ///                 NetworkConfigurationDetails = new Oci.DataScience.Inputs.ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs
+    ///                 {
+    ///                     NetworkType = computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsNetworkType,
+    ///                     SubnetIds = computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsSubnetIds,
+    ///                 },
     ///             },
     ///             ScalingPolicy = new Oci.DataScience.Inputs.ComputeTargetComputeConfigurationDetailsScalingPolicyArgs
     ///             {

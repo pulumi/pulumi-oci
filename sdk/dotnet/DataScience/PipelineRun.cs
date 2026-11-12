@@ -70,6 +70,7 @@ namespace Pulumi.Oci.DataScience
     ///         },
     ///         OpcParentRptUrl = pipelineRunOpcParentRptUrl,
     ///         ParametersOverride = pipelineRunParametersOverride,
+    ///         PipelineRunRetentionPeriodInDaysOverride = pipelineRunPipelineRunRetentionPeriodInDaysOverride,
     ///         ProjectId = testProject.Id,
     ///         StepOverrideDetails = new[]
     ///         {
@@ -265,6 +266,12 @@ namespace Pulumi.Oci.DataScience
         public Output<string> PipelineId { get; private set; } = null!;
 
         /// <summary>
+        /// Retention period in days for pipeline run.
+        /// </summary>
+        [Output("pipelineRunRetentionPeriodInDaysOverride")]
+        public Output<int> PipelineRunRetentionPeriodInDaysOverride { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         /// </summary>
         [Output("projectId")]
@@ -455,6 +462,12 @@ namespace Pulumi.Oci.DataScience
         public Input<string> PipelineId { get; set; } = null!;
 
         /// <summary>
+        /// Retention period in days for pipeline run.
+        /// </summary>
+        [Input("pipelineRunRetentionPeriodInDaysOverride")]
+        public Input<int>? PipelineRunRetentionPeriodInDaysOverride { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         /// </summary>
         [Input("projectId", required: true)]
@@ -623,6 +636,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("pipelineId")]
         public Input<string>? PipelineId { get; set; }
+
+        /// <summary>
+        /// Retention period in days for pipeline run.
+        /// </summary>
+        [Input("pipelineRunRetentionPeriodInDaysOverride")]
+        public Input<int>? PipelineRunRetentionPeriodInDaysOverride { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.

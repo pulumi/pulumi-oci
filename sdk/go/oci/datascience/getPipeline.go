@@ -85,6 +85,8 @@ type LookupPipelineResult struct {
 	// Parameters used in the pipeline.
 	Parameters map[string]string `pulumi:"parameters"`
 	PipelineId string            `pulumi:"pipelineId"`
+	// Retention period in days for pipeline runs.
+	PipelineRunRetentionPeriodInDays int `pulumi:"pipelineRunRetentionPeriodInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId string `pulumi:"projectId"`
 	// The current state of the pipeline.
@@ -201,6 +203,11 @@ func (o LookupPipelineResultOutput) Parameters() pulumi.StringMapOutput {
 
 func (o LookupPipelineResultOutput) PipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPipelineResult) string { return v.PipelineId }).(pulumi.StringOutput)
+}
+
+// Retention period in days for pipeline runs.
+func (o LookupPipelineResultOutput) PipelineRunRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPipelineResult) int { return v.PipelineRunRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

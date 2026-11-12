@@ -107,6 +107,10 @@ export class Pipeline extends pulumi.CustomResource {
      */
     declare public readonly parameters: pulumi.Output<{[key: string]: string}>;
     /**
+     * Retention period in days for pipeline runs.
+     */
+    declare public readonly pipelineRunRetentionPeriodInDays: pulumi.Output<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
     declare public readonly projectId: pulumi.Output<string>;
@@ -161,6 +165,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["logConfigurationDetails"] = state?.logConfigurationDetails;
             resourceInputs["parameters"] = state?.parameters;
+            resourceInputs["pipelineRunRetentionPeriodInDays"] = state?.pipelineRunRetentionPeriodInDays;
             resourceInputs["projectId"] = state?.projectId;
             resourceInputs["state"] = state?.state;
             resourceInputs["stepArtifacts"] = state?.stepArtifacts;
@@ -190,6 +195,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["infrastructureConfigurationDetails"] = args?.infrastructureConfigurationDetails;
             resourceInputs["logConfigurationDetails"] = args?.logConfigurationDetails;
             resourceInputs["parameters"] = args?.parameters;
+            resourceInputs["pipelineRunRetentionPeriodInDays"] = args?.pipelineRunRetentionPeriodInDays;
             resourceInputs["projectId"] = args?.projectId;
             resourceInputs["stepArtifacts"] = args?.stepArtifacts;
             resourceInputs["stepDetails"] = args?.stepDetails;
@@ -255,6 +261,10 @@ export interface PipelineState {
      * (Updatable) Parameters used in the pipeline.
      */
     parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Retention period in days for pipeline runs.
+     */
+    pipelineRunRetentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
@@ -327,6 +337,10 @@ export interface PipelineArgs {
      * (Updatable) Parameters used in the pipeline.
      */
     parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Retention period in days for pipeline runs.
+     */
+    pipelineRunRetentionPeriodInDays?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */

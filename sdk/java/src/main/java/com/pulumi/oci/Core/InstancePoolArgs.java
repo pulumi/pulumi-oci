@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
+import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -158,6 +159,33 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Optional pool-level launch override policy for future instance launches.
+     * 
+     * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+     * 
+     * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+     * 
+     * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+     * 
+     */
+    @Import(name="overridePolicy")
+    private @Nullable Output<InstancePoolOverridePolicyArgs> overridePolicy;
+
+    /**
+     * @return (Updatable) Optional pool-level launch override policy for future instance launches.
+     * 
+     * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+     * 
+     * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+     * 
+     * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+     * 
+     */
+    public Optional<Output<InstancePoolOverridePolicyArgs>> overridePolicy() {
+        return Optional.ofNullable(this.overridePolicy);
+    }
+
+    /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      * 
      * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
@@ -224,6 +252,7 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
         this.instanceHostnameFormatter = $.instanceHostnameFormatter;
         this.lifecycleManagement = $.lifecycleManagement;
         this.loadBalancers = $.loadBalancers;
+        this.overridePolicy = $.overridePolicy;
         this.placementConfigurations = $.placementConfigurations;
         this.size = $.size;
         this.state = $.state;
@@ -444,6 +473,39 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder loadBalancers(InstancePoolLoadBalancerArgs... loadBalancers) {
             return loadBalancers(List.of(loadBalancers));
+        }
+
+        /**
+         * @param overridePolicy (Updatable) Optional pool-level launch override policy for future instance launches.
+         * 
+         * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+         * 
+         * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+         * 
+         * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overridePolicy(@Nullable Output<InstancePoolOverridePolicyArgs> overridePolicy) {
+            $.overridePolicy = overridePolicy;
+            return this;
+        }
+
+        /**
+         * @param overridePolicy (Updatable) Optional pool-level launch override policy for future instance launches.
+         * 
+         * The policy is evaluated only after placement is resolved for a launch. In V1, provide between 1 and 3 availability domain-scoped statements and no more than one statement for the same availability domain.
+         * 
+         * For a matched availability domain, request order defines the canonical override candidate sequence. Preferred-candidate reuse may try one current option once as a fast path. If that fast path misses, canonical evaluation restarts from option 1. During canonical evaluation, the worker advances to the next option only for `out-of-host-capacity`, `LimitExceeded`, and `QuotaExceeded`, and only after same-option retries are exhausted. Other failures are terminal for that launch attempt.
+         * 
+         * When used on create, omitting `overridePolicy` preserves the existing base-plus-placement behavior. When used on update, omitting `overridePolicy` leaves the stored policy unchanged, a non-null value replaces the stored policy, and `null` clears it. Read surfaces omit `overridePolicy` when no policy is stored on the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overridePolicy(InstancePoolOverridePolicyArgs overridePolicy) {
+            return overridePolicy(Output.of(overridePolicy));
         }
 
         /**

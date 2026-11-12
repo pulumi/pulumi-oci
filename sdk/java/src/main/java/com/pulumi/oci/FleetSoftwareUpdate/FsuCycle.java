@@ -80,6 +80,7 @@ import javax.annotation.Nullable;
  *                     .newHomePrefix(fsuCycleGoalVersionDetailsComponentsNewHomePrefix)
  *                     .build())
  *                 .homePolicy(fsuCycleGoalVersionDetailsHomePolicy)
+ *                 .isOlderVersionAcknowledged(fsuCycleGoalVersionDetailsIsOlderVersionAcknowledged)
  *                 .newHomePrefix(fsuCycleGoalVersionDetailsNewHomePrefix)
  *                 .softwareImageId(testImage.get("id"))
  *                 .version(fsuCycleGoalVersionDetailsVersion)

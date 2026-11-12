@@ -106,17 +106,9 @@ public final class ClusterNetworkInstancePoolLoadBalancerArgs extends com.pulumi
         return Optional.ofNullable(this.state);
     }
 
-    /**
-     * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-     * 
-     */
     @Import(name="vnicSelection")
     private @Nullable Output<String> vnicSelection;
 
-    /**
-     * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-     * 
-     */
     public Optional<Output<String>> vnicSelection() {
         return Optional.ofNullable(this.vnicSelection);
     }
@@ -277,23 +269,11 @@ public final class ClusterNetworkInstancePoolLoadBalancerArgs extends com.pulumi
             return state(Output.of(state));
         }
 
-        /**
-         * @param vnicSelection Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-         * 
-         * @return builder
-         * 
-         */
         public Builder vnicSelection(@Nullable Output<String> vnicSelection) {
             $.vnicSelection = vnicSelection;
             return this;
         }
 
-        /**
-         * @param vnicSelection Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-         * 
-         * @return builder
-         * 
-         */
         public Builder vnicSelection(String vnicSelection) {
             return vnicSelection(Output.of(vnicSelection));
         }

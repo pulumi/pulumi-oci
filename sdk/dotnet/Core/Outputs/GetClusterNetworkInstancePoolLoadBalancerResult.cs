@@ -37,9 +37,6 @@ namespace Pulumi.Oci.Core.Outputs
         /// The current state of the cluster network.
         /// </summary>
         public readonly string State;
-        /// <summary>
-        /// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        /// </summary>
         public readonly string VnicSelection;
 
         [OutputConstructor]

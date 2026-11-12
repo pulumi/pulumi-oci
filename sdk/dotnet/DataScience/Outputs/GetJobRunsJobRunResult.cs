@@ -67,9 +67,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailResult> JobNodeConfigurationOverrideDetails;
         /// <summary>
+        /// Retention period in days for job run.
+        /// </summary>
+        public readonly int JobRunRetentionPeriodInDaysOverride;
+        /// <summary>
         /// Collection of JobStorageMountConfigurationDetails.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult> JobStorageMountConfigurationDetailsLists;
+        /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListResult> JobStorageMountConfigurationOverrideDetailsLists;
         /// <summary>
         /// The state details of the node group.
         /// </summary>
@@ -134,7 +142,11 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailResult> jobNodeConfigurationOverrideDetails,
 
+            int jobRunRetentionPeriodInDaysOverride,
+
             ImmutableArray<Outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult> jobStorageMountConfigurationDetailsLists,
+
+            ImmutableArray<Outputs.GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListResult> jobStorageMountConfigurationOverrideDetailsLists,
 
             string lifecycleDetails,
 
@@ -168,7 +180,9 @@ namespace Pulumi.Oci.DataScience.Outputs
             JobInfrastructureConfigurationOverrideDetails = jobInfrastructureConfigurationOverrideDetails;
             JobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
             JobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
+            JobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
             JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
+            JobStorageMountConfigurationOverrideDetailsLists = jobStorageMountConfigurationOverrideDetailsLists;
             LifecycleDetails = lifecycleDetails;
             LogDetails = logDetails;
             NodeGroupDetailsLists = nodeGroupDetailsLists;

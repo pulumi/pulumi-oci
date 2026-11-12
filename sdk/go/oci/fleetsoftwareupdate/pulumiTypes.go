@@ -1715,6 +1715,8 @@ type FsuCycleGoalVersionDetails struct {
 	Components []FsuCycleGoalVersionDetailsComponent `pulumi:"components"`
 	// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy *string `pulumi:"homePolicy"`
+	// (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix *string `pulumi:"newHomePrefix"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
@@ -1741,6 +1743,8 @@ type FsuCycleGoalVersionDetailsArgs struct {
 	Components FsuCycleGoalVersionDetailsComponentArrayInput `pulumi:"components"`
 	// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy pulumi.StringPtrInput `pulumi:"homePolicy"`
+	// (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix pulumi.StringPtrInput `pulumi:"newHomePrefix"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
@@ -1838,6 +1842,11 @@ func (o FsuCycleGoalVersionDetailsOutput) HomePolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCycleGoalVersionDetails) *string { return v.HomePolicy }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o FsuCycleGoalVersionDetailsOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetails) *bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 func (o FsuCycleGoalVersionDetailsOutput) NewHomePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCycleGoalVersionDetails) *string { return v.NewHomePrefix }).(pulumi.StringPtrOutput)
@@ -1900,6 +1909,16 @@ func (o FsuCycleGoalVersionDetailsPtrOutput) HomePolicy() pulumi.StringPtrOutput
 		}
 		return v.HomePolicy
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o FsuCycleGoalVersionDetailsPtrOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FsuCycleGoalVersionDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
@@ -5820,6 +5839,8 @@ type GetFsuCycleGoalVersionDetail struct {
 	Components []GetFsuCycleGoalVersionDetailComponent `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy string `pulumi:"homePolicy"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix string `pulumi:"newHomePrefix"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
@@ -5846,6 +5867,8 @@ type GetFsuCycleGoalVersionDetailArgs struct {
 	Components GetFsuCycleGoalVersionDetailComponentArrayInput `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy pulumi.StringInput `pulumi:"homePolicy"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix pulumi.StringInput `pulumi:"newHomePrefix"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
@@ -5915,6 +5938,11 @@ func (o GetFsuCycleGoalVersionDetailOutput) Components() GetFsuCycleGoalVersionD
 // Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 func (o GetFsuCycleGoalVersionDetailOutput) HomePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) string { return v.HomePolicy }).(pulumi.StringOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o GetFsuCycleGoalVersionDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
@@ -7451,6 +7479,8 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail struct {
 	Components []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy string `pulumi:"homePolicy"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix string `pulumi:"newHomePrefix"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
@@ -7477,6 +7507,8 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArgs struct {
 	Components GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayInput `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy pulumi.StringInput `pulumi:"homePolicy"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix pulumi.StringInput `pulumi:"newHomePrefix"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
@@ -7548,6 +7580,13 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) Compon
 // Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) HomePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) string { return v.HomePolicy }).(pulumi.StringOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible software version for this Exadata Fleet Update Cycle. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) bool {
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolOutput)
 }
 
 // Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.

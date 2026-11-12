@@ -90,6 +90,8 @@ type LookupPipelineRunResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId    string `pulumi:"pipelineId"`
 	PipelineRunId string `pulumi:"pipelineRunId"`
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride int `pulumi:"pipelineRunRetentionPeriodInDaysOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId string `pulumi:"projectId"`
 	// The state of the step run.
@@ -229,6 +231,11 @@ func (o LookupPipelineRunResultOutput) PipelineId() pulumi.StringOutput {
 
 func (o LookupPipelineRunResultOutput) PipelineRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) string { return v.PipelineRunId }).(pulumi.StringOutput)
+}
+
+// Retention period in days for pipeline run.
+func (o LookupPipelineRunResultOutput) PipelineRunRetentionPeriodInDaysOverride() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPipelineRunResult) int { return v.PipelineRunRetentionPeriodInDaysOverride }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.

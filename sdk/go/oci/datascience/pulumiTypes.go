@@ -195,10 +195,14 @@ func (o ComputeTargetComputeConfigurationDetailsPtrOutput) ScalingPolicy() Compu
 type ComputeTargetComputeConfigurationDetailsInstanceConfiguration struct {
 	// (Updatable) The size of the boot volume to attach to the instance.
 	BootVolumeSizeInGbs *int `pulumi:"bootVolumeSizeInGbs"`
+	// (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 	InstanceShape string `pulumi:"instanceShape"`
 	// (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
 	InstanceShapeDetails *ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails `pulumi:"instanceShapeDetails"`
+	// The network configuration details for managed compute cluster type resource.
+	NetworkConfigurationDetails *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails `pulumi:"networkConfigurationDetails"`
 }
 
 // ComputeTargetComputeConfigurationDetailsInstanceConfigurationInput is an input type that accepts ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs and ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput values.
@@ -215,10 +219,14 @@ type ComputeTargetComputeConfigurationDetailsInstanceConfigurationInput interfac
 type ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs struct {
 	// (Updatable) The size of the boot volume to attach to the instance.
 	BootVolumeSizeInGbs pulumi.IntPtrInput `pulumi:"bootVolumeSizeInGbs"`
+	// (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 	InstanceShape pulumi.StringInput `pulumi:"instanceShape"`
 	// (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
 	InstanceShapeDetails ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsPtrInput `pulumi:"instanceShapeDetails"`
+	// The network configuration details for managed compute cluster type resource.
+	NetworkConfigurationDetails ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrInput `pulumi:"networkConfigurationDetails"`
 }
 
 func (ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs) ElementType() reflect.Type {
@@ -305,6 +313,13 @@ func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput) Boo
 	}).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ComputeTargetComputeConfigurationDetailsInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput) InstanceShape() pulumi.StringOutput {
 	return o.ApplyT(func(v ComputeTargetComputeConfigurationDetailsInstanceConfiguration) string { return v.InstanceShape }).(pulumi.StringOutput)
@@ -315,6 +330,13 @@ func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput) Ins
 	return o.ApplyT(func(v ComputeTargetComputeConfigurationDetailsInstanceConfiguration) *ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails {
 		return v.InstanceShapeDetails
 	}).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsPtrOutput)
+}
+
+// The network configuration details for managed compute cluster type resource.
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput) NetworkConfigurationDetails() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v ComputeTargetComputeConfigurationDetailsInstanceConfiguration) *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails {
+		return v.NetworkConfigurationDetails
+	}).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput)
 }
 
 type ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrOutput struct{ *pulumi.OutputState }
@@ -351,6 +373,16 @@ func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrOutput) 
 	}).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ComputeTargetComputeConfigurationDetailsInstanceConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrOutput) InstanceShape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ComputeTargetComputeConfigurationDetailsInstanceConfiguration) *string {
@@ -369,6 +401,16 @@ func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrOutput) 
 		}
 		return v.InstanceShapeDetails
 	}).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsPtrOutput)
+}
+
+// The network configuration details for managed compute cluster type resource.
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrOutput) NetworkConfigurationDetails() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *ComputeTargetComputeConfigurationDetailsInstanceConfiguration) *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkConfigurationDetails
+	}).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput)
 }
 
 type ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetails struct {
@@ -529,6 +571,166 @@ func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceSha
 		}
 		return v.Ocpus
 	}).(pulumi.Float64PtrOutput)
+}
+
+type ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType string `pulumi:"networkType"`
+	// The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SubnetIds []string `pulumi:"subnetIds"`
+}
+
+// ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsInput is an input type that accepts ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs and ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput values.
+// You can construct a concrete instance of `ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsInput` via:
+//
+//	ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs{...}
+type ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput
+	ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutputWithContext(context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput
+}
+
+type ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+}
+
+func (ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails)(nil)).Elem()
+}
+
+func (i ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput {
+	return i.ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutputWithContext(ctx context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput)
+}
+
+func (i ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return i.ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(ctx context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput).ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrInput is an input type that accepts ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs, ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtr and ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrInput` via:
+//
+//	        ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput
+	ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput
+}
+
+type computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrType ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs
+
+func ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtr(v *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrInput {
+	return (*computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrType)(v)
+}
+
+func (*computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails)(nil)).Elem()
+}
+
+func (i *computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrType) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return i.ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *computeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrType) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(ctx context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput)
+}
+
+type ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails)(nil)).Elem()
+}
+
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput {
+	return o
+}
+
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutputWithContext(ctx context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput {
+	return o
+}
+
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return o.ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(ctx context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails) *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails {
+		return &v
+	}).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails) []string {
+		return v.SubnetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails)(nil)).Elem()
+}
+
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput) ToComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutputWithContext(ctx context.Context) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput) Elem() ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput {
+	return o.ApplyT(func(v *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails) ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails
+		return ret
+	}).(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The list of customer subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetIds
+	}).(pulumi.StringArrayOutput)
 }
 
 type ComputeTargetComputeConfigurationDetailsScalingPolicy struct {
@@ -1986,12 +2188,16 @@ func (o JobJobEnvironmentConfigurationDetailsPtrOutput) JobEnvironmentType() pul
 type JobJobInfrastructureConfigurationDetails struct {
 	// (Updatable) The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
+	// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId *string `pulumi:"computeTargetId"`
 	// (Updatable) The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails *JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails `pulumi:"jobShapeConfigDetails"`
+	// (Updatable) The network configuration details for the compute target job.
+	NetworkConfiguration *JobJobInfrastructureConfigurationDetailsNetworkConfiguration `pulumi:"networkConfiguration"`
 	// (Updatable) Details for the compute target job resource configuration.
 	ResourceConfiguration *JobJobInfrastructureConfigurationDetailsResourceConfiguration `pulumi:"resourceConfiguration"`
 	// (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
@@ -2014,12 +2220,16 @@ type JobJobInfrastructureConfigurationDetailsInput interface {
 type JobJobInfrastructureConfigurationDetailsArgs struct {
 	// (Updatable) The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
+	// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringPtrInput `pulumi:"computeTargetId"`
 	// (Updatable) The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrInput `pulumi:"jobShapeConfigDetails"`
+	// (Updatable) The network configuration details for the compute target job.
+	NetworkConfiguration JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
 	// (Updatable) Details for the compute target job resource configuration.
 	ResourceConfiguration JobJobInfrastructureConfigurationDetailsResourceConfigurationPtrInput `pulumi:"resourceConfiguration"`
 	// (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
@@ -2110,6 +2320,11 @@ func (o JobJobInfrastructureConfigurationDetailsOutput) BlockStorageSizeInGbs() 
 	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetails) *int { return v.BlockStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobJobInfrastructureConfigurationDetailsOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetails) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobJobInfrastructureConfigurationDetailsOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetails) *string { return v.ComputeTargetId }).(pulumi.StringPtrOutput)
@@ -2125,6 +2340,13 @@ func (o JobJobInfrastructureConfigurationDetailsOutput) JobShapeConfigDetails() 
 	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetails) *JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
 		return v.JobShapeConfigDetails
 	}).(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The network configuration details for the compute target job.
+func (o JobJobInfrastructureConfigurationDetailsOutput) NetworkConfiguration() JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetails) *JobJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		return v.NetworkConfiguration
+	}).(JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // (Updatable) Details for the compute target job resource configuration.
@@ -2178,6 +2400,16 @@ func (o JobJobInfrastructureConfigurationDetailsPtrOutput) BlockStorageSizeInGbs
 	}).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobJobInfrastructureConfigurationDetailsPtrOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobJobInfrastructureConfigurationDetailsPtrOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetails) *string {
@@ -2206,6 +2438,16 @@ func (o JobJobInfrastructureConfigurationDetailsPtrOutput) JobShapeConfigDetails
 		}
 		return v.JobShapeConfigDetails
 	}).(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The network configuration details for the compute target job.
+func (o JobJobInfrastructureConfigurationDetailsPtrOutput) NetworkConfiguration() JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetails) *JobJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkConfiguration
+	}).(JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // (Updatable) Details for the compute target job resource configuration.
@@ -2411,6 +2653,162 @@ func (o JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput) 
 		}
 		return v.Ocpus
 	}).(pulumi.Float64PtrOutput)
+}
+
+type JobJobInfrastructureConfigurationDetailsNetworkConfiguration struct {
+	// (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType string `pulumi:"networkType"`
+	// (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// JobJobInfrastructureConfigurationDetailsNetworkConfigurationInput is an input type that accepts JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs and JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput values.
+// You can construct a concrete instance of `JobJobInfrastructureConfigurationDetailsNetworkConfigurationInput` via:
+//
+//	JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+type JobJobInfrastructureConfigurationDetailsNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput
+	ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput
+}
+
+type JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs struct {
+	// (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return i.ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+func (i JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput).ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput is an input type that accepts JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs, JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtr and JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput` via:
+//
+//	        JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+	ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+}
+
+type jobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs
+
+func JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtr(v *JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput {
+	return (*jobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType)(v)
+}
+
+func (*jobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *jobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *jobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+type JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobJobInfrastructureConfigurationDetailsNetworkConfiguration) *JobJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		return &v
+	}).(JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+// (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetailsNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobInfrastructureConfigurationDetailsNetworkConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToJobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) Elem() JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetailsNetworkConfiguration) JobJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret JobJobInfrastructureConfigurationDetailsNetworkConfiguration
+		return ret
+	}).(JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+// (Updatable) The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the customer-supplied subnet for VNIC attach
+func (o JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type JobJobInfrastructureConfigurationDetailsResourceConfiguration struct {
@@ -3326,7 +3724,7 @@ func (o JobJobNodeConfigurationDetailsPtrOutput) StartupOrder() pulumi.StringPtr
 }
 
 type JobJobNodeConfigurationDetailsJobNetworkConfiguration struct {
-	// job network type
+	// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 	JobNetworkType string `pulumi:"jobNetworkType"`
 	// The custom subnet id
 	SubnetId *string `pulumi:"subnetId"`
@@ -3344,7 +3742,7 @@ type JobJobNodeConfigurationDetailsJobNetworkConfigurationInput interface {
 }
 
 type JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs struct {
-	// job network type
+	// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 	JobNetworkType pulumi.StringInput `pulumi:"jobNetworkType"`
 	// The custom subnet id
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
@@ -3427,7 +3825,7 @@ func (o JobJobNodeConfigurationDetailsJobNetworkConfigurationOutput) ToJobJobNod
 	}).(JobJobNodeConfigurationDetailsJobNetworkConfigurationPtrOutput)
 }
 
-// job network type
+// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 func (o JobJobNodeConfigurationDetailsJobNetworkConfigurationOutput) JobNetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v JobJobNodeConfigurationDetailsJobNetworkConfiguration) string { return v.JobNetworkType }).(pulumi.StringOutput)
 }
@@ -3461,7 +3859,7 @@ func (o JobJobNodeConfigurationDetailsJobNetworkConfigurationPtrOutput) Elem() J
 	}).(JobJobNodeConfigurationDetailsJobNetworkConfigurationOutput)
 }
 
-// job network type
+// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 func (o JobJobNodeConfigurationDetailsJobNetworkConfigurationPtrOutput) JobNetworkType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *JobJobNodeConfigurationDetailsJobNetworkConfiguration) *string {
 		if v == nil {
@@ -4324,12 +4722,16 @@ func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnv
 type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId *string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfiguration *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration `pulumi:"networkConfiguration"`
 	// Details for the compute target job resource configuration.
 	ResourceConfiguration *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration `pulumi:"resourceConfiguration"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -4352,12 +4754,16 @@ type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfras
 type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringPtrInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfiguration JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
 	// Details for the compute target job resource configuration.
 	ResourceConfiguration JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationPtrInput `pulumi:"resourceConfiguration"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -4450,6 +4856,13 @@ func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInf
 	}).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
@@ -4469,6 +4882,13 @@ func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInf
 	return o.ApplyT(func(v JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
 		return v.JobShapeConfigDetails
 	}).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsOutput) NetworkConfiguration() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		return v.NetworkConfiguration
+	}).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -4526,6 +4946,16 @@ func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInf
 	}).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
@@ -4554,6 +4984,16 @@ func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInf
 		}
 		return v.JobShapeConfigDetails
 	}).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput) NetworkConfiguration() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkConfiguration
+	}).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -4765,6 +5205,166 @@ func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInf
 		}
 		return v.Ocpus
 	}).(pulumi.Float64PtrOutput)
+}
+
+type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType string `pulumi:"networkType"`
+	// The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput is an input type that accepts JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs and JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput values.
+// You can construct a concrete instance of `JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput` via:
+//
+//	JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput
+	ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput
+}
+
+type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return i.ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+func (i JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput).ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput is an input type that accepts JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs, JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtr and JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput` via:
+//
+//	        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+	ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+}
+
+type jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs
+
+func JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtr(v *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput {
+	return (*jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType)(v)
+}
+
+func (*jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		return &v
+	}).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the customer-supplied subnet for VNIC attach
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToJobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) Elem() JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o.ApplyT(func(v *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration
+		return ret
+	}).(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the customer-supplied subnet for VNIC attach
+func (o JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration struct {
@@ -6091,12 +6691,16 @@ func (o JobRunJobEnvironmentConfigurationOverrideDetailsPtrOutput) JobEnvironmen
 type JobRunJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId *string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType *string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []JobRunJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []JobRunJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -6119,12 +6723,16 @@ type JobRunJobInfrastructureConfigurationDetailInput interface {
 type JobRunJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringPtrInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringPtrInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations JobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -6189,6 +6797,11 @@ func (o JobRunJobInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbs(
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetail) *int { return v.BlockStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobRunJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetail) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobRunJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetail) *string { return v.ComputeTargetId }).(pulumi.StringPtrOutput)
@@ -6204,6 +6817,13 @@ func (o JobRunJobInfrastructureConfigurationDetailOutput) JobShapeConfigDetails(
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetail) []JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o JobRunJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetail) []JobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -6356,6 +6976,112 @@ func (o JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type JobRunJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType *string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// JobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs and JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `JobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type JobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray and JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray{ JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray []JobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetailNetworkConfiguration) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationDetailNetworkConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]JobRunJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type JobRunJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -6702,12 +7428,16 @@ func (o JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceR
 type JobRunJobInfrastructureConfigurationOverrideDetails struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId *string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails *JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfiguration *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration `pulumi:"networkConfiguration"`
 	// Details for the compute target job resource configuration.
 	ResourceConfiguration *JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration `pulumi:"resourceConfiguration"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -6730,12 +7460,16 @@ type JobRunJobInfrastructureConfigurationOverrideDetailsInput interface {
 type JobRunJobInfrastructureConfigurationOverrideDetailsArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringPtrInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfiguration JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
 	// Details for the compute target job resource configuration.
 	ResourceConfiguration JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationPtrInput `pulumi:"resourceConfiguration"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -6826,6 +7560,11 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsOutput) BlockStorageS
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetails) *int { return v.BlockStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetails) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobRunJobInfrastructureConfigurationOverrideDetailsOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetails) *string { return v.ComputeTargetId }).(pulumi.StringPtrOutput)
@@ -6841,6 +7580,13 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsOutput) JobShapeConfi
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetails) *JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails {
 		return v.JobShapeConfigDetails
 	}).(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsOutput) NetworkConfiguration() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetails) *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration {
+		return v.NetworkConfiguration
+	}).(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -6894,6 +7640,16 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsPtrOutput) BlockStora
 	}).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsPtrOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobRunJobInfrastructureConfigurationOverrideDetailsPtrOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetails) *string {
@@ -6922,6 +7678,16 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsPtrOutput) JobShapeCo
 		}
 		return v.JobShapeConfigDetails
 	}).(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsPtrOutput) NetworkConfiguration() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetails) *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkConfiguration
+	}).(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -6955,6 +7721,8 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsPtrOutput) SubnetId()
 }
 
 type JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline *string `pulumi:"cpuBaseline"`
 	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to the job run instance.
@@ -6973,6 +7741,8 @@ type JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsInp
 }
 
 type JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringPtrInput `pulumi:"cpuBaseline"`
 	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to the job run instance.
@@ -7056,6 +7826,13 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails
 	}).(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrOutput)
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOutput) CpuBaseline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails) *string {
+		return v.CpuBaseline
+	}).(pulumi.StringPtrOutput)
+}
+
 // The total amount of memory available to the job run instance, in gigabytes.
 func (o JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails) *float64 {
@@ -7094,6 +7871,16 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails
 	}).(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOutput)
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrOutput) CpuBaseline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CpuBaseline
+	}).(pulumi.StringPtrOutput)
+}
+
 // The total amount of memory available to the job run instance, in gigabytes.
 func (o JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails) *float64 {
@@ -7112,6 +7899,166 @@ func (o JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails
 		}
 		return v.Ocpus
 	}).(pulumi.Float64PtrOutput)
+}
+
+type JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType string `pulumi:"networkType"`
+	// The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationInput is an input type that accepts JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs and JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput values.
+// You can construct a concrete instance of `JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationInput` via:
+//
+//	JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs{...}
+type JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput
+	ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutputWithContext(context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput
+}
+
+type JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput {
+	return i.ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput)
+}
+
+func (i JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput).ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrInput is an input type that accepts JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs, JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtr and JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrInput` via:
+//
+//	        JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput
+	ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput
+}
+
+type jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrType JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs
+
+func JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtr(v *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrInput {
+	return (*jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrType)(v)
+}
+
+func (*jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrType) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *jobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrType) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput)
+}
+
+type JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return o.ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration) *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration {
+		return &v
+	}).(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the customer-supplied subnet for VNIC attach
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration) *string {
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput) ToJobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput) Elem() JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput {
+	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration) JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration
+		return ret
+	}).(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the customer-supplied subnet for VNIC attach
+func (o JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration struct {
@@ -8027,7 +8974,7 @@ func (o JobRunJobNodeConfigurationOverrideDetailsPtrOutput) StartupOrder() pulum
 }
 
 type JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration struct {
-	// job network type
+	// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 	JobNetworkType string `pulumi:"jobNetworkType"`
 	// The custom subnet id
 	SubnetId *string `pulumi:"subnetId"`
@@ -8045,7 +8992,7 @@ type JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationInput inter
 }
 
 type JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs struct {
-	// job network type
+	// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 	JobNetworkType pulumi.StringInput `pulumi:"jobNetworkType"`
 	// The custom subnet id
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
@@ -8128,7 +9075,7 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationOutput) 
 	}).(JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationPtrOutput)
 }
 
-// job network type
+// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 func (o JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationOutput) JobNetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration) string {
 		return v.JobNetworkType
@@ -8164,7 +9111,7 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationPtrOutpu
 	}).(JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationOutput)
 }
 
-// job network type
+// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
 func (o JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationPtrOutput) JobNetworkType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration) *string {
 		if v == nil {
@@ -9031,12 +9978,16 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId *string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfiguration *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration `pulumi:"networkConfiguration"`
 	// Details for the compute target job resource configuration.
 	ResourceConfiguration *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration `pulumi:"resourceConfiguration"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -9059,12 +10010,16 @@ type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsLi
 type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringPtrInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfiguration JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
 	// Details for the compute target job resource configuration.
 	ResourceConfiguration JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationPtrInput `pulumi:"resourceConfiguration"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -9157,6 +10112,13 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 	}).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
@@ -9176,6 +10138,13 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
 		return v.JobShapeConfigDetails
 	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsOutput) NetworkConfiguration() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		return v.NetworkConfiguration
+	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -9233,6 +10202,16 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 	}).(pulumi.IntPtrOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationId
+	}).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput) ComputeTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *string {
@@ -9261,6 +10240,16 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 		}
 		return v.JobShapeConfigDetails
 	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput) NetworkConfiguration() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails) *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkConfiguration
+	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -9294,6 +10283,8 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 }
 
 type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline *string `pulumi:"cpuBaseline"`
 	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to the job run instance.
@@ -9312,6 +10303,8 @@ type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsLi
 }
 
 type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringPtrInput `pulumi:"cpuBaseline"`
 	// The total amount of memory available to the job run instance, in gigabytes.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to the job run instance.
@@ -9395,6 +10388,13 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput)
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput) CpuBaseline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *string {
+		return v.CpuBaseline
+	}).(pulumi.StringPtrOutput)
+}
+
 // The total amount of memory available to the job run instance, in gigabytes.
 func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *float64 {
@@ -9433,6 +10433,16 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput)
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput) CpuBaseline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CpuBaseline
+	}).(pulumi.StringPtrOutput)
+}
+
 // The total amount of memory available to the job run instance, in gigabytes.
 func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails) *float64 {
@@ -9451,6 +10461,166 @@ func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetail
 		}
 		return v.Ocpus
 	}).(pulumi.Float64PtrOutput)
+}
+
+type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType string `pulumi:"networkType"`
+	// The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput is an input type that accepts JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs and JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput values.
+// You can construct a concrete instance of `JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput` via:
+//
+//	JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput
+	ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput
+}
+
+type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs struct {
+	// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The OCID of the customer-supplied subnet for VNIC attach
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return i.ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+func (i JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput).ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput is an input type that accepts JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs, JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtr and JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput` via:
+//
+//	        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+	ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+}
+
+type jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs
+
+func JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtr(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput {
+	return (*jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType)(v)
+}
+
+func (*jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		return &v
+	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the customer-supplied subnet for VNIC attach
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToJobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) Elem() JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration
+		return ret
+	}).(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+// The network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the customer-supplied subnet for VNIC attach
+func (o JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfiguration struct {
@@ -10112,6 +11282,168 @@ func (o JobRunJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobRunJobStorageMountConfigurationDetailsList {
 		return vs[0].([]JobRunJobStorageMountConfigurationDetailsList)[vs[1].(int)]
 	}).(JobRunJobStorageMountConfigurationDetailsListOutput)
+}
+
+type JobRunJobStorageMountConfigurationOverrideDetailsList struct {
+	// The object storage bucket
+	Bucket *string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath *string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId *string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId *string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace *string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix *string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// JobRunJobStorageMountConfigurationOverrideDetailsListInput is an input type that accepts JobRunJobStorageMountConfigurationOverrideDetailsListArgs and JobRunJobStorageMountConfigurationOverrideDetailsListOutput values.
+// You can construct a concrete instance of `JobRunJobStorageMountConfigurationOverrideDetailsListInput` via:
+//
+//	JobRunJobStorageMountConfigurationOverrideDetailsListArgs{...}
+type JobRunJobStorageMountConfigurationOverrideDetailsListInput interface {
+	pulumi.Input
+
+	ToJobRunJobStorageMountConfigurationOverrideDetailsListOutput() JobRunJobStorageMountConfigurationOverrideDetailsListOutput
+	ToJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(context.Context) JobRunJobStorageMountConfigurationOverrideDetailsListOutput
+}
+
+type JobRunJobStorageMountConfigurationOverrideDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringPtrInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (JobRunJobStorageMountConfigurationOverrideDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (i JobRunJobStorageMountConfigurationOverrideDetailsListArgs) ToJobRunJobStorageMountConfigurationOverrideDetailsListOutput() JobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return i.ToJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(context.Background())
+}
+
+func (i JobRunJobStorageMountConfigurationOverrideDetailsListArgs) ToJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobStorageMountConfigurationOverrideDetailsListOutput)
+}
+
+// JobRunJobStorageMountConfigurationOverrideDetailsListArrayInput is an input type that accepts JobRunJobStorageMountConfigurationOverrideDetailsListArray and JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput values.
+// You can construct a concrete instance of `JobRunJobStorageMountConfigurationOverrideDetailsListArrayInput` via:
+//
+//	JobRunJobStorageMountConfigurationOverrideDetailsListArray{ JobRunJobStorageMountConfigurationOverrideDetailsListArgs{...} }
+type JobRunJobStorageMountConfigurationOverrideDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput
+	ToJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(context.Context) JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput
+}
+
+type JobRunJobStorageMountConfigurationOverrideDetailsListArray []JobRunJobStorageMountConfigurationOverrideDetailsListInput
+
+func (JobRunJobStorageMountConfigurationOverrideDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (i JobRunJobStorageMountConfigurationOverrideDetailsListArray) ToJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return i.ToJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i JobRunJobStorageMountConfigurationOverrideDetailsListArray) ToJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput)
+}
+
+type JobRunJobStorageMountConfigurationOverrideDetailsListOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobStorageMountConfigurationOverrideDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) ToJobRunJobStorageMountConfigurationOverrideDetailsListOutput() JobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return o
+}
+
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) ToJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// The local directory name to be mounted
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) DestinationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) *string { return v.DestinationPath }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the export
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) *string { return v.ExportId }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the mount target
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// The object storage namespace
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Prefix in the bucket to mount
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// The type of storage.
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ToJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o
+}
+
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ToJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(ctx context.Context) JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o
+}
+
+func (o JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) Index(i pulumi.IntInput) JobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobRunJobStorageMountConfigurationOverrideDetailsList {
+		return vs[0].([]JobRunJobStorageMountConfigurationOverrideDetailsList)[vs[1].(int)]
+	}).(JobRunJobStorageMountConfigurationOverrideDetailsListOutput)
 }
 
 type JobRunLogDetail struct {
@@ -13899,8 +15231,10 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 	InstanceConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration `pulumi:"instanceConfiguration"`
 	// The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps *int `pulumi:"maximumBandwidthMbps"`
-	// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+	// Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration `pulumi:"modelDeploymentResourceConfiguration"`
+	// The network configuration details for model deploy on managed compute cluster type compute target.
+	NetworkConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration `pulumi:"networkConfiguration"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicy *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy `pulumi:"scalingPolicy"`
 }
@@ -13926,8 +15260,10 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 	InstanceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationPtrInput `pulumi:"instanceConfiguration"`
 	// The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps pulumi.IntPtrInput `pulumi:"maximumBandwidthMbps"`
-	// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+	// Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrInput `pulumi:"modelDeploymentResourceConfiguration"`
+	// The network configuration details for model deploy on managed compute cluster type compute target.
+	NetworkConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicy ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyPtrInput `pulumi:"scalingPolicy"`
 }
@@ -14043,11 +15379,18 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+// Resource configuration details for model deploy on managed compute cluster type compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsOutput) ModelDeploymentResourceConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
 		return v.ModelDeploymentResourceConfiguration
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput)
+}
+
+// The network configuration details for model deploy on managed compute cluster type compute target.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsOutput) NetworkConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration {
+		return v.NetworkConfiguration
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // The scaling policy to apply to each model of the deployment.
@@ -14130,7 +15473,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+// Resource configuration details for model deploy on managed compute cluster type compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsPtrOutput) ModelDeploymentResourceConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
 		if v == nil {
@@ -14138,6 +15481,16 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 		}
 		return v.ModelDeploymentResourceConfiguration
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput)
+}
+
+// The network configuration details for model deploy on managed compute cluster type compute target.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsPtrOutput) NetworkConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkConfiguration
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
 }
 
 // The scaling policy to apply to each model of the deployment.
@@ -14151,6 +15504,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
@@ -14176,6 +15530,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
@@ -14266,6 +15621,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationPtrOutput)
 }
 
+// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration) []string {
 		return v.CapacityReservationIds
@@ -14331,6 +15687,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationOutput)
 }
 
+// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationPtrOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration) []string {
 		if v == nil {
@@ -14572,9 +15929,9 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration struct {
-	// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+	// Resource limit configuration details for workload on managed compute cluster type compute target
 	ResourceLimitConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration `pulumi:"resourceLimitConfiguration"`
-	// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+	// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 	ResourceRequestConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration `pulumi:"resourceRequestConfiguration"`
 }
 
@@ -14590,9 +15947,9 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs struct {
-	// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+	// Resource limit configuration details for workload on managed compute cluster type compute target
 	ResourceLimitConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrInput `pulumi:"resourceLimitConfiguration"`
-	// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+	// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 	ResourceRequestConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationInput `pulumi:"resourceRequestConfiguration"`
 }
 
@@ -14673,14 +16030,14 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput)
 }
 
-// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+// Resource limit configuration details for workload on managed compute cluster type compute target
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationOutput) ResourceLimitConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration {
 		return v.ResourceLimitConfiguration
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput)
 }
 
-// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationOutput) ResourceRequestConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		return v.ResourceRequestConfiguration
@@ -14711,7 +16068,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationOutput)
 }
 
-// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+// Resource limit configuration details for workload on managed compute cluster type compute target
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput) ResourceLimitConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration {
 		if v == nil {
@@ -14721,7 +16078,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput)
 }
 
-// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput) ResourceRequestConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		if v == nil {
@@ -14892,7 +16249,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration struct {
-	// (Updatable) The total number of gpus required to be allocated to the workload.
+	// The total number of gpus required to be allocated to the workload.
 	Gpus *int `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
@@ -14912,7 +16269,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs struct {
-	// (Updatable) The total number of gpus required to be allocated to the workload.
+	// The total number of gpus required to be allocated to the workload.
 	Gpus pulumi.IntPtrInput `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
@@ -14997,7 +16354,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrOutput)
 }
 
-// (Updatable) The total number of gpus required to be allocated to the workload.
+// The total number of gpus required to be allocated to the workload.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationOutput) Gpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration) *int {
 		return v.Gpus
@@ -15042,7 +16399,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationOutput)
 }
 
-// (Updatable) The total number of gpus required to be allocated to the workload.
+// The total number of gpus required to be allocated to the workload.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrOutput) Gpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration) *int {
 		if v == nil {
@@ -15070,6 +16427,166 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 		}
 		return &v.Ocpus
 	}).(pulumi.Float64PtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs and ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationInput` via:
+//
+//	ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput).ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs, ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtr and ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrInput` via:
+//
+//	        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+	ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput
+}
+
+type modelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrType ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs
+
+func ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtr(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrInput {
+	return (*modelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrType)(v)
+}
+
+func (*modelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *modelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return i.ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *modelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrType) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration {
+		return &v
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput)
+}
+
+// network type
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration)(nil)).Elem()
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) ToModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutputWithContext(ctx context.Context) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) Elem() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration
+		return ret
+	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput)
+}
+
+// network type
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy struct {
@@ -16841,6 +18358,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration struct {
+	// (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName *string `pulumi:"instanceShapeName"`
@@ -16866,6 +18384,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs struct {
+	// (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringPtrInput `pulumi:"instanceShapeName"`
@@ -16956,6 +18475,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrOutput)
 }
 
+// (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) []string {
 		return v.CapacityReservationIds
@@ -17021,6 +18541,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput)
 }
 
+// (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) []string {
 		if v == nil {
@@ -31605,10 +33126,14 @@ func (o GetComputeTargetComputeConfigurationDetailArrayOutput) Index(i pulumi.In
 type GetComputeTargetComputeConfigurationDetailInstanceConfiguration struct {
 	// The size of the boot volume to attach to the instance.
 	BootVolumeSizeInGbs int `pulumi:"bootVolumeSizeInGbs"`
+	// The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 	InstanceShape string `pulumi:"instanceShape"`
 	// Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
 	InstanceShapeDetails []GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail `pulumi:"instanceShapeDetails"`
+	// The network configuration details for managed compute cluster type resource.
+	NetworkConfigurationDetails []GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail `pulumi:"networkConfigurationDetails"`
 }
 
 // GetComputeTargetComputeConfigurationDetailInstanceConfigurationInput is an input type that accepts GetComputeTargetComputeConfigurationDetailInstanceConfigurationArgs and GetComputeTargetComputeConfigurationDetailInstanceConfigurationOutput values.
@@ -31625,10 +33150,14 @@ type GetComputeTargetComputeConfigurationDetailInstanceConfigurationInput interf
 type GetComputeTargetComputeConfigurationDetailInstanceConfigurationArgs struct {
 	// The size of the boot volume to attach to the instance.
 	BootVolumeSizeInGbs pulumi.IntInput `pulumi:"bootVolumeSizeInGbs"`
+	// The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 	InstanceShape pulumi.StringInput `pulumi:"instanceShape"`
 	// Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
 	InstanceShapeDetails GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayInput `pulumi:"instanceShapeDetails"`
+	// The network configuration details for managed compute cluster type resource.
+	NetworkConfigurationDetails GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput `pulumi:"networkConfigurationDetails"`
 }
 
 func (GetComputeTargetComputeConfigurationDetailInstanceConfigurationArgs) ElementType() reflect.Type {
@@ -31689,6 +33218,13 @@ func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) B
 	}).(pulumi.IntOutput)
 }
 
+// The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetComputeTargetComputeConfigurationDetailInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) InstanceShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetComputeTargetComputeConfigurationDetailInstanceConfiguration) string { return v.InstanceShape }).(pulumi.StringOutput)
@@ -31699,6 +33235,13 @@ func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) I
 	return o.ApplyT(func(v GetComputeTargetComputeConfigurationDetailInstanceConfiguration) []GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail {
 		return v.InstanceShapeDetails
 	}).(GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayOutput)
+}
+
+// The network configuration details for managed compute cluster type resource.
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) NetworkConfigurationDetails() GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetComputeTargetComputeConfigurationDetailInstanceConfiguration) []GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail {
+		return v.NetworkConfigurationDetails
+	}).(GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput)
 }
 
 type GetComputeTargetComputeConfigurationDetailInstanceConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -31829,6 +33372,116 @@ func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceS
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail {
 		return vs[0].([]GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail)[vs[1].(int)]
 	}).(GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailOutput)
+}
+
+type GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The list of [OCID] of customer subnetIds.
+	SubnetIds []string `pulumi:"subnetIds"`
+}
+
+// GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput is an input type that accepts GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs and GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput` via:
+//
+//	GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs{...}
+type GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput() GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput
+	ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(context.Context) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput
+}
+
+type GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The list of [OCID] of customer subnetIds.
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+}
+
+func (GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput() GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return i.ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(ctx context.Context) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput)
+}
+
+// GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput is an input type that accepts GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray and GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput` via:
+//
+//	GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray{ GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs{...} }
+type GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput() GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput
+	ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(context.Context) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput
+}
+
+type GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray []GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput
+
+func (GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput() GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return i.ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(ctx context.Context) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput)
+}
+
+type GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput() GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return o
+}
+
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(ctx context.Context) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return o
+}
+
+// network type
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The list of [OCID] of customer subnetIds.
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail) []string {
+		return v.SubnetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput() GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) ToGetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(ctx context.Context) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail {
+		return vs[0].([]GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)[vs[1].(int)]
+	}).(GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput)
 }
 
 type GetComputeTargetComputeConfigurationDetailScalingPolicy struct {
@@ -33197,10 +34850,14 @@ func (o GetComputeTargetsComputeTargetComputeConfigurationDetailArrayOutput) Ind
 type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfiguration struct {
 	// The size of the boot volume to attach to the instance.
 	BootVolumeSizeInGbs int `pulumi:"bootVolumeSizeInGbs"`
+	// The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 	InstanceShape string `pulumi:"instanceShape"`
 	// Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
 	InstanceShapeDetails []GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail `pulumi:"instanceShapeDetails"`
+	// The network configuration details for managed compute cluster type resource.
+	NetworkConfigurationDetails []GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail `pulumi:"networkConfigurationDetails"`
 }
 
 // GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInput is an input type that accepts GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationArgs and GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationOutput values.
@@ -33217,10 +34874,14 @@ type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurati
 type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationArgs struct {
 	// The size of the boot volume to attach to the instance.
 	BootVolumeSizeInGbs pulumi.IntInput `pulumi:"bootVolumeSizeInGbs"`
+	// The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 	InstanceShape pulumi.StringInput `pulumi:"instanceShape"`
 	// Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
 	InstanceShapeDetails GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayInput `pulumi:"instanceShapeDetails"`
+	// The network configuration details for managed compute cluster type resource.
+	NetworkConfigurationDetails GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput `pulumi:"networkConfigurationDetails"`
 }
 
 func (GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationArgs) ElementType() reflect.Type {
@@ -33281,6 +34942,13 @@ func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigur
 	}).(pulumi.IntOutput)
 }
 
+// The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation. When provided, specify exactly one reservation OCID. Capacity reservations are supported only for GPU shapes.
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
 func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) InstanceShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfiguration) string {
@@ -33293,6 +34961,13 @@ func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigur
 	return o.ApplyT(func(v GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfiguration) []GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail {
 		return v.InstanceShapeDetails
 	}).(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayOutput)
+}
+
+// The network configuration details for managed compute cluster type resource.
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationOutput) NetworkConfigurationDetails() GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfiguration) []GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail {
+		return v.NetworkConfigurationDetails
+	}).(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput)
 }
 
 type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -33423,6 +35098,116 @@ func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigur
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail {
 		return vs[0].([]GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetail)[vs[1].(int)]
 	}).(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailOutput)
+}
+
+type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The list of [OCID] of customer subnetIds.
+	SubnetIds []string `pulumi:"subnetIds"`
+}
+
+// GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput is an input type that accepts GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs and GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput` via:
+//
+//	GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs{...}
+type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput() GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput
+	ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(context.Context) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput
+}
+
+type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The list of [OCID] of customer subnetIds.
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+}
+
+func (GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput() GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return i.ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(ctx context.Context) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput)
+}
+
+// GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput is an input type that accepts GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray and GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput` via:
+//
+//	GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray{ GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs{...} }
+type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput() GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput
+	ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(context.Context) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput
+}
+
+type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray []GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput
+
+func (GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput() GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return i.ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(ctx context.Context) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput)
+}
+
+type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput() GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return o
+}
+
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutputWithContext(ctx context.Context) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return o
+}
+
+// network type
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The list of [OCID] of customer subnetIds.
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail) []string {
+		return v.SubnetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput() GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) ToGetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutputWithContext(ctx context.Context) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail {
+		return vs[0].([]GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetail)[vs[1].(int)]
+	}).(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput)
 }
 
 type GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicy struct {
@@ -35680,12 +37465,16 @@ func (o GetJobJobEnvironmentConfigurationDetailArrayOutput) Index(i pulumi.IntIn
 type GetJobJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -35708,12 +37497,16 @@ type GetJobJobInfrastructureConfigurationDetailInput interface {
 type GetJobJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -35778,6 +37571,11 @@ func (o GetJobJobInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbs(
 	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetail) string { return v.ComputeTargetId }).(pulumi.StringOutput)
@@ -35793,6 +37591,13 @@ func (o GetJobJobInfrastructureConfigurationDetailOutput) JobShapeConfigDetails(
 	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetail) []GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetail) []GetJobJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -35945,6 +37750,112 @@ func (o GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetailNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobInfrastructureConfigurationDetailNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -37248,12 +39159,16 @@ func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobE
 type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -37276,12 +39191,16 @@ type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfr
 type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -37348,6 +39267,13 @@ func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobI
 	}).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
@@ -37367,6 +39293,13 @@ func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobI
 	return o.ApplyT(func(v GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -37529,6 +39462,116 @@ func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -38445,12 +40488,16 @@ func (o GetJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) Index(i p
 type GetJobRunJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobRunJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -38473,12 +40520,16 @@ type GetJobRunJobInfrastructureConfigurationDetailInput interface {
 type GetJobRunJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -38543,6 +40594,11 @@ func (o GetJobRunJobInfrastructureConfigurationDetailOutput) BlockStorageSizeInG
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobRunJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobRunJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetail) string { return v.ComputeTargetId }).(pulumi.StringOutput)
@@ -38558,6 +40614,13 @@ func (o GetJobRunJobInfrastructureConfigurationDetailOutput) JobShapeConfigDetai
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetail) []GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobRunJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetail) []GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -38712,6 +40775,112 @@ func (o GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobRunJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -39058,12 +41227,16 @@ func (o GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResour
 type GetJobRunJobInfrastructureConfigurationOverrideDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -39086,12 +41259,16 @@ type GetJobRunJobInfrastructureConfigurationOverrideDetailInput interface {
 type GetJobRunJobInfrastructureConfigurationOverrideDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -39156,6 +41333,11 @@ func (o GetJobRunJobInfrastructureConfigurationOverrideDetailOutput) BlockStorag
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobRunJobInfrastructureConfigurationOverrideDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetail) string { return v.ComputeTargetId }).(pulumi.StringOutput)
@@ -39171,6 +41353,13 @@ func (o GetJobRunJobInfrastructureConfigurationOverrideDetailOutput) JobShapeCon
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetail) []GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailOutput) NetworkConfigurations() GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetail) []GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -39211,6 +41400,8 @@ func (o GetJobRunJobInfrastructureConfigurationOverrideDetailArrayOutput) Index(
 }
 
 type GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -39229,6 +41420,8 @@ type GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailIn
 }
 
 type GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -39286,6 +41479,13 @@ func (o GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetai
 	return o
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
 // The memory in Gbs required to be allocated to run the workload.
 func (o GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail) float64 {
@@ -39318,6 +41518,116 @@ func (o GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetai
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput is an input type that accepts GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs and GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput` via:
+//
+//	GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs{...}
+type GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput() GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput
+	ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(context.Context) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput
+}
+
+type GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput() GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return i.ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput)
+}
+
+// GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput is an input type that accepts GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray and GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray{ GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs{...} }
+type GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput() GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput
+	ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray []GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput
+
+func (GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput() GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput() GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput() GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) ToGetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration {
+		return vs[0].([]GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput)
 }
 
 type GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfiguration struct {
@@ -40627,12 +42937,16 @@ func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDeta
 type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -40655,12 +42969,16 @@ type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetails
 type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -40727,6 +43045,13 @@ func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDeta
 	}).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
@@ -40746,6 +43071,13 @@ func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDeta
 	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -40790,6 +43122,8 @@ func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDeta
 }
 
 type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -40808,6 +43142,8 @@ type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetails
 }
 
 type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -40865,6 +43201,13 @@ func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDeta
 	return o
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
 // The memory in Gbs required to be allocated to run the workload.
 func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 {
@@ -40897,6 +43240,116 @@ func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDeta
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -41400,6 +43853,168 @@ func (o GetJobRunJobStorageMountConfigurationDetailsListArrayOutput) Index(i pul
 	}).(GetJobRunJobStorageMountConfigurationDetailsListOutput)
 }
 
+type GetJobRunJobStorageMountConfigurationOverrideDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetJobRunJobStorageMountConfigurationOverrideDetailsListInput is an input type that accepts GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs and GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput values.
+// You can construct a concrete instance of `GetJobRunJobStorageMountConfigurationOverrideDetailsListInput` via:
+//
+//	GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs{...}
+type GetJobRunJobStorageMountConfigurationOverrideDetailsListInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobStorageMountConfigurationOverrideDetailsListOutput() GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput
+	ToGetJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(context.Context) GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput
+}
+
+type GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListOutput() GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return i.ToGetJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput)
+}
+
+// GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput is an input type that accepts GetJobRunJobStorageMountConfigurationOverrideDetailsListArray and GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput` via:
+//
+//	GetJobRunJobStorageMountConfigurationOverrideDetailsListArray{ GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs{...} }
+type GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput
+	ToGetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(context.Context) GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput
+}
+
+type GetJobRunJobStorageMountConfigurationOverrideDetailsListArray []GetJobRunJobStorageMountConfigurationOverrideDetailsListInput
+
+func (GetJobRunJobStorageMountConfigurationOverrideDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunJobStorageMountConfigurationOverrideDetailsListArray) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return i.ToGetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunJobStorageMountConfigurationOverrideDetailsListArray) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput)
+}
+
+type GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListOutput() GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return o
+}
+
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.DestinationPath }).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ToGetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) Index(i pulumi.IntInput) GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunJobStorageMountConfigurationOverrideDetailsList {
+		return vs[0].([]GetJobRunJobStorageMountConfigurationOverrideDetailsList)[vs[1].(int)]
+	}).(GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput)
+}
+
 type GetJobRunLogDetail struct {
 	// The log group id for where log objects will be for job runs.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -41758,8 +44373,12 @@ type GetJobRunsJobRun struct {
 	JobLogConfigurationOverrideDetails []GetJobRunsJobRunJobLogConfigurationOverrideDetail `pulumi:"jobLogConfigurationOverrideDetails"`
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails []GetJobRunsJobRunJobNodeConfigurationOverrideDetail `pulumi:"jobNodeConfigurationOverrideDetails"`
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride int `pulumi:"jobRunRetentionPeriodInDaysOverride"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobRunsJobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists []GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList `pulumi:"jobStorageMountConfigurationOverrideDetailsLists"`
 	// The state details of the node group.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -41818,8 +44437,12 @@ type GetJobRunsJobRunArgs struct {
 	JobLogConfigurationOverrideDetails GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayInput `pulumi:"jobLogConfigurationOverrideDetails"`
 	// The job node configuration details
 	JobNodeConfigurationOverrideDetails GetJobRunsJobRunJobNodeConfigurationOverrideDetailArrayInput `pulumi:"jobNodeConfigurationOverrideDetails"`
+	// Retention period in days for job run.
+	JobRunRetentionPeriodInDaysOverride pulumi.IntInput `pulumi:"jobRunRetentionPeriodInDaysOverride"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayInput `pulumi:"jobStorageMountConfigurationDetailsLists"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationOverrideDetailsLists GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput `pulumi:"jobStorageMountConfigurationOverrideDetailsLists"`
 	// The state details of the node group.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -41971,11 +44594,23 @@ func (o GetJobRunsJobRunOutput) JobNodeConfigurationOverrideDetails() GetJobRuns
 	}).(GetJobRunsJobRunJobNodeConfigurationOverrideDetailArrayOutput)
 }
 
+// Retention period in days for job run.
+func (o GetJobRunsJobRunOutput) JobRunRetentionPeriodInDaysOverride() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobRunsJobRun) int { return v.JobRunRetentionPeriodInDaysOverride }).(pulumi.IntOutput)
+}
+
 // Collection of JobStorageMountConfigurationDetails.
 func (o GetJobRunsJobRunOutput) JobStorageMountConfigurationDetailsLists() GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput {
 	return o.ApplyT(func(v GetJobRunsJobRun) []GetJobRunsJobRunJobStorageMountConfigurationDetailsList {
 		return v.JobStorageMountConfigurationDetailsLists
 	}).(GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o GetJobRunsJobRunOutput) JobStorageMountConfigurationOverrideDetailsLists() GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRun) []GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList {
+		return v.JobStorageMountConfigurationOverrideDetailsLists
+	}).(GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput)
 }
 
 // The state details of the node group.
@@ -42463,12 +45098,16 @@ func (o GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArrayOutput) In
 type GetJobRunsJobRunJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -42491,12 +45130,16 @@ type GetJobRunsJobRunJobInfrastructureConfigurationDetailInput interface {
 type GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -42561,6 +45204,11 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailOutput) BlockStorage
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetail) string { return v.ComputeTargetId }).(pulumi.StringOutput)
@@ -42576,6 +45224,13 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailOutput) JobShapeConf
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetail) []GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetail) []GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -42734,6 +45389,116 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -43080,12 +45845,16 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguratio
 type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -43108,12 +45877,16 @@ type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailInput interface
 type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -43180,6 +45953,13 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailOutput) Bloc
 	}).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetail) string { return v.ComputeTargetId }).(pulumi.StringOutput)
@@ -43197,6 +45977,13 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailOutput) JobS
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetail) []GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailOutput) NetworkConfigurations() GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetail) []GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -43237,6 +46024,8 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailArrayOutput)
 }
 
 type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -43255,6 +46044,8 @@ type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigD
 }
 
 type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -43312,6 +46103,13 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConf
 	return o
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
 // The memory in Gbs required to be allocated to run the workload.
 func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail) float64 {
@@ -43344,6 +46142,116 @@ func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConf
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput is an input type that accepts GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs and GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput` via:
+//
+//	GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs{...}
+type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput() GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput
+	ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(context.Context) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput() GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return i.ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput)
+}
+
+// GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput is an input type that accepts GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray and GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray{ GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs{...} }
+type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput
+	ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray []GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput() GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) ToGetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration {
+		return vs[0].([]GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput)
 }
 
 type GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfiguration struct {
@@ -44655,12 +47563,16 @@ func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurat
 type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -44683,12 +47595,16 @@ type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguration
 type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -44755,6 +47671,13 @@ func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurat
 	}).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
@@ -44774,6 +47697,13 @@ func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurat
 	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -44818,6 +47748,8 @@ func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurat
 }
 
 type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -44836,6 +47768,8 @@ type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfiguration
 }
 
 type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
 	// The memory in Gbs required to be allocated to run the workload.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
 	// The ocpus required to be allocated to run the workload.
@@ -44893,6 +47827,13 @@ func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurat
 	return o
 }
 
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
 // The memory in Gbs required to be allocated to run the workload.
 func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail) float64 {
@@ -44925,6 +47866,116 @@ func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurat
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -45428,6 +48479,170 @@ func (o GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput) Inde
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobStorageMountConfigurationDetailsList {
 		return vs[0].([]GetJobRunsJobRunJobStorageMountConfigurationDetailsList)[vs[1].(int)]
 	}).(GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput)
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList struct {
+	// The object storage bucket
+	Bucket string `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath string `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId string `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId string `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace string `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix string `pulumi:"prefix"`
+	// The type of storage.
+	StorageType string `pulumi:"storageType"`
+}
+
+// GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListInput is an input type that accepts GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs and GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListInput` via:
+//
+//	GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs{...}
+type GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput() GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput
+	ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(context.Context) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs struct {
+	// The object storage bucket
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The local directory name to be mounted
+	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
+	// The local path of the mounted directory, excluding directory name.
+	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
+	// OCID of the export
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+	// OCID of the mount target
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// The object storage namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Prefix in the bucket to mount
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The type of storage.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+}
+
+func (GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput() GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return i.ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput)
+}
+
+// GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput is an input type that accepts GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArray and GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput` via:
+//
+//	GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArray{ GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs{...} }
+type GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput
+	ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(context.Context) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArray []GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListInput
+
+func (GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArray) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return i.ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArray) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput)
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput() GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return o
+}
+
+// The object storage bucket
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The local directory name to be mounted
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string {
+		return v.DestinationDirectoryName
+	}).(pulumi.StringOutput)
+}
+
+// The local path of the mounted directory, excluding directory name.
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) DestinationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string {
+		return v.DestinationPath
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the export
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+// OCID of the mount target
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// The object storage namespace
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Prefix in the bucket to mount
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The type of storage.
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+type GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList)(nil)).Elem()
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput() GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) ToGetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutputWithContext(ctx context.Context) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o
+}
+
+func (o GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput) Index(i pulumi.IntInput) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList {
+		return vs[0].([]GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsList)[vs[1].(int)]
+	}).(GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput)
 }
 
 type GetJobRunsJobRunLogDetail struct {
@@ -46025,6 +49240,8 @@ type GetJobsJob struct {
 	JobLogConfigurationDetails []GetJobsJobJobLogConfigurationDetail `pulumi:"jobLogConfigurationDetails"`
 	// The job node configuration details
 	JobNodeConfigurationDetails []GetJobsJobJobNodeConfigurationDetail `pulumi:"jobNodeConfigurationDetails"`
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays int `pulumi:"jobRunRetentionPeriodInDays"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobsJobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -46080,6 +49297,8 @@ type GetJobsJobArgs struct {
 	JobLogConfigurationDetails GetJobsJobJobLogConfigurationDetailArrayInput `pulumi:"jobLogConfigurationDetails"`
 	// The job node configuration details
 	JobNodeConfigurationDetails GetJobsJobJobNodeConfigurationDetailArrayInput `pulumi:"jobNodeConfigurationDetails"`
+	// Retention period in days for job runs.
+	JobRunRetentionPeriodInDays pulumi.IntInput `pulumi:"jobRunRetentionPeriodInDays"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists GetJobsJobJobStorageMountConfigurationDetailsListArrayInput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -46233,6 +49452,11 @@ func (o GetJobsJobOutput) JobLogConfigurationDetails() GetJobsJobJobLogConfigura
 // The job node configuration details
 func (o GetJobsJobOutput) JobNodeConfigurationDetails() GetJobsJobJobNodeConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetJobsJob) []GetJobsJobJobNodeConfigurationDetail { return v.JobNodeConfigurationDetails }).(GetJobsJobJobNodeConfigurationDetailArrayOutput)
+}
+
+// Retention period in days for job runs.
+func (o GetJobsJobOutput) JobRunRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJob) int { return v.JobRunRetentionPeriodInDays }).(pulumi.IntOutput)
 }
 
 // Collection of JobStorageMountConfigurationDetails.
@@ -46695,12 +49919,16 @@ func (o GetJobsJobJobEnvironmentConfigurationDetailArrayOutput) Index(i pulumi.I
 type GetJobsJobJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobsJobJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -46723,12 +49951,16 @@ type GetJobsJobJobInfrastructureConfigurationDetailInput interface {
 type GetJobsJobJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -46793,6 +50025,11 @@ func (o GetJobsJobJobInfrastructureConfigurationDetailOutput) BlockStorageSizeIn
 	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobsJobJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetail) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobsJobJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetail) string { return v.ComputeTargetId }).(pulumi.StringOutput)
@@ -46808,6 +50045,13 @@ func (o GetJobsJobJobInfrastructureConfigurationDetailOutput) JobShapeConfigDeta
 	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetail) []GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobsJobJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetail) []GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -46964,6 +50208,114 @@ func (o GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayO
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobsJobJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobsJobJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -48269,12 +51621,16 @@ func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsList
 type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId string `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType string `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails []GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations []GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations []GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -48297,12 +51653,16 @@ type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJob
 type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs struct {
 	// The size of the block storage volume to attach to the instance running the job
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 	ComputeTargetId pulumi.StringInput `pulumi:"computeTargetId"`
 	// The infrastructure type used for job run.
 	JobInfrastructureType pulumi.StringInput `pulumi:"jobInfrastructureType"`
 	// Details for the job run shape configuration. Specify only when a flex shape is selected.
 	JobShapeConfigDetails GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput `pulumi:"jobShapeConfigDetails"`
+	// The network configuration details for the compute target job.
+	NetworkConfigurations GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for the compute target job resource configuration.
 	ResourceConfigurations GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
 	// The name that corresponds to the JobShapeSummary to use for the job node
@@ -48369,6 +51729,13 @@ func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsList
 	}).(pulumi.IntOutput)
 }
 
+// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.  Supported for `STANDALONE` and `ME_STANDALONE` infrastructure only.
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
 func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) ComputeTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) string {
@@ -48388,6 +51755,13 @@ func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsList
 	return o.ApplyT(func(v GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return v.JobShapeConfigDetails
 	}).(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput)
+}
+
+// The network configuration details for the compute target job.
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail) []GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // Details for the compute target job resource configuration.
@@ -48550,6 +51924,116 @@ func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsList
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
 		return vs[0].([]GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail)[vs[1].(int)]
 	}).(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput)
+}
+
+type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs and GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The subnet to create a secondary vnic in to attach to the instance running the job
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray and GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{ GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray []GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput() GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the job
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration struct {
@@ -56747,8 +60231,11 @@ type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigura
 	// The model deployment instance configuration.
 	InstanceConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
-	MaximumBandwidthMbps                  int                                                                                                                         `pulumi:"maximumBandwidthMbps"`
+	MaximumBandwidthMbps int `pulumi:"maximumBandwidthMbps"`
+	// Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration `pulumi:"modelDeploymentResourceConfigurations"`
+	// The network configuration details for model deploy on managed compute cluster type compute target.
+	NetworkConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy `pulumi:"scalingPolicies"`
 }
@@ -56773,8 +60260,11 @@ type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigura
 	// The model deployment instance configuration.
 	InstanceConfigurations GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
-	MaximumBandwidthMbps                  pulumi.IntInput                                                                                                                     `pulumi:"maximumBandwidthMbps"`
+	MaximumBandwidthMbps pulumi.IntInput `pulumi:"maximumBandwidthMbps"`
+	// Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfigurations GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArrayInput `pulumi:"modelDeploymentResourceConfigurations"`
+	// The network configuration details for model deploy on managed compute cluster type compute target.
+	NetworkConfigurations GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArrayInput `pulumi:"scalingPolicies"`
 }
@@ -56864,10 +60354,18 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 	}).(pulumi.IntOutput)
 }
 
+// Resource configuration details for model deploy on managed compute cluster type compute target.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailOutput) ModelDeploymentResourceConfigurations() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail) []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration {
 		return v.ModelDeploymentResourceConfigurations
 	}).(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArrayOutput)
+}
+
+// The network configuration details for model deploy on managed compute cluster type compute target.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail) []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // The scaling policy to apply to each model of the deployment.
@@ -56898,6 +60396,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
@@ -56923,6 +60422,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigura
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
@@ -56987,6 +60487,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 	return o
 }
 
+// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration) []string {
 		return v.CapacityReservationIds
@@ -57170,7 +60671,9 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration struct {
-	ResourceLimitConfigurations   []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration   `pulumi:"resourceLimitConfigurations"`
+	// Resource limit configuration details for workload on managed compute cluster type compute target
+	ResourceLimitConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration `pulumi:"resourceLimitConfigurations"`
+	// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 	ResourceRequestConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration `pulumi:"resourceRequestConfigurations"`
 }
 
@@ -57186,7 +60689,9 @@ type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigura
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArgs struct {
-	ResourceLimitConfigurations   GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayInput   `pulumi:"resourceLimitConfigurations"`
+	// Resource limit configuration details for workload on managed compute cluster type compute target
+	ResourceLimitConfigurations GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayInput `pulumi:"resourceLimitConfigurations"`
+	// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 	ResourceRequestConfigurations GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayInput `pulumi:"resourceRequestConfigurations"`
 }
 
@@ -57241,12 +60746,14 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 	return o
 }
 
+// Resource limit configuration details for workload on managed compute cluster type compute target
 func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationOutput) ResourceLimitConfigurations() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration) []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration {
 		return v.ResourceLimitConfigurations
 	}).(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayOutput)
 }
 
+// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationOutput) ResourceRequestConfigurations() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration) []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		return v.ResourceRequestConfigurations
@@ -57384,6 +60891,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration struct {
+	// The total number of gpus required to be allocated to the workload.
 	Gpus int `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
@@ -57403,6 +60911,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigura
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArgs struct {
+	// The total number of gpus required to be allocated to the workload.
 	Gpus pulumi.IntInput `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
@@ -57461,6 +60970,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 	return o
 }
 
+// The total number of gpus required to be allocated to the workload.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationOutput) Gpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration) int {
 		return v.Gpus
@@ -57499,6 +61009,116 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration)[vs[1].(int)]
 	}).(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs and GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray and GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray{ GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray []GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy struct {
@@ -58752,6 +62372,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
@@ -58777,6 +62398,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
@@ -58841,6 +62463,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	return o
 }
 
+// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) []string {
 		return v.CapacityReservationIds
@@ -61587,8 +65210,11 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrast
 	// The model deployment instance configuration.
 	InstanceConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
-	MaximumBandwidthMbps                  int                                                                                                                                         `pulumi:"maximumBandwidthMbps"`
+	MaximumBandwidthMbps int `pulumi:"maximumBandwidthMbps"`
+	// Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration `pulumi:"modelDeploymentResourceConfigurations"`
+	// The network configuration details for model deploy on managed compute cluster type compute target.
+	NetworkConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration `pulumi:"networkConfigurations"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy `pulumi:"scalingPolicies"`
 }
@@ -61613,8 +65239,11 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrast
 	// The model deployment instance configuration.
 	InstanceConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
-	MaximumBandwidthMbps                  pulumi.IntInput                                                                                                                                     `pulumi:"maximumBandwidthMbps"`
+	MaximumBandwidthMbps pulumi.IntInput `pulumi:"maximumBandwidthMbps"`
+	// Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArrayInput `pulumi:"modelDeploymentResourceConfigurations"`
+	// The network configuration details for model deploy on managed compute cluster type compute target.
+	NetworkConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArrayInput `pulumi:"scalingPolicies"`
 }
@@ -61704,10 +65333,18 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 	}).(pulumi.IntOutput)
 }
 
+// Resource configuration details for model deploy on managed compute cluster type compute target.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailOutput) ModelDeploymentResourceConfigurations() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration {
 		return v.ModelDeploymentResourceConfigurations
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArrayOutput)
+}
+
+// The network configuration details for model deploy on managed compute cluster type compute target.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailOutput) NetworkConfigurations() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
 }
 
 // The scaling policy to apply to each model of the deployment.
@@ -61738,6 +65375,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
@@ -61763,6 +65401,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrast
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
@@ -61827,6 +65466,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 	return o
 }
 
+// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration) []string {
 		return v.CapacityReservationIds
@@ -62010,7 +65650,9 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration struct {
-	ResourceLimitConfigurations   []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration   `pulumi:"resourceLimitConfigurations"`
+	// Resource limit configuration details for workload on managed compute cluster type compute target
+	ResourceLimitConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration `pulumi:"resourceLimitConfigurations"`
+	// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 	ResourceRequestConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration `pulumi:"resourceRequestConfigurations"`
 }
 
@@ -62026,7 +65668,9 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrast
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationArgs struct {
-	ResourceLimitConfigurations   GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayInput   `pulumi:"resourceLimitConfigurations"`
+	// Resource limit configuration details for workload on managed compute cluster type compute target
+	ResourceLimitConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayInput `pulumi:"resourceLimitConfigurations"`
+	// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 	ResourceRequestConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayInput `pulumi:"resourceRequestConfigurations"`
 }
 
@@ -62081,12 +65725,14 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 	return o
 }
 
+// Resource limit configuration details for workload on managed compute cluster type compute target
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationOutput) ResourceLimitConfigurations() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfiguration {
 		return v.ResourceLimitConfigurations
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayOutput)
 }
 
+// Resource request configuration to run workload on managed compute cluster type compute target compute target.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationOutput) ResourceRequestConfigurations() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration) []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		return v.ResourceRequestConfigurations
@@ -62224,6 +65870,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration struct {
+	// The total number of gpus required to be allocated to the workload.
 	Gpus int `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
@@ -62243,6 +65890,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrast
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArgs struct {
+	// The total number of gpus required to be allocated to the workload.
 	Gpus pulumi.IntInput `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
@@ -62301,6 +65949,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 	return o
 }
 
+// The total number of gpus required to be allocated to the workload.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationOutput) Gpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration) int {
 		return v.Gpus
@@ -62339,6 +65988,116 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfiguration)[vs[1].(int)]
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration struct {
+	// network type
+	NetworkType string `pulumi:"networkType"`
+	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs{...}
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs struct {
+	// network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput)
+}
+
+// GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput` via:
+//
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs{...} }
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+	ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return i.ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return o
+}
+
+// network type
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput() GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration {
+		return vs[0].([]GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration)[vs[1].(int)]
+	}).(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput)
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy struct {
@@ -63592,6 +67351,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
@@ -63617,6 +67377,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs struct {
+	// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
@@ -63681,6 +67442,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	return o
 }
 
+// This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) []string {
 		return v.CapacityReservationIds
@@ -71839,3163 +75601,6 @@ func (o GetNotebookSessionsNotebookSessionArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetNotebookSessionsNotebookSessionOutput)
 }
 
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail struct {
-	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
-	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// Details for the notebook session shape configuration.
-	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
-	// The OCID of a Data Science private endpoint.
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
-	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-	Shape string `pulumi:"shape"`
-	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs struct {
-	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
-	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
-	// Details for the notebook session shape configuration.
-	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
-	// The OCID of a Data Science private endpoint.
-	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
-	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
-	return o
-}
-
-// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) int {
-		return v.BlockStorageSizeInGbs
-	}).(pulumi.IntOutput)
-}
-
-// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string {
-		return v.CapacityReservationId
-	}).(pulumi.StringOutput)
-}
-
-// Details for the notebook session shape configuration.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) NotebookSessionShapeConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail {
-		return v.NotebookSessionShapeConfigDetails
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput)
-}
-
-// The OCID of a Data Science private endpoint.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string {
-		return v.PrivateEndpointId
-	}).(pulumi.StringOutput)
-}
-
-// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline string `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the notebook session instance, in gigabytes.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The total number of OCPUs available to the notebook session instance.
-	Ocpus float64 `pulumi:"ocpus"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the notebook session instance, in gigabytes.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The total number of OCPUs available to the notebook session instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) string {
-		return v.CpuBaseline
-	}).(pulumi.StringOutput)
-}
-
-// The total amount of memory available to the notebook session instance, in gigabytes.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The total number of OCPUs available to the notebook session instance.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail) float64 {
-		return v.Ocpus
-	}).(pulumi.Float64Output)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail struct {
-	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
-	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// Details for the notebook session shape configuration.
-	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
-	// The OCID of a Data Science private endpoint.
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
-	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-	Shape string `pulumi:"shape"`
-	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs struct {
-	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
-	// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
-	// Details for the notebook session shape configuration.
-	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
-	// The OCID of a Data Science private endpoint.
-	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
-	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
-	return o
-}
-
-// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) int {
-		return v.BlockStorageSizeInGbs
-	}).(pulumi.IntOutput)
-}
-
-// This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string {
-		return v.CapacityReservationId
-	}).(pulumi.StringOutput)
-}
-
-// Details for the notebook session shape configuration.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) NotebookSessionShapeConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail {
-		return v.NotebookSessionShapeConfigDetails
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput)
-}
-
-// The OCID of a Data Science private endpoint.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string {
-		return v.PrivateEndpointId
-	}).(pulumi.StringOutput)
-}
-
-// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline string `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the notebook session instance, in gigabytes.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The total number of OCPUs available to the notebook session instance.
-	Ocpus float64 `pulumi:"ocpus"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the notebook session instance, in gigabytes.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The total number of OCPUs available to the notebook session instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) string {
-		return v.CpuBaseline
-	}).(pulumi.StringOutput)
-}
-
-// The total amount of memory available to the notebook session instance, in gigabytes.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The total number of OCPUs available to the notebook session instance.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail) float64 {
-		return v.Ocpus
-	}).(pulumi.Float64Output)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail struct {
-	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables map[string]string `pulumi:"customEnvironmentVariables"`
-	// Git configuration Details.
-	NotebookSessionGitConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail `pulumi:"notebookSessionGitConfigDetails"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs struct {
-	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables pulumi.StringMapInput `pulumi:"customEnvironmentVariables"`
-	// Git configuration Details.
-	NotebookSessionGitConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput `pulumi:"notebookSessionGitConfigDetails"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
-	return o
-}
-
-// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]string {
-		return v.CustomEnvironmentVariables
-	}).(pulumi.StringMapOutput)
-}
-
-// Git configuration Details.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) NotebookSessionGitConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
-		return v.NotebookSessionGitConfigDetails
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail struct {
-	// A collection of Git repository configurations.
-	NotebookSessionGitRepoConfigCollections []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection `pulumi:"notebookSessionGitRepoConfigCollections"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs struct {
-	// A collection of Git repository configurations.
-	NotebookSessionGitRepoConfigCollections GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput `pulumi:"notebookSessionGitRepoConfigCollections"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
-	return o
-}
-
-// A collection of Git repository configurations.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) NotebookSessionGitRepoConfigCollections() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
-		return v.NotebookSessionGitRepoConfigCollections
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection struct {
-	// The repository URL
-	Url string `pulumi:"url"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs struct {
-	// The repository URL
-	Url pulumi.StringInput `pulumi:"url"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
-	return o
-}
-
-// The repository URL
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection) string {
-		return v.Url
-	}).(pulumi.StringOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList struct {
-	// The object storage bucket
-	Bucket string `pulumi:"bucket"`
-	// The local directory name to be mounted
-	DestinationDirectoryName string `pulumi:"destinationDirectoryName"`
-	// The local path of the mounted directory, excluding directory name.
-	DestinationPath string `pulumi:"destinationPath"`
-	// OCID of the export
-	ExportId string `pulumi:"exportId"`
-	// OCID of the mount target
-	MountTargetId string `pulumi:"mountTargetId"`
-	// The object storage namespace
-	Namespace string `pulumi:"namespace"`
-	// Prefix in the bucket to mount
-	Prefix string `pulumi:"prefix"`
-	// The type of storage.
-	StorageType string `pulumi:"storageType"`
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs and GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...}
-type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs struct {
-	// The object storage bucket
-	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The local directory name to be mounted
-	DestinationDirectoryName pulumi.StringInput `pulumi:"destinationDirectoryName"`
-	// The local path of the mounted directory, excluding directory name.
-	DestinationPath pulumi.StringInput `pulumi:"destinationPath"`
-	// OCID of the export
-	ExportId pulumi.StringInput `pulumi:"exportId"`
-	// OCID of the mount target
-	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
-	// The object storage namespace
-	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Prefix in the bucket to mount
-	Prefix pulumi.StringInput `pulumi:"prefix"`
-	// The type of storage.
-	StorageType pulumi.StringInput `pulumi:"storageType"`
-}
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
-}
-
-// GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray and GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput values.
-// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput` via:
-//
-//	GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{ GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{...} }
-type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput interface {
-	pulumi.Input
-
-	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
-	ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray []GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
-	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(context.Background())
-}
-
-func (i GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
-	return o
-}
-
-// The object storage bucket
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.Bucket
-	}).(pulumi.StringOutput)
-}
-
-// The local directory name to be mounted
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationDirectoryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.DestinationDirectoryName
-	}).(pulumi.StringOutput)
-}
-
-// The local path of the mounted directory, excluding directory name.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) DestinationPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.DestinationPath
-	}).(pulumi.StringOutput)
-}
-
-// OCID of the export
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) ExportId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.ExportId
-	}).(pulumi.StringOutput)
-}
-
-// OCID of the mount target
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.MountTargetId
-	}).(pulumi.StringOutput)
-}
-
-// The object storage namespace
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.Namespace
-	}).(pulumi.StringOutput)
-}
-
-// Prefix in the bucket to mount
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) Prefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.Prefix
-	}).(pulumi.StringOutput)
-}
-
-// The type of storage.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput) StorageType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList) string {
-		return v.StorageType
-	}).(pulumi.StringOutput)
-}
-
-type GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)(nil)).Elem()
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput {
-	return o
-}
-
-func (o GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList {
-		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList)[vs[1].(int)]
-	}).(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput)
-}
-
-type GetPipelineConfigurationDetail struct {
-	// The command line arguments to set for step.
-	CommandLineArguments string `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
-	// The type of pipeline.
-	Type string `pulumi:"type"`
-}
-
-// GetPipelineConfigurationDetailInput is an input type that accepts GetPipelineConfigurationDetailArgs and GetPipelineConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineConfigurationDetailInput` via:
-//
-//	GetPipelineConfigurationDetailArgs{...}
-type GetPipelineConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineConfigurationDetailOutput() GetPipelineConfigurationDetailOutput
-	ToGetPipelineConfigurationDetailOutputWithContext(context.Context) GetPipelineConfigurationDetailOutput
-}
-
-type GetPipelineConfigurationDetailArgs struct {
-	// The command line arguments to set for step.
-	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
-	// The type of pipeline.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetPipelineConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineConfigurationDetailArgs) ToGetPipelineConfigurationDetailOutput() GetPipelineConfigurationDetailOutput {
-	return i.ToGetPipelineConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineConfigurationDetailArgs) ToGetPipelineConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineConfigurationDetailOutput)
-}
-
-// GetPipelineConfigurationDetailArrayInput is an input type that accepts GetPipelineConfigurationDetailArray and GetPipelineConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineConfigurationDetailArrayInput` via:
-//
-//	GetPipelineConfigurationDetailArray{ GetPipelineConfigurationDetailArgs{...} }
-type GetPipelineConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineConfigurationDetailArrayOutput() GetPipelineConfigurationDetailArrayOutput
-	ToGetPipelineConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineConfigurationDetailArrayOutput
-}
-
-type GetPipelineConfigurationDetailArray []GetPipelineConfigurationDetailInput
-
-func (GetPipelineConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineConfigurationDetailArray) ToGetPipelineConfigurationDetailArrayOutput() GetPipelineConfigurationDetailArrayOutput {
-	return i.ToGetPipelineConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineConfigurationDetailArray) ToGetPipelineConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineConfigurationDetailArrayOutput)
-}
-
-type GetPipelineConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineConfigurationDetailOutput) ToGetPipelineConfigurationDetailOutput() GetPipelineConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineConfigurationDetailOutput) ToGetPipelineConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailOutput {
-	return o
-}
-
-// The command line arguments to set for step.
-func (o GetPipelineConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineConfigurationDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
-}
-
-// Environment variables to set for step.
-func (o GetPipelineConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPipelineConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
-}
-
-// A time bound for the execution of the step.
-func (o GetPipelineConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineConfigurationDetail) string { return v.MaximumRuntimeInMinutes }).(pulumi.StringOutput)
-}
-
-// The type of pipeline.
-func (o GetPipelineConfigurationDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineConfigurationDetail) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetPipelineConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineConfigurationDetailArrayOutput) ToGetPipelineConfigurationDetailArrayOutput() GetPipelineConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineConfigurationDetailArrayOutput) ToGetPipelineConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineConfigurationDetail {
-		return vs[0].([]GetPipelineConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineConfigurationDetailOutput)
-}
-
-type GetPipelineInfrastructureConfigurationDetail struct {
-	// The size of the block storage volume to attach to the instance.
-	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
-	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-	BlockStorageSizeInGbsParameterized string `pulumi:"blockStorageSizeInGbsParameterized"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ShapeConfigDetails []GetPipelineInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
-	ShapeName string `pulumi:"shapeName"`
-	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetPipelineInfrastructureConfigurationDetailInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailArgs and GetPipelineInfrastructureConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailInput` via:
-//
-//	GetPipelineInfrastructureConfigurationDetailArgs{...}
-type GetPipelineInfrastructureConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineInfrastructureConfigurationDetailOutput() GetPipelineInfrastructureConfigurationDetailOutput
-	ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailOutput
-}
-
-type GetPipelineInfrastructureConfigurationDetailArgs struct {
-	// The size of the block storage volume to attach to the instance.
-	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
-	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-	BlockStorageSizeInGbsParameterized pulumi.StringInput `pulumi:"blockStorageSizeInGbsParameterized"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ShapeConfigDetails GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
-	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetPipelineInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailArgs) ToGetPipelineInfrastructureConfigurationDetailOutput() GetPipelineInfrastructureConfigurationDetailOutput {
-	return i.ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailArgs) ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailOutput)
-}
-
-// GetPipelineInfrastructureConfigurationDetailArrayInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailArray and GetPipelineInfrastructureConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailArrayInput` via:
-//
-//	GetPipelineInfrastructureConfigurationDetailArray{ GetPipelineInfrastructureConfigurationDetailArgs{...} }
-type GetPipelineInfrastructureConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineInfrastructureConfigurationDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailArrayOutput
-	ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailArrayOutput
-}
-
-type GetPipelineInfrastructureConfigurationDetailArray []GetPipelineInfrastructureConfigurationDetailInput
-
-func (GetPipelineInfrastructureConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailArray) ToGetPipelineInfrastructureConfigurationDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailArrayOutput {
-	return i.ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailArray) ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailArrayOutput)
-}
-
-type GetPipelineInfrastructureConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineInfrastructureConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailOutput) ToGetPipelineInfrastructureConfigurationDetailOutput() GetPipelineInfrastructureConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailOutput) ToGetPipelineInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailOutput {
-	return o
-}
-
-// The size of the block storage volume to attach to the instance.
-func (o GetPipelineInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
-}
-
-// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string {
-		return v.BlockStorageSizeInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-func (o GetPipelineInfrastructureConfigurationDetailOutput) ShapeConfigDetails() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) []GetPipelineInfrastructureConfigurationDetailShapeConfigDetail {
-		return v.ShapeConfigDetails
-	}).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
-}
-
-// The shape used to launch the instance for all step runs in the pipeline.
-func (o GetPipelineInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string { return v.ShapeName }).(pulumi.StringOutput)
-}
-
-// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-func (o GetPipelineInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetPipelineInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineInfrastructureConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineInfrastructureConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineInfrastructureConfigurationDetail {
-		return vs[0].([]GetPipelineInfrastructureConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineInfrastructureConfigurationDetailOutput)
-}
-
-type GetPipelineInfrastructureConfigurationDetailShapeConfigDetail struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline string `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized string `pulumi:"ocpusParameterized"`
-}
-
-// GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs and GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput values.
-// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput` via:
-//
-//	GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs{...}
-type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput
-	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput
-}
-
-type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
-}
-
-func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return i.ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput)
-}
-
-// GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray and GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput` via:
-//
-//	GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray{ GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs{...} }
-type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
-	ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
-}
-
-type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray []GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput
-
-func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return i.ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
-}
-
-type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return o
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) string { return v.CpuBaseline }).(pulumi.StringOutput)
-}
-
-// The total amount of memory available to the pipeline step run instance GBs.
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
-}
-
-// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) string {
-		return v.MemoryInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// The total number of OCPUs available to the pipeline step run instance.
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) float64 { return v.Ocpus }).(pulumi.Float64Output)
-}
-
-// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetailShapeConfigDetail) string {
-		return v.OcpusParameterized
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineInfrastructureConfigurationDetailShapeConfigDetail {
-		return vs[0].([]GetPipelineInfrastructureConfigurationDetailShapeConfigDetail)[vs[1].(int)]
-	}).(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput)
-}
-
-type GetPipelineLogConfigurationDetail struct {
-	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
-	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
-	// If customer logging is enabled for pipeline.
-	EnableLogging bool `pulumi:"enableLogging"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId string `pulumi:"logGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId string `pulumi:"logId"`
-}
-
-// GetPipelineLogConfigurationDetailInput is an input type that accepts GetPipelineLogConfigurationDetailArgs and GetPipelineLogConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineLogConfigurationDetailInput` via:
-//
-//	GetPipelineLogConfigurationDetailArgs{...}
-type GetPipelineLogConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineLogConfigurationDetailOutput() GetPipelineLogConfigurationDetailOutput
-	ToGetPipelineLogConfigurationDetailOutputWithContext(context.Context) GetPipelineLogConfigurationDetailOutput
-}
-
-type GetPipelineLogConfigurationDetailArgs struct {
-	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
-	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
-	// If customer logging is enabled for pipeline.
-	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	LogId pulumi.StringInput `pulumi:"logId"`
-}
-
-func (GetPipelineLogConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineLogConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineLogConfigurationDetailArgs) ToGetPipelineLogConfigurationDetailOutput() GetPipelineLogConfigurationDetailOutput {
-	return i.ToGetPipelineLogConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineLogConfigurationDetailArgs) ToGetPipelineLogConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineLogConfigurationDetailOutput)
-}
-
-// GetPipelineLogConfigurationDetailArrayInput is an input type that accepts GetPipelineLogConfigurationDetailArray and GetPipelineLogConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineLogConfigurationDetailArrayInput` via:
-//
-//	GetPipelineLogConfigurationDetailArray{ GetPipelineLogConfigurationDetailArgs{...} }
-type GetPipelineLogConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineLogConfigurationDetailArrayOutput() GetPipelineLogConfigurationDetailArrayOutput
-	ToGetPipelineLogConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineLogConfigurationDetailArrayOutput
-}
-
-type GetPipelineLogConfigurationDetailArray []GetPipelineLogConfigurationDetailInput
-
-func (GetPipelineLogConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineLogConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineLogConfigurationDetailArray) ToGetPipelineLogConfigurationDetailArrayOutput() GetPipelineLogConfigurationDetailArrayOutput {
-	return i.ToGetPipelineLogConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineLogConfigurationDetailArray) ToGetPipelineLogConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineLogConfigurationDetailArrayOutput)
-}
-
-type GetPipelineLogConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineLogConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineLogConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineLogConfigurationDetailOutput) ToGetPipelineLogConfigurationDetailOutput() GetPipelineLogConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineLogConfigurationDetailOutput) ToGetPipelineLogConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailOutput {
-	return o
-}
-
-// If automatic on-behalf-of log object creation is enabled for pipeline runs.
-func (o GetPipelineLogConfigurationDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) bool { return v.EnableAutoLogCreation }).(pulumi.BoolOutput)
-}
-
-// If customer logging is enabled for pipeline.
-func (o GetPipelineLogConfigurationDetailOutput) EnableLogging() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) bool { return v.EnableLogging }).(pulumi.BoolOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-func (o GetPipelineLogConfigurationDetailOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-func (o GetPipelineLogConfigurationDetailOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineLogConfigurationDetail) string { return v.LogId }).(pulumi.StringOutput)
-}
-
-type GetPipelineLogConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineLogConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineLogConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineLogConfigurationDetailArrayOutput) ToGetPipelineLogConfigurationDetailArrayOutput() GetPipelineLogConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineLogConfigurationDetailArrayOutput) ToGetPipelineLogConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineLogConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineLogConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineLogConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineLogConfigurationDetail {
-		return vs[0].([]GetPipelineLogConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineLogConfigurationDetailOutput)
-}
-
-type GetPipelineRunConfigurationDetail struct {
-	// The command line arguments to set for step.
-	CommandLineArguments string `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
-	// The type of pipeline.
-	Type string `pulumi:"type"`
-}
-
-// GetPipelineRunConfigurationDetailInput is an input type that accepts GetPipelineRunConfigurationDetailArgs and GetPipelineRunConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunConfigurationDetailInput` via:
-//
-//	GetPipelineRunConfigurationDetailArgs{...}
-type GetPipelineRunConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunConfigurationDetailOutput() GetPipelineRunConfigurationDetailOutput
-	ToGetPipelineRunConfigurationDetailOutputWithContext(context.Context) GetPipelineRunConfigurationDetailOutput
-}
-
-type GetPipelineRunConfigurationDetailArgs struct {
-	// The command line arguments to set for step.
-	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
-	// The type of pipeline.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetPipelineRunConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunConfigurationDetailArgs) ToGetPipelineRunConfigurationDetailOutput() GetPipelineRunConfigurationDetailOutput {
-	return i.ToGetPipelineRunConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunConfigurationDetailArgs) ToGetPipelineRunConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationDetailOutput)
-}
-
-// GetPipelineRunConfigurationDetailArrayInput is an input type that accepts GetPipelineRunConfigurationDetailArray and GetPipelineRunConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunConfigurationDetailArrayInput` via:
-//
-//	GetPipelineRunConfigurationDetailArray{ GetPipelineRunConfigurationDetailArgs{...} }
-type GetPipelineRunConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunConfigurationDetailArrayOutput() GetPipelineRunConfigurationDetailArrayOutput
-	ToGetPipelineRunConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunConfigurationDetailArrayOutput
-}
-
-type GetPipelineRunConfigurationDetailArray []GetPipelineRunConfigurationDetailInput
-
-func (GetPipelineRunConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunConfigurationDetailArray) ToGetPipelineRunConfigurationDetailArrayOutput() GetPipelineRunConfigurationDetailArrayOutput {
-	return i.ToGetPipelineRunConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunConfigurationDetailArray) ToGetPipelineRunConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationDetailArrayOutput)
-}
-
-type GetPipelineRunConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunConfigurationDetailOutput) ToGetPipelineRunConfigurationDetailOutput() GetPipelineRunConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunConfigurationDetailOutput) ToGetPipelineRunConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailOutput {
-	return o
-}
-
-// The command line arguments to set for step.
-func (o GetPipelineRunConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
-}
-
-// Environment variables to set for step.
-func (o GetPipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
-}
-
-// A time bound for the execution of the step.
-func (o GetPipelineRunConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) string { return v.MaximumRuntimeInMinutes }).(pulumi.StringOutput)
-}
-
-// The type of pipeline.
-func (o GetPipelineRunConfigurationDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetPipelineRunConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunConfigurationDetailArrayOutput) ToGetPipelineRunConfigurationDetailArrayOutput() GetPipelineRunConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunConfigurationDetailArrayOutput) ToGetPipelineRunConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunConfigurationDetail {
-		return vs[0].([]GetPipelineRunConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineRunConfigurationDetailOutput)
-}
-
-type GetPipelineRunConfigurationOverrideDetail struct {
-	// The command line arguments to set for step.
-	CommandLineArguments string `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
-	// The type of pipeline.
-	Type string `pulumi:"type"`
-}
-
-// GetPipelineRunConfigurationOverrideDetailInput is an input type that accepts GetPipelineRunConfigurationOverrideDetailArgs and GetPipelineRunConfigurationOverrideDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunConfigurationOverrideDetailInput` via:
-//
-//	GetPipelineRunConfigurationOverrideDetailArgs{...}
-type GetPipelineRunConfigurationOverrideDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunConfigurationOverrideDetailOutput() GetPipelineRunConfigurationOverrideDetailOutput
-	ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(context.Context) GetPipelineRunConfigurationOverrideDetailOutput
-}
-
-type GetPipelineRunConfigurationOverrideDetailArgs struct {
-	// The command line arguments to set for step.
-	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
-	// The type of pipeline.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetPipelineRunConfigurationOverrideDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunConfigurationOverrideDetailArgs) ToGetPipelineRunConfigurationOverrideDetailOutput() GetPipelineRunConfigurationOverrideDetailOutput {
-	return i.ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunConfigurationOverrideDetailArgs) ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationOverrideDetailOutput)
-}
-
-// GetPipelineRunConfigurationOverrideDetailArrayInput is an input type that accepts GetPipelineRunConfigurationOverrideDetailArray and GetPipelineRunConfigurationOverrideDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunConfigurationOverrideDetailArrayInput` via:
-//
-//	GetPipelineRunConfigurationOverrideDetailArray{ GetPipelineRunConfigurationOverrideDetailArgs{...} }
-type GetPipelineRunConfigurationOverrideDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunConfigurationOverrideDetailArrayOutput() GetPipelineRunConfigurationOverrideDetailArrayOutput
-	ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunConfigurationOverrideDetailArrayOutput
-}
-
-type GetPipelineRunConfigurationOverrideDetailArray []GetPipelineRunConfigurationOverrideDetailInput
-
-func (GetPipelineRunConfigurationOverrideDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunConfigurationOverrideDetailArray) ToGetPipelineRunConfigurationOverrideDetailArrayOutput() GetPipelineRunConfigurationOverrideDetailArrayOutput {
-	return i.ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunConfigurationOverrideDetailArray) ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunConfigurationOverrideDetailArrayOutput)
-}
-
-type GetPipelineRunConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunConfigurationOverrideDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunConfigurationOverrideDetailOutput) ToGetPipelineRunConfigurationOverrideDetailOutput() GetPipelineRunConfigurationOverrideDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunConfigurationOverrideDetailOutput) ToGetPipelineRunConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailOutput {
-	return o
-}
-
-// The command line arguments to set for step.
-func (o GetPipelineRunConfigurationOverrideDetailOutput) CommandLineArguments() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
-}
-
-// Environment variables to set for step.
-func (o GetPipelineRunConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
-}
-
-// A time bound for the execution of the step.
-func (o GetPipelineRunConfigurationOverrideDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) string { return v.MaximumRuntimeInMinutes }).(pulumi.StringOutput)
-}
-
-// The type of pipeline.
-func (o GetPipelineRunConfigurationOverrideDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetPipelineRunConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunConfigurationOverrideDetailArrayOutput) ToGetPipelineRunConfigurationOverrideDetailArrayOutput() GetPipelineRunConfigurationOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunConfigurationOverrideDetailArrayOutput) ToGetPipelineRunConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunConfigurationOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunConfigurationOverrideDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunConfigurationOverrideDetail {
-		return vs[0].([]GetPipelineRunConfigurationOverrideDetail)[vs[1].(int)]
-	}).(GetPipelineRunConfigurationOverrideDetailOutput)
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetail struct {
-	// The size of the block storage volume to attach to the instance.
-	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
-	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-	BlockStorageSizeInGbsParameterized string `pulumi:"blockStorageSizeInGbsParameterized"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ShapeConfigDetails []GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
-	ShapeName string `pulumi:"shapeName"`
-	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetPipelineRunInfrastructureConfigurationOverrideDetailInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailArgs and GetPipelineRunInfrastructureConfigurationOverrideDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailInput` via:
-//
-//	GetPipelineRunInfrastructureConfigurationOverrideDetailArgs{...}
-type GetPipelineRunInfrastructureConfigurationOverrideDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailOutput
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailArgs struct {
-	// The size of the block storage volume to attach to the instance.
-	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
-	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-	BlockStorageSizeInGbsParameterized pulumi.StringInput `pulumi:"blockStorageSizeInGbsParameterized"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ShapeConfigDetails GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
-	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
-	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailOutput)
-}
-
-// GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailArray and GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput` via:
-//
-//	GetPipelineRunInfrastructureConfigurationOverrideDetailArray{ GetPipelineRunInfrastructureConfigurationOverrideDetailArgs{...} }
-type GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailArray []GetPipelineRunInfrastructureConfigurationOverrideDetailInput
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
-	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput)
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
-	return o
-}
-
-// The size of the block storage volume to attach to the instance.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
-}
-
-// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) BlockStorageSizeInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) string {
-		return v.BlockStorageSizeInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ShapeConfigDetails() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) []GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail {
-		return v.ShapeConfigDetails
-	}).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput)
-}
-
-// The shape used to launch the instance for all step runs in the pipeline.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) string { return v.ShapeName }).(pulumi.StringOutput)
-}
-
-// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetail) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunInfrastructureConfigurationOverrideDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunInfrastructureConfigurationOverrideDetail {
-		return vs[0].([]GetPipelineRunInfrastructureConfigurationOverrideDetail)[vs[1].(int)]
-	}).(GetPipelineRunInfrastructureConfigurationOverrideDetailOutput)
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline string `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized string `pulumi:"ocpusParameterized"`
-}
-
-// GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs and GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput` via:
-//
-//	GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs{...}
-type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
-}
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
-	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput)
-}
-
-// GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray and GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput` via:
-//
-//	GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray{ GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs{...} }
-type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput
-	ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray []GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
-	return i.ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput)
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) string {
-		return v.CpuBaseline
-	}).(pulumi.StringOutput)
-}
-
-// The total amount of memory available to the pipeline step run instance GBs.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) string {
-		return v.MemoryInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// The total number of OCPUs available to the pipeline step run instance.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) float64 {
-		return v.Ocpus
-	}).(pulumi.Float64Output)
-}
-
-// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail) string {
-		return v.OcpusParameterized
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput() GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) ToGetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail {
-		return vs[0].([]GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail)[vs[1].(int)]
-	}).(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput)
-}
-
-type GetPipelineRunLogConfigurationOverrideDetail struct {
-	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
-	EnableAutoLogCreation bool `pulumi:"enableAutoLogCreation"`
-	// If customer logging is enabled for pipeline.
-	EnableLogging bool `pulumi:"enableLogging"`
-	// The log group id for where log objects will be for pipeline runs.
-	LogGroupId string `pulumi:"logGroupId"`
-	// The log id of the log object the pipeline run logs will be shipped to.
-	LogId string `pulumi:"logId"`
-}
-
-// GetPipelineRunLogConfigurationOverrideDetailInput is an input type that accepts GetPipelineRunLogConfigurationOverrideDetailArgs and GetPipelineRunLogConfigurationOverrideDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunLogConfigurationOverrideDetailInput` via:
-//
-//	GetPipelineRunLogConfigurationOverrideDetailArgs{...}
-type GetPipelineRunLogConfigurationOverrideDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunLogConfigurationOverrideDetailOutput() GetPipelineRunLogConfigurationOverrideDetailOutput
-	ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(context.Context) GetPipelineRunLogConfigurationOverrideDetailOutput
-}
-
-type GetPipelineRunLogConfigurationOverrideDetailArgs struct {
-	// If automatic on-behalf-of log object creation is enabled for pipeline runs.
-	EnableAutoLogCreation pulumi.BoolInput `pulumi:"enableAutoLogCreation"`
-	// If customer logging is enabled for pipeline.
-	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
-	// The log group id for where log objects will be for pipeline runs.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
-	// The log id of the log object the pipeline run logs will be shipped to.
-	LogId pulumi.StringInput `pulumi:"logId"`
-}
-
-func (GetPipelineRunLogConfigurationOverrideDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunLogConfigurationOverrideDetailArgs) ToGetPipelineRunLogConfigurationOverrideDetailOutput() GetPipelineRunLogConfigurationOverrideDetailOutput {
-	return i.ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunLogConfigurationOverrideDetailArgs) ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogConfigurationOverrideDetailOutput)
-}
-
-// GetPipelineRunLogConfigurationOverrideDetailArrayInput is an input type that accepts GetPipelineRunLogConfigurationOverrideDetailArray and GetPipelineRunLogConfigurationOverrideDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunLogConfigurationOverrideDetailArrayInput` via:
-//
-//	GetPipelineRunLogConfigurationOverrideDetailArray{ GetPipelineRunLogConfigurationOverrideDetailArgs{...} }
-type GetPipelineRunLogConfigurationOverrideDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunLogConfigurationOverrideDetailArrayOutput() GetPipelineRunLogConfigurationOverrideDetailArrayOutput
-	ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunLogConfigurationOverrideDetailArrayOutput
-}
-
-type GetPipelineRunLogConfigurationOverrideDetailArray []GetPipelineRunLogConfigurationOverrideDetailInput
-
-func (GetPipelineRunLogConfigurationOverrideDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunLogConfigurationOverrideDetailArray) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutput() GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
-	return i.ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunLogConfigurationOverrideDetailArray) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogConfigurationOverrideDetailArrayOutput)
-}
-
-type GetPipelineRunLogConfigurationOverrideDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunLogConfigurationOverrideDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunLogConfigurationOverrideDetailOutput) ToGetPipelineRunLogConfigurationOverrideDetailOutput() GetPipelineRunLogConfigurationOverrideDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunLogConfigurationOverrideDetailOutput) ToGetPipelineRunLogConfigurationOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailOutput {
-	return o
-}
-
-// If automatic on-behalf-of log object creation is enabled for pipeline runs.
-func (o GetPipelineRunLogConfigurationOverrideDetailOutput) EnableAutoLogCreation() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) bool { return v.EnableAutoLogCreation }).(pulumi.BoolOutput)
-}
-
-// If customer logging is enabled for pipeline.
-func (o GetPipelineRunLogConfigurationOverrideDetailOutput) EnableLogging() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) bool { return v.EnableLogging }).(pulumi.BoolOutput)
-}
-
-// The log group id for where log objects will be for pipeline runs.
-func (o GetPipelineRunLogConfigurationOverrideDetailOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
-}
-
-// The log id of the log object the pipeline run logs will be shipped to.
-func (o GetPipelineRunLogConfigurationOverrideDetailOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunLogConfigurationOverrideDetail) string { return v.LogId }).(pulumi.StringOutput)
-}
-
-type GetPipelineRunLogConfigurationOverrideDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunLogConfigurationOverrideDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunLogConfigurationOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunLogConfigurationOverrideDetailArrayOutput) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutput() GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunLogConfigurationOverrideDetailArrayOutput) ToGetPipelineRunLogConfigurationOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogConfigurationOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunLogConfigurationOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunLogConfigurationOverrideDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunLogConfigurationOverrideDetail {
-		return vs[0].([]GetPipelineRunLogConfigurationOverrideDetail)[vs[1].(int)]
-	}).(GetPipelineRunLogConfigurationOverrideDetailOutput)
-}
-
-type GetPipelineRunLogDetail struct {
-	// The log group id for where log objects will be for pipeline runs.
-	LogGroupId string `pulumi:"logGroupId"`
-	// The log id of the log object the pipeline run logs will be shipped to.
-	LogId string `pulumi:"logId"`
-}
-
-// GetPipelineRunLogDetailInput is an input type that accepts GetPipelineRunLogDetailArgs and GetPipelineRunLogDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunLogDetailInput` via:
-//
-//	GetPipelineRunLogDetailArgs{...}
-type GetPipelineRunLogDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunLogDetailOutput() GetPipelineRunLogDetailOutput
-	ToGetPipelineRunLogDetailOutputWithContext(context.Context) GetPipelineRunLogDetailOutput
-}
-
-type GetPipelineRunLogDetailArgs struct {
-	// The log group id for where log objects will be for pipeline runs.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
-	// The log id of the log object the pipeline run logs will be shipped to.
-	LogId pulumi.StringInput `pulumi:"logId"`
-}
-
-func (GetPipelineRunLogDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunLogDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunLogDetailArgs) ToGetPipelineRunLogDetailOutput() GetPipelineRunLogDetailOutput {
-	return i.ToGetPipelineRunLogDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunLogDetailArgs) ToGetPipelineRunLogDetailOutputWithContext(ctx context.Context) GetPipelineRunLogDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogDetailOutput)
-}
-
-// GetPipelineRunLogDetailArrayInput is an input type that accepts GetPipelineRunLogDetailArray and GetPipelineRunLogDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunLogDetailArrayInput` via:
-//
-//	GetPipelineRunLogDetailArray{ GetPipelineRunLogDetailArgs{...} }
-type GetPipelineRunLogDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunLogDetailArrayOutput() GetPipelineRunLogDetailArrayOutput
-	ToGetPipelineRunLogDetailArrayOutputWithContext(context.Context) GetPipelineRunLogDetailArrayOutput
-}
-
-type GetPipelineRunLogDetailArray []GetPipelineRunLogDetailInput
-
-func (GetPipelineRunLogDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunLogDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunLogDetailArray) ToGetPipelineRunLogDetailArrayOutput() GetPipelineRunLogDetailArrayOutput {
-	return i.ToGetPipelineRunLogDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunLogDetailArray) ToGetPipelineRunLogDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunLogDetailArrayOutput)
-}
-
-type GetPipelineRunLogDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunLogDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunLogDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunLogDetailOutput) ToGetPipelineRunLogDetailOutput() GetPipelineRunLogDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunLogDetailOutput) ToGetPipelineRunLogDetailOutputWithContext(ctx context.Context) GetPipelineRunLogDetailOutput {
-	return o
-}
-
-// The log group id for where log objects will be for pipeline runs.
-func (o GetPipelineRunLogDetailOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunLogDetail) string { return v.LogGroupId }).(pulumi.StringOutput)
-}
-
-// The log id of the log object the pipeline run logs will be shipped to.
-func (o GetPipelineRunLogDetailOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunLogDetail) string { return v.LogId }).(pulumi.StringOutput)
-}
-
-type GetPipelineRunLogDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunLogDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunLogDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunLogDetailArrayOutput) ToGetPipelineRunLogDetailArrayOutput() GetPipelineRunLogDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunLogDetailArrayOutput) ToGetPipelineRunLogDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunLogDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunLogDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunLogDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunLogDetail {
-		return vs[0].([]GetPipelineRunLogDetail)[vs[1].(int)]
-	}).(GetPipelineRunLogDetailOutput)
-}
-
-type GetPipelineRunStepOverrideDetail struct {
-	// The configuration details of a step.
-	StepConfigurationDetails []GetPipelineRunStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
-	// Container Details for a step in pipeline.
-	StepContainerConfigurationDetails []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
-	// The configuration details of a Dataflow step.
-	StepDataflowConfigurationDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail `pulumi:"stepDataflowConfigurationDetails"`
-	// The infrastructure configuration details of a pipeline or a step.
-	StepInfrastructureConfigurationDetails []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail `pulumi:"stepInfrastructureConfigurationDetails"`
-	// The name of the step.
-	StepName string `pulumi:"stepName"`
-	// The storage mount details to mount to the instance running the pipeline step.
-	StepStorageMountConfigurationDetailsLists []GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList `pulumi:"stepStorageMountConfigurationDetailsLists"`
-}
-
-// GetPipelineRunStepOverrideDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailArgs and GetPipelineRunStepOverrideDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailArgs{...}
-type GetPipelineRunStepOverrideDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailOutput() GetPipelineRunStepOverrideDetailOutput
-	ToGetPipelineRunStepOverrideDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailArgs struct {
-	// The configuration details of a step.
-	StepConfigurationDetails GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
-	// Container Details for a step in pipeline.
-	StepContainerConfigurationDetails GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
-	// The configuration details of a Dataflow step.
-	StepDataflowConfigurationDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput `pulumi:"stepDataflowConfigurationDetails"`
-	// The infrastructure configuration details of a pipeline or a step.
-	StepInfrastructureConfigurationDetails GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput `pulumi:"stepInfrastructureConfigurationDetails"`
-	// The name of the step.
-	StepName pulumi.StringInput `pulumi:"stepName"`
-	// The storage mount details to mount to the instance running the pipeline step.
-	StepStorageMountConfigurationDetailsLists GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayInput `pulumi:"stepStorageMountConfigurationDetailsLists"`
-}
-
-func (GetPipelineRunStepOverrideDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailArgs) ToGetPipelineRunStepOverrideDetailOutput() GetPipelineRunStepOverrideDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailArgs) ToGetPipelineRunStepOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailArray and GetPipelineRunStepOverrideDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailArray{ GetPipelineRunStepOverrideDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailArrayOutput() GetPipelineRunStepOverrideDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailArray []GetPipelineRunStepOverrideDetailInput
-
-func (GetPipelineRunStepOverrideDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailArray) ToGetPipelineRunStepOverrideDetailArrayOutput() GetPipelineRunStepOverrideDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailArray) ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailOutput) ToGetPipelineRunStepOverrideDetailOutput() GetPipelineRunStepOverrideDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailOutput) ToGetPipelineRunStepOverrideDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailOutput {
-	return o
-}
-
-// The configuration details of a step.
-func (o GetPipelineRunStepOverrideDetailOutput) StepConfigurationDetails() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepConfigurationDetail {
-		return v.StepConfigurationDetails
-	}).(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput)
-}
-
-// Container Details for a step in pipeline.
-func (o GetPipelineRunStepOverrideDetailOutput) StepContainerConfigurationDetails() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
-		return v.StepContainerConfigurationDetails
-	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
-}
-
-// The configuration details of a Dataflow step.
-func (o GetPipelineRunStepOverrideDetailOutput) StepDataflowConfigurationDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
-		return v.StepDataflowConfigurationDetails
-	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
-}
-
-// The infrastructure configuration details of a pipeline or a step.
-func (o GetPipelineRunStepOverrideDetailOutput) StepInfrastructureConfigurationDetails() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail {
-		return v.StepInfrastructureConfigurationDetails
-	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput)
-}
-
-// The name of the step.
-func (o GetPipelineRunStepOverrideDetailOutput) StepName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) string { return v.StepName }).(pulumi.StringOutput)
-}
-
-// The storage mount details to mount to the instance running the pipeline step.
-func (o GetPipelineRunStepOverrideDetailOutput) StepStorageMountConfigurationDetailsLists() GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList {
-		return v.StepStorageMountConfigurationDetailsLists
-	}).(GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailArrayOutput) ToGetPipelineRunStepOverrideDetailArrayOutput() GetPipelineRunStepOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailArrayOutput) ToGetPipelineRunStepOverrideDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepConfigurationDetail struct {
-	// The command line arguments to set for step.
-	CommandLineArguments string `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
-}
-
-// GetPipelineRunStepOverrideDetailStepConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepConfigurationDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs{...}
-type GetPipelineRunStepOverrideDetailStepConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput
-	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs struct {
-	// The command line arguments to set for step.
-	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
-	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
-	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
-}
-
-func (GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepConfigurationDetailInput
-
-func (GetPipelineRunStepOverrideDetailStepConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
-	return o
-}
-
-// The command line arguments to set for step.
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) CommandLineArguments() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) string { return v.CommandLineArguments }).(pulumi.StringOutput)
-}
-
-// Environment variables to set for step.
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) map[string]string {
-		return v.EnvironmentVariables
-	}).(pulumi.StringMapOutput)
-}
-
-// A time bound for the execution of the step.
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) MaximumRuntimeInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) string {
-		return v.MaximumRuntimeInMinutes
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepConfigurationDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetailStepConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail struct {
-	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-	Cmds []string `pulumi:"cmds"`
-	// The type of container.
-	ContainerType string `pulumi:"containerType"`
-	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-	Entrypoints []string `pulumi:"entrypoints"`
-	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
-	Image string `pulumi:"image"`
-	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-	ImageDigest string `pulumi:"imageDigest"`
-	// OCID of the container image signature
-	ImageSignatureId string `pulumi:"imageSignatureId"`
-}
-
-// GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...}
-type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
-	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs struct {
-	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
-	// The type of container.
-	ContainerType pulumi.StringInput `pulumi:"containerType"`
-	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
-	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
-	Image pulumi.StringInput `pulumi:"image"`
-	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
-	// OCID of the container image signature
-	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
-}
-
-func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput
-
-func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
-	return o
-}
-
-// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
-}
-
-// The type of container.
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
-		return v.ContainerType
-	}).(pulumi.StringOutput)
-}
-
-// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string {
-		return v.Entrypoints
-	}).(pulumi.StringArrayOutput)
-}
-
-// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string { return v.Image }).(pulumi.StringOutput)
-}
-
-// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
-}
-
-// OCID of the container image signature
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
-		return v.ImageSignatureId
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail struct {
-	// The Spark configuration passed to the running process.
-	Configuration map[string]string `pulumi:"configuration"`
-	// The VM shape for the driver.
-	DriverShape string `pulumi:"driverShape"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	DriverShapeConfigDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail `pulumi:"driverShapeConfigDetails"`
-	// The VM shape for the executors.
-	ExecutorShape string `pulumi:"executorShape"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ExecutorShapeConfigDetails []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail `pulumi:"executorShapeConfigDetails"`
-	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-	LogsBucketUri string `pulumi:"logsBucketUri"`
-	// The number of executor VMs requested.
-	NumExecutors int `pulumi:"numExecutors"`
-	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
-	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
-}
-
-// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...}
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs struct {
-	// The Spark configuration passed to the running process.
-	Configuration pulumi.StringMapInput `pulumi:"configuration"`
-	// The VM shape for the driver.
-	DriverShape pulumi.StringInput `pulumi:"driverShape"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	DriverShapeConfigDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput `pulumi:"driverShapeConfigDetails"`
-	// The VM shape for the executors.
-	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ExecutorShapeConfigDetails GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput `pulumi:"executorShapeConfigDetails"`
-	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
-	// The number of executor VMs requested.
-	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
-	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
-	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
-}
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
-	return o
-}
-
-// The Spark configuration passed to the running process.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) Configuration() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) map[string]string {
-		return v.Configuration
-	}).(pulumi.StringMapOutput)
-}
-
-// The VM shape for the driver.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.DriverShape }).(pulumi.StringOutput)
-}
-
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) DriverShapeConfigDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
-		return v.DriverShapeConfigDetails
-	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
-}
-
-// The VM shape for the executors.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.ExecutorShape }).(pulumi.StringOutput)
-}
-
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) ExecutorShapeConfigDetails() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
-		return v.ExecutorShapeConfigDetails
-	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
-}
-
-// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) LogsBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string { return v.LogsBucketUri }).(pulumi.StringOutput)
-}
-
-// The number of executor VMs requested.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) NumExecutors() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) int { return v.NumExecutors }).(pulumi.IntOutput)
-}
-
-// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput) WarehouseBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail) string {
-		return v.WarehouseBucketUri
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail struct {
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized string `pulumi:"ocpusParameterized"`
-}
-
-// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...}
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs struct {
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
-}
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
-	return o
-}
-
-// The total amount of memory available to the pipeline step run instance GBs.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) string {
-		return v.MemoryInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// The total number of OCPUs available to the pipeline step run instance.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) float64 {
-		return v.Ocpus
-	}).(pulumi.Float64Output)
-}
-
-// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail) string {
-		return v.OcpusParameterized
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail struct {
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized string `pulumi:"ocpusParameterized"`
-}
-
-// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...}
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs struct {
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
-}
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
-	return o
-}
-
-// The total amount of memory available to the pipeline step run instance GBs.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) string {
-		return v.MemoryInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// The total number of OCPUs available to the pipeline step run instance.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) float64 {
-		return v.Ocpus
-	}).(pulumi.Float64Output)
-}
-
-// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail) string {
-		return v.OcpusParameterized
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsPtrInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsArgs{})
@@ -75003,6 +75608,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsPtrInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsScalingPolicyInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsScalingPolicyPtrInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs{})
@@ -75023,6 +75630,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsPtrInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsNetworkConfigurationInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsResourceConfigurationInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsResourceConfigurationPtrInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75047,6 +75656,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationPtrInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75065,6 +75676,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75075,6 +75688,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsPtrInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationPtrInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75099,6 +75714,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationPtrInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75107,6 +75724,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationPtrInput)(nil)).Elem(), JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), JobRunJobStorageMountConfigurationDetailsListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), JobRunJobStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationOverrideDetailsListInput)(nil)).Elem(), JobRunJobStorageMountConfigurationOverrideDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationOverrideDetailsListArrayInput)(nil)).Elem(), JobRunJobStorageMountConfigurationOverrideDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailInput)(nil)).Elem(), JobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailArrayInput)(nil)).Elem(), JobRunLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunNodeGroupDetailsListInput)(nil)).Elem(), JobRunNodeGroupDetailsListArgs{})
@@ -75167,6 +75786,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyPtrInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgs{})
@@ -75348,6 +75969,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailInstanceConfigurationArrayInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailInstanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailScalingPolicyInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailScalingPolicyArrayInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailScalingPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyArgs{})
@@ -75372,6 +75995,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationArrayInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyArrayInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyArgs{})
@@ -75410,6 +76035,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75434,6 +76061,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75452,6 +76081,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75462,6 +76093,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75486,6 +76119,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75494,6 +76129,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArrayInput)(nil)).Elem(), GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobRunJobStorageMountConfigurationDetailsListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobRunJobStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobStorageMountConfigurationOverrideDetailsListInput)(nil)).Elem(), GetJobRunJobStorageMountConfigurationOverrideDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput)(nil)).Elem(), GetJobRunJobStorageMountConfigurationOverrideDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunLogDetailInput)(nil)).Elem(), GetJobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunLogDetailArrayInput)(nil)).Elem(), GetJobRunLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunNodeGroupDetailsListInput)(nil)).Elem(), GetJobRunNodeGroupDetailsListArgs{})
@@ -75512,6 +76149,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75522,6 +76161,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75546,6 +76187,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75554,6 +76197,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArrayInput)(nil)).Elem(), GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobRunsJobRunJobStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListInput)(nil)).Elem(), GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayInput)(nil)).Elem(), GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunLogDetailInput)(nil)).Elem(), GetJobRunsJobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunLogDetailArrayInput)(nil)).Elem(), GetJobRunsJobRunLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobRunsJobRunNodeGroupDetailsListInput)(nil)).Elem(), GetJobRunsJobRunNodeGroupDetailsListArgs{})
@@ -75576,6 +76221,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75600,6 +76247,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationInput)(nil)).Elem(), GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs{})
@@ -75732,6 +76381,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArrayInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyArgs{})
@@ -75804,6 +76455,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyArgs{})
@@ -75944,60 +76597,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsFilterArrayInput)(nil)).Elem(), GetNotebookSessionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineConfigurationDetailInput)(nil)).Elem(), GetPipelineConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLogConfigurationDetailInput)(nil)).Elem(), GetPipelineLogConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLogConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineLogConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationDetailInput)(nil)).Elem(), GetPipelineRunConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetailInput)(nil)).Elem(), GetPipelineRunConfigurationOverrideDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunConfigurationOverrideDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetailInput)(nil)).Elem(), GetPipelineRunLogConfigurationOverrideDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogConfigurationOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunLogConfigurationOverrideDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogDetailInput)(nil)).Elem(), GetPipelineRunLogDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunLogDetailArrayInput)(nil)).Elem(), GetPipelineRunLogDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsInstanceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsInstanceConfigurationNetworkConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsScalingPolicyOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsScalingPolicyPtrOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyOutput{})
@@ -76018,6 +76625,8 @@ func init() {
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsResourceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76042,6 +76651,8 @@ func init() {
 	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76060,6 +76671,8 @@ func init() {
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76070,6 +76683,8 @@ func init() {
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76094,6 +76709,8 @@ func init() {
 	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76102,6 +76719,8 @@ func init() {
 	pulumi.RegisterOutputType(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationDetailsListOutput{})
 	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationOverrideDetailsListOutput{})
+	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailArrayOutput{})
 	pulumi.RegisterOutputType(JobRunNodeGroupDetailsListOutput{})
@@ -76162,6 +76781,8 @@ func init() {
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyPtrOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyOutput{})
@@ -76343,6 +76964,8 @@ func init() {
 	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailInstanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailScalingPolicyOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailScalingPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyOutput{})
@@ -76367,6 +76990,8 @@ func init() {
 	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationInstanceShapeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailInstanceConfigurationNetworkConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyOutput{})
@@ -76405,6 +77030,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76429,6 +77056,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76447,6 +77076,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76457,6 +77088,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76481,6 +77114,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76489,6 +77124,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobStorageMountConfigurationDetailsListOutput{})
 	pulumi.RegisterOutputType(GetJobRunJobStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobStorageMountConfigurationOverrideDetailsListOutput{})
+	pulumi.RegisterOutputType(GetJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunLogDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunNodeGroupDetailsListOutput{})
@@ -76507,6 +77144,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76517,6 +77156,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76541,6 +77182,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76549,6 +77192,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobStorageMountConfigurationDetailsListOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunJobStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListOutput{})
+	pulumi.RegisterOutputType(GetJobRunsJobRunJobStorageMountConfigurationOverrideDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunLogDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobRunsJobRunNodeGroupDetailsListOutput{})
@@ -76571,6 +77216,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76595,6 +77242,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationOutput{})
@@ -76727,6 +77376,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyOutput{})
@@ -76799,6 +77450,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceLimitConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResourceRequestConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyOutput{})
@@ -76939,52 +77592,4 @@ func init() {
 	pulumi.RegisterOutputType(GetNotebookSessionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListOutput{})
-	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineLogConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineLogConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunConfigurationOverrideDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunConfigurationOverrideDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunLogConfigurationOverrideDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunLogConfigurationOverrideDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunLogDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunLogDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput{})
 }

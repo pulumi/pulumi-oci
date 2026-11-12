@@ -4026,6 +4026,40 @@
                                 "load_balancers": {
                                     "maxItemsOne": false
                                 },
+                                "override_policy": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "override_statements": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "override_options": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "override": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "shape_config_details": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "selector": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "placement_configurations": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -4880,6 +4914,40 @@
                     },
                     "load_balancers": {
                         "maxItemsOne": false
+                    },
+                    "override_policy": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "override_statements": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "override_options": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "override": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "shape_config_details": {
+                                                                        "maxItemsOne": true
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "selector": {
+                                                "maxItemsOne": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     },
                     "placement_configurations": {
                         "maxItemsOne": false,
@@ -11007,8 +11075,21 @@
                                     "maxItemsOne": true,
                                     "elem": {
                                         "fields": {
+                                            "capacity_reservation_ids": {
+                                                "maxItemsOne": false
+                                            },
                                             "instance_shape_details": {
                                                 "maxItemsOne": true
+                                            },
+                                            "network_configuration_details": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "subnet_ids": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -11089,6 +11170,9 @@
                                 "job_shape_config_details": {
                                     "maxItemsOne": true
                                 },
+                                "network_configuration": {
+                                    "maxItemsOne": true
+                                },
                                 "resource_configuration": {
                                     "maxItemsOne": true,
                                     "elem": {
@@ -11154,6 +11238,9 @@
                                                 "elem": {
                                                     "fields": {
                                                         "job_shape_config_details": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "network_configuration": {
                                                             "maxItemsOne": true
                                                         },
                                                         "resource_configuration": {
@@ -11224,6 +11311,9 @@
                                 "job_shape_config_details": {
                                     "maxItemsOne": false
                                 },
+                                "network_configuration": {
+                                    "maxItemsOne": false
+                                },
                                 "resource_configuration": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -11245,6 +11335,9 @@
                         "elem": {
                             "fields": {
                                 "job_shape_config_details": {
+                                    "maxItemsOne": true
+                                },
+                                "network_configuration": {
                                     "maxItemsOne": true
                                 },
                                 "resource_configuration": {
@@ -11314,6 +11407,9 @@
                                                         "job_shape_config_details": {
                                                             "maxItemsOne": true
                                                         },
+                                                        "network_configuration": {
+                                                            "maxItemsOne": true
+                                                        },
                                                         "resource_configuration": {
                                                             "maxItemsOne": true,
                                                             "elem": {
@@ -11337,6 +11433,9 @@
                         }
                     },
                     "job_storage_mount_configuration_details_list": {
+                        "maxItemsOne": false
+                    },
+                    "job_storage_mount_configuration_override_details_list": {
                         "maxItemsOne": false
                     },
                     "log_details": {
@@ -11545,6 +11644,9 @@
                                                         }
                                                     }
                                                 }
+                                            },
+                                            "network_configuration": {
+                                                "maxItemsOne": true
                                             },
                                             "scaling_policy": {
                                                 "maxItemsOne": true,
@@ -37216,6 +37318,40 @@
                                 "load_balancers": {
                                     "maxItemsOne": false
                                 },
+                                "override_policy": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "override_statements": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "override_options": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "override": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "shape_config_details": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "selector": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "placement_configurations": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -37331,6 +37467,40 @@
                                         "fields": {
                                             "load_balancers": {
                                                 "maxItemsOne": false
+                                            },
+                                            "override_policy": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "override_statements": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "override_options": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "override": {
+                                                                                    "maxItemsOne": false,
+                                                                                    "elem": {
+                                                                                        "fields": {
+                                                                                            "shape_config_details": {
+                                                                                                "maxItemsOne": false
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "selector": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             },
                                             "placement_configurations": {
                                                 "maxItemsOne": false,
@@ -39580,6 +39750,40 @@
                     "load_balancers": {
                         "maxItemsOne": false
                     },
+                    "override_policy": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "override_statements": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "override_options": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "override": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "shape_config_details": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "selector": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "placement_configurations": {
                         "maxItemsOne": false,
                         "elem": {
@@ -39686,6 +39890,40 @@
                                 },
                                 "load_balancers": {
                                     "maxItemsOne": false
+                                },
+                                "override_policy": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "override_statements": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "override_options": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "override": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "shape_config_details": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "selector": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 },
                                 "placement_configurations": {
                                     "maxItemsOne": false,
@@ -61563,8 +61801,21 @@
                                     "maxItemsOne": false,
                                     "elem": {
                                         "fields": {
+                                            "capacity_reservation_ids": {
+                                                "maxItemsOne": false
+                                            },
                                             "instance_shape_details": {
                                                 "maxItemsOne": false
+                                            },
+                                            "network_configuration_details": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "subnet_ids": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -61639,8 +61890,21 @@
                                                 "maxItemsOne": false,
                                                 "elem": {
                                                     "fields": {
+                                                        "capacity_reservation_ids": {
+                                                            "maxItemsOne": false
+                                                        },
                                                         "instance_shape_details": {
                                                             "maxItemsOne": false
+                                                        },
+                                                        "network_configuration_details": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "subnet_ids": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -61795,6 +62059,9 @@
                                 "job_shape_config_details": {
                                     "maxItemsOne": false
                                 },
+                                "network_configuration": {
+                                    "maxItemsOne": false
+                                },
                                 "resource_configuration": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -61860,6 +62127,9 @@
                                                 "elem": {
                                                     "fields": {
                                                         "job_shape_config_details": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "network_configuration": {
                                                             "maxItemsOne": false
                                                         },
                                                         "resource_configuration": {
@@ -61930,6 +62200,9 @@
                                 "job_shape_config_details": {
                                     "maxItemsOne": false
                                 },
+                                "network_configuration": {
+                                    "maxItemsOne": false
+                                },
                                 "resource_configuration": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -61951,6 +62224,9 @@
                         "elem": {
                             "fields": {
                                 "job_shape_config_details": {
+                                    "maxItemsOne": false
+                                },
+                                "network_configuration": {
                                     "maxItemsOne": false
                                 },
                                 "resource_configuration": {
@@ -62020,6 +62296,9 @@
                                                         "job_shape_config_details": {
                                                             "maxItemsOne": false
                                                         },
+                                                        "network_configuration": {
+                                                            "maxItemsOne": false
+                                                        },
                                                         "resource_configuration": {
                                                             "maxItemsOne": false,
                                                             "elem": {
@@ -62043,6 +62322,9 @@
                         }
                     },
                     "job_storage_mount_configuration_details_list": {
+                        "maxItemsOne": false
+                    },
+                    "job_storage_mount_configuration_override_details_list": {
                         "maxItemsOne": false
                     },
                     "log_details": {
@@ -62108,6 +62390,9 @@
                                             "job_shape_config_details": {
                                                 "maxItemsOne": false
                                             },
+                                            "network_configuration": {
+                                                "maxItemsOne": false
+                                            },
                                             "resource_configuration": {
                                                 "maxItemsOne": false,
                                                 "elem": {
@@ -62129,6 +62414,9 @@
                                     "elem": {
                                         "fields": {
                                             "job_shape_config_details": {
+                                                "maxItemsOne": false
+                                            },
+                                            "network_configuration": {
                                                 "maxItemsOne": false
                                             },
                                             "resource_configuration": {
@@ -62198,6 +62486,9 @@
                                                                     "job_shape_config_details": {
                                                                         "maxItemsOne": false
                                                                     },
+                                                                    "network_configuration": {
+                                                                        "maxItemsOne": false
+                                                                    },
                                                                     "resource_configuration": {
                                                                         "maxItemsOne": false,
                                                                         "elem": {
@@ -62221,6 +62512,9 @@
                                     }
                                 },
                                 "job_storage_mount_configuration_details_list": {
+                                    "maxItemsOne": false
+                                },
+                                "job_storage_mount_configuration_override_details_list": {
                                     "maxItemsOne": false
                                 },
                                 "log_details": {
@@ -62308,6 +62602,9 @@
                                             "job_shape_config_details": {
                                                 "maxItemsOne": false
                                             },
+                                            "network_configuration": {
+                                                "maxItemsOne": false
+                                            },
                                             "resource_configuration": {
                                                 "maxItemsOne": false,
                                                 "elem": {
@@ -62373,6 +62670,9 @@
                                                             "elem": {
                                                                 "fields": {
                                                                     "job_shape_config_details": {
+                                                                        "maxItemsOne": false
+                                                                    },
+                                                                    "network_configuration": {
                                                                         "maxItemsOne": false
                                                                     },
                                                                     "resource_configuration": {
@@ -62826,6 +63126,9 @@
                                                     }
                                                 }
                                             },
+                                            "network_configuration": {
+                                                "maxItemsOne": false
+                                            },
                                             "scaling_policy": {
                                                 "maxItemsOne": false,
                                                 "elem": {
@@ -63048,6 +63351,9 @@
                                                                     }
                                                                 }
                                                             }
+                                                        },
+                                                        "network_configuration": {
+                                                            "maxItemsOne": false
                                                         },
                                                         "scaling_policy": {
                                                             "maxItemsOne": false,

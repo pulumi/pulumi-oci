@@ -67,9 +67,10 @@ import (
 //					LogGroupId:            pulumi.Any(testLogGroup.Id),
 //					LogId:                 pulumi.Any(testLog.Id),
 //				},
-//				OpcParentRptUrl:    pulumi.Any(pipelineRunOpcParentRptUrl),
-//				ParametersOverride: pulumi.Any(pipelineRunParametersOverride),
-//				ProjectId:          pulumi.Any(testProject.Id),
+//				OpcParentRptUrl:                          pulumi.Any(pipelineRunOpcParentRptUrl),
+//				ParametersOverride:                       pulumi.Any(pipelineRunParametersOverride),
+//				PipelineRunRetentionPeriodInDaysOverride: pulumi.Any(pipelineRunPipelineRunRetentionPeriodInDaysOverride),
+//				ProjectId:                                pulumi.Any(testProject.Id),
 //				StepOverrideDetails: datascience.PipelineRunStepOverrideDetailArray{
 //					&datascience.PipelineRunStepOverrideDetailArgs{
 //						StepConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs{
@@ -196,6 +197,8 @@ type PipelineRun struct {
 	ParametersOverride pulumi.StringMapOutput `pulumi:"parametersOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId pulumi.StringOutput `pulumi:"pipelineId"`
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride pulumi.IntOutput `pulumi:"pipelineRunRetentionPeriodInDaysOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the step run.
@@ -289,6 +292,8 @@ type pipelineRunState struct {
 	ParametersOverride map[string]string `pulumi:"parametersOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId *string `pulumi:"pipelineId"`
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride *int `pulumi:"pipelineRunRetentionPeriodInDaysOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId *string `pulumi:"projectId"`
 	// The state of the step run.
@@ -344,6 +349,8 @@ type PipelineRunState struct {
 	ParametersOverride pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId pulumi.StringPtrInput
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId pulumi.StringPtrInput
 	// The state of the step run.
@@ -401,6 +408,8 @@ type pipelineRunArgs struct {
 	ParametersOverride map[string]string `pulumi:"parametersOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId string `pulumi:"pipelineId"`
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride *int `pulumi:"pipelineRunRetentionPeriodInDaysOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId string `pulumi:"projectId"`
 	// Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -437,6 +446,8 @@ type PipelineRunArgs struct {
 	ParametersOverride pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId pulumi.StringInput
+	// Retention period in days for pipeline run.
+	PipelineRunRetentionPeriodInDaysOverride pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId pulumi.StringInput
 	// Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -615,6 +626,11 @@ func (o PipelineRunOutput) ParametersOverride() pulumi.StringMapOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 func (o PipelineRunOutput) PipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.PipelineId }).(pulumi.StringOutput)
+}
+
+// Retention period in days for pipeline run.
+func (o PipelineRunOutput) PipelineRunRetentionPeriodInDaysOverride() pulumi.IntOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.IntOutput { return v.PipelineRunRetentionPeriodInDaysOverride }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// job network type
+        /// The job network type. Valid values are `CUSTOM_NETWORK` and `DEFAULT_NETWORK`.
         /// </summary>
         [Input("jobNetworkType", required: true)]
         public Input<string> JobNetworkType { get; set; } = null!;

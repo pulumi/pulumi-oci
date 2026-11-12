@@ -31,9 +31,13 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int? MaximumBandwidthMbps;
         /// <summary>
-        /// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+        /// Resource configuration details for model deploy on managed compute cluster type compute target.
         /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration? ModelDeploymentResourceConfiguration;
+        /// <summary>
+        /// The network configuration details for model deploy on managed compute cluster type compute target.
+        /// </summary>
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration? NetworkConfiguration;
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.
         /// </summary>
@@ -53,6 +57,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration? modelDeploymentResourceConfiguration,
 
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfiguration? networkConfiguration,
+
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy? scalingPolicy)
         {
             BandwidthMbps = bandwidthMbps;
@@ -61,6 +67,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             InstanceConfiguration = instanceConfiguration;
             MaximumBandwidthMbps = maximumBandwidthMbps;
             ModelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
+            NetworkConfiguration = networkConfiguration;
             ScalingPolicy = scalingPolicy;
         }
     }

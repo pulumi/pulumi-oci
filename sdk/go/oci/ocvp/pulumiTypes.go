@@ -5080,8 +5080,6 @@ type GetClustersClusterCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment string `pulumi:"initialCommitment"`
-	// The initial fault domain host distribution mode for the Cluster.
-	InitialFaultDomainHostDistribution string `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -5157,8 +5155,6 @@ type GetClustersClusterCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
-	// The initial fault domain host distribution mode for the Cluster.
-	InitialFaultDomainHostDistribution pulumi.StringInput `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -5323,11 +5319,6 @@ func (o GetClustersClusterCollectionItemOutput) Id() pulumi.StringOutput {
 // The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o GetClustersClusterCollectionItemOutput) InitialCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialCommitment }).(pulumi.StringOutput)
-}
-
-// The initial fault domain host distribution mode for the Cluster.
-func (o GetClustersClusterCollectionItemOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialFaultDomainHostDistribution }).(pulumi.StringOutput)
 }
 
 // The initial OCPU count of the Cluster's ESXi hosts.

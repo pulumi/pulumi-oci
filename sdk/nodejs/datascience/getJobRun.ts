@@ -98,9 +98,17 @@ export interface GetJobRunResult {
     readonly jobNodeConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobNodeConfigurationOverrideDetail[];
     readonly jobRunId: string;
     /**
+     * Retention period in days for job run.
+     */
+    readonly jobRunRetentionPeriodInDaysOverride: number;
+    /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     readonly jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobRunJobStorageMountConfigurationDetailsList[];
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    readonly jobStorageMountConfigurationOverrideDetailsLists: outputs.DataScience.GetJobRunJobStorageMountConfigurationOverrideDetailsList[];
     /**
      * The state details of the node group.
      */

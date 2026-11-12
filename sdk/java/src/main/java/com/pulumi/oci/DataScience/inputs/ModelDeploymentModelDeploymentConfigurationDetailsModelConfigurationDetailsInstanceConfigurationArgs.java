@@ -17,9 +17,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
     public static final ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs Empty = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs();
 
+    /**
+     * (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+     * 
+     */
     @Import(name="capacityReservationIds")
     private @Nullable Output<List<String>> capacityReservationIds;
 
+    /**
+     * @return (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+     * 
+     */
     public Optional<Output<List<String>>> capacityReservationIds() {
         return Optional.ofNullable(this.capacityReservationIds);
     }
@@ -128,15 +136,33 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
             $ = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param capacityReservationIds (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacityReservationIds(@Nullable Output<List<String>> capacityReservationIds) {
             $.capacityReservationIds = capacityReservationIds;
             return this;
         }
 
+        /**
+         * @param capacityReservationIds (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacityReservationIds(List<String> capacityReservationIds) {
             return capacityReservationIds(Output.of(capacityReservationIds));
         }
 
+        /**
+         * @param capacityReservationIds (Updatable) This specifies the list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed capacity reservation to be used for launching model deployment instances. Capacity reservations are supported only for GPU shapes and are subject to service access restrictions. Specify at most one reservation OCID.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacityReservationIds(String... capacityReservationIds) {
             return capacityReservationIds(List.of(capacityReservationIds));
         }

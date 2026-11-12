@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -88,18 +89,33 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     }
 
     /**
-     * (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * Resource configuration details for model deploy on managed compute cluster type compute target.
      * 
      */
     @Import(name="modelDeploymentResourceConfiguration")
     private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs> modelDeploymentResourceConfiguration;
 
     /**
-     * @return (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * @return Resource configuration details for model deploy on managed compute cluster type compute target.
      * 
      */
     public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs>> modelDeploymentResourceConfiguration() {
         return Optional.ofNullable(this.modelDeploymentResourceConfiguration);
+    }
+
+    /**
+     * The network configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
+    @Import(name="networkConfiguration")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs> networkConfiguration;
+
+    /**
+     * @return The network configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs>> networkConfiguration() {
+        return Optional.ofNullable(this.networkConfiguration);
     }
 
     /**
@@ -126,6 +142,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         this.instanceConfiguration = $.instanceConfiguration;
         this.maximumBandwidthMbps = $.maximumBandwidthMbps;
         this.modelDeploymentResourceConfiguration = $.modelDeploymentResourceConfiguration;
+        this.networkConfiguration = $.networkConfiguration;
         this.scalingPolicy = $.scalingPolicy;
     }
 
@@ -241,7 +258,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         }
 
         /**
-         * @param modelDeploymentResourceConfiguration (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         * @param modelDeploymentResourceConfiguration Resource configuration details for model deploy on managed compute cluster type compute target.
          * 
          * @return builder
          * 
@@ -252,13 +269,34 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         }
 
         /**
-         * @param modelDeploymentResourceConfiguration (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         * @param modelDeploymentResourceConfiguration Resource configuration details for model deploy on managed compute cluster type compute target.
          * 
          * @return builder
          * 
          */
         public Builder modelDeploymentResourceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs modelDeploymentResourceConfiguration) {
             return modelDeploymentResourceConfiguration(Output.of(modelDeploymentResourceConfiguration));
+        }
+
+        /**
+         * @param networkConfiguration The network configuration details for model deploy on managed compute cluster type compute target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs> networkConfiguration) {
+            $.networkConfiguration = networkConfiguration;
+            return this;
+        }
+
+        /**
+         * @param networkConfiguration The network configuration details for model deploy on managed compute cluster type compute target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs networkConfiguration) {
+            return networkConfiguration(Output.of(networkConfiguration));
         }
 
         /**

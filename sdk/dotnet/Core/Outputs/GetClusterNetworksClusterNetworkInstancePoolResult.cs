@@ -48,6 +48,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult> LoadBalancers;
         /// <summary>
+        /// Optional pool-level launch override policy for future instance launches.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyResult> OverridePolicies;
+        /// <summary>
         /// The placement configurations for the instance pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult> PlacementConfigurations;
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult> loadBalancers,
 
+            ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolOverridePolicyResult> overridePolicies,
+
             ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult> placementConfigurations,
 
             string poolType,
@@ -110,6 +116,7 @@ namespace Pulumi.Oci.Core.Outputs
             InstanceDisplayNameFormatter = instanceDisplayNameFormatter;
             InstanceHostnameFormatter = instanceHostnameFormatter;
             LoadBalancers = loadBalancers;
+            OverridePolicies = overridePolicies;
             PlacementConfigurations = placementConfigurations;
             PoolType = poolType;
             Size = size;

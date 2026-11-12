@@ -14,26 +14,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
     /**
-     * @return (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+     * @return Resource limit configuration details for workload on managed compute cluster type compute target
      * 
      */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration resourceLimitConfiguration;
     /**
-     * @return (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     * @return Resource request configuration to run workload on managed compute cluster type compute target compute target.
      * 
      */
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration resourceRequestConfiguration;
 
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration() {}
     /**
-     * @return (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+     * @return Resource limit configuration details for workload on managed compute cluster type compute target
      * 
      */
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration> resourceLimitConfiguration() {
         return Optional.ofNullable(this.resourceLimitConfiguration);
     }
     /**
-     * @return (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     * @return Resource request configuration to run workload on managed compute cluster type compute target compute target.
      * 
      */
     public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration resourceRequestConfiguration() {

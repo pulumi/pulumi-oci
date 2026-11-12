@@ -40,10 +40,16 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? MaximumBandwidthMbps { get; set; }
 
         /// <summary>
-        /// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+        /// Resource configuration details for model deploy on managed compute cluster type compute target.
         /// </summary>
         [Input("modelDeploymentResourceConfiguration")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs>? ModelDeploymentResourceConfiguration { get; set; }
+
+        /// <summary>
+        /// The network configuration details for model deploy on managed compute cluster type compute target.
+        /// </summary>
+        [Input("networkConfiguration")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsNetworkConfigurationArgs>? NetworkConfiguration { get; set; }
 
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.

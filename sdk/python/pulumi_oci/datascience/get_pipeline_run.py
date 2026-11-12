@@ -27,7 +27,7 @@ class GetPipelineRunResult:
     """
     A collection of values returned by getPipelineRun.
     """
-    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_override_details=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, opc_parent_rpt_url=None, parameters_override=None, pipeline_id=None, pipeline_run_id=None, project_id=None, state=None, step_override_details=None, step_runs=None, storage_mount_configuration_override_details_lists=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_override_details=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, opc_parent_rpt_url=None, parameters_override=None, pipeline_id=None, pipeline_run_id=None, pipeline_run_retention_period_in_days_override=None, project_id=None, state=None, step_override_details=None, step_runs=None, storage_mount_configuration_override_details_lists=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -79,6 +79,9 @@ class GetPipelineRunResult:
         if pipeline_run_id and not isinstance(pipeline_run_id, str):
             raise TypeError("Expected argument 'pipeline_run_id' to be a str")
         pulumi.set(__self__, "pipeline_run_id", pipeline_run_id)
+        if pipeline_run_retention_period_in_days_override and not isinstance(pipeline_run_retention_period_in_days_override, int):
+            raise TypeError("Expected argument 'pipeline_run_retention_period_in_days_override' to be a int")
+        pulumi.set(__self__, "pipeline_run_retention_period_in_days_override", pipeline_run_retention_period_in_days_override)
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
@@ -241,6 +244,14 @@ class GetPipelineRunResult:
         return pulumi.get(self, "pipeline_run_id")
 
     @_builtins.property
+    @pulumi.getter(name="pipelineRunRetentionPeriodInDaysOverride")
+    def pipeline_run_retention_period_in_days_override(self) -> _builtins.int:
+        """
+        Retention period in days for pipeline run.
+        """
+        return pulumi.get(self, "pipeline_run_retention_period_in_days_override")
+
+    @_builtins.property
     @pulumi.getter(name="projectId")
     def project_id(self) -> _builtins.str:
         """
@@ -344,6 +355,7 @@ class AwaitableGetPipelineRunResult(GetPipelineRunResult):
             parameters_override=self.parameters_override,
             pipeline_id=self.pipeline_id,
             pipeline_run_id=self.pipeline_run_id,
+            pipeline_run_retention_period_in_days_override=self.pipeline_run_retention_period_in_days_override,
             project_id=self.project_id,
             state=self.state,
             step_override_details=self.step_override_details,
@@ -398,6 +410,7 @@ def get_pipeline_run(pipeline_run_id: Optional[_builtins.str] = None,
         parameters_override=pulumi.get(__ret__, 'parameters_override'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_run_id=pulumi.get(__ret__, 'pipeline_run_id'),
+        pipeline_run_retention_period_in_days_override=pulumi.get(__ret__, 'pipeline_run_retention_period_in_days_override'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         step_override_details=pulumi.get(__ret__, 'step_override_details'),
@@ -449,6 +462,7 @@ def get_pipeline_run_output(pipeline_run_id: pulumi.Input[Optional[_builtins.str
         parameters_override=pulumi.get(__response__, 'parameters_override'),
         pipeline_id=pulumi.get(__response__, 'pipeline_id'),
         pipeline_run_id=pulumi.get(__response__, 'pipeline_run_id'),
+        pipeline_run_retention_period_in_days_override=pulumi.get(__response__, 'pipeline_run_retention_period_in_days_override'),
         project_id=pulumi.get(__response__, 'project_id'),
         state=pulumi.get(__response__, 'state'),
         step_override_details=pulumi.get(__response__, 'step_override_details'),

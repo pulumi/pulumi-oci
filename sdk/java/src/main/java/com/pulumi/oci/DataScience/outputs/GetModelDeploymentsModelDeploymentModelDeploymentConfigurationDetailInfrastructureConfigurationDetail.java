@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy;
 import java.lang.Integer;
 import java.lang.String;
@@ -36,7 +37,16 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * 
      */
     private Integer maximumBandwidthMbps;
+    /**
+     * @return Resource configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration> modelDeploymentResourceConfigurations;
+    /**
+     * @return The network configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations;
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
@@ -75,8 +85,19 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     public Integer maximumBandwidthMbps() {
         return this.maximumBandwidthMbps;
     }
+    /**
+     * @return Resource configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration> modelDeploymentResourceConfigurations() {
         return this.modelDeploymentResourceConfigurations;
+    }
+    /**
+     * @return The network configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations() {
+        return this.networkConfigurations;
     }
     /**
      * @return The scaling policy to apply to each model of the deployment.
@@ -101,6 +122,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration> instanceConfigurations;
         private Integer maximumBandwidthMbps;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration> modelDeploymentResourceConfigurations;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy> scalingPolicies;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail defaults) {
@@ -111,6 +133,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     	      this.instanceConfigurations = defaults.instanceConfigurations;
     	      this.maximumBandwidthMbps = defaults.maximumBandwidthMbps;
     	      this.modelDeploymentResourceConfigurations = defaults.modelDeploymentResourceConfigurations;
+    	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.scalingPolicies = defaults.scalingPolicies;
         }
 
@@ -169,6 +192,17 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             return modelDeploymentResourceConfigurations(List.of(modelDeploymentResourceConfigurations));
         }
         @CustomType.Setter
+        public Builder networkConfigurations(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration> networkConfigurations) {
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
+            return this;
+        }
+        public Builder networkConfigurations(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailNetworkConfiguration... networkConfigurations) {
+            return networkConfigurations(List.of(networkConfigurations));
+        }
+        @CustomType.Setter
         public Builder scalingPolicies(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy> scalingPolicies) {
             if (scalingPolicies == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail", "scalingPolicies");
@@ -187,6 +221,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             _resultValue.instanceConfigurations = instanceConfigurations;
             _resultValue.maximumBandwidthMbps = maximumBandwidthMbps;
             _resultValue.modelDeploymentResourceConfigurations = modelDeploymentResourceConfigurations;
+            _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.scalingPolicies = scalingPolicies;
             return _resultValue;
         }

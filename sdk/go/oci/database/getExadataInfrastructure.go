@@ -157,6 +157,8 @@ type LookupExadataInfrastructureResult struct {
 	RackSerialNumber string `pulumi:"rackSerialNumber"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape string `pulumi:"shape"`
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfigurations []GetExadataInfrastructureSslInspectionConfiguration `pulumi:"sslInspectionConfigurations"`
 	// The current lifecycle state of the Exadata infrastructure.
 	State string `pulumi:"state"`
 	// The number of Exadata storage servers for the Exadata infrastructure.
@@ -458,6 +460,13 @@ func (o LookupExadataInfrastructureResultOutput) RackSerialNumber() pulumi.Strin
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 func (o LookupExadataInfrastructureResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// SSL inspection configuration for the Exadata infrastructure.
+func (o LookupExadataInfrastructureResultOutput) SslInspectionConfigurations() GetExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) []GetExadataInfrastructureSslInspectionConfiguration {
+		return v.SslInspectionConfigurations
+	}).(GetExadataInfrastructureSslInspectionConfigurationArrayOutput)
 }
 
 // The current lifecycle state of the Exadata infrastructure.

@@ -69,6 +69,7 @@ public final class GetDatabaseSoftwareImageResult {
      * 
      */
     private String includedPatchesSummary;
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return True if this Database software image is supported for Upgrade.
      * 
@@ -187,6 +188,9 @@ public final class GetDatabaseSoftwareImageResult {
     public String includedPatchesSummary() {
         return this.includedPatchesSummary;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * @return True if this Database software image is supported for Upgrade.
      * 
@@ -261,6 +265,7 @@ public final class GetDatabaseSoftwareImageResult {
         private String imageShapeFamily;
         private String imageType;
         private String includedPatchesSummary;
+        private Boolean isOlderVersionAcknowledged;
         private Boolean isUpgradeSupported;
         private String lifecycleDetails;
         private String lsInventory;
@@ -284,6 +289,7 @@ public final class GetDatabaseSoftwareImageResult {
     	      this.imageShapeFamily = defaults.imageShapeFamily;
     	      this.imageType = defaults.imageType;
     	      this.includedPatchesSummary = defaults.includedPatchesSummary;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.isUpgradeSupported = defaults.isUpgradeSupported;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lsInventory = defaults.lsInventory;
@@ -397,6 +403,14 @@ public final class GetDatabaseSoftwareImageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
             if (isUpgradeSupported == null) {
               throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "isUpgradeSupported");
@@ -474,6 +488,7 @@ public final class GetDatabaseSoftwareImageResult {
             _resultValue.imageShapeFamily = imageShapeFamily;
             _resultValue.imageType = imageType;
             _resultValue.includedPatchesSummary = includedPatchesSummary;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.isUpgradeSupported = isUpgradeSupported;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lsInventory = lsInventory;

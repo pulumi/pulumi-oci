@@ -64,11 +64,6 @@ public final class GetDbHomesDbHomeDatabase {
      */
     private String lifecycleDetails;
     private String ncharacterSet;
-    /**
-     * @return List of one-off patches for Database Homes.
-     * 
-     */
-    private List<String> oneOffPatches;
     private String pdbName;
     private List<String> pluggableDatabases;
     private String recoveryApplianceVpcPassword;
@@ -182,13 +177,6 @@ public final class GetDbHomesDbHomeDatabase {
     public String ncharacterSet() {
         return this.ncharacterSet;
     }
-    /**
-     * @return List of one-off patches for Database Homes.
-     * 
-     */
-    public List<String> oneOffPatches() {
-        return this.oneOffPatches;
-    }
     public String pdbName() {
         return this.pdbName;
     }
@@ -264,7 +252,6 @@ public final class GetDbHomesDbHomeDatabase {
         private String kmsKeyVersionId;
         private String lifecycleDetails;
         private String ncharacterSet;
-        private List<String> oneOffPatches;
         private String pdbName;
         private List<String> pluggableDatabases;
         private String recoveryApplianceVpcPassword;
@@ -299,7 +286,6 @@ public final class GetDbHomesDbHomeDatabase {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
-    	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
@@ -483,17 +469,6 @@ public final class GetDbHomesDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
-        public Builder oneOffPatches(List<String> oneOffPatches) {
-            if (oneOffPatches == null) {
-              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "oneOffPatches");
-            }
-            this.oneOffPatches = oneOffPatches;
-            return this;
-        }
-        public Builder oneOffPatches(String... oneOffPatches) {
-            return oneOffPatches(List.of(oneOffPatches));
-        }
-        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             if (pdbName == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "pdbName");
@@ -609,7 +584,6 @@ public final class GetDbHomesDbHomeDatabase {
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.ncharacterSet = ncharacterSet;
-            _resultValue.oneOffPatches = oneOffPatches;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;

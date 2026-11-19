@@ -107211,6 +107211,10 @@ export namespace Database {
 
     export interface AutonomousDatabaseConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -107234,6 +107238,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -107264,6 +107272,10 @@ export namespace Database {
          * (Updatable) Compute used by database tools.
          */
         computeCount: number;
+        /**
+         * (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+         */
+        estimatedConcurrentSessions: number;
         /**
          * (Updatable) Indicates whether tool is enabled.
          */
@@ -107535,6 +107547,10 @@ export namespace Database {
 
     export interface AutonomousDatabasePublicConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -107558,6 +107574,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -107726,6 +107746,10 @@ export namespace Database {
 
     export interface AutonomousDatabaseVanityConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -107750,6 +107774,10 @@ export namespace Database {
          */
         machineLearningUserManagementUrl: string;
         /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
+        /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
         mongoDbUrl: string;
@@ -107757,6 +107785,10 @@ export namespace Database {
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
          */
         ordsUrl: string;
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         */
+        spatialStudioUrl: string;
         /**
          * Oracle SQL Developer Web URL.
          */
@@ -109089,6 +109121,10 @@ export namespace Database {
 
     export interface DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
         /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged: boolean;
+        /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
         majorVersion: string;
@@ -109319,6 +109355,10 @@ export namespace Database {
     }
 
     export interface DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+        /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged: boolean;
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
@@ -109601,10 +109641,14 @@ export namespace Database {
         databaseSoftwareImageId: string;
         /**
          * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         */
+        dbVersion: string;
+        /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
          *
          * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          */
-        dbVersion: string;
+        isOlderVersionAcknowledged: boolean;
         /**
          * Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
          */
@@ -109777,10 +109821,6 @@ export namespace Database {
          * The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
          */
         ncharacterSet: string;
-        /**
-         * List of one-off patches for Database Homes.
-         */
-        oneOffPatches: string[];
         /**
          * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
          */
@@ -110194,6 +110234,10 @@ export namespace Database {
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged: boolean;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          */
@@ -110947,6 +110991,17 @@ export namespace Database {
          * (Updatable) The network bonding mode for the Exadata infrastructure.
          */
         drNetworkBondingMode: string;
+    }
+
+    export interface ExadataInfrastructureSslInspectionConfiguration {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+         */
+        certificateAuthorityId: string;
+        /**
+         * Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+         */
+        isEnabled: boolean;
     }
 
     export interface ExadataInfrastructureStorageContact {
@@ -113651,6 +113706,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabaseConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -113674,6 +113733,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -113777,6 +113840,10 @@ export namespace Database {
          * Compute used by database tools.
          */
         computeCount: number;
+        /**
+         * Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+         */
+        estimatedConcurrentSessions: number;
         /**
          * Indicates whether tool is enabled.
          */
@@ -114072,6 +114139,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabasePublicConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -114095,6 +114166,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -114367,6 +114442,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabaseVanityConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -114391,6 +114470,10 @@ export namespace Database {
          */
         machineLearningUserManagementUrl: string;
         /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
+        /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
         mongoDbUrl: string;
@@ -114398,6 +114481,10 @@ export namespace Database {
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
          */
         ordsUrl: string;
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         */
+        spatialStudioUrl: string;
         /**
          * Oracle SQL Developer Web URL.
          */
@@ -115165,6 +115252,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -115188,6 +115279,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -115218,6 +115313,10 @@ export namespace Database {
          * Compute used by database tools.
          */
         computeCount: number;
+        /**
+         * Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+         */
+        estimatedConcurrentSessions: number;
         /**
          * Indicates whether tool is enabled.
          */
@@ -115489,6 +115588,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -115512,6 +115615,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -115677,6 +115784,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -115701,6 +115812,10 @@ export namespace Database {
          */
         machineLearningUserManagementUrl: string;
         /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
+        /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
         mongoDbUrl: string;
@@ -115708,6 +115823,10 @@ export namespace Database {
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
          */
         ordsUrl: string;
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         */
+        spatialStudioUrl: string;
         /**
          * Oracle SQL Developer Web URL.
          */
@@ -116427,6 +116546,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -116450,6 +116573,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -116480,6 +116607,10 @@ export namespace Database {
          * Compute used by database tools.
          */
         computeCount: number;
+        /**
+         * Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+         */
+        estimatedConcurrentSessions: number;
         /**
          * Indicates whether tool is enabled.
          */
@@ -116751,6 +116882,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -116774,6 +116909,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -116932,6 +117071,10 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl: string;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl: string;
@@ -116955,6 +117098,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl: string;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl: string;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -119807,6 +119954,7 @@ export namespace Database {
          * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
          */
         isLocalBackupEnabled: boolean;
+        isOlderVersionAcknowledged: boolean;
         /**
          * If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
          */
@@ -120147,6 +120295,7 @@ export namespace Database {
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        isOlderVersionAcknowledged: boolean;
         licenseModel: string;
         /**
          * Additional information about the current lifecycleState, if available.
@@ -120639,6 +120788,7 @@ export namespace Database {
     }
 
     export interface GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+        isOlderVersionAcknowledged: boolean;
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
@@ -121741,6 +121891,7 @@ export namespace Database {
     }
 
     export interface GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+        isOlderVersionAcknowledged: boolean;
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
@@ -121918,6 +122069,7 @@ export namespace Database {
          * The patches included in the image and the version of the image.
          */
         includedPatchesSummary: string;
+        isOlderVersionAcknowledged: boolean;
         /**
          * If provided, filters the results to the set of database versions which are supported for Upgrade.
          */
@@ -122597,6 +122749,7 @@ export namespace Database {
     }
 
     export interface GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+        isOlderVersionAcknowledged: boolean;
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
@@ -122822,6 +122975,7 @@ export namespace Database {
     }
 
     export interface GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+        isOlderVersionAcknowledged: boolean;
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
@@ -122971,10 +123125,6 @@ export namespace Database {
          */
         lifecycleDetails: string;
         ncharacterSet: string;
-        /**
-         * List of one-off patches for Database Homes.
-         */
-        oneOffPatches: string[];
         pdbName: string;
         pluggableDatabases: string[];
         recoveryApplianceVpcPassword: string;
@@ -123177,6 +123327,7 @@ export namespace Database {
          */
         id: string;
         isDesupportedVersion: boolean;
+        isOlderVersionAcknowledged: boolean;
         /**
          * Indicates whether unified autiding is enabled or not.
          */
@@ -123194,6 +123345,10 @@ export namespace Database {
          * Additional information about the current lifecycle state.
          */
         lifecycleDetails: string;
+        /**
+         * List of one-off patches for Database Homes.
+         */
+        oneOffPatches: string[];
         source: string;
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
@@ -123255,10 +123410,6 @@ export namespace Database {
          */
         lifecycleDetails: string;
         ncharacterSet: string;
-        /**
-         * List of one-off patches for Database Homes.
-         */
-        oneOffPatches: string[];
         pdbName: string;
         pluggableDatabases: string[];
         recoveryApplianceVpcPassword: string;
@@ -124346,6 +124497,7 @@ export namespace Database {
          */
         id: string;
         iormConfigCaches: outputs.Database.GetDbSystemsDbSystemIormConfigCache[];
+        isOlderVersionAcknowledged: boolean;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -124583,6 +124735,7 @@ export namespace Database {
          */
         id: string;
         isActiveDataGuardEnabled: boolean;
+        isOlderVersionAcknowledged: boolean;
         keyStoreId: string;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -125026,6 +125179,17 @@ export namespace Database {
         drNetworkBondingMode: string;
     }
 
+    export interface GetExadataInfrastructureSslInspectionConfiguration {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+         */
+        certificateAuthorityId: string;
+        /**
+         * Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+         */
+        isEnabled: boolean;
+    }
+
     export interface GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -125229,6 +125393,10 @@ export namespace Database {
          */
         shape: string;
         /**
+         * SSL inspection configuration for the Exadata infrastructure.
+         */
+        sslInspectionConfigurations: outputs.Database.GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration[];
+        /**
          * A filter to return only resources that match the given lifecycle state exactly.
          */
         state: string;
@@ -125402,6 +125570,17 @@ export namespace Database {
          * The network bonding mode for the Exadata infrastructure.
          */
         drNetworkBondingMode: string;
+    }
+
+    export interface GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+         */
+        certificateAuthorityId: string;
+        /**
+         * Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+         */
+        isEnabled: boolean;
     }
 
     export interface GetExadataInfrastructuresFilter {
@@ -125694,6 +125873,7 @@ export namespace Database {
          * The IORM settings of the Exadata DB system.
          */
         iormConfigCaches: outputs.Database.GetExadbVmClustersExadbVmClusterIormConfigCache[];
+        isOlderVersionAcknowledged: boolean;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
          */
@@ -129056,6 +129236,7 @@ export namespace Database {
          * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
          */
         isLocalBackupEnabled: boolean;
+        isOlderVersionAcknowledged: boolean;
         /**
          * If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
          */
@@ -180742,6 +180923,10 @@ export namespace Functions {
          */
         actionType: string;
         /**
+         * Name of SaaS Application being migrated.
+         */
+        applicationType: string;
+        /**
          * Patch that delivered the Vertex update prerequisite.
          */
         artifact: string;
@@ -180765,6 +180950,18 @@ export namespace Functions {
          * Unique identifier of the object that represents the action.
          */
         referenceKey: string;
+        /**
+         * Source environment id derived from appman instance id
+         */
+        sourceEnvironmentId: string;
+        /**
+         * Source environment name derived from source pod name
+         */
+        sourceEnvironmentName: string;
+        /**
+         * Source environment url derived from source url
+         */
+        sourceEnvironmentUrl: string;
         /**
          * A filter that returns all resources that match the specified status
          */
@@ -180781,6 +180978,10 @@ export namespace Functions {
          */
         actionType: string;
         /**
+         * Name of SaaS Application being migrated.
+         */
+        applicationType: string;
+        /**
          * Patch that delivered the Vertex update prerequisite.
          */
         artifact: string;
@@ -180804,6 +181005,18 @@ export namespace Functions {
          * Unique identifier of the object that represents the action.
          */
         referenceKey: string;
+        /**
+         * Source environment id derived from appman instance id
+         */
+        sourceEnvironmentId: string;
+        /**
+         * Source environment name derived from source pod name
+         */
+        sourceEnvironmentName: string;
+        /**
+         * Source environment url derived from source url
+         */
+        sourceEnvironmentUrl: string;
         /**
          * The current state of the scheduledActivity.
          */
@@ -180918,7 +181131,7 @@ export namespace Functions {
 
     export interface GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         /**
-         * Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+         * Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
          */
         additionalEgressRules: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule[];
         /**
@@ -256704,9 +256917,37 @@ export namespace LoadBalancer {
 
     export interface BackendSetHealthChecker {
         /**
+         * (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+         *
+         * This value must be an integer from `1` through `100`.
+         *
+         * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+         *
+         * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+         *
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         *
+         * Example: `1`
+         */
+        defaultWeight: number;
+        /**
          * (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
          */
         intervalMs?: number;
+        /**
+         * (Updatable) You can enable dynamic backend weights for HTTP health checks.
+         *
+         * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+         *
+         * A valid header value is an integer from `0` through `100`.
+         *
+         * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+         *
+         * If omitted during create, the default is `false`.
+         *
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         */
+        isDynamicBackendWeightEnabled: boolean;
         /**
          * (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
          *
@@ -256983,9 +257224,17 @@ export namespace LoadBalancer {
 
     export interface GetBackendSetsBackendsetHealthChecker {
         /**
+         * The fallback backend weight used when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+         */
+        defaultWeight: number;
+        /**
          * The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
          */
         intervalMs: number;
+        /**
+         * Indicates whether dynamic backend weights are enabled for HTTP health checks.
+         */
+        isDynamicBackendWeightEnabled: boolean;
         /**
          * Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
          */
@@ -257460,7 +257709,7 @@ export namespace LoadBalancer {
          */
         freeformTags: {[key: string]: string};
         /**
-         * Ocid of the Reserved IP/Public Ip created with VCN.
+         * Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
          */
         id: string;
         /**
@@ -257540,14 +257789,14 @@ export namespace LoadBalancer {
 
     export interface GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
         /**
-         * Ocid of the Reserved IP/Public Ip created with VCN.
+         * Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
          */
         id: string;
     }
 
     export interface GetLoadBalancersLoadBalancerReservedIp {
         /**
-         * Ocid of the Reserved IP/Public Ip created with VCN.
+         * Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
          */
         id: string;
     }
@@ -258069,22 +258318,25 @@ export namespace LoadBalancer {
 
     export interface LoadBalancerIpAddressDetailReservedIp {
         /**
-         * Ocid of the Reserved IP/Public Ip created with VCN.
+         * Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
          */
         id: string;
     }
 
     export interface LoadBalancerReservedIp {
         /**
-         * (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+         * (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
          *
          * Reserved IPs are IPs which already registered using VCN API.
          *
-         * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+         * For public load balancers, create a reserved Public IP and pass the OCID in this field.
+         * For private load balancers, create a reserved Private IP and pass the OCID in this field.
+         * Load balancer will be configured to listen to traffic on this IP.
          *
          * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
          *
-         * Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
          *
          * IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
          */
@@ -263033,6 +263285,48 @@ export namespace Lustre {
         squashUid: string;
     }
 
+    export interface FileStorageLustreFileSystemTieringConfiguration {
+        /**
+         * (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+         */
+        isEnabled: boolean;
+        /**
+         * (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+         */
+        policyMode: string;
+        /**
+         * Service-computed number of custom tiering policy rules.
+         */
+        ruleCount: number;
+        /**
+         * (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+         */
+        rules: outputs.Lustre.FileStorageLustreFileSystemTieringConfigurationRule[];
+    }
+
+    export interface FileStorageLustreFileSystemTieringConfigurationRule {
+        /**
+         * (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+         */
+        action: string;
+        /**
+         * (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+         */
+        archiveAfterDaysSinceLastAccess: number;
+        /**
+         * (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+         */
+        minSizeInBytes: string;
+        /**
+         * (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+         */
+        pathPrefixes: string[];
+        /**
+         * (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+         */
+        releaseAfterDaysSinceLastAccess: number;
+    }
+
     export interface GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection {
         /**
          * List of available start times on every day of the week
@@ -263159,6 +263453,48 @@ export namespace Lustre {
         squashUid: string;
     }
 
+    export interface GetFileStorageLustreFileSystemTieringConfiguration {
+        /**
+         * Whether tiering is enabled for the Lustre file system.
+         */
+        isEnabled: boolean;
+        /**
+         * Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+         */
+        policyMode: string;
+        /**
+         * Service-computed number of custom tiering policy rules.
+         */
+        ruleCount: number;
+        /**
+         * Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+         */
+        rules: outputs.Lustre.GetFileStorageLustreFileSystemTieringConfigurationRule[];
+    }
+
+    export interface GetFileStorageLustreFileSystemTieringConfigurationRule {
+        /**
+         * The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+         */
+        action: string;
+        /**
+         * Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+         */
+        archiveAfterDaysSinceLastAccess: number;
+        /**
+         * Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+         */
+        minSizeInBytes: string;
+        /**
+         * One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+         */
+        pathPrefixes: string[];
+        /**
+         * Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+         */
+        releaseAfterDaysSinceLastAccess: number;
+    }
+
     export interface GetFileStorageLustreFileSystemsFilter {
         name: string;
         regex?: boolean;
@@ -263265,6 +263601,10 @@ export namespace Lustre {
          */
         systemTags: {[key: string]: string};
         /**
+         * Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+         */
+        tieringConfigurations: outputs.Lustre.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration[];
+        /**
          * The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
          */
         timeBillingCycleEnd: string;
@@ -263354,6 +263694,48 @@ export namespace Lustre {
          * The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
          */
         squashUid: string;
+    }
+
+    export interface GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration {
+        /**
+         * Whether tiering is enabled for the Lustre file system.
+         */
+        isEnabled: boolean;
+        /**
+         * Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+         */
+        policyMode: string;
+        /**
+         * Service-computed number of custom tiering policy rules.
+         */
+        ruleCount: number;
+        /**
+         * Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+         */
+        rules: outputs.Lustre.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule[];
+    }
+
+    export interface GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule {
+        /**
+         * The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+         */
+        action: string;
+        /**
+         * Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+         */
+        archiveAfterDaysSinceLastAccess: number;
+        /**
+         * Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+         */
+        minSizeInBytes: string;
+        /**
+         * One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+         */
+        pathPrefixes: string[];
+        /**
+         * Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+         */
+        releaseAfterDaysSinceLastAccess: number;
     }
 
     export interface GetFileStorageObjectStorageLinkSyncJobsFilter {
@@ -279960,7 +280342,7 @@ export namespace Ocvp {
          */
         clusterId: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
          */
         compartmentId: string;
         /**
@@ -280045,7 +280427,7 @@ export namespace Ocvp {
          */
         clusterId: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
          */
         compartmentId: string;
         /**

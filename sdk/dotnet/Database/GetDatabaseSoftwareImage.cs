@@ -168,6 +168,7 @@ namespace Pulumi.Oci.Database
         /// The patches included in the image and the version of the image.
         /// </summary>
         public readonly string IncludedPatchesSummary;
+        public readonly bool IsOlderVersionAcknowledged;
         /// <summary>
         /// True if this Database software image is supported for Upgrade.
         /// </summary>
@@ -224,6 +225,8 @@ namespace Pulumi.Oci.Database
 
             string includedPatchesSummary,
 
+            bool isOlderVersionAcknowledged,
+
             bool isUpgradeSupported,
 
             string lifecycleDetails,
@@ -252,6 +255,7 @@ namespace Pulumi.Oci.Database
             ImageShapeFamily = imageShapeFamily;
             ImageType = imageType;
             IncludedPatchesSummary = includedPatchesSummary;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             IsUpgradeSupported = isUpgradeSupported;
             LifecycleDetails = lifecycleDetails;
             LsInventory = lsInventory;

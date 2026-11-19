@@ -149,6 +149,8 @@ type VmCluster struct {
 	GiVersion pulumi.StringOutput `pulumi:"giVersion"`
 	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
+	// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolOutput `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolOutput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -291,6 +293,8 @@ type vmClusterState struct {
 	GiVersion *string `pulumi:"giVersion"`
 	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
+	// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -383,6 +387,8 @@ type VmClusterState struct {
 	GiVersion pulumi.StringPtrInput
 	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
+	// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -479,6 +485,8 @@ type vmClusterArgs struct {
 	GiVersion string `pulumi:"giVersion"`
 	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
+	// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -547,6 +555,8 @@ type VmClusterArgs struct {
 	GiVersion pulumi.StringInput
 	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
+	// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -766,6 +776,11 @@ func (o VmClusterOutput) GiVersion() pulumi.StringOutput {
 // (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 func (o VmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.BoolOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+}
+
+// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o VmClusterOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.BoolOutput { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.

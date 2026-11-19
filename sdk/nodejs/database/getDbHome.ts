@@ -87,6 +87,7 @@ export interface GetDbHomeResult {
      */
     readonly id: string;
     readonly isDesupportedVersion: boolean;
+    readonly isOlderVersionAcknowledged: boolean;
     /**
      * Indicates whether unified autiding is enabled or not.
      */
@@ -104,6 +105,10 @@ export interface GetDbHomeResult {
      * Additional information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * List of one-off patches for Database Homes.
+     */
+    readonly oneOffPatches: string[];
     readonly source: string;
     /**
      * The current state of the Database Home.

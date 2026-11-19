@@ -111,7 +111,8 @@ type LookupCloudVmClusterResult struct {
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []GetCloudVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       bool `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
 	IsSparseDiskgroupEnabled bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -367,6 +368,10 @@ func (o LookupCloudVmClusterResultOutput) IormConfigCaches() GetCloudVmClusterIo
 // If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 func (o LookupCloudVmClusterResultOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) bool { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+}
+
+func (o LookupCloudVmClusterResultOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.

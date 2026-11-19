@@ -10354,6 +10354,8 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAr
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction struct {
 	// Type of action.
 	ActionType string `pulumi:"actionType"`
+	// Name of SaaS Application being migrated.
+	ApplicationType string `pulumi:"applicationType"`
 	// Patch that delivered the Vertex update prerequisite.
 	Artifact string `pulumi:"artifact"`
 	// Patch artifact category.
@@ -10366,6 +10368,12 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActio
 	Qualifier string `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action.
 	ReferenceKey string `pulumi:"referenceKey"`
+	// Source environment id derived from appman instance id
+	SourceEnvironmentId string `pulumi:"sourceEnvironmentId"`
+	// Source environment name derived from source pod name
+	SourceEnvironmentName string `pulumi:"sourceEnvironmentName"`
+	// Source environment url derived from source url
+	SourceEnvironmentUrl string `pulumi:"sourceEnvironmentUrl"`
 	// A filter that returns all resources that match the specified status
 	State string `pulumi:"state"`
 	// Name of the repo.
@@ -10386,6 +10394,8 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActio
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs struct {
 	// Type of action.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// Name of SaaS Application being migrated.
+	ApplicationType pulumi.StringInput `pulumi:"applicationType"`
 	// Patch that delivered the Vertex update prerequisite.
 	Artifact pulumi.StringInput `pulumi:"artifact"`
 	// Patch artifact category.
@@ -10398,6 +10408,12 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActio
 	Qualifier pulumi.StringInput `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action.
 	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
+	// Source environment id derived from appman instance id
+	SourceEnvironmentId pulumi.StringInput `pulumi:"sourceEnvironmentId"`
+	// Source environment name derived from source pod name
+	SourceEnvironmentName pulumi.StringInput `pulumi:"sourceEnvironmentName"`
+	// Source environment url derived from source url
+	SourceEnvironmentUrl pulumi.StringInput `pulumi:"sourceEnvironmentUrl"`
 	// A filter that returns all resources that match the specified status
 	State pulumi.StringInput `pulumi:"state"`
 	// Name of the repo.
@@ -10462,6 +10478,13 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	}).(pulumi.StringOutput)
 }
 
+// Name of SaaS Application being migrated.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ApplicationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.ApplicationType
+	}).(pulumi.StringOutput)
+}
+
 // Patch that delivered the Vertex update prerequisite.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Artifact() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
@@ -10504,6 +10527,27 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	}).(pulumi.StringOutput)
 }
 
+// Source environment id derived from appman instance id
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) SourceEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.SourceEnvironmentId
+	}).(pulumi.StringOutput)
+}
+
+// Source environment name derived from source pod name
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) SourceEnvironmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.SourceEnvironmentName
+	}).(pulumi.StringOutput)
+}
+
+// Source environment url derived from source url
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) SourceEnvironmentUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.SourceEnvironmentUrl
+	}).(pulumi.StringOutput)
+}
+
 // A filter that returns all resources that match the specified status
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
@@ -10541,6 +10585,8 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 type GetFusionEnvironmentScheduledActivityAction struct {
 	// Type of action.
 	ActionType string `pulumi:"actionType"`
+	// Name of SaaS Application being migrated.
+	ApplicationType string `pulumi:"applicationType"`
 	// Patch that delivered the Vertex update prerequisite.
 	Artifact string `pulumi:"artifact"`
 	// Patch artifact category.
@@ -10553,6 +10599,12 @@ type GetFusionEnvironmentScheduledActivityAction struct {
 	Qualifier string `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action.
 	ReferenceKey string `pulumi:"referenceKey"`
+	// Source environment id derived from appman instance id
+	SourceEnvironmentId string `pulumi:"sourceEnvironmentId"`
+	// Source environment name derived from source pod name
+	SourceEnvironmentName string `pulumi:"sourceEnvironmentName"`
+	// Source environment url derived from source url
+	SourceEnvironmentUrl string `pulumi:"sourceEnvironmentUrl"`
 	// The current state of the scheduledActivity.
 	State string `pulumi:"state"`
 	// Name of the repo.
@@ -10573,6 +10625,8 @@ type GetFusionEnvironmentScheduledActivityActionInput interface {
 type GetFusionEnvironmentScheduledActivityActionArgs struct {
 	// Type of action.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// Name of SaaS Application being migrated.
+	ApplicationType pulumi.StringInput `pulumi:"applicationType"`
 	// Patch that delivered the Vertex update prerequisite.
 	Artifact pulumi.StringInput `pulumi:"artifact"`
 	// Patch artifact category.
@@ -10585,6 +10639,12 @@ type GetFusionEnvironmentScheduledActivityActionArgs struct {
 	Qualifier pulumi.StringInput `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action.
 	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
+	// Source environment id derived from appman instance id
+	SourceEnvironmentId pulumi.StringInput `pulumi:"sourceEnvironmentId"`
+	// Source environment name derived from source pod name
+	SourceEnvironmentName pulumi.StringInput `pulumi:"sourceEnvironmentName"`
+	// Source environment url derived from source url
+	SourceEnvironmentUrl pulumi.StringInput `pulumi:"sourceEnvironmentUrl"`
 	// The current state of the scheduledActivity.
 	State pulumi.StringInput `pulumi:"state"`
 	// Name of the repo.
@@ -10647,6 +10707,11 @@ func (o GetFusionEnvironmentScheduledActivityActionOutput) ActionType() pulumi.S
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ActionType }).(pulumi.StringOutput)
 }
 
+// Name of SaaS Application being migrated.
+func (o GetFusionEnvironmentScheduledActivityActionOutput) ApplicationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ApplicationType }).(pulumi.StringOutput)
+}
+
 // Patch that delivered the Vertex update prerequisite.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) Artifact() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Artifact }).(pulumi.StringOutput)
@@ -10675,6 +10740,21 @@ func (o GetFusionEnvironmentScheduledActivityActionOutput) Qualifier() pulumi.St
 // Unique identifier of the object that represents the action.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) ReferenceKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ReferenceKey }).(pulumi.StringOutput)
+}
+
+// Source environment id derived from appman instance id
+func (o GetFusionEnvironmentScheduledActivityActionOutput) SourceEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.SourceEnvironmentId }).(pulumi.StringOutput)
+}
+
+// Source environment name derived from source pod name
+func (o GetFusionEnvironmentScheduledActivityActionOutput) SourceEnvironmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.SourceEnvironmentName }).(pulumi.StringOutput)
+}
+
+// Source environment url derived from source url
+func (o GetFusionEnvironmentScheduledActivityActionOutput) SourceEnvironmentUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.SourceEnvironmentUrl }).(pulumi.StringOutput)
 }
 
 // The current state of the scheduledActivity.
@@ -11740,7 +11820,7 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) Index(i pul
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
-	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules []GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// Language packs
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
@@ -11817,7 +11897,7 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemInput interface {
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
-	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayInput `pulumi:"additionalEgressRules"`
 	// Language packs
 	AdditionalLanguagePacks pulumi.StringArrayInput `pulumi:"additionalLanguagePacks"`
@@ -11933,7 +12013,7 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ToGetFusionE
 	return o
 }
 
-// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) AdditionalEgressRules() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule {
 		return v.AdditionalEgressRules

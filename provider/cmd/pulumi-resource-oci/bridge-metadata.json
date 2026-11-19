@@ -7703,9 +7703,6 @@
                                 "encryption_key_location_details": {
                                     "maxItemsOne": true
                                 },
-                                "one_off_patches": {
-                                    "maxItemsOne": false
-                                },
                                 "pluggable_databases": {
                                     "maxItemsOne": false
                                 },
@@ -7714,6 +7711,9 @@
                                 }
                             }
                         }
+                    },
+                    "one_off_patches": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -7985,6 +7985,9 @@
                     },
                     "ntp_server": {
                         "maxItemsOne": false
+                    },
+                    "ssl_inspection_configuration": {
+                        "maxItemsOne": true
                     }
                 }
             },
@@ -19512,6 +19515,23 @@
                             "fields": {
                                 "client_exceptions": {
                                     "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tiering_configuration": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "rules": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "path_prefixes": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -50568,9 +50588,6 @@
                                 "encryption_key_location_details": {
                                     "maxItemsOne": false
                                 },
-                                "one_off_patches": {
-                                    "maxItemsOne": false
-                                },
                                 "pluggable_databases": {
                                     "maxItemsOne": false
                                 },
@@ -50579,6 +50596,9 @@
                                 }
                             }
                         }
+                    },
+                    "one_off_patches": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -50662,9 +50682,6 @@
                                             "encryption_key_location_details": {
                                                 "maxItemsOne": false
                                             },
-                                            "one_off_patches": {
-                                                "maxItemsOne": false
-                                            },
                                             "pluggable_databases": {
                                                 "maxItemsOne": false
                                             },
@@ -50673,6 +50690,9 @@
                                             }
                                         }
                                     }
+                                },
+                                "one_off_patches": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }
@@ -51310,6 +51330,9 @@
                     },
                     "ntp_server": {
                         "maxItemsOne": false
+                    },
+                    "ssl_inspection_configuration": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -51378,6 +51401,9 @@
                                     "maxItemsOne": false
                                 },
                                 "ntp_server": {
+                                    "maxItemsOne": false
+                                },
+                                "ssl_inspection_configuration": {
                                     "maxItemsOne": false
                                 }
                             }
@@ -87854,6 +87880,23 @@
                                 }
                             }
                         }
+                    },
+                    "tiering_configuration": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "rules": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "path_prefixes": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -87914,6 +87957,23 @@
                                                     "fields": {
                                                         "client_exceptions": {
                                                             "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "tiering_configuration": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "rules": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "path_prefixes": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }

@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult
     {
+        public readonly bool IsOlderVersionAcknowledged;
         /// <summary>
         /// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
         /// </summary>
@@ -28,12 +29,15 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult(
+            bool isOlderVersionAcknowledged,
+
             string majorVersion,
 
             string source,
 
             string versionPreference)
         {
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             MajorVersion = majorVersion;
             Source = source;
             VersionPreference = versionPreference;

@@ -14,6 +14,7 @@ import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemDateTimeDetails;
 import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemMaintenanceWindow;
 import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata;
 import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemRootSquashConfiguration;
+import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemTieringConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
@@ -43,6 +44,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Lustre.FileStorageLustreFileSystemArgs;
  * import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemRootSquashConfigurationArgs;
  * import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemMaintenanceWindowArgs;
+ * import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemTieringConfigurationArgs;
+ * import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemTieringConfigurationRuleArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -80,6 +83,17 @@ import javax.annotation.Nullable;
  *                 .timeStart(lustreFileSystemMaintenanceWindowTimeStart)
  *                 .build())
  *             .nsgIds(lustreFileSystemNsgIds)
+ *             .tieringConfiguration(FileStorageLustreFileSystemTieringConfigurationArgs.builder()
+ *                 .isEnabled(lustreFileSystemTieringConfigurationIsEnabled)
+ *                 .policyMode(lustreFileSystemTieringConfigurationPolicyMode)
+ *                 .rules(FileStorageLustreFileSystemTieringConfigurationRuleArgs.builder()
+ *                     .action(lustreFileSystemTieringConfigurationRulesAction)
+ *                     .pathPrefixes(lustreFileSystemTieringConfigurationRulesPathPrefixes)
+ *                     .archiveAfterDaysSinceLastAccess(lustreFileSystemTieringConfigurationRulesArchiveAfterDaysSinceLastAccess)
+ *                     .minSizeInBytes(lustreFileSystemTieringConfigurationRulesMinSizeInBytes)
+ *                     .releaseAfterDaysSinceLastAccess(lustreFileSystemTieringConfigurationRulesReleaseAfterDaysSinceLastAccess)
+ *                     .build())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -431,6 +445,20 @@ public class FileStorageLustreFileSystem extends com.pulumi.resources.CustomReso
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     * 
+     */
+    @Export(name="tieringConfiguration", refs={FileStorageLustreFileSystemTieringConfiguration.class}, tree="[0]")
+    private Output<FileStorageLustreFileSystemTieringConfiguration> tieringConfiguration;
+
+    /**
+     * @return (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     * 
+     */
+    public Output<FileStorageLustreFileSystemTieringConfiguration> tieringConfiguration() {
+        return this.tieringConfiguration;
     }
     /**
      * The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`

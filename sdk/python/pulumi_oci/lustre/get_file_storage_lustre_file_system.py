@@ -27,7 +27,7 @@ class GetFileStorageLustreFileSystemResult:
     """
     A collection of values returned by getFileStorageLustreFileSystem.
     """
-    def __init__(__self__, availability_domain=None, capacity_in_gbs=None, cluster_placement_group_id=None, compartment_id=None, date_time_details=None, defined_tags=None, display_name=None, file_system_description=None, file_system_name=None, freeform_tags=None, id=None, kms_key_id=None, lifecycle_details=None, lnet=None, lustre_file_system_id=None, maintenance_window_metadatas=None, maintenance_windows=None, major_version=None, management_service_address=None, nsg_ids=None, override_maintenance_trigger=None, performance_tier=None, root_squash_configurations=None, state=None, subnet_id=None, system_tags=None, time_billing_cycle_end=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, capacity_in_gbs=None, cluster_placement_group_id=None, compartment_id=None, date_time_details=None, defined_tags=None, display_name=None, file_system_description=None, file_system_name=None, freeform_tags=None, id=None, kms_key_id=None, lifecycle_details=None, lnet=None, lustre_file_system_id=None, maintenance_window_metadatas=None, maintenance_windows=None, major_version=None, management_service_address=None, nsg_ids=None, override_maintenance_trigger=None, performance_tier=None, root_squash_configurations=None, state=None, subnet_id=None, system_tags=None, tiering_configurations=None, time_billing_cycle_end=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -106,6 +106,9 @@ class GetFileStorageLustreFileSystemResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tiering_configurations and not isinstance(tiering_configurations, list):
+            raise TypeError("Expected argument 'tiering_configurations' to be a list")
+        pulumi.set(__self__, "tiering_configurations", tiering_configurations)
         if time_billing_cycle_end and not isinstance(time_billing_cycle_end, str):
             raise TypeError("Expected argument 'time_billing_cycle_end' to be a str")
         pulumi.set(__self__, "time_billing_cycle_end", time_billing_cycle_end)
@@ -316,6 +319,14 @@ class GetFileStorageLustreFileSystemResult:
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="tieringConfigurations")
+    def tiering_configurations(self) -> Sequence['outputs.GetFileStorageLustreFileSystemTieringConfigurationResult']:
+        """
+        Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+        """
+        return pulumi.get(self, "tiering_configurations")
+
+    @_builtins.property
     @pulumi.getter(name="timeBillingCycleEnd")
     def time_billing_cycle_end(self) -> _builtins.str:
         """
@@ -372,6 +383,7 @@ class AwaitableGetFileStorageLustreFileSystemResult(GetFileStorageLustreFileSyst
             state=self.state,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
+            tiering_configurations=self.tiering_configurations,
             time_billing_cycle_end=self.time_billing_cycle_end,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -428,6 +440,7 @@ def get_file_storage_lustre_file_system(lustre_file_system_id: Optional[_builtin
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tiering_configurations=pulumi.get(__ret__, 'tiering_configurations'),
         time_billing_cycle_end=pulumi.get(__ret__, 'time_billing_cycle_end'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -481,6 +494,7 @@ def get_file_storage_lustre_file_system_output(lustre_file_system_id: pulumi.Inp
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        tiering_configurations=pulumi.get(__response__, 'tiering_configurations'),
         time_billing_cycle_end=pulumi.get(__response__, 'time_billing_cycle_end'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

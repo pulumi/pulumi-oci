@@ -115,6 +115,9 @@ namespace Pulumi.Oci.Database
         [Output("isDesupportedVersion")]
         public Output<bool> IsDesupportedVersion { get; private set; } = null!;
 
+        [Output("isOlderVersionAcknowledged")]
+        public Output<bool> IsOlderVersionAcknowledged { get; private set; } = null!;
+
         /// <summary>
         /// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         /// </summary>
@@ -144,6 +147,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// List of one-off patches for Database Homes.
+        /// </summary>
+        [Output("oneOffPatches")]
+        public Output<ImmutableArray<string>> OneOffPatches { get; private set; } = null!;
 
         /// <summary>
         /// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
@@ -297,6 +306,9 @@ namespace Pulumi.Oci.Database
         [Input("isDesupportedVersion")]
         public Input<bool>? IsDesupportedVersion { get; set; }
 
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
         /// <summary>
         /// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         /// </summary>
@@ -423,6 +435,9 @@ namespace Pulumi.Oci.Database
         [Input("isDesupportedVersion")]
         public Input<bool>? IsDesupportedVersion { get; set; }
 
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
         /// <summary>
         /// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         /// </summary>
@@ -452,6 +467,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("oneOffPatches")]
+        private InputList<string>? _oneOffPatches;
+
+        /// <summary>
+        /// List of one-off patches for Database Homes.
+        /// </summary>
+        public InputList<string> OneOffPatches
+        {
+            get => _oneOffPatches ?? (_oneOffPatches = new InputList<string>());
+            set => _oneOffPatches = value;
+        }
 
         /// <summary>
         /// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.

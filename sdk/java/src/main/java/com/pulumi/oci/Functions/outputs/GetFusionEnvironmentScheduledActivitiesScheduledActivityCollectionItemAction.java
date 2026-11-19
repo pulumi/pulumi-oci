@@ -16,6 +16,11 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
      */
     private String actionType;
     /**
+     * @return Name of SaaS Application being migrated.
+     * 
+     */
+    private String applicationType;
+    /**
      * @return Patch that delivered the Vertex update prerequisite.
      * 
      */
@@ -46,6 +51,21 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
      */
     private String referenceKey;
     /**
+     * @return Source environment id derived from appman instance id
+     * 
+     */
+    private String sourceEnvironmentId;
+    /**
+     * @return Source environment name derived from source pod name
+     * 
+     */
+    private String sourceEnvironmentName;
+    /**
+     * @return Source environment url derived from source url
+     * 
+     */
+    private String sourceEnvironmentUrl;
+    /**
      * @return A filter that returns all resources that match the specified status
      * 
      */
@@ -63,6 +83,13 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
      */
     public String actionType() {
         return this.actionType;
+    }
+    /**
+     * @return Name of SaaS Application being migrated.
+     * 
+     */
+    public String applicationType() {
+        return this.applicationType;
     }
     /**
      * @return Patch that delivered the Vertex update prerequisite.
@@ -107,6 +134,27 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
         return this.referenceKey;
     }
     /**
+     * @return Source environment id derived from appman instance id
+     * 
+     */
+    public String sourceEnvironmentId() {
+        return this.sourceEnvironmentId;
+    }
+    /**
+     * @return Source environment name derived from source pod name
+     * 
+     */
+    public String sourceEnvironmentName() {
+        return this.sourceEnvironmentName;
+    }
+    /**
+     * @return Source environment url derived from source url
+     * 
+     */
+    public String sourceEnvironmentUrl() {
+        return this.sourceEnvironmentUrl;
+    }
+    /**
      * @return A filter that returns all resources that match the specified status
      * 
      */
@@ -131,24 +179,32 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
     @CustomType.Builder
     public static final class Builder {
         private String actionType;
+        private String applicationType;
         private String artifact;
         private String category;
         private String description;
         private String mode;
         private String qualifier;
         private String referenceKey;
+        private String sourceEnvironmentId;
+        private String sourceEnvironmentName;
+        private String sourceEnvironmentUrl;
         private String state;
         private String version;
         public Builder() {}
         public Builder(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionType = defaults.actionType;
+    	      this.applicationType = defaults.applicationType;
     	      this.artifact = defaults.artifact;
     	      this.category = defaults.category;
     	      this.description = defaults.description;
     	      this.mode = defaults.mode;
     	      this.qualifier = defaults.qualifier;
     	      this.referenceKey = defaults.referenceKey;
+    	      this.sourceEnvironmentId = defaults.sourceEnvironmentId;
+    	      this.sourceEnvironmentName = defaults.sourceEnvironmentName;
+    	      this.sourceEnvironmentUrl = defaults.sourceEnvironmentUrl;
     	      this.state = defaults.state;
     	      this.version = defaults.version;
         }
@@ -159,6 +215,14 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
               throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction", "actionType");
             }
             this.actionType = actionType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder applicationType(String applicationType) {
+            if (applicationType == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction", "applicationType");
+            }
+            this.applicationType = applicationType;
             return this;
         }
         @CustomType.Setter
@@ -210,6 +274,30 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
             return this;
         }
         @CustomType.Setter
+        public Builder sourceEnvironmentId(String sourceEnvironmentId) {
+            if (sourceEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction", "sourceEnvironmentId");
+            }
+            this.sourceEnvironmentId = sourceEnvironmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceEnvironmentName(String sourceEnvironmentName) {
+            if (sourceEnvironmentName == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction", "sourceEnvironmentName");
+            }
+            this.sourceEnvironmentName = sourceEnvironmentName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceEnvironmentUrl(String sourceEnvironmentUrl) {
+            if (sourceEnvironmentUrl == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction", "sourceEnvironmentUrl");
+            }
+            this.sourceEnvironmentUrl = sourceEnvironmentUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction", "state");
@@ -228,12 +316,16 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
         public GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction build() {
             final var _resultValue = new GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction();
             _resultValue.actionType = actionType;
+            _resultValue.applicationType = applicationType;
             _resultValue.artifact = artifact;
             _resultValue.category = category;
             _resultValue.description = description;
             _resultValue.mode = mode;
             _resultValue.qualifier = qualifier;
             _resultValue.referenceKey = referenceKey;
+            _resultValue.sourceEnvironmentId = sourceEnvironmentId;
+            _resultValue.sourceEnvironmentName = sourceEnvironmentName;
+            _resultValue.sourceEnvironmentUrl = sourceEnvironmentUrl;
             _resultValue.state = state;
             _resultValue.version = version;
             return _resultValue;

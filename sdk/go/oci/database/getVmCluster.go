@@ -98,7 +98,8 @@ type LookupVmClusterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
 	Id string `pulumi:"id"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       bool `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
 	IsSparseDiskgroupEnabled bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -283,6 +284,10 @@ func (o LookupVmClusterResultOutput) Id() pulumi.StringOutput {
 // If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 func (o LookupVmClusterResultOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) bool { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+}
+
+func (o LookupVmClusterResultOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.

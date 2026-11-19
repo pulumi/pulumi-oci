@@ -205,6 +205,10 @@ export class VmCluster extends pulumi.CustomResource {
      */
     declare public readonly isLocalBackupEnabled: pulumi.Output<boolean>;
     /**
+     * (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    declare public readonly isOlderVersionAcknowledged: pulumi.Output<boolean>;
+    /**
      * (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      */
     declare public readonly isSparseDiskgroupEnabled: pulumi.Output<boolean>;
@@ -331,6 +335,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["giVersion"] = state?.giVersion;
             resourceInputs["isLocalBackupEnabled"] = state?.isLocalBackupEnabled;
+            resourceInputs["isOlderVersionAcknowledged"] = state?.isOlderVersionAcknowledged;
             resourceInputs["isSparseDiskgroupEnabled"] = state?.isSparseDiskgroupEnabled;
             resourceInputs["lastPatchHistoryEntryId"] = state?.lastPatchHistoryEntryId;
             resourceInputs["licenseModel"] = state?.licenseModel;
@@ -395,6 +400,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["giVersion"] = args?.giVersion;
             resourceInputs["isLocalBackupEnabled"] = args?.isLocalBackupEnabled;
+            resourceInputs["isOlderVersionAcknowledged"] = args?.isOlderVersionAcknowledged;
             resourceInputs["isSparseDiskgroupEnabled"] = args?.isSparseDiskgroupEnabled;
             resourceInputs["licenseModel"] = args?.licenseModel;
             resourceInputs["memorySizeInGbs"] = args?.memorySizeInGbs;
@@ -512,6 +518,10 @@ export interface VmClusterState {
      * (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      */
     isLocalBackupEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      */
@@ -679,6 +689,10 @@ export interface VmClusterArgs {
      * (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      */
     isLocalBackupEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      */

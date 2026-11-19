@@ -87,6 +87,8 @@ type DatabaseSoftwareImage struct {
 	ImageType pulumi.StringOutput `pulumi:"imageType"`
 	// The patches included in the image and the version of the image.
 	IncludedPatchesSummary pulumi.StringOutput `pulumi:"includedPatchesSummary"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolOutput `pulumi:"isOlderVersionAcknowledged"`
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported pulumi.BoolOutput `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
@@ -164,6 +166,8 @@ type databaseSoftwareImageState struct {
 	ImageType *string `pulumi:"imageType"`
 	// The patches included in the image and the version of the image.
 	IncludedPatchesSummary *string `pulumi:"includedPatchesSummary"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported *bool `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
@@ -206,6 +210,8 @@ type DatabaseSoftwareImageState struct {
 	ImageType pulumi.StringPtrInput
 	// The patches included in the image and the version of the image.
 	IncludedPatchesSummary pulumi.StringPtrInput
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported pulumi.BoolPtrInput
 	// Detailed message for the lifecycle state.
@@ -254,6 +260,8 @@ type databaseSoftwareImageArgs struct {
 	ImageShapeFamily *string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
 	ImageType *string `pulumi:"imageType"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory *string `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
@@ -283,6 +291,8 @@ type DatabaseSoftwareImageArgs struct {
 	ImageShapeFamily pulumi.StringPtrInput
 	// The type of software image. Can be grid or database.
 	ImageType pulumi.StringPtrInput
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory pulumi.StringPtrInput
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
@@ -429,6 +439,11 @@ func (o DatabaseSoftwareImageOutput) ImageType() pulumi.StringOutput {
 // The patches included in the image and the version of the image.
 func (o DatabaseSoftwareImageOutput) IncludedPatchesSummary() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.IncludedPatchesSummary }).(pulumi.StringOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o DatabaseSoftwareImageOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.BoolOutput { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // True if this Database software image is supported for Upgrade.

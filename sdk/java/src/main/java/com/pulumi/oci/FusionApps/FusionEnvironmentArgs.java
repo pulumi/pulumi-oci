@@ -24,14 +24,14 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
     public static final FusionEnvironmentArgs Empty = new FusionEnvironmentArgs();
 
     /**
-     * (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
      * 
      */
     @Import(name="additionalEgressRules")
     private @Nullable Output<List<FusionEnvironmentAdditionalEgressRuleArgs>> additionalEgressRules;
 
     /**
-     * @return (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * @return (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
      * 
      */
     public Optional<Output<List<FusionEnvironmentAdditionalEgressRuleArgs>>> additionalEgressRules() {
@@ -277,7 +277,7 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class FusionEnvironmentArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
          * 
          * @return builder
          * 

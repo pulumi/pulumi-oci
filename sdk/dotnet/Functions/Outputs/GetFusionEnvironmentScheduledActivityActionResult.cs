@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string ActionType;
         /// <summary>
+        /// Name of SaaS Application being migrated.
+        /// </summary>
+        public readonly string ApplicationType;
+        /// <summary>
         /// Patch that delivered the Vertex update prerequisite.
         /// </summary>
         public readonly string Artifact;
@@ -42,6 +46,18 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string ReferenceKey;
         /// <summary>
+        /// Source environment id derived from appman instance id
+        /// </summary>
+        public readonly string SourceEnvironmentId;
+        /// <summary>
+        /// Source environment name derived from source pod name
+        /// </summary>
+        public readonly string SourceEnvironmentName;
+        /// <summary>
+        /// Source environment url derived from source url
+        /// </summary>
+        public readonly string SourceEnvironmentUrl;
+        /// <summary>
         /// The current state of the scheduledActivity.
         /// </summary>
         public readonly string State;
@@ -53,6 +69,8 @@ namespace Pulumi.Oci.Functions.Outputs
         [OutputConstructor]
         private GetFusionEnvironmentScheduledActivityActionResult(
             string actionType,
+
+            string applicationType,
 
             string artifact,
 
@@ -66,17 +84,27 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string referenceKey,
 
+            string sourceEnvironmentId,
+
+            string sourceEnvironmentName,
+
+            string sourceEnvironmentUrl,
+
             string state,
 
             string version)
         {
             ActionType = actionType;
+            ApplicationType = applicationType;
             Artifact = artifact;
             Category = category;
             Description = description;
             Mode = mode;
             Qualifier = qualifier;
             ReferenceKey = referenceKey;
+            SourceEnvironmentId = sourceEnvironmentId;
+            SourceEnvironmentName = sourceEnvironmentName;
+            SourceEnvironmentUrl = sourceEnvironmentUrl;
             State = state;
             Version = version;
         }

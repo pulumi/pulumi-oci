@@ -14,9 +14,37 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class BackendSetHealthChecker
     {
         /// <summary>
+        /// (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+        /// 
+        /// This value must be an integer from `1` through `100`.
+        /// 
+        /// Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `True`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `True`; otherwise, the request is rejected.
+        /// 
+        /// On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+        /// 
+        /// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+        /// 
+        /// Example: `1`
+        /// </summary>
+        public readonly int? DefaultWeight;
+        /// <summary>
         /// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
         /// </summary>
         public readonly int? IntervalMs;
+        /// <summary>
+        /// (Updatable) You can enable dynamic backend weights for HTTP health checks.
+        /// 
+        /// When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+        /// 
+        /// A valid header value is an integer from `0` through `100`.
+        /// 
+        /// If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+        /// 
+        /// If omitted during create, the default is `False`.
+        /// 
+        /// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+        /// </summary>
+        public readonly bool? IsDynamicBackendWeightEnabled;
         /// <summary>
         /// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
         /// 
@@ -58,7 +86,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
         [OutputConstructor]
         private BackendSetHealthChecker(
+            int? defaultWeight,
+
             int? intervalMs,
+
+            bool? isDynamicBackendWeightEnabled,
 
             bool? isForcePlainText,
 
@@ -76,7 +108,9 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string? urlPath)
         {
+            DefaultWeight = defaultWeight;
             IntervalMs = intervalMs;
+            IsDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
             IsForcePlainText = isForcePlainText;
             Port = port;
             Protocol = protocol;

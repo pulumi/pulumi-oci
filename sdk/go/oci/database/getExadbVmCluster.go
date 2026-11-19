@@ -94,7 +94,8 @@ type LookupExadbVmClusterResult struct {
 	// The OCID of the identity connector
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []GetExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
+	IormConfigCaches           []GetExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
+	IsOlderVersionAcknowledged bool                               `pulumi:"isOlderVersionAcknowledged"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
 	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -280,6 +281,10 @@ func (o LookupExadbVmClusterResultOutput) Id() pulumi.StringOutput {
 // The IORM settings of the Exadata DB system.
 func (o LookupExadbVmClusterResultOutput) IormConfigCaches() GetExadbVmClusterIormConfigCacheArrayOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) []GetExadbVmClusterIormConfigCache { return v.IormConfigCaches }).(GetExadbVmClusterIormConfigCacheArrayOutput)
+}
+
+func (o LookupExadbVmClusterResultOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.

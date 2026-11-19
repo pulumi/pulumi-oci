@@ -167,18 +167,6 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("ncharacterSet")]
         public Input<string>? NcharacterSet { get; set; }
 
-        [Input("oneOffPatches")]
-        private InputList<string>? _oneOffPatches;
-
-        /// <summary>
-        /// List of one-off patches for Database Homes.
-        /// </summary>
-        public InputList<string> OneOffPatches
-        {
-            get => _oneOffPatches ?? (_oneOffPatches = new InputList<string>());
-            set => _oneOffPatches = value;
-        }
-
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>

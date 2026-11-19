@@ -104,6 +104,11 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable Boolean isActiveDataGuardEnabled;
     /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    private @Nullable Boolean isOlderVersionAcknowledged;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
@@ -310,6 +315,13 @@ public final class DbSystemDbHomeDatabase {
         return Optional.ofNullable(this.isActiveDataGuardEnabled);
     }
     /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Boolean> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
@@ -449,6 +461,7 @@ public final class DbSystemDbHomeDatabase {
         private @Nullable Map<String,String> freeformTags;
         private @Nullable String id;
         private @Nullable Boolean isActiveDataGuardEnabled;
+        private @Nullable Boolean isOlderVersionAcknowledged;
         private @Nullable String keyStoreId;
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
@@ -485,6 +498,7 @@ public final class DbSystemDbHomeDatabase {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
@@ -616,6 +630,12 @@ public final class DbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(@Nullable Boolean isOlderVersionAcknowledged) {
+
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder keyStoreId(@Nullable String keyStoreId) {
 
             this.keyStoreId = keyStoreId;
@@ -728,6 +748,7 @@ public final class DbSystemDbHomeDatabase {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;

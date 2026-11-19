@@ -38,7 +38,8 @@ class FileStorageLustreFileSystemArgs:
                  maintenance_window: pulumi.Input[Optional['FileStorageLustreFileSystemMaintenanceWindowArgs']] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tiering_configuration: pulumi.Input[Optional['FileStorageLustreFileSystemTieringConfigurationArgs']] = None):
         """
         The set of arguments for constructing a FileStorageLustreFileSystem resource.
 
@@ -62,6 +63,7 @@ class FileStorageLustreFileSystemArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input['FileStorageLustreFileSystemTieringConfigurationArgs'] tiering_configuration: (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_in_gbs", capacity_in_gbs)
@@ -92,6 +94,8 @@ class FileStorageLustreFileSystemArgs:
             pulumi.set(__self__, "override_maintenance_trigger", override_maintenance_trigger)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tiering_configuration is not None:
+            pulumi.set(__self__, "tiering_configuration", tiering_configuration)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -309,6 +313,18 @@ class FileStorageLustreFileSystemArgs:
     def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="tieringConfiguration")
+    def tiering_configuration(self) -> pulumi.Input[Optional['FileStorageLustreFileSystemTieringConfigurationArgs']]:
+        """
+        (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+        """
+        return pulumi.get(self, "tiering_configuration")
+
+    @tiering_configuration.setter
+    def tiering_configuration(self, value: pulumi.Input[Optional['FileStorageLustreFileSystemTieringConfigurationArgs']]):
+        pulumi.set(self, "tiering_configuration", value)
+
 
 @pulumi.input_type
 class _FileStorageLustreFileSystemState:
@@ -337,6 +353,7 @@ class _FileStorageLustreFileSystemState:
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tiering_configuration: pulumi.Input[Optional['FileStorageLustreFileSystemTieringConfigurationArgs']] = None,
                  time_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None):
@@ -369,6 +386,7 @@ class _FileStorageLustreFileSystemState:
         :param pulumi.Input[_builtins.str] state: The current state of the Lustre file system.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input['FileStorageLustreFileSystemTieringConfigurationArgs'] tiering_configuration: (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
         :param pulumi.Input[_builtins.str] time_billing_cycle_end: The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_created: The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Lustre file system was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
@@ -421,6 +439,8 @@ class _FileStorageLustreFileSystemState:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tiering_configuration is not None:
+            pulumi.set(__self__, "tiering_configuration", tiering_configuration)
         if time_billing_cycle_end is not None:
             pulumi.set(__self__, "time_billing_cycle_end", time_billing_cycle_end)
         if time_created is not None:
@@ -717,6 +737,18 @@ class _FileStorageLustreFileSystemState:
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="tieringConfiguration")
+    def tiering_configuration(self) -> pulumi.Input[Optional['FileStorageLustreFileSystemTieringConfigurationArgs']]:
+        """
+        (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+        """
+        return pulumi.get(self, "tiering_configuration")
+
+    @tiering_configuration.setter
+    def tiering_configuration(self, value: pulumi.Input[Optional['FileStorageLustreFileSystemTieringConfigurationArgs']]):
+        pulumi.set(self, "tiering_configuration", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeBillingCycleEnd")
     def time_billing_cycle_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -777,6 +809,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tiering_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemTieringConfigurationArgs', 'FileStorageLustreFileSystemTieringConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemTieringConfiguration']]] = None,
                  __props__=None):
         """
         This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -819,7 +852,18 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                 "day_of_week": lustre_file_system_maintenance_window_day_of_week,
                 "time_start": lustre_file_system_maintenance_window_time_start,
             },
-            nsg_ids=lustre_file_system_nsg_ids)
+            nsg_ids=lustre_file_system_nsg_ids,
+            tiering_configuration={
+                "is_enabled": lustre_file_system_tiering_configuration_is_enabled,
+                "policy_mode": lustre_file_system_tiering_configuration_policy_mode,
+                "rules": [{
+                    "action": lustre_file_system_tiering_configuration_rules_action,
+                    "path_prefixes": lustre_file_system_tiering_configuration_rules_path_prefixes,
+                    "archive_after_days_since_last_access": lustre_file_system_tiering_configuration_rules_archive_after_days_since_last_access,
+                    "min_size_in_bytes": lustre_file_system_tiering_configuration_rules_min_size_in_bytes,
+                    "release_after_days_since_last_access": lustre_file_system_tiering_configuration_rules_release_after_days_since_last_access,
+                }],
+            })
         ```
 
         ## Import
@@ -853,6 +897,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']] root_squash_configuration: (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Union['FileStorageLustreFileSystemTieringConfigurationArgs', 'FileStorageLustreFileSystemTieringConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemTieringConfiguration']] tiering_configuration: (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
         """
         ...
     @overload
@@ -901,7 +946,18 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                 "day_of_week": lustre_file_system_maintenance_window_day_of_week,
                 "time_start": lustre_file_system_maintenance_window_time_start,
             },
-            nsg_ids=lustre_file_system_nsg_ids)
+            nsg_ids=lustre_file_system_nsg_ids,
+            tiering_configuration={
+                "is_enabled": lustre_file_system_tiering_configuration_is_enabled,
+                "policy_mode": lustre_file_system_tiering_configuration_policy_mode,
+                "rules": [{
+                    "action": lustre_file_system_tiering_configuration_rules_action,
+                    "path_prefixes": lustre_file_system_tiering_configuration_rules_path_prefixes,
+                    "archive_after_days_since_last_access": lustre_file_system_tiering_configuration_rules_archive_after_days_since_last_access,
+                    "min_size_in_bytes": lustre_file_system_tiering_configuration_rules_min_size_in_bytes,
+                    "release_after_days_since_last_access": lustre_file_system_tiering_configuration_rules_release_after_days_since_last_access,
+                }],
+            })
         ```
 
         ## Import
@@ -946,6 +1002,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tiering_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemTieringConfigurationArgs', 'FileStorageLustreFileSystemTieringConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemTieringConfiguration']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -987,6 +1044,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["system_tags"] = system_tags
+            __props__.__dict__["tiering_configuration"] = tiering_configuration
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["lnet"] = None
             __props__.__dict__["maintenance_window_metadatas"] = None
@@ -1032,6 +1090,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tiering_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemTieringConfigurationArgs', 'FileStorageLustreFileSystemTieringConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemTieringConfiguration']]] = None,
             time_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'FileStorageLustreFileSystem':
@@ -1068,6 +1127,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the Lustre file system.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Union['FileStorageLustreFileSystemTieringConfigurationArgs', 'FileStorageLustreFileSystemTieringConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemTieringConfiguration']] tiering_configuration: (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
         :param pulumi.Input[_builtins.str] time_billing_cycle_end: The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_created: The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Lustre file system was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
@@ -1100,6 +1160,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["tiering_configuration"] = tiering_configuration
         __props__.__dict__["time_billing_cycle_end"] = time_billing_cycle_end
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -1132,6 +1193,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tiering_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemTieringConfigurationArgs', 'FileStorageLustreFileSystemTieringConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemTieringConfiguration']]] = None,
             time_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
@@ -1160,6 +1222,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         __props__["state"] = state
         __props__["subnetId"] = subnet_id
         __props__["systemTags"] = system_tags
+        __props__["tieringConfiguration"] = tiering_configuration
         __props__["timeBillingCycleEnd"] = time_billing_cycle_end
         __props__["timeCreated"] = time_created
         __props__["timeUpdated"] = time_updated
@@ -1356,6 +1419,14 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tieringConfiguration")
+    def tiering_configuration(self) -> pulumi.Output['outputs.FileStorageLustreFileSystemTieringConfiguration']:
+        """
+        (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+        """
+        return pulumi.get(self, "tiering_configuration")
 
     @_builtins.property
     @pulumi.getter(name="timeBillingCycleEnd")

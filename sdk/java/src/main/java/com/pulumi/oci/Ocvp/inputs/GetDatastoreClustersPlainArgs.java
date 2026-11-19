@@ -4,7 +4,6 @@
 package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersFilter;
 import java.lang.String;
 import java.util.List;
@@ -33,18 +32,18 @@ public final class GetDatastoreClustersPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private String compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -140,12 +139,12 @@ public final class GetDatastoreClustersPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
          * 
          * @return builder
          * 
          */
-        public Builder compartmentId(String compartmentId) {
+        public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -193,9 +192,6 @@ public final class GetDatastoreClustersPlainArgs extends com.pulumi.resources.In
         }
 
         public GetDatastoreClustersPlainArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetDatastoreClustersPlainArgs", "compartmentId");
-            }
             return $;
         }
     }

@@ -62,6 +62,7 @@ public final class GetDataGuardAssociationResult {
      * 
      */
     private Boolean isActiveDataGuardEnabled;
+    private Boolean isOlderVersionAcknowledged;
     private String licenseModel;
     /**
      * @return Additional information about the current lifecycleState, if available.
@@ -234,6 +235,9 @@ public final class GetDataGuardAssociationResult {
     public Boolean isActiveDataGuardEnabled() {
         return this.isActiveDataGuardEnabled;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     public String licenseModel() {
         return this.licenseModel;
     }
@@ -390,6 +394,7 @@ public final class GetDataGuardAssociationResult {
         private String hostname;
         private String id;
         private Boolean isActiveDataGuardEnabled;
+        private Boolean isOlderVersionAcknowledged;
         private String licenseModel;
         private String lifecycleDetails;
         private Integer migrateTrigger;
@@ -445,6 +450,7 @@ public final class GetDataGuardAssociationResult {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.migrateTrigger = defaults.migrateTrigger;
@@ -698,6 +704,14 @@ public final class GetDataGuardAssociationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
             if (licenseModel == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "licenseModel");
@@ -929,6 +943,7 @@ public final class GetDataGuardAssociationResult {
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.migrateTrigger = migrateTrigger;

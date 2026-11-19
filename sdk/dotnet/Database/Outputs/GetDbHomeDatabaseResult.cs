@@ -51,10 +51,6 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         public readonly string NcharacterSet;
-        /// <summary>
-        /// List of one-off patches for Database Homes.
-        /// </summary>
-        public readonly ImmutableArray<string> OneOffPatches;
         public readonly string PdbName;
         public readonly ImmutableArray<string> PluggableDatabases;
         public readonly string RecoveryApplianceVpcPassword;
@@ -118,8 +114,6 @@ namespace Pulumi.Oci.Database.Outputs
 
             string ncharacterSet,
 
-            ImmutableArray<string> oneOffPatches,
-
             string pdbName,
 
             ImmutableArray<string> pluggableDatabases,
@@ -162,7 +156,6 @@ namespace Pulumi.Oci.Database.Outputs
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
-            OneOffPatches = oneOffPatches;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
             RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;

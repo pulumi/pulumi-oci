@@ -14,7 +14,8 @@ import (
 // This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 //
 // List the Datastore Clusters in the specified compartment. The list can be filtered
-// by compartment, Datastore Cluster, Display name and Lifecycle state
+// by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+// compartmentId or datastoreClusterId must be provided.
 //
 // ## Example Usage
 //
@@ -31,8 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ocvp.GetDatastoreClusters(ctx, &ocvp.GetDatastoreClustersArgs{
-//				CompartmentId:      compartmentId,
 //				ClusterId:          pulumi.StringRef(testCluster.Id),
+//				CompartmentId:      pulumi.StringRef(compartmentId),
 //				DatastoreClusterId: pulumi.StringRef(testDatastoreCluster.Id),
 //				DisplayName:        pulumi.StringRef(datastoreClusterDisplayName),
 //				State:              pulumi.StringRef(datastoreClusterState),
@@ -59,8 +60,8 @@ func GetDatastoreClusters(ctx *pulumi.Context, args *GetDatastoreClustersArgs, o
 type GetDatastoreClustersArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId *string `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
 	DatastoreClusterId *string `pulumi:"datastoreClusterId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -75,7 +76,7 @@ type GetDatastoreClustersResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware Cluster that Datastore cluster is attached to.
 	ClusterId *string `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of datastore_cluster_collection.
 	DatastoreClusterCollections []GetDatastoreClustersDatastoreClusterCollection `pulumi:"datastoreClusterCollections"`
 	DatastoreClusterId          *string                                          `pulumi:"datastoreClusterId"`
@@ -97,8 +98,8 @@ func GetDatastoreClustersOutput(ctx *pulumi.Context, args GetDatastoreClustersOu
 type GetDatastoreClustersOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
 	DatastoreClusterId pulumi.StringPtrInput `pulumi:"datastoreClusterId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -133,8 +134,8 @@ func (o GetDatastoreClustersResultOutput) ClusterId() pulumi.StringPtrOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
-func (o GetDatastoreClustersResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatastoreClustersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDatastoreClustersResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatastoreClustersResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The list of datastore_cluster_collection.

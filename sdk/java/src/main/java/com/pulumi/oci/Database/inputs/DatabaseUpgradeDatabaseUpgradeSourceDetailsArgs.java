@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -33,8 +34,6 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-     * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
@@ -42,11 +41,28 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
     /**
      * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-     * 
      */
     public Optional<Output<String>> dbVersion() {
         return Optional.ofNullable(this.dbVersion);
+    }
+
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
     }
 
     /**
@@ -94,6 +110,7 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
     private DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs $) {
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dbVersion = $.dbVersion;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.options = $.options;
         this.source = $.source;
     }
@@ -140,8 +157,6 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
         /**
          * @param dbVersion A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
          * 
-         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-         * 
          * @return builder
          * 
          */
@@ -153,13 +168,36 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
         /**
          * @param dbVersion A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
          * 
-         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-         * 
          * @return builder
          * 
          */
         public Builder dbVersion(String dbVersion) {
             return dbVersion(Output.of(dbVersion));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

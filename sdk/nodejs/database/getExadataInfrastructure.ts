@@ -237,6 +237,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly shape: string;
     /**
+     * SSL inspection configuration for the Exadata infrastructure.
+     */
+    readonly sslInspectionConfigurations: outputs.Database.GetExadataInfrastructureSslInspectionConfiguration[];
+    /**
      * The current lifecycle state of the Exadata infrastructure.
      */
     readonly state: string;

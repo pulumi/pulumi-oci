@@ -46,6 +46,7 @@ class DataGuardAssociationArgs:
                  fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -113,6 +114,7 @@ class DataGuardAssociationArgs:
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[_builtins.str] hostname: The hostname for the DB node.
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
                
@@ -182,6 +184,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "hostname", hostname)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
         if migrate_trigger is not None:
@@ -535,6 +539,18 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "is_active_data_guard_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -761,6 +777,7 @@ class _DataGuardAssociationState:
                  fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -828,6 +845,7 @@ class _DataGuardAssociationState:
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[_builtins.str] hostname: The hostname for the DB node.
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
@@ -921,6 +939,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "hostname", hostname)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
@@ -1283,6 +1303,18 @@ class _DataGuardAssociationState:
         pulumi.set(self, "is_active_data_guard_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1627,6 +1659,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1755,6 +1788,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[_builtins.str] hostname: The hostname for the DB node.
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
                
@@ -1905,6 +1939,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1963,6 +1998,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             __props__.__dict__["fault_domains"] = fault_domains
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
+            __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["migrate_trigger"] = migrate_trigger
             __props__.__dict__["node_count"] = node_count
@@ -2031,6 +2067,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2102,6 +2139,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[_builtins.str] hostname: The hostname for the DB node.
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
@@ -2174,6 +2212,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["fault_domains"] = fault_domains
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
+        __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["migrate_trigger"] = migrate_trigger
@@ -2229,6 +2268,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2280,6 +2320,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__["faultDomains"] = fault_domains
         __props__["hostname"] = hostname
         __props__["isActiveDataGuardEnabled"] = is_active_data_guard_enabled
+        __props__["isOlderVersionAcknowledged"] = is_older_version_acknowledged
         __props__["licenseModel"] = license_model
         __props__["lifecycleDetails"] = lifecycle_details
         __props__["migrateTrigger"] = migrate_trigger
@@ -2516,6 +2557,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         (Updatable) True if active Data Guard is enabled.
         """
         return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")

@@ -412,6 +412,21 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     }
 
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+
+    /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      * 
      */
@@ -842,6 +857,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         this.faultDomains = $.faultDomains;
         this.hostname = $.hostname;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
         this.migrateTrigger = $.migrateTrigger;
@@ -1446,6 +1462,27 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          */
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
             return isActiveDataGuardEnabled(Output.of(isActiveDataGuardEnabled));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

@@ -64,7 +64,7 @@ class GetDatastoreClustersResult:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
+    def compartment_id(self) -> Optional[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
         """
@@ -140,7 +140,8 @@ def get_datastore_clusters(cluster_id: Optional[_builtins.str] = None,
     This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
     List the Datastore Clusters in the specified compartment. The list can be filtered
-    by compartment, Datastore Cluster, Display name and Lifecycle state
+    by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+    compartmentId or datastoreClusterId must be provided.
 
     ## Example Usage
 
@@ -148,8 +149,8 @@ def get_datastore_clusters(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_clusters = oci.ocvp.get_datastore_clusters(compartment_id=compartment_id,
-        cluster_id=test_cluster["id"],
+    test_datastore_clusters = oci.ocvp.get_datastore_clusters(cluster_id=test_cluster["id"],
+        compartment_id=compartment_id,
         datastore_cluster_id=test_datastore_cluster["id"],
         display_name=datastore_cluster_display_name,
         state=datastore_cluster_state)
@@ -157,7 +158,7 @@ def get_datastore_clusters(cluster_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
     :param _builtins.str datastore_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str state: The lifecycle state of the resource.
@@ -182,7 +183,7 @@ def get_datastore_clusters(cluster_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
 def get_datastore_clusters_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   datastore_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatastoreClustersFilterArgs', 'GetDatastoreClustersFilterArgsDict', 'outputs.GetDatastoreClustersFilterResult']]]]] = None,
@@ -192,7 +193,8 @@ def get_datastore_clusters_output(cluster_id: pulumi.Input[Optional[Optional[_bu
     This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 
     List the Datastore Clusters in the specified compartment. The list can be filtered
-    by compartment, Datastore Cluster, Display name and Lifecycle state
+    by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+    compartmentId or datastoreClusterId must be provided.
 
     ## Example Usage
 
@@ -200,8 +202,8 @@ def get_datastore_clusters_output(cluster_id: pulumi.Input[Optional[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_clusters = oci.ocvp.get_datastore_clusters(compartment_id=compartment_id,
-        cluster_id=test_cluster["id"],
+    test_datastore_clusters = oci.ocvp.get_datastore_clusters(cluster_id=test_cluster["id"],
+        compartment_id=compartment_id,
         datastore_cluster_id=test_datastore_cluster["id"],
         display_name=datastore_cluster_display_name,
         state=datastore_cluster_state)
@@ -209,7 +211,7 @@ def get_datastore_clusters_output(cluster_id: pulumi.Input[Optional[Optional[_bu
 
 
     :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
     :param _builtins.str datastore_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str state: The lifecycle state of the resource.

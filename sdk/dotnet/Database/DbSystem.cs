@@ -227,6 +227,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.DbSystemIormConfigCache>> IormConfigCaches { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Output("isOlderVersionAcknowledged")]
+        public Output<bool> IsOlderVersionAcknowledged { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
@@ -717,6 +723,12 @@ namespace Pulumi.Oci.Database
         public Input<string> Hostname { get; set; } = null!;
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Input("kmsKeyId")]
@@ -1077,6 +1089,12 @@ namespace Pulumi.Oci.Database
             get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.DbSystemIormConfigCacheGetArgs>());
             set => _iormConfigCaches = value;
         }
+
+        /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

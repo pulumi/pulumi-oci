@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class LoadBalancerIpAddressDetailReservedIpArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Ocid of the Reserved IP/Public Ip created with VCN.
+        /// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

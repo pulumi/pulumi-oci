@@ -92,10 +92,6 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? NcharacterSet;
         /// <summary>
-        /// List of one-off patches for Database Homes.
-        /// </summary>
-        public readonly ImmutableArray<string> OneOffPatches;
-        /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
         public readonly string? PdbName;
@@ -182,8 +178,6 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? ncharacterSet,
 
-            ImmutableArray<string> oneOffPatches,
-
             string? pdbName,
 
             ImmutableArray<string> pluggableDatabases,
@@ -226,7 +220,6 @@ namespace Pulumi.Oci.Database.Outputs
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
-            OneOffPatches = oneOffPatches;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
             RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;

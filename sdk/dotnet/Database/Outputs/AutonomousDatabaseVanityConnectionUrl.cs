@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousDatabaseVanityConnectionUrl
     {
         /// <summary>
+        /// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        /// </summary>
+        public readonly string? A2aUrl;
+        /// <summary>
         /// Oracle Application Express (APEX) URL.
         /// </summary>
         public readonly string? ApexUrl;
@@ -38,6 +42,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? MachineLearningUserManagementUrl;
         /// <summary>
+        /// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        /// </summary>
+        public readonly string? McpUrl;
+        /// <summary>
         /// The URL of the MongoDB API for the Autonomous Database.
         /// </summary>
         public readonly string? MongoDbUrl;
@@ -46,12 +54,18 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? OrdsUrl;
         /// <summary>
+        /// The URL of the Spatial Studio for the Autonomous AI Database.
+        /// </summary>
+        public readonly string? SpatialStudioUrl;
+        /// <summary>
         /// Oracle SQL Developer Web URL.
         /// </summary>
         public readonly string? SqlDevWebUrl;
 
         [OutputConstructor]
         private AutonomousDatabaseVanityConnectionUrl(
+            string? a2aUrl,
+
             string? apexUrl,
 
             string? databaseTransformsUrl,
@@ -64,20 +78,27 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? machineLearningUserManagementUrl,
 
+            string? mcpUrl,
+
             string? mongoDbUrl,
 
             string? ordsUrl,
 
+            string? spatialStudioUrl,
+
             string? sqlDevWebUrl)
         {
+            A2aUrl = a2aUrl;
             ApexUrl = apexUrl;
             DatabaseTransformsUrl = databaseTransformsUrl;
             EssbaseUrl = essbaseUrl;
             GraphStudioUrl = graphStudioUrl;
             MachineLearningNotebookUrl = machineLearningNotebookUrl;
             MachineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            McpUrl = mcpUrl;
             MongoDbUrl = mongoDbUrl;
             OrdsUrl = ordsUrl;
+            SpatialStudioUrl = spatialStudioUrl;
             SqlDevWebUrl = sqlDevWebUrl;
         }
     }

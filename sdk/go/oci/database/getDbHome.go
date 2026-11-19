@@ -80,8 +80,9 @@ type LookupDbHomeResult struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType string `pulumi:"homeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id                   string `pulumi:"id"`
-	IsDesupportedVersion bool   `pulumi:"isDesupportedVersion"`
+	Id                         string `pulumi:"id"`
+	IsDesupportedVersion       bool   `pulumi:"isDesupportedVersion"`
+	IsOlderVersionAcknowledged bool   `pulumi:"isOlderVersionAcknowledged"`
 	// Indicates whether unified autiding is enabled or not.
 	IsUnifiedAuditingEnabled bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -91,7 +92,9 @@ type LookupDbHomeResult struct {
 	LastPatchHistoryEntryId string `pulumi:"lastPatchHistoryEntryId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	Source           string `pulumi:"source"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches []string `pulumi:"oneOffPatches"`
+	Source        string   `pulumi:"source"`
 	// The current state of the Database Home.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -198,6 +201,10 @@ func (o LookupDbHomeResultOutput) IsDesupportedVersion() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDbHomeResult) bool { return v.IsDesupportedVersion }).(pulumi.BoolOutput)
 }
 
+func (o LookupDbHomeResultOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDbHomeResult) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
+}
+
 // Indicates whether unified autiding is enabled or not.
 func (o LookupDbHomeResultOutput) IsUnifiedAuditingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDbHomeResult) bool { return v.IsUnifiedAuditingEnabled }).(pulumi.BoolOutput)
@@ -220,6 +227,11 @@ func (o LookupDbHomeResultOutput) LastPatchHistoryEntryId() pulumi.StringOutput 
 // Additional information about the current lifecycle state.
 func (o LookupDbHomeResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbHomeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// List of one-off patches for Database Homes.
+func (o LookupDbHomeResultOutput) OneOffPatches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDbHomeResult) []string { return v.OneOffPatches }).(pulumi.StringArrayOutput)
 }
 
 func (o LookupDbHomeResultOutput) Source() pulumi.StringOutput {

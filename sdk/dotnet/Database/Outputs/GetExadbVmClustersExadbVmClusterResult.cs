@@ -85,6 +85,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The IORM settings of the Exadata DB system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterIormConfigCacheResult> IormConfigCaches;
+        public readonly bool IsOlderVersionAcknowledged;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         /// </summary>
@@ -239,6 +240,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterIormConfigCacheResult> iormConfigCaches,
 
+            bool isOlderVersionAcknowledged,
+
             string lastUpdateHistoryEntryId,
 
             string licenseModel,
@@ -317,6 +320,7 @@ namespace Pulumi.Oci.Database.Outputs
             Hostname = hostname;
             Id = id;
             IormConfigCaches = iormConfigCaches;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             LastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;

@@ -49,6 +49,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
      */
     private String id;
     private Boolean isActiveDataGuardEnabled;
+    private Boolean isOlderVersionAcknowledged;
     private String keyStoreId;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -152,6 +153,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     public Boolean isActiveDataGuardEnabled() {
         return this.isActiveDataGuardEnabled;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     public String keyStoreId() {
         return this.keyStoreId;
     }
@@ -241,6 +245,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isActiveDataGuardEnabled;
+        private Boolean isOlderVersionAcknowledged;
         private String keyStoreId;
         private String kmsKeyId;
         private String kmsKeyVersionId;
@@ -277,6 +282,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
@@ -445,6 +451,14 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
             if (keyStoreId == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "keyStoreId");
@@ -587,6 +601,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;

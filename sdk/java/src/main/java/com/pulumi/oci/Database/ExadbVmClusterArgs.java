@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterNodeConfigArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterNodeResourceArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -227,6 +228,21 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
      */
     public Output<String> hostname() {
         return this.hostname;
+    }
+
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
     }
 
     /**
@@ -523,6 +539,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.freeformTags = $.freeformTags;
         this.gridImageId = $.gridImageId;
         this.hostname = $.hostname;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.licenseModel = $.licenseModel;
         this.nodeConfig = $.nodeConfig;
         this.nodeResources = $.nodeResources;
@@ -854,6 +871,27 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

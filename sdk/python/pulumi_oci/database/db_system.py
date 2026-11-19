@@ -45,6 +45,7 @@ class DbSystemArgs:
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -130,6 +131,7 @@ class DbSystemArgs:
                
                Example: `FAULT-DOMAIN-1`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
@@ -195,6 +197,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -562,6 +566,18 @@ class DbSystemArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -835,6 +851,7 @@ class _DbSystemState:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -931,6 +948,7 @@ class _DbSystemState:
                
                **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -1032,6 +1050,8 @@ class _DbSystemState:
             pulumi.set(__self__, "hostname", hostname)
         if iorm_config_caches is not None:
             pulumi.set(__self__, "iorm_config_caches", iorm_config_caches)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -1419,6 +1439,18 @@ class _DbSystemState:
     @iorm_config_caches.setter
     def iorm_config_caches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]]):
         pulumi.set(self, "iorm_config_caches", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -1970,6 +2002,7 @@ class DbSystem(pulumi.CustomResource):
                  fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2097,6 +2130,7 @@ class DbSystem(pulumi.CustomResource):
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
@@ -2227,6 +2261,7 @@ class DbSystem(pulumi.CustomResource):
                  fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2289,6 +2324,7 @@ class DbSystem(pulumi.CustomResource):
             if hostname is None and not opts.urn:
                 raise TypeError("Missing required property 'hostname'")
             __props__.__dict__["hostname"] = hostname
+            __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["kms_key_version_id"] = kms_key_version_id
             __props__.__dict__["license_model"] = license_model
@@ -2370,6 +2406,7 @@ class DbSystem(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemIormConfigCacheArgs', 'DbSystemIormConfigCacheArgsDict', 'outputs.DbSystemIormConfigCache']]]]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2470,6 +2507,7 @@ class DbSystem(pulumi.CustomResource):
                
                **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCacheArgs', 'DbSystemIormConfigCacheArgsDict', 'outputs.DbSystemIormConfigCache']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -2552,6 +2590,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["iorm_config_caches"] = iorm_config_caches
+        __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
@@ -2623,6 +2662,7 @@ class DbSystem(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemIormConfigCacheArgs', 'DbSystemIormConfigCacheArgsDict', 'outputs.DbSystemIormConfigCache']]]]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2690,6 +2730,7 @@ class DbSystem(pulumi.CustomResource):
         __props__["freeformTags"] = freeform_tags
         __props__["hostname"] = hostname
         __props__["iormConfigCaches"] = iorm_config_caches
+        __props__["isOlderVersionAcknowledged"] = is_older_version_acknowledged
         __props__["kmsKeyId"] = kms_key_id
         __props__["kmsKeyVersionId"] = kms_key_version_id
         __props__["lastMaintenanceRunId"] = last_maintenance_run_id
@@ -2943,6 +2984,14 @@ class DbSystem(pulumi.CustomResource):
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")

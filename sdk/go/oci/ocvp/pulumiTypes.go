@@ -6490,7 +6490,7 @@ type GetDatastoreClustersDatastoreClusterCollectionItem struct {
 	CapacityInGbs float64 `pulumi:"capacityInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId string `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Type of the datastore cluster.
 	DatastoreClusterType string `pulumi:"datastoreClusterType"`
@@ -6536,7 +6536,7 @@ type GetDatastoreClustersDatastoreClusterCollectionItemArgs struct {
 	CapacityInGbs pulumi.Float64Input `pulumi:"capacityInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Type of the datastore cluster.
 	DatastoreClusterType pulumi.StringInput `pulumi:"datastoreClusterType"`
@@ -6630,7 +6630,7 @@ func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) ClusterId() pu
 	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 func (o GetDatastoreClustersDatastoreClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatastoreClustersDatastoreClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -6926,7 +6926,7 @@ type GetDatastoresDatastoreCollectionItem struct {
 	CapacityInGbs float64 `pulumi:"capacityInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId string `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -6970,7 +6970,7 @@ type GetDatastoresDatastoreCollectionItemArgs struct {
 	CapacityInGbs pulumi.Float64Input `pulumi:"capacityInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -7070,7 +7070,7 @@ func (o GetDatastoresDatastoreCollectionItemOutput) ClusterId() pulumi.StringOut
 	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 func (o GetDatastoresDatastoreCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatastoresDatastoreCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

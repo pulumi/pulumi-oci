@@ -58,7 +58,7 @@ type GetFusionEnvironmentArgs struct {
 
 // A collection of values returned by getFusionEnvironment.
 type GetFusionEnvironmentResult struct {
-	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules []GetFusionEnvironmentAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// Language packs
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
@@ -154,7 +154,7 @@ func (o GetFusionEnvironmentResultOutput) ToGetFusionEnvironmentResultOutputWith
 	return o
 }
 
-// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 func (o GetFusionEnvironmentResultOutput) AdditionalEgressRules() GetFusionEnvironmentAdditionalEgressRuleArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentResult) []GetFusionEnvironmentAdditionalEgressRule {
 		return v.AdditionalEgressRules

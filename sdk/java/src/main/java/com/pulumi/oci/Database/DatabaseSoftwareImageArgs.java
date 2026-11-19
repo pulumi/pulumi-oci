@@ -6,6 +6,7 @@ package com.pulumi.oci.Database;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -139,6 +140,21 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+
+    /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
@@ -200,6 +216,7 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
         this.freeformTags = $.freeformTags;
         this.imageShapeFamily = $.imageShapeFamily;
         this.imageType = $.imageType;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.lsInventory = $.lsInventory;
         this.patchSet = $.patchSet;
         this.sourceDbHomeId = $.sourceDbHomeId;
@@ -399,6 +416,27 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
          */
         public Builder imageType(String imageType) {
             return imageType(Output.of(imageType));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

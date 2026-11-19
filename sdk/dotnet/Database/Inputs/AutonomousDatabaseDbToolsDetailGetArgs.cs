@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<double>? ComputeCount { get; set; }
 
         /// <summary>
+        /// (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+        /// </summary>
+        [Input("estimatedConcurrentSessions")]
+        public Input<int>? EstimatedConcurrentSessions { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether tool is enabled.
         /// </summary>
         [Input("isEnabled")]

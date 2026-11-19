@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.inputs.ExadbVmClusterIormConfigCacheArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterMultiCloudIdentityConnectorConfigArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterNodeConfigArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterNodeResourceArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -288,6 +289,21 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<List<ExadbVmClusterIormConfigCacheArgs>>> iormConfigCaches() {
         return Optional.ofNullable(this.iormConfigCaches);
+    }
+
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
     }
 
     /**
@@ -768,6 +784,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
         this.gridImageType = $.gridImageType;
         this.hostname = $.hostname;
         this.iormConfigCaches = $.iormConfigCaches;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.lastUpdateHistoryEntryId = $.lastUpdateHistoryEntryId;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -1205,6 +1222,27 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder iormConfigCaches(ExadbVmClusterIormConfigCacheArgs... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

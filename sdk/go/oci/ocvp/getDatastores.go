@@ -14,7 +14,8 @@ import (
 // This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
 //
 // List the Datastores in the specified compartment. The list can be filtered
-// by compartment, datastore id, display name and lifecycle state.
+// by compartment, datastore id, display name and lifecycle state. Either
+// compartmentId or datastoreId must be provided.
 //
 // ## Example Usage
 //
@@ -31,8 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ocvp.GetDatastores(ctx, &ocvp.GetDatastoresArgs{
-//				CompartmentId: compartmentId,
 //				ClusterId:     pulumi.StringRef(testCluster.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
 //				DatastoreId:   pulumi.StringRef(testDatastore.Id),
 //				DisplayName:   pulumi.StringRef(datastoreDisplayName),
 //				State:         pulumi.StringRef(datastoreState),
@@ -59,8 +60,8 @@ func GetDatastores(ctx *pulumi.Context, args *GetDatastoresArgs, opts ...pulumi.
 type GetDatastoresArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId *string `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
 	DatastoreId *string `pulumi:"datastoreId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -75,7 +76,7 @@ type GetDatastoresResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware Cluster that Datastore is attached to.
 	ClusterId *string `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of datastore_collection.
 	DatastoreCollections []GetDatastoresDatastoreCollection `pulumi:"datastoreCollections"`
 	DatastoreId          *string                            `pulumi:"datastoreId"`
@@ -97,8 +98,8 @@ func GetDatastoresOutput(ctx *pulumi.Context, args GetDatastoresOutputArgs, opts
 type GetDatastoresOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
 	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
 	DatastoreId pulumi.StringPtrInput `pulumi:"datastoreId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -133,8 +134,8 @@ func (o GetDatastoresResultOutput) ClusterId() pulumi.StringPtrOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
-func (o GetDatastoresResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatastoresResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDatastoresResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatastoresResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The list of datastore_collection.

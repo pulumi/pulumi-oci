@@ -256,6 +256,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
     declare public readonly isLocalBackupEnabled: pulumi.Output<boolean>;
+    declare public readonly isOlderVersionAcknowledged: pulumi.Output<boolean>;
     /**
      * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      */
@@ -464,6 +465,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["hostname"] = state?.hostname;
             resourceInputs["iormConfigCaches"] = state?.iormConfigCaches;
             resourceInputs["isLocalBackupEnabled"] = state?.isLocalBackupEnabled;
+            resourceInputs["isOlderVersionAcknowledged"] = state?.isOlderVersionAcknowledged;
             resourceInputs["isSparseDiskgroupEnabled"] = state?.isSparseDiskgroupEnabled;
             resourceInputs["lastUpdateHistoryEntryId"] = state?.lastUpdateHistoryEntryId;
             resourceInputs["licenseModel"] = state?.licenseModel;
@@ -556,6 +558,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["giVersion"] = args?.giVersion;
             resourceInputs["hostname"] = args?.hostname;
             resourceInputs["isLocalBackupEnabled"] = args?.isLocalBackupEnabled;
+            resourceInputs["isOlderVersionAcknowledged"] = args?.isOlderVersionAcknowledged;
             resourceInputs["isSparseDiskgroupEnabled"] = args?.isSparseDiskgroupEnabled;
             resourceInputs["licenseModel"] = args?.licenseModel;
             resourceInputs["memorySizeInGbs"] = args?.memorySizeInGbs;
@@ -731,6 +734,7 @@ export interface CloudVmClusterState {
      * (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
     isLocalBackupEnabled?: pulumi.Input<boolean | undefined>;
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      */
@@ -1009,6 +1013,7 @@ export interface CloudVmClusterArgs {
      * (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
     isLocalBackupEnabled?: pulumi.Input<boolean | undefined>;
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      */

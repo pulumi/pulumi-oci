@@ -94,6 +94,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         /// </summary>
         public readonly bool IsLocalBackupEnabled;
+        public readonly bool IsOlderVersionAcknowledged;
         /// <summary>
         /// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
         /// </summary>
@@ -226,6 +227,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isLocalBackupEnabled,
 
+            bool isOlderVersionAcknowledged,
+
             bool isSparseDiskgroupEnabled,
 
             string lastPatchHistoryEntryId,
@@ -295,6 +298,7 @@ namespace Pulumi.Oci.Database.Outputs
             GiVersion = giVersion;
             Id = id;
             IsLocalBackupEnabled = isLocalBackupEnabled;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             IsSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
             LastPatchHistoryEntryId = lastPatchHistoryEntryId;
             LicenseModel = licenseModel;

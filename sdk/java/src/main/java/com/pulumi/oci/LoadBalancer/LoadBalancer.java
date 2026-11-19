@@ -409,14 +409,14 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
         return this.requestIdHeader;
     }
     /**
-     * (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+     * (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      * 
      */
     @Export(name="reservedIps", refs={List.class,LoadBalancerReservedIp.class}, tree="[0,1]")
     private Output</* @Nullable */ List<LoadBalancerReservedIp>> reservedIps;
 
     /**
-     * @return (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+     * @return (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      * 
      */
     public Output<Optional<List<LoadBalancerReservedIp>>> reservedIps() {

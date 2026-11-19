@@ -48,6 +48,17 @@ import * as utilities from "../utilities";
  *         timeStart: lustreFileSystemMaintenanceWindowTimeStart,
  *     },
  *     nsgIds: lustreFileSystemNsgIds,
+ *     tieringConfiguration: {
+ *         isEnabled: lustreFileSystemTieringConfigurationIsEnabled,
+ *         policyMode: lustreFileSystemTieringConfigurationPolicyMode,
+ *         rules: [{
+ *             action: lustreFileSystemTieringConfigurationRulesAction,
+ *             pathPrefixes: lustreFileSystemTieringConfigurationRulesPathPrefixes,
+ *             archiveAfterDaysSinceLastAccess: lustreFileSystemTieringConfigurationRulesArchiveAfterDaysSinceLastAccess,
+ *             minSizeInBytes: lustreFileSystemTieringConfigurationRulesMinSizeInBytes,
+ *             releaseAfterDaysSinceLastAccess: lustreFileSystemTieringConfigurationRulesReleaseAfterDaysSinceLastAccess,
+ *         }],
+ *     },
  * });
  * ```
  *
@@ -195,6 +206,10 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
      */
     declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     */
+    declare public readonly tieringConfiguration: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemTieringConfiguration>;
+    /**
      * The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeBillingCycleEnd: pulumi.Output<string>;
@@ -244,6 +259,7 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tieringConfiguration"] = state?.tieringConfiguration;
             resourceInputs["timeBillingCycleEnd"] = state?.timeBillingCycleEnd;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
@@ -288,6 +304,7 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
             resourceInputs["rootSquashConfiguration"] = args?.rootSquashConfiguration;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["systemTags"] = args?.systemTags;
+            resourceInputs["tieringConfiguration"] = args?.tieringConfiguration;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lnet"] = undefined /*out*/;
             resourceInputs["maintenanceWindowMetadatas"] = undefined /*out*/;
@@ -406,6 +423,10 @@ export interface FileStorageLustreFileSystemState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     */
+    tieringConfiguration?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemTieringConfiguration | undefined>;
+    /**
      * The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeBillingCycleEnd?: pulumi.Input<string | undefined>;
@@ -495,4 +516,8 @@ export interface FileStorageLustreFileSystemArgs {
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     */
+    tieringConfiguration?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemTieringConfiguration | undefined>;
 }

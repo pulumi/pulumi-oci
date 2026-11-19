@@ -27,7 +27,7 @@ class GetExadbVmClusterResult:
     """
     A collection of values returned by getExadbVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, cluster_placement_group_id=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, multi_cloud_identity_connector_configs=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, register_pkcs_trigger=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, shape_attribute=None, ssh_public_keys=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, unregister_pkcs_trigger=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, cluster_placement_group_id=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, is_older_version_acknowledged=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, multi_cloud_identity_connector_configs=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, register_pkcs_trigger=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, shape_attribute=None, ssh_public_keys=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, unregister_pkcs_trigger=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -85,6 +85,9 @@ class GetExadbVmClusterResult:
         if iorm_config_caches and not isinstance(iorm_config_caches, list):
             raise TypeError("Expected argument 'iorm_config_caches' to be a list")
         pulumi.set(__self__, "iorm_config_caches", iorm_config_caches)
+        if is_older_version_acknowledged and not isinstance(is_older_version_acknowledged, bool):
+            raise TypeError("Expected argument 'is_older_version_acknowledged' to be a bool")
+        pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if last_update_history_entry_id and not isinstance(last_update_history_entry_id, str):
             raise TypeError("Expected argument 'last_update_history_entry_id' to be a str")
         pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
@@ -324,6 +327,11 @@ class GetExadbVmClusterResult:
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> _builtins.bool:
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateHistoryEntryId")
@@ -586,6 +594,7 @@ class AwaitableGetExadbVmClusterResult(GetExadbVmClusterResult):
             hostname=self.hostname,
             id=self.id,
             iorm_config_caches=self.iorm_config_caches,
+            is_older_version_acknowledged=self.is_older_version_acknowledged,
             last_update_history_entry_id=self.last_update_history_entry_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
@@ -662,6 +671,7 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[_builtins.str] = None,
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         iorm_config_caches=pulumi.get(__ret__, 'iorm_config_caches'),
+        is_older_version_acknowledged=pulumi.get(__ret__, 'is_older_version_acknowledged'),
         last_update_history_entry_id=pulumi.get(__ret__, 'last_update_history_entry_id'),
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -735,6 +745,7 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: pulumi.Input[Optional[_buil
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
         iorm_config_caches=pulumi.get(__response__, 'iorm_config_caches'),
+        is_older_version_acknowledged=pulumi.get(__response__, 'is_older_version_acknowledged'),
         last_update_history_entry_id=pulumi.get(__response__, 'last_update_history_entry_id'),
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),

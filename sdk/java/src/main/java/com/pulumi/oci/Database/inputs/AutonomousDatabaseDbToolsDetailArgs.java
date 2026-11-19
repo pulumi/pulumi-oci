@@ -35,6 +35,21 @@ public final class AutonomousDatabaseDbToolsDetailArgs extends com.pulumi.resour
     }
 
     /**
+     * (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+     * 
+     */
+    @Import(name="estimatedConcurrentSessions")
+    private @Nullable Output<Integer> estimatedConcurrentSessions;
+
+    /**
+     * @return (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+     * 
+     */
+    public Optional<Output<Integer>> estimatedConcurrentSessions() {
+        return Optional.ofNullable(this.estimatedConcurrentSessions);
+    }
+
+    /**
      * (Updatable) Indicates whether tool is enabled.
      * 
      */
@@ -83,6 +98,7 @@ public final class AutonomousDatabaseDbToolsDetailArgs extends com.pulumi.resour
 
     private AutonomousDatabaseDbToolsDetailArgs(AutonomousDatabaseDbToolsDetailArgs $) {
         this.computeCount = $.computeCount;
+        this.estimatedConcurrentSessions = $.estimatedConcurrentSessions;
         this.isEnabled = $.isEnabled;
         this.maxIdleTimeInMinutes = $.maxIdleTimeInMinutes;
         this.name = $.name;
@@ -125,6 +141,27 @@ public final class AutonomousDatabaseDbToolsDetailArgs extends com.pulumi.resour
          */
         public Builder computeCount(Double computeCount) {
             return computeCount(Output.of(computeCount));
+        }
+
+        /**
+         * @param estimatedConcurrentSessions (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder estimatedConcurrentSessions(@Nullable Output<Integer> estimatedConcurrentSessions) {
+            $.estimatedConcurrentSessions = estimatedConcurrentSessions;
+            return this;
+        }
+
+        /**
+         * @param estimatedConcurrentSessions (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder estimatedConcurrentSessions(Integer estimatedConcurrentSessions) {
+            return estimatedConcurrentSessions(Output.of(estimatedConcurrentSessions));
         }
 
         /**

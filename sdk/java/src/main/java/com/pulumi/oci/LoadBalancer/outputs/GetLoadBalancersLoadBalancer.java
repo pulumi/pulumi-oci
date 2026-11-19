@@ -37,7 +37,7 @@ public final class GetLoadBalancersLoadBalancer {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Ocid of the Reserved IP/Public Ip created with VCN.
+     * @return Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
      * 
      */
     private String id;
@@ -148,7 +148,7 @@ public final class GetLoadBalancersLoadBalancer {
         return this.freeformTags;
     }
     /**
-     * @return Ocid of the Reserved IP/Public Ip created with VCN.
+     * @return Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
      * 
      */
     public String id() {

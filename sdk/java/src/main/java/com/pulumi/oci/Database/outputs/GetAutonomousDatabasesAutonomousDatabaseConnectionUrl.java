@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
     /**
+     * @return The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    private String a2aUrl;
+    /**
      * @return Oracle Application Express (APEX) URL.
      * 
      */
@@ -41,6 +46,11 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
      */
     private String machineLearningUserManagementUrl;
     /**
+     * @return The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    private String mcpUrl;
+    /**
      * @return The URL of the MongoDB API for the Autonomous Database.
      * 
      */
@@ -62,6 +72,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
     private String sqlDevWebUrl;
 
     private GetAutonomousDatabasesAutonomousDatabaseConnectionUrl() {}
+    /**
+     * @return The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    public String a2aUrl() {
+        return this.a2aUrl;
+    }
     /**
      * @return Oracle Application Express (APEX) URL.
      * 
@@ -105,6 +122,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
         return this.machineLearningUserManagementUrl;
     }
     /**
+     * @return The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    public String mcpUrl() {
+        return this.mcpUrl;
+    }
+    /**
      * @return The URL of the MongoDB API for the Autonomous Database.
      * 
      */
@@ -142,12 +166,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String a2aUrl;
         private String apexUrl;
         private String databaseTransformsUrl;
         private String essbaseUrl;
         private String graphStudioUrl;
         private String machineLearningNotebookUrl;
         private String machineLearningUserManagementUrl;
+        private String mcpUrl;
         private String mongoDbUrl;
         private String ordsUrl;
         private String spatialStudioUrl;
@@ -155,18 +181,28 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
         public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseConnectionUrl defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.a2aUrl = defaults.a2aUrl;
     	      this.apexUrl = defaults.apexUrl;
     	      this.databaseTransformsUrl = defaults.databaseTransformsUrl;
     	      this.essbaseUrl = defaults.essbaseUrl;
     	      this.graphStudioUrl = defaults.graphStudioUrl;
     	      this.machineLearningNotebookUrl = defaults.machineLearningNotebookUrl;
     	      this.machineLearningUserManagementUrl = defaults.machineLearningUserManagementUrl;
+    	      this.mcpUrl = defaults.mcpUrl;
     	      this.mongoDbUrl = defaults.mongoDbUrl;
     	      this.ordsUrl = defaults.ordsUrl;
     	      this.spatialStudioUrl = defaults.spatialStudioUrl;
     	      this.sqlDevWebUrl = defaults.sqlDevWebUrl;
         }
 
+        @CustomType.Setter
+        public Builder a2aUrl(String a2aUrl) {
+            if (a2aUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "a2aUrl");
+            }
+            this.a2aUrl = a2aUrl;
+            return this;
+        }
         @CustomType.Setter
         public Builder apexUrl(String apexUrl) {
             if (apexUrl == null) {
@@ -216,6 +252,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
             return this;
         }
         @CustomType.Setter
+        public Builder mcpUrl(String mcpUrl) {
+            if (mcpUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "mcpUrl");
+            }
+            this.mcpUrl = mcpUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder mongoDbUrl(String mongoDbUrl) {
             if (mongoDbUrl == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "mongoDbUrl");
@@ -249,12 +293,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
         }
         public GetAutonomousDatabasesAutonomousDatabaseConnectionUrl build() {
             final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseConnectionUrl();
+            _resultValue.a2aUrl = a2aUrl;
             _resultValue.apexUrl = apexUrl;
             _resultValue.databaseTransformsUrl = databaseTransformsUrl;
             _resultValue.essbaseUrl = essbaseUrl;
             _resultValue.graphStudioUrl = graphStudioUrl;
             _resultValue.machineLearningNotebookUrl = machineLearningNotebookUrl;
             _resultValue.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            _resultValue.mcpUrl = mcpUrl;
             _resultValue.mongoDbUrl = mongoDbUrl;
             _resultValue.ordsUrl = ordsUrl;
             _resultValue.spatialStudioUrl = spatialStudioUrl;

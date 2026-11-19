@@ -91,6 +91,7 @@ export interface GetDataGuardAssociationResult {
      * True if active Data Guard is enabled.
      */
     readonly isActiveDataGuardEnabled: boolean;
+    readonly isOlderVersionAcknowledged: boolean;
     readonly licenseModel: string;
     /**
      * Additional information about the current lifecycleState, if available.

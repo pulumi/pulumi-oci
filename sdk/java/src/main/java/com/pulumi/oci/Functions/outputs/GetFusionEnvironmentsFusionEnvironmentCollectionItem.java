@@ -20,7 +20,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     /**
-     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
      * 
      */
     private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule> additionalEgressRules;
@@ -176,7 +176,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
 
     private GetFusionEnvironmentsFusionEnvironmentCollectionItem() {}
     /**
-     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
      * 
      */
     public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule> additionalEgressRules() {

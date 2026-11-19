@@ -292,6 +292,9 @@ namespace Pulumi.Oci.Database
         [Output("isLocalBackupEnabled")]
         public Output<bool> IsLocalBackupEnabled { get; private set; } = null!;
 
+        [Output("isOlderVersionAcknowledged")]
+        public Output<bool> IsOlderVersionAcknowledged { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         /// </summary>
@@ -766,6 +769,9 @@ namespace Pulumi.Oci.Database
         [Input("isLocalBackupEnabled")]
         public Input<bool>? IsLocalBackupEnabled { get; set; }
 
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
         /// <summary>
         /// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         /// </summary>
@@ -1135,6 +1141,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isLocalBackupEnabled")]
         public Input<bool>? IsLocalBackupEnabled { get; set; }
+
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
 
         /// <summary>
         /// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.

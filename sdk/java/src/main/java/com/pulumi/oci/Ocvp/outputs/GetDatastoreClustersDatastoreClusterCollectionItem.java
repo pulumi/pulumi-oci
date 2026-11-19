@@ -29,7 +29,7 @@ public final class GetDatastoreClustersDatastoreClusterCollectionItem {
      */
     private String clusterId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
     private String compartmentId;
@@ -117,7 +117,7 @@ public final class GetDatastoreClustersDatastoreClusterCollectionItem {
         return this.clusterId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
     public String compartmentId() {

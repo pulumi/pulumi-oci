@@ -482,6 +482,20 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.isActiveDataGuardEnabled);
     }
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Export(name="isOlderVersionAcknowledged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Output<Boolean> isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
+    /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      * 
      */

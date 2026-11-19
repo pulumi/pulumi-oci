@@ -251,6 +251,12 @@ namespace Pulumi.Oci.Database
         public Output<bool?> IsActiveDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Output("isOlderVersionAcknowledged")]
+        public Output<bool> IsOlderVersionAcknowledged { get; private set; } = null!;
+
+        /// <summary>
         /// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         /// </summary>
         [Output("licenseModel")]
@@ -666,6 +672,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsActiveDataGuardEnabled { get; set; }
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
+        /// <summary>
         /// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         /// </summary>
         [Input("licenseModel")]
@@ -1013,6 +1025,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isActiveDataGuardEnabled")]
         public Input<bool>? IsActiveDataGuardEnabled { get; set; }
+
+        /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
 
         /// <summary>
         /// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.

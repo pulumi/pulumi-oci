@@ -13,10 +13,20 @@ import java.util.Objects;
 @CustomType
 public final class GetBackendSetsBackendsetHealthChecker {
     /**
+     * @return The fallback backend weight used when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+     * 
+     */
+    private Integer defaultWeight;
+    /**
      * @return The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
      * 
      */
     private Integer intervalMs;
+    /**
+     * @return Indicates whether dynamic backend weights are enabled for HTTP health checks.
+     * 
+     */
+    private Boolean isDynamicBackendWeightEnabled;
     /**
      * @return Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
      * 
@@ -60,11 +70,25 @@ public final class GetBackendSetsBackendsetHealthChecker {
 
     private GetBackendSetsBackendsetHealthChecker() {}
     /**
+     * @return The fallback backend weight used when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+     * 
+     */
+    public Integer defaultWeight() {
+        return this.defaultWeight;
+    }
+    /**
      * @return The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
      * 
      */
     public Integer intervalMs() {
         return this.intervalMs;
+    }
+    /**
+     * @return Indicates whether dynamic backend weights are enabled for HTTP health checks.
+     * 
+     */
+    public Boolean isDynamicBackendWeightEnabled() {
+        return this.isDynamicBackendWeightEnabled;
     }
     /**
      * @return Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
@@ -132,7 +156,9 @@ public final class GetBackendSetsBackendsetHealthChecker {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer defaultWeight;
         private Integer intervalMs;
+        private Boolean isDynamicBackendWeightEnabled;
         private Boolean isForcePlainText;
         private Integer port;
         private String protocol;
@@ -144,7 +170,9 @@ public final class GetBackendSetsBackendsetHealthChecker {
         public Builder() {}
         public Builder(GetBackendSetsBackendsetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.defaultWeight = defaults.defaultWeight;
     	      this.intervalMs = defaults.intervalMs;
+    	      this.isDynamicBackendWeightEnabled = defaults.isDynamicBackendWeightEnabled;
     	      this.isForcePlainText = defaults.isForcePlainText;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
@@ -156,11 +184,27 @@ public final class GetBackendSetsBackendsetHealthChecker {
         }
 
         @CustomType.Setter
+        public Builder defaultWeight(Integer defaultWeight) {
+            if (defaultWeight == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetHealthChecker", "defaultWeight");
+            }
+            this.defaultWeight = defaultWeight;
+            return this;
+        }
+        @CustomType.Setter
         public Builder intervalMs(Integer intervalMs) {
             if (intervalMs == null) {
               throw new MissingRequiredPropertyException("GetBackendSetsBackendsetHealthChecker", "intervalMs");
             }
             this.intervalMs = intervalMs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDynamicBackendWeightEnabled(Boolean isDynamicBackendWeightEnabled) {
+            if (isDynamicBackendWeightEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetHealthChecker", "isDynamicBackendWeightEnabled");
+            }
+            this.isDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
             return this;
         }
         @CustomType.Setter
@@ -229,7 +273,9 @@ public final class GetBackendSetsBackendsetHealthChecker {
         }
         public GetBackendSetsBackendsetHealthChecker build() {
             final var _resultValue = new GetBackendSetsBackendsetHealthChecker();
+            _resultValue.defaultWeight = defaultWeight;
             _resultValue.intervalMs = intervalMs;
+            _resultValue.isDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
             _resultValue.isForcePlainText = isForcePlainText;
             _resultValue.port = port;
             _resultValue.protocol = protocol;

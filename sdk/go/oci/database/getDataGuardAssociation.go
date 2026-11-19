@@ -92,8 +92,9 @@ type LookupDataGuardAssociationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
 	Id string `pulumi:"id"`
 	// True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
-	LicenseModel             string `pulumi:"licenseModel"`
+	IsActiveDataGuardEnabled   bool   `pulumi:"isActiveDataGuardEnabled"`
+	IsOlderVersionAcknowledged bool   `pulumi:"isOlderVersionAcknowledged"`
+	LicenseModel               string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails string   `pulumi:"lifecycleDetails"`
 	MigrateTrigger   int      `pulumi:"migrateTrigger"`
@@ -276,6 +277,10 @@ func (o LookupDataGuardAssociationResultOutput) Id() pulumi.StringOutput {
 // True if active Data Guard is enabled.
 func (o LookupDataGuardAssociationResultOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) LicenseModel() pulumi.StringOutput {

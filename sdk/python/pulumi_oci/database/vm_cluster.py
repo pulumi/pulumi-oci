@@ -40,6 +40,7 @@ class VmClusterArgs:
                  file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -74,6 +75,7 @@ class VmClusterArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.bool] is_sparse_diskgroup_enabled: (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
@@ -120,6 +122,8 @@ class VmClusterArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_local_backup_enabled is not None:
             pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_sparse_diskgroup_enabled is not None:
             pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if license_model is not None:
@@ -374,6 +378,18 @@ class VmClusterArgs:
         pulumi.set(self, "is_local_backup_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
     def is_sparse_diskgroup_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -541,6 +557,7 @@ class _VmClusterState:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -588,6 +605,7 @@ class _VmClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.bool] is_sparse_diskgroup_enabled: (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[_builtins.str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -654,6 +672,8 @@ class _VmClusterState:
             pulumi.set(__self__, "gi_version", gi_version)
         if is_local_backup_enabled is not None:
             pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_sparse_diskgroup_enabled is not None:
             pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if last_patch_history_entry_id is not None:
@@ -942,6 +962,18 @@ class _VmClusterState:
     @is_local_backup_enabled.setter
     def is_local_backup_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_local_backup_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
@@ -1252,6 +1284,7 @@ class VmCluster(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1365,6 +1398,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.bool] is_sparse_diskgroup_enabled: (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
@@ -1499,6 +1533,7 @@ class VmCluster(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1549,6 +1584,7 @@ class VmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'gi_version'")
             __props__.__dict__["gi_version"] = gi_version
             __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
+            __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
             __props__.__dict__["is_sparse_diskgroup_enabled"] = is_sparse_diskgroup_enabled
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
@@ -1610,6 +1646,7 @@ class VmCluster(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gi_version: pulumi.Input[Optional[_builtins.str]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1661,6 +1698,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.bool] is_sparse_diskgroup_enabled: (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[_builtins.str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -1711,6 +1749,7 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gi_version"] = gi_version
         __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
+        __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
         __props__.__dict__["is_sparse_diskgroup_enabled"] = is_sparse_diskgroup_enabled
         __props__.__dict__["last_patch_history_entry_id"] = last_patch_history_entry_id
         __props__.__dict__["license_model"] = license_model
@@ -1760,6 +1799,7 @@ class VmCluster(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gi_version: pulumi.Input[Optional[_builtins.str]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1805,6 +1845,7 @@ class VmCluster(pulumi.CustomResource):
         __props__["freeformTags"] = freeform_tags
         __props__["giVersion"] = gi_version
         __props__["isLocalBackupEnabled"] = is_local_backup_enabled
+        __props__["isOlderVersionAcknowledged"] = is_older_version_acknowledged
         __props__["isSparseDiskgroupEnabled"] = is_sparse_diskgroup_enabled
         __props__["lastPatchHistoryEntryId"] = last_patch_history_entry_id
         __props__["licenseModel"] = license_model
@@ -1990,6 +2031,14 @@ class VmCluster(pulumi.CustomResource):
         (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         """
         return pulumi.get(self, "is_local_backup_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")

@@ -70,7 +70,8 @@ type DbHome struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType pulumi.StringOutput `pulumi:"homeType"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
-	IsDesupportedVersion pulumi.BoolOutput `pulumi:"isDesupportedVersion"`
+	IsDesupportedVersion       pulumi.BoolOutput `pulumi:"isDesupportedVersion"`
+	IsOlderVersionAcknowledged pulumi.BoolOutput `pulumi:"isOlderVersionAcknowledged"`
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
 	IsUnifiedAuditingEnabled pulumi.BoolOutput `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -81,6 +82,8 @@ type DbHome struct {
 	LastPatchHistoryEntryId pulumi.StringOutput `pulumi:"lastPatchHistoryEntryId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches pulumi.StringArrayOutput `pulumi:"oneOffPatches"`
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
 	Source pulumi.StringOutput `pulumi:"source"`
 	// The current state of the Database Home.
@@ -152,7 +155,8 @@ type dbHomeState struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType *string `pulumi:"homeType"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
-	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
+	IsDesupportedVersion       *bool `pulumi:"isDesupportedVersion"`
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
 	IsUnifiedAuditingEnabled *bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -163,6 +167,8 @@ type dbHomeState struct {
 	LastPatchHistoryEntryId *string `pulumi:"lastPatchHistoryEntryId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches []string `pulumi:"oneOffPatches"`
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
 	Source *string `pulumi:"source"`
 	// The current state of the Database Home.
@@ -205,7 +211,8 @@ type DbHomeState struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType pulumi.StringPtrInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
-	IsDesupportedVersion pulumi.BoolPtrInput
+	IsDesupportedVersion       pulumi.BoolPtrInput
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
 	IsUnifiedAuditingEnabled pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -216,6 +223,8 @@ type DbHomeState struct {
 	LastPatchHistoryEntryId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
+	// List of one-off patches for Database Homes.
+	OneOffPatches pulumi.StringArrayInput
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
 	Source pulumi.StringPtrInput
 	// The current state of the Database Home.
@@ -264,7 +273,8 @@ type dbHomeArgs struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType *string `pulumi:"homeType"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
-	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
+	IsDesupportedVersion       *bool `pulumi:"isDesupportedVersion"`
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
 	IsUnifiedAuditingEnabled *bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -304,7 +314,8 @@ type DbHomeArgs struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType pulumi.StringPtrInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
-	IsDesupportedVersion pulumi.BoolPtrInput
+	IsDesupportedVersion       pulumi.BoolPtrInput
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
 	IsUnifiedAuditingEnabled pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -470,6 +481,10 @@ func (o DbHomeOutput) IsDesupportedVersion() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.BoolOutput { return v.IsDesupportedVersion }).(pulumi.BoolOutput)
 }
 
+func (o DbHomeOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.BoolOutput { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
+}
+
 // Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
 func (o DbHomeOutput) IsUnifiedAuditingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.BoolOutput { return v.IsUnifiedAuditingEnabled }).(pulumi.BoolOutput)
@@ -493,6 +508,11 @@ func (o DbHomeOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
 // Additional information about the current lifecycle state.
 func (o DbHomeOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// List of one-off patches for Database Homes.
+func (o DbHomeOutput) OneOffPatches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringArrayOutput { return v.OneOffPatches }).(pulumi.StringArrayOutput)
 }
 
 // The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.

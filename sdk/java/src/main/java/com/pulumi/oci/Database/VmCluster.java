@@ -413,6 +413,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
         return this.isLocalBackupEnabled;
     }
     /**
+     * (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Export(name="isOlderVersionAcknowledged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Output<Boolean> isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
+    /**
      * (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      * 
      */

@@ -417,6 +417,8 @@ __all__ = [
     'ExadataInfrastructureMaintenanceWindowMonthArgsDict',
     'ExadataInfrastructureNetworkBondingModeDetailsArgs',
     'ExadataInfrastructureNetworkBondingModeDetailsArgsDict',
+    'ExadataInfrastructureSslInspectionConfigurationArgs',
+    'ExadataInfrastructureSslInspectionConfigurationArgsDict',
     'ExadataInfrastructureStorageContactArgs',
     'ExadataInfrastructureStorageContactArgsDict',
     'ExadataInfrastructureStorageMaintenanceWindowArgs',
@@ -5897,6 +5899,10 @@ class AutonomousDatabaseConnectionStringProfileArgs:
 
 
 class AutonomousDatabaseConnectionUrlArgsDict(TypedDict):
+    a2a_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+    """
     apex_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Oracle Application Express (APEX) URL.
@@ -5921,6 +5927,10 @@ class AutonomousDatabaseConnectionUrlArgsDict(TypedDict):
     """
     Oracle Machine Learning user management URL.
     """
+    mcp_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+    """
     mongo_db_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The URL of the MongoDB API for the Autonomous Database.
@@ -5941,28 +5951,34 @@ class AutonomousDatabaseConnectionUrlArgsDict(TypedDict):
 @pulumi.input_type
 class AutonomousDatabaseConnectionUrlArgs:
     def __init__(__self__, *,
+                 a2a_url: pulumi.Input[Optional[_builtins.str]] = None,
                  apex_url: pulumi.Input[Optional[_builtins.str]] = None,
                  database_transforms_url: pulumi.Input[Optional[_builtins.str]] = None,
                  essbase_url: pulumi.Input[Optional[_builtins.str]] = None,
                  graph_studio_url: pulumi.Input[Optional[_builtins.str]] = None,
                  machine_learning_notebook_url: pulumi.Input[Optional[_builtins.str]] = None,
                  machine_learning_user_management_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 mcp_url: pulumi.Input[Optional[_builtins.str]] = None,
                  mongo_db_url: pulumi.Input[Optional[_builtins.str]] = None,
                  ords_url: pulumi.Input[Optional[_builtins.str]] = None,
                  spatial_studio_url: pulumi.Input[Optional[_builtins.str]] = None,
                  sql_dev_web_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] a2a_url: The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
         :param pulumi.Input[_builtins.str] apex_url: Oracle Application Express (APEX) URL.
         :param pulumi.Input[_builtins.str] database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
         :param pulumi.Input[_builtins.str] essbase_url: Essbase URL for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param pulumi.Input[_builtins.str] machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param pulumi.Input[_builtins.str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param pulumi.Input[_builtins.str] mcp_url: The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
         :param pulumi.Input[_builtins.str] mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param pulumi.Input[_builtins.str] ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         :param pulumi.Input[_builtins.str] spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] sql_dev_web_url: Oracle SQL Developer Web URL.
         """
+        if a2a_url is not None:
+            pulumi.set(__self__, "a2a_url", a2a_url)
         if apex_url is not None:
             pulumi.set(__self__, "apex_url", apex_url)
         if database_transforms_url is not None:
@@ -5975,6 +5991,8 @@ class AutonomousDatabaseConnectionUrlArgs:
             pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         if machine_learning_user_management_url is not None:
             pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mcp_url is not None:
+            pulumi.set(__self__, "mcp_url", mcp_url)
         if mongo_db_url is not None:
             pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         if ords_url is not None:
@@ -5983,6 +6001,18 @@ class AutonomousDatabaseConnectionUrlArgs:
             pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         if sql_dev_web_url is not None:
             pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="a2aUrl")
+    def a2a_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        """
+        return pulumi.get(self, "a2a_url")
+
+    @a2a_url.setter
+    def a2a_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "a2a_url", value)
 
     @_builtins.property
     @pulumi.getter(name="apexUrl")
@@ -6055,6 +6085,18 @@ class AutonomousDatabaseConnectionUrlArgs:
     @machine_learning_user_management_url.setter
     def machine_learning_user_management_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "machine_learning_user_management_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mcpUrl")
+    def mcp_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        """
+        return pulumi.get(self, "mcp_url")
+
+    @mcp_url.setter
+    def mcp_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "mcp_url", value)
 
     @_builtins.property
     @pulumi.getter(name="mongoDbUrl")
@@ -6143,6 +6185,10 @@ class AutonomousDatabaseDbToolsDetailArgsDict(TypedDict):
     """
     (Updatable) Compute used by database tools.
     """
+    estimated_concurrent_sessions: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+    """
     is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether tool is enabled.
@@ -6157,17 +6203,21 @@ class AutonomousDatabaseDbToolsDetailArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
                  compute_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 estimated_concurrent_sessions: pulumi.Input[Optional[_builtins.int]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  max_idle_time_in_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of database tool.
         :param pulumi.Input[_builtins.float] compute_count: (Updatable) Compute used by database tools.
+        :param pulumi.Input[_builtins.int] estimated_concurrent_sessions: (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates whether tool is enabled.
         :param pulumi.Input[_builtins.int] max_idle_time_in_minutes: (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
         """
         pulumi.set(__self__, "name", name)
         if compute_count is not None:
             pulumi.set(__self__, "compute_count", compute_count)
+        if estimated_concurrent_sessions is not None:
+            pulumi.set(__self__, "estimated_concurrent_sessions", estimated_concurrent_sessions)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
         if max_idle_time_in_minutes is not None:
@@ -6196,6 +6246,18 @@ class AutonomousDatabaseDbToolsDetailArgs:
     @compute_count.setter
     def compute_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedConcurrentSessions")
+    def estimated_concurrent_sessions(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+        """
+        return pulumi.get(self, "estimated_concurrent_sessions")
+
+    @estimated_concurrent_sessions.setter
+    def estimated_concurrent_sessions(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "estimated_concurrent_sessions", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
@@ -7472,6 +7534,10 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
 
 
 class AutonomousDatabasePublicConnectionUrlArgsDict(TypedDict):
+    a2a_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+    """
     apex_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Oracle Application Express (APEX) URL.
@@ -7496,6 +7562,10 @@ class AutonomousDatabasePublicConnectionUrlArgsDict(TypedDict):
     """
     Oracle Machine Learning user management URL.
     """
+    mcp_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+    """
     mongo_db_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The URL of the MongoDB API for the Autonomous Database.
@@ -7516,28 +7586,34 @@ class AutonomousDatabasePublicConnectionUrlArgsDict(TypedDict):
 @pulumi.input_type
 class AutonomousDatabasePublicConnectionUrlArgs:
     def __init__(__self__, *,
+                 a2a_url: pulumi.Input[Optional[_builtins.str]] = None,
                  apex_url: pulumi.Input[Optional[_builtins.str]] = None,
                  database_transforms_url: pulumi.Input[Optional[_builtins.str]] = None,
                  essbase_url: pulumi.Input[Optional[_builtins.str]] = None,
                  graph_studio_url: pulumi.Input[Optional[_builtins.str]] = None,
                  machine_learning_notebook_url: pulumi.Input[Optional[_builtins.str]] = None,
                  machine_learning_user_management_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 mcp_url: pulumi.Input[Optional[_builtins.str]] = None,
                  mongo_db_url: pulumi.Input[Optional[_builtins.str]] = None,
                  ords_url: pulumi.Input[Optional[_builtins.str]] = None,
                  spatial_studio_url: pulumi.Input[Optional[_builtins.str]] = None,
                  sql_dev_web_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] a2a_url: The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
         :param pulumi.Input[_builtins.str] apex_url: Oracle Application Express (APEX) URL.
         :param pulumi.Input[_builtins.str] database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
         :param pulumi.Input[_builtins.str] essbase_url: Essbase URL for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param pulumi.Input[_builtins.str] machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param pulumi.Input[_builtins.str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param pulumi.Input[_builtins.str] mcp_url: The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
         :param pulumi.Input[_builtins.str] mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param pulumi.Input[_builtins.str] ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         :param pulumi.Input[_builtins.str] spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] sql_dev_web_url: Oracle SQL Developer Web URL.
         """
+        if a2a_url is not None:
+            pulumi.set(__self__, "a2a_url", a2a_url)
         if apex_url is not None:
             pulumi.set(__self__, "apex_url", apex_url)
         if database_transforms_url is not None:
@@ -7550,6 +7626,8 @@ class AutonomousDatabasePublicConnectionUrlArgs:
             pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         if machine_learning_user_management_url is not None:
             pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mcp_url is not None:
+            pulumi.set(__self__, "mcp_url", mcp_url)
         if mongo_db_url is not None:
             pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         if ords_url is not None:
@@ -7558,6 +7636,18 @@ class AutonomousDatabasePublicConnectionUrlArgs:
             pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         if sql_dev_web_url is not None:
             pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="a2aUrl")
+    def a2a_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        """
+        return pulumi.get(self, "a2a_url")
+
+    @a2a_url.setter
+    def a2a_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "a2a_url", value)
 
     @_builtins.property
     @pulumi.getter(name="apexUrl")
@@ -7630,6 +7720,18 @@ class AutonomousDatabasePublicConnectionUrlArgs:
     @machine_learning_user_management_url.setter
     def machine_learning_user_management_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "machine_learning_user_management_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mcpUrl")
+    def mcp_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        """
+        return pulumi.get(self, "mcp_url")
+
+    @mcp_url.setter
+    def mcp_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "mcp_url", value)
 
     @_builtins.property
     @pulumi.getter(name="mongoDbUrl")
@@ -8370,6 +8472,10 @@ class AutonomousDatabaseTransportableTablespaceArgs:
 
 
 class AutonomousDatabaseVanityConnectionUrlArgsDict(TypedDict):
+    a2a_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+    """
     apex_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Oracle Application Express (APEX) URL.
@@ -8394,6 +8500,10 @@ class AutonomousDatabaseVanityConnectionUrlArgsDict(TypedDict):
     """
     Oracle Machine Learning user management URL.
     """
+    mcp_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+    """
     mongo_db_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The URL of the MongoDB API for the Autonomous Database.
@@ -8401,6 +8511,10 @@ class AutonomousDatabaseVanityConnectionUrlArgsDict(TypedDict):
     ords_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+    """
+    spatial_studio_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL of the Spatial Studio for the Autonomous AI Database.
     """
     sql_dev_web_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -8410,26 +8524,34 @@ class AutonomousDatabaseVanityConnectionUrlArgsDict(TypedDict):
 @pulumi.input_type
 class AutonomousDatabaseVanityConnectionUrlArgs:
     def __init__(__self__, *,
+                 a2a_url: pulumi.Input[Optional[_builtins.str]] = None,
                  apex_url: pulumi.Input[Optional[_builtins.str]] = None,
                  database_transforms_url: pulumi.Input[Optional[_builtins.str]] = None,
                  essbase_url: pulumi.Input[Optional[_builtins.str]] = None,
                  graph_studio_url: pulumi.Input[Optional[_builtins.str]] = None,
                  machine_learning_notebook_url: pulumi.Input[Optional[_builtins.str]] = None,
                  machine_learning_user_management_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 mcp_url: pulumi.Input[Optional[_builtins.str]] = None,
                  mongo_db_url: pulumi.Input[Optional[_builtins.str]] = None,
                  ords_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 spatial_studio_url: pulumi.Input[Optional[_builtins.str]] = None,
                  sql_dev_web_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] a2a_url: The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
         :param pulumi.Input[_builtins.str] apex_url: Oracle Application Express (APEX) URL.
         :param pulumi.Input[_builtins.str] database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
         :param pulumi.Input[_builtins.str] essbase_url: Essbase URL for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param pulumi.Input[_builtins.str] machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param pulumi.Input[_builtins.str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param pulumi.Input[_builtins.str] mcp_url: The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
         :param pulumi.Input[_builtins.str] mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param pulumi.Input[_builtins.str] ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] sql_dev_web_url: Oracle SQL Developer Web URL.
         """
+        if a2a_url is not None:
+            pulumi.set(__self__, "a2a_url", a2a_url)
         if apex_url is not None:
             pulumi.set(__self__, "apex_url", apex_url)
         if database_transforms_url is not None:
@@ -8442,12 +8564,28 @@ class AutonomousDatabaseVanityConnectionUrlArgs:
             pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         if machine_learning_user_management_url is not None:
             pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mcp_url is not None:
+            pulumi.set(__self__, "mcp_url", mcp_url)
         if mongo_db_url is not None:
             pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         if ords_url is not None:
             pulumi.set(__self__, "ords_url", ords_url)
+        if spatial_studio_url is not None:
+            pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         if sql_dev_web_url is not None:
             pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="a2aUrl")
+    def a2a_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        """
+        return pulumi.get(self, "a2a_url")
+
+    @a2a_url.setter
+    def a2a_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "a2a_url", value)
 
     @_builtins.property
     @pulumi.getter(name="apexUrl")
@@ -8522,6 +8660,18 @@ class AutonomousDatabaseVanityConnectionUrlArgs:
         pulumi.set(self, "machine_learning_user_management_url", value)
 
     @_builtins.property
+    @pulumi.getter(name="mcpUrl")
+    def mcp_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        """
+        return pulumi.get(self, "mcp_url")
+
+    @mcp_url.setter
+    def mcp_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "mcp_url", value)
+
+    @_builtins.property
     @pulumi.getter(name="mongoDbUrl")
     def mongo_db_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -8544,6 +8694,18 @@ class AutonomousDatabaseVanityConnectionUrlArgs:
     @ords_url.setter
     def ords_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ords_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
+
+    @spatial_studio_url.setter
+    def spatial_studio_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "spatial_studio_url", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -14845,6 +15007,10 @@ class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs:
 
 
 class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgsDict(TypedDict):
+    is_older_version_acknowledged: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+    """
     major_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -14861,20 +15027,36 @@ class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDe
 @pulumi.input_type
 class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs:
     def __init__(__self__, *,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  major_version: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  version_preference: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
         """
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if major_version is not None:
             pulumi.set(__self__, "major_version", major_version)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if version_preference is not None:
             pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="majorVersion")
@@ -15947,6 +16129,10 @@ class DatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs:
 
 
 class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgsDict(TypedDict):
+    is_older_version_acknowledged: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+    """
     major_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -15963,20 +16149,36 @@ class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs
 @pulumi.input_type
 class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs:
     def __init__(__self__, *,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  major_version: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  version_preference: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
         """
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if major_version is not None:
             pulumi.set(__self__, "major_version", major_version)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if version_preference is not None:
             pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="majorVersion")
@@ -17254,6 +17456,10 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict(TypedDict):
     db_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+    """
+    is_older_version_acknowledged: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
 
     This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
     """
@@ -17276,11 +17482,13 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
     def __init__(__self__, *,
                  database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  options: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
         :param pulumi.Input[_builtins.str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[_builtins.str] options: Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
@@ -17295,6 +17503,8 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if options is not None:
             pulumi.set(__self__, "options", options)
         if source is not None:
@@ -17317,14 +17527,26 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
     def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
     def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter
@@ -17813,10 +18035,6 @@ class DbHomeDatabaseArgsDict(TypedDict):
     """
     The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
     """
-    one_off_patches: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
-    """
-    List of one-off patches for Database Homes.
-    """
     pdb_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -17885,7 +18103,6 @@ class DbHomeDatabaseArgs:
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
-                 one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
                  pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  recovery_appliance_vpc_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -17920,7 +18137,6 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] one_off_patches: List of one-off patches for Database Homes.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
         :param pulumi.Input[_builtins.str] recovery_appliance_vpc_password: The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
@@ -17972,8 +18188,6 @@ class DbHomeDatabaseArgs:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
-        if one_off_patches is not None:
-            pulumi.set(__self__, "one_off_patches", one_off_patches)
         if pdb_name is not None:
             pulumi.set(__self__, "pdb_name", pdb_name)
         if pluggable_databases is not None:
@@ -18234,18 +18448,6 @@ class DbHomeDatabaseArgs:
     @ncharacter_set.setter
     def ncharacter_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ncharacter_set", value)
-
-    @_builtins.property
-    @pulumi.getter(name="oneOffPatches")
-    def one_off_patches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
-        """
-        List of one-off patches for Database Homes.
-        """
-        return pulumi.get(self, "one_off_patches")
-
-    @one_off_patches.setter
-    def one_off_patches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
-        pulumi.set(self, "one_off_patches", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbName")
@@ -19911,6 +20113,10 @@ class DbSystemDbHomeDatabaseArgsDict(TypedDict):
     """
     True if active Data Guard is enabled.
     """
+    is_older_version_acknowledged: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+    """
     key_store_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
@@ -20000,6 +20206,7 @@ class DbSystemDbHomeDatabaseArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -20036,6 +20243,7 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -20094,6 +20302,8 @@ class DbSystemDbHomeDatabaseArgs:
             pulumi.set(__self__, "id", id)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if key_store_id is not None:
             pulumi.set(__self__, "key_store_id", key_store_id)
         if kms_key_id is not None:
@@ -20338,6 +20548,18 @@ class DbSystemDbHomeDatabaseArgs:
     @is_active_data_guard_enabled.setter
     def is_active_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active_data_guard_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
@@ -23778,6 +24000,54 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
     @dr_network_bonding_mode.setter
     def dr_network_bonding_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dr_network_bonding_mode", value)
+
+
+class ExadataInfrastructureSslInspectionConfigurationArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+    """
+    certificate_authority_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+    """
+
+@pulumi.input_type
+class ExadataInfrastructureSslInspectionConfigurationArgs:
+    def __init__(__self__, *,
+                 is_enabled: pulumi.Input[_builtins.bool],
+                 certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_enabled: Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+        :param pulumi.Input[_builtins.str] certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if certificate_authority_id is not None:
+            pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateAuthorityId")
+    def certificate_authority_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+        """
+        return pulumi.get(self, "certificate_authority_id")
+
+    @certificate_authority_id.setter
+    def certificate_authority_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate_authority_id", value)
 
 
 class ExadataInfrastructureStorageContactArgsDict(TypedDict):

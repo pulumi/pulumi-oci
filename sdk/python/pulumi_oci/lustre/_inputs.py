@@ -27,6 +27,10 @@ __all__ = [
     'FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgsDict',
     'FileStorageLustreFileSystemRootSquashConfigurationArgs',
     'FileStorageLustreFileSystemRootSquashConfigurationArgsDict',
+    'FileStorageLustreFileSystemTieringConfigurationArgs',
+    'FileStorageLustreFileSystemTieringConfigurationArgsDict',
+    'FileStorageLustreFileSystemTieringConfigurationRuleArgs',
+    'FileStorageLustreFileSystemTieringConfigurationRuleArgsDict',
     'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs',
     'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict',
     'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs',
@@ -389,6 +393,202 @@ class FileStorageLustreFileSystemRootSquashConfigurationArgs:
     @squash_uid.setter
     def squash_uid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "squash_uid", value)
+
+
+class FileStorageLustreFileSystemTieringConfigurationArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+    """
+    policy_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+    """
+    rule_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Service-computed number of custom tiering policy rules.
+    """
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemTieringConfigurationRuleArgsDict']]]]]
+    """
+    (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+    """
+
+@pulumi.input_type
+class FileStorageLustreFileSystemTieringConfigurationArgs:
+    def __init__(__self__, *,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 policy_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemTieringConfigurationRuleArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+        :param pulumi.Input[_builtins.str] policy_mode: (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+        :param pulumi.Input[_builtins.int] rule_count: Service-computed number of custom tiering policy rules.
+        :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemTieringConfigurationRuleArgs']]] rules: (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if policy_mode is not None:
+            pulumi.set(__self__, "policy_mode", policy_mode)
+        if rule_count is not None:
+            pulumi.set(__self__, "rule_count", rule_count)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="policyMode")
+    def policy_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+        """
+        return pulumi.get(self, "policy_mode")
+
+    @policy_mode.setter
+    def policy_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "policy_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleCount")
+    def rule_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Service-computed number of custom tiering policy rules.
+        """
+        return pulumi.get(self, "rule_count")
+
+    @rule_count.setter
+    def rule_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "rule_count", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemTieringConfigurationRuleArgs']]]]:
+        """
+        (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemTieringConfigurationRuleArgs']]]]):
+        pulumi.set(self, "rules", value)
+
+
+class FileStorageLustreFileSystemTieringConfigurationRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+    """
+    path_prefixes: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+    """
+    archive_after_days_since_last_access: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+    """
+    min_size_in_bytes: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+    """
+    release_after_days_since_last_access: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+    """
+
+@pulumi.input_type
+class FileStorageLustreFileSystemTieringConfigurationRuleArgs:
+    def __init__(__self__, *,
+                 action: pulumi.Input[_builtins.str],
+                 path_prefixes: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 archive_after_days_since_last_access: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 release_after_days_since_last_access: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] path_prefixes: (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+        :param pulumi.Input[_builtins.int] archive_after_days_since_last_access: (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+        :param pulumi.Input[_builtins.str] min_size_in_bytes: (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+        :param pulumi.Input[_builtins.int] release_after_days_since_last_access: (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "path_prefixes", path_prefixes)
+        if archive_after_days_since_last_access is not None:
+            pulumi.set(__self__, "archive_after_days_since_last_access", archive_after_days_since_last_access)
+        if min_size_in_bytes is not None:
+            pulumi.set(__self__, "min_size_in_bytes", min_size_in_bytes)
+        if release_after_days_since_last_access is not None:
+            pulumi.set(__self__, "release_after_days_since_last_access", release_after_days_since_last_access)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pathPrefixes")
+    def path_prefixes(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+        """
+        return pulumi.get(self, "path_prefixes")
+
+    @path_prefixes.setter
+    def path_prefixes(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "path_prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="archiveAfterDaysSinceLastAccess")
+    def archive_after_days_since_last_access(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+        """
+        return pulumi.get(self, "archive_after_days_since_last_access")
+
+    @archive_after_days_since_last_access.setter
+    def archive_after_days_since_last_access(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "archive_after_days_since_last_access", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minSizeInBytes")
+    def min_size_in_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+        """
+        return pulumi.get(self, "min_size_in_bytes")
+
+    @min_size_in_bytes.setter
+    def min_size_in_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "min_size_in_bytes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="releaseAfterDaysSinceLastAccess")
+    def release_after_days_since_last_access(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+        """
+        return pulumi.get(self, "release_after_days_since_last_access")
+
+    @release_after_days_since_last_access.setter
+    def release_after_days_since_last_access(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "release_after_days_since_last_access", value)
 
 
 class GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict(TypedDict):

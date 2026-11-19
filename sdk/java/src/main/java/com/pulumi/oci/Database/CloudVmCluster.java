@@ -540,6 +540,12 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isLocalBackupEnabled() {
         return this.isLocalBackupEnabled;
     }
+    @Export(name="isOlderVersionAcknowledged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOlderVersionAcknowledged;
+
+    public Output<Boolean> isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      * 

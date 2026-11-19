@@ -190,7 +190,8 @@ type CloudVmCluster struct {
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches CloudVmClusterIormConfigCacheArrayOutput `pulumi:"iormConfigCaches"`
 	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged pulumi.BoolOutput `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolOutput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -405,7 +406,8 @@ type cloudVmClusterState struct {
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []CloudVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       *bool `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -564,7 +566,8 @@ type CloudVmClusterState struct {
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches CloudVmClusterIormConfigCacheArrayInput
 	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled pulumi.BoolPtrInput
+	IsLocalBackupEnabled       pulumi.BoolPtrInput
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -725,7 +728,8 @@ type cloudVmClusterArgs struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname string `pulumi:"hostname"`
 	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       *bool `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -839,7 +843,8 @@ type CloudVmClusterArgs struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname pulumi.StringInput
 	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled pulumi.BoolPtrInput
+	IsLocalBackupEnabled       pulumi.BoolPtrInput
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -1127,6 +1132,10 @@ func (o CloudVmClusterOutput) IormConfigCaches() CloudVmClusterIormConfigCacheAr
 // (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 func (o CloudVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.BoolOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+}
+
+func (o CloudVmClusterOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.BoolOutput { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.

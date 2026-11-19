@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

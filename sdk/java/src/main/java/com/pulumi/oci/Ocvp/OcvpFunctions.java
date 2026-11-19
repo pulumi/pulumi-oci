@@ -1935,7 +1935,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastore Clusters in the specified compartment. The list can be filtered
-     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+     * compartmentId or datastoreClusterId must be provided.
      * 
      * ## Example Usage
      * 
@@ -1962,8 +1963,104 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .datastoreClusterId(testDatastoreCluster.get("id"))
+     *             .displayName(datastoreClusterDisplayName)
+     *             .state(datastoreClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreClustersResult> getDatastoreClusters() {
+        return getDatastoreClusters(GetDatastoreClustersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastore Clusters in the specified compartment. The list can be filtered
+     * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+     * compartmentId or datastoreClusterId must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .datastoreClusterId(testDatastoreCluster.get("id"))
+     *             .displayName(datastoreClusterDisplayName)
+     *             .state(datastoreClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoreClustersResult> getDatastoreClustersPlain() {
+        return getDatastoreClustersPlain(GetDatastoreClustersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastore Clusters in the specified compartment. The list can be filtered
+     * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+     * compartmentId or datastoreClusterId must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
@@ -1982,7 +2079,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastore Clusters in the specified compartment. The list can be filtered
-     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+     * compartmentId or datastoreClusterId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2009,8 +2107,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
@@ -2029,7 +2127,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastore Clusters in the specified compartment. The list can be filtered
-     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+     * compartmentId or datastoreClusterId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2056,8 +2155,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
@@ -2076,7 +2175,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastore Clusters in the specified compartment. The list can be filtered
-     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+     * compartmentId or datastoreClusterId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2103,8 +2203,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
@@ -2123,7 +2223,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastore Clusters in the specified compartment. The list can be filtered
-     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+     * compartmentId or datastoreClusterId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2150,8 +2251,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
@@ -2170,7 +2271,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastores in the specified compartment. The list can be filtered
-     * by compartment, datastore id, display name and lifecycle state.
+     * by compartment, datastore id, display name and lifecycle state. Either
+     * compartmentId or datastoreId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2197,8 +2299,104 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .datastoreId(testDatastore.get("id"))
+     *             .displayName(datastoreDisplayName)
+     *             .state(datastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoresResult> getDatastores() {
+        return getDatastores(GetDatastoresArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastores in the specified compartment. The list can be filtered
+     * by compartment, datastore id, display name and lifecycle state. Either
+     * compartmentId or datastoreId must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .datastoreId(testDatastore.get("id"))
+     *             .displayName(datastoreDisplayName)
+     *             .state(datastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoresResult> getDatastoresPlain() {
+        return getDatastoresPlain(GetDatastoresPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastores in the specified compartment. The list can be filtered
+     * by compartment, datastore id, display name and lifecycle state. Either
+     * compartmentId or datastoreId must be provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
@@ -2217,7 +2415,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastores in the specified compartment. The list can be filtered
-     * by compartment, datastore id, display name and lifecycle state.
+     * by compartment, datastore id, display name and lifecycle state. Either
+     * compartmentId or datastoreId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2244,8 +2443,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
@@ -2264,7 +2463,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastores in the specified compartment. The list can be filtered
-     * by compartment, datastore id, display name and lifecycle state.
+     * by compartment, datastore id, display name and lifecycle state. Either
+     * compartmentId or datastoreId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2291,8 +2491,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
@@ -2311,7 +2511,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastores in the specified compartment. The list can be filtered
-     * by compartment, datastore id, display name and lifecycle state.
+     * by compartment, datastore id, display name and lifecycle state. Either
+     * compartmentId or datastoreId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2338,8 +2539,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
@@ -2358,7 +2559,8 @@ public final class OcvpFunctions {
      * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * List the Datastores in the specified compartment. The list can be filtered
-     * by compartment, datastore id, display name and lifecycle state.
+     * by compartment, datastore id, display name and lifecycle state. Either
+     * compartmentId or datastoreId must be provided.
      * 
      * ## Example Usage
      * 
@@ -2385,8 +2587,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
      *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)

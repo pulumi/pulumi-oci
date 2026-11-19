@@ -38,6 +38,7 @@ class ExadbVmClusterArgs:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  node_resources: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -78,6 +79,7 @@ class ExadbVmClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -120,6 +122,8 @@ class ExadbVmClusterArgs:
             pulumi.set(__self__, "domain", domain)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
         if node_resources is not None:
@@ -360,6 +364,18 @@ class ExadbVmClusterArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -552,6 +568,7 @@ class _ExadbVmClusterState:
                  grid_image_type: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -608,6 +625,7 @@ class _ExadbVmClusterState:
                
                **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
         :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -677,6 +695,8 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "hostname", hostname)
         if iorm_config_caches is not None:
             pulumi.set(__self__, "iorm_config_caches", iorm_config_caches)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if last_update_history_entry_id is not None:
             pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
         if license_model is not None:
@@ -947,6 +967,18 @@ class _ExadbVmClusterState:
     @iorm_config_caches.setter
     def iorm_config_caches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]]):
         pulumi.set(self, "iorm_config_caches", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateHistoryEntryId")
@@ -1332,6 +1364,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  grid_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  node_config: pulumi.Input[Optional[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict', 'outputs.ExadbVmClusterNodeConfig']]] = None,
                  node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict', 'outputs.ExadbVmClusterNodeResource']]]]] = None,
@@ -1443,6 +1476,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict', 'outputs.ExadbVmClusterNodeConfig']] node_config: (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict', 'outputs.ExadbVmClusterNodeResource']]]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
@@ -1571,6 +1605,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  grid_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  node_config: pulumi.Input[Optional[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict', 'outputs.ExadbVmClusterNodeConfig']]] = None,
                  node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict', 'outputs.ExadbVmClusterNodeResource']]]]] = None,
@@ -1625,6 +1660,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             if hostname is None and not opts.urn:
                 raise TypeError("Missing required property 'hostname'")
             __props__.__dict__["hostname"] = hostname
+            __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
             __props__.__dict__["license_model"] = license_model
             if node_config is None and not opts.urn:
                 raise TypeError("Missing required property 'node_config'")
@@ -1694,6 +1730,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             grid_image_type: pulumi.Input[Optional[_builtins.str]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCacheArgs', 'ExadbVmClusterIormConfigCacheArgsDict', 'outputs.ExadbVmClusterIormConfigCache']]]]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1754,6 +1791,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                
                **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCacheArgs', 'ExadbVmClusterIormConfigCacheArgsDict', 'outputs.ExadbVmClusterIormConfigCache']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -1810,6 +1848,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__.__dict__["grid_image_type"] = grid_image_type
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["iorm_config_caches"] = iorm_config_caches
+        __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
         __props__.__dict__["last_update_history_entry_id"] = last_update_history_entry_id
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -1862,6 +1901,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             grid_image_type: pulumi.Input[Optional[_builtins.str]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCacheArgs', 'ExadbVmClusterIormConfigCacheArgsDict', 'outputs.ExadbVmClusterIormConfigCache']]]]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1910,6 +1950,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__["gridImageType"] = grid_image_type
         __props__["hostname"] = hostname
         __props__["iormConfigCaches"] = iorm_config_caches
+        __props__["isOlderVersionAcknowledged"] = is_older_version_acknowledged
         __props__["lastUpdateHistoryEntryId"] = last_update_history_entry_id
         __props__["licenseModel"] = license_model
         __props__["lifecycleDetails"] = lifecycle_details
@@ -2083,6 +2124,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateHistoryEntryId")

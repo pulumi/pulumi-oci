@@ -219,6 +219,20 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
         return this.includedPatchesSummary;
     }
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Export(name="isOlderVersionAcknowledged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Output<Boolean> isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
+    /**
      * True if this Database software image is supported for Upgrade.
      * 
      */

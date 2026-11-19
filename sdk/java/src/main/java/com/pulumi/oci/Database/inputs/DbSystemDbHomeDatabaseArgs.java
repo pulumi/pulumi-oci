@@ -284,6 +284,21 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
@@ -543,6 +558,7 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         this.freeformTags = $.freeformTags;
         this.id = $.id;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.keyStoreId = $.keyStoreId;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
@@ -942,6 +958,27 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
          */
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
             return isActiveDataGuardEnabled(Output.of(isActiveDataGuardEnabled));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

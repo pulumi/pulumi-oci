@@ -229,7 +229,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      */
     declare public readonly requestIdHeader: pulumi.Output<string>;
     /**
-     * (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+     * (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
     declare public readonly reservedIps: pulumi.Output<outputs.LoadBalancer.LoadBalancerReservedIp[] | undefined>;
     /**
@@ -449,7 +449,7 @@ export interface LoadBalancerState {
      */
     requestIdHeader?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+     * (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[] | undefined>;
     /**
@@ -584,7 +584,7 @@ export interface LoadBalancerArgs {
      */
     requestIdHeader?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+     * (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[] | undefined>;
     /**

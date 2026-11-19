@@ -9,6 +9,7 @@ import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSy
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfiguration;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -134,6 +135,11 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     * 
+     */
+    private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration> tieringConfigurations;
     /**
      * @return The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -319,6 +325,13 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
         return this.systemTags;
     }
     /**
+     * @return Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     * 
+     */
+    public List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration> tieringConfigurations() {
+        return this.tieringConfigurations;
+    }
+    /**
      * @return The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -374,6 +387,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
+        private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration> tieringConfigurations;
         private String timeBillingCycleEnd;
         private String timeCreated;
         private String timeUpdated;
@@ -405,6 +419,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
+    	      this.tieringConfigurations = defaults.tieringConfigurations;
     	      this.timeBillingCycleEnd = defaults.timeBillingCycleEnd;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -626,6 +641,17 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
             return this;
         }
         @CustomType.Setter
+        public Builder tieringConfigurations(List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration> tieringConfigurations) {
+            if (tieringConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem", "tieringConfigurations");
+            }
+            this.tieringConfigurations = tieringConfigurations;
+            return this;
+        }
+        public Builder tieringConfigurations(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration... tieringConfigurations) {
+            return tieringConfigurations(List.of(tieringConfigurations));
+        }
+        @CustomType.Setter
         public Builder timeBillingCycleEnd(String timeBillingCycleEnd) {
             if (timeBillingCycleEnd == null) {
               throw new MissingRequiredPropertyException("GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem", "timeBillingCycleEnd");
@@ -676,6 +702,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;
+            _resultValue.tieringConfigurations = tieringConfigurations;
             _resultValue.timeBillingCycleEnd = timeBillingCycleEnd;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

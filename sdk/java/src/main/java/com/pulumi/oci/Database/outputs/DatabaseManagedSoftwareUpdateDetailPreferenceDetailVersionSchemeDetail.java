@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -11,6 +12,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    private @Nullable Boolean isOlderVersionAcknowledged;
     /**
      * @return The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
@@ -28,6 +34,13 @@ public final class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSch
     private @Nullable String versionPreference;
 
     private DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail() {}
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Boolean> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
     /**
      * @return The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
@@ -59,17 +72,25 @@ public final class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSch
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean isOlderVersionAcknowledged;
         private @Nullable String majorVersion;
         private @Nullable String source;
         private @Nullable String versionPreference;
         public Builder() {}
         public Builder(DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.majorVersion = defaults.majorVersion;
     	      this.source = defaults.source;
     	      this.versionPreference = defaults.versionPreference;
         }
 
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(@Nullable Boolean isOlderVersionAcknowledged) {
+
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
         @CustomType.Setter
         public Builder majorVersion(@Nullable String majorVersion) {
 
@@ -90,6 +111,7 @@ public final class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSch
         }
         public DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail build() {
             final var _resultValue = new DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail();
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.majorVersion = majorVersion;
             _resultValue.source = source;
             _resultValue.versionPreference = versionPreference;

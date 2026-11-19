@@ -103,6 +103,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCacheResult> IormConfigCaches;
+        public readonly bool IsOlderVersionAcknowledged;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
@@ -302,6 +303,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCacheResult> iormConfigCaches,
 
+            bool isOlderVersionAcknowledged,
+
             string kmsKeyId,
 
             string kmsKeyVersionId,
@@ -412,6 +415,7 @@ namespace Pulumi.Oci.Database.Outputs
             Hostname = hostname;
             Id = id;
             IormConfigCaches = iormConfigCaches;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LastMaintenanceRunId = lastMaintenanceRunId;

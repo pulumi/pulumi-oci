@@ -180,6 +180,7 @@ namespace Pulumi.Oci.Database
         /// True if active Data Guard is enabled.
         /// </summary>
         public readonly bool IsActiveDataGuardEnabled;
+        public readonly bool IsOlderVersionAcknowledged;
         public readonly string LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycleState, if available.
@@ -295,6 +296,8 @@ namespace Pulumi.Oci.Database
 
             bool isActiveDataGuardEnabled,
 
+            bool isOlderVersionAcknowledged,
+
             string licenseModel,
 
             string lifecycleDetails,
@@ -372,6 +375,7 @@ namespace Pulumi.Oci.Database
             Hostname = hostname;
             Id = id;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
             MigrateTrigger = migrateTrigger;

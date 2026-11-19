@@ -13,6 +13,7 @@ import com.pulumi.oci.Database.outputs.DbHomeDatabase;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -218,6 +219,12 @@ public class DbHome extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isDesupportedVersion() {
         return this.isDesupportedVersion;
     }
+    @Export(name="isOlderVersionAcknowledged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOlderVersionAcknowledged;
+
+    public Output<Boolean> isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      * 
@@ -287,6 +294,20 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * List of one-off patches for Database Homes.
+     * 
+     */
+    @Export(name="oneOffPatches", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> oneOffPatches;
+
+    /**
+     * @return List of one-off patches for Database Homes.
+     * 
+     */
+    public Output<List<String>> oneOffPatches() {
+        return this.oneOffPatches;
     }
     /**
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.

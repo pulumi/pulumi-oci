@@ -187,7 +187,7 @@ type LoadBalancer struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader pulumi.StringOutput `pulumi:"requestIdHeader"`
-	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayOutput `pulumi:"reservedIps"`
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
@@ -329,7 +329,7 @@ type loadBalancerState struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader *string `pulumi:"requestIdHeader"`
-	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
@@ -430,7 +430,7 @@ type LoadBalancerState struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader pulumi.StringPtrInput
-	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes pulumi.StringMapInput
@@ -534,7 +534,7 @@ type loadBalancerArgs struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader *string `pulumi:"requestIdHeader"`
-	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
@@ -623,7 +623,7 @@ type LoadBalancerArgs struct {
 	// * Unless the header name is "" it must start with "X-" prefix.
 	// * Setting the header name to "" will set it to the default: X-Request-Id.
 	RequestIdHeader pulumi.StringPtrInput
-	// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
 	// (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
 	SecurityAttributes pulumi.StringMapInput
@@ -843,7 +843,7 @@ func (o LoadBalancerOutput) RequestIdHeader() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.RequestIdHeader }).(pulumi.StringOutput)
 }
 
-// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 func (o LoadBalancerOutput) ReservedIps() LoadBalancerReservedIpArrayOutput {
 	return o.ApplyT(func(v *LoadBalancer) LoadBalancerReservedIpArrayOutput { return v.ReservedIps }).(LoadBalancerReservedIpArrayOutput)
 }

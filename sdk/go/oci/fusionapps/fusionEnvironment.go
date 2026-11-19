@@ -98,7 +98,7 @@ import (
 type FusionEnvironment struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules FusionEnvironmentAdditionalEgressRuleArrayOutput `pulumi:"additionalEgressRules"`
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks pulumi.StringArrayOutput `pulumi:"additionalLanguagePacks"`
@@ -207,7 +207,7 @@ func GetFusionEnvironment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FusionEnvironment resources.
 type fusionEnvironmentState struct {
-	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules []FusionEnvironmentAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
@@ -272,7 +272,7 @@ type fusionEnvironmentState struct {
 }
 
 type FusionEnvironmentState struct {
-	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules FusionEnvironmentAdditionalEgressRuleArrayInput
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks pulumi.StringArrayInput
@@ -347,7 +347,7 @@ func FusionEnvironmentExists(ctx *pulumi.Context,
 }
 
 type fusionEnvironmentArgs struct {
-	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules []FusionEnvironmentAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
@@ -381,7 +381,7 @@ type fusionEnvironmentArgs struct {
 
 // The set of arguments for constructing a FusionEnvironment resource.
 type FusionEnvironmentArgs struct {
-	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules FusionEnvironmentAdditionalEgressRuleArrayInput
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks pulumi.StringArrayInput
@@ -500,7 +500,7 @@ func (o FusionEnvironmentOutput) ToFusionEnvironmentOutputWithContext(ctx contex
 	return o
 }
 
-// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
 func (o FusionEnvironmentOutput) AdditionalEgressRules() FusionEnvironmentAdditionalEgressRuleArrayOutput {
 	return o.ApplyT(func(v *FusionEnvironment) FusionEnvironmentAdditionalEgressRuleArrayOutput {
 		return v.AdditionalEgressRules

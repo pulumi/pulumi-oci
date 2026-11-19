@@ -31,6 +31,7 @@ class DbHomeArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -81,6 +82,8 @@ class DbHomeArgs:
             pulumi.set(__self__, "home_type", home_type)
         if is_desupported_version is not None:
             pulumi.set(__self__, "is_desupported_version", is_desupported_version)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_unified_auditing_enabled is not None:
             pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         if kms_key_id is not None:
@@ -214,6 +217,15 @@ class DbHomeArgs:
         pulumi.set(self, "is_desupported_version", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="isUnifiedAuditingEnabled")
     def is_unified_auditing_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -292,11 +304,13 @@ class _DbHomeState:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                  last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -325,6 +339,7 @@ class _DbHomeState:
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] one_off_patches: List of one-off patches for Database Homes.
         :param pulumi.Input[_builtins.str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Home.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -358,6 +373,8 @@ class _DbHomeState:
             pulumi.set(__self__, "home_type", home_type)
         if is_desupported_version is not None:
             pulumi.set(__self__, "is_desupported_version", is_desupported_version)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_unified_auditing_enabled is not None:
             pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         if kms_key_id is not None:
@@ -368,6 +385,8 @@ class _DbHomeState:
             pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if one_off_patches is not None:
+            pulumi.set(__self__, "one_off_patches", one_off_patches)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if state is not None:
@@ -525,6 +544,15 @@ class _DbHomeState:
         pulumi.set(self, "is_desupported_version", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="isUnifiedAuditingEnabled")
     def is_unified_auditing_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -583,6 +611,18 @@ class _DbHomeState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="oneOffPatches")
+    def one_off_patches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of one-off patches for Database Homes.
+        """
+        return pulumi.get(self, "one_off_patches")
+
+    @one_off_patches.setter
+    def one_off_patches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "one_off_patches", value)
 
     @_builtins.property
     @pulumi.getter
@@ -664,6 +704,7 @@ class DbHome(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -787,6 +828,7 @@ class DbHome(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -811,6 +853,7 @@ class DbHome(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["home_type"] = home_type
             __props__.__dict__["is_desupported_version"] = is_desupported_version
+            __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
             __props__.__dict__["is_unified_auditing_enabled"] = is_unified_auditing_enabled
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["kms_key_version_id"] = kms_key_version_id
@@ -820,6 +863,7 @@ class DbHome(pulumi.CustomResource):
             __props__.__dict__["db_home_location"] = None
             __props__.__dict__["last_patch_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["one_off_patches"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -845,11 +889,13 @@ class DbHome(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             home_type: pulumi.Input[Optional[_builtins.str]] = None,
             is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -882,6 +928,7 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] one_off_patches: List of one-off patches for Database Homes.
         :param pulumi.Input[_builtins.str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Home.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -907,11 +954,13 @@ class DbHome(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["home_type"] = home_type
         __props__.__dict__["is_desupported_version"] = is_desupported_version
+        __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
         __props__.__dict__["is_unified_auditing_enabled"] = is_unified_auditing_enabled
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["last_patch_history_entry_id"] = last_patch_history_entry_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["one_off_patches"] = one_off_patches
         __props__.__dict__["source"] = source
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -934,11 +983,13 @@ class DbHome(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             home_type: pulumi.Input[Optional[_builtins.str]] = None,
             is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -957,11 +1008,13 @@ class DbHome(pulumi.CustomResource):
         __props__["freeformTags"] = freeform_tags
         __props__["homeType"] = home_type
         __props__["isDesupportedVersion"] = is_desupported_version
+        __props__["isOlderVersionAcknowledged"] = is_older_version_acknowledged
         __props__["isUnifiedAuditingEnabled"] = is_unified_auditing_enabled
         __props__["kmsKeyId"] = kms_key_id
         __props__["kmsKeyVersionId"] = kms_key_version_id
         __props__["lastPatchHistoryEntryId"] = last_patch_history_entry_id
         __props__["lifecycleDetails"] = lifecycle_details
+        __props__["oneOffPatches"] = one_off_patches
         __props__["source"] = source
         __props__["state"] = state
         __props__["systemTags"] = system_tags
@@ -1067,6 +1120,11 @@ class DbHome(pulumi.CustomResource):
         return pulumi.get(self, "is_desupported_version")
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @_builtins.property
     @pulumi.getter(name="isUnifiedAuditingEnabled")
     def is_unified_auditing_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -1105,6 +1163,14 @@ class DbHome(pulumi.CustomResource):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="oneOffPatches")
+    def one_off_patches(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of one-off patches for Database Homes.
+        """
+        return pulumi.get(self, "one_off_patches")
 
     @_builtins.property
     @pulumi.getter

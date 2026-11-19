@@ -27,6 +27,7 @@ class DatabaseSoftwareImageArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
                  image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  ls_inventory: pulumi.Input[Optional[_builtins.str]] = None,
                  patch_set: pulumi.Input[Optional[_builtins.str]] = None,
                  source_db_home_id: pulumi.Input[Optional[_builtins.str]] = None):
@@ -41,6 +42,7 @@ class DatabaseSoftwareImageArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] image_type: The type of software image. Can be grid or database.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[_builtins.str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[_builtins.str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -62,6 +64,8 @@ class DatabaseSoftwareImageArgs:
             pulumi.set(__self__, "image_shape_family", image_shape_family)
         if image_type is not None:
             pulumi.set(__self__, "image_type", image_type)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if ls_inventory is not None:
             pulumi.set(__self__, "ls_inventory", ls_inventory)
         if patch_set is not None:
@@ -166,6 +170,18 @@ class DatabaseSoftwareImageArgs:
         pulumi.set(self, "image_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -218,6 +234,7 @@ class _DatabaseSoftwareImageState:
                  image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
                  image_type: pulumi.Input[Optional[_builtins.str]] = None,
                  included_patches_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_upgrade_supported: pulumi.Input[Optional[_builtins.bool]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  ls_inventory: pulumi.Input[Optional[_builtins.str]] = None,
@@ -239,6 +256,7 @@ class _DatabaseSoftwareImageState:
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] image_type: The type of software image. Can be grid or database.
         :param pulumi.Input[_builtins.str] included_patches_summary: The patches included in the image and the version of the image.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[_builtins.str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
@@ -271,6 +289,8 @@ class _DatabaseSoftwareImageState:
             pulumi.set(__self__, "image_type", image_type)
         if included_patches_summary is not None:
             pulumi.set(__self__, "included_patches_summary", included_patches_summary)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_upgrade_supported is not None:
             pulumi.set(__self__, "is_upgrade_supported", is_upgrade_supported)
         if lifecycle_details is not None:
@@ -409,6 +429,18 @@ class _DatabaseSoftwareImageState:
         pulumi.set(self, "included_patches_summary", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="isUpgradeSupported")
     def is_upgrade_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -522,6 +554,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
                  image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  ls_inventory: pulumi.Input[Optional[_builtins.str]] = None,
                  patch_set: pulumi.Input[Optional[_builtins.str]] = None,
                  source_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -575,6 +608,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] image_type: The type of software image. Can be grid or database.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[_builtins.str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[_builtins.str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -650,6 +684,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
                  image_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  ls_inventory: pulumi.Input[Optional[_builtins.str]] = None,
                  patch_set: pulumi.Input[Optional[_builtins.str]] = None,
                  source_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -674,6 +709,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["image_shape_family"] = image_shape_family
             __props__.__dict__["image_type"] = image_type
+            __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
             __props__.__dict__["ls_inventory"] = ls_inventory
             __props__.__dict__["patch_set"] = patch_set
             __props__.__dict__["source_db_home_id"] = source_db_home_id
@@ -704,6 +740,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
             image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
             image_type: pulumi.Input[Optional[_builtins.str]] = None,
             included_patches_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_upgrade_supported: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             ls_inventory: pulumi.Input[Optional[_builtins.str]] = None,
@@ -729,6 +766,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] image_type: The type of software image. Can be grid or database.
         :param pulumi.Input[_builtins.str] included_patches_summary: The patches included in the image and the version of the image.
+        :param pulumi.Input[_builtins.bool] is_older_version_acknowledged: Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         :param pulumi.Input[_builtins.bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[_builtins.str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
@@ -755,6 +793,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         __props__.__dict__["image_shape_family"] = image_shape_family
         __props__.__dict__["image_type"] = image_type
         __props__.__dict__["included_patches_summary"] = included_patches_summary
+        __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
         __props__.__dict__["is_upgrade_supported"] = is_upgrade_supported
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["ls_inventory"] = ls_inventory
@@ -778,6 +817,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
             image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
             image_type: pulumi.Input[Optional[_builtins.str]] = None,
             included_patches_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_upgrade_supported: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             ls_inventory: pulumi.Input[Optional[_builtins.str]] = None,
@@ -797,6 +837,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         __props__["imageShapeFamily"] = image_shape_family
         __props__["imageType"] = image_type
         __props__["includedPatchesSummary"] = included_patches_summary
+        __props__["isOlderVersionAcknowledged"] = is_older_version_acknowledged
         __props__["isUpgradeSupported"] = is_upgrade_supported
         __props__["lifecycleDetails"] = lifecycle_details
         __props__["lsInventory"] = ls_inventory
@@ -886,6 +927,14 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         The patches included in the image and the version of the image.
         """
         return pulumi.get(self, "included_patches_summary")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        """
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="isUpgradeSupported")

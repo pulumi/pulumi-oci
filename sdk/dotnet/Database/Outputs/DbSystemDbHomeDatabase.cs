@@ -84,6 +84,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool? IsActiveDataGuardEnabled;
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        public readonly bool? IsOlderVersionAcknowledged;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
         public readonly string? KeyStoreId;
@@ -189,6 +193,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool? isActiveDataGuardEnabled,
 
+            bool? isOlderVersionAcknowledged,
+
             string? keyStoreId,
 
             string? kmsKeyId,
@@ -237,6 +243,7 @@ namespace Pulumi.Oci.Database.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             KeyStoreId = keyStoreId;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;

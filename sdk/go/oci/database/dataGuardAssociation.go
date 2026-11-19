@@ -162,6 +162,8 @@ type DataGuardAssociation struct {
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrOutput `pulumi:"isActiveDataGuardEnabled"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolOutput `pulumi:"isOlderVersionAcknowledged"`
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
@@ -350,6 +352,8 @@ type dataGuardAssociationState struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
@@ -484,6 +488,8 @@ type DataGuardAssociationState struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel pulumi.StringPtrInput
 	// Additional information about the current lifecycleState, if available.
@@ -624,6 +630,8 @@ type dataGuardAssociationArgs struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
@@ -741,6 +749,8 @@ type DataGuardAssociationArgs struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
@@ -1022,6 +1032,11 @@ func (o DataGuardAssociationOutput) Hostname() pulumi.StringOutput {
 // (Updatable) True if active Data Guard is enabled.
 func (o DataGuardAssociationOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.BoolPtrOutput { return v.IsActiveDataGuardEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o DataGuardAssociationOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.BoolOutput { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.

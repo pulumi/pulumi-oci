@@ -191,6 +191,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.ExadbVmClusterIormConfigCache[]>;
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    declare public readonly isOlderVersionAcknowledged: pulumi.Output<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */
     declare public /*out*/ readonly lastUpdateHistoryEntryId: pulumi.Output<string>;
@@ -345,6 +349,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["gridImageType"] = state?.gridImageType;
             resourceInputs["hostname"] = state?.hostname;
             resourceInputs["iormConfigCaches"] = state?.iormConfigCaches;
+            resourceInputs["isOlderVersionAcknowledged"] = state?.isOlderVersionAcknowledged;
             resourceInputs["lastUpdateHistoryEntryId"] = state?.lastUpdateHistoryEntryId;
             resourceInputs["licenseModel"] = state?.licenseModel;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -423,6 +428,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["gridImageId"] = args?.gridImageId;
             resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["isOlderVersionAcknowledged"] = args?.isOlderVersionAcknowledged;
             resourceInputs["licenseModel"] = args?.licenseModel;
             resourceInputs["nodeConfig"] = args?.nodeConfig;
             resourceInputs["nodeResources"] = args?.nodeResources;
@@ -541,6 +547,10 @@ export interface ExadbVmClusterState {
      * The IORM settings of the Exadata DB system.
      */
     iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterIormConfigCache>[] | undefined>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */
@@ -729,6 +739,10 @@ export interface ExadbVmClusterArgs {
      * **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
      */
     hostname: pulumi.Input<string>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      */

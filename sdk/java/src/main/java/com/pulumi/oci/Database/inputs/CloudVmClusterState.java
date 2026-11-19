@@ -447,6 +447,13 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.isLocalBackupEnabled);
     }
 
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+
     /**
      * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      * 
@@ -1099,6 +1106,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.hostname = $.hostname;
         this.iormConfigCaches = $.iormConfigCaches;
         this.isLocalBackupEnabled = $.isLocalBackupEnabled;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.isSparseDiskgroupEnabled = $.isSparseDiskgroupEnabled;
         this.lastUpdateHistoryEntryId = $.lastUpdateHistoryEntryId;
         this.licenseModel = $.licenseModel;
@@ -1770,6 +1778,15 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
             return isLocalBackupEnabled(Output.of(isLocalBackupEnabled));
+        }
+
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

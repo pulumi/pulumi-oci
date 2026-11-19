@@ -43,6 +43,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         public readonly bool IsActiveDataGuardEnabled;
+        public readonly bool IsOlderVersionAcknowledged;
         public readonly string KeyStoreId;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -109,6 +110,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isActiveDataGuardEnabled,
 
+            bool isOlderVersionAcknowledged,
+
             string keyStoreId,
 
             string kmsKeyId,
@@ -157,6 +160,7 @@ namespace Pulumi.Oci.Database.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             KeyStoreId = keyStoreId;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;

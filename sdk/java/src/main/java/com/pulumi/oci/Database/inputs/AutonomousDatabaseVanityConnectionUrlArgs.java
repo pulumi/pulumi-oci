@@ -16,6 +16,21 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
     public static final AutonomousDatabaseVanityConnectionUrlArgs Empty = new AutonomousDatabaseVanityConnectionUrlArgs();
 
     /**
+     * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    @Import(name="a2aUrl")
+    private @Nullable Output<String> a2aUrl;
+
+    /**
+     * @return The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    public Optional<Output<String>> a2aUrl() {
+        return Optional.ofNullable(this.a2aUrl);
+    }
+
+    /**
      * Oracle Application Express (APEX) URL.
      * 
      */
@@ -106,6 +121,21 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
     }
 
     /**
+     * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    @Import(name="mcpUrl")
+    private @Nullable Output<String> mcpUrl;
+
+    /**
+     * @return The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    public Optional<Output<String>> mcpUrl() {
+        return Optional.ofNullable(this.mcpUrl);
+    }
+
+    /**
      * The URL of the MongoDB API for the Autonomous Database.
      * 
      */
@@ -136,6 +166,21 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
     }
 
     /**
+     * The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    @Import(name="spatialStudioUrl")
+    private @Nullable Output<String> spatialStudioUrl;
+
+    /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    public Optional<Output<String>> spatialStudioUrl() {
+        return Optional.ofNullable(this.spatialStudioUrl);
+    }
+
+    /**
      * Oracle SQL Developer Web URL.
      * 
      */
@@ -153,14 +198,17 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
     private AutonomousDatabaseVanityConnectionUrlArgs() {}
 
     private AutonomousDatabaseVanityConnectionUrlArgs(AutonomousDatabaseVanityConnectionUrlArgs $) {
+        this.a2aUrl = $.a2aUrl;
         this.apexUrl = $.apexUrl;
         this.databaseTransformsUrl = $.databaseTransformsUrl;
         this.essbaseUrl = $.essbaseUrl;
         this.graphStudioUrl = $.graphStudioUrl;
         this.machineLearningNotebookUrl = $.machineLearningNotebookUrl;
         this.machineLearningUserManagementUrl = $.machineLearningUserManagementUrl;
+        this.mcpUrl = $.mcpUrl;
         this.mongoDbUrl = $.mongoDbUrl;
         this.ordsUrl = $.ordsUrl;
+        this.spatialStudioUrl = $.spatialStudioUrl;
         this.sqlDevWebUrl = $.sqlDevWebUrl;
     }
 
@@ -180,6 +228,27 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
 
         public Builder(AutonomousDatabaseVanityConnectionUrlArgs defaults) {
             $ = new AutonomousDatabaseVanityConnectionUrlArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param a2aUrl The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder a2aUrl(@Nullable Output<String> a2aUrl) {
+            $.a2aUrl = a2aUrl;
+            return this;
+        }
+
+        /**
+         * @param a2aUrl The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder a2aUrl(String a2aUrl) {
+            return a2aUrl(Output.of(a2aUrl));
         }
 
         /**
@@ -309,6 +378,27 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
         }
 
         /**
+         * @param mcpUrl The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mcpUrl(@Nullable Output<String> mcpUrl) {
+            $.mcpUrl = mcpUrl;
+            return this;
+        }
+
+        /**
+         * @param mcpUrl The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mcpUrl(String mcpUrl) {
+            return mcpUrl(Output.of(mcpUrl));
+        }
+
+        /**
          * @param mongoDbUrl The URL of the MongoDB API for the Autonomous Database.
          * 
          * @return builder
@@ -348,6 +438,27 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
          */
         public Builder ordsUrl(String ordsUrl) {
             return ordsUrl(Output.of(ordsUrl));
+        }
+
+        /**
+         * @param spatialStudioUrl The URL of the Spatial Studio for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spatialStudioUrl(@Nullable Output<String> spatialStudioUrl) {
+            $.spatialStudioUrl = spatialStudioUrl;
+            return this;
+        }
+
+        /**
+         * @param spatialStudioUrl The URL of the Spatial Studio for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spatialStudioUrl(String spatialStudioUrl) {
+            return spatialStudioUrl(Output.of(spatialStudioUrl));
         }
 
         /**

@@ -68,6 +68,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
      * 
      */
     private String includedPatchesSummary;
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return If provided, filters the results to the set of database versions which are supported for Upgrade.
      * 
@@ -183,6 +184,9 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
     public String includedPatchesSummary() {
         return this.includedPatchesSummary;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * @return If provided, filters the results to the set of database versions which are supported for Upgrade.
      * 
@@ -256,6 +260,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
         private String imageShapeFamily;
         private String imageType;
         private String includedPatchesSummary;
+        private Boolean isOlderVersionAcknowledged;
         private Boolean isUpgradeSupported;
         private String lifecycleDetails;
         private String lsInventory;
@@ -278,6 +283,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
     	      this.imageShapeFamily = defaults.imageShapeFamily;
     	      this.imageType = defaults.imageType;
     	      this.includedPatchesSummary = defaults.includedPatchesSummary;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.isUpgradeSupported = defaults.isUpgradeSupported;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lsInventory = defaults.lsInventory;
@@ -383,6 +389,14 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
             return this;
         }
         @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImagesDatabaseSoftwareImage", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
             if (isUpgradeSupported == null) {
               throw new MissingRequiredPropertyException("GetDatabaseSoftwareImagesDatabaseSoftwareImage", "isUpgradeSupported");
@@ -459,6 +473,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
             _resultValue.imageShapeFamily = imageShapeFamily;
             _resultValue.imageType = imageType;
             _resultValue.includedPatchesSummary = includedPatchesSummary;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.isUpgradeSupported = isUpgradeSupported;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lsInventory = lsInventory;

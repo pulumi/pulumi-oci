@@ -132,6 +132,7 @@ public final class GetDbSystemsDbSystem {
      */
     private String id;
     private List<GetDbSystemsDbSystemIormConfigCache> iormConfigCaches;
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -476,6 +477,9 @@ public final class GetDbSystemsDbSystem {
     public List<GetDbSystemsDbSystemIormConfigCache> iormConfigCaches() {
         return this.iormConfigCaches;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -778,6 +782,7 @@ public final class GetDbSystemsDbSystem {
         private String hostname;
         private String id;
         private List<GetDbSystemsDbSystemIormConfigCache> iormConfigCaches;
+        private Boolean isOlderVersionAcknowledged;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lastMaintenanceRunId;
@@ -848,6 +853,7 @@ public final class GetDbSystemsDbSystem {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.iormConfigCaches = defaults.iormConfigCaches;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
@@ -1102,6 +1108,14 @@ public final class GetDbSystemsDbSystem {
         }
         public Builder iormConfigCaches(GetDbSystemsDbSystemIormConfigCache... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
+        }
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
@@ -1497,6 +1511,7 @@ public final class GetDbSystemsDbSystem {
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.iormConfigCaches = iormConfigCaches;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;

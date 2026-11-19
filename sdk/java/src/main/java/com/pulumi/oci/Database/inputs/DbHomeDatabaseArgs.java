@@ -315,21 +315,6 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * List of one-off patches for Database Homes.
-     * 
-     */
-    @Import(name="oneOffPatches")
-    private @Nullable Output<List<String>> oneOffPatches;
-
-    /**
-     * @return List of one-off patches for Database Homes.
-     * 
-     */
-    public Optional<Output<List<String>>> oneOffPatches() {
-        return Optional.ofNullable(this.oneOffPatches);
-    }
-
-    /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
@@ -517,7 +502,6 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.ncharacterSet = $.ncharacterSet;
-        this.oneOffPatches = $.oneOffPatches;
         this.pdbName = $.pdbName;
         this.pluggableDatabases = $.pluggableDatabases;
         this.recoveryApplianceVpcPassword = $.recoveryApplianceVpcPassword;
@@ -955,37 +939,6 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder ncharacterSet(String ncharacterSet) {
             return ncharacterSet(Output.of(ncharacterSet));
-        }
-
-        /**
-         * @param oneOffPatches List of one-off patches for Database Homes.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder oneOffPatches(@Nullable Output<List<String>> oneOffPatches) {
-            $.oneOffPatches = oneOffPatches;
-            return this;
-        }
-
-        /**
-         * @param oneOffPatches List of one-off patches for Database Homes.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder oneOffPatches(List<String> oneOffPatches) {
-            return oneOffPatches(Output.of(oneOffPatches));
-        }
-
-        /**
-         * @param oneOffPatches List of one-off patches for Database Homes.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder oneOffPatches(String... oneOffPatches) {
-            return oneOffPatches(List.of(oneOffPatches));
         }
 
         /**

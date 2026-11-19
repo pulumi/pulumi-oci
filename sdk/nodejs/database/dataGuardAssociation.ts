@@ -226,6 +226,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     declare public readonly isActiveDataGuardEnabled: pulumi.Output<boolean | undefined>;
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    declare public readonly isOlderVersionAcknowledged: pulumi.Output<boolean>;
+    /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */
     declare public readonly licenseModel: pulumi.Output<string | undefined>;
@@ -379,6 +383,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["faultDomains"] = state?.faultDomains;
             resourceInputs["hostname"] = state?.hostname;
             resourceInputs["isActiveDataGuardEnabled"] = state?.isActiveDataGuardEnabled;
+            resourceInputs["isOlderVersionAcknowledged"] = state?.isOlderVersionAcknowledged;
             resourceInputs["licenseModel"] = state?.licenseModel;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["migrateTrigger"] = state?.migrateTrigger;
@@ -447,6 +452,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["faultDomains"] = args?.faultDomains;
             resourceInputs["hostname"] = args?.hostname;
             resourceInputs["isActiveDataGuardEnabled"] = args?.isActiveDataGuardEnabled;
+            resourceInputs["isOlderVersionAcknowledged"] = args?.isOlderVersionAcknowledged;
             resourceInputs["licenseModel"] = args?.licenseModel;
             resourceInputs["migrateTrigger"] = args?.migrateTrigger;
             resourceInputs["nodeCount"] = args?.nodeCount;
@@ -596,6 +602,10 @@ export interface DataGuardAssociationState {
      * (Updatable) True if active Data Guard is enabled.
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */
@@ -819,6 +829,10 @@ export interface DataGuardAssociationArgs {
      * (Updatable) True if active Data Guard is enabled.
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the dataguard association. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      */

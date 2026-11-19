@@ -141,6 +141,8 @@ type DbSystem struct {
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches DbSystemIormConfigCacheArrayOutput `pulumi:"iormConfigCaches"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolOutput `pulumi:"isOlderVersionAcknowledged"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -361,6 +363,8 @@ type dbSystemState struct {
 	Hostname *string `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []DbSystemIormConfigCache `pulumi:"iormConfigCaches"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -534,6 +538,8 @@ type DbSystemState struct {
 	Hostname pulumi.StringPtrInput
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches DbSystemIormConfigCacheArrayInput
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -715,6 +721,8 @@ type dbSystemArgs struct {
 	//
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
 	Hostname string `pulumi:"hostname"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -847,6 +855,8 @@ type DbSystemArgs struct {
 	//
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
 	Hostname pulumi.StringInput
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -1133,6 +1143,11 @@ func (o DbSystemOutput) Hostname() pulumi.StringOutput {
 // The IORM settings of the Exadata DB system.
 func (o DbSystemOutput) IormConfigCaches() DbSystemIormConfigCacheArrayOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemIormConfigCacheArrayOutput { return v.IormConfigCaches }).(DbSystemIormConfigCacheArrayOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o DbSystemOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.BoolOutput { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

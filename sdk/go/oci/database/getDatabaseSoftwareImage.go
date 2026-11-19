@@ -80,7 +80,8 @@ type LookupDatabaseSoftwareImageResult struct {
 	// The type of software image. Can be grid or database.
 	ImageType string `pulumi:"imageType"`
 	// The patches included in the image and the version of the image.
-	IncludedPatchesSummary string `pulumi:"includedPatchesSummary"`
+	IncludedPatchesSummary     string `pulumi:"includedPatchesSummary"`
+	IsOlderVersionAcknowledged bool   `pulumi:"isOlderVersionAcknowledged"`
 	// True if this Database software image is supported for Upgrade.
 	IsUpgradeSupported bool `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
@@ -185,6 +186,10 @@ func (o LookupDatabaseSoftwareImageResultOutput) ImageType() pulumi.StringOutput
 // The patches included in the image and the version of the image.
 func (o LookupDatabaseSoftwareImageResultOutput) IncludedPatchesSummary() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.IncludedPatchesSummary }).(pulumi.StringOutput)
+}
+
+func (o LookupDatabaseSoftwareImageResultOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // True if this Database software image is supported for Upgrade.

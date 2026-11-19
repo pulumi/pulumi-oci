@@ -234,7 +234,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> RequestIdHeader { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        /// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         /// </summary>
         [Output("reservedIps")]
         public Output<ImmutableArray<Outputs.LoadBalancerReservedIp>> ReservedIps { get; private set; } = null!;
@@ -468,7 +468,7 @@ namespace Pulumi.Oci.LoadBalancer
         private InputList<Inputs.LoadBalancerReservedIpArgs>? _reservedIps;
 
         /// <summary>
-        /// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        /// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         /// </summary>
         public InputList<Inputs.LoadBalancerReservedIpArgs> ReservedIps
         {
@@ -687,7 +687,7 @@ namespace Pulumi.Oci.LoadBalancer
         private InputList<Inputs.LoadBalancerReservedIpGetArgs>? _reservedIps;
 
         /// <summary>
-        /// (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        /// (Updatable) An array of reserved Ips. Pre-created public or private IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         /// </summary>
         public InputList<Inputs.LoadBalancerReservedIpGetArgs> ReservedIps
         {

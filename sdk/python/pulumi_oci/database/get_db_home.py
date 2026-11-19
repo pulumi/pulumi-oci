@@ -27,7 +27,7 @@ class GetDbHomeResult:
     """
     A collection of values returned by getDbHome.
     """
-    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, home_type=None, id=None, is_desupported_version=None, is_unified_auditing_enabled=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, system_tags=None, time_created=None, vm_cluster_id=None):
+    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, home_type=None, id=None, is_desupported_version=None, is_older_version_acknowledged=None, is_unified_auditing_enabled=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, one_off_patches=None, source=None, state=None, system_tags=None, time_created=None, vm_cluster_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -70,6 +70,9 @@ class GetDbHomeResult:
         if is_desupported_version and not isinstance(is_desupported_version, bool):
             raise TypeError("Expected argument 'is_desupported_version' to be a bool")
         pulumi.set(__self__, "is_desupported_version", is_desupported_version)
+        if is_older_version_acknowledged and not isinstance(is_older_version_acknowledged, bool):
+            raise TypeError("Expected argument 'is_older_version_acknowledged' to be a bool")
+        pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_unified_auditing_enabled and not isinstance(is_unified_auditing_enabled, bool):
             raise TypeError("Expected argument 'is_unified_auditing_enabled' to be a bool")
         pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
@@ -85,6 +88,9 @@ class GetDbHomeResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if one_off_patches and not isinstance(one_off_patches, list):
+            raise TypeError("Expected argument 'one_off_patches' to be a list")
+        pulumi.set(__self__, "one_off_patches", one_off_patches)
         if source and not isinstance(source, str):
             raise TypeError("Expected argument 'source' to be a str")
         pulumi.set(__self__, "source", source)
@@ -202,6 +208,11 @@ class GetDbHomeResult:
         return pulumi.get(self, "is_desupported_version")
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> _builtins.bool:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @_builtins.property
     @pulumi.getter(name="isUnifiedAuditingEnabled")
     def is_unified_auditing_enabled(self) -> _builtins.bool:
         """
@@ -237,6 +248,14 @@ class GetDbHomeResult:
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="oneOffPatches")
+    def one_off_patches(self) -> Sequence[_builtins.str]:
+        """
+        List of one-off patches for Database Homes.
+        """
+        return pulumi.get(self, "one_off_patches")
 
     @_builtins.property
     @pulumi.getter
@@ -296,11 +315,13 @@ class AwaitableGetDbHomeResult(GetDbHomeResult):
             home_type=self.home_type,
             id=self.id,
             is_desupported_version=self.is_desupported_version,
+            is_older_version_acknowledged=self.is_older_version_acknowledged,
             is_unified_auditing_enabled=self.is_unified_auditing_enabled,
             kms_key_id=self.kms_key_id,
             kms_key_version_id=self.kms_key_version_id,
             last_patch_history_entry_id=self.last_patch_history_entry_id,
             lifecycle_details=self.lifecycle_details,
+            one_off_patches=self.one_off_patches,
             source=self.source,
             state=self.state,
             system_tags=self.system_tags,
@@ -347,11 +368,13 @@ def get_db_home(db_home_id: Optional[_builtins.str] = None,
         home_type=pulumi.get(__ret__, 'home_type'),
         id=pulumi.get(__ret__, 'id'),
         is_desupported_version=pulumi.get(__ret__, 'is_desupported_version'),
+        is_older_version_acknowledged=pulumi.get(__ret__, 'is_older_version_acknowledged'),
         is_unified_auditing_enabled=pulumi.get(__ret__, 'is_unified_auditing_enabled'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         kms_key_version_id=pulumi.get(__ret__, 'kms_key_version_id'),
         last_patch_history_entry_id=pulumi.get(__ret__, 'last_patch_history_entry_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        one_off_patches=pulumi.get(__ret__, 'one_off_patches'),
         source=pulumi.get(__ret__, 'source'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -395,11 +418,13 @@ def get_db_home_output(db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
         home_type=pulumi.get(__response__, 'home_type'),
         id=pulumi.get(__response__, 'id'),
         is_desupported_version=pulumi.get(__response__, 'is_desupported_version'),
+        is_older_version_acknowledged=pulumi.get(__response__, 'is_older_version_acknowledged'),
         is_unified_auditing_enabled=pulumi.get(__response__, 'is_unified_auditing_enabled'),
         kms_key_id=pulumi.get(__response__, 'kms_key_id'),
         kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
         last_patch_history_entry_id=pulumi.get(__response__, 'last_patch_history_entry_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        one_off_patches=pulumi.get(__response__, 'one_off_patches'),
         source=pulumi.get(__response__, 'source'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

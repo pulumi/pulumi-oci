@@ -229,6 +229,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsLocalBackupEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Output("isOlderVersionAcknowledged")]
+        public Output<bool> IsOlderVersionAcknowledged { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         /// </summary>
         [Output("isSparseDiskgroupEnabled")]
@@ -542,6 +548,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsLocalBackupEnabled { get; set; }
 
         /// <summary>
+        /// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
+        /// <summary>
         /// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         /// </summary>
         [Input("isSparseDiskgroupEnabled")]
@@ -782,6 +794,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isLocalBackupEnabled")]
         public Input<bool>? IsLocalBackupEnabled { get; set; }
+
+        /// <summary>
+        /// (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
 
         /// <summary>
         /// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.

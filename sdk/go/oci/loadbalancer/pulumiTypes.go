@@ -210,8 +210,32 @@ func (o BackendSetBackendArrayOutput) Index(i pulumi.IntInput) BackendSetBackend
 }
 
 type BackendSetHealthChecker struct {
+	// (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+	//
+	// This value must be an integer from `1` through `100`.
+	//
+	// Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+	//
+	// On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+	//
+	// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+	//
+	// Example: `1`
+	DefaultWeight *int `pulumi:"defaultWeight"`
 	// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 	IntervalMs *int `pulumi:"intervalMs"`
+	// (Updatable) You can enable dynamic backend weights for HTTP health checks.
+	//
+	// When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+	//
+	// A valid header value is an integer from `0` through `100`.
+	//
+	// If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+	//
+	// If omitted during create, the default is `false`.
+	//
+	// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+	IsDynamicBackendWeightEnabled *bool `pulumi:"isDynamicBackendWeightEnabled"`
 	// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
 	//
 	// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
@@ -248,8 +272,32 @@ type BackendSetHealthCheckerInput interface {
 }
 
 type BackendSetHealthCheckerArgs struct {
+	// (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+	//
+	// This value must be an integer from `1` through `100`.
+	//
+	// Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+	//
+	// On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+	//
+	// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+	//
+	// Example: `1`
+	DefaultWeight pulumi.IntPtrInput `pulumi:"defaultWeight"`
 	// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 	IntervalMs pulumi.IntPtrInput `pulumi:"intervalMs"`
+	// (Updatable) You can enable dynamic backend weights for HTTP health checks.
+	//
+	// When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+	//
+	// A valid header value is an integer from `0` through `100`.
+	//
+	// If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+	//
+	// If omitted during create, the default is `false`.
+	//
+	// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+	IsDynamicBackendWeightEnabled pulumi.BoolPtrInput `pulumi:"isDynamicBackendWeightEnabled"`
 	// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
 	//
 	// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
@@ -351,9 +399,39 @@ func (o BackendSetHealthCheckerOutput) ToBackendSetHealthCheckerPtrOutputWithCon
 	}).(BackendSetHealthCheckerPtrOutput)
 }
 
+// (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+//
+// This value must be an integer from `1` through `100`.
+//
+// Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+//
+// On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+//
+// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+//
+// Example: `1`
+func (o BackendSetHealthCheckerOutput) DefaultWeight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BackendSetHealthChecker) *int { return v.DefaultWeight }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 func (o BackendSetHealthCheckerOutput) IntervalMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetHealthChecker) *int { return v.IntervalMs }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) You can enable dynamic backend weights for HTTP health checks.
+//
+// When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+//
+// A valid header value is an integer from `0` through `100`.
+//
+// If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+//
+// If omitted during create, the default is `false`.
+//
+// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+func (o BackendSetHealthCheckerOutput) IsDynamicBackendWeightEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v BackendSetHealthChecker) *bool { return v.IsDynamicBackendWeightEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
@@ -426,6 +504,26 @@ func (o BackendSetHealthCheckerPtrOutput) Elem() BackendSetHealthCheckerOutput {
 	}).(BackendSetHealthCheckerOutput)
 }
 
+// (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+//
+// This value must be an integer from `1` through `100`.
+//
+// Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+//
+// On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+//
+// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+//
+// Example: `1`
+func (o BackendSetHealthCheckerPtrOutput) DefaultWeight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthChecker) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultWeight
+	}).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 func (o BackendSetHealthCheckerPtrOutput) IntervalMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BackendSetHealthChecker) *int {
@@ -434,6 +532,26 @@ func (o BackendSetHealthCheckerPtrOutput) IntervalMs() pulumi.IntPtrOutput {
 		}
 		return v.IntervalMs
 	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) You can enable dynamic backend weights for HTTP health checks.
+//
+// When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+//
+// A valid header value is an integer from `0` through `100`.
+//
+// If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+//
+// If omitted during create, the default is `false`.
+//
+// For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+func (o BackendSetHealthCheckerPtrOutput) IsDynamicBackendWeightEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthChecker) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsDynamicBackendWeightEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
@@ -2200,7 +2318,7 @@ func (o LoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.IntInput) LoadBal
 }
 
 type LoadBalancerIpAddressDetailReservedIp struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id *string `pulumi:"id"`
 }
 
@@ -2216,7 +2334,7 @@ type LoadBalancerIpAddressDetailReservedIpInput interface {
 }
 
 type LoadBalancerIpAddressDetailReservedIpArgs struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -2271,7 +2389,7 @@ func (o LoadBalancerIpAddressDetailReservedIpOutput) ToLoadBalancerIpAddressDeta
 	return o
 }
 
-// Ocid of the Reserved IP/Public Ip created with VCN.
+// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 func (o LoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LoadBalancerIpAddressDetailReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -2297,15 +2415,18 @@ func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) Index(i pulumi.IntInpu
 }
 
 type LoadBalancerReservedIp struct {
-	// (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+	// (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	//
 	// Reserved IPs are IPs which already registered using VCN API.
 	//
-	// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+	// For public load balancers, create a reserved Public IP and pass the OCID in this field.
+	// For private load balancers, create a reserved Private IP and pass the OCID in this field.
+	// Load balancer will be configured to listen to traffic on this IP.
 	//
 	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 	//
-	// Example: "ocid1.publicip.oc1.phx.unique_ID"
+	// Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+	// Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
 	//
 	// IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id *string `pulumi:"id"`
@@ -2323,15 +2444,18 @@ type LoadBalancerReservedIpInput interface {
 }
 
 type LoadBalancerReservedIpArgs struct {
-	// (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+	// (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	//
 	// Reserved IPs are IPs which already registered using VCN API.
 	//
-	// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+	// For public load balancers, create a reserved Public IP and pass the OCID in this field.
+	// For private load balancers, create a reserved Private IP and pass the OCID in this field.
+	// Load balancer will be configured to listen to traffic on this IP.
 	//
 	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 	//
-	// Example: "ocid1.publicip.oc1.phx.unique_ID"
+	// Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+	// Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
 	//
 	// IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -2388,15 +2512,18 @@ func (o LoadBalancerReservedIpOutput) ToLoadBalancerReservedIpOutputWithContext(
 	return o
 }
 
-// (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+// (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 //
 // Reserved IPs are IPs which already registered using VCN API.
 //
-// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+// For public load balancers, create a reserved Public IP and pass the OCID in this field.
+// For private load balancers, create a reserved Private IP and pass the OCID in this field.
+// Load balancer will be configured to listen to traffic on this IP.
 //
 // Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 //
-// Example: "ocid1.publicip.oc1.phx.unique_ID"
+// Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+// Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
 //
 // IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 func (o LoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
@@ -4581,8 +4708,12 @@ func (o GetBackendSetsBackendsetBackendArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetBackendSetsBackendsetHealthChecker struct {
+	// The fallback backend weight used when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+	DefaultWeight int `pulumi:"defaultWeight"`
 	// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
 	IntervalMs int `pulumi:"intervalMs"`
+	// Indicates whether dynamic backend weights are enabled for HTTP health checks.
+	IsDynamicBackendWeightEnabled bool `pulumi:"isDynamicBackendWeightEnabled"`
 	// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
 	IsForcePlainText bool `pulumi:"isForcePlainText"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
@@ -4613,8 +4744,12 @@ type GetBackendSetsBackendsetHealthCheckerInput interface {
 }
 
 type GetBackendSetsBackendsetHealthCheckerArgs struct {
+	// The fallback backend weight used when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+	DefaultWeight pulumi.IntInput `pulumi:"defaultWeight"`
 	// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
 	IntervalMs pulumi.IntInput `pulumi:"intervalMs"`
+	// Indicates whether dynamic backend weights are enabled for HTTP health checks.
+	IsDynamicBackendWeightEnabled pulumi.BoolInput `pulumi:"isDynamicBackendWeightEnabled"`
 	// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
 	IsForcePlainText pulumi.BoolInput `pulumi:"isForcePlainText"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
@@ -4684,9 +4819,19 @@ func (o GetBackendSetsBackendsetHealthCheckerOutput) ToGetBackendSetsBackendsetH
 	return o
 }
 
+// The fallback backend weight used when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+func (o GetBackendSetsBackendsetHealthCheckerOutput) DefaultWeight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.DefaultWeight }).(pulumi.IntOutput)
+}
+
 // The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
 func (o GetBackendSetsBackendsetHealthCheckerOutput) IntervalMs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.IntervalMs }).(pulumi.IntOutput)
+}
+
+// Indicates whether dynamic backend weights are enabled for HTTP health checks.
+func (o GetBackendSetsBackendsetHealthCheckerOutput) IsDynamicBackendWeightEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) bool { return v.IsDynamicBackendWeightEnabled }).(pulumi.BoolOutput)
 }
 
 // Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
@@ -7680,7 +7825,7 @@ type GetLoadBalancersLoadBalancer struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id string `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddressDetails []GetLoadBalancersLoadBalancerIpAddressDetail `pulumi:"ipAddressDetails"`
@@ -7737,7 +7882,7 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddressDetails GetLoadBalancersLoadBalancerIpAddressDetailArrayInput `pulumi:"ipAddressDetails"`
@@ -7845,7 +7990,7 @@ func (o GetLoadBalancersLoadBalancerOutput) FreeformTags() pulumi.StringMapOutpu
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Ocid of the Reserved IP/Public Ip created with VCN.
+// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 func (o GetLoadBalancersLoadBalancerOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -8071,7 +8216,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.I
 }
 
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIp struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -8087,7 +8232,7 @@ type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpInput interface {
 }
 
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -8142,7 +8287,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) ToGetLoadBa
 	return o
 }
 
-// Ocid of the Reserved IP/Public Ip created with VCN.
+// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetailReservedIp) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -8168,7 +8313,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput) Index(
 }
 
 type GetLoadBalancersLoadBalancerReservedIp struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -8184,7 +8329,7 @@ type GetLoadBalancersLoadBalancerReservedIpInput interface {
 }
 
 type GetLoadBalancersLoadBalancerReservedIpArgs struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -8239,7 +8384,7 @@ func (o GetLoadBalancersLoadBalancerReservedIpOutput) ToGetLoadBalancersLoadBala
 	return o
 }
 
-// Ocid of the Reserved IP/Public Ip created with VCN.
+// Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 func (o GetLoadBalancersLoadBalancerReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerReservedIp) string { return v.Id }).(pulumi.StringOutput)
 }

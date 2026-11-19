@@ -15,10 +15,40 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackendSetHealthChecker {
     /**
+     * @return (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+     * 
+     * This value must be an integer from `1` through `100`.
+     * 
+     * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+     * 
+     * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     * Example: `1`
+     * 
+     */
+    private @Nullable Integer defaultWeight;
+    /**
      * @return (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
      * 
      */
     private @Nullable Integer intervalMs;
+    /**
+     * @return (Updatable) You can enable dynamic backend weights for HTTP health checks.
+     * 
+     * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend&#39;s HTTP health check response. The load balancer uses that value as the backend&#39;s effective weight when distributing traffic.
+     * 
+     * A valid header value is an integer from `0` through `100`.
+     * 
+     * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+     * 
+     * If omitted during create, the default is `false`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     */
+    private @Nullable Boolean isDynamicBackendWeightEnabled;
     /**
      * @return (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
      * 
@@ -68,11 +98,45 @@ public final class BackendSetHealthChecker {
 
     private BackendSetHealthChecker() {}
     /**
+     * @return (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+     * 
+     * This value must be an integer from `1` through `100`.
+     * 
+     * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+     * 
+     * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     * Example: `1`
+     * 
+     */
+    public Optional<Integer> defaultWeight() {
+        return Optional.ofNullable(this.defaultWeight);
+    }
+    /**
      * @return (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
      * 
      */
     public Optional<Integer> intervalMs() {
         return Optional.ofNullable(this.intervalMs);
+    }
+    /**
+     * @return (Updatable) You can enable dynamic backend weights for HTTP health checks.
+     * 
+     * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend&#39;s HTTP health check response. The load balancer uses that value as the backend&#39;s effective weight when distributing traffic.
+     * 
+     * A valid header value is an integer from `0` through `100`.
+     * 
+     * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+     * 
+     * If omitted during create, the default is `false`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     */
+    public Optional<Boolean> isDynamicBackendWeightEnabled() {
+        return Optional.ofNullable(this.isDynamicBackendWeightEnabled);
     }
     /**
      * @return (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
@@ -146,7 +210,9 @@ public final class BackendSetHealthChecker {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Integer defaultWeight;
         private @Nullable Integer intervalMs;
+        private @Nullable Boolean isDynamicBackendWeightEnabled;
         private @Nullable Boolean isForcePlainText;
         private @Nullable Integer port;
         private String protocol;
@@ -158,7 +224,9 @@ public final class BackendSetHealthChecker {
         public Builder() {}
         public Builder(BackendSetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.defaultWeight = defaults.defaultWeight;
     	      this.intervalMs = defaults.intervalMs;
+    	      this.isDynamicBackendWeightEnabled = defaults.isDynamicBackendWeightEnabled;
     	      this.isForcePlainText = defaults.isForcePlainText;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
@@ -170,9 +238,21 @@ public final class BackendSetHealthChecker {
         }
 
         @CustomType.Setter
+        public Builder defaultWeight(@Nullable Integer defaultWeight) {
+
+            this.defaultWeight = defaultWeight;
+            return this;
+        }
+        @CustomType.Setter
         public Builder intervalMs(@Nullable Integer intervalMs) {
 
             this.intervalMs = intervalMs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDynamicBackendWeightEnabled(@Nullable Boolean isDynamicBackendWeightEnabled) {
+
+            this.isDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
             return this;
         }
         @CustomType.Setter
@@ -227,7 +307,9 @@ public final class BackendSetHealthChecker {
         }
         public BackendSetHealthChecker build() {
             final var _resultValue = new BackendSetHealthChecker();
+            _resultValue.defaultWeight = defaultWeight;
             _resultValue.intervalMs = intervalMs;
+            _resultValue.isDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
             _resultValue.isForcePlainText = isForcePlainText;
             _resultValue.port = port;
             _resultValue.protocol = protocol;

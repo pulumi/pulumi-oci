@@ -27,7 +27,7 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, compute_model=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, exascale_configs=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, is_scheduling_policy_associated=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_version_preferences=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, system_tags=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, compute_model=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, exascale_configs=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, is_scheduling_policy_associated=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_version_preferences=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, ssl_inspection_configurations=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, system_tags=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -178,6 +178,9 @@ class GetExadataInfrastructureResult:
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
+        if ssl_inspection_configurations and not isinstance(ssl_inspection_configurations, list):
+            raise TypeError("Expected argument 'ssl_inspection_configurations' to be a list")
+        pulumi.set(__self__, "ssl_inspection_configurations", ssl_inspection_configurations)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -592,6 +595,14 @@ class GetExadataInfrastructureResult:
         return pulumi.get(self, "shape")
 
     @_builtins.property
+    @pulumi.getter(name="sslInspectionConfigurations")
+    def ssl_inspection_configurations(self) -> Sequence['outputs.GetExadataInfrastructureSslInspectionConfigurationResult']:
+        """
+        SSL inspection configuration for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "ssl_inspection_configurations")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -704,6 +715,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             ntp_servers=self.ntp_servers,
             rack_serial_number=self.rack_serial_number,
             shape=self.shape,
+            ssl_inspection_configurations=self.ssl_inspection_configurations,
             state=self.state,
             storage_count=self.storage_count,
             storage_server_type=self.storage_server_type,
@@ -790,6 +802,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[_builtins.str
         ntp_servers=pulumi.get(__ret__, 'ntp_servers'),
         rack_serial_number=pulumi.get(__ret__, 'rack_serial_number'),
         shape=pulumi.get(__ret__, 'shape'),
+        ssl_inspection_configurations=pulumi.get(__ret__, 'ssl_inspection_configurations'),
         state=pulumi.get(__ret__, 'state'),
         storage_count=pulumi.get(__ret__, 'storage_count'),
         storage_server_type=pulumi.get(__ret__, 'storage_server_type'),
@@ -873,6 +886,7 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: pulumi.Input[Op
         ntp_servers=pulumi.get(__response__, 'ntp_servers'),
         rack_serial_number=pulumi.get(__response__, 'rack_serial_number'),
         shape=pulumi.get(__response__, 'shape'),
+        ssl_inspection_configurations=pulumi.get(__response__, 'ssl_inspection_configurations'),
         state=pulumi.get(__response__, 'state'),
         storage_count=pulumi.get(__response__, 'storage_count'),
         storage_server_type=pulumi.get(__response__, 'storage_server_type'),

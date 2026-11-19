@@ -36,7 +36,9 @@ namespace Pulumi.Oci.LoadBalancer
     ///         HealthChecker = new Oci.LoadBalancer.Inputs.BackendSetHealthCheckerArgs
     ///         {
     ///             Protocol = backendSetHealthCheckerProtocol,
+    ///             DefaultWeight = backendSetHealthCheckerDefaultWeight,
     ///             IntervalMs = backendSetHealthCheckerIntervalMs,
+    ///             IsDynamicBackendWeightEnabled = backendSetHealthCheckerIsDynamicBackendWeightEnabled,
     ///             IsForcePlainText = backendSetHealthCheckerIsForcePlainText,
     ///             Port = backendSetHealthCheckerPort,
     ///             ResponseBodyRegex = backendSetHealthCheckerResponseBodyRegex,

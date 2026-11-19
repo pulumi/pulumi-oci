@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +15,21 @@ import javax.annotation.Nullable;
 public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs Empty = new DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs();
+
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
 
     /**
      * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -63,6 +79,7 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
     private DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs() {}
 
     private DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs(DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs $) {
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.majorVersion = $.majorVersion;
         this.source = $.source;
         this.versionPreference = $.versionPreference;
@@ -84,6 +101,27 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
 
         public Builder(DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs defaults) {
             $ = new DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

@@ -281,6 +281,21 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+
+    /**
      * (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      * 
      */
@@ -508,6 +523,7 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.giVersion = $.giVersion;
         this.isLocalBackupEnabled = $.isLocalBackupEnabled;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.isSparseDiskgroupEnabled = $.isSparseDiskgroupEnabled;
         this.licenseModel = $.licenseModel;
         this.memorySizeInGbs = $.memorySizeInGbs;
@@ -917,6 +933,27 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
             return isLocalBackupEnabled(Output.of(isLocalBackupEnabled));
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        /**
+         * @param isOlderVersionAcknowledged (Required when version is not latest) Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

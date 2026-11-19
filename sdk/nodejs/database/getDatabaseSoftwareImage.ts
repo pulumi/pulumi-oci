@@ -86,6 +86,7 @@ export interface GetDatabaseSoftwareImageResult {
      * The patches included in the image and the version of the image.
      */
     readonly includedPatchesSummary: string;
+    readonly isOlderVersionAcknowledged: boolean;
     /**
      * True if this Database software image is supported for Upgrade.
      */

@@ -19,6 +19,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail {
      */
     private Double computeCount;
     /**
+     * @return Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+     * 
+     */
+    private Integer estimatedConcurrentSessions;
+    /**
      * @return Indicates whether tool is enabled.
      * 
      */
@@ -41,6 +46,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail {
      */
     public Double computeCount() {
         return this.computeCount;
+    }
+    /**
+     * @return Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+     * 
+     */
+    public Integer estimatedConcurrentSessions() {
+        return this.estimatedConcurrentSessions;
     }
     /**
      * @return Indicates whether tool is enabled.
@@ -74,6 +86,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail {
     @CustomType.Builder
     public static final class Builder {
         private Double computeCount;
+        private Integer estimatedConcurrentSessions;
         private Boolean isEnabled;
         private Integer maxIdleTimeInMinutes;
         private String name;
@@ -81,6 +94,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail {
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computeCount = defaults.computeCount;
+    	      this.estimatedConcurrentSessions = defaults.estimatedConcurrentSessions;
     	      this.isEnabled = defaults.isEnabled;
     	      this.maxIdleTimeInMinutes = defaults.maxIdleTimeInMinutes;
     	      this.name = defaults.name;
@@ -92,6 +106,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail", "computeCount");
             }
             this.computeCount = computeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder estimatedConcurrentSessions(Integer estimatedConcurrentSessions) {
+            if (estimatedConcurrentSessions == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail", "estimatedConcurrentSessions");
+            }
+            this.estimatedConcurrentSessions = estimatedConcurrentSessions;
             return this;
         }
         @CustomType.Setter
@@ -121,6 +143,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail {
         public GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail();
             _resultValue.computeCount = computeCount;
+            _resultValue.estimatedConcurrentSessions = estimatedConcurrentSessions;
             _resultValue.isEnabled = isEnabled;
             _resultValue.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
             _resultValue.name = name;

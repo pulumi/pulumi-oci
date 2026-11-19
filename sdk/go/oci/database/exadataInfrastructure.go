@@ -95,6 +95,10 @@ import (
 //					ClientNetworkBondingMode: pulumi.Any(exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode),
 //					DrNetworkBondingMode:     pulumi.Any(exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode),
 //				},
+//				SslInspectionConfiguration: &database.ExadataInfrastructureSslInspectionConfigurationArgs{
+//					IsEnabled:              pulumi.Any(exadataInfrastructureSslInspectionConfigurationIsEnabled),
+//					CertificateAuthorityId: pulumi.Any(testCertificateAuthority.Id),
+//				},
 //				StorageCount:      pulumi.Any(exadataInfrastructureStorageCount),
 //				StorageServerType: pulumi.Any(exadataInfrastructureStorageServerType),
 //			})
@@ -216,6 +220,8 @@ type ExadataInfrastructure struct {
 	RackSerialNumber pulumi.StringOutput `pulumi:"rackSerialNumber"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringOutput `pulumi:"shape"`
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfiguration ExadataInfrastructureSslInspectionConfigurationOutput `pulumi:"sslInspectionConfiguration"`
 	// The current lifecycle state of the Exadata infrastructure.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The number of storage servers for the Exadata infrastructure.
@@ -397,6 +403,8 @@ type exadataInfrastructureState struct {
 	RackSerialNumber *string `pulumi:"rackSerialNumber"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape *string `pulumi:"shape"`
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfiguration *ExadataInfrastructureSslInspectionConfiguration `pulumi:"sslInspectionConfiguration"`
 	// The current lifecycle state of the Exadata infrastructure.
 	State *string `pulumi:"state"`
 	// The number of storage servers for the Exadata infrastructure.
@@ -513,6 +521,8 @@ type ExadataInfrastructureState struct {
 	RackSerialNumber pulumi.StringPtrInput
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringPtrInput
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfiguration ExadataInfrastructureSslInspectionConfigurationPtrInput
 	// The current lifecycle state of the Exadata infrastructure.
 	State pulumi.StringPtrInput
 	// The number of storage servers for the Exadata infrastructure.
@@ -595,6 +605,8 @@ type exadataInfrastructureArgs struct {
 	NtpServers []string `pulumi:"ntpServers"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape string `pulumi:"shape"`
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfiguration *ExadataInfrastructureSslInspectionConfiguration `pulumi:"sslInspectionConfiguration"`
 	// The number of storage servers for the Exadata infrastructure.
 	StorageCount *int `pulumi:"storageCount"`
 	// The storage server type of the Exadata infrastructure.
@@ -660,6 +672,8 @@ type ExadataInfrastructureArgs struct {
 	NtpServers pulumi.StringArrayInput
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringInput
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfiguration ExadataInfrastructureSslInspectionConfigurationPtrInput
 	// The number of storage servers for the Exadata infrastructure.
 	StorageCount pulumi.IntPtrInput
 	// The storage server type of the Exadata infrastructure.
@@ -1006,6 +1020,13 @@ func (o ExadataInfrastructureOutput) RackSerialNumber() pulumi.StringOutput {
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 func (o ExadataInfrastructureOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+}
+
+// SSL inspection configuration for the Exadata infrastructure.
+func (o ExadataInfrastructureOutput) SslInspectionConfiguration() ExadataInfrastructureSslInspectionConfigurationOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) ExadataInfrastructureSslInspectionConfigurationOutput {
+		return v.SslInspectionConfiguration
+	}).(ExadataInfrastructureSslInspectionConfigurationOutput)
 }
 
 // The current lifecycle state of the Exadata infrastructure.

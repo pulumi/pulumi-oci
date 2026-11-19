@@ -168,6 +168,13 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isDesupportedVersion);
     }
 
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+
     /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      * 
@@ -262,6 +269,7 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.homeType = $.homeType;
         this.isDesupportedVersion = $.isDesupportedVersion;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.isUnifiedAuditingEnabled = $.isUnifiedAuditingEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
@@ -491,6 +499,15 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
             return isDesupportedVersion(Output.of(isDesupportedVersion));
+        }
+
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
         }
 
         /**

@@ -27,7 +27,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, compute_model=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, live_image_version_details=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, node_count=None, nsg_ids=None, ocpu_count=None, oracle_linux_version=None, private_zone_id=None, reco_storage_percentage=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_ipv6ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, update_details=None, vip_ids=None, vipv6ids=None, vm_backup_storage_type=None, vm_cluster_type=None, vm_file_system_storage_type=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, compute_model=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_older_version_acknowledged=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, live_image_version_details=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, node_count=None, nsg_ids=None, ocpu_count=None, oracle_linux_version=None, private_zone_id=None, reco_storage_percentage=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_ipv6ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, update_details=None, vip_ids=None, vipv6ids=None, vm_backup_storage_type=None, vm_cluster_type=None, vm_file_system_storage_type=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -112,6 +112,9 @@ class GetCloudVmClusterResult:
         if is_local_backup_enabled and not isinstance(is_local_backup_enabled, bool):
             raise TypeError("Expected argument 'is_local_backup_enabled' to be a bool")
         pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+        if is_older_version_acknowledged and not isinstance(is_older_version_acknowledged, bool):
+            raise TypeError("Expected argument 'is_older_version_acknowledged' to be a bool")
+        pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_sparse_diskgroup_enabled and not isinstance(is_sparse_diskgroup_enabled, bool):
             raise TypeError("Expected argument 'is_sparse_diskgroup_enabled' to be a bool")
         pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
@@ -453,6 +456,11 @@ class GetCloudVmClusterResult:
         If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         """
         return pulumi.get(self, "is_local_backup_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> _builtins.bool:
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
@@ -812,6 +820,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             id=self.id,
             iorm_config_caches=self.iorm_config_caches,
             is_local_backup_enabled=self.is_local_backup_enabled,
+            is_older_version_acknowledged=self.is_older_version_acknowledged,
             is_sparse_diskgroup_enabled=self.is_sparse_diskgroup_enabled,
             last_update_history_entry_id=self.last_update_history_entry_id,
             license_model=self.license_model,
@@ -908,6 +917,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         iorm_config_caches=pulumi.get(__ret__, 'iorm_config_caches'),
         is_local_backup_enabled=pulumi.get(__ret__, 'is_local_backup_enabled'),
+        is_older_version_acknowledged=pulumi.get(__ret__, 'is_older_version_acknowledged'),
         is_sparse_diskgroup_enabled=pulumi.get(__ret__, 'is_sparse_diskgroup_enabled'),
         last_update_history_entry_id=pulumi.get(__ret__, 'last_update_history_entry_id'),
         license_model=pulumi.get(__ret__, 'license_model'),
@@ -1001,6 +1011,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: pulumi.Input[Optional[_buil
         id=pulumi.get(__response__, 'id'),
         iorm_config_caches=pulumi.get(__response__, 'iorm_config_caches'),
         is_local_backup_enabled=pulumi.get(__response__, 'is_local_backup_enabled'),
+        is_older_version_acknowledged=pulumi.get(__response__, 'is_older_version_acknowledged'),
         is_sparse_diskgroup_enabled=pulumi.get(__response__, 'is_sparse_diskgroup_enabled'),
         last_update_history_entry_id=pulumi.get(__response__, 'last_update_history_entry_id'),
         license_model=pulumi.get(__response__, 'license_model'),

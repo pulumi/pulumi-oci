@@ -19,10 +19,14 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string? DatabaseSoftwareImageId;
         /// <summary>
         /// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+        /// </summary>
+        public readonly string? DbVersion;
+        /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         /// </summary>
-        public readonly string? DbVersion;
+        public readonly bool? IsOlderVersionAcknowledged;
         /// <summary>
         /// Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
         /// </summary>
@@ -43,12 +47,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? dbVersion,
 
+            bool? isOlderVersionAcknowledged,
+
             string? options,
 
             string? source)
         {
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             DbVersion = dbVersion;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             Options = options;
             Source = source;
         }

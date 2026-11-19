@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseConnectionUrlArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        /// </summary>
+        [Input("a2aUrl")]
+        public Input<string>? A2aUrl { get; set; }
+
+        /// <summary>
         /// Oracle Application Express (APEX) URL.
         /// </summary>
         [Input("apexUrl")]
@@ -47,6 +53,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("machineLearningUserManagementUrl")]
         public Input<string>? MachineLearningUserManagementUrl { get; set; }
+
+        /// <summary>
+        /// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        /// </summary>
+        [Input("mcpUrl")]
+        public Input<string>? McpUrl { get; set; }
 
         /// <summary>
         /// The URL of the MongoDB API for the Autonomous Database.

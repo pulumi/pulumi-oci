@@ -289,9 +289,37 @@ class BackendSetHealthCheckerArgsDict(TypedDict):
     """
     (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
     """
+    default_weight: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+
+    This value must be an integer from `1` through `100`.
+
+    Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+
+    On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+
+    For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+
+    Example: `1`
+    """
     interval_ms: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
+    """
+    is_dynamic_backend_weight_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) You can enable dynamic backend weights for HTTP health checks.
+
+    When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+
+    A valid header value is an integer from `0` through `100`.
+
+    If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+
+    If omitted during create, the default is `false`.
+
+    For TCP health checks, this field is accepted and stored, but it has no runtime effect.
     """
     is_force_plain_text: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
@@ -332,7 +360,9 @@ class BackendSetHealthCheckerArgsDict(TypedDict):
 class BackendSetHealthCheckerArgs:
     def __init__(__self__, *,
                  protocol: pulumi.Input[_builtins.str],
+                 default_weight: pulumi.Input[Optional[_builtins.int]] = None,
                  interval_ms: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_dynamic_backend_weight_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_force_plain_text: pulumi.Input[Optional[_builtins.bool]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
                  response_body_regex: pulumi.Input[Optional[_builtins.str]] = None,
@@ -342,7 +372,29 @@ class BackendSetHealthCheckerArgs:
                  url_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] protocol: (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
+        :param pulumi.Input[_builtins.int] default_weight: (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+               
+               This value must be an integer from `1` through `100`.
+               
+               Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+               
+               On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+               
+               For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+               
+               Example: `1`
         :param pulumi.Input[_builtins.int] interval_ms: (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
+        :param pulumi.Input[_builtins.bool] is_dynamic_backend_weight_enabled: (Updatable) You can enable dynamic backend weights for HTTP health checks.
+               
+               When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+               
+               A valid header value is an integer from `0` through `100`.
+               
+               If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+               
+               If omitted during create, the default is `false`.
+               
+               For TCP health checks, this field is accepted and stored, but it has no runtime effect.
         :param pulumi.Input[_builtins.bool] is_force_plain_text: (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
                
                If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
@@ -358,8 +410,12 @@ class BackendSetHealthCheckerArgs:
         :param pulumi.Input[_builtins.str] url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
         pulumi.set(__self__, "protocol", protocol)
+        if default_weight is not None:
+            pulumi.set(__self__, "default_weight", default_weight)
         if interval_ms is not None:
             pulumi.set(__self__, "interval_ms", interval_ms)
+        if is_dynamic_backend_weight_enabled is not None:
+            pulumi.set(__self__, "is_dynamic_backend_weight_enabled", is_dynamic_backend_weight_enabled)
         if is_force_plain_text is not None:
             pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
         if port is not None:
@@ -388,6 +444,28 @@ class BackendSetHealthCheckerArgs:
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
+    @pulumi.getter(name="defaultWeight")
+    def default_weight(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+
+        This value must be an integer from `1` through `100`.
+
+        Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+
+        On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+
+        For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+
+        Example: `1`
+        """
+        return pulumi.get(self, "default_weight")
+
+    @default_weight.setter
+    def default_weight(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "default_weight", value)
+
+    @_builtins.property
     @pulumi.getter(name="intervalMs")
     def interval_ms(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -398,6 +476,28 @@ class BackendSetHealthCheckerArgs:
     @interval_ms.setter
     def interval_ms(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval_ms", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDynamicBackendWeightEnabled")
+    def is_dynamic_backend_weight_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) You can enable dynamic backend weights for HTTP health checks.
+
+        When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+
+        A valid header value is an integer from `0` through `100`.
+
+        If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+
+        If omitted during create, the default is `false`.
+
+        For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+        """
+        return pulumi.get(self, "is_dynamic_backend_weight_enabled")
+
+    @is_dynamic_backend_weight_enabled.setter
+    def is_dynamic_backend_weight_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_dynamic_backend_weight_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isForcePlainText")
@@ -1496,7 +1596,7 @@ class LoadBalancerIpAddressDetailArgs:
 class LoadBalancerIpAddressDetailReservedIpArgsDict(TypedDict):
     id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Ocid of the Reserved IP/Public Ip created with VCN.
+    Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
     """
 
 @pulumi.input_type
@@ -1504,7 +1604,7 @@ class LoadBalancerIpAddressDetailReservedIpArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: Ocid of the Reserved IP/Public Ip created with VCN.
+        :param pulumi.Input[_builtins.str] id: Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1513,7 +1613,7 @@ class LoadBalancerIpAddressDetailReservedIpArgs:
     @pulumi.getter
     def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Ocid of the Reserved IP/Public Ip created with VCN.
+        Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -1525,15 +1625,18 @@ class LoadBalancerIpAddressDetailReservedIpArgs:
 class LoadBalancerReservedIpArgsDict(TypedDict):
     id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+    (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 
     Reserved IPs are IPs which already registered using VCN API.
 
-    Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+    For public load balancers, create a reserved Public IP and pass the OCID in this field.
+    For private load balancers, create a reserved Private IP and pass the OCID in this field.
+    Load balancer will be configured to listen to traffic on this IP.
 
     Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 
-    Example: "ocid1.publicip.oc1.phx.unique_ID"
+    Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+    Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
 
     IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
     """
@@ -1543,15 +1646,18 @@ class LoadBalancerReservedIpArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+        :param pulumi.Input[_builtins.str] id: (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
                
                Reserved IPs are IPs which already registered using VCN API.
                
-               Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+               For public load balancers, create a reserved Public IP and pass the OCID in this field.
+               For private load balancers, create a reserved Private IP and pass the OCID in this field.
+               Load balancer will be configured to listen to traffic on this IP.
                
                Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
                
-               Example: "ocid1.publicip.oc1.phx.unique_ID"
+               Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+               Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
                
                IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
@@ -1562,15 +1668,18 @@ class LoadBalancerReservedIpArgs:
     @pulumi.getter
     def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+        (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
 
         Reserved IPs are IPs which already registered using VCN API.
 
-        Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+        For public load balancers, create a reserved Public IP and pass the OCID in this field.
+        For private load balancers, create a reserved Private IP and pass the OCID in this field.
+        Load balancer will be configured to listen to traffic on this IP.
 
         Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID"
+        Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+        Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
 
         IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """

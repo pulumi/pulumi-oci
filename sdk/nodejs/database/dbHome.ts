@@ -124,6 +124,7 @@ export class DbHome extends pulumi.CustomResource {
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
     declare public readonly isDesupportedVersion: pulumi.Output<boolean>;
+    declare public readonly isOlderVersionAcknowledged: pulumi.Output<boolean>;
     /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      */
@@ -144,6 +145,10 @@ export class DbHome extends pulumi.CustomResource {
      * Additional information about the current lifecycle state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * List of one-off patches for Database Homes.
+     */
+    declare public /*out*/ readonly oneOffPatches: pulumi.Output<string[]>;
     /**
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
      */
@@ -193,11 +198,13 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["homeType"] = state?.homeType;
             resourceInputs["isDesupportedVersion"] = state?.isDesupportedVersion;
+            resourceInputs["isOlderVersionAcknowledged"] = state?.isOlderVersionAcknowledged;
             resourceInputs["isUnifiedAuditingEnabled"] = state?.isUnifiedAuditingEnabled;
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
             resourceInputs["lastPatchHistoryEntryId"] = state?.lastPatchHistoryEntryId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["oneOffPatches"] = state?.oneOffPatches;
             resourceInputs["source"] = state?.source;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -215,6 +222,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["homeType"] = args?.homeType;
             resourceInputs["isDesupportedVersion"] = args?.isDesupportedVersion;
+            resourceInputs["isOlderVersionAcknowledged"] = args?.isOlderVersionAcknowledged;
             resourceInputs["isUnifiedAuditingEnabled"] = args?.isUnifiedAuditingEnabled;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
             resourceInputs["kmsKeyVersionId"] = args?.kmsKeyVersionId;
@@ -224,6 +232,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["dbHomeLocation"] = undefined /*out*/;
             resourceInputs["lastPatchHistoryEntryId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["oneOffPatches"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -286,6 +295,7 @@ export interface DbHomeState {
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
     isDesupportedVersion?: pulumi.Input<boolean | undefined>;
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      */
@@ -306,6 +316,10 @@ export interface DbHomeState {
      * Additional information about the current lifecycle state.
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
+    /**
+     * List of one-off patches for Database Homes.
+     */
+    oneOffPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
      */
@@ -376,6 +390,7 @@ export interface DbHomeArgs {
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
     isDesupportedVersion?: pulumi.Input<boolean | undefined>;
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      */

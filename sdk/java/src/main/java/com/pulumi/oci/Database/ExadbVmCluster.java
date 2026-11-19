@@ -15,6 +15,7 @@ import com.pulumi.oci.Database.outputs.ExadbVmClusterMultiCloudIdentityConnector
 import com.pulumi.oci.Database.outputs.ExadbVmClusterNodeConfig;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterNodeResource;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -367,6 +368,20 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<List<ExadbVmClusterIormConfigCache>> iormConfigCaches() {
         return this.iormConfigCaches;
+    }
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Export(name="isOlderVersionAcknowledged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Output<Boolean> isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.

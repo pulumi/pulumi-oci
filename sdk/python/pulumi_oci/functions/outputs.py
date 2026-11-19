@@ -4233,32 +4233,44 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResu
 class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult(dict):
     def __init__(__self__, *,
                  action_type: _builtins.str,
+                 application_type: _builtins.str,
                  artifact: _builtins.str,
                  category: _builtins.str,
                  description: _builtins.str,
                  mode: _builtins.str,
                  qualifier: _builtins.str,
                  reference_key: _builtins.str,
+                 source_environment_id: _builtins.str,
+                 source_environment_name: _builtins.str,
+                 source_environment_url: _builtins.str,
                  state: _builtins.str,
                  version: _builtins.str):
         """
         :param _builtins.str action_type: Type of action.
+        :param _builtins.str application_type: Name of SaaS Application being migrated.
         :param _builtins.str artifact: Patch that delivered the Vertex update prerequisite.
         :param _builtins.str category: Patch artifact category.
         :param _builtins.str description: A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param _builtins.str mode: A string that describes whether the change is applied hot or cold.
         :param _builtins.str qualifier: Month qualifier.
         :param _builtins.str reference_key: Unique identifier of the object that represents the action.
+        :param _builtins.str source_environment_id: Source environment id derived from appman instance id
+        :param _builtins.str source_environment_name: Source environment name derived from source pod name
+        :param _builtins.str source_environment_url: Source environment url derived from source url
         :param _builtins.str state: A filter that returns all resources that match the specified status
         :param _builtins.str version: Name of the repo.
         """
         pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "application_type", application_type)
         pulumi.set(__self__, "artifact", artifact)
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "qualifier", qualifier)
         pulumi.set(__self__, "reference_key", reference_key)
+        pulumi.set(__self__, "source_environment_id", source_environment_id)
+        pulumi.set(__self__, "source_environment_name", source_environment_name)
+        pulumi.set(__self__, "source_environment_url", source_environment_url)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "version", version)
 
@@ -4269,6 +4281,14 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
         Type of action.
         """
         return pulumi.get(self, "action_type")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationType")
+    def application_type(self) -> _builtins.str:
+        """
+        Name of SaaS Application being migrated.
+        """
+        return pulumi.get(self, "application_type")
 
     @_builtins.property
     @pulumi.getter
@@ -4317,6 +4337,30 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
         Unique identifier of the object that represents the action.
         """
         return pulumi.get(self, "reference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceEnvironmentId")
+    def source_environment_id(self) -> _builtins.str:
+        """
+        Source environment id derived from appman instance id
+        """
+        return pulumi.get(self, "source_environment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceEnvironmentName")
+    def source_environment_name(self) -> _builtins.str:
+        """
+        Source environment name derived from source pod name
+        """
+        return pulumi.get(self, "source_environment_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceEnvironmentUrl")
+    def source_environment_url(self) -> _builtins.str:
+        """
+        Source environment url derived from source url
+        """
+        return pulumi.get(self, "source_environment_url")
 
     @_builtins.property
     @pulumi.getter
@@ -4339,32 +4383,44 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
 class GetFusionEnvironmentScheduledActivityActionResult(dict):
     def __init__(__self__, *,
                  action_type: _builtins.str,
+                 application_type: _builtins.str,
                  artifact: _builtins.str,
                  category: _builtins.str,
                  description: _builtins.str,
                  mode: _builtins.str,
                  qualifier: _builtins.str,
                  reference_key: _builtins.str,
+                 source_environment_id: _builtins.str,
+                 source_environment_name: _builtins.str,
+                 source_environment_url: _builtins.str,
                  state: _builtins.str,
                  version: _builtins.str):
         """
         :param _builtins.str action_type: Type of action.
+        :param _builtins.str application_type: Name of SaaS Application being migrated.
         :param _builtins.str artifact: Patch that delivered the Vertex update prerequisite.
         :param _builtins.str category: Patch artifact category.
         :param _builtins.str description: A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param _builtins.str mode: A string that describes whether the change is applied hot or cold.
         :param _builtins.str qualifier: Month qualifier.
         :param _builtins.str reference_key: Unique identifier of the object that represents the action.
+        :param _builtins.str source_environment_id: Source environment id derived from appman instance id
+        :param _builtins.str source_environment_name: Source environment name derived from source pod name
+        :param _builtins.str source_environment_url: Source environment url derived from source url
         :param _builtins.str state: The current state of the scheduledActivity.
         :param _builtins.str version: Name of the repo.
         """
         pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "application_type", application_type)
         pulumi.set(__self__, "artifact", artifact)
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "qualifier", qualifier)
         pulumi.set(__self__, "reference_key", reference_key)
+        pulumi.set(__self__, "source_environment_id", source_environment_id)
+        pulumi.set(__self__, "source_environment_name", source_environment_name)
+        pulumi.set(__self__, "source_environment_url", source_environment_url)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "version", version)
 
@@ -4375,6 +4431,14 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
         Type of action.
         """
         return pulumi.get(self, "action_type")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationType")
+    def application_type(self) -> _builtins.str:
+        """
+        Name of SaaS Application being migrated.
+        """
+        return pulumi.get(self, "application_type")
 
     @_builtins.property
     @pulumi.getter
@@ -4423,6 +4487,30 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
         Unique identifier of the object that represents the action.
         """
         return pulumi.get(self, "reference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceEnvironmentId")
+    def source_environment_id(self) -> _builtins.str:
+        """
+        Source environment id derived from appman instance id
+        """
+        return pulumi.get(self, "source_environment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceEnvironmentName")
+    def source_environment_name(self) -> _builtins.str:
+        """
+        Source environment name derived from source pod name
+        """
+        return pulumi.get(self, "source_environment_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceEnvironmentUrl")
+    def source_environment_url(self) -> _builtins.str:
+        """
+        Source environment url derived from source url
+        """
+        return pulumi.get(self, "source_environment_url")
 
     @_builtins.property
     @pulumi.getter
@@ -4785,7 +4873,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
                  time_updated: _builtins.str,
                  version: _builtins.str):
         """
-        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs'] additional_egress_rules: Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs'] additional_egress_rules: Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         :param Sequence[_builtins.str] additional_language_packs: Language packs
         :param Sequence[_builtins.str] applied_patch_bundles: Patch bundle names
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
@@ -4852,7 +4940,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
     @pulumi.getter(name="additionalEgressRules")
     def additional_egress_rules(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleResult']:
         """
-        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         """
         return pulumi.get(self, "additional_egress_rules")
 

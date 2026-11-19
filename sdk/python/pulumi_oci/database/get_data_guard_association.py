@@ -27,7 +27,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cluster_placement_group_id=None, compute_count=None, compute_model=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, migrate_trigger=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, private_ip_v6=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, subscription_id=None, time_created=None, time_zone=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cluster_placement_group_id=None, compute_count=None, compute_model=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, is_older_version_acknowledged=None, license_model=None, lifecycle_details=None, migrate_trigger=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, private_ip_v6=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, subscription_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -109,6 +109,9 @@ class GetDataGuardAssociationResult:
         if is_active_data_guard_enabled and not isinstance(is_active_data_guard_enabled, bool):
             raise TypeError("Expected argument 'is_active_data_guard_enabled' to be a bool")
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if is_older_version_acknowledged and not isinstance(is_older_version_acknowledged, bool):
+            raise TypeError("Expected argument 'is_older_version_acknowledged' to be a bool")
+        pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if license_model and not isinstance(license_model, str):
             raise TypeError("Expected argument 'license_model' to be a str")
         pulumi.set(__self__, "license_model", license_model)
@@ -336,6 +339,11 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> _builtins.bool:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @_builtins.property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> _builtins.str:
         return pulumi.get(self, "license_model")
@@ -527,6 +535,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             hostname=self.hostname,
             id=self.id,
             is_active_data_guard_enabled=self.is_active_data_guard_enabled,
+            is_older_version_acknowledged=self.is_older_version_acknowledged,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             migrate_trigger=self.migrate_trigger,
@@ -610,6 +619,7 @@ def get_data_guard_association(data_guard_association_id: Optional[_builtins.str
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         is_active_data_guard_enabled=pulumi.get(__ret__, 'is_active_data_guard_enabled'),
+        is_older_version_acknowledged=pulumi.get(__ret__, 'is_older_version_acknowledged'),
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         migrate_trigger=pulumi.get(__ret__, 'migrate_trigger'),
@@ -690,6 +700,7 @@ def get_data_guard_association_output(data_guard_association_id: pulumi.Input[Op
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
         is_active_data_guard_enabled=pulumi.get(__response__, 'is_active_data_guard_enabled'),
+        is_older_version_acknowledged=pulumi.get(__response__, 'is_older_version_acknowledged'),
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         migrate_trigger=pulumi.get(__response__, 'migrate_trigger'),

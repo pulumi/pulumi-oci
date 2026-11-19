@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.outputs.GetExadbVmClusterIormConfigCache;
 import com.pulumi.oci.Database.outputs.GetExadbVmClusterMultiCloudIdentityConnectorConfig;
 import com.pulumi.oci.Database.outputs.GetExadbVmClusterNodeConfig;
 import com.pulumi.oci.Database.outputs.GetExadbVmClusterNodeResource;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -109,6 +110,7 @@ public final class GetExadbVmClusterResult {
      * 
      */
     private List<GetExadbVmClusterIormConfigCache> iormConfigCaches;
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
@@ -383,6 +385,9 @@ public final class GetExadbVmClusterResult {
     public List<GetExadbVmClusterIormConfigCache> iormConfigCaches() {
         return this.iormConfigCaches;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
@@ -615,6 +620,7 @@ public final class GetExadbVmClusterResult {
         private String hostname;
         private String id;
         private List<GetExadbVmClusterIormConfigCache> iormConfigCaches;
+        private Boolean isOlderVersionAcknowledged;
         private String lastUpdateHistoryEntryId;
         private String licenseModel;
         private String lifecycleDetails;
@@ -667,6 +673,7 @@ public final class GetExadbVmClusterResult {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.iormConfigCaches = defaults.iormConfigCaches;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.lastUpdateHistoryEntryId = defaults.lastUpdateHistoryEntryId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -859,6 +866,14 @@ public final class GetExadbVmClusterResult {
         }
         public Builder iormConfigCaches(GetExadbVmClusterIormConfigCache... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
+        }
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClusterResult", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
         }
         @CustomType.Setter
         public Builder lastUpdateHistoryEntryId(String lastUpdateHistoryEntryId) {
@@ -1142,6 +1157,7 @@ public final class GetExadbVmClusterResult {
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.iormConfigCaches = iormConfigCaches;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;

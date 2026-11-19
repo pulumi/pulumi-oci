@@ -497,7 +497,9 @@ class BackendSet(pulumi.CustomResource):
         test_backend_set = oci.loadbalancer.BackendSet("test_backend_set",
             health_checker={
                 "protocol": backend_set_health_checker_protocol,
+                "default_weight": backend_set_health_checker_default_weight,
                 "interval_ms": backend_set_health_checker_interval_ms,
+                "is_dynamic_backend_weight_enabled": backend_set_health_checker_is_dynamic_backend_weight_enabled,
                 "is_force_plain_text": backend_set_health_checker_is_force_plain_text,
                 "port": backend_set_health_checker_port,
                 "response_body_regex": backend_set_health_checker_response_body_regex,
@@ -621,7 +623,9 @@ class BackendSet(pulumi.CustomResource):
         test_backend_set = oci.loadbalancer.BackendSet("test_backend_set",
             health_checker={
                 "protocol": backend_set_health_checker_protocol,
+                "default_weight": backend_set_health_checker_default_weight,
                 "interval_ms": backend_set_health_checker_interval_ms,
+                "is_dynamic_backend_weight_enabled": backend_set_health_checker_is_dynamic_backend_weight_enabled,
                 "is_force_plain_text": backend_set_health_checker_is_force_plain_text,
                 "port": backend_set_health_checker_port,
                 "response_body_regex": backend_set_health_checker_response_body_regex,

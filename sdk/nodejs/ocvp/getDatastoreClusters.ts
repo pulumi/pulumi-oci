@@ -10,7 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
  *
  * List the Datastore Clusters in the specified compartment. The list can be filtered
- * by compartment, Datastore Cluster, Display name and Lifecycle state
+ * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+ * compartmentId or datastoreClusterId must be provided.
  *
  * ## Example Usage
  *
@@ -19,15 +20,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatastoreClusters = oci.ocvp.getDatastoreClusters({
- *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
+ *     compartmentId: compartmentId,
  *     datastoreClusterId: testDatastoreCluster.id,
  *     displayName: datastoreClusterDisplayName,
  *     state: datastoreClusterState,
  * });
  * ```
  */
-export function getDatastoreClusters(args: GetDatastoreClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastoreClustersResult> {
+export function getDatastoreClusters(args?: GetDatastoreClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastoreClustersResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", {
         "clusterId": args.clusterId,
@@ -48,9 +50,9 @@ export interface GetDatastoreClustersArgs {
      */
     clusterId?: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
      */
@@ -77,7 +79,7 @@ export interface GetDatastoreClustersResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The list of datastore_cluster_collection.
      */
@@ -101,7 +103,8 @@ export interface GetDatastoreClustersResult {
  * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
  *
  * List the Datastore Clusters in the specified compartment. The list can be filtered
- * by compartment, Datastore Cluster, Display name and Lifecycle state
+ * by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+ * compartmentId or datastoreClusterId must be provided.
  *
  * ## Example Usage
  *
@@ -110,15 +113,16 @@ export interface GetDatastoreClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatastoreClusters = oci.ocvp.getDatastoreClusters({
- *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
+ *     compartmentId: compartmentId,
  *     datastoreClusterId: testDatastoreCluster.id,
  *     displayName: datastoreClusterDisplayName,
  *     state: datastoreClusterState,
  * });
  * ```
  */
-export function getDatastoreClustersOutput(args: GetDatastoreClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastoreClustersResult> {
+export function getDatastoreClustersOutput(args?: GetDatastoreClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastoreClustersResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", {
         "clusterId": args.clusterId,
@@ -139,9 +143,9 @@ export interface GetDatastoreClustersOutputArgs {
      */
     clusterId?: pulumi.Input<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
      */

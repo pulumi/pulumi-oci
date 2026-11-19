@@ -15,6 +15,7 @@ import com.pulumi.oci.Database.outputs.ExadataInfrastructureExascaleConfig;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureMaintenanceVersionPreferences;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureNetworkBondingModeDetails;
+import com.pulumi.oci.Database.outputs.ExadataInfrastructureSslInspectionConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -51,6 +52,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowMonthArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataInfrastructureSslInspectionConfigurationArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -116,6 +118,10 @@ import javax.annotation.Nullable;
  *                 .backupNetworkBondingMode(exadataInfrastructureNetworkBondingModeDetailsBackupNetworkBondingMode)
  *                 .clientNetworkBondingMode(exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode)
  *                 .drNetworkBondingMode(exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode)
+ *                 .build())
+ *             .sslInspectionConfiguration(ExadataInfrastructureSslInspectionConfigurationArgs.builder()
+ *                 .isEnabled(exadataInfrastructureSslInspectionConfigurationIsEnabled)
+ *                 .certificateAuthorityId(testCertificateAuthority.get("id"))
  *                 .build())
  *             .storageCount(exadataInfrastructureStorageCount)
  *             .storageServerType(exadataInfrastructureStorageServerType)
@@ -808,6 +814,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<String> shape() {
         return this.shape;
+    }
+    /**
+     * SSL inspection configuration for the Exadata infrastructure.
+     * 
+     */
+    @Export(name="sslInspectionConfiguration", refs={ExadataInfrastructureSslInspectionConfiguration.class}, tree="[0]")
+    private Output<ExadataInfrastructureSslInspectionConfiguration> sslInspectionConfiguration;
+
+    /**
+     * @return SSL inspection configuration for the Exadata infrastructure.
+     * 
+     */
+    public Output<ExadataInfrastructureSslInspectionConfiguration> sslInspectionConfiguration() {
+        return this.sslInspectionConfiguration;
     }
     /**
      * The current lifecycle state of the Exadata infrastructure.

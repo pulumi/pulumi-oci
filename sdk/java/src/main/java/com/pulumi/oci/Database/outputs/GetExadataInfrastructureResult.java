@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.outputs.GetExadataInfrastructureExascaleConfig;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureMaintenanceVersionPreference;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureNetworkBondingModeDetail;
+import com.pulumi.oci.Database.outputs.GetExadataInfrastructureSslInspectionConfiguration;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -259,6 +260,11 @@ public final class GetExadataInfrastructureResult {
      * 
      */
     private String shape;
+    /**
+     * @return SSL inspection configuration for the Exadata infrastructure.
+     * 
+     */
+    private List<GetExadataInfrastructureSslInspectionConfiguration> sslInspectionConfigurations;
     /**
      * @return The current lifecycle state of the Exadata infrastructure.
      * 
@@ -635,6 +641,13 @@ public final class GetExadataInfrastructureResult {
         return this.shape;
     }
     /**
+     * @return SSL inspection configuration for the Exadata infrastructure.
+     * 
+     */
+    public List<GetExadataInfrastructureSslInspectionConfiguration> sslInspectionConfigurations() {
+        return this.sslInspectionConfigurations;
+    }
+    /**
      * @return The current lifecycle state of the Exadata infrastructure.
      * 
      */
@@ -743,6 +756,7 @@ public final class GetExadataInfrastructureResult {
         private List<String> ntpServers;
         private String rackSerialNumber;
         private String shape;
+        private List<GetExadataInfrastructureSslInspectionConfiguration> sslInspectionConfigurations;
         private String state;
         private Integer storageCount;
         private String storageServerType;
@@ -803,6 +817,7 @@ public final class GetExadataInfrastructureResult {
     	      this.ntpServers = defaults.ntpServers;
     	      this.rackSerialNumber = defaults.rackSerialNumber;
     	      this.shape = defaults.shape;
+    	      this.sslInspectionConfigurations = defaults.sslInspectionConfigurations;
     	      this.state = defaults.state;
     	      this.storageCount = defaults.storageCount;
     	      this.storageServerType = defaults.storageServerType;
@@ -1237,6 +1252,17 @@ public final class GetExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sslInspectionConfigurations(List<GetExadataInfrastructureSslInspectionConfiguration> sslInspectionConfigurations) {
+            if (sslInspectionConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "sslInspectionConfigurations");
+            }
+            this.sslInspectionConfigurations = sslInspectionConfigurations;
+            return this;
+        }
+        public Builder sslInspectionConfigurations(GetExadataInfrastructureSslInspectionConfiguration... sslInspectionConfigurations) {
+            return sslInspectionConfigurations(List.of(sslInspectionConfigurations));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "state");
@@ -1344,6 +1370,7 @@ public final class GetExadataInfrastructureResult {
             _resultValue.ntpServers = ntpServers;
             _resultValue.rackSerialNumber = rackSerialNumber;
             _resultValue.shape = shape;
+            _resultValue.sslInspectionConfigurations = sslInspectionConfigurations;
             _resultValue.state = state;
             _resultValue.storageCount = storageCount;
             _resultValue.storageServerType = storageServerType;

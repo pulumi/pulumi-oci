@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetBackupDestinationAssociatedLongTermBackup struct {
+	// The user-provided name of the backup destination.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id string `pulumi:"id"`
+}
+
+// GetBackupDestinationAssociatedLongTermBackupInput is an input type that accepts GetBackupDestinationAssociatedLongTermBackupArgs and GetBackupDestinationAssociatedLongTermBackupOutput values.
+// You can construct a concrete instance of `GetBackupDestinationAssociatedLongTermBackupInput` via:
+//
+//	GetBackupDestinationAssociatedLongTermBackupArgs{...}
+type GetBackupDestinationAssociatedLongTermBackupInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationAssociatedLongTermBackupOutput
+	ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Context) GetBackupDestinationAssociatedLongTermBackupOutput
+}
+
+type GetBackupDestinationAssociatedLongTermBackupArgs struct {
+	// The user-provided name of the backup destination.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetBackupDestinationAssociatedLongTermBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationAssociatedLongTermBackupOutput {
+	return i.ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationAssociatedLongTermBackupOutput)
+}
+
+// GetBackupDestinationAssociatedLongTermBackupArrayInput is an input type that accepts GetBackupDestinationAssociatedLongTermBackupArray and GetBackupDestinationAssociatedLongTermBackupArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationAssociatedLongTermBackupArrayInput` via:
+//
+//	GetBackupDestinationAssociatedLongTermBackupArray{ GetBackupDestinationAssociatedLongTermBackupArgs{...} }
+type GetBackupDestinationAssociatedLongTermBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationAssociatedLongTermBackupArrayOutput
+	ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Context) GetBackupDestinationAssociatedLongTermBackupArrayOutput
+}
+
+type GetBackupDestinationAssociatedLongTermBackupArray []GetBackupDestinationAssociatedLongTermBackupInput
+
+func (GetBackupDestinationAssociatedLongTermBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return i.ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationAssociatedLongTermBackupArrayOutput)
+}
+
+type GetBackupDestinationAssociatedLongTermBackupOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationAssociatedLongTermBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationAssociatedLongTermBackupOutput {
+	return o
+}
+
+func (o GetBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupOutput {
+	return o
+}
+
+// The user-provided name of the backup destination.
+func (o GetBackupDestinationAssociatedLongTermBackupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationAssociatedLongTermBackup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+func (o GetBackupDestinationAssociatedLongTermBackupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationAssociatedLongTermBackup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetBackupDestinationAssociatedLongTermBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationAssociatedLongTermBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationAssociatedLongTermBackupArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationAssociatedLongTermBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationAssociatedLongTermBackup {
+		return vs[0].([]GetBackupDestinationAssociatedLongTermBackup)[vs[1].(int)]
+	}).(GetBackupDestinationAssociatedLongTermBackupOutput)
+}
+
 type GetBackupDestinationMountTypeDetail struct {
 	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
 	LocalMountPointPath string `pulumi:"localMountPointPath"`
@@ -8658,7 +8764,8 @@ type GetCloudVmClustersCloudVmCluster struct {
 	Id               string                                            `pulumi:"id"`
 	IormConfigCaches []GetCloudVmClustersCloudVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       bool `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
 	IsSparseDiskgroupEnabled bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -8805,7 +8912,8 @@ type GetCloudVmClustersCloudVmClusterArgs struct {
 	Id               pulumi.StringInput                                        `pulumi:"id"`
 	IormConfigCaches GetCloudVmClustersCloudVmClusterIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-	IsLocalBackupEnabled pulumi.BoolInput `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       pulumi.BoolInput `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolInput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -9079,6 +9187,10 @@ func (o GetCloudVmClustersCloudVmClusterOutput) IormConfigCaches() GetCloudVmClu
 // If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 func (o GetCloudVmClustersCloudVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) bool { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetCloudVmClustersCloudVmClusterOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
@@ -10694,8 +10806,9 @@ type GetDataGuardAssociationsDataGuardAssociation struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
 	Id string `pulumi:"id"`
 	// True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
-	LicenseModel             string `pulumi:"licenseModel"`
+	IsActiveDataGuardEnabled   bool   `pulumi:"isActiveDataGuardEnabled"`
+	IsOlderVersionAcknowledged bool   `pulumi:"isOlderVersionAcknowledged"`
+	LicenseModel               string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails string   `pulumi:"lifecycleDetails"`
 	MigrateTrigger   int      `pulumi:"migrateTrigger"`
@@ -10775,8 +10888,9 @@ type GetDataGuardAssociationsDataGuardAssociationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
 	Id pulumi.StringInput `pulumi:"id"`
 	// True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled pulumi.BoolInput   `pulumi:"isActiveDataGuardEnabled"`
-	LicenseModel             pulumi.StringInput `pulumi:"licenseModel"`
+	IsActiveDataGuardEnabled   pulumi.BoolInput   `pulumi:"isActiveDataGuardEnabled"`
+	IsOlderVersionAcknowledged pulumi.BoolInput   `pulumi:"isOlderVersionAcknowledged"`
+	LicenseModel               pulumi.StringInput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
 	MigrateTrigger   pulumi.IntInput         `pulumi:"migrateTrigger"`
@@ -10976,6 +11090,10 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) Id() pulumi.StringOu
 // True if active Data Guard is enabled.
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) LicenseModel() pulumi.StringOutput {
@@ -13345,6 +13463,7 @@ func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutpu
 }
 
 type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion string `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -13365,6 +13484,7 @@ type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionScheme
 }
 
 type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -13422,6 +13542,12 @@ func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSch
 
 func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
 	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) bool {
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolOutput)
 }
 
 // The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -18719,6 +18845,7 @@ func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) Index
 }
 
 type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion string `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -18739,6 +18866,7 @@ type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailIn
 }
 
 type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -18796,6 +18924,12 @@ func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetai
 
 func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
 	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) bool {
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolOutput)
 }
 
 // The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -19569,7 +19703,8 @@ type GetDatabaseSoftwareImagesDatabaseSoftwareImage struct {
 	// A filter to return only resources that match the given image type exactly.
 	ImageType string `pulumi:"imageType"`
 	// The patches included in the image and the version of the image.
-	IncludedPatchesSummary string `pulumi:"includedPatchesSummary"`
+	IncludedPatchesSummary     string `pulumi:"includedPatchesSummary"`
+	IsOlderVersionAcknowledged bool   `pulumi:"isOlderVersionAcknowledged"`
 	// If provided, filters the results to the set of database versions which are supported for Upgrade.
 	IsUpgradeSupported bool `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
@@ -19620,7 +19755,8 @@ type GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs struct {
 	// A filter to return only resources that match the given image type exactly.
 	ImageType pulumi.StringInput `pulumi:"imageType"`
 	// The patches included in the image and the version of the image.
-	IncludedPatchesSummary pulumi.StringInput `pulumi:"includedPatchesSummary"`
+	IncludedPatchesSummary     pulumi.StringInput `pulumi:"includedPatchesSummary"`
+	IsOlderVersionAcknowledged pulumi.BoolInput   `pulumi:"isOlderVersionAcknowledged"`
 	// If provided, filters the results to the set of database versions which are supported for Upgrade.
 	IsUpgradeSupported pulumi.BoolInput `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
@@ -19746,6 +19882,10 @@ func (o GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput) ImageType() pulumi
 // The patches included in the image and the version of the image.
 func (o GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput) IncludedPatchesSummary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseSoftwareImagesDatabaseSoftwareImage) string { return v.IncludedPatchesSummary }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseSoftwareImagesDatabaseSoftwareImage) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // If provided, filters the results to the set of database versions which are supported for Upgrade.
@@ -22836,6 +22976,7 @@ func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailA
 }
 
 type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion string `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -22856,6 +22997,7 @@ type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVers
 }
 
 type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -22913,6 +23055,12 @@ func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailV
 
 func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
 	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) bool {
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolOutput)
 }
 
 // The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -24293,6 +24441,7 @@ func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutp
 }
 
 type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion string `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -24313,6 +24462,7 @@ type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchem
 }
 
 type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
 	// The update should be applied on the database for the selected version scheme.
@@ -24370,6 +24520,12 @@ func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSc
 
 func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
 	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) bool {
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolOutput)
 }
 
 // The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -25168,10 +25324,8 @@ type GetDbHomeDatabase struct {
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	NcharacterSet    string `pulumi:"ncharacterSet"`
-	// List of one-off patches for Database Homes.
-	OneOffPatches                []string `pulumi:"oneOffPatches"`
+	LifecycleDetails             string   `pulumi:"lifecycleDetails"`
+	NcharacterSet                string   `pulumi:"ncharacterSet"`
 	PdbName                      string   `pulumi:"pdbName"`
 	PluggableDatabases           []string `pulumi:"pluggableDatabases"`
 	RecoveryApplianceVpcPassword string   `pulumi:"recoveryApplianceVpcPassword"`
@@ -25224,10 +25378,8 @@ type GetDbHomeDatabaseArgs struct {
 	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	NcharacterSet    pulumi.StringInput `pulumi:"ncharacterSet"`
-	// List of one-off patches for Database Homes.
-	OneOffPatches                pulumi.StringArrayInput `pulumi:"oneOffPatches"`
+	LifecycleDetails             pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	NcharacterSet                pulumi.StringInput      `pulumi:"ncharacterSet"`
 	PdbName                      pulumi.StringInput      `pulumi:"pdbName"`
 	PluggableDatabases           pulumi.StringArrayInput `pulumi:"pluggableDatabases"`
 	RecoveryApplianceVpcPassword pulumi.StringInput      `pulumi:"recoveryApplianceVpcPassword"`
@@ -25381,11 +25533,6 @@ func (o GetDbHomeDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 
 func (o GetDbHomeDatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomeDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
-}
-
-// List of one-off patches for Database Homes.
-func (o GetDbHomeDatabaseOutput) OneOffPatches() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDbHomeDatabase) []string { return v.OneOffPatches }).(pulumi.StringArrayOutput)
 }
 
 func (o GetDbHomeDatabaseOutput) PdbName() pulumi.StringOutput {
@@ -26745,8 +26892,9 @@ type GetDbHomesDbHome struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType string `pulumi:"homeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id                   string `pulumi:"id"`
-	IsDesupportedVersion bool   `pulumi:"isDesupportedVersion"`
+	Id                         string `pulumi:"id"`
+	IsDesupportedVersion       bool   `pulumi:"isDesupportedVersion"`
+	IsOlderVersionAcknowledged bool   `pulumi:"isOlderVersionAcknowledged"`
 	// Indicates whether unified autiding is enabled or not.
 	IsUnifiedAuditingEnabled bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -26756,7 +26904,9 @@ type GetDbHomesDbHome struct {
 	LastPatchHistoryEntryId string `pulumi:"lastPatchHistoryEntryId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	Source           string `pulumi:"source"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches []string `pulumi:"oneOffPatches"`
+	Source        string   `pulumi:"source"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -26801,8 +26951,9 @@ type GetDbHomesDbHomeArgs struct {
 	// Represents database home will be managed by oracle or customer
 	HomeType pulumi.StringInput `pulumi:"homeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id                   pulumi.StringInput `pulumi:"id"`
-	IsDesupportedVersion pulumi.BoolInput   `pulumi:"isDesupportedVersion"`
+	Id                         pulumi.StringInput `pulumi:"id"`
+	IsDesupportedVersion       pulumi.BoolInput   `pulumi:"isDesupportedVersion"`
+	IsOlderVersionAcknowledged pulumi.BoolInput   `pulumi:"isOlderVersionAcknowledged"`
 	// Indicates whether unified autiding is enabled or not.
 	IsUnifiedAuditingEnabled pulumi.BoolInput `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -26812,7 +26963,9 @@ type GetDbHomesDbHomeArgs struct {
 	LastPatchHistoryEntryId pulumi.StringInput `pulumi:"lastPatchHistoryEntryId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	Source           pulumi.StringInput `pulumi:"source"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches pulumi.StringArrayInput `pulumi:"oneOffPatches"`
+	Source        pulumi.StringInput      `pulumi:"source"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -26940,6 +27093,10 @@ func (o GetDbHomesDbHomeOutput) IsDesupportedVersion() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbHomesDbHome) bool { return v.IsDesupportedVersion }).(pulumi.BoolOutput)
 }
 
+func (o GetDbHomesDbHomeOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
+}
+
 // Indicates whether unified autiding is enabled or not.
 func (o GetDbHomesDbHomeOutput) IsUnifiedAuditingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbHomesDbHome) bool { return v.IsUnifiedAuditingEnabled }).(pulumi.BoolOutput)
@@ -26962,6 +27119,11 @@ func (o GetDbHomesDbHomeOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
 // Additional information about the current lifecycle state.
 func (o GetDbHomesDbHomeOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// List of one-off patches for Database Homes.
+func (o GetDbHomesDbHomeOutput) OneOffPatches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) []string { return v.OneOffPatches }).(pulumi.StringArrayOutput)
 }
 
 func (o GetDbHomesDbHomeOutput) Source() pulumi.StringOutput {
@@ -27034,10 +27196,8 @@ type GetDbHomesDbHomeDatabase struct {
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	NcharacterSet    string `pulumi:"ncharacterSet"`
-	// List of one-off patches for Database Homes.
-	OneOffPatches                []string `pulumi:"oneOffPatches"`
+	LifecycleDetails             string   `pulumi:"lifecycleDetails"`
+	NcharacterSet                string   `pulumi:"ncharacterSet"`
 	PdbName                      string   `pulumi:"pdbName"`
 	PluggableDatabases           []string `pulumi:"pluggableDatabases"`
 	RecoveryApplianceVpcPassword string   `pulumi:"recoveryApplianceVpcPassword"`
@@ -27091,10 +27251,8 @@ type GetDbHomesDbHomeDatabaseArgs struct {
 	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	NcharacterSet    pulumi.StringInput `pulumi:"ncharacterSet"`
-	// List of one-off patches for Database Homes.
-	OneOffPatches                pulumi.StringArrayInput `pulumi:"oneOffPatches"`
+	LifecycleDetails             pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	NcharacterSet                pulumi.StringInput      `pulumi:"ncharacterSet"`
 	PdbName                      pulumi.StringInput      `pulumi:"pdbName"`
 	PluggableDatabases           pulumi.StringArrayInput `pulumi:"pluggableDatabases"`
 	RecoveryApplianceVpcPassword pulumi.StringInput      `pulumi:"recoveryApplianceVpcPassword"`
@@ -27251,11 +27409,6 @@ func (o GetDbHomesDbHomeDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 
 func (o GetDbHomesDbHomeDatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
-}
-
-// List of one-off patches for Database Homes.
-func (o GetDbHomesDbHomeDatabaseOutput) OneOffPatches() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) []string { return v.OneOffPatches }).(pulumi.StringArrayOutput)
 }
 
 func (o GetDbHomesDbHomeDatabaseOutput) PdbName() pulumi.StringOutput {
@@ -33810,8 +33963,9 @@ type GetDbSystemsDbSystem struct {
 	// The hostname for the DB system.
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id               string                                `pulumi:"id"`
-	IormConfigCaches []GetDbSystemsDbSystemIormConfigCache `pulumi:"iormConfigCaches"`
+	Id                         string                                `pulumi:"id"`
+	IormConfigCaches           []GetDbSystemsDbSystemIormConfigCache `pulumi:"iormConfigCaches"`
+	IsOlderVersionAcknowledged bool                                  `pulumi:"isOlderVersionAcknowledged"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
@@ -33950,8 +34104,9 @@ type GetDbSystemsDbSystemArgs struct {
 	// The hostname for the DB system.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id               pulumi.StringInput                            `pulumi:"id"`
-	IormConfigCaches GetDbSystemsDbSystemIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
+	Id                         pulumi.StringInput                            `pulumi:"id"`
+	IormConfigCaches           GetDbSystemsDbSystemIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
+	IsOlderVersionAcknowledged pulumi.BoolInput                              `pulumi:"isOlderVersionAcknowledged"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
@@ -34203,6 +34358,10 @@ func (o GetDbSystemsDbSystemOutput) Id() pulumi.StringOutput {
 
 func (o GetDbSystemsDbSystemOutput) IormConfigCaches() GetDbSystemsDbSystemIormConfigCacheArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemIormConfigCache { return v.IormConfigCaches }).(GetDbSystemsDbSystemIormConfigCacheArrayOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -34768,9 +34927,10 @@ type GetDbSystemsDbSystemDbHomeDatabase struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id                       string `pulumi:"id"`
-	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
-	KeyStoreId               string `pulumi:"keyStoreId"`
+	Id                         string `pulumi:"id"`
+	IsActiveDataGuardEnabled   bool   `pulumi:"isActiveDataGuardEnabled"`
+	IsOlderVersionAcknowledged bool   `pulumi:"isOlderVersionAcknowledged"`
+	KeyStoreId                 string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
@@ -34823,9 +34983,10 @@ type GetDbSystemsDbSystemDbHomeDatabaseArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id                       pulumi.StringInput `pulumi:"id"`
-	IsActiveDataGuardEnabled pulumi.BoolInput   `pulumi:"isActiveDataGuardEnabled"`
-	KeyStoreId               pulumi.StringInput `pulumi:"keyStoreId"`
+	Id                         pulumi.StringInput `pulumi:"id"`
+	IsActiveDataGuardEnabled   pulumi.BoolInput   `pulumi:"isActiveDataGuardEnabled"`
+	IsOlderVersionAcknowledged pulumi.BoolInput   `pulumi:"isOlderVersionAcknowledged"`
+	KeyStoreId                 pulumi.StringInput `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
@@ -34975,6 +35136,10 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) Id() pulumi.StringOutput {
 
 func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) KeyStoreId() pulumi.StringOutput {
@@ -38197,6 +38362,112 @@ func (o GetExadataInfrastructureNetworkBondingModeDetailArrayOutput) Index(i pul
 	}).(GetExadataInfrastructureNetworkBondingModeDetailOutput)
 }
 
+type GetExadataInfrastructureSslInspectionConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+	CertificateAuthorityId string `pulumi:"certificateAuthorityId"`
+	// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetExadataInfrastructureSslInspectionConfigurationInput is an input type that accepts GetExadataInfrastructureSslInspectionConfigurationArgs and GetExadataInfrastructureSslInspectionConfigurationOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureSslInspectionConfigurationInput` via:
+//
+//	GetExadataInfrastructureSslInspectionConfigurationArgs{...}
+type GetExadataInfrastructureSslInspectionConfigurationInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureSslInspectionConfigurationOutput() GetExadataInfrastructureSslInspectionConfigurationOutput
+	ToGetExadataInfrastructureSslInspectionConfigurationOutputWithContext(context.Context) GetExadataInfrastructureSslInspectionConfigurationOutput
+}
+
+type GetExadataInfrastructureSslInspectionConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+	CertificateAuthorityId pulumi.StringInput `pulumi:"certificateAuthorityId"`
+	// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetExadataInfrastructureSslInspectionConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureSslInspectionConfigurationArgs) ToGetExadataInfrastructureSslInspectionConfigurationOutput() GetExadataInfrastructureSslInspectionConfigurationOutput {
+	return i.ToGetExadataInfrastructureSslInspectionConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureSslInspectionConfigurationArgs) ToGetExadataInfrastructureSslInspectionConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructureSslInspectionConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureSslInspectionConfigurationOutput)
+}
+
+// GetExadataInfrastructureSslInspectionConfigurationArrayInput is an input type that accepts GetExadataInfrastructureSslInspectionConfigurationArray and GetExadataInfrastructureSslInspectionConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureSslInspectionConfigurationArrayInput` via:
+//
+//	GetExadataInfrastructureSslInspectionConfigurationArray{ GetExadataInfrastructureSslInspectionConfigurationArgs{...} }
+type GetExadataInfrastructureSslInspectionConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureSslInspectionConfigurationArrayOutput() GetExadataInfrastructureSslInspectionConfigurationArrayOutput
+	ToGetExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(context.Context) GetExadataInfrastructureSslInspectionConfigurationArrayOutput
+}
+
+type GetExadataInfrastructureSslInspectionConfigurationArray []GetExadataInfrastructureSslInspectionConfigurationInput
+
+func (GetExadataInfrastructureSslInspectionConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureSslInspectionConfigurationArray) ToGetExadataInfrastructureSslInspectionConfigurationArrayOutput() GetExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return i.ToGetExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureSslInspectionConfigurationArray) ToGetExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureSslInspectionConfigurationArrayOutput)
+}
+
+type GetExadataInfrastructureSslInspectionConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureSslInspectionConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureSslInspectionConfigurationOutput) ToGetExadataInfrastructureSslInspectionConfigurationOutput() GetExadataInfrastructureSslInspectionConfigurationOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureSslInspectionConfigurationOutput) ToGetExadataInfrastructureSslInspectionConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructureSslInspectionConfigurationOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+func (o GetExadataInfrastructureSslInspectionConfigurationOutput) CertificateAuthorityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureSslInspectionConfiguration) string { return v.CertificateAuthorityId }).(pulumi.StringOutput)
+}
+
+// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+func (o GetExadataInfrastructureSslInspectionConfigurationOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureSslInspectionConfiguration) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetExadataInfrastructureSslInspectionConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureSslInspectionConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureSslInspectionConfigurationArrayOutput) ToGetExadataInfrastructureSslInspectionConfigurationArrayOutput() GetExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureSslInspectionConfigurationArrayOutput) ToGetExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureSslInspectionConfigurationArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureSslInspectionConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureSslInspectionConfiguration {
+		return vs[0].([]GetExadataInfrastructureSslInspectionConfiguration)[vs[1].(int)]
+	}).(GetExadataInfrastructureSslInspectionConfigurationOutput)
+}
+
 type GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	Id string `pulumi:"id"`
@@ -38402,6 +38673,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	RackSerialNumber string `pulumi:"rackSerialNumber"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape string `pulumi:"shape"`
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfigurations []GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration `pulumi:"sslInspectionConfigurations"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
 	// The number of Exadata storage servers for the Exadata infrastructure.
@@ -38526,6 +38799,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	RackSerialNumber pulumi.StringInput `pulumi:"rackSerialNumber"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringInput `pulumi:"shape"`
+	// SSL inspection configuration for the Exadata infrastructure.
+	SslInspectionConfigurations GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayInput `pulumi:"sslInspectionConfigurations"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
 	// The number of Exadata storage servers for the Exadata infrastructure.
@@ -38846,6 +39121,13 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) RackSerialNumber()
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// SSL inspection configuration for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) SslInspectionConfigurations() GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration {
+		return v.SslInspectionConfigurations
+	}).(GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
@@ -39918,6 +40200,116 @@ func (o GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailAr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail {
 		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail)[vs[1].(int)]
 	}).(GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+	CertificateAuthorityId string `pulumi:"certificateAuthorityId"`
+	// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs and GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs{...}
+type GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput() GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput
+	ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+	CertificateAuthorityId pulumi.StringInput `pulumi:"certificateAuthorityId"`
+	// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput() GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput)
+}
+
+// GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArray and GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArray{ GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs{...} }
+type GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput() GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput
+	ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArray []GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationInput
+
+func (GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArray) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput() GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArray) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput() GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+func (o GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput) CertificateAuthorityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration) string {
+		return v.CertificateAuthorityId
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput() GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration {
+		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureSslInspectionConfiguration)[vs[1].(int)]
+	}).(GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput)
 }
 
 type GetExadataInfrastructuresFilter struct {
@@ -41465,7 +41857,8 @@ type GetExadbVmClustersExadbVmCluster struct {
 	// The OCID of the identity connector
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []GetExadbVmClustersExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
+	IormConfigCaches           []GetExadbVmClustersExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
+	IsOlderVersionAcknowledged bool                                              `pulumi:"isOlderVersionAcknowledged"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
 	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -41574,7 +41967,8 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	// The OCID of the identity connector
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
+	IormConfigCaches           GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
+	IsOlderVersionAcknowledged pulumi.BoolInput                                          `pulumi:"isOlderVersionAcknowledged"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringInput `pulumi:"lastUpdateHistoryEntryId"`
 	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -41779,6 +42173,10 @@ func (o GetExadbVmClustersExadbVmClusterOutput) IormConfigCaches() GetExadbVmClu
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterIormConfigCache {
 		return v.IormConfigCaches
 	}).(GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput)
+}
+
+func (o GetExadbVmClustersExadbVmClusterOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -62131,7 +62529,8 @@ type GetVmClustersVmCluster struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
 	Id string `pulumi:"id"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       bool `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged bool `pulumi:"isOlderVersionAcknowledged"`
 	// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
 	IsSparseDiskgroupEnabled bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -62231,7 +62630,8 @@ type GetVmClustersVmClusterArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
 	Id pulumi.StringInput `pulumi:"id"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-	IsLocalBackupEnabled pulumi.BoolInput `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled       pulumi.BoolInput `pulumi:"isLocalBackupEnabled"`
+	IsOlderVersionAcknowledged pulumi.BoolInput `pulumi:"isOlderVersionAcknowledged"`
 	// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolInput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -62438,6 +62838,10 @@ func (o GetVmClustersVmClusterOutput) Id() pulumi.StringOutput {
 // If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 func (o GetVmClustersVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) bool { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetVmClustersVmClusterOutput) IsOlderVersionAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolOutput)
 }
 
 // If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
@@ -63382,6 +63786,8 @@ func (o GetVmClustersVmClusterUpdateDetailArrayOutput) Index(i pulumi.IntInput) 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationMountTypeDetailInput)(nil)).Elem(), GetBackupDestinationMountTypeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationMountTypeDetailArrayInput)(nil)).Elem(), GetBackupDestinationMountTypeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationArgs{})
@@ -63880,6 +64286,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureNetworkBondingModeDetailInput)(nil)).Elem(), GetExadataInfrastructureNetworkBondingModeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureNetworkBondingModeDetailArrayInput)(nil)).Elem(), GetExadataInfrastructureNetworkBondingModeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureSslInspectionConfigurationInput)(nil)).Elem(), GetExadataInfrastructureSslInspectionConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureSslInspectionConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructureSslInspectionConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterInput)(nil)).Elem(), GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayInput)(nil)).Elem(), GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureArgs{})
@@ -63900,6 +64308,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresFilterInput)(nil)).Elem(), GetExadataInfrastructuresFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresFilterArrayInput)(nil)).Elem(), GetExadataInfrastructuresFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataIormConfigDbPlanInput)(nil)).Elem(), GetExadataIormConfigDbPlanArgs{})
@@ -64244,6 +64654,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterLiveImageVersionDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterLiveImageVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArray{})
+	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationMountTypeDetailOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationMountTypeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationOutput{})
@@ -64742,6 +65154,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureNetworkBondingModeDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureNetworkBondingModeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureSslInspectionConfigurationOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureSslInspectionConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureOutput{})
@@ -64762,6 +65176,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureSslInspectionConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresFilterOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataIormConfigDbPlanOutput{})

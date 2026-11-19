@@ -5,11 +5,13 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
@@ -27,6 +29,9 @@ public final class GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDeta
     private String versionPreference;
 
     private GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail() {}
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * @return The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
@@ -58,17 +63,27 @@ public final class GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDeta
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean isOlderVersionAcknowledged;
         private String majorVersion;
         private String source;
         private String versionPreference;
         public Builder() {}
         public Builder(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.majorVersion = defaults.majorVersion;
     	      this.source = defaults.source;
     	      this.versionPreference = defaults.versionPreference;
         }
 
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
         @CustomType.Setter
         public Builder majorVersion(String majorVersion) {
             if (majorVersion == null) {
@@ -95,6 +110,7 @@ public final class GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDeta
         }
         public GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail build() {
             final var _resultValue = new GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail();
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.majorVersion = majorVersion;
             _resultValue.source = source;
             _resultValue.versionPreference = versionPreference;

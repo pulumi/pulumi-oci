@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,10 +20,15 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
     /**
      * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
+     */
+    private @Nullable String dbVersion;
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
-    private @Nullable String dbVersion;
+    private @Nullable Boolean isOlderVersionAcknowledged;
     /**
      * @return Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: &#34;-upgradeTimezone false -keepEvents&#34;
      * 
@@ -50,11 +56,18 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
     /**
      * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-     * 
      */
     public Optional<String> dbVersion() {
         return Optional.ofNullable(this.dbVersion);
+    }
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * 
+     */
+    public Optional<Boolean> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
     }
     /**
      * @return Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: &#34;-upgradeTimezone false -keepEvents&#34;
@@ -87,6 +100,7 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
     public static final class Builder {
         private @Nullable String databaseSoftwareImageId;
         private @Nullable String dbVersion;
+        private @Nullable Boolean isOlderVersionAcknowledged;
         private @Nullable String options;
         private @Nullable String source;
         public Builder() {}
@@ -94,6 +108,7 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
     	      Objects.requireNonNull(defaults);
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbVersion = defaults.dbVersion;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.options = defaults.options;
     	      this.source = defaults.source;
         }
@@ -108,6 +123,12 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
         public Builder dbVersion(@Nullable String dbVersion) {
 
             this.dbVersion = dbVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(@Nullable Boolean isOlderVersionAcknowledged) {
+
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             return this;
         }
         @CustomType.Setter
@@ -126,6 +147,7 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
             final var _resultValue = new DatabaseUpgradeDatabaseUpgradeSourceDetails();
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbVersion = dbVersion;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.options = options;
             _resultValue.source = source;
             return _resultValue;

@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DbHomeDatabaseArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -198,6 +199,13 @@ public final class DbHomeState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isDesupportedVersion);
     }
 
+    @Import(name="isOlderVersionAcknowledged")
+    private @Nullable Output<Boolean> isOlderVersionAcknowledged;
+
+    public Optional<Output<Boolean>> isOlderVersionAcknowledged() {
+        return Optional.ofNullable(this.isOlderVersionAcknowledged);
+    }
+
     /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      * 
@@ -271,6 +279,21 @@ public final class DbHomeState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * List of one-off patches for Database Homes.
+     * 
+     */
+    @Import(name="oneOffPatches")
+    private @Nullable Output<List<String>> oneOffPatches;
+
+    /**
+     * @return List of one-off patches for Database Homes.
+     * 
+     */
+    public Optional<Output<List<String>>> oneOffPatches() {
+        return Optional.ofNullable(this.oneOffPatches);
     }
 
     /**
@@ -369,11 +392,13 @@ public final class DbHomeState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.homeType = $.homeType;
         this.isDesupportedVersion = $.isDesupportedVersion;
+        this.isOlderVersionAcknowledged = $.isOlderVersionAcknowledged;
         this.isUnifiedAuditingEnabled = $.isUnifiedAuditingEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lastPatchHistoryEntryId = $.lastPatchHistoryEntryId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.oneOffPatches = $.oneOffPatches;
         this.source = $.source;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -647,6 +672,15 @@ public final class DbHomeState extends com.pulumi.resources.ResourceArgs {
             return isDesupportedVersion(Output.of(isDesupportedVersion));
         }
 
+        public Builder isOlderVersionAcknowledged(@Nullable Output<Boolean> isOlderVersionAcknowledged) {
+            $.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            return isOlderVersionAcknowledged(Output.of(isOlderVersionAcknowledged));
+        }
+
         /**
          * @param isUnifiedAuditingEnabled Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
          * 
@@ -750,6 +784,37 @@ public final class DbHomeState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param oneOffPatches List of one-off patches for Database Homes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oneOffPatches(@Nullable Output<List<String>> oneOffPatches) {
+            $.oneOffPatches = oneOffPatches;
+            return this;
+        }
+
+        /**
+         * @param oneOffPatches List of one-off patches for Database Homes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oneOffPatches(List<String> oneOffPatches) {
+            return oneOffPatches(Output.of(oneOffPatches));
+        }
+
+        /**
+         * @param oneOffPatches List of one-off patches for Database Homes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oneOffPatches(String... oneOffPatches) {
+            return oneOffPatches(List.of(oneOffPatches));
         }
 
         /**

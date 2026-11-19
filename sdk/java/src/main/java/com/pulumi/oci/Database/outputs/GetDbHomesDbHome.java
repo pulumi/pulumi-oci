@@ -68,6 +68,7 @@ public final class GetDbHomesDbHome {
      */
     private String id;
     private Boolean isDesupportedVersion;
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return Indicates whether unified autiding is enabled or not.
      * 
@@ -89,6 +90,11 @@ public final class GetDbHomesDbHome {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return List of one-off patches for Database Homes.
+     * 
+     */
+    private List<String> oneOffPatches;
     private String source;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
@@ -194,6 +200,9 @@ public final class GetDbHomesDbHome {
     public Boolean isDesupportedVersion() {
         return this.isDesupportedVersion;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * @return Indicates whether unified autiding is enabled or not.
      * 
@@ -224,6 +233,13 @@ public final class GetDbHomesDbHome {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return List of one-off patches for Database Homes.
+     * 
+     */
+    public List<String> oneOffPatches() {
+        return this.oneOffPatches;
     }
     public String source() {
         return this.source;
@@ -280,11 +296,13 @@ public final class GetDbHomesDbHome {
         private String homeType;
         private String id;
         private Boolean isDesupportedVersion;
+        private Boolean isOlderVersionAcknowledged;
         private Boolean isUnifiedAuditingEnabled;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lastPatchHistoryEntryId;
         private String lifecycleDetails;
+        private List<String> oneOffPatches;
         private String source;
         private String state;
         private Map<String,String> systemTags;
@@ -307,11 +325,13 @@ public final class GetDbHomesDbHome {
     	      this.homeType = defaults.homeType;
     	      this.id = defaults.id;
     	      this.isDesupportedVersion = defaults.isDesupportedVersion;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.isUnifiedAuditingEnabled = defaults.isUnifiedAuditingEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lastPatchHistoryEntryId = defaults.lastPatchHistoryEntryId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.source = defaults.source;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -435,6 +455,14 @@ public final class GetDbHomesDbHome {
             return this;
         }
         @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHome", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
             if (isUnifiedAuditingEnabled == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHome", "isUnifiedAuditingEnabled");
@@ -473,6 +501,17 @@ public final class GetDbHomesDbHome {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder oneOffPatches(List<String> oneOffPatches) {
+            if (oneOffPatches == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHome", "oneOffPatches");
+            }
+            this.oneOffPatches = oneOffPatches;
+            return this;
+        }
+        public Builder oneOffPatches(String... oneOffPatches) {
+            return oneOffPatches(List.of(oneOffPatches));
         }
         @CustomType.Setter
         public Builder source(String source) {
@@ -530,11 +569,13 @@ public final class GetDbHomesDbHome {
             _resultValue.homeType = homeType;
             _resultValue.id = id;
             _resultValue.isDesupportedVersion = isDesupportedVersion;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.oneOffPatches = oneOffPatches;
             _resultValue.source = source;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

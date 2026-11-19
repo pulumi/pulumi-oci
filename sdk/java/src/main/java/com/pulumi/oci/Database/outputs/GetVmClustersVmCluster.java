@@ -121,6 +121,7 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private Boolean isLocalBackupEnabled;
+    private Boolean isOlderVersionAcknowledged;
     /**
      * @return If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
@@ -374,6 +375,9 @@ public final class GetVmClustersVmCluster {
     public Boolean isLocalBackupEnabled() {
         return this.isLocalBackupEnabled;
     }
+    public Boolean isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
     /**
      * @return If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
@@ -561,6 +565,7 @@ public final class GetVmClustersVmCluster {
         private String giVersion;
         private String id;
         private Boolean isLocalBackupEnabled;
+        private Boolean isOlderVersionAcknowledged;
         private Boolean isSparseDiskgroupEnabled;
         private String lastPatchHistoryEntryId;
         private String licenseModel;
@@ -609,6 +614,7 @@ public final class GetVmClustersVmCluster {
     	      this.giVersion = defaults.giVersion;
     	      this.id = defaults.id;
     	      this.isLocalBackupEnabled = defaults.isLocalBackupEnabled;
+    	      this.isOlderVersionAcknowledged = defaults.isOlderVersionAcknowledged;
     	      this.isSparseDiskgroupEnabled = defaults.isSparseDiskgroupEnabled;
     	      this.lastPatchHistoryEntryId = defaults.lastPatchHistoryEntryId;
     	      this.licenseModel = defaults.licenseModel;
@@ -813,6 +819,14 @@ public final class GetVmClustersVmCluster {
               throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "isLocalBackupEnabled");
             }
             this.isLocalBackupEnabled = isLocalBackupEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            if (isOlderVersionAcknowledged == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "isOlderVersionAcknowledged");
+            }
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             return this;
         }
         @CustomType.Setter
@@ -1039,6 +1053,7 @@ public final class GetVmClustersVmCluster {
             _resultValue.giVersion = giVersion;
             _resultValue.id = id;
             _resultValue.isLocalBackupEnabled = isLocalBackupEnabled;
+            _resultValue.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
             _resultValue.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
             _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             _resultValue.licenseModel = licenseModel;

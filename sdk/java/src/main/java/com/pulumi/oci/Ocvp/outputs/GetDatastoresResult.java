@@ -24,7 +24,7 @@ public final class GetDatastoresResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The list of datastore_collection.
      * 
@@ -60,8 +60,8 @@ public final class GetDatastoresResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The list of datastore_collection.
@@ -108,7 +108,7 @@ public final class GetDatastoresResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String clusterId;
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private List<GetDatastoresDatastoreCollection> datastoreCollections;
         private @Nullable String datastoreId;
         private @Nullable String displayName;
@@ -135,10 +135,8 @@ public final class GetDatastoresResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            if (compartmentId == null) {
-              throw new MissingRequiredPropertyException("GetDatastoresResult", "compartmentId");
-            }
+        public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }

@@ -43,7 +43,7 @@ class FusionEnvironmentArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
         :param pulumi.Input[_builtins.str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[_builtins.str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
-        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] dns_prefix: DNS prefix.
@@ -144,7 +144,7 @@ class FusionEnvironmentArgs:
     @pulumi.getter(name="additionalEgressRules")
     def additional_egress_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
         """
-        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         """
         return pulumi.get(self, "additional_egress_rules")
 
@@ -286,7 +286,7 @@ class _FusionEnvironmentState:
         """
         Input properties used for looking up and filtering FusionEnvironment resources.
 
-        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applied_patch_bundles: Patch bundle names
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
@@ -385,7 +385,7 @@ class _FusionEnvironmentState:
     @pulumi.getter(name="additionalEgressRules")
     def additional_egress_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
         """
-        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         """
         return pulumi.get(self, "additional_egress_rules")
 
@@ -830,7 +830,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict', 'outputs.FusionEnvironmentAdditionalEgressRule']]]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict', 'outputs.FusionEnvironmentAdditionalEgressRule']]]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
         :param pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict', 'outputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
@@ -1040,7 +1040,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict', 'outputs.FusionEnvironmentAdditionalEgressRule']]]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict', 'outputs.FusionEnvironmentAdditionalEgressRule']]]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applied_patch_bundles: Patch bundle names
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
@@ -1177,7 +1177,7 @@ class FusionEnvironment(pulumi.CustomResource):
     @pulumi.getter(name="additionalEgressRules")
     def additional_egress_rules(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentAdditionalEgressRule']]:
         """
-        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache). If access to a non-standard port is required, however, they can be listed here.
         """
         return pulumi.get(self, "additional_egress_rules")
 

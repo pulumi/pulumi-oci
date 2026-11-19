@@ -48,6 +48,7 @@ class ExadataInfrastructureArgs:
                  maintenance_window: pulumi.Input[Optional['ExadataInfrastructureMaintenanceWindowArgs']] = None,
                  multi_rack_configuration_file: pulumi.Input[Optional[_builtins.str]] = None,
                  network_bonding_mode_details: pulumi.Input[Optional['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
+                 ssl_inspection_configuration: pulumi.Input[Optional['ExadataInfrastructureSslInspectionConfigurationArgs']] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_server_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -83,6 +84,7 @@ class ExadataInfrastructureArgs:
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
+        :param pulumi.Input['ExadataInfrastructureSslInspectionConfigurationArgs'] ssl_inspection_configuration: SSL inspection configuration for the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] storage_count: The number of storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
         """
@@ -128,6 +130,8 @@ class ExadataInfrastructureArgs:
             pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         if network_bonding_mode_details is not None:
             pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
+        if ssl_inspection_configuration is not None:
+            pulumi.set(__self__, "ssl_inspection_configuration", ssl_inspection_configuration)
         if storage_count is not None:
             pulumi.set(__self__, "storage_count", storage_count)
         if storage_server_type is not None:
@@ -459,6 +463,18 @@ class ExadataInfrastructureArgs:
         pulumi.set(self, "network_bonding_mode_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="sslInspectionConfiguration")
+    def ssl_inspection_configuration(self) -> pulumi.Input[Optional['ExadataInfrastructureSslInspectionConfigurationArgs']]:
+        """
+        SSL inspection configuration for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "ssl_inspection_configuration")
+
+    @ssl_inspection_configuration.setter
+    def ssl_inspection_configuration(self, value: pulumi.Input[Optional['ExadataInfrastructureSslInspectionConfigurationArgs']]):
+        pulumi.set(self, "ssl_inspection_configuration", value)
+
+    @_builtins.property
     @pulumi.getter(name="storageCount")
     def storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -534,6 +550,7 @@ class _ExadataInfrastructureState:
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  rack_serial_number: pulumi.Input[Optional[_builtins.str]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_inspection_configuration: pulumi.Input[Optional['ExadataInfrastructureSslInspectionConfigurationArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -595,6 +612,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[_builtins.str] rack_serial_number: The serial number for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+        :param pulumi.Input['ExadataInfrastructureSslInspectionConfigurationArgs'] ssl_inspection_configuration: SSL inspection configuration for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] storage_count: The number of storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
@@ -699,6 +717,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "rack_serial_number", rack_serial_number)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
+        if ssl_inspection_configuration is not None:
+            pulumi.set(__self__, "ssl_inspection_configuration", ssl_inspection_configuration)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if storage_count is not None:
@@ -1292,6 +1312,18 @@ class _ExadataInfrastructureState:
         pulumi.set(self, "shape", value)
 
     @_builtins.property
+    @pulumi.getter(name="sslInspectionConfiguration")
+    def ssl_inspection_configuration(self) -> pulumi.Input[Optional['ExadataInfrastructureSslInspectionConfigurationArgs']]:
+        """
+        SSL inspection configuration for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "ssl_inspection_configuration")
+
+    @ssl_inspection_configuration.setter
+    def ssl_inspection_configuration(self, value: pulumi.Input[Optional['ExadataInfrastructureSslInspectionConfigurationArgs']]):
+        pulumi.set(self, "ssl_inspection_configuration", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1408,6 +1440,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_inspection_configuration: pulumi.Input[Optional[Union['ExadataInfrastructureSslInspectionConfigurationArgs', 'ExadataInfrastructureSslInspectionConfigurationArgsDict', 'outputs.ExadataInfrastructureSslInspectionConfiguration']]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1482,6 +1515,10 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 "client_network_bonding_mode": exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode,
                 "dr_network_bonding_mode": exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode,
             },
+            ssl_inspection_configuration={
+                "is_enabled": exadata_infrastructure_ssl_inspection_configuration_is_enabled,
+                "certificate_authority_id": test_certificate_authority["id"],
+            },
             storage_count=exadata_infrastructure_storage_count,
             storage_server_type=exadata_infrastructure_storage_server_type)
         ```
@@ -1526,6 +1563,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+        :param pulumi.Input[Union['ExadataInfrastructureSslInspectionConfigurationArgs', 'ExadataInfrastructureSslInspectionConfigurationArgsDict', 'outputs.ExadataInfrastructureSslInspectionConfiguration']] ssl_inspection_configuration: SSL inspection configuration for the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] storage_count: The number of storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] time_zone: (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -1606,6 +1644,10 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 "client_network_bonding_mode": exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode,
                 "dr_network_bonding_mode": exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode,
             },
+            ssl_inspection_configuration={
+                "is_enabled": exadata_infrastructure_ssl_inspection_configuration_is_enabled,
+                "certificate_authority_id": test_certificate_authority["id"],
+            },
             storage_count=exadata_infrastructure_storage_count,
             storage_server_type=exadata_infrastructure_storage_server_type)
         ```
@@ -1660,6 +1702,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_inspection_configuration: pulumi.Input[Optional[Union['ExadataInfrastructureSslInspectionConfigurationArgs', 'ExadataInfrastructureSslInspectionConfigurationArgsDict', 'outputs.ExadataInfrastructureSslInspectionConfiguration']]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1720,6 +1763,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
+            __props__.__dict__["ssl_inspection_configuration"] = ssl_inspection_configuration
             __props__.__dict__["storage_count"] = storage_count
             __props__.__dict__["storage_server_type"] = storage_server_type
             if time_zone is None and not opts.urn:
@@ -1809,6 +1853,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             rack_serial_number: pulumi.Input[Optional[_builtins.str]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_inspection_configuration: pulumi.Input[Optional[Union['ExadataInfrastructureSslInspectionConfigurationArgs', 'ExadataInfrastructureSslInspectionConfigurationArgsDict', 'outputs.ExadataInfrastructureSslInspectionConfiguration']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             storage_count: pulumi.Input[Optional[_builtins.int]] = None,
             storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1874,6 +1919,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[_builtins.str] rack_serial_number: The serial number for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+        :param pulumi.Input[Union['ExadataInfrastructureSslInspectionConfigurationArgs', 'ExadataInfrastructureSslInspectionConfigurationArgsDict', 'outputs.ExadataInfrastructureSslInspectionConfiguration']] ssl_inspection_configuration: SSL inspection configuration for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] storage_count: The number of storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
@@ -1934,6 +1980,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["ntp_servers"] = ntp_servers
         __props__.__dict__["rack_serial_number"] = rack_serial_number
         __props__.__dict__["shape"] = shape
+        __props__.__dict__["ssl_inspection_configuration"] = ssl_inspection_configuration
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_count"] = storage_count
         __props__.__dict__["storage_server_type"] = storage_server_type
@@ -1994,6 +2041,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             rack_serial_number: pulumi.Input[Optional[_builtins.str]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_inspection_configuration: pulumi.Input[Optional[Union['ExadataInfrastructureSslInspectionConfigurationArgs', 'ExadataInfrastructureSslInspectionConfigurationArgsDict', 'outputs.ExadataInfrastructureSslInspectionConfiguration']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             storage_count: pulumi.Input[Optional[_builtins.int]] = None,
             storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2050,6 +2098,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__["ntpServers"] = ntp_servers
         __props__["rackSerialNumber"] = rack_serial_number
         __props__["shape"] = shape
+        __props__["sslInspectionConfiguration"] = ssl_inspection_configuration
         __props__["state"] = state
         __props__["storageCount"] = storage_count
         __props__["storageServerType"] = storage_server_type
@@ -2443,6 +2492,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="sslInspectionConfiguration")
+    def ssl_inspection_configuration(self) -> pulumi.Output['outputs.ExadataInfrastructureSslInspectionConfiguration']:
+        """
+        SSL inspection configuration for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "ssl_inspection_configuration")
 
     @_builtins.property
     @pulumi.getter

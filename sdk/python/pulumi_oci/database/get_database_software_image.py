@@ -26,7 +26,7 @@ class GetDatabaseSoftwareImageResult:
     """
     A collection of values returned by getDatabaseSoftwareImage.
     """
-    def __init__(__self__, compartment_id=None, database_software_image_id=None, database_software_image_included_patches=None, database_software_image_one_off_patches=None, database_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_shape_family=None, image_type=None, included_patches_summary=None, is_upgrade_supported=None, lifecycle_details=None, ls_inventory=None, patch_set=None, source_db_home_id=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, compartment_id=None, database_software_image_id=None, database_software_image_included_patches=None, database_software_image_one_off_patches=None, database_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_shape_family=None, image_type=None, included_patches_summary=None, is_older_version_acknowledged=None, is_upgrade_supported=None, lifecycle_details=None, ls_inventory=None, patch_set=None, source_db_home_id=None, state=None, system_tags=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -63,6 +63,9 @@ class GetDatabaseSoftwareImageResult:
         if included_patches_summary and not isinstance(included_patches_summary, str):
             raise TypeError("Expected argument 'included_patches_summary' to be a str")
         pulumi.set(__self__, "included_patches_summary", included_patches_summary)
+        if is_older_version_acknowledged and not isinstance(is_older_version_acknowledged, bool):
+            raise TypeError("Expected argument 'is_older_version_acknowledged' to be a bool")
+        pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_upgrade_supported and not isinstance(is_upgrade_supported, bool):
             raise TypeError("Expected argument 'is_upgrade_supported' to be a bool")
         pulumi.set(__self__, "is_upgrade_supported", is_upgrade_supported)
@@ -182,6 +185,11 @@ class GetDatabaseSoftwareImageResult:
         return pulumi.get(self, "included_patches_summary")
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> _builtins.bool:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @_builtins.property
     @pulumi.getter(name="isUpgradeSupported")
     def is_upgrade_supported(self) -> _builtins.bool:
         """
@@ -261,6 +269,7 @@ class AwaitableGetDatabaseSoftwareImageResult(GetDatabaseSoftwareImageResult):
             image_shape_family=self.image_shape_family,
             image_type=self.image_type,
             included_patches_summary=self.included_patches_summary,
+            is_older_version_acknowledged=self.is_older_version_acknowledged,
             is_upgrade_supported=self.is_upgrade_supported,
             lifecycle_details=self.lifecycle_details,
             ls_inventory=self.ls_inventory,
@@ -308,6 +317,7 @@ def get_database_software_image(database_software_image_id: Optional[_builtins.s
         image_shape_family=pulumi.get(__ret__, 'image_shape_family'),
         image_type=pulumi.get(__ret__, 'image_type'),
         included_patches_summary=pulumi.get(__ret__, 'included_patches_summary'),
+        is_older_version_acknowledged=pulumi.get(__ret__, 'is_older_version_acknowledged'),
         is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         ls_inventory=pulumi.get(__ret__, 'ls_inventory'),
@@ -352,6 +362,7 @@ def get_database_software_image_output(database_software_image_id: pulumi.Input[
         image_shape_family=pulumi.get(__response__, 'image_shape_family'),
         image_type=pulumi.get(__response__, 'image_type'),
         included_patches_summary=pulumi.get(__response__, 'included_patches_summary'),
+        is_older_version_acknowledged=pulumi.get(__response__, 'is_older_version_acknowledged'),
         is_upgrade_supported=pulumi.get(__response__, 'is_upgrade_supported'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         ls_inventory=pulumi.get(__response__, 'ls_inventory'),

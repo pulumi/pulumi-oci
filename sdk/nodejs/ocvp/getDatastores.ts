@@ -10,7 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
  *
  * List the Datastores in the specified compartment. The list can be filtered
- * by compartment, datastore id, display name and lifecycle state.
+ * by compartment, datastore id, display name and lifecycle state. Either
+ * compartmentId or datastoreId must be provided.
  *
  * ## Example Usage
  *
@@ -19,15 +20,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatastores = oci.ocvp.getDatastores({
- *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
+ *     compartmentId: compartmentId,
  *     datastoreId: testDatastore.id,
  *     displayName: datastoreDisplayName,
  *     state: datastoreState,
  * });
  * ```
  */
-export function getDatastores(args: GetDatastoresArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastoresResult> {
+export function getDatastores(args?: GetDatastoresArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastoresResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getDatastores:getDatastores", {
         "clusterId": args.clusterId,
@@ -48,9 +50,9 @@ export interface GetDatastoresArgs {
      */
     clusterId?: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
      */
@@ -77,7 +79,7 @@ export interface GetDatastoresResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The list of datastore_collection.
      */
@@ -101,7 +103,8 @@ export interface GetDatastoresResult {
  * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
  *
  * List the Datastores in the specified compartment. The list can be filtered
- * by compartment, datastore id, display name and lifecycle state.
+ * by compartment, datastore id, display name and lifecycle state. Either
+ * compartmentId or datastoreId must be provided.
  *
  * ## Example Usage
  *
@@ -110,15 +113,16 @@ export interface GetDatastoresResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatastores = oci.ocvp.getDatastores({
- *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
+ *     compartmentId: compartmentId,
  *     datastoreId: testDatastore.id,
  *     displayName: datastoreDisplayName,
  *     state: datastoreState,
  * });
  * ```
  */
-export function getDatastoresOutput(args: GetDatastoresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastoresResult> {
+export function getDatastoresOutput(args?: GetDatastoresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDatastoresResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Ocvp/getDatastores:getDatastores", {
         "clusterId": args.clusterId,
@@ -139,9 +143,9 @@ export interface GetDatastoresOutputArgs {
      */
     clusterId?: pulumi.Input<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
      */

@@ -76,6 +76,10 @@ import * as utilities from "../utilities";
  *         clientNetworkBondingMode: exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode,
  *         drNetworkBondingMode: exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode,
  *     },
+ *     sslInspectionConfiguration: {
+ *         isEnabled: exadataInfrastructureSslInspectionConfigurationIsEnabled,
+ *         certificateAuthorityId: testCertificateAuthority.id,
+ *     },
  *     storageCount: exadataInfrastructureStorageCount,
  *     storageServerType: exadataInfrastructureStorageServerType,
  * });
@@ -322,6 +326,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     declare public readonly shape: pulumi.Output<string>;
     /**
+     * SSL inspection configuration for the Exadata infrastructure.
+     */
+    declare public readonly sslInspectionConfiguration: pulumi.Output<outputs.Database.ExadataInfrastructureSslInspectionConfiguration>;
+    /**
      * The current lifecycle state of the Exadata infrastructure.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -411,6 +419,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["ntpServers"] = state?.ntpServers;
             resourceInputs["rackSerialNumber"] = state?.rackSerialNumber;
             resourceInputs["shape"] = state?.shape;
+            resourceInputs["sslInspectionConfiguration"] = state?.sslInspectionConfiguration;
             resourceInputs["state"] = state?.state;
             resourceInputs["storageCount"] = state?.storageCount;
             resourceInputs["storageServerType"] = state?.storageServerType;
@@ -482,6 +491,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["networkBondingModeDetails"] = args?.networkBondingModeDetails;
             resourceInputs["ntpServers"] = args?.ntpServers;
             resourceInputs["shape"] = args?.shape;
+            resourceInputs["sslInspectionConfiguration"] = args?.sslInspectionConfiguration;
             resourceInputs["storageCount"] = args?.storageCount;
             resourceInputs["storageServerType"] = args?.storageServerType;
             resourceInputs["timeZone"] = args?.timeZone;
@@ -715,6 +725,10 @@ export interface ExadataInfrastructureState {
      */
     shape?: pulumi.Input<string | undefined>;
     /**
+     * SSL inspection configuration for the Exadata infrastructure.
+     */
+    sslInspectionConfiguration?: pulumi.Input<inputs.Database.ExadataInfrastructureSslInspectionConfiguration | undefined>;
+    /**
      * The current lifecycle state of the Exadata infrastructure.
      */
     state?: pulumi.Input<string | undefined>;
@@ -853,6 +867,10 @@ export interface ExadataInfrastructureArgs {
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
     shape: pulumi.Input<string>;
+    /**
+     * SSL inspection configuration for the Exadata infrastructure.
+     */
+    sslInspectionConfiguration?: pulumi.Input<inputs.Database.ExadataInfrastructureSslInspectionConfiguration | undefined>;
     /**
      * The number of storage servers for the Exadata infrastructure.
      */

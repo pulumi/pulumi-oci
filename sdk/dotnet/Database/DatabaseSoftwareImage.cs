@@ -120,6 +120,12 @@ namespace Pulumi.Oci.Database
         public Output<string> IncludedPatchesSummary { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Output("isOlderVersionAcknowledged")]
+        public Output<bool> IsOlderVersionAcknowledged { get; private set; } = null!;
+
+        /// <summary>
         /// True if this Database software image is supported for Upgrade.
         /// </summary>
         [Output("isUpgradeSupported")]
@@ -283,6 +289,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? ImageType { get; set; }
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
+        /// <summary>
         /// The output from the OPatch lsInventory command, which is passed as a string.
         /// </summary>
         [Input("lsInventory")]
@@ -394,6 +406,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("includedPatchesSummary")]
         public Input<string>? IncludedPatchesSummary { get; set; }
+
+        /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
 
         /// <summary>
         /// True if this Database software image is supported for Upgrade.

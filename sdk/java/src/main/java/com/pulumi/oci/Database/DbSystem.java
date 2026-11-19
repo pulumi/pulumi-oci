@@ -449,6 +449,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.iormConfigCaches;
     }
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    @Export(name="isOlderVersionAcknowledged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOlderVersionAcknowledged;
+
+    /**
+     * @return Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     * 
+     */
+    public Output<Boolean> isOlderVersionAcknowledged() {
+        return this.isOlderVersionAcknowledged;
+    }
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */

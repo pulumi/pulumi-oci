@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double ComputeCount;
         /// <summary>
+        /// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+        /// </summary>
+        public readonly int EstimatedConcurrentSessions;
+        /// <summary>
         /// Indicates whether tool is enabled.
         /// </summary>
         public readonly bool IsEnabled;
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.Database.Outputs
         private GetAutonomousDatabaseDbToolsDetailResult(
             double computeCount,
 
+            int estimatedConcurrentSessions,
+
             bool isEnabled,
 
             int maxIdleTimeInMinutes,
@@ -41,6 +47,7 @@ namespace Pulumi.Oci.Database.Outputs
             string name)
         {
             ComputeCount = computeCount;
+            EstimatedConcurrentSessions = estimatedConcurrentSessions;
             IsEnabled = isEnabled;
             MaxIdleTimeInMinutes = maxIdleTimeInMinutes;
             Name = name;

@@ -14,9 +14,17 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetBackendSetsBackendsetHealthCheckerResult
     {
         /// <summary>
+        /// The fallback backend weight used when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+        /// </summary>
+        public readonly int DefaultWeight;
+        /// <summary>
         /// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
         /// </summary>
         public readonly int IntervalMs;
+        /// <summary>
+        /// Indicates whether dynamic backend weights are enabled for HTTP health checks.
+        /// </summary>
+        public readonly bool IsDynamicBackendWeightEnabled;
         /// <summary>
         /// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
         /// </summary>
@@ -52,7 +60,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
         [OutputConstructor]
         private GetBackendSetsBackendsetHealthCheckerResult(
+            int defaultWeight,
+
             int intervalMs,
+
+            bool isDynamicBackendWeightEnabled,
 
             bool isForcePlainText,
 
@@ -70,7 +82,9 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string urlPath)
         {
+            DefaultWeight = defaultWeight;
             IntervalMs = intervalMs;
+            IsDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
             IsForcePlainText = isForcePlainText;
             Port = port;
             Protocol = protocol;

@@ -61,6 +61,19 @@ import (
 //					TimeStart: pulumi.Any(lustreFileSystemMaintenanceWindowTimeStart),
 //				},
 //				NsgIds: pulumi.Any(lustreFileSystemNsgIds),
+//				TieringConfiguration: &lustre.FileStorageLustreFileSystemTieringConfigurationArgs{
+//					IsEnabled:  pulumi.Any(lustreFileSystemTieringConfigurationIsEnabled),
+//					PolicyMode: pulumi.Any(lustreFileSystemTieringConfigurationPolicyMode),
+//					Rules: lustre.FileStorageLustreFileSystemTieringConfigurationRuleArray{
+//						&lustre.FileStorageLustreFileSystemTieringConfigurationRuleArgs{
+//							Action:                          pulumi.Any(lustreFileSystemTieringConfigurationRulesAction),
+//							PathPrefixes:                    pulumi.Any(lustreFileSystemTieringConfigurationRulesPathPrefixes),
+//							ArchiveAfterDaysSinceLastAccess: pulumi.Any(lustreFileSystemTieringConfigurationRulesArchiveAfterDaysSinceLastAccess),
+//							MinSizeInBytes:                  pulumi.Any(lustreFileSystemTieringConfigurationRulesMinSizeInBytes),
+//							ReleaseAfterDaysSinceLastAccess: pulumi.Any(lustreFileSystemTieringConfigurationRulesReleaseAfterDaysSinceLastAccess),
+//						},
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -131,6 +144,8 @@ type FileStorageLustreFileSystem struct {
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfiguration FileStorageLustreFileSystemTieringConfigurationOutput `pulumi:"tieringConfiguration"`
 	// The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd pulumi.StringOutput `pulumi:"timeBillingCycleEnd"`
 	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
@@ -246,6 +261,8 @@ type fileStorageLustreFileSystemState struct {
 	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfiguration *FileStorageLustreFileSystemTieringConfiguration `pulumi:"tieringConfiguration"`
 	// The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd *string `pulumi:"timeBillingCycleEnd"`
 	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
@@ -305,6 +322,8 @@ type FileStorageLustreFileSystemState struct {
 	SubnetId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfiguration FileStorageLustreFileSystemTieringConfigurationPtrInput
 	// The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd pulumi.StringPtrInput
 	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
@@ -362,6 +381,8 @@ type fileStorageLustreFileSystemArgs struct {
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfiguration *FileStorageLustreFileSystemTieringConfiguration `pulumi:"tieringConfiguration"`
 }
 
 // The set of arguments for constructing a FileStorageLustreFileSystem resource.
@@ -404,6 +425,8 @@ type FileStorageLustreFileSystemArgs struct {
 	SubnetId pulumi.StringInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfiguration FileStorageLustreFileSystemTieringConfigurationPtrInput
 }
 
 func (FileStorageLustreFileSystemArgs) ElementType() reflect.Type {
@@ -621,6 +644,13 @@ func (o FileStorageLustreFileSystemOutput) SubnetId() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o FileStorageLustreFileSystemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Tiering configuration details for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths and restoring archived data transparently when accessed. When tiering is enabled and `policyMode` is `CUSTOM`, provide one or more policy rules. When tiering is disabled, custom policy rules are optional. If `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+func (o FileStorageLustreFileSystemOutput) TieringConfiguration() FileStorageLustreFileSystemTieringConfigurationOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystem) FileStorageLustreFileSystemTieringConfigurationOutput {
+		return v.TieringConfiguration
+	}).(FileStorageLustreFileSystemTieringConfigurationOutput)
 }
 
 // The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`

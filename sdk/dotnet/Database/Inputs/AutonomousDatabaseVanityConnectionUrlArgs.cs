@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseVanityConnectionUrlArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        /// </summary>
+        [Input("a2aUrl")]
+        public Input<string>? A2aUrl { get; set; }
+
+        /// <summary>
         /// Oracle Application Express (APEX) URL.
         /// </summary>
         [Input("apexUrl")]
@@ -49,6 +55,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? MachineLearningUserManagementUrl { get; set; }
 
         /// <summary>
+        /// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+        /// </summary>
+        [Input("mcpUrl")]
+        public Input<string>? McpUrl { get; set; }
+
+        /// <summary>
         /// The URL of the MongoDB API for the Autonomous Database.
         /// </summary>
         [Input("mongoDbUrl")]
@@ -59,6 +71,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("ordsUrl")]
         public Input<string>? OrdsUrl { get; set; }
+
+        /// <summary>
+        /// The URL of the Spatial Studio for the Autonomous AI Database.
+        /// </summary>
+        [Input("spatialStudioUrl")]
+        public Input<string>? SpatialStudioUrl { get; set; }
 
         /// <summary>
         /// Oracle SQL Developer Web URL.

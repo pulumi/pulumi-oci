@@ -6730,6 +6730,8 @@ func (o AutonomousDatabaseConnectionStringProfileArrayOutput) Index(i pulumi.Int
 }
 
 type AutonomousDatabaseConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl *string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl *string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -6742,6 +6744,8 @@ type AutonomousDatabaseConnectionUrl struct {
 	MachineLearningNotebookUrl *string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl *string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl *string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl *string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -6764,6 +6768,8 @@ type AutonomousDatabaseConnectionUrlInput interface {
 }
 
 type AutonomousDatabaseConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringPtrInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringPtrInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -6776,6 +6782,8 @@ type AutonomousDatabaseConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringPtrInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringPtrInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringPtrInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringPtrInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -6837,6 +6845,11 @@ func (o AutonomousDatabaseConnectionUrlOutput) ToAutonomousDatabaseConnectionUrl
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o AutonomousDatabaseConnectionUrlOutput) A2aUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseConnectionUrl) *string { return v.A2aUrl }).(pulumi.StringPtrOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o AutonomousDatabaseConnectionUrlOutput) ApexUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseConnectionUrl) *string { return v.ApexUrl }).(pulumi.StringPtrOutput)
@@ -6865,6 +6878,11 @@ func (o AutonomousDatabaseConnectionUrlOutput) MachineLearningNotebookUrl() pulu
 // Oracle Machine Learning user management URL.
 func (o AutonomousDatabaseConnectionUrlOutput) MachineLearningUserManagementUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseConnectionUrl) *string { return v.MachineLearningUserManagementUrl }).(pulumi.StringPtrOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o AutonomousDatabaseConnectionUrlOutput) McpUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseConnectionUrl) *string { return v.McpUrl }).(pulumi.StringPtrOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -7007,6 +7025,8 @@ func (o AutonomousDatabaseCustomerContactArrayOutput) Index(i pulumi.IntInput) A
 type AutonomousDatabaseDbToolsDetail struct {
 	// (Updatable) Compute used by database tools.
 	ComputeCount *float64 `pulumi:"computeCount"`
+	// (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions *int `pulumi:"estimatedConcurrentSessions"`
 	// (Updatable) Indicates whether tool is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -7029,6 +7049,8 @@ type AutonomousDatabaseDbToolsDetailInput interface {
 type AutonomousDatabaseDbToolsDetailArgs struct {
 	// (Updatable) Compute used by database tools.
 	ComputeCount pulumi.Float64PtrInput `pulumi:"computeCount"`
+	// (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions pulumi.IntPtrInput `pulumi:"estimatedConcurrentSessions"`
 	// (Updatable) Indicates whether tool is enabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -7091,6 +7113,11 @@ func (o AutonomousDatabaseDbToolsDetailOutput) ToAutonomousDatabaseDbToolsDetail
 // (Updatable) Compute used by database tools.
 func (o AutonomousDatabaseDbToolsDetailOutput) ComputeCount() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseDbToolsDetail) *float64 { return v.ComputeCount }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+func (o AutonomousDatabaseDbToolsDetailOutput) EstimatedConcurrentSessions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseDbToolsDetail) *int { return v.EstimatedConcurrentSessions }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Indicates whether tool is enabled.
@@ -8495,6 +8522,8 @@ func (o AutonomousDatabaseLongTermBackupScheduleArrayOutput) Index(i pulumi.IntI
 }
 
 type AutonomousDatabasePublicConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl *string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl *string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -8507,6 +8536,8 @@ type AutonomousDatabasePublicConnectionUrl struct {
 	MachineLearningNotebookUrl *string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl *string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl *string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl *string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -8529,6 +8560,8 @@ type AutonomousDatabasePublicConnectionUrlInput interface {
 }
 
 type AutonomousDatabasePublicConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringPtrInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringPtrInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -8541,6 +8574,8 @@ type AutonomousDatabasePublicConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringPtrInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringPtrInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringPtrInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringPtrInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -8602,6 +8637,11 @@ func (o AutonomousDatabasePublicConnectionUrlOutput) ToAutonomousDatabasePublicC
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o AutonomousDatabasePublicConnectionUrlOutput) A2aUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabasePublicConnectionUrl) *string { return v.A2aUrl }).(pulumi.StringPtrOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o AutonomousDatabasePublicConnectionUrlOutput) ApexUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabasePublicConnectionUrl) *string { return v.ApexUrl }).(pulumi.StringPtrOutput)
@@ -8630,6 +8670,11 @@ func (o AutonomousDatabasePublicConnectionUrlOutput) MachineLearningNotebookUrl(
 // Oracle Machine Learning user management URL.
 func (o AutonomousDatabasePublicConnectionUrlOutput) MachineLearningUserManagementUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabasePublicConnectionUrl) *string { return v.MachineLearningUserManagementUrl }).(pulumi.StringPtrOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o AutonomousDatabasePublicConnectionUrlOutput) McpUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabasePublicConnectionUrl) *string { return v.McpUrl }).(pulumi.StringPtrOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -9916,6 +9961,8 @@ func (o AutonomousDatabaseTransportableTablespacePtrOutput) TtsBundleUrl() pulum
 }
 
 type AutonomousDatabaseVanityConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl *string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl *string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -9928,10 +9975,14 @@ type AutonomousDatabaseVanityConnectionUrl struct {
 	MachineLearningNotebookUrl *string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl *string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl *string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl *string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 	OrdsUrl *string `pulumi:"ordsUrl"`
+	// The URL of the Spatial Studio for the Autonomous AI Database.
+	SpatialStudioUrl *string `pulumi:"spatialStudioUrl"`
 	// Oracle SQL Developer Web URL.
 	SqlDevWebUrl *string `pulumi:"sqlDevWebUrl"`
 }
@@ -9948,6 +9999,8 @@ type AutonomousDatabaseVanityConnectionUrlInput interface {
 }
 
 type AutonomousDatabaseVanityConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringPtrInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringPtrInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -9960,10 +10013,14 @@ type AutonomousDatabaseVanityConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringPtrInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringPtrInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringPtrInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringPtrInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 	OrdsUrl pulumi.StringPtrInput `pulumi:"ordsUrl"`
+	// The URL of the Spatial Studio for the Autonomous AI Database.
+	SpatialStudioUrl pulumi.StringPtrInput `pulumi:"spatialStudioUrl"`
 	// Oracle SQL Developer Web URL.
 	SqlDevWebUrl pulumi.StringPtrInput `pulumi:"sqlDevWebUrl"`
 }
@@ -10019,6 +10076,11 @@ func (o AutonomousDatabaseVanityConnectionUrlOutput) ToAutonomousDatabaseVanityC
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o AutonomousDatabaseVanityConnectionUrlOutput) A2aUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.A2aUrl }).(pulumi.StringPtrOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o AutonomousDatabaseVanityConnectionUrlOutput) ApexUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.ApexUrl }).(pulumi.StringPtrOutput)
@@ -10049,6 +10111,11 @@ func (o AutonomousDatabaseVanityConnectionUrlOutput) MachineLearningUserManageme
 	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.MachineLearningUserManagementUrl }).(pulumi.StringPtrOutput)
 }
 
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o AutonomousDatabaseVanityConnectionUrlOutput) McpUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.McpUrl }).(pulumi.StringPtrOutput)
+}
+
 // The URL of the MongoDB API for the Autonomous Database.
 func (o AutonomousDatabaseVanityConnectionUrlOutput) MongoDbUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.MongoDbUrl }).(pulumi.StringPtrOutput)
@@ -10057,6 +10124,11 @@ func (o AutonomousDatabaseVanityConnectionUrlOutput) MongoDbUrl() pulumi.StringP
 // The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 func (o AutonomousDatabaseVanityConnectionUrlOutput) OrdsUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.OrdsUrl }).(pulumi.StringPtrOutput)
+}
+
+// The URL of the Spatial Studio for the Autonomous AI Database.
+func (o AutonomousDatabaseVanityConnectionUrlOutput) SpatialStudioUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.SpatialStudioUrl }).(pulumi.StringPtrOutput)
 }
 
 // Oracle SQL Developer Web URL.
@@ -20075,6 +20147,8 @@ func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) 
 }
 
 type DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion *string `pulumi:"majorVersion"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
@@ -20095,6 +20169,8 @@ type DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDet
 }
 
 type DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion pulumi.StringPtrInput `pulumi:"majorVersion"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
@@ -20152,6 +20228,13 @@ func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionScheme
 
 func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
 	return o
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) *bool {
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -21724,6 +21807,8 @@ func (o DatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) Index(i 
 }
 
 type DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion *string `pulumi:"majorVersion"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
@@ -21744,6 +21829,8 @@ type DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput
 }
 
 type DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput `pulumi:"isOlderVersionAcknowledged"`
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
 	MajorVersion pulumi.StringPtrInput `pulumi:"majorVersion"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
@@ -21801,6 +21888,13 @@ func (o DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOu
 
 func (o DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
 	return o
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) *bool {
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
@@ -23257,9 +23351,11 @@ type DatabaseUpgradeDatabaseUpgradeSourceDetails struct {
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+	DbVersion *string `pulumi:"dbVersion"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-	DbVersion *string `pulumi:"dbVersion"`
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
 	Options *string `pulumi:"options"`
 	// The source of the Oracle Database software to be used for the upgrade.
@@ -23286,9 +23382,11 @@ type DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs struct {
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
 	DatabaseSoftwareImageId pulumi.StringPtrInput `pulumi:"databaseSoftwareImageId"`
 	// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput `pulumi:"isOlderVersionAcknowledged"`
 	// Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
 	Options pulumi.StringPtrInput `pulumi:"options"`
 	// The source of the Oracle Database software to be used for the upgrade.
@@ -23383,10 +23481,15 @@ func (o DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput) DatabaseSoftwareImage
 }
 
 // A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-//
-// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 func (o DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseUpgradeDatabaseUpgradeSourceDetails) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+//
+// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+func (o DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DatabaseUpgradeDatabaseUpgradeSourceDetails) *bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolPtrOutput)
 }
 
 // Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
@@ -23439,8 +23542,6 @@ func (o DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput) DatabaseSoftwareIm
 }
 
 // A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-//
-// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 func (o DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseUpgradeDatabaseUpgradeSourceDetails) *string {
 		if v == nil {
@@ -23448,6 +23549,18 @@ func (o DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput) DbVersion() pulumi
 		}
 		return v.DbVersion
 	}).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+//
+// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+func (o DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgradeDatabaseUpgradeSourceDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsOlderVersionAcknowledged
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
@@ -23860,8 +23973,6 @@ type DbHomeDatabase struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
-	// List of one-off patches for Database Homes.
-	OneOffPatches []string `pulumi:"oneOffPatches"`
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 	PdbName *string `pulumi:"pdbName"`
 	// The list of pluggable databases that needs to be restored into new database.
@@ -23940,8 +24051,6 @@ type DbHomeDatabaseArgs struct {
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet pulumi.StringPtrInput `pulumi:"ncharacterSet"`
-	// List of one-off patches for Database Homes.
-	OneOffPatches pulumi.StringArrayInput `pulumi:"oneOffPatches"`
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 	PdbName pulumi.StringPtrInput `pulumi:"pdbName"`
 	// The list of pluggable databases that needs to be restored into new database.
@@ -24145,11 +24254,6 @@ func (o DbHomeDatabaseOutput) LifecycleDetails() pulumi.StringPtrOutput {
 // The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 func (o DbHomeDatabaseOutput) NcharacterSet() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbHomeDatabase) *string { return v.NcharacterSet }).(pulumi.StringPtrOutput)
-}
-
-// List of one-off patches for Database Homes.
-func (o DbHomeDatabaseOutput) OneOffPatches() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v DbHomeDatabase) []string { return v.OneOffPatches }).(pulumi.StringArrayOutput)
 }
 
 // The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -24431,16 +24535,6 @@ func (o DbHomeDatabasePtrOutput) NcharacterSet() pulumi.StringPtrOutput {
 		}
 		return v.NcharacterSet
 	}).(pulumi.StringPtrOutput)
-}
-
-// List of one-off patches for Database Homes.
-func (o DbHomeDatabasePtrOutput) OneOffPatches() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *DbHomeDatabase) []string {
-		if v == nil {
-			return nil
-		}
-		return v.OneOffPatches
-	}).(pulumi.StringArrayOutput)
 }
 
 // The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -26905,6 +26999,8 @@ type DbSystemDbHomeDatabase struct {
 	Id *string `pulumi:"id"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged *bool `pulumi:"isOlderVersionAcknowledged"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -26994,6 +27090,8 @@ type DbSystemDbHomeDatabaseArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput `pulumi:"isActiveDataGuardEnabled"`
+	// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+	IsOlderVersionAcknowledged pulumi.BoolPtrInput `pulumi:"isOlderVersionAcknowledged"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringPtrInput `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -27200,6 +27298,11 @@ func (o DbSystemDbHomeDatabaseOutput) Id() pulumi.StringPtrOutput {
 // True if active Data Guard is enabled.
 func (o DbSystemDbHomeDatabaseOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DbSystemDbHomeDatabase) *bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o DbSystemDbHomeDatabaseOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DbSystemDbHomeDatabase) *bool { return v.IsOlderVersionAcknowledged }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
@@ -27487,6 +27590,16 @@ func (o DbSystemDbHomeDatabasePtrOutput) IsActiveDataGuardEnabled() pulumi.BoolP
 			return nil
 		}
 		return v.IsActiveDataGuardEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+func (o DbSystemDbHomeDatabasePtrOutput) IsOlderVersionAcknowledged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbSystemDbHomeDatabase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsOlderVersionAcknowledged
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -32832,6 +32945,162 @@ func (o ExadataInfrastructureNetworkBondingModeDetailsPtrOutput) DrNetworkBondin
 		}
 		return v.DrNetworkBondingMode
 	}).(pulumi.StringPtrOutput)
+}
+
+type ExadataInfrastructureSslInspectionConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+	CertificateAuthorityId *string `pulumi:"certificateAuthorityId"`
+	// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// ExadataInfrastructureSslInspectionConfigurationInput is an input type that accepts ExadataInfrastructureSslInspectionConfigurationArgs and ExadataInfrastructureSslInspectionConfigurationOutput values.
+// You can construct a concrete instance of `ExadataInfrastructureSslInspectionConfigurationInput` via:
+//
+//	ExadataInfrastructureSslInspectionConfigurationArgs{...}
+type ExadataInfrastructureSslInspectionConfigurationInput interface {
+	pulumi.Input
+
+	ToExadataInfrastructureSslInspectionConfigurationOutput() ExadataInfrastructureSslInspectionConfigurationOutput
+	ToExadataInfrastructureSslInspectionConfigurationOutputWithContext(context.Context) ExadataInfrastructureSslInspectionConfigurationOutput
+}
+
+type ExadataInfrastructureSslInspectionConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+	CertificateAuthorityId pulumi.StringPtrInput `pulumi:"certificateAuthorityId"`
+	// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (ExadataInfrastructureSslInspectionConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (i ExadataInfrastructureSslInspectionConfigurationArgs) ToExadataInfrastructureSslInspectionConfigurationOutput() ExadataInfrastructureSslInspectionConfigurationOutput {
+	return i.ToExadataInfrastructureSslInspectionConfigurationOutputWithContext(context.Background())
+}
+
+func (i ExadataInfrastructureSslInspectionConfigurationArgs) ToExadataInfrastructureSslInspectionConfigurationOutputWithContext(ctx context.Context) ExadataInfrastructureSslInspectionConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureSslInspectionConfigurationOutput)
+}
+
+func (i ExadataInfrastructureSslInspectionConfigurationArgs) ToExadataInfrastructureSslInspectionConfigurationPtrOutput() ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return i.ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ExadataInfrastructureSslInspectionConfigurationArgs) ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(ctx context.Context) ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureSslInspectionConfigurationOutput).ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(ctx)
+}
+
+// ExadataInfrastructureSslInspectionConfigurationPtrInput is an input type that accepts ExadataInfrastructureSslInspectionConfigurationArgs, ExadataInfrastructureSslInspectionConfigurationPtr and ExadataInfrastructureSslInspectionConfigurationPtrOutput values.
+// You can construct a concrete instance of `ExadataInfrastructureSslInspectionConfigurationPtrInput` via:
+//
+//	        ExadataInfrastructureSslInspectionConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ExadataInfrastructureSslInspectionConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToExadataInfrastructureSslInspectionConfigurationPtrOutput() ExadataInfrastructureSslInspectionConfigurationPtrOutput
+	ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(context.Context) ExadataInfrastructureSslInspectionConfigurationPtrOutput
+}
+
+type exadataInfrastructureSslInspectionConfigurationPtrType ExadataInfrastructureSslInspectionConfigurationArgs
+
+func ExadataInfrastructureSslInspectionConfigurationPtr(v *ExadataInfrastructureSslInspectionConfigurationArgs) ExadataInfrastructureSslInspectionConfigurationPtrInput {
+	return (*exadataInfrastructureSslInspectionConfigurationPtrType)(v)
+}
+
+func (*exadataInfrastructureSslInspectionConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (i *exadataInfrastructureSslInspectionConfigurationPtrType) ToExadataInfrastructureSslInspectionConfigurationPtrOutput() ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return i.ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *exadataInfrastructureSslInspectionConfigurationPtrType) ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(ctx context.Context) ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureSslInspectionConfigurationPtrOutput)
+}
+
+type ExadataInfrastructureSslInspectionConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ExadataInfrastructureSslInspectionConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (o ExadataInfrastructureSslInspectionConfigurationOutput) ToExadataInfrastructureSslInspectionConfigurationOutput() ExadataInfrastructureSslInspectionConfigurationOutput {
+	return o
+}
+
+func (o ExadataInfrastructureSslInspectionConfigurationOutput) ToExadataInfrastructureSslInspectionConfigurationOutputWithContext(ctx context.Context) ExadataInfrastructureSslInspectionConfigurationOutput {
+	return o
+}
+
+func (o ExadataInfrastructureSslInspectionConfigurationOutput) ToExadataInfrastructureSslInspectionConfigurationPtrOutput() ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return o.ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ExadataInfrastructureSslInspectionConfigurationOutput) ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(ctx context.Context) ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExadataInfrastructureSslInspectionConfiguration) *ExadataInfrastructureSslInspectionConfiguration {
+		return &v
+	}).(ExadataInfrastructureSslInspectionConfigurationPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+func (o ExadataInfrastructureSslInspectionConfigurationOutput) CertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInfrastructureSslInspectionConfiguration) *string { return v.CertificateAuthorityId }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+func (o ExadataInfrastructureSslInspectionConfigurationOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ExadataInfrastructureSslInspectionConfiguration) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type ExadataInfrastructureSslInspectionConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ExadataInfrastructureSslInspectionConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExadataInfrastructureSslInspectionConfiguration)(nil)).Elem()
+}
+
+func (o ExadataInfrastructureSslInspectionConfigurationPtrOutput) ToExadataInfrastructureSslInspectionConfigurationPtrOutput() ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return o
+}
+
+func (o ExadataInfrastructureSslInspectionConfigurationPtrOutput) ToExadataInfrastructureSslInspectionConfigurationPtrOutputWithContext(ctx context.Context) ExadataInfrastructureSslInspectionConfigurationPtrOutput {
+	return o
+}
+
+func (o ExadataInfrastructureSslInspectionConfigurationPtrOutput) Elem() ExadataInfrastructureSslInspectionConfigurationOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureSslInspectionConfiguration) ExadataInfrastructureSslInspectionConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ExadataInfrastructureSslInspectionConfiguration
+		return ret
+	}).(ExadataInfrastructureSslInspectionConfigurationOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+func (o ExadataInfrastructureSslInspectionConfigurationPtrOutput) CertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureSslInspectionConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertificateAuthorityId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+func (o ExadataInfrastructureSslInspectionConfigurationPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureSslInspectionConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 type ExadataInfrastructureStorageContact struct {
@@ -55828,6 +56097,8 @@ func (o GetAutonomousDatabaseConnectionStringProfileArrayOutput) Index(i pulumi.
 }
 
 type GetAutonomousDatabaseConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -55840,6 +56111,8 @@ type GetAutonomousDatabaseConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -55862,6 +56135,8 @@ type GetAutonomousDatabaseConnectionUrlInput interface {
 }
 
 type GetAutonomousDatabaseConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -55874,6 +56149,8 @@ type GetAutonomousDatabaseConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -55935,6 +56212,11 @@ func (o GetAutonomousDatabaseConnectionUrlOutput) ToGetAutonomousDatabaseConnect
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabaseConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabaseConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -55963,6 +56245,11 @@ func (o GetAutonomousDatabaseConnectionUrlOutput) MachineLearningNotebookUrl() p
 // Oracle Machine Learning user management URL.
 func (o GetAutonomousDatabaseConnectionUrlOutput) MachineLearningUserManagementUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseConnectionUrl) string { return v.MachineLearningUserManagementUrl }).(pulumi.StringOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabaseConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -56475,6 +56762,8 @@ func (o GetAutonomousDatabaseDataguardAssociationsFilterArrayOutput) Index(i pul
 type GetAutonomousDatabaseDbToolsDetail struct {
 	// Compute used by database tools.
 	ComputeCount float64 `pulumi:"computeCount"`
+	// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions int `pulumi:"estimatedConcurrentSessions"`
 	// Indicates whether tool is enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -56497,6 +56786,8 @@ type GetAutonomousDatabaseDbToolsDetailInput interface {
 type GetAutonomousDatabaseDbToolsDetailArgs struct {
 	// Compute used by database tools.
 	ComputeCount pulumi.Float64Input `pulumi:"computeCount"`
+	// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions pulumi.IntInput `pulumi:"estimatedConcurrentSessions"`
 	// Indicates whether tool is enabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -56559,6 +56850,11 @@ func (o GetAutonomousDatabaseDbToolsDetailOutput) ToGetAutonomousDatabaseDbTools
 // Compute used by database tools.
 func (o GetAutonomousDatabaseDbToolsDetailOutput) ComputeCount() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAutonomousDatabaseDbToolsDetail) float64 { return v.ComputeCount }).(pulumi.Float64Output)
+}
+
+// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+func (o GetAutonomousDatabaseDbToolsDetailOutput) EstimatedConcurrentSessions() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseDbToolsDetail) int { return v.EstimatedConcurrentSessions }).(pulumi.IntOutput)
 }
 
 // Indicates whether tool is enabled.
@@ -58066,6 +58362,8 @@ func (o GetAutonomousDatabasePeersFilterArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetAutonomousDatabasePublicConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -58078,6 +58376,8 @@ type GetAutonomousDatabasePublicConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -58100,6 +58400,8 @@ type GetAutonomousDatabasePublicConnectionUrlInput interface {
 }
 
 type GetAutonomousDatabasePublicConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -58112,6 +58414,8 @@ type GetAutonomousDatabasePublicConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -58173,6 +58477,11 @@ func (o GetAutonomousDatabasePublicConnectionUrlOutput) ToGetAutonomousDatabaseP
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasePublicConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasePublicConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabasePublicConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasePublicConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -58201,6 +58510,11 @@ func (o GetAutonomousDatabasePublicConnectionUrlOutput) MachineLearningNotebookU
 // Oracle Machine Learning user management URL.
 func (o GetAutonomousDatabasePublicConnectionUrlOutput) MachineLearningUserManagementUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasePublicConnectionUrl) string { return v.MachineLearningUserManagementUrl }).(pulumi.StringOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasePublicConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasePublicConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -60285,6 +60599,8 @@ func (o GetAutonomousDatabaseTransportableTablespaceArrayOutput) Index(i pulumi.
 }
 
 type GetAutonomousDatabaseVanityConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -60297,10 +60613,14 @@ type GetAutonomousDatabaseVanityConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 	OrdsUrl string `pulumi:"ordsUrl"`
+	// The URL of the Spatial Studio for the Autonomous AI Database.
+	SpatialStudioUrl string `pulumi:"spatialStudioUrl"`
 	// Oracle SQL Developer Web URL.
 	SqlDevWebUrl string `pulumi:"sqlDevWebUrl"`
 }
@@ -60317,6 +60637,8 @@ type GetAutonomousDatabaseVanityConnectionUrlInput interface {
 }
 
 type GetAutonomousDatabaseVanityConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -60329,10 +60651,14 @@ type GetAutonomousDatabaseVanityConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 	OrdsUrl pulumi.StringInput `pulumi:"ordsUrl"`
+	// The URL of the Spatial Studio for the Autonomous AI Database.
+	SpatialStudioUrl pulumi.StringInput `pulumi:"spatialStudioUrl"`
 	// Oracle SQL Developer Web URL.
 	SqlDevWebUrl pulumi.StringInput `pulumi:"sqlDevWebUrl"`
 }
@@ -60388,6 +60714,11 @@ func (o GetAutonomousDatabaseVanityConnectionUrlOutput) ToGetAutonomousDatabaseV
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabaseVanityConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabaseVanityConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -60418,6 +60749,11 @@ func (o GetAutonomousDatabaseVanityConnectionUrlOutput) MachineLearningUserManag
 	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.MachineLearningUserManagementUrl }).(pulumi.StringOutput)
 }
 
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabaseVanityConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
+}
+
 // The URL of the MongoDB API for the Autonomous Database.
 func (o GetAutonomousDatabaseVanityConnectionUrlOutput) MongoDbUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.MongoDbUrl }).(pulumi.StringOutput)
@@ -60426,6 +60762,11 @@ func (o GetAutonomousDatabaseVanityConnectionUrlOutput) MongoDbUrl() pulumi.Stri
 // The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 func (o GetAutonomousDatabaseVanityConnectionUrlOutput) OrdsUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.OrdsUrl }).(pulumi.StringOutput)
+}
+
+// The URL of the Spatial Studio for the Autonomous AI Database.
+func (o GetAutonomousDatabaseVanityConnectionUrlOutput) SpatialStudioUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.SpatialStudioUrl }).(pulumi.StringOutput)
 }
 
 // Oracle SQL Developer Web URL.
@@ -62963,6 +63304,8 @@ func (o GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArrayOutp
 }
 
 type GetAutonomousDatabasesAutonomousDatabaseConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -62975,6 +63318,8 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -62997,6 +63342,8 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionUrlInput interface {
 }
 
 type GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -63009,6 +63356,8 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -63070,6 +63419,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) ToGetAutono
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -63102,6 +63456,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) MachineLear
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseConnectionUrl) string {
 		return v.MachineLearningUserManagementUrl
 	}).(pulumi.StringOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -63244,6 +63603,8 @@ func (o GetAutonomousDatabasesAutonomousDatabaseCustomerContactArrayOutput) Inde
 type GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail struct {
 	// Compute used by database tools.
 	ComputeCount float64 `pulumi:"computeCount"`
+	// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions int `pulumi:"estimatedConcurrentSessions"`
 	// Indicates whether tool is enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -63266,6 +63627,8 @@ type GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailInput interface {
 type GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailArgs struct {
 	// Compute used by database tools.
 	ComputeCount pulumi.Float64Input `pulumi:"computeCount"`
+	// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions pulumi.IntInput `pulumi:"estimatedConcurrentSessions"`
 	// Indicates whether tool is enabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -63328,6 +63691,13 @@ func (o GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailOutput) ToGetAutono
 // Compute used by database tools.
 func (o GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailOutput) ComputeCount() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail) float64 { return v.ComputeCount }).(pulumi.Float64Output)
+}
+
+// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+func (o GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailOutput) EstimatedConcurrentSessions() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail) int {
+		return v.EstimatedConcurrentSessions
+	}).(pulumi.IntOutput)
 }
 
 // Indicates whether tool is enabled.
@@ -64576,6 +64946,8 @@ func (o GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArrayOutpu
 }
 
 type GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -64588,6 +64960,8 @@ type GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -64610,6 +64984,8 @@ type GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlInput interface 
 }
 
 type GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -64622,6 +64998,8 @@ type GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -64683,6 +65061,11 @@ func (o GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlOutput) ToGet
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -64717,6 +65100,11 @@ func (o GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlOutput) Machi
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl) string {
 		return v.MachineLearningUserManagementUrl
 	}).(pulumi.StringOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -65768,6 +66156,8 @@ func (o GetAutonomousDatabasesAutonomousDatabaseTransportableTablespaceArrayOutp
 }
 
 type GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -65780,10 +66170,14 @@ type GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 	OrdsUrl string `pulumi:"ordsUrl"`
+	// The URL of the Spatial Studio for the Autonomous AI Database.
+	SpatialStudioUrl string `pulumi:"spatialStudioUrl"`
 	// Oracle SQL Developer Web URL.
 	SqlDevWebUrl string `pulumi:"sqlDevWebUrl"`
 }
@@ -65800,6 +66194,8 @@ type GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlInput interface 
 }
 
 type GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -65812,10 +66208,14 @@ type GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 	OrdsUrl pulumi.StringInput `pulumi:"ordsUrl"`
+	// The URL of the Spatial Studio for the Autonomous AI Database.
+	SpatialStudioUrl pulumi.StringInput `pulumi:"spatialStudioUrl"`
 	// Oracle SQL Developer Web URL.
 	SqlDevWebUrl pulumi.StringInput `pulumi:"sqlDevWebUrl"`
 }
@@ -65871,6 +66271,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) ToGet
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -65907,6 +66312,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) Machi
 	}).(pulumi.StringOutput)
 }
 
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
+}
+
 // The URL of the MongoDB API for the Autonomous Database.
 func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) MongoDbUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string { return v.MongoDbUrl }).(pulumi.StringOutput)
@@ -65915,6 +66325,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) Mongo
 // The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
 func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) OrdsUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string { return v.OrdsUrl }).(pulumi.StringOutput)
+}
+
+// The URL of the Spatial Studio for the Autonomous AI Database.
+func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) SpatialStudioUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string { return v.SpatialStudioUrl }).(pulumi.StringOutput)
 }
 
 // Oracle SQL Developer Web URL.
@@ -68303,6 +68718,8 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArr
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -68315,6 +68732,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -68337,6 +68756,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlInput interface 
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -68349,6 +68770,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs struct {
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -68410,6 +68833,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput) ToGet
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -68444,6 +68872,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput) Machi
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl) string {
 		return v.MachineLearningUserManagementUrl
 	}).(pulumi.StringOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -68586,6 +69019,8 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArrayOutput
 type GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail struct {
 	// Compute used by database tools.
 	ComputeCount float64 `pulumi:"computeCount"`
+	// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions int `pulumi:"estimatedConcurrentSessions"`
 	// Indicates whether tool is enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -68608,6 +69043,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailInput interface 
 type GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailArgs struct {
 	// Compute used by database tools.
 	ComputeCount pulumi.Float64Input `pulumi:"computeCount"`
+	// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+	EstimatedConcurrentSessions pulumi.IntInput `pulumi:"estimatedConcurrentSessions"`
 	// Indicates whether tool is enabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The max idle time, in minutes, after which the VM used by database tools will be terminated.
@@ -68670,6 +69107,13 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailOutput) ToGet
 // Compute used by database tools.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailOutput) ComputeCount() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail) float64 { return v.ComputeCount }).(pulumi.Float64Output)
+}
+
+// Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailOutput) EstimatedConcurrentSessions() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail) int {
+		return v.EstimatedConcurrentSessions
+	}).(pulumi.IntOutput)
 }
 
 // Indicates whether tool is enabled.
@@ -69932,6 +70376,8 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArra
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -69944,6 +70390,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -69966,6 +70414,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlInput inte
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -69978,6 +70428,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlArgs struc
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -70039,6 +70491,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlOutput)
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -70075,6 +70532,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlOutput)
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl) string {
 		return v.MachineLearningUserManagementUrl
 	}).(pulumi.StringOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -71002,6 +71464,8 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArrayOutput) Inde
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl string `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -71014,6 +71478,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl struct {
 	MachineLearningNotebookUrl string `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl string `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl string `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl string `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -71034,6 +71500,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlInput inte
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlArgs struct {
+	// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	A2aUrl pulumi.StringInput `pulumi:"a2aUrl"`
 	// Oracle Application Express (APEX) URL.
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
@@ -71046,6 +71514,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlArgs struc
 	MachineLearningNotebookUrl pulumi.StringInput `pulumi:"machineLearningNotebookUrl"`
 	// Oracle Machine Learning user management URL.
 	MachineLearningUserManagementUrl pulumi.StringInput `pulumi:"machineLearningUserManagementUrl"`
+	// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+	McpUrl pulumi.StringInput `pulumi:"mcpUrl"`
 	// The URL of the MongoDB API for the Autonomous Database.
 	MongoDbUrl pulumi.StringInput `pulumi:"mongoDbUrl"`
 	// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
@@ -71105,6 +71575,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlOutput)
 	return o
 }
 
+// The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlOutput) A2aUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl) string { return v.A2aUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Application Express (APEX) URL.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlOutput) ApexUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl) string { return v.ApexUrl }).(pulumi.StringOutput)
@@ -71141,6 +71616,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlOutput)
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl) string {
 		return v.MachineLearningUserManagementUrl
 	}).(pulumi.StringOutput)
+}
+
+// The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlOutput) McpUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl) string { return v.McpUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the MongoDB API for the Autonomous Database.
@@ -78212,112 +78692,6 @@ func (o GetBackupDestinationAssociatedDatabaseArrayOutput) Index(i pulumi.IntInp
 	}).(GetBackupDestinationAssociatedDatabaseOutput)
 }
 
-type GetBackupDestinationAssociatedLongTermBackup struct {
-	// The user-provided name of the backup destination.
-	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id string `pulumi:"id"`
-}
-
-// GetBackupDestinationAssociatedLongTermBackupInput is an input type that accepts GetBackupDestinationAssociatedLongTermBackupArgs and GetBackupDestinationAssociatedLongTermBackupOutput values.
-// You can construct a concrete instance of `GetBackupDestinationAssociatedLongTermBackupInput` via:
-//
-//	GetBackupDestinationAssociatedLongTermBackupArgs{...}
-type GetBackupDestinationAssociatedLongTermBackupInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationAssociatedLongTermBackupOutput
-	ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Context) GetBackupDestinationAssociatedLongTermBackupOutput
-}
-
-type GetBackupDestinationAssociatedLongTermBackupArgs struct {
-	// The user-provided name of the backup destination.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id pulumi.StringInput `pulumi:"id"`
-}
-
-func (GetBackupDestinationAssociatedLongTermBackupArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (i GetBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationAssociatedLongTermBackupOutput {
-	return i.ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationAssociatedLongTermBackupOutput)
-}
-
-// GetBackupDestinationAssociatedLongTermBackupArrayInput is an input type that accepts GetBackupDestinationAssociatedLongTermBackupArray and GetBackupDestinationAssociatedLongTermBackupArrayOutput values.
-// You can construct a concrete instance of `GetBackupDestinationAssociatedLongTermBackupArrayInput` via:
-//
-//	GetBackupDestinationAssociatedLongTermBackupArray{ GetBackupDestinationAssociatedLongTermBackupArgs{...} }
-type GetBackupDestinationAssociatedLongTermBackupArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationAssociatedLongTermBackupArrayOutput
-	ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Context) GetBackupDestinationAssociatedLongTermBackupArrayOutput
-}
-
-type GetBackupDestinationAssociatedLongTermBackupArray []GetBackupDestinationAssociatedLongTermBackupInput
-
-func (GetBackupDestinationAssociatedLongTermBackupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (i GetBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return i.ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationAssociatedLongTermBackupArrayOutput)
-}
-
-type GetBackupDestinationAssociatedLongTermBackupOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationAssociatedLongTermBackupOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (o GetBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationAssociatedLongTermBackupOutput {
-	return o
-}
-
-func (o GetBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupOutput {
-	return o
-}
-
-// The user-provided name of the backup destination.
-func (o GetBackupDestinationAssociatedLongTermBackupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationAssociatedLongTermBackup) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-func (o GetBackupDestinationAssociatedLongTermBackupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationAssociatedLongTermBackup) string { return v.Id }).(pulumi.StringOutput)
-}
-
-type GetBackupDestinationAssociatedLongTermBackupArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationAssociatedLongTermBackupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (o GetBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationAssociatedLongTermBackupArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationAssociatedLongTermBackupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationAssociatedLongTermBackup {
-		return vs[0].([]GetBackupDestinationAssociatedLongTermBackup)[vs[1].(int)]
-	}).(GetBackupDestinationAssociatedLongTermBackupOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseAddStandbyBackupConfigInput)(nil)).Elem(), AutonomousContainerDatabaseAddStandbyBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseAddStandbyBackupConfigArrayInput)(nil)).Elem(), AutonomousContainerDatabaseAddStandbyBackupConfigArray{})
@@ -78721,6 +79095,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), ExadataInfrastructureMaintenanceWindowMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureNetworkBondingModeDetailsInput)(nil)).Elem(), ExadataInfrastructureNetworkBondingModeDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureNetworkBondingModeDetailsPtrInput)(nil)).Elem(), ExadataInfrastructureNetworkBondingModeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureSslInspectionConfigurationInput)(nil)).Elem(), ExadataInfrastructureSslInspectionConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureSslInspectionConfigurationPtrInput)(nil)).Elem(), ExadataInfrastructureSslInspectionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureStorageContactInput)(nil)).Elem(), ExadataInfrastructureStorageContactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureStorageContactArrayInput)(nil)).Elem(), ExadataInfrastructureStorageContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureStorageMaintenanceWindowInput)(nil)).Elem(), ExadataInfrastructureStorageMaintenanceWindowArgs{})
@@ -79316,8 +79692,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersFilterArrayInput)(nil)).Elem(), GetAutonomousVmClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedDatabaseInput)(nil)).Elem(), GetBackupDestinationAssociatedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedDatabaseArrayInput)(nil)).Elem(), GetBackupDestinationAssociatedDatabaseArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArray{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailOutput{})
@@ -79720,6 +80094,8 @@ func init() {
 	pulumi.RegisterOutputType(ExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureNetworkBondingModeDetailsOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureNetworkBondingModeDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ExadataInfrastructureSslInspectionConfigurationOutput{})
+	pulumi.RegisterOutputType(ExadataInfrastructureSslInspectionConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureStorageContactOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureStorageContactArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureStorageMaintenanceWindowOutput{})
@@ -80315,6 +80691,4 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousVmClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationAssociatedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationAssociatedDatabaseArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupArrayOutput{})
 }

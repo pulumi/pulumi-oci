@@ -15,7 +15,8 @@ namespace Pulumi.Oci.Ocvp
         /// This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// List the Datastore Clusters in the specified compartment. The list can be filtered
-        /// by compartment, Datastore Cluster, Display name and Lifecycle state
+        /// by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+        /// compartmentId or datastoreClusterId must be provided.
         /// 
         /// ## Example Usage
         /// 
@@ -29,8 +30,8 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testDatastoreClusters = Oci.Ocvp.GetDatastoreClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = compartmentId,
         ///         ClusterId = testCluster.Id,
+        ///         CompartmentId = compartmentId,
         ///         DatastoreClusterId = testDatastoreCluster.Id,
         ///         DisplayName = datastoreClusterDisplayName,
         ///         State = datastoreClusterState,
@@ -39,14 +40,15 @@ namespace Pulumi.Oci.Ocvp
         /// });
         /// ```
         /// </summary>
-        public static Task<GetDatastoreClustersResult> InvokeAsync(GetDatastoreClustersArgs args, InvokeOptions? options = null)
+        public static Task<GetDatastoreClustersResult> InvokeAsync(GetDatastoreClustersArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatastoreClustersResult>("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", args ?? new GetDatastoreClustersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// List the Datastore Clusters in the specified compartment. The list can be filtered
-        /// by compartment, Datastore Cluster, Display name and Lifecycle state
+        /// by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+        /// compartmentId or datastoreClusterId must be provided.
         /// 
         /// ## Example Usage
         /// 
@@ -60,8 +62,8 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testDatastoreClusters = Oci.Ocvp.GetDatastoreClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = compartmentId,
         ///         ClusterId = testCluster.Id,
+        ///         CompartmentId = compartmentId,
         ///         DatastoreClusterId = testDatastoreCluster.Id,
         ///         DisplayName = datastoreClusterDisplayName,
         ///         State = datastoreClusterState,
@@ -70,14 +72,15 @@ namespace Pulumi.Oci.Ocvp
         /// });
         /// ```
         /// </summary>
-        public static Output<GetDatastoreClustersResult> Invoke(GetDatastoreClustersInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetDatastoreClustersResult> Invoke(GetDatastoreClustersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatastoreClustersResult>("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", args ?? new GetDatastoreClustersInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// List the Datastore Clusters in the specified compartment. The list can be filtered
-        /// by compartment, Datastore Cluster, Display name and Lifecycle state
+        /// by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+        /// compartmentId or datastoreClusterId must be provided.
         /// 
         /// ## Example Usage
         /// 
@@ -91,8 +94,8 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testDatastoreClusters = Oci.Ocvp.GetDatastoreClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = compartmentId,
         ///         ClusterId = testCluster.Id,
+        ///         CompartmentId = compartmentId,
         ///         DatastoreClusterId = testDatastoreCluster.Id,
         ///         DisplayName = datastoreClusterDisplayName,
         ///         State = datastoreClusterState,
@@ -115,10 +118,10 @@ namespace Pulumi.Oci.Ocvp
         public string? ClusterId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
@@ -161,10 +164,10 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
@@ -209,7 +212,7 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Datastore.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The list of datastore_cluster_collection.
         /// </summary>
@@ -233,7 +236,7 @@ namespace Pulumi.Oci.Ocvp
         private GetDatastoreClustersResult(
             string? clusterId,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetDatastoreClustersDatastoreClusterCollectionResult> datastoreClusterCollections,
 

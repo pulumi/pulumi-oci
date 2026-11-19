@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceVersionPreferencesArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
+import com.pulumi.oci.Database.inputs.ExadataInfrastructureSslInspectionConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -415,6 +416,21 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * SSL inspection configuration for the Exadata infrastructure.
+     * 
+     */
+    @Import(name="sslInspectionConfiguration")
+    private @Nullable Output<ExadataInfrastructureSslInspectionConfigurationArgs> sslInspectionConfiguration;
+
+    /**
+     * @return SSL inspection configuration for the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<ExadataInfrastructureSslInspectionConfigurationArgs>> sslInspectionConfiguration() {
+        return Optional.ofNullable(this.sslInspectionConfiguration);
+    }
+
+    /**
      * The number of storage servers for the Exadata infrastructure.
      * 
      */
@@ -488,6 +504,7 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         this.networkBondingModeDetails = $.networkBondingModeDetails;
         this.ntpServers = $.ntpServers;
         this.shape = $.shape;
+        this.sslInspectionConfiguration = $.sslInspectionConfiguration;
         this.storageCount = $.storageCount;
         this.storageServerType = $.storageServerType;
         this.timeZone = $.timeZone;
@@ -1081,6 +1098,27 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
          */
         public Builder shape(String shape) {
             return shape(Output.of(shape));
+        }
+
+        /**
+         * @param sslInspectionConfiguration SSL inspection configuration for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslInspectionConfiguration(@Nullable Output<ExadataInfrastructureSslInspectionConfigurationArgs> sslInspectionConfiguration) {
+            $.sslInspectionConfiguration = sslInspectionConfiguration;
+            return this;
+        }
+
+        /**
+         * @param sslInspectionConfiguration SSL inspection configuration for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslInspectionConfiguration(ExadataInfrastructureSslInspectionConfigurationArgs sslInspectionConfiguration) {
+            return sslInspectionConfiguration(Output.of(sslInspectionConfiguration));
         }
 
         /**

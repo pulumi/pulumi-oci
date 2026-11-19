@@ -167,6 +167,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         public readonly bool IsDesupportedVersion;
+        public readonly bool IsOlderVersionAcknowledged;
         /// <summary>
         /// Indicates whether unified autiding is enabled or not.
         /// </summary>
@@ -184,6 +185,10 @@ namespace Pulumi.Oci.Database
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// List of one-off patches for Database Homes.
+        /// </summary>
+        public readonly ImmutableArray<string> OneOffPatches;
         public readonly string Source;
         /// <summary>
         /// The current state of the Database Home.
@@ -232,6 +237,8 @@ namespace Pulumi.Oci.Database
 
             bool isDesupportedVersion,
 
+            bool isOlderVersionAcknowledged,
+
             bool isUnifiedAuditingEnabled,
 
             string kmsKeyId,
@@ -241,6 +248,8 @@ namespace Pulumi.Oci.Database
             string lastPatchHistoryEntryId,
 
             string lifecycleDetails,
+
+            ImmutableArray<string> oneOffPatches,
 
             string source,
 
@@ -266,11 +275,13 @@ namespace Pulumi.Oci.Database
             HomeType = homeType;
             Id = id;
             IsDesupportedVersion = isDesupportedVersion;
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             IsUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LastPatchHistoryEntryId = lastPatchHistoryEntryId;
             LifecycleDetails = lifecycleDetails;
+            OneOffPatches = oneOffPatches;
             Source = source;
             State = state;
             SystemTags = systemTags;

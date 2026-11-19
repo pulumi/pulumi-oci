@@ -12,6 +12,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseVanityConnectionUrl {
     /**
+     * @return The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    private @Nullable String a2aUrl;
+    /**
      * @return Oracle Application Express (APEX) URL.
      * 
      */
@@ -42,6 +47,11 @@ public final class AutonomousDatabaseVanityConnectionUrl {
      */
     private @Nullable String machineLearningUserManagementUrl;
     /**
+     * @return The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    private @Nullable String mcpUrl;
+    /**
      * @return The URL of the MongoDB API for the Autonomous Database.
      * 
      */
@@ -52,12 +62,24 @@ public final class AutonomousDatabaseVanityConnectionUrl {
      */
     private @Nullable String ordsUrl;
     /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    private @Nullable String spatialStudioUrl;
+    /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
     private @Nullable String sqlDevWebUrl;
 
     private AutonomousDatabaseVanityConnectionUrl() {}
+    /**
+     * @return The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    public Optional<String> a2aUrl() {
+        return Optional.ofNullable(this.a2aUrl);
+    }
     /**
      * @return Oracle Application Express (APEX) URL.
      * 
@@ -101,6 +123,13 @@ public final class AutonomousDatabaseVanityConnectionUrl {
         return Optional.ofNullable(this.machineLearningUserManagementUrl);
     }
     /**
+     * @return The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+     * 
+     */
+    public Optional<String> mcpUrl() {
+        return Optional.ofNullable(this.mcpUrl);
+    }
+    /**
      * @return The URL of the MongoDB API for the Autonomous Database.
      * 
      */
@@ -113,6 +142,13 @@ public final class AutonomousDatabaseVanityConnectionUrl {
      */
     public Optional<String> ordsUrl() {
         return Optional.ofNullable(this.ordsUrl);
+    }
+    /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    public Optional<String> spatialStudioUrl() {
+        return Optional.ofNullable(this.spatialStudioUrl);
     }
     /**
      * @return Oracle SQL Developer Web URL.
@@ -131,29 +167,41 @@ public final class AutonomousDatabaseVanityConnectionUrl {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String a2aUrl;
         private @Nullable String apexUrl;
         private @Nullable String databaseTransformsUrl;
         private @Nullable String essbaseUrl;
         private @Nullable String graphStudioUrl;
         private @Nullable String machineLearningNotebookUrl;
         private @Nullable String machineLearningUserManagementUrl;
+        private @Nullable String mcpUrl;
         private @Nullable String mongoDbUrl;
         private @Nullable String ordsUrl;
+        private @Nullable String spatialStudioUrl;
         private @Nullable String sqlDevWebUrl;
         public Builder() {}
         public Builder(AutonomousDatabaseVanityConnectionUrl defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.a2aUrl = defaults.a2aUrl;
     	      this.apexUrl = defaults.apexUrl;
     	      this.databaseTransformsUrl = defaults.databaseTransformsUrl;
     	      this.essbaseUrl = defaults.essbaseUrl;
     	      this.graphStudioUrl = defaults.graphStudioUrl;
     	      this.machineLearningNotebookUrl = defaults.machineLearningNotebookUrl;
     	      this.machineLearningUserManagementUrl = defaults.machineLearningUserManagementUrl;
+    	      this.mcpUrl = defaults.mcpUrl;
     	      this.mongoDbUrl = defaults.mongoDbUrl;
     	      this.ordsUrl = defaults.ordsUrl;
+    	      this.spatialStudioUrl = defaults.spatialStudioUrl;
     	      this.sqlDevWebUrl = defaults.sqlDevWebUrl;
         }
 
+        @CustomType.Setter
+        public Builder a2aUrl(@Nullable String a2aUrl) {
+
+            this.a2aUrl = a2aUrl;
+            return this;
+        }
         @CustomType.Setter
         public Builder apexUrl(@Nullable String apexUrl) {
 
@@ -191,6 +239,12 @@ public final class AutonomousDatabaseVanityConnectionUrl {
             return this;
         }
         @CustomType.Setter
+        public Builder mcpUrl(@Nullable String mcpUrl) {
+
+            this.mcpUrl = mcpUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder mongoDbUrl(@Nullable String mongoDbUrl) {
 
             this.mongoDbUrl = mongoDbUrl;
@@ -203,6 +257,12 @@ public final class AutonomousDatabaseVanityConnectionUrl {
             return this;
         }
         @CustomType.Setter
+        public Builder spatialStudioUrl(@Nullable String spatialStudioUrl) {
+
+            this.spatialStudioUrl = spatialStudioUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlDevWebUrl(@Nullable String sqlDevWebUrl) {
 
             this.sqlDevWebUrl = sqlDevWebUrl;
@@ -210,14 +270,17 @@ public final class AutonomousDatabaseVanityConnectionUrl {
         }
         public AutonomousDatabaseVanityConnectionUrl build() {
             final var _resultValue = new AutonomousDatabaseVanityConnectionUrl();
+            _resultValue.a2aUrl = a2aUrl;
             _resultValue.apexUrl = apexUrl;
             _resultValue.databaseTransformsUrl = databaseTransformsUrl;
             _resultValue.essbaseUrl = essbaseUrl;
             _resultValue.graphStudioUrl = graphStudioUrl;
             _resultValue.machineLearningNotebookUrl = machineLearningNotebookUrl;
             _resultValue.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            _resultValue.mcpUrl = mcpUrl;
             _resultValue.mongoDbUrl = mongoDbUrl;
             _resultValue.ordsUrl = ordsUrl;
+            _resultValue.spatialStudioUrl = spatialStudioUrl;
             _resultValue.sqlDevWebUrl = sqlDevWebUrl;
             return _resultValue;
         }

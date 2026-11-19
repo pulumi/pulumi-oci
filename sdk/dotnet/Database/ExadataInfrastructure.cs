@@ -100,6 +100,11 @@ namespace Pulumi.Oci.Database
     ///             ClientNetworkBondingMode = exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode,
     ///             DrNetworkBondingMode = exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode,
     ///         },
+    ///         SslInspectionConfiguration = new Oci.Database.Inputs.ExadataInfrastructureSslInspectionConfigurationArgs
+    ///         {
+    ///             IsEnabled = exadataInfrastructureSslInspectionConfigurationIsEnabled,
+    ///             CertificateAuthorityId = testCertificateAuthority.Id,
+    ///         },
     ///         StorageCount = exadataInfrastructureStorageCount,
     ///         StorageServerType = exadataInfrastructureStorageServerType,
     ///     });
@@ -408,6 +413,12 @@ namespace Pulumi.Oci.Database
         public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
+        /// SSL inspection configuration for the Exadata infrastructure.
+        /// </summary>
+        [Output("sslInspectionConfiguration")]
+        public Output<Outputs.ExadataInfrastructureSslInspectionConfiguration> SslInspectionConfiguration { get; private set; } = null!;
+
+        /// <summary>
         /// The current lifecycle state of the Exadata infrastructure.
         /// </summary>
         [Output("state")]
@@ -681,6 +692,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
+
+        /// <summary>
+        /// SSL inspection configuration for the Exadata infrastructure.
+        /// </summary>
+        [Input("sslInspectionConfiguration")]
+        public Input<Inputs.ExadataInfrastructureSslInspectionConfigurationArgs>? SslInspectionConfiguration { get; set; }
 
         /// <summary>
         /// The number of storage servers for the Exadata infrastructure.
@@ -1038,6 +1055,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
+
+        /// <summary>
+        /// SSL inspection configuration for the Exadata infrastructure.
+        /// </summary>
+        [Input("sslInspectionConfiguration")]
+        public Input<Inputs.ExadataInfrastructureSslInspectionConfigurationGetArgs>? SslInspectionConfiguration { get; set; }
 
         /// <summary>
         /// The current lifecycle state of the Exadata infrastructure.

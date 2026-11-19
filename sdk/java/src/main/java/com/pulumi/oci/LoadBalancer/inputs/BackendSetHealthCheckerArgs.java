@@ -19,6 +19,41 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
     public static final BackendSetHealthCheckerArgs Empty = new BackendSetHealthCheckerArgs();
 
     /**
+     * (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+     * 
+     * This value must be an integer from `1` through `100`.
+     * 
+     * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+     * 
+     * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     * Example: `1`
+     * 
+     */
+    @Import(name="defaultWeight")
+    private @Nullable Output<Integer> defaultWeight;
+
+    /**
+     * @return (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+     * 
+     * This value must be an integer from `1` through `100`.
+     * 
+     * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+     * 
+     * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     * Example: `1`
+     * 
+     */
+    public Optional<Output<Integer>> defaultWeight() {
+        return Optional.ofNullable(this.defaultWeight);
+    }
+
+    /**
      * (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
      * 
      */
@@ -31,6 +66,41 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<Integer>> intervalMs() {
         return Optional.ofNullable(this.intervalMs);
+    }
+
+    /**
+     * (Updatable) You can enable dynamic backend weights for HTTP health checks.
+     * 
+     * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend&#39;s HTTP health check response. The load balancer uses that value as the backend&#39;s effective weight when distributing traffic.
+     * 
+     * A valid header value is an integer from `0` through `100`.
+     * 
+     * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+     * 
+     * If omitted during create, the default is `false`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     */
+    @Import(name="isDynamicBackendWeightEnabled")
+    private @Nullable Output<Boolean> isDynamicBackendWeightEnabled;
+
+    /**
+     * @return (Updatable) You can enable dynamic backend weights for HTTP health checks.
+     * 
+     * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend&#39;s HTTP health check response. The load balancer uses that value as the backend&#39;s effective weight when distributing traffic.
+     * 
+     * A valid header value is an integer from `0` through `100`.
+     * 
+     * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+     * 
+     * If omitted during create, the default is `false`.
+     * 
+     * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     * 
+     */
+    public Optional<Output<Boolean>> isDynamicBackendWeightEnabled() {
+        return Optional.ofNullable(this.isDynamicBackendWeightEnabled);
     }
 
     /**
@@ -168,7 +238,9 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
     private BackendSetHealthCheckerArgs() {}
 
     private BackendSetHealthCheckerArgs(BackendSetHealthCheckerArgs $) {
+        this.defaultWeight = $.defaultWeight;
         this.intervalMs = $.intervalMs;
+        this.isDynamicBackendWeightEnabled = $.isDynamicBackendWeightEnabled;
         this.isForcePlainText = $.isForcePlainText;
         this.port = $.port;
         this.protocol = $.protocol;
@@ -198,6 +270,47 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param defaultWeight (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+         * 
+         * This value must be an integer from `1` through `100`.
+         * 
+         * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+         * 
+         * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+         * 
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         * 
+         * Example: `1`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultWeight(@Nullable Output<Integer> defaultWeight) {
+            $.defaultWeight = defaultWeight;
+            return this;
+        }
+
+        /**
+         * @param defaultWeight (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend&#39;s HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+         * 
+         * This value must be an integer from `1` through `100`.
+         * 
+         * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+         * 
+         * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+         * 
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         * 
+         * Example: `1`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultWeight(Integer defaultWeight) {
+            return defaultWeight(Output.of(defaultWeight));
+        }
+
+        /**
          * @param intervalMs (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
          * 
          * @return builder
@@ -216,6 +329,47 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
          */
         public Builder intervalMs(Integer intervalMs) {
             return intervalMs(Output.of(intervalMs));
+        }
+
+        /**
+         * @param isDynamicBackendWeightEnabled (Updatable) You can enable dynamic backend weights for HTTP health checks.
+         * 
+         * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend&#39;s HTTP health check response. The load balancer uses that value as the backend&#39;s effective weight when distributing traffic.
+         * 
+         * A valid header value is an integer from `0` through `100`.
+         * 
+         * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+         * 
+         * If omitted during create, the default is `false`.
+         * 
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDynamicBackendWeightEnabled(@Nullable Output<Boolean> isDynamicBackendWeightEnabled) {
+            $.isDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDynamicBackendWeightEnabled (Updatable) You can enable dynamic backend weights for HTTP health checks.
+         * 
+         * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend&#39;s HTTP health check response. The load balancer uses that value as the backend&#39;s effective weight when distributing traffic.
+         * 
+         * A valid header value is an integer from `0` through `100`.
+         * 
+         * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+         * 
+         * If omitted during create, the default is `false`.
+         * 
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDynamicBackendWeightEnabled(Boolean isDynamicBackendWeightEnabled) {
+            return isDynamicBackendWeightEnabled(Output.of(isDynamicBackendWeightEnabled));
         }
 
         /**

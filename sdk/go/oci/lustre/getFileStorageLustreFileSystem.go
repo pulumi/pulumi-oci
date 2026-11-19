@@ -107,6 +107,8 @@ type LookupFileStorageLustreFileSystemResult struct {
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfigurations []GetFileStorageLustreFileSystemTieringConfiguration `pulumi:"tieringConfigurations"`
 	// The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd string `pulumi:"timeBillingCycleEnd"`
 	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
@@ -278,6 +280,13 @@ func (o LookupFileStorageLustreFileSystemResultOutput) SubnetId() pulumi.StringO
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupFileStorageLustreFileSystemResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+func (o LookupFileStorageLustreFileSystemResultOutput) TieringConfigurations() GetFileStorageLustreFileSystemTieringConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) []GetFileStorageLustreFileSystemTieringConfiguration {
+		return v.TieringConfigurations
+	}).(GetFileStorageLustreFileSystemTieringConfigurationArrayOutput)
 }
 
 // The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`

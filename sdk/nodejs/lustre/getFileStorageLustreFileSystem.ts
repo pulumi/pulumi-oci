@@ -139,6 +139,10 @@ export interface GetFileStorageLustreFileSystemResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
+     * Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+     */
+    readonly tieringConfigurations: outputs.Lustre.GetFileStorageLustreFileSystemTieringConfiguration[];
+    /**
      * The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeBillingCycleEnd: string;

@@ -123,6 +123,10 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly includedPatchesSummary: pulumi.Output<string>;
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    declare public readonly isOlderVersionAcknowledged: pulumi.Output<boolean>;
+    /**
      * True if this Database software image is supported for Upgrade.
      */
     declare public /*out*/ readonly isUpgradeSupported: pulumi.Output<boolean>;
@@ -181,6 +185,7 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
             resourceInputs["imageShapeFamily"] = state?.imageShapeFamily;
             resourceInputs["imageType"] = state?.imageType;
             resourceInputs["includedPatchesSummary"] = state?.includedPatchesSummary;
+            resourceInputs["isOlderVersionAcknowledged"] = state?.isOlderVersionAcknowledged;
             resourceInputs["isUpgradeSupported"] = state?.isUpgradeSupported;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["lsInventory"] = state?.lsInventory;
@@ -205,6 +210,7 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["imageShapeFamily"] = args?.imageShapeFamily;
             resourceInputs["imageType"] = args?.imageType;
+            resourceInputs["isOlderVersionAcknowledged"] = args?.isOlderVersionAcknowledged;
             resourceInputs["lsInventory"] = args?.lsInventory;
             resourceInputs["patchSet"] = args?.patchSet;
             resourceInputs["sourceDbHomeId"] = args?.sourceDbHomeId;
@@ -265,6 +271,10 @@ export interface DatabaseSoftwareImageState {
      * The patches included in the image and the version of the image.
      */
     includedPatchesSummary?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * True if this Database software image is supported for Upgrade.
      */
@@ -338,6 +348,10 @@ export interface DatabaseSoftwareImageArgs {
      * The type of software image. Can be grid or database.
      */
     imageType?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the software image. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      */

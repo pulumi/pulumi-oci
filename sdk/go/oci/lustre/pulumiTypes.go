@@ -854,6 +854,339 @@ func (o FileStorageLustreFileSystemRootSquashConfigurationPtrOutput) SquashUid()
 	}).(pulumi.StringPtrOutput)
 }
 
+type FileStorageLustreFileSystemTieringConfiguration struct {
+	// (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+	PolicyMode *string `pulumi:"policyMode"`
+	// Service-computed number of custom tiering policy rules.
+	RuleCount *int `pulumi:"ruleCount"`
+	// (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+	Rules []FileStorageLustreFileSystemTieringConfigurationRule `pulumi:"rules"`
+}
+
+// FileStorageLustreFileSystemTieringConfigurationInput is an input type that accepts FileStorageLustreFileSystemTieringConfigurationArgs and FileStorageLustreFileSystemTieringConfigurationOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemTieringConfigurationInput` via:
+//
+//	FileStorageLustreFileSystemTieringConfigurationArgs{...}
+type FileStorageLustreFileSystemTieringConfigurationInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemTieringConfigurationOutput() FileStorageLustreFileSystemTieringConfigurationOutput
+	ToFileStorageLustreFileSystemTieringConfigurationOutputWithContext(context.Context) FileStorageLustreFileSystemTieringConfigurationOutput
+}
+
+type FileStorageLustreFileSystemTieringConfigurationArgs struct {
+	// (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+	// (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+	PolicyMode pulumi.StringPtrInput `pulumi:"policyMode"`
+	// Service-computed number of custom tiering policy rules.
+	RuleCount pulumi.IntPtrInput `pulumi:"ruleCount"`
+	// (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+	Rules FileStorageLustreFileSystemTieringConfigurationRuleArrayInput `pulumi:"rules"`
+}
+
+func (FileStorageLustreFileSystemTieringConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationArgs) ToFileStorageLustreFileSystemTieringConfigurationOutput() FileStorageLustreFileSystemTieringConfigurationOutput {
+	return i.ToFileStorageLustreFileSystemTieringConfigurationOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationArgs) ToFileStorageLustreFileSystemTieringConfigurationOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemTieringConfigurationOutput)
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationArgs) ToFileStorageLustreFileSystemTieringConfigurationPtrOutput() FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return i.ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationArgs) ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemTieringConfigurationOutput).ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(ctx)
+}
+
+// FileStorageLustreFileSystemTieringConfigurationPtrInput is an input type that accepts FileStorageLustreFileSystemTieringConfigurationArgs, FileStorageLustreFileSystemTieringConfigurationPtr and FileStorageLustreFileSystemTieringConfigurationPtrOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemTieringConfigurationPtrInput` via:
+//
+//	        FileStorageLustreFileSystemTieringConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type FileStorageLustreFileSystemTieringConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemTieringConfigurationPtrOutput() FileStorageLustreFileSystemTieringConfigurationPtrOutput
+	ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(context.Context) FileStorageLustreFileSystemTieringConfigurationPtrOutput
+}
+
+type fileStorageLustreFileSystemTieringConfigurationPtrType FileStorageLustreFileSystemTieringConfigurationArgs
+
+func FileStorageLustreFileSystemTieringConfigurationPtr(v *FileStorageLustreFileSystemTieringConfigurationArgs) FileStorageLustreFileSystemTieringConfigurationPtrInput {
+	return (*fileStorageLustreFileSystemTieringConfigurationPtrType)(v)
+}
+
+func (*fileStorageLustreFileSystemTieringConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (i *fileStorageLustreFileSystemTieringConfigurationPtrType) ToFileStorageLustreFileSystemTieringConfigurationPtrOutput() FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return i.ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *fileStorageLustreFileSystemTieringConfigurationPtrType) ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemTieringConfigurationPtrOutput)
+}
+
+type FileStorageLustreFileSystemTieringConfigurationOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemTieringConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) ToFileStorageLustreFileSystemTieringConfigurationOutput() FileStorageLustreFileSystemTieringConfigurationOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) ToFileStorageLustreFileSystemTieringConfigurationOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) ToFileStorageLustreFileSystemTieringConfigurationPtrOutput() FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return o.ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FileStorageLustreFileSystemTieringConfiguration) *FileStorageLustreFileSystemTieringConfiguration {
+		return &v
+	}).(FileStorageLustreFileSystemTieringConfigurationPtrOutput)
+}
+
+// (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfiguration) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) PolicyMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfiguration) *string { return v.PolicyMode }).(pulumi.StringPtrOutput)
+}
+
+// Service-computed number of custom tiering policy rules.
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) RuleCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfiguration) *int { return v.RuleCount }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+func (o FileStorageLustreFileSystemTieringConfigurationOutput) Rules() FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfiguration) []FileStorageLustreFileSystemTieringConfigurationRule {
+		return v.Rules
+	}).(FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput)
+}
+
+type FileStorageLustreFileSystemTieringConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemTieringConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationPtrOutput) ToFileStorageLustreFileSystemTieringConfigurationPtrOutput() FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationPtrOutput) ToFileStorageLustreFileSystemTieringConfigurationPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationPtrOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationPtrOutput) Elem() FileStorageLustreFileSystemTieringConfigurationOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemTieringConfiguration) FileStorageLustreFileSystemTieringConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret FileStorageLustreFileSystemTieringConfiguration
+		return ret
+	}).(FileStorageLustreFileSystemTieringConfigurationOutput)
+}
+
+// (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+func (o FileStorageLustreFileSystemTieringConfigurationPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemTieringConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+func (o FileStorageLustreFileSystemTieringConfigurationPtrOutput) PolicyMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemTieringConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PolicyMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Service-computed number of custom tiering policy rules.
+func (o FileStorageLustreFileSystemTieringConfigurationPtrOutput) RuleCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemTieringConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RuleCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+func (o FileStorageLustreFileSystemTieringConfigurationPtrOutput) Rules() FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemTieringConfiguration) []FileStorageLustreFileSystemTieringConfigurationRule {
+		if v == nil {
+			return nil
+		}
+		return v.Rules
+	}).(FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput)
+}
+
+type FileStorageLustreFileSystemTieringConfigurationRule struct {
+	// (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+	Action string `pulumi:"action"`
+	// (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+	ArchiveAfterDaysSinceLastAccess *int `pulumi:"archiveAfterDaysSinceLastAccess"`
+	// (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+	MinSizeInBytes *string `pulumi:"minSizeInBytes"`
+	// (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+	PathPrefixes []string `pulumi:"pathPrefixes"`
+	// (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+	ReleaseAfterDaysSinceLastAccess *int `pulumi:"releaseAfterDaysSinceLastAccess"`
+}
+
+// FileStorageLustreFileSystemTieringConfigurationRuleInput is an input type that accepts FileStorageLustreFileSystemTieringConfigurationRuleArgs and FileStorageLustreFileSystemTieringConfigurationRuleOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemTieringConfigurationRuleInput` via:
+//
+//	FileStorageLustreFileSystemTieringConfigurationRuleArgs{...}
+type FileStorageLustreFileSystemTieringConfigurationRuleInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemTieringConfigurationRuleOutput() FileStorageLustreFileSystemTieringConfigurationRuleOutput
+	ToFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(context.Context) FileStorageLustreFileSystemTieringConfigurationRuleOutput
+}
+
+type FileStorageLustreFileSystemTieringConfigurationRuleArgs struct {
+	// (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+	Action pulumi.StringInput `pulumi:"action"`
+	// (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+	ArchiveAfterDaysSinceLastAccess pulumi.IntPtrInput `pulumi:"archiveAfterDaysSinceLastAccess"`
+	// (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+	MinSizeInBytes pulumi.StringPtrInput `pulumi:"minSizeInBytes"`
+	// (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+	PathPrefixes pulumi.StringArrayInput `pulumi:"pathPrefixes"`
+	// (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+	ReleaseAfterDaysSinceLastAccess pulumi.IntPtrInput `pulumi:"releaseAfterDaysSinceLastAccess"`
+}
+
+func (FileStorageLustreFileSystemTieringConfigurationRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationRuleArgs) ToFileStorageLustreFileSystemTieringConfigurationRuleOutput() FileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return i.ToFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationRuleArgs) ToFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemTieringConfigurationRuleOutput)
+}
+
+// FileStorageLustreFileSystemTieringConfigurationRuleArrayInput is an input type that accepts FileStorageLustreFileSystemTieringConfigurationRuleArray and FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemTieringConfigurationRuleArrayInput` via:
+//
+//	FileStorageLustreFileSystemTieringConfigurationRuleArray{ FileStorageLustreFileSystemTieringConfigurationRuleArgs{...} }
+type FileStorageLustreFileSystemTieringConfigurationRuleArrayInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput() FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput
+	ToFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(context.Context) FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput
+}
+
+type FileStorageLustreFileSystemTieringConfigurationRuleArray []FileStorageLustreFileSystemTieringConfigurationRuleInput
+
+func (FileStorageLustreFileSystemTieringConfigurationRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationRuleArray) ToFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput() FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return i.ToFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemTieringConfigurationRuleArray) ToFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput)
+}
+
+type FileStorageLustreFileSystemTieringConfigurationRuleOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemTieringConfigurationRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationRuleOutput) ToFileStorageLustreFileSystemTieringConfigurationRuleOutput() FileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationRuleOutput) ToFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return o
+}
+
+// (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+func (o FileStorageLustreFileSystemTieringConfigurationRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfigurationRule) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+func (o FileStorageLustreFileSystemTieringConfigurationRuleOutput) ArchiveAfterDaysSinceLastAccess() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfigurationRule) *int {
+		return v.ArchiveAfterDaysSinceLastAccess
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+func (o FileStorageLustreFileSystemTieringConfigurationRuleOutput) MinSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfigurationRule) *string { return v.MinSizeInBytes }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+func (o FileStorageLustreFileSystemTieringConfigurationRuleOutput) PathPrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfigurationRule) []string { return v.PathPrefixes }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+func (o FileStorageLustreFileSystemTieringConfigurationRuleOutput) ReleaseAfterDaysSinceLastAccess() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemTieringConfigurationRule) *int {
+		return v.ReleaseAfterDaysSinceLastAccess
+	}).(pulumi.IntPtrOutput)
+}
+
+type FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) ToFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput() FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) ToFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) Index(i pulumi.IntInput) FileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileStorageLustreFileSystemTieringConfigurationRule {
+		return vs[0].([]FileStorageLustreFileSystemTieringConfigurationRule)[vs[1].(int)]
+	}).(FileStorageLustreFileSystemTieringConfigurationRuleOutput)
+}
+
 type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection struct {
 	// List of available start times on every day of the week
 	Items []GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem `pulumi:"items"`
@@ -2159,6 +2492,269 @@ func (o GetFileStorageLustreFileSystemRootSquashConfigurationArrayOutput) Index(
 	}).(GetFileStorageLustreFileSystemRootSquashConfigurationOutput)
 }
 
+type GetFileStorageLustreFileSystemTieringConfiguration struct {
+	// Whether tiering is enabled for the Lustre file system.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+	PolicyMode string `pulumi:"policyMode"`
+	// Service-computed number of custom tiering policy rules.
+	RuleCount int `pulumi:"ruleCount"`
+	// Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+	Rules []GetFileStorageLustreFileSystemTieringConfigurationRule `pulumi:"rules"`
+}
+
+// GetFileStorageLustreFileSystemTieringConfigurationInput is an input type that accepts GetFileStorageLustreFileSystemTieringConfigurationArgs and GetFileStorageLustreFileSystemTieringConfigurationOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemTieringConfigurationInput` via:
+//
+//	GetFileStorageLustreFileSystemTieringConfigurationArgs{...}
+type GetFileStorageLustreFileSystemTieringConfigurationInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemTieringConfigurationOutput() GetFileStorageLustreFileSystemTieringConfigurationOutput
+	ToGetFileStorageLustreFileSystemTieringConfigurationOutputWithContext(context.Context) GetFileStorageLustreFileSystemTieringConfigurationOutput
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationArgs struct {
+	// Whether tiering is enabled for the Lustre file system.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+	PolicyMode pulumi.StringInput `pulumi:"policyMode"`
+	// Service-computed number of custom tiering policy rules.
+	RuleCount pulumi.IntInput `pulumi:"ruleCount"`
+	// Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+	Rules GetFileStorageLustreFileSystemTieringConfigurationRuleArrayInput `pulumi:"rules"`
+}
+
+func (GetFileStorageLustreFileSystemTieringConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationArgs) ToGetFileStorageLustreFileSystemTieringConfigurationOutput() GetFileStorageLustreFileSystemTieringConfigurationOutput {
+	return i.ToGetFileStorageLustreFileSystemTieringConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationArgs) ToGetFileStorageLustreFileSystemTieringConfigurationOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemTieringConfigurationOutput)
+}
+
+// GetFileStorageLustreFileSystemTieringConfigurationArrayInput is an input type that accepts GetFileStorageLustreFileSystemTieringConfigurationArray and GetFileStorageLustreFileSystemTieringConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemTieringConfigurationArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemTieringConfigurationArray{ GetFileStorageLustreFileSystemTieringConfigurationArgs{...} }
+type GetFileStorageLustreFileSystemTieringConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemTieringConfigurationArrayOutput() GetFileStorageLustreFileSystemTieringConfigurationArrayOutput
+	ToGetFileStorageLustreFileSystemTieringConfigurationArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemTieringConfigurationArrayOutput
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationArray []GetFileStorageLustreFileSystemTieringConfigurationInput
+
+func (GetFileStorageLustreFileSystemTieringConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationArray) ToGetFileStorageLustreFileSystemTieringConfigurationArrayOutput() GetFileStorageLustreFileSystemTieringConfigurationArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemTieringConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationArray) ToGetFileStorageLustreFileSystemTieringConfigurationArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemTieringConfigurationArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemTieringConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationOutput) ToGetFileStorageLustreFileSystemTieringConfigurationOutput() GetFileStorageLustreFileSystemTieringConfigurationOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationOutput) ToGetFileStorageLustreFileSystemTieringConfigurationOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationOutput {
+	return o
+}
+
+// Whether tiering is enabled for the Lustre file system.
+func (o GetFileStorageLustreFileSystemTieringConfigurationOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfiguration) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+func (o GetFileStorageLustreFileSystemTieringConfigurationOutput) PolicyMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfiguration) string { return v.PolicyMode }).(pulumi.StringOutput)
+}
+
+// Service-computed number of custom tiering policy rules.
+func (o GetFileStorageLustreFileSystemTieringConfigurationOutput) RuleCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfiguration) int { return v.RuleCount }).(pulumi.IntOutput)
+}
+
+// Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+func (o GetFileStorageLustreFileSystemTieringConfigurationOutput) Rules() GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfiguration) []GetFileStorageLustreFileSystemTieringConfigurationRule {
+		return v.Rules
+	}).(GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemTieringConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemTieringConfiguration)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationArrayOutput) ToGetFileStorageLustreFileSystemTieringConfigurationArrayOutput() GetFileStorageLustreFileSystemTieringConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationArrayOutput) ToGetFileStorageLustreFileSystemTieringConfigurationArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemTieringConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemTieringConfiguration {
+		return vs[0].([]GetFileStorageLustreFileSystemTieringConfiguration)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemTieringConfigurationOutput)
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationRule struct {
+	// The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+	Action string `pulumi:"action"`
+	// Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+	ArchiveAfterDaysSinceLastAccess int `pulumi:"archiveAfterDaysSinceLastAccess"`
+	// Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+	MinSizeInBytes string `pulumi:"minSizeInBytes"`
+	// One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+	PathPrefixes []string `pulumi:"pathPrefixes"`
+	// Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+	ReleaseAfterDaysSinceLastAccess int `pulumi:"releaseAfterDaysSinceLastAccess"`
+}
+
+// GetFileStorageLustreFileSystemTieringConfigurationRuleInput is an input type that accepts GetFileStorageLustreFileSystemTieringConfigurationRuleArgs and GetFileStorageLustreFileSystemTieringConfigurationRuleOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemTieringConfigurationRuleInput` via:
+//
+//	GetFileStorageLustreFileSystemTieringConfigurationRuleArgs{...}
+type GetFileStorageLustreFileSystemTieringConfigurationRuleInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemTieringConfigurationRuleOutput() GetFileStorageLustreFileSystemTieringConfigurationRuleOutput
+	ToGetFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(context.Context) GetFileStorageLustreFileSystemTieringConfigurationRuleOutput
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationRuleArgs struct {
+	// The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+	ArchiveAfterDaysSinceLastAccess pulumi.IntInput `pulumi:"archiveAfterDaysSinceLastAccess"`
+	// Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+	MinSizeInBytes pulumi.StringInput `pulumi:"minSizeInBytes"`
+	// One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+	PathPrefixes pulumi.StringArrayInput `pulumi:"pathPrefixes"`
+	// Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+	ReleaseAfterDaysSinceLastAccess pulumi.IntInput `pulumi:"releaseAfterDaysSinceLastAccess"`
+}
+
+func (GetFileStorageLustreFileSystemTieringConfigurationRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationRuleArgs) ToGetFileStorageLustreFileSystemTieringConfigurationRuleOutput() GetFileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return i.ToGetFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationRuleArgs) ToGetFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemTieringConfigurationRuleOutput)
+}
+
+// GetFileStorageLustreFileSystemTieringConfigurationRuleArrayInput is an input type that accepts GetFileStorageLustreFileSystemTieringConfigurationRuleArray and GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemTieringConfigurationRuleArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemTieringConfigurationRuleArray{ GetFileStorageLustreFileSystemTieringConfigurationRuleArgs{...} }
+type GetFileStorageLustreFileSystemTieringConfigurationRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput() GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput
+	ToGetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationRuleArray []GetFileStorageLustreFileSystemTieringConfigurationRuleInput
+
+func (GetFileStorageLustreFileSystemTieringConfigurationRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationRuleArray) ToGetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput() GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemTieringConfigurationRuleArray) ToGetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationRuleOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) ToGetFileStorageLustreFileSystemTieringConfigurationRuleOutput() GetFileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) ToGetFileStorageLustreFileSystemTieringConfigurationRuleOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return o
+}
+
+// The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfigurationRule) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) ArchiveAfterDaysSinceLastAccess() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfigurationRule) int {
+		return v.ArchiveAfterDaysSinceLastAccess
+	}).(pulumi.IntOutput)
+}
+
+// Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) MinSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfigurationRule) string { return v.MinSizeInBytes }).(pulumi.StringOutput)
+}
+
+// One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) PathPrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfigurationRule) []string { return v.PathPrefixes }).(pulumi.StringArrayOutput)
+}
+
+// Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleOutput) ReleaseAfterDaysSinceLastAccess() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemTieringConfigurationRule) int {
+		return v.ReleaseAfterDaysSinceLastAccess
+	}).(pulumi.IntOutput)
+}
+
+type GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) ToGetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput() GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) ToGetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemTieringConfigurationRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemTieringConfigurationRule {
+		return vs[0].([]GetFileStorageLustreFileSystemTieringConfigurationRule)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemTieringConfigurationRuleOutput)
+}
+
 type GetFileStorageLustreFileSystemsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -2410,6 +3006,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem struct {
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfigurations []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration `pulumi:"tieringConfigurations"`
 	// The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd string `pulumi:"timeBillingCycleEnd"`
 	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
@@ -2478,6 +3076,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArgs struct {
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+	TieringConfigurations GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayInput `pulumi:"tieringConfigurations"`
 	// The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
 	TimeBillingCycleEnd pulumi.StringInput `pulumi:"timeBillingCycleEnd"`
 	// The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
@@ -2684,6 +3284,13 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) Sys
 	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) map[string]string {
 		return v.SystemTags
 	}).(pulumi.StringMapOutput)
+}
+
+// Tiering configuration for a Lustre file system. Tiering archives eligible file data to Object Storage while keeping files visible at their original Lustre paths, and restores archived data transparently when accessed. When `policyMode` is `CUSTOM`, this object includes the custom policy rules configured for the file system. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) TieringConfigurations() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration {
+		return v.TieringConfigurations
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput)
 }
 
 // The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
@@ -3414,6 +4021,281 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashC
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfiguration {
 		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfiguration)[vs[1].(int)]
 	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration struct {
+	// Whether tiering is enabled for the Lustre file system.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+	PolicyMode string `pulumi:"policyMode"`
+	// Service-computed number of custom tiering policy rules.
+	RuleCount int `pulumi:"ruleCount"`
+	// Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+	Rules []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule `pulumi:"rules"`
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs{...}
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs struct {
+	// Whether tiering is enabled for the Lustre file system.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+	PolicyMode pulumi.StringInput `pulumi:"policyMode"`
+	// Service-computed number of custom tiering policy rules.
+	RuleCount pulumi.IntInput `pulumi:"ruleCount"`
+	// Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+	Rules GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayInput `pulumi:"rules"`
+}
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput)
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArray and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArray{ GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs{...} }
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArray []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationInput
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput {
+	return o
+}
+
+// Whether tiering is enabled for the Lustre file system.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the service default policy rule or custom policy rules are used. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules configured in `rules`.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput) PolicyMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration) string {
+		return v.PolicyMode
+	}).(pulumi.StringOutput)
+}
+
+// Service-computed number of custom tiering policy rules.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput) RuleCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration) int {
+		return v.RuleCount
+	}).(pulumi.IntOutput)
+}
+
+// Custom tiering policy rules configured for the Lustre file system. This property is only applicable when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, the service applies the built-in tiering policy rule instead. An enabled custom policy contains 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput) Rules() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration) []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule {
+		return v.Rules
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration {
+		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfiguration)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule struct {
+	// The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+	Action string `pulumi:"action"`
+	// Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+	ArchiveAfterDaysSinceLastAccess int `pulumi:"archiveAfterDaysSinceLastAccess"`
+	// Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+	MinSizeInBytes string `pulumi:"minSizeInBytes"`
+	// One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+	PathPrefixes []string `pulumi:"pathPrefixes"`
+	// Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+	ReleaseAfterDaysSinceLastAccess int `pulumi:"releaseAfterDaysSinceLastAccess"`
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs{...}
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs struct {
+	// The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+	ArchiveAfterDaysSinceLastAccess pulumi.IntInput `pulumi:"archiveAfterDaysSinceLastAccess"`
+	// Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+	MinSizeInBytes pulumi.StringInput `pulumi:"minSizeInBytes"`
+	// One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+	PathPrefixes pulumi.StringArrayInput `pulumi:"pathPrefixes"`
+	// Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+	ReleaseAfterDaysSinceLastAccess pulumi.IntInput `pulumi:"releaseAfterDaysSinceLastAccess"`
+}
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput)
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArray and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArray{ GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs{...} }
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArray []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleInput
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput {
+	return o
+}
+
+// The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) ArchiveAfterDaysSinceLastAccess() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule) int {
+		return v.ArchiveAfterDaysSinceLastAccess
+	}).(pulumi.IntOutput)
+}
+
+// Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) MinSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule) string {
+		return v.MinSizeInBytes
+	}).(pulumi.StringOutput)
+}
+
+// One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) PathPrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule) []string {
+		return v.PathPrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput) ReleaseAfterDaysSinceLastAccess() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule) int {
+		return v.ReleaseAfterDaysSinceLastAccess
+	}).(pulumi.IntOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule {
+		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRule)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput)
 }
 
 type GetFileStorageObjectStorageLinkSyncJobsFilter struct {
@@ -4379,6 +5261,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemRootSquashConfigurationInput)(nil)).Elem(), FileStorageLustreFileSystemRootSquashConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemRootSquashConfigurationPtrInput)(nil)).Elem(), FileStorageLustreFileSystemRootSquashConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemTieringConfigurationInput)(nil)).Elem(), FileStorageLustreFileSystemTieringConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemTieringConfigurationPtrInput)(nil)).Elem(), FileStorageLustreFileSystemTieringConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemTieringConfigurationRuleInput)(nil)).Elem(), FileStorageLustreFileSystemTieringConfigurationRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemTieringConfigurationRuleArrayInput)(nil)).Elem(), FileStorageLustreFileSystemTieringConfigurationRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs{})
@@ -4403,6 +5289,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemRootSquashConfigurationInput)(nil)).Elem(), GetFileStorageLustreFileSystemRootSquashConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemRootSquashConfigurationArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemRootSquashConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfigurationInput)(nil)).Elem(), GetFileStorageLustreFileSystemTieringConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfigurationArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemTieringConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfigurationRuleInput)(nil)).Elem(), GetFileStorageLustreFileSystemTieringConfigurationRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemTieringConfigurationRuleArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemTieringConfigurationRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsFilterInput)(nil)).Elem(), GetFileStorageLustreFileSystemsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsFilterArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionArgs{})
@@ -4421,6 +5311,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsFilterInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsFilterArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionArgs{})
@@ -4445,6 +5339,10 @@ func init() {
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemRootSquashConfigurationOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemRootSquashConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemTieringConfigurationOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemTieringConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemTieringConfigurationRuleOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemTieringConfigurationRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput{})
 	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput{})
@@ -4469,6 +5367,10 @@ func init() {
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemRootSquashConfigurationOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemRootSquashConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemTieringConfigurationOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemTieringConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemTieringConfigurationRuleOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemTieringConfigurationRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsFilterOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionOutput{})
@@ -4487,6 +5389,10 @@ func init() {
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemTieringConfigurationRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsFilterOutput{})
 	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionOutput{})

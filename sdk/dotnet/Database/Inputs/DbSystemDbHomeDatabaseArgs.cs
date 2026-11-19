@@ -168,6 +168,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<bool>? IsActiveDataGuardEnabled { get; set; }
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
         [Input("keyStoreId")]

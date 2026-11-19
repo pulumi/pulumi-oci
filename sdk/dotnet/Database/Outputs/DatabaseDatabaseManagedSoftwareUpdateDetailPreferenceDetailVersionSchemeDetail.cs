@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail
     {
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        public readonly bool? IsOlderVersionAcknowledged;
+        /// <summary>
         /// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
         /// </summary>
         public readonly string? MajorVersion;
@@ -28,12 +32,15 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail(
+            bool? isOlderVersionAcknowledged,
+
             string? majorVersion,
 
             string? source,
 
             string? versionPreference)
         {
+            IsOlderVersionAcknowledged = isOlderVersionAcknowledged;
             MajorVersion = majorVersion;
             Source = source;
             VersionPreference = versionPreference;

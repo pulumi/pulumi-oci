@@ -32378,6 +32378,10 @@ export namespace Database {
 
     export interface AutonomousDatabaseConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl?: pulumi.Input<string | undefined>;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl?: pulumi.Input<string | undefined>;
@@ -32401,6 +32405,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl?: pulumi.Input<string | undefined>;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl?: pulumi.Input<string | undefined>;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -32431,6 +32439,10 @@ export namespace Database {
          * (Updatable) Compute used by database tools.
          */
         computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Specifies the estimated number of concurrent user sessions (range 1–64 for Graph, 1–256 for OML, default 1). applies only to OML and Graph tools—not applicable to DLA, Data Transforms, or Spatial.
+         */
+        estimatedConcurrentSessions?: pulumi.Input<number | undefined>;
         /**
          * (Updatable) Indicates whether tool is enabled.
          */
@@ -32702,6 +32714,10 @@ export namespace Database {
 
     export interface AutonomousDatabasePublicConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl?: pulumi.Input<string | undefined>;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl?: pulumi.Input<string | undefined>;
@@ -32725,6 +32741,10 @@ export namespace Database {
          * Oracle Machine Learning user management URL.
          */
         machineLearningUserManagementUrl?: pulumi.Input<string | undefined>;
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl?: pulumi.Input<string | undefined>;
         /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
@@ -32893,6 +32913,10 @@ export namespace Database {
 
     export interface AutonomousDatabaseVanityConnectionUrl {
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        a2aUrl?: pulumi.Input<string | undefined>;
+        /**
          * Oracle Application Express (APEX) URL.
          */
         apexUrl?: pulumi.Input<string | undefined>;
@@ -32917,6 +32941,10 @@ export namespace Database {
          */
         machineLearningUserManagementUrl?: pulumi.Input<string | undefined>;
         /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+         */
+        mcpUrl?: pulumi.Input<string | undefined>;
+        /**
          * The URL of the MongoDB API for the Autonomous Database.
          */
         mongoDbUrl?: pulumi.Input<string | undefined>;
@@ -32924,6 +32952,10 @@ export namespace Database {
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
          */
         ordsUrl?: pulumi.Input<string | undefined>;
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         */
+        spatialStudioUrl?: pulumi.Input<string | undefined>;
         /**
          * Oracle SQL Developer Web URL.
          */
@@ -34256,6 +34288,10 @@ export namespace Database {
 
     export interface DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
         /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
+        /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
         majorVersion?: pulumi.Input<string | undefined>;
@@ -34486,6 +34522,10 @@ export namespace Database {
     }
 
     export interface DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+        /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          */
@@ -34768,10 +34808,14 @@ export namespace Database {
         databaseSoftwareImageId?: pulumi.Input<string | undefined>;
         /**
          * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         */
+        dbVersion?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the database. This value is used for downstream Database service APIs that requires older-version acknowledgement.
          *
          * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          */
-        dbVersion?: pulumi.Input<string | undefined>;
+        isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
         /**
          * Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
          */
@@ -34944,10 +34988,6 @@ export namespace Database {
          * The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
          */
         ncharacterSet?: pulumi.Input<string | undefined>;
-        /**
-         * List of one-off patches for Database Homes.
-         */
-        oneOffPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
          * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
          */
@@ -35361,6 +35401,10 @@ export namespace Database {
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+         */
+        isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          */
@@ -36114,6 +36158,17 @@ export namespace Database {
          * (Updatable) The network bonding mode for the Exadata infrastructure.
          */
         drNetworkBondingMode?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ExadataInfrastructureSslInspectionConfiguration {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+         */
+        certificateAuthorityId?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates whether SSL inspection is enabled for the Exadata infrastructure.
+         */
+        isEnabled: pulumi.Input<boolean>;
     }
 
     export interface ExadataInfrastructureStorageContact {
@@ -86279,9 +86334,37 @@ export namespace LoadBalancer {
 
     export interface BackendSetHealthChecker {
         /**
+         * (Updatable) You can configure this fallback backend weight when dynamic backend weights are enabled and the backend's HTTP health check response does not include a valid `X-Dynamic-Backend-Weight` header value.
+         *
+         * This value must be an integer from `1` through `100`.
+         *
+         * Setting `defaultWeight` does not enable dynamic backend weights. To enable dynamic backend weights, set `isDynamicBackendWeightEnabled` to `true`. If your request includes `defaultWeight`, you must also set `isDynamicBackendWeightEnabled` to `true`; otherwise, the request is rejected.
+         *
+         * On create, if dynamic backend weights are enabled and this field is omitted or null, the service uses `1`.
+         *
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         *
+         * Example: `1`
+         */
+        defaultWeight?: pulumi.Input<number | undefined>;
+        /**
          * (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
          */
         intervalMs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) You can enable dynamic backend weights for HTTP health checks.
+         *
+         * When enabled, the load balancer reads the `X-Dynamic-Backend-Weight` header from each backend's HTTP health check response. The load balancer uses that value as the backend's effective weight when distributing traffic.
+         *
+         * A valid header value is an integer from `0` through `100`.
+         *
+         * If the backend response does not include this header, or includes an invalid value, the load balancer uses `defaultWeight`.
+         *
+         * If omitted during create, the default is `false`.
+         *
+         * For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+         */
+        isDynamicBackendWeightEnabled?: pulumi.Input<boolean | undefined>;
         /**
          * (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
          *
@@ -86801,22 +86884,25 @@ export namespace LoadBalancer {
 
     export interface LoadBalancerIpAddressDetailReservedIp {
         /**
-         * Ocid of the Reserved IP/Public Ip created with VCN.
+         * Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
          */
         id?: pulumi.Input<string | undefined>;
     }
 
     export interface LoadBalancerReservedIp {
         /**
-         * (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+         * (Updatable) Ocid of the Reserved IP (Public IP or Private IP) created with VCN.
          *
          * Reserved IPs are IPs which already registered using VCN API.
          *
-         * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+         * For public load balancers, create a reserved Public IP and pass the OCID in this field.
+         * For private load balancers, create a reserved Private IP and pass the OCID in this field.
+         * Load balancer will be configured to listen to traffic on this IP.
          *
          * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
          *
-         * Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * Public IP Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * Private IP Example: "ocid1.privateip.oc1.phx.unique_ID"
          *
          * IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
          */
@@ -88918,6 +89004,48 @@ export namespace Lustre {
          * (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
          */
         squashUid?: pulumi.Input<string | undefined>;
+    }
+
+    export interface FileStorageLustreFileSystemTieringConfiguration {
+        /**
+         * (Updatable) Whether tiering is enabled for the Lustre file system. If unspecified, defaults to `false`.
+         */
+        isEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * (Updatable) Whether the service default policy rule or custom policy rules are used. If unspecified, defaults to `DEFAULT`. When set to `DEFAULT`, the service applies the built-in tiering policy rule, which archives files larger than 1 MB that have not been accessed for more than 30 days. When set to `CUSTOM`, the service uses the policy rules specified in `rules`.
+         */
+        policyMode?: pulumi.Input<string | undefined>;
+        /**
+         * Service-computed number of custom tiering policy rules.
+         */
+        ruleCount?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Custom tiering policy rules. Specify this only when `policyMode` is `CUSTOM`. When `policyMode` is `DEFAULT`, omit this property; the service applies the built-in tiering policy rule instead. An enabled custom policy must contain 1 to 50 rules. When tiering is disabled, custom policy rules are optional.
+         */
+        rules?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemTieringConfigurationRule>[] | undefined>;
+    }
+
+    export interface FileStorageLustreFileSystemTieringConfigurationRule {
+        /**
+         * (Updatable) The action to apply to files whose paths match this rule. `ARCHIVE` makes matching files eligible to be archived to Object Storage. `SKIP` excludes matching files from being archived.
+         */
+        action: pulumi.Input<string>;
+        /**
+         * (Updatable) Required for ARCHIVE rules. Archive files that have not been accessed for this many days. Must not be specified for SKIP rules.
+         */
+        archiveAfterDaysSinceLastAccess?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Optional minimum file size in bytes for an ARCHIVE rule to apply. Must not be specified for SKIP rules.
+         */
+        minSizeInBytes?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) One or more absolute path prefixes in the Lustre file system to which this rule applies. The service preserves the order of path prefixes in responses. Each path prefix can contain up to 4096 characters. Each rule must contain at least one path prefix, and a tiering policy can contain up to 100 path prefixes total across all rules.
+         */
+        pathPrefixes: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Required for ARCHIVE rules. Release archived file data from files that have not been accessed for this many days. This value must be greater than `archiveAfterDaysSinceLastAccess`. Must not be specified for SKIP rules.
+         */
+        releaseAfterDaysSinceLastAccess?: pulumi.Input<number | undefined>;
     }
 
     export interface GetFileStorageAvailableMaintenanceScheduleStartTimesFilter {

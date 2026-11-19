@@ -45,6 +45,7 @@ class CloudVmClusterArgs:
                  file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -174,6 +175,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_local_backup_enabled is not None:
             pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_sparse_diskgroup_enabled is not None:
             pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if license_model is not None:
@@ -520,6 +523,15 @@ class CloudVmClusterArgs:
         pulumi.set(self, "is_local_backup_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
+
+    @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
     def is_sparse_diskgroup_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -793,6 +805,7 @@ class _CloudVmClusterState:
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheArgs']]]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -979,6 +992,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "iorm_config_caches", iorm_config_caches)
         if is_local_backup_enabled is not None:
             pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+        if is_older_version_acknowledged is not None:
+            pulumi.set(__self__, "is_older_version_acknowledged", is_older_version_acknowledged)
         if is_sparse_diskgroup_enabled is not None:
             pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if last_update_history_entry_id is not None:
@@ -1389,6 +1404,15 @@ class _CloudVmClusterState:
     @is_local_backup_enabled.setter
     def is_local_backup_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_local_backup_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_older_version_acknowledged")
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_older_version_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
@@ -1915,6 +1939,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2232,6 +2257,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2299,6 +2325,7 @@ class CloudVmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'hostname'")
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
+            __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
             __props__.__dict__["is_sparse_diskgroup_enabled"] = is_sparse_diskgroup_enabled
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
@@ -2384,6 +2411,7 @@ class CloudVmCluster(pulumi.CustomResource):
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigCacheArgs', 'CloudVmClusterIormConfigCacheArgsDict', 'outputs.CloudVmClusterIormConfigCache']]]]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2552,6 +2580,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["iorm_config_caches"] = iorm_config_caches
         __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
+        __props__.__dict__["is_older_version_acknowledged"] = is_older_version_acknowledged
         __props__.__dict__["is_sparse_diskgroup_enabled"] = is_sparse_diskgroup_enabled
         __props__.__dict__["last_update_history_entry_id"] = last_update_history_entry_id
         __props__.__dict__["license_model"] = license_model
@@ -2624,6 +2653,7 @@ class CloudVmCluster(pulumi.CustomResource):
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             iorm_config_caches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigCacheArgs', 'CloudVmClusterIormConfigCacheArgsDict', 'outputs.CloudVmClusterIormConfigCache']]]]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_older_version_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
             is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2692,6 +2722,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__["hostname"] = hostname
         __props__["iormConfigCaches"] = iorm_config_caches
         __props__["isLocalBackupEnabled"] = is_local_backup_enabled
+        __props__["isOlderVersionAcknowledged"] = is_older_version_acknowledged
         __props__["isSparseDiskgroupEnabled"] = is_sparse_diskgroup_enabled
         __props__["lastUpdateHistoryEntryId"] = last_update_history_entry_id
         __props__["licenseModel"] = license_model
@@ -2958,6 +2989,11 @@ class CloudVmCluster(pulumi.CustomResource):
         (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         """
         return pulumi.get(self, "is_local_backup_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isOlderVersionAcknowledged")
+    def is_older_version_acknowledged(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_older_version_acknowledged")
 
     @_builtins.property
     @pulumi.getter(name="isSparseDiskgroupEnabled")

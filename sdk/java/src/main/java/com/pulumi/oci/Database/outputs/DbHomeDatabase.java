@@ -115,11 +115,6 @@ public final class DbHomeDatabase {
      */
     private @Nullable String ncharacterSet;
     /**
-     * @return List of one-off patches for Database Homes.
-     * 
-     */
-    private @Nullable List<String> oneOffPatches;
-    /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
@@ -313,13 +308,6 @@ public final class DbHomeDatabase {
         return Optional.ofNullable(this.ncharacterSet);
     }
     /**
-     * @return List of one-off patches for Database Homes.
-     * 
-     */
-    public List<String> oneOffPatches() {
-        return this.oneOffPatches == null ? List.of() : this.oneOffPatches;
-    }
-    /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
@@ -426,7 +414,6 @@ public final class DbHomeDatabase {
         private @Nullable String kmsKeyVersionId;
         private @Nullable String lifecycleDetails;
         private @Nullable String ncharacterSet;
-        private @Nullable List<String> oneOffPatches;
         private @Nullable String pdbName;
         private @Nullable List<String> pluggableDatabases;
         private @Nullable String recoveryApplianceVpcPassword;
@@ -461,7 +448,6 @@ public final class DbHomeDatabase {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
-    	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
@@ -601,15 +587,6 @@ public final class DbHomeDatabase {
             return this;
         }
         @CustomType.Setter
-        public Builder oneOffPatches(@Nullable List<String> oneOffPatches) {
-
-            this.oneOffPatches = oneOffPatches;
-            return this;
-        }
-        public Builder oneOffPatches(String... oneOffPatches) {
-            return oneOffPatches(List.of(oneOffPatches));
-        }
-        @CustomType.Setter
         public Builder pdbName(@Nullable String pdbName) {
 
             this.pdbName = pdbName;
@@ -700,7 +677,6 @@ public final class DbHomeDatabase {
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.ncharacterSet = ncharacterSet;
-            _resultValue.oneOffPatches = oneOffPatches;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;

@@ -205,6 +205,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.ExadbVmClusterIormConfigCache>> IormConfigCaches { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Output("isOlderVersionAcknowledged")]
+        public Output<bool> IsOlderVersionAcknowledged { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         /// </summary>
         [Output("lastUpdateHistoryEntryId")]
@@ -537,6 +543,12 @@ namespace Pulumi.Oci.Database
         public Input<string> Hostname { get; set; } = null!;
 
         /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
+
+        /// <summary>
         /// (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         /// </summary>
         [Input("licenseModel")]
@@ -811,6 +823,12 @@ namespace Pulumi.Oci.Database
             get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.ExadbVmClusterIormConfigCacheGetArgs>());
             set => _iormConfigCaches = value;
         }
+
+        /// <summary>
+        /// Indicates whether the customer acknowledged the risk of selecting an older eligible database/GI version for the Exadata VM Cluster. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+        /// </summary>
+        [Input("isOlderVersionAcknowledged")]
+        public Input<bool>? IsOlderVersionAcknowledged { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.

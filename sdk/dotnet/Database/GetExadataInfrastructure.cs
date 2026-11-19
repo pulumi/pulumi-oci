@@ -321,6 +321,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Shape;
         /// <summary>
+        /// SSL inspection configuration for the Exadata infrastructure.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExadataInfrastructureSslInspectionConfigurationResult> SslInspectionConfigurations;
+        /// <summary>
         /// The current lifecycle state of the Exadata infrastructure.
         /// </summary>
         public readonly string State;
@@ -451,6 +455,8 @@ namespace Pulumi.Oci.Database
 
             string shape,
 
+            ImmutableArray<Outputs.GetExadataInfrastructureSslInspectionConfigurationResult> sslInspectionConfigurations,
+
             string state,
 
             int storageCount,
@@ -515,6 +521,7 @@ namespace Pulumi.Oci.Database
             NtpServers = ntpServers;
             RackSerialNumber = rackSerialNumber;
             Shape = shape;
+            SslInspectionConfigurations = sslInspectionConfigurations;
             State = state;
             StorageCount = storageCount;
             StorageServerType = storageServerType;

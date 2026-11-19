@@ -27,7 +27,9 @@ import * as utilities from "../utilities";
  * const testBackendSet = new oci.loadbalancer.BackendSet("test_backend_set", {
  *     healthChecker: {
  *         protocol: backendSetHealthCheckerProtocol,
+ *         defaultWeight: backendSetHealthCheckerDefaultWeight,
  *         intervalMs: backendSetHealthCheckerIntervalMs,
+ *         isDynamicBackendWeightEnabled: backendSetHealthCheckerIsDynamicBackendWeightEnabled,
  *         isForcePlainText: backendSetHealthCheckerIsForcePlainText,
  *         port: backendSetHealthCheckerPort,
  *         responseBodyRegex: backendSetHealthCheckerResponseBodyRegex,

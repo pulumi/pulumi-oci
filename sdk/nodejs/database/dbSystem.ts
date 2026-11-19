@@ -214,6 +214,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.DbSystemIormConfigCache[]>;
     /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    declare public readonly isOlderVersionAcknowledged: pulumi.Output<boolean>;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     declare public readonly kmsKeyId: pulumi.Output<string | undefined>;
@@ -427,6 +431,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["hostname"] = state?.hostname;
             resourceInputs["iormConfigCaches"] = state?.iormConfigCaches;
+            resourceInputs["isOlderVersionAcknowledged"] = state?.isOlderVersionAcknowledged;
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
             resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
@@ -512,6 +517,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["faultDomains"] = args?.faultDomains;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["isOlderVersionAcknowledged"] = args?.isOlderVersionAcknowledged;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
             resourceInputs["kmsKeyVersionId"] = args?.kmsKeyVersionId;
             resourceInputs["licenseModel"] = args?.licenseModel;
@@ -683,6 +689,10 @@ export interface DbSystemState {
      * The IORM settings of the Exadata DB system.
      */
     iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemIormConfigCache>[] | undefined>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
@@ -979,6 +989,10 @@ export interface DbSystemArgs {
      * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
      */
     hostname: pulumi.Input<string>;
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible database version for the DB System. This value is used for downstream Database service APIs that requires older-version acknowledgement.
+     */
+    isOlderVersionAcknowledged?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */

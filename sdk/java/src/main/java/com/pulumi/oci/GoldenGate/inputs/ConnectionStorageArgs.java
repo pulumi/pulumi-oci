@@ -147,6 +147,36 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     */
+    @Import(name="properties")
+    private @Nullable Output<String> properties;
+
+    /**
+     * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     */
+    public Optional<Output<String>> properties() {
+        return Optional.ofNullable(this.properties);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
+    @Import(name="propertiesSecretId")
+    private @Nullable Output<String> propertiesSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
+    public Optional<Output<String>> propertiesSecretId() {
+        return Optional.ofNullable(this.propertiesSecretId);
+    }
+
+    /**
      * (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
      * 
      */
@@ -254,6 +284,7 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
      * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
      * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
      * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
      * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
      * 
      */
@@ -266,11 +297,48 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
      * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
      * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
      * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
      * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
      * 
      */
     public Output<String> storageType() {
         return this.storageType;
+    }
+
+    /**
+     * (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated
+    @Import(name="trustStore")
+    private @Nullable Output<String> trustStore;
+
+    /**
+     * @return (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated
+    public Optional<Output<String>> trustStore() {
+        return Optional.ofNullable(this.trustStore);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    @Import(name="trustStoreSecretId")
+    private @Nullable Output<String> trustStoreSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    public Optional<Output<String>> trustStoreSecretId() {
+        return Optional.ofNullable(this.trustStoreSecretId);
     }
 
     private ConnectionStorageArgs() {}
@@ -284,6 +352,8 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
         this.container = $.container;
         this.endpoint = $.endpoint;
         this.projectId = $.projectId;
+        this.properties = $.properties;
+        this.propertiesSecretId = $.propertiesSecretId;
         this.region = $.region;
         this.schemeType = $.schemeType;
         this.secretAccessKey = $.secretAccessKey;
@@ -291,6 +361,8 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
         this.serviceAccountKeyFile = $.serviceAccountKeyFile;
         this.serviceAccountKeyFileSecretId = $.serviceAccountKeyFileSecretId;
         this.storageType = $.storageType;
+        this.trustStore = $.trustStore;
+        this.trustStoreSecretId = $.trustStoreSecretId;
     }
 
     public static Builder builder() {
@@ -490,6 +562,48 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param properties (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder properties(@Nullable Output<String> properties) {
+            $.properties = properties;
+            return this;
+        }
+
+        /**
+         * @param properties (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder properties(String properties) {
+            return properties(Output.of(properties));
+        }
+
+        /**
+         * @param propertiesSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * 
+         * @return builder
+         * 
+         */
+        public Builder propertiesSecretId(@Nullable Output<String> propertiesSecretId) {
+            $.propertiesSecretId = propertiesSecretId;
+            return this;
+        }
+
+        /**
+         * @param propertiesSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * 
+         * @return builder
+         * 
+         */
+        public Builder propertiesSecretId(String propertiesSecretId) {
+            return propertiesSecretId(Output.of(propertiesSecretId));
+        }
+
+        /**
          * @param region (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
          * 
          * @return builder
@@ -633,6 +747,7 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
          * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
          * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
          * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
          * 
          * @return builder
@@ -649,6 +764,7 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
          * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
          * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
          * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
          * 
          * @return builder
@@ -656,6 +772,54 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder storageType(String storageType) {
             return storageType(Output.of(storageType));
+        }
+
+        /**
+         * @param trustStore (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         * 
+         * @return builder
+         * 
+         * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+         * 
+         */
+        @Deprecated
+        public Builder trustStore(@Nullable Output<String> trustStore) {
+            $.trustStore = trustStore;
+            return this;
+        }
+
+        /**
+         * @param trustStore (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         * 
+         * @return builder
+         * 
+         * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+         * 
+         */
+        @Deprecated
+        public Builder trustStore(String trustStore) {
+            return trustStore(Output.of(trustStore));
+        }
+
+        /**
+         * @param trustStoreSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustStoreSecretId(@Nullable Output<String> trustStoreSecretId) {
+            $.trustStoreSecretId = trustStoreSecretId;
+            return this;
+        }
+
+        /**
+         * @param trustStoreSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            return trustStoreSecretId(Output.of(trustStoreSecretId));
         }
 
         public ConnectionStorageArgs build() {

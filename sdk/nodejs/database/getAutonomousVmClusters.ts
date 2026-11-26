@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: autonomousVmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     kmsType: autonomousVmClusterKmsType,
  *     state: autonomousVmClusterState,
  * });
  * ```
@@ -32,6 +33,7 @@ export function getAutonomousVmClusters(args: GetAutonomousVmClustersArgs, opts?
         "displayName": args.displayName,
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
+        "kmsType": args.kmsType,
         "state": args.state,
     }, opts);
 }
@@ -53,6 +55,10 @@ export interface GetAutonomousVmClustersArgs {
      */
     exadataInfrastructureId?: string;
     filters?: inputs.Database.GetAutonomousVmClustersFilter[];
+    /**
+     * A filter to return only resources that match the given kms exactly.
+     */
+    kmsType?: string;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
@@ -84,6 +90,7 @@ export interface GetAutonomousVmClustersResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly kmsType?: string;
     /**
      * The current state of the Autonomous VM cluster.
      */
@@ -104,6 +111,7 @@ export interface GetAutonomousVmClustersResult {
  *     compartmentId: compartmentId,
  *     displayName: autonomousVmClusterDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     kmsType: autonomousVmClusterKmsType,
  *     state: autonomousVmClusterState,
  * });
  * ```
@@ -115,6 +123,7 @@ export function getAutonomousVmClustersOutput(args: GetAutonomousVmClustersOutpu
         "displayName": args.displayName,
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
+        "kmsType": args.kmsType,
         "state": args.state,
     }, opts);
 }
@@ -136,6 +145,10 @@ export interface GetAutonomousVmClustersOutputArgs {
      */
     exadataInfrastructureId?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousVmClustersFilterArgs>[] | undefined>;
+    /**
+     * A filter to return only resources that match the given kms exactly.
+     */
+    kmsType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */

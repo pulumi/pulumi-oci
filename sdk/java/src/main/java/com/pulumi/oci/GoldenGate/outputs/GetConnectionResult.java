@@ -13,6 +13,7 @@ import com.pulumi.oci.GoldenGate.outputs.GetConnectionCatalog;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionLock;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionStorage;
+import com.pulumi.oci.GoldenGate.outputs.GetConnectionWarehouseStorage;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -23,7 +24,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionResult {
     /**
-     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * @return The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
      * 
      */
     private String accessKeyId;
@@ -34,12 +35,12 @@ public final class GetConnectionResult {
     @Deprecated
     private String accountKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
      * 
      */
     private String accountKeySecretId;
     /**
-     * @return Sets the Azure storage account name.
+     * @return The Azure Storage account name.
      * 
      */
     private String accountName;
@@ -431,7 +432,7 @@ public final class GetConnectionResult {
      */
     private String redisClusterId;
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     private String region;
@@ -479,7 +480,7 @@ public final class GetConnectionResult {
     @Deprecated
     private String secretAccessKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
      * 
      */
     private String secretAccessKeySecretId;
@@ -733,9 +734,7 @@ public final class GetConnectionResult {
      */
     private String trustStorePasswordSecretId;
     /**
-     * @return Secret OCID containing the trust store content.
-     * * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
-     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
      * 
      */
     private String trustStoreSecretId;
@@ -777,6 +776,16 @@ public final class GetConnectionResult {
      */
     private String walletSecretId;
     /**
+     * @return The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     * 
+     */
+    private String warehouseName;
+    /**
+     * @return Represents the warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     * 
+     */
+    private List<GetConnectionWarehouseStorage> warehouseStorages;
+    /**
      * @return * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
      * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
      * 
@@ -785,7 +794,7 @@ public final class GetConnectionResult {
 
     private GetConnectionResult() {}
     /**
-     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * @return The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
      * 
      */
     public String accessKeyId() {
@@ -800,14 +809,14 @@ public final class GetConnectionResult {
         return this.accountKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
      * 
      */
     public String accountKeySecretId() {
         return this.accountKeySecretId;
     }
     /**
-     * @return Sets the Azure storage account name.
+     * @return The Azure Storage account name.
      * 
      */
     public String accountName() {
@@ -1345,7 +1354,7 @@ public final class GetConnectionResult {
         return this.redisClusterId;
     }
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     public String region() {
@@ -1411,7 +1420,7 @@ public final class GetConnectionResult {
         return this.secretAccessKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
      * 
      */
     public String secretAccessKeySecretId() {
@@ -1757,9 +1766,7 @@ public final class GetConnectionResult {
         return this.trustStorePasswordSecretId;
     }
     /**
-     * @return Secret OCID containing the trust store content.
-     * * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
-     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
      * 
      */
     public String trustStoreSecretId() {
@@ -1815,6 +1822,20 @@ public final class GetConnectionResult {
      */
     public String walletSecretId() {
         return this.walletSecretId;
+    }
+    /**
+     * @return The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     * 
+     */
+    public String warehouseName() {
+        return this.warehouseName;
+    }
+    /**
+     * @return Represents the warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     * 
+     */
+    public List<GetConnectionWarehouseStorage> warehouseStorages() {
+        return this.warehouseStorages;
     }
     /**
      * @return * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
@@ -1973,6 +1994,8 @@ public final class GetConnectionResult {
         private String vaultId;
         private String wallet;
         private String walletSecretId;
+        private String warehouseName;
+        private List<GetConnectionWarehouseStorage> warehouseStorages;
         private String workspaceUrl;
         public Builder() {}
         public Builder(GetConnectionResult defaults) {
@@ -2116,6 +2139,8 @@ public final class GetConnectionResult {
     	      this.vaultId = defaults.vaultId;
     	      this.wallet = defaults.wallet;
     	      this.walletSecretId = defaults.walletSecretId;
+    	      this.warehouseName = defaults.warehouseName;
+    	      this.warehouseStorages = defaults.warehouseStorages;
     	      this.workspaceUrl = defaults.workspaceUrl;
         }
 
@@ -3259,6 +3284,25 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder warehouseName(String warehouseName) {
+            if (warehouseName == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "warehouseName");
+            }
+            this.warehouseName = warehouseName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder warehouseStorages(List<GetConnectionWarehouseStorage> warehouseStorages) {
+            if (warehouseStorages == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "warehouseStorages");
+            }
+            this.warehouseStorages = warehouseStorages;
+            return this;
+        }
+        public Builder warehouseStorages(GetConnectionWarehouseStorage... warehouseStorages) {
+            return warehouseStorages(List.of(warehouseStorages));
+        }
+        @CustomType.Setter
         public Builder workspaceUrl(String workspaceUrl) {
             if (workspaceUrl == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "workspaceUrl");
@@ -3407,6 +3451,8 @@ public final class GetConnectionResult {
             _resultValue.vaultId = vaultId;
             _resultValue.wallet = wallet;
             _resultValue.walletSecretId = walletSecretId;
+            _resultValue.warehouseName = warehouseName;
+            _resultValue.warehouseStorages = warehouseStorages;
             _resultValue.workspaceUrl = workspaceUrl;
             return _resultValue;
         }

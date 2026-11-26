@@ -27,7 +27,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, artifact_locations=None, auth_details=None, auth_secret=None, auth_secret_secret_id=None, auth_token=None, auth_token_secret_id=None, authentication_mode=None, authentication_type=None, azure_authority_host=None, azure_tenant_id=None, bootstrap_servers=None, catalogs=None, client_id=None, client_secret=None, client_secret_secret_id=None, cluster_endpoint=None, cluster_id=None, cluster_placement_group_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, key_store_type=None, lifecycle_details=None, locks=None, max_input_chars=None, model_key=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, provider_id=None, provider_type=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, rest_auth_secret_key=None, rest_auth_secret_key_secret_id=None, rest_endpoint=None, routing_method=None, rpc_cipher=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_attributes=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_use_resource_principal=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, storage_credential_name=None, storages=None, stream_pool_id=None, submit_mode=None, subnet_id=None, subscription_id=None, system_tags=None, technology_type=None, tenancy_id=None, tenant_id=None, time_created=None, time_updated=None, tls_ca_file=None, tls_certificate_key_file=None, tls_certificate_key_file_password=None, tls_certificate_key_file_password_secret_id=None, tls_certificate_key_file_secret_id=None, tls_protocol=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, trust_store_type=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None, workspace_url=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, artifact_locations=None, auth_details=None, auth_secret=None, auth_secret_secret_id=None, auth_token=None, auth_token_secret_id=None, authentication_mode=None, authentication_type=None, azure_authority_host=None, azure_tenant_id=None, bootstrap_servers=None, catalogs=None, client_id=None, client_secret=None, client_secret_secret_id=None, cluster_endpoint=None, cluster_id=None, cluster_placement_group_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, key_store_type=None, lifecycle_details=None, locks=None, max_input_chars=None, model_key=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, provider_id=None, provider_type=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, rest_auth_secret_key=None, rest_auth_secret_key_secret_id=None, rest_endpoint=None, routing_method=None, rpc_cipher=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_attributes=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_use_resource_principal=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, storage_credential_name=None, storages=None, stream_pool_id=None, submit_mode=None, subnet_id=None, subscription_id=None, system_tags=None, technology_type=None, tenancy_id=None, tenant_id=None, time_created=None, time_updated=None, tls_ca_file=None, tls_certificate_key_file=None, tls_certificate_key_file_password=None, tls_certificate_key_file_password_secret_id=None, tls_certificate_key_file_secret_id=None, tls_protocol=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, trust_store_type=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None, warehouse_name=None, warehouse_storages=None, workspace_url=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -445,6 +445,12 @@ class GetConnectionResult:
         if wallet_secret_id and not isinstance(wallet_secret_id, str):
             raise TypeError("Expected argument 'wallet_secret_id' to be a str")
         pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        if warehouse_name and not isinstance(warehouse_name, str):
+            raise TypeError("Expected argument 'warehouse_name' to be a str")
+        pulumi.set(__self__, "warehouse_name", warehouse_name)
+        if warehouse_storages and not isinstance(warehouse_storages, list):
+            raise TypeError("Expected argument 'warehouse_storages' to be a list")
+        pulumi.set(__self__, "warehouse_storages", warehouse_storages)
         if workspace_url and not isinstance(workspace_url, str):
             raise TypeError("Expected argument 'workspace_url' to be a str")
         pulumi.set(__self__, "workspace_url", workspace_url)
@@ -453,7 +459,7 @@ class GetConnectionResult:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> _builtins.str:
         """
-        Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -467,7 +473,7 @@ class GetConnectionResult:
     @pulumi.getter(name="accountKeySecretId")
     def account_key_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
         """
         return pulumi.get(self, "account_key_secret_id")
 
@@ -475,7 +481,7 @@ class GetConnectionResult:
     @pulumi.getter(name="accountName")
     def account_name(self) -> _builtins.str:
         """
-        Sets the Azure storage account name.
+        The Azure Storage account name.
         """
         return pulumi.get(self, "account_name")
 
@@ -1061,7 +1067,7 @@ class GetConnectionResult:
     @pulumi.getter
     def region(self) -> _builtins.str:
         """
-        The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
         """
         return pulumi.get(self, "region")
 
@@ -1127,7 +1133,7 @@ class GetConnectionResult:
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -1493,9 +1499,7 @@ class GetConnectionResult:
     @pulumi.getter(name="trustStoreSecretId")
     def trust_store_secret_id(self) -> _builtins.str:
         """
-        Secret OCID containing the trust store content.
-        * SPARK: Applicable when `security_protocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
-        * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
         """
         return pulumi.get(self, "trust_store_secret_id")
 
@@ -1553,6 +1557,22 @@ class GetConnectionResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
         return pulumi.get(self, "wallet_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseName")
+    def warehouse_name(self) -> _builtins.str:
+        """
+        The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        """
+        return pulumi.get(self, "warehouse_name")
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseStorages")
+    def warehouse_storages(self) -> Sequence['outputs.GetConnectionWarehouseStorageResult']:
+        """
+        Represents the warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        """
+        return pulumi.get(self, "warehouse_storages")
 
     @_builtins.property
     @pulumi.getter(name="workspaceUrl")
@@ -1709,6 +1729,8 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             vault_id=self.vault_id,
             wallet=self.wallet,
             wallet_secret_id=self.wallet_secret_id,
+            warehouse_name=self.warehouse_name,
+            warehouse_storages=self.warehouse_storages,
             workspace_url=self.workspace_url)
 
 
@@ -1877,6 +1899,8 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
         vault_id=pulumi.get(__ret__, 'vault_id'),
         wallet=pulumi.get(__ret__, 'wallet'),
         wallet_secret_id=pulumi.get(__ret__, 'wallet_secret_id'),
+        warehouse_name=pulumi.get(__ret__, 'warehouse_name'),
+        warehouse_storages=pulumi.get(__ret__, 'warehouse_storages'),
         workspace_url=pulumi.get(__ret__, 'workspace_url'))
 def get_connection_output(connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionResult]:
@@ -2042,4 +2066,6 @@ def get_connection_output(connection_id: pulumi.Input[Optional[_builtins.str]] =
         vault_id=pulumi.get(__response__, 'vault_id'),
         wallet=pulumi.get(__response__, 'wallet'),
         wallet_secret_id=pulumi.get(__response__, 'wallet_secret_id'),
+        warehouse_name=pulumi.get(__response__, 'warehouse_name'),
+        warehouse_storages=pulumi.get(__response__, 'warehouse_storages'),
         workspace_url=pulumi.get(__response__, 'workspace_url')))

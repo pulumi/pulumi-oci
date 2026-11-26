@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetInstancePoolInstanceMaintenancePolicy;
 import com.pulumi.oci.Core.outputs.GetInstancePoolLifecycleManagement;
 import com.pulumi.oci.Core.outputs.GetInstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.GetInstancePoolOverridePolicy;
@@ -63,6 +64,11 @@ public final class GetInstancePoolResult {
      * 
      */
     private String instanceHostnameFormatter;
+    /**
+     * @return Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    private List<GetInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
@@ -177,6 +183,13 @@ public final class GetInstancePoolResult {
         return this.instanceHostnameFormatter;
     }
     /**
+     * @return Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    public List<GetInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies() {
+        return this.instanceMaintenancePolicies;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
      */
@@ -259,6 +272,7 @@ public final class GetInstancePoolResult {
         private String instanceConfigurationId;
         private String instanceDisplayNameFormatter;
         private String instanceHostnameFormatter;
+        private List<GetInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies;
         private String instancePoolId;
         private List<GetInstancePoolLifecycleManagement> lifecycleManagements;
         private List<GetInstancePoolLoadBalancer> loadBalancers;
@@ -281,6 +295,7 @@ public final class GetInstancePoolResult {
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
     	      this.instanceDisplayNameFormatter = defaults.instanceDisplayNameFormatter;
     	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
+    	      this.instanceMaintenancePolicies = defaults.instanceMaintenancePolicies;
     	      this.instancePoolId = defaults.instancePoolId;
     	      this.lifecycleManagements = defaults.lifecycleManagements;
     	      this.loadBalancers = defaults.loadBalancers;
@@ -371,6 +386,17 @@ public final class GetInstancePoolResult {
             }
             this.instanceHostnameFormatter = instanceHostnameFormatter;
             return this;
+        }
+        @CustomType.Setter
+        public Builder instanceMaintenancePolicies(List<GetInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies) {
+            if (instanceMaintenancePolicies == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "instanceMaintenancePolicies");
+            }
+            this.instanceMaintenancePolicies = instanceMaintenancePolicies;
+            return this;
+        }
+        public Builder instanceMaintenancePolicies(GetInstancePoolInstanceMaintenancePolicy... instanceMaintenancePolicies) {
+            return instanceMaintenancePolicies(List.of(instanceMaintenancePolicies));
         }
         @CustomType.Setter
         public Builder instancePoolId(String instancePoolId) {
@@ -468,6 +494,7 @@ public final class GetInstancePoolResult {
             _resultValue.instanceConfigurationId = instanceConfigurationId;
             _resultValue.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
+            _resultValue.instanceMaintenancePolicies = instanceMaintenancePolicies;
             _resultValue.instancePoolId = instancePoolId;
             _resultValue.lifecycleManagements = lifecycleManagements;
             _resultValue.loadBalancers = loadBalancers;

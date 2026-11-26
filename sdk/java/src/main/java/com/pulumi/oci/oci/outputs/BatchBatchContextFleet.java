@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.BatchBatchContextFleetReservation;
 import com.pulumi.oci.oci.outputs.BatchBatchContextFleetShape;
 import java.lang.Integer;
 import java.lang.String;
@@ -29,6 +30,11 @@ public final class BatchBatchContextFleet {
      * 
      */
     private String name;
+    /**
+     * @return Reservation selection for initial provisioning of a fleet.
+     * 
+     */
+    private @Nullable BatchBatchContextFleetReservation reservation;
     /**
      * @return Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
      * 
@@ -71,6 +77,13 @@ public final class BatchBatchContextFleet {
         return this.name;
     }
     /**
+     * @return Reservation selection for initial provisioning of a fleet.
+     * 
+     */
+    public Optional<BatchBatchContextFleetReservation> reservation() {
+        return Optional.ofNullable(this.reservation);
+    }
+    /**
      * @return Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
      * 
      */
@@ -107,6 +120,7 @@ public final class BatchBatchContextFleet {
         private @Nullable String details;
         private Integer maxConcurrentTasks;
         private String name;
+        private @Nullable BatchBatchContextFleetReservation reservation;
         private BatchBatchContextFleetShape shape;
         private @Nullable String state;
         private String type;
@@ -116,6 +130,7 @@ public final class BatchBatchContextFleet {
     	      this.details = defaults.details;
     	      this.maxConcurrentTasks = defaults.maxConcurrentTasks;
     	      this.name = defaults.name;
+    	      this.reservation = defaults.reservation;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
@@ -141,6 +156,12 @@ public final class BatchBatchContextFleet {
               throw new MissingRequiredPropertyException("BatchBatchContextFleet", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder reservation(@Nullable BatchBatchContextFleetReservation reservation) {
+
+            this.reservation = reservation;
             return this;
         }
         @CustomType.Setter
@@ -170,6 +191,7 @@ public final class BatchBatchContextFleet {
             _resultValue.details = details;
             _resultValue.maxConcurrentTasks = maxConcurrentTasks;
             _resultValue.name = name;
+            _resultValue.reservation = reservation;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.type = type;

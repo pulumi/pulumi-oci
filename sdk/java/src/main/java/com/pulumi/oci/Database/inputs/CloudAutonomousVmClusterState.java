@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterKeyManagementSystemDetailArgs;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs;
@@ -411,6 +412,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
      */
     public Optional<Output<Boolean>> isMtlsEnabledVmCluster() {
         return Optional.ofNullable(this.isMtlsEnabledVmCluster);
+    }
+
+    /**
+     * Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    @Import(name="keyManagementSystemDetails")
+    private @Nullable Output<List<CloudAutonomousVmClusterKeyManagementSystemDetailArgs>> keyManagementSystemDetails;
+
+    /**
+     * @return Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    public Optional<Output<List<CloudAutonomousVmClusterKeyManagementSystemDetailArgs>>> keyManagementSystemDetails() {
+        return Optional.ofNullable(this.keyManagementSystemDetails);
     }
 
     /**
@@ -1084,6 +1100,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.freeformTags = $.freeformTags;
         this.hostname = $.hostname;
         this.isMtlsEnabledVmCluster = $.isMtlsEnabledVmCluster;
+        this.keyManagementSystemDetails = $.keyManagementSystemDetails;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.lastUpdateHistoryEntryId = $.lastUpdateHistoryEntryId;
         this.licenseModel = $.licenseModel;
@@ -1700,6 +1717,37 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
          */
         public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
             return isMtlsEnabledVmCluster(Output.of(isMtlsEnabledVmCluster));
+        }
+
+        /**
+         * @param keyManagementSystemDetails Autonomous VM Cluster Key Management System details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyManagementSystemDetails(@Nullable Output<List<CloudAutonomousVmClusterKeyManagementSystemDetailArgs>> keyManagementSystemDetails) {
+            $.keyManagementSystemDetails = keyManagementSystemDetails;
+            return this;
+        }
+
+        /**
+         * @param keyManagementSystemDetails Autonomous VM Cluster Key Management System details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyManagementSystemDetails(List<CloudAutonomousVmClusterKeyManagementSystemDetailArgs> keyManagementSystemDetails) {
+            return keyManagementSystemDetails(Output.of(keyManagementSystemDetails));
+        }
+
+        /**
+         * @param keyManagementSystemDetails Autonomous VM Cluster Key Management System details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyManagementSystemDetails(CloudAutonomousVmClusterKeyManagementSystemDetailArgs... keyManagementSystemDetails) {
+            return keyManagementSystemDetails(List.of(keyManagementSystemDetails));
         }
 
         /**

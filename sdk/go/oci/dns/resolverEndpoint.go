@@ -19,6 +19,24 @@ import (
 //
 // Creates a new resolver endpoint in the same compartment as the resolver.
 //
+// ## Dependency ordering
+//
+// With OCI provider v8.16.0 or later, the
+// `Core.getCnvDnsResolverAssociation`
+// data source waits for the VCN's resolver association to become available. Use its
+// `dnsResolverId` directly for endpoints and resolver configuration. Endpoints
+// must not depend on the resolver configuration resource whose rules reference
+// those endpoints, because that would create a dependency cycle.
+//
+// Reference the forwarding endpoint's `name` in `sourceEndpointName` and the
+// destination listening endpoint's `listeningAddress` in `destinationAddresses`.
+// These references order rule configuration after endpoint creation and rule
+// removal before endpoint deletion. When using modules, expose endpoint names and
+// addresses as outputs and use them to configure rules in the calling module.
+//
+// See the runnable resolver example
+// and the resolver reference.
+//
 // ## Example Usage
 //
 // ```go
@@ -37,7 +55,7 @@ import (
 //				IsForwarding:       pulumi.Any(resolverEndpointIsForwarding),
 //				IsListening:        pulumi.Any(resolverEndpointIsListening),
 //				Name:               pulumi.Any(resolverEndpointName),
-//				ResolverId:         pulumi.Any(testResolver.Id),
+//				ResolverId:         pulumi.Any(testVcnDnsResolverAssociation.DnsResolverId),
 //				SubnetId:           pulumi.Any(testSubnet.Id),
 //				Scope:              pulumi.String("PRIVATE"),
 //				DefinedTags:        pulumi.Any(resolverEndpointDefinedTags),

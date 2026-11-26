@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.CloudAutonomousVmClusterArgs;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterState;
+import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterKeyManagementSystemDetail;
 import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindowDetails;
 import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig;
@@ -480,6 +481,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Boolean> isMtlsEnabledVmCluster() {
         return this.isMtlsEnabledVmCluster;
+    }
+    /**
+     * Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    @Export(name="keyManagementSystemDetails", refs={List.class,CloudAutonomousVmClusterKeyManagementSystemDetail.class}, tree="[0,1]")
+    private Output<List<CloudAutonomousVmClusterKeyManagementSystemDetail>> keyManagementSystemDetails;
+
+    /**
+     * @return Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    public Output<List<CloudAutonomousVmClusterKeyManagementSystemDetail>> keyManagementSystemDetails() {
+        return this.keyManagementSystemDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

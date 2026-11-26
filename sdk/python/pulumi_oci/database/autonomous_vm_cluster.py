@@ -392,6 +392,7 @@ class _AutonomousVmClusterState:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_mtls_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_management_system_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterKeyManagementSystemDetailArgs']]]] = None,
                  last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -445,6 +446,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
         :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterKeyManagementSystemDetailArgs']]] key_management_system_details: Autonomous VM Cluster Key Management System details.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -527,6 +529,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
         if is_mtls_enabled is not None:
             pulumi.set(__self__, "is_mtls_enabled", is_mtls_enabled)
+        if key_management_system_details is not None:
+            pulumi.set(__self__, "key_management_system_details", key_management_system_details)
         if last_maintenance_run_id is not None:
             pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         if license_model is not None:
@@ -863,6 +867,18 @@ class _AutonomousVmClusterState:
     @is_mtls_enabled.setter
     def is_mtls_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_mtls_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystemDetails")
+    def key_management_system_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterKeyManagementSystemDetailArgs']]]]:
+        """
+        Autonomous VM Cluster Key Management System details.
+        """
+        return pulumi.get(self, "key_management_system_details")
+
+    @key_management_system_details.setter
+    def key_management_system_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterKeyManagementSystemDetailArgs']]]]):
+        pulumi.set(self, "key_management_system_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")
@@ -1493,6 +1509,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["data_storage_size_in_tbs"] = None
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
             __props__.__dict__["exadata_storage_in_tbs_lowest_scaled_value"] = None
+            __props__.__dict__["key_management_system_details"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["maintenance_windows"] = None
@@ -1548,6 +1565,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_mtls_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_management_system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousVmClusterKeyManagementSystemDetailArgs', 'AutonomousVmClusterKeyManagementSystemDetailArgsDict', 'outputs.AutonomousVmClusterKeyManagementSystemDetail']]]]] = None,
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1605,6 +1623,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
         :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterKeyManagementSystemDetailArgs', 'AutonomousVmClusterKeyManagementSystemDetailArgsDict', 'outputs.AutonomousVmClusterKeyManagementSystemDetail']]]] key_management_system_details: Autonomous VM Cluster Key Management System details.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -1667,6 +1686,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
         __props__.__dict__["is_mtls_enabled"] = is_mtls_enabled
+        __props__.__dict__["key_management_system_details"] = key_management_system_details
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -1726,6 +1746,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_mtls_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_management_system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousVmClusterKeyManagementSystemDetailArgs', 'AutonomousVmClusterKeyManagementSystemDetailArgsDict', 'outputs.AutonomousVmClusterKeyManagementSystemDetail']]]]] = None,
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1781,6 +1802,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__["freeformTags"] = freeform_tags
         __props__["isLocalBackupEnabled"] = is_local_backup_enabled
         __props__["isMtlsEnabled"] = is_mtls_enabled
+        __props__["keyManagementSystemDetails"] = key_management_system_details
         __props__["lastMaintenanceRunId"] = last_maintenance_run_id
         __props__["licenseModel"] = license_model
         __props__["lifecycleDetails"] = lifecycle_details
@@ -1992,6 +2014,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         """
         return pulumi.get(self, "is_mtls_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystemDetails")
+    def key_management_system_details(self) -> pulumi.Output[Sequence['outputs.AutonomousVmClusterKeyManagementSystemDetail']]:
+        """
+        Autonomous VM Cluster Key Management System details.
+        """
+        return pulumi.get(self, "key_management_system_details")
 
     @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")

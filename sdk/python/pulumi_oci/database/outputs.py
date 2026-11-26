@@ -84,6 +84,7 @@ __all__ = [
     'AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek',
     'AutonomousExadataInfrastructureMaintenanceWindowDetailsMonth',
     'AutonomousExadataInfrastructureMaintenanceWindowMonth',
+    'AutonomousVmClusterKeyManagementSystemDetail',
     'AutonomousVmClusterMaintenanceWindow',
     'AutonomousVmClusterMaintenanceWindowDaysOfWeek',
     'AutonomousVmClusterMaintenanceWindowDetail',
@@ -94,6 +95,7 @@ __all__ = [
     'BackupDestinationAssociatedLongTermBackup',
     'BackupDestinationMountTypeDetails',
     'BackupEncryptionKeyLocationDetail',
+    'CloudAutonomousVmClusterKeyManagementSystemDetail',
     'CloudAutonomousVmClusterMaintenanceWindow',
     'CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek',
     'CloudAutonomousVmClusterMaintenanceWindowDetails',
@@ -241,6 +243,8 @@ __all__ = [
     'ExternalPluggableDatabaseDatabaseManagementConfig',
     'ExternalPluggableDatabaseOperationsInsightsConfig',
     'ExternalPluggableDatabaseStackMonitoringConfig',
+    'KeyStoreAssociatedAutonomousVmCluster',
+    'KeyStoreAssociatedCloudAutonomousVmCluster',
     'KeyStoreAssociatedDatabase',
     'KeyStoreAssociatedLongTermBackup',
     'KeyStoreTypeDetails',
@@ -499,6 +503,7 @@ __all__ = [
     'GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult',
     'GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult',
     'GetAutonomousVmClusterAcdResourceUsagesFilterResult',
+    'GetAutonomousVmClusterKeyManagementSystemDetailResult',
     'GetAutonomousVmClusterMaintenanceWindowResult',
     'GetAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
     'GetAutonomousVmClusterMaintenanceWindowDetailResult',
@@ -508,6 +513,7 @@ __all__ = [
     'GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult',
     'GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult',
     'GetAutonomousVmClustersAutonomousVmClusterResult',
+    'GetAutonomousVmClustersAutonomousVmClusterKeyManagementSystemDetailResult',
     'GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult',
     'GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
     'GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult',
@@ -529,6 +535,7 @@ __all__ = [
     'GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult',
     'GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult',
     'GetCloudAutonomousVmClusterAcdResourceUsagesFilterResult',
+    'GetCloudAutonomousVmClusterKeyManagementSystemDetailResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowDetailResult',
@@ -539,6 +546,7 @@ __all__ = [
     'GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult',
     'GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult',
@@ -843,11 +851,15 @@ __all__ = [
     'GetGiVersionMinorVersionsGiMinorVersionResult',
     'GetGiVersionsFilterResult',
     'GetGiVersionsGiVersionResult',
+    'GetKeyStoreAssociatedAutonomousVmClusterResult',
+    'GetKeyStoreAssociatedCloudAutonomousVmClusterResult',
     'GetKeyStoreAssociatedDatabaseResult',
     'GetKeyStoreAssociatedLongTermBackupResult',
     'GetKeyStoreTypeDetailResult',
     'GetKeyStoresFilterResult',
     'GetKeyStoresKeyStoreResult',
+    'GetKeyStoresKeyStoreAssociatedAutonomousVmClusterResult',
+    'GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterResult',
     'GetKeyStoresKeyStoreAssociatedDatabaseResult',
     'GetKeyStoresKeyStoreAssociatedLongTermBackupResult',
     'GetKeyStoresKeyStoreTypeDetailResult',
@@ -7660,6 +7672,84 @@ class AutonomousExadataInfrastructureMaintenanceWindowMonth(dict):
 
 
 @pulumi.output_type
+class AutonomousVmClusterKeyManagementSystemDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isExclusive":
+            suggest = "is_exclusive"
+        elif key == "keyManagementSystem":
+            suggest = "key_management_system"
+        elif key == "keyStoreId":
+            suggest = "key_store_id"
+        elif key == "thalesHsmPort":
+            suggest = "thales_hsm_port"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousVmClusterKeyManagementSystemDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousVmClusterKeyManagementSystemDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousVmClusterKeyManagementSystemDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_exclusive: Optional[_builtins.bool] = None,
+                 key_management_system: Optional[_builtins.str] = None,
+                 key_store_id: Optional[_builtins.str] = None,
+                 thales_hsm_port: Optional[_builtins.int] = None):
+        """
+        :param _builtins.bool is_exclusive: If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        :param _builtins.str key_management_system: The type of key management system used.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        :param _builtins.int thales_hsm_port: Thales HSM Port. Default is 9000.
+        """
+        if is_exclusive is not None:
+            pulumi.set(__self__, "is_exclusive", is_exclusive)
+        if key_management_system is not None:
+            pulumi.set(__self__, "key_management_system", key_management_system)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
+        if thales_hsm_port is not None:
+            pulumi.set(__self__, "thales_hsm_port", thales_hsm_port)
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusive")
+    def is_exclusive(self) -> Optional[_builtins.bool]:
+        """
+        If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        """
+        return pulumi.get(self, "is_exclusive")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystem")
+    def key_management_system(self) -> Optional[_builtins.str]:
+        """
+        The type of key management system used.
+        """
+        return pulumi.get(self, "key_management_system")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="thalesHsmPort")
+    def thales_hsm_port(self) -> Optional[_builtins.int]:
+        """
+        Thales HSM Port. Default is 9000.
+        """
+        return pulumi.get(self, "thales_hsm_port")
+
+
+@pulumi.output_type
 class AutonomousVmClusterMaintenanceWindow(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -8334,6 +8424,84 @@ class BackupEncryptionKeyLocationDetail(dict):
         Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterKeyManagementSystemDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isExclusive":
+            suggest = "is_exclusive"
+        elif key == "keyManagementSystem":
+            suggest = "key_management_system"
+        elif key == "keyStoreId":
+            suggest = "key_store_id"
+        elif key == "thalesHsmPort":
+            suggest = "thales_hsm_port"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudAutonomousVmClusterKeyManagementSystemDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudAutonomousVmClusterKeyManagementSystemDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudAutonomousVmClusterKeyManagementSystemDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_exclusive: Optional[_builtins.bool] = None,
+                 key_management_system: Optional[_builtins.str] = None,
+                 key_store_id: Optional[_builtins.str] = None,
+                 thales_hsm_port: Optional[_builtins.int] = None):
+        """
+        :param _builtins.bool is_exclusive: If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        :param _builtins.str key_management_system: The type of key management system used.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        :param _builtins.int thales_hsm_port: Thales HSM Port. Default is 9000.
+        """
+        if is_exclusive is not None:
+            pulumi.set(__self__, "is_exclusive", is_exclusive)
+        if key_management_system is not None:
+            pulumi.set(__self__, "key_management_system", key_management_system)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
+        if thales_hsm_port is not None:
+            pulumi.set(__self__, "thales_hsm_port", thales_hsm_port)
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusive")
+    def is_exclusive(self) -> Optional[_builtins.bool]:
+        """
+        If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        """
+        return pulumi.get(self, "is_exclusive")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystem")
+    def key_management_system(self) -> Optional[_builtins.str]:
+        """
+        The type of key management system used.
+        """
+        return pulumi.get(self, "key_management_system")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="thalesHsmPort")
+    def thales_hsm_port(self) -> Optional[_builtins.int]:
+        """
+        Thales HSM Port. Default is 9000.
+        """
+        return pulumi.get(self, "thales_hsm_port")
 
 
 @pulumi.output_type
@@ -20814,6 +20982,102 @@ class ExternalPluggableDatabaseStackMonitoringConfig(dict):
         The status of Stack Monitoring.
         """
         return pulumi.get(self, "stack_monitoring_status")
+
+
+@pulumi.output_type
+class KeyStoreAssociatedAutonomousVmCluster(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyStoreAssociatedAutonomousVmCluster. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyStoreAssociatedAutonomousVmCluster.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyStoreAssociatedAutonomousVmCluster.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class KeyStoreAssociatedCloudAutonomousVmCluster(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyStoreAssociatedCloudAutonomousVmCluster. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyStoreAssociatedCloudAutonomousVmCluster.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyStoreAssociatedCloudAutonomousVmCluster.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -41868,6 +42132,57 @@ class GetAutonomousVmClusterAcdResourceUsagesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousVmClusterKeyManagementSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 is_exclusive: _builtins.bool,
+                 key_management_system: _builtins.str,
+                 key_store_id: _builtins.str,
+                 thales_hsm_port: _builtins.int):
+        """
+        :param _builtins.bool is_exclusive: If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        :param _builtins.str key_management_system: The type of key management system used.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        :param _builtins.int thales_hsm_port: Thales HSM Port. Default is 9000.
+        """
+        pulumi.set(__self__, "is_exclusive", is_exclusive)
+        pulumi.set(__self__, "key_management_system", key_management_system)
+        pulumi.set(__self__, "key_store_id", key_store_id)
+        pulumi.set(__self__, "thales_hsm_port", thales_hsm_port)
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusive")
+    def is_exclusive(self) -> _builtins.bool:
+        """
+        If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        """
+        return pulumi.get(self, "is_exclusive")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystem")
+    def key_management_system(self) -> _builtins.str:
+        """
+        The type of key management system used.
+        """
+        return pulumi.get(self, "key_management_system")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="thalesHsmPort")
+    def thales_hsm_port(self) -> _builtins.int:
+        """
+        Thales HSM Port. Default is 9000.
+        """
+        return pulumi.get(self, "thales_hsm_port")
+
+
+@pulumi.output_type
 class GetAutonomousVmClusterMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: _builtins.int,
@@ -42366,6 +42681,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  id: _builtins.str,
                  is_local_backup_enabled: _builtins.bool,
                  is_mtls_enabled: _builtins.bool,
+                 key_management_system_details: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterKeyManagementSystemDetailResult'],
                  last_maintenance_run_id: _builtins.str,
                  license_model: _builtins.str,
                  lifecycle_details: _builtins.str,
@@ -42420,6 +42736,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
         :param _builtins.bool is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
         :param _builtins.bool is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        :param Sequence['GetAutonomousVmClustersAutonomousVmClusterKeyManagementSystemDetailArgs'] key_management_system_details: Autonomous VM Cluster Key Management System details.
         :param _builtins.str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param _builtins.str license_model: The Oracle license model that applies to the Autonomous VM cluster. The default is LICENSE_INCLUDED.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
@@ -42475,6 +42792,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
         pulumi.set(__self__, "is_mtls_enabled", is_mtls_enabled)
+        pulumi.set(__self__, "key_management_system_details", key_management_system_details)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -42699,6 +43017,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         """
         return pulumi.get(self, "is_mtls_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystemDetails")
+    def key_management_system_details(self) -> Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterKeyManagementSystemDetailResult']:
+        """
+        Autonomous VM Cluster Key Management System details.
+        """
+        return pulumi.get(self, "key_management_system_details")
 
     @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")
@@ -42932,6 +43258,57 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         return pulumi.get(self, "vm_cluster_network_id")
+
+
+@pulumi.output_type
+class GetAutonomousVmClustersAutonomousVmClusterKeyManagementSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 is_exclusive: _builtins.bool,
+                 key_management_system: _builtins.str,
+                 key_store_id: _builtins.str,
+                 thales_hsm_port: _builtins.int):
+        """
+        :param _builtins.bool is_exclusive: If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        :param _builtins.str key_management_system: The type of key management system used.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        :param _builtins.int thales_hsm_port: Thales HSM Port. Default is 9000.
+        """
+        pulumi.set(__self__, "is_exclusive", is_exclusive)
+        pulumi.set(__self__, "key_management_system", key_management_system)
+        pulumi.set(__self__, "key_store_id", key_store_id)
+        pulumi.set(__self__, "thales_hsm_port", thales_hsm_port)
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusive")
+    def is_exclusive(self) -> _builtins.bool:
+        """
+        If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        """
+        return pulumi.get(self, "is_exclusive")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystem")
+    def key_management_system(self) -> _builtins.str:
+        """
+        The type of key management system used.
+        """
+        return pulumi.get(self, "key_management_system")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="thalesHsmPort")
+    def thales_hsm_port(self) -> _builtins.int:
+        """
+        Thales HSM Port. Default is 9000.
+        """
+        return pulumi.get(self, "thales_hsm_port")
 
 
 @pulumi.output_type
@@ -44386,6 +44763,57 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetCloudAutonomousVmClusterKeyManagementSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 is_exclusive: _builtins.bool,
+                 key_management_system: _builtins.str,
+                 key_store_id: _builtins.str,
+                 thales_hsm_port: _builtins.int):
+        """
+        :param _builtins.bool is_exclusive: If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        :param _builtins.str key_management_system: The type of key management system used.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        :param _builtins.int thales_hsm_port: Thales HSM Port. Default is 9000.
+        """
+        pulumi.set(__self__, "is_exclusive", is_exclusive)
+        pulumi.set(__self__, "key_management_system", key_management_system)
+        pulumi.set(__self__, "key_store_id", key_store_id)
+        pulumi.set(__self__, "thales_hsm_port", thales_hsm_port)
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusive")
+    def is_exclusive(self) -> _builtins.bool:
+        """
+        If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        """
+        return pulumi.get(self, "is_exclusive")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystem")
+    def key_management_system(self) -> _builtins.str:
+        """
+        The type of key management system used.
+        """
+        return pulumi.get(self, "key_management_system")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="thalesHsmPort")
+    def thales_hsm_port(self) -> _builtins.int:
+        """
+        Thales HSM Port. Default is 9000.
+        """
+        return pulumi.get(self, "thales_hsm_port")
+
+
+@pulumi.output_type
 class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: _builtins.int,
@@ -44955,6 +45383,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  hostname: _builtins.str,
                  id: _builtins.str,
                  is_mtls_enabled_vm_cluster: _builtins.bool,
+                 key_management_system_details: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailResult'],
                  last_maintenance_run_id: _builtins.str,
                  last_update_history_entry_id: _builtins.str,
                  license_model: _builtins.str,
@@ -45025,6 +45454,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param _builtins.str hostname: The hostname for the cloud Autonomous VM cluster.
         :param _builtins.str id: The OCID of the identity connector
         :param _builtins.bool is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs'] key_management_system_details: Autonomous VM Cluster Key Management System details.
         :param _builtins.str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param _builtins.str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
         :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -45092,6 +45522,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
+        pulumi.set(__self__, "key_management_system_details", key_management_system_details)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
         pulumi.set(__self__, "license_model", license_model)
@@ -45350,6 +45781,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         """
         return pulumi.get(self, "is_mtls_enabled_vm_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystemDetails")
+    def key_management_system_details(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailResult']:
+        """
+        Autonomous VM Cluster Key Management System details.
+        """
+        return pulumi.get(self, "key_management_system_details")
 
     @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")
@@ -45675,6 +46114,57 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="unregisterPkcsTrigger")
     def unregister_pkcs_trigger(self) -> _builtins.int:
         return pulumi.get(self, "unregister_pkcs_trigger")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 is_exclusive: _builtins.bool,
+                 key_management_system: _builtins.str,
+                 key_store_id: _builtins.str,
+                 thales_hsm_port: _builtins.int):
+        """
+        :param _builtins.bool is_exclusive: If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        :param _builtins.str key_management_system: The type of key management system used.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        :param _builtins.int thales_hsm_port: Thales HSM Port. Default is 9000.
+        """
+        pulumi.set(__self__, "is_exclusive", is_exclusive)
+        pulumi.set(__self__, "key_management_system", key_management_system)
+        pulumi.set(__self__, "key_store_id", key_store_id)
+        pulumi.set(__self__, "thales_hsm_port", thales_hsm_port)
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusive")
+    def is_exclusive(self) -> _builtins.bool:
+        """
+        If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+        """
+        return pulumi.get(self, "is_exclusive")
+
+    @_builtins.property
+    @pulumi.getter(name="keyManagementSystem")
+    def key_management_system(self) -> _builtins.str:
+        """
+        The type of key management system used.
+        """
+        return pulumi.get(self, "key_management_system")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="thalesHsmPort")
+    def thales_hsm_port(self) -> _builtins.int:
+        """
+        Thales HSM Port. Default is 9000.
+        """
+        return pulumi.get(self, "thales_hsm_port")
 
 
 @pulumi.output_type
@@ -69129,6 +69619,64 @@ class GetGiVersionsGiVersionResult(dict):
 
 
 @pulumi.output_type
+class GetKeyStoreAssociatedAutonomousVmClusterResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetKeyStoreAssociatedCloudAutonomousVmClusterResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetKeyStoreAssociatedDatabaseResult(dict):
     def __init__(__self__, *,
                  db_name: _builtins.str,
@@ -69289,6 +69837,8 @@ class GetKeyStoresFilterResult(dict):
 @pulumi.output_type
 class GetKeyStoresKeyStoreResult(dict):
     def __init__(__self__, *,
+                 associated_autonomous_vm_clusters: Sequence['outputs.GetKeyStoresKeyStoreAssociatedAutonomousVmClusterResult'],
+                 associated_cloud_autonomous_vm_clusters: Sequence['outputs.GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterResult'],
                  associated_databases: Sequence['outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult'],
                  associated_long_term_backup_count: _builtins.int,
                  associated_long_term_backups: Sequence['outputs.GetKeyStoresKeyStoreAssociatedLongTermBackupResult'],
@@ -69304,6 +69854,8 @@ class GetKeyStoresKeyStoreResult(dict):
                  time_created: _builtins.str,
                  type_details: Sequence['outputs.GetKeyStoresKeyStoreTypeDetailResult']):
         """
+        :param Sequence['GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs'] associated_autonomous_vm_clusters: List of Autonomous VM Clusters associated with the key store.
+        :param Sequence['GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs'] associated_cloud_autonomous_vm_clusters: List of Cloud Autonomous VM Clusters associated with the key store.
         :param Sequence['GetKeyStoresKeyStoreAssociatedDatabaseArgs'] associated_databases: List of databases associated with the key store.
         :param _builtins.int associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
         :param Sequence['GetKeyStoresKeyStoreAssociatedLongTermBackupArgs'] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
@@ -69318,6 +69870,8 @@ class GetKeyStoresKeyStoreResult(dict):
         :param _builtins.str time_created: The date and time that the key store was created.
         :param Sequence['GetKeyStoresKeyStoreTypeDetailArgs'] type_details: Key store type details.
         """
+        pulumi.set(__self__, "associated_autonomous_vm_clusters", associated_autonomous_vm_clusters)
+        pulumi.set(__self__, "associated_cloud_autonomous_vm_clusters", associated_cloud_autonomous_vm_clusters)
         pulumi.set(__self__, "associated_databases", associated_databases)
         pulumi.set(__self__, "associated_long_term_backup_count", associated_long_term_backup_count)
         pulumi.set(__self__, "associated_long_term_backups", associated_long_term_backups)
@@ -69332,6 +69886,22 @@ class GetKeyStoresKeyStoreResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "type_details", type_details)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedAutonomousVmClusters")
+    def associated_autonomous_vm_clusters(self) -> Sequence['outputs.GetKeyStoresKeyStoreAssociatedAutonomousVmClusterResult']:
+        """
+        List of Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_autonomous_vm_clusters")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedCloudAutonomousVmClusters")
+    def associated_cloud_autonomous_vm_clusters(self) -> Sequence['outputs.GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterResult']:
+        """
+        List of Cloud Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_cloud_autonomous_vm_clusters")
 
     @_builtins.property
     @pulumi.getter(name="associatedDatabases")
@@ -69441,6 +70011,64 @@ class GetKeyStoresKeyStoreResult(dict):
         Key store type details.
         """
         return pulumi.get(self, "type_details")
+
+
+@pulumi.output_type
+class GetKeyStoresKeyStoreAssociatedAutonomousVmClusterResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type

@@ -100,6 +100,11 @@ export type AutonomousVmCluster = import("./autonomousVmCluster").AutonomousVmCl
 export const AutonomousVmCluster: typeof import("./autonomousVmCluster").AutonomousVmCluster = null as any;
 utilities.lazyLoad(exports, ["AutonomousVmCluster"], () => require("./autonomousVmCluster"));
 
+export { AutonomousVmClusterKmsManagementArgs, AutonomousVmClusterKmsManagementState } from "./autonomousVmClusterKmsManagement";
+export type AutonomousVmClusterKmsManagement = import("./autonomousVmClusterKmsManagement").AutonomousVmClusterKmsManagement;
+export const AutonomousVmClusterKmsManagement: typeof import("./autonomousVmClusterKmsManagement").AutonomousVmClusterKmsManagement = null as any;
+utilities.lazyLoad(exports, ["AutonomousVmClusterKmsManagement"], () => require("./autonomousVmClusterKmsManagement"));
+
 export { AutonomousVmClusterOrdsCertificateManagementArgs, AutonomousVmClusterOrdsCertificateManagementState } from "./autonomousVmClusterOrdsCertificateManagement";
 export type AutonomousVmClusterOrdsCertificateManagement = import("./autonomousVmClusterOrdsCertificateManagement").AutonomousVmClusterOrdsCertificateManagement;
 export const AutonomousVmClusterOrdsCertificateManagement: typeof import("./autonomousVmClusterOrdsCertificateManagement").AutonomousVmClusterOrdsCertificateManagement = null as any;
@@ -129,6 +134,11 @@ export { CloudAutonomousVmClusterArgs, CloudAutonomousVmClusterState } from "./c
 export type CloudAutonomousVmCluster = import("./cloudAutonomousVmCluster").CloudAutonomousVmCluster;
 export const CloudAutonomousVmCluster: typeof import("./cloudAutonomousVmCluster").CloudAutonomousVmCluster = null as any;
 utilities.lazyLoad(exports, ["CloudAutonomousVmCluster"], () => require("./cloudAutonomousVmCluster"));
+
+export { CloudAutonomousVmClusterKmsManagementArgs, CloudAutonomousVmClusterKmsManagementState } from "./cloudAutonomousVmClusterKmsManagement";
+export type CloudAutonomousVmClusterKmsManagement = import("./cloudAutonomousVmClusterKmsManagement").CloudAutonomousVmClusterKmsManagement;
+export const CloudAutonomousVmClusterKmsManagement: typeof import("./cloudAutonomousVmClusterKmsManagement").CloudAutonomousVmClusterKmsManagement = null as any;
+utilities.lazyLoad(exports, ["CloudAutonomousVmClusterKmsManagement"], () => require("./cloudAutonomousVmClusterKmsManagement"));
 
 export { CloudDatabaseManagementArgs, CloudDatabaseManagementState } from "./cloudDatabaseManagement";
 export type CloudDatabaseManagement = import("./cloudDatabaseManagement").CloudDatabaseManagement;
@@ -1298,6 +1308,8 @@ const _module = {
                 return new AutonomousExadataInfrastructure(name, <any>undefined, { urn })
             case "oci:Database/autonomousVmCluster:AutonomousVmCluster":
                 return new AutonomousVmCluster(name, <any>undefined, { urn })
+            case "oci:Database/autonomousVmClusterKmsManagement:AutonomousVmClusterKmsManagement":
+                return new AutonomousVmClusterKmsManagement(name, <any>undefined, { urn })
             case "oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement":
                 return new AutonomousVmClusterOrdsCertificateManagement(name, <any>undefined, { urn })
             case "oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement":
@@ -1310,6 +1322,8 @@ const _module = {
                 return new BackupDestination(name, <any>undefined, { urn })
             case "oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster":
                 return new CloudAutonomousVmCluster(name, <any>undefined, { urn })
+            case "oci:Database/cloudAutonomousVmClusterKmsManagement:CloudAutonomousVmClusterKmsManagement":
+                return new CloudAutonomousVmClusterKmsManagement(name, <any>undefined, { urn })
             case "oci:Database/cloudDatabaseManagement:CloudDatabaseManagement":
                 return new CloudDatabaseManagement(name, <any>undefined, { urn })
             case "oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure":
@@ -1450,12 +1464,14 @@ pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseSoftwar
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseWallet", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmClusterKmsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmClusterOrdsCertificateManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmClusterSslCertificateManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backup", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backupCancelManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/backupDestination", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudAutonomousVmCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/cloudAutonomousVmClusterKmsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudDatabaseManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudExadataInfrastructureConfigureExascaleManagement", _module)

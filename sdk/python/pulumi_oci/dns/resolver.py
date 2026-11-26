@@ -458,12 +458,54 @@ class Resolver(pulumi.CustomResource):
 
         Updates the specified resolver with your new information.
 
-        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN's state shows as Available in the OCI Console before updating DNS resolver properties.
+        Resolvers are associated with VCNs and created when a VCN is created. Use the VCN resolver association data source to wait for the association before configuring the resolver.
         A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove rules from a resolver, update the resolver resource.
 
         Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
 
         Default view behavior on VCN delete: If the resolver's default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
+
+        ## Dependency ordering
+
+        With OCI provider v8.16.0 or later, the
+        `core_get_cnv_dns_resolver_association`
+        data source waits for the VCN's resolver association to become available. Use its
+        `dns_resolver_id` directly for endpoints and resolver configuration. Endpoints
+        must not depend on the resolver configuration resource whose rules reference
+        those endpoints, because that would create a dependency cycle.
+
+        Reference the forwarding endpoint's `name` in `source_endpoint_name` and the
+        destination listening endpoint's `listening_address` in `destination_addresses`.
+        These references order rule configuration after endpoint creation and rule
+        removal before endpoint deletion. When using modules, expose endpoint names and
+        addresses as outputs and use them to configure rules in the calling module.
+
+        See the runnable resolver example
+        and the resolver endpoint reference.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_resolver = oci.dns.Resolver("test_resolver",
+            resolver_id=test_vcn_dns_resolver_association["dnsResolverId"],
+            scope="PRIVATE",
+            attached_views=[{
+                "view_id": test_view["id"],
+            }],
+            defined_tags=resolver_defined_tags,
+            display_name=resolver_display_name,
+            freeform_tags=resolver_freeform_tags,
+            rules=[{
+                "action": resolver_rules_action,
+                "destination_addresses": resolver_rules_destination_addresses,
+                "source_endpoint_name": test_resolver_endpoint["name"],
+                "client_address_conditions": resolver_rules_client_address_conditions,
+                "qname_cover_conditions": resolver_rules_qname_cover_conditions,
+            }])
+        ```
 
         ## Import
 
@@ -503,12 +545,54 @@ class Resolver(pulumi.CustomResource):
 
         Updates the specified resolver with your new information.
 
-        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN's state shows as Available in the OCI Console before updating DNS resolver properties.
+        Resolvers are associated with VCNs and created when a VCN is created. Use the VCN resolver association data source to wait for the association before configuring the resolver.
         A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove rules from a resolver, update the resolver resource.
 
         Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
 
         Default view behavior on VCN delete: If the resolver's default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
+
+        ## Dependency ordering
+
+        With OCI provider v8.16.0 or later, the
+        `core_get_cnv_dns_resolver_association`
+        data source waits for the VCN's resolver association to become available. Use its
+        `dns_resolver_id` directly for endpoints and resolver configuration. Endpoints
+        must not depend on the resolver configuration resource whose rules reference
+        those endpoints, because that would create a dependency cycle.
+
+        Reference the forwarding endpoint's `name` in `source_endpoint_name` and the
+        destination listening endpoint's `listening_address` in `destination_addresses`.
+        These references order rule configuration after endpoint creation and rule
+        removal before endpoint deletion. When using modules, expose endpoint names and
+        addresses as outputs and use them to configure rules in the calling module.
+
+        See the runnable resolver example
+        and the resolver endpoint reference.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_resolver = oci.dns.Resolver("test_resolver",
+            resolver_id=test_vcn_dns_resolver_association["dnsResolverId"],
+            scope="PRIVATE",
+            attached_views=[{
+                "view_id": test_view["id"],
+            }],
+            defined_tags=resolver_defined_tags,
+            display_name=resolver_display_name,
+            freeform_tags=resolver_freeform_tags,
+            rules=[{
+                "action": resolver_rules_action,
+                "destination_addresses": resolver_rules_destination_addresses,
+                "source_endpoint_name": test_resolver_endpoint["name"],
+                "client_address_conditions": resolver_rules_client_address_conditions,
+                "qname_cover_conditions": resolver_rules_qname_cover_conditions,
+            }])
+        ```
 
         ## Import
 

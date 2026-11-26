@@ -506,6 +506,10 @@ class BatchBatchContext(pulumi.CustomResource):
                     "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
                 },
                 "type": batch_context_fleets_type,
+                "reservation": {
+                    "capacity_reservation_ids": batch_context_fleets_reservation_capacity_reservation_ids,
+                    "type": batch_context_fleets_reservation_type,
+                },
             }],
             network={
                 "subnet_id": test_subnet["id"],
@@ -593,6 +597,10 @@ class BatchBatchContext(pulumi.CustomResource):
                     "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
                 },
                 "type": batch_context_fleets_type,
+                "reservation": {
+                    "capacity_reservation_ids": batch_context_fleets_reservation_capacity_reservation_ids,
+                    "type": batch_context_fleets_reservation_type,
+                },
             }],
             network={
                 "subnet_id": test_subnet["id"],

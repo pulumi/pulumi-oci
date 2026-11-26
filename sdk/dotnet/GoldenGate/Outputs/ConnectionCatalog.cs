@@ -18,6 +18,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? Branch;
         /// <summary>
+        /// (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+        /// </summary>
+        public readonly Outputs.ConnectionCatalogCatalogConfig? CatalogConfig;
+        /// <summary>
         /// (Updatable) The catalog type.
         /// </summary>
         public readonly string CatalogType;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         private ConnectionCatalog(
             string? branch,
 
+            Outputs.ConnectionCatalogCatalogConfig? catalogConfig,
+
             string catalogType,
 
             string? clientId,
@@ -83,6 +89,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string? uri)
         {
             Branch = branch;
+            CatalogConfig = catalogConfig;
             CatalogType = catalogType;
             ClientId = clientId;
             ClientSecret = clientSecret;

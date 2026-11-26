@@ -14,7 +14,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetDeploymentTypesDeploymentTypeCollectionItemResult
     {
         /// <summary>
-        /// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+        /// The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
         /// </summary>
         public readonly string Category;
         /// <summary>
@@ -46,6 +46,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SupportedCapabilities;
         /// <summary>
+        /// The list of credential stores supported by the deployment type.
+        /// </summary>
+        public readonly ImmutableArray<string> SupportedCredentialStores;
+        /// <summary>
         /// The list of Oracle license models supported by the deployment type.
         /// </summary>
         public readonly ImmutableArray<string> SupportedLicenseTypes;
@@ -76,6 +80,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<string> supportedCapabilities,
 
+            ImmutableArray<string> supportedCredentialStores,
+
             ImmutableArray<string> supportedLicenseTypes,
 
             string supportedTechnologiesUrl,
@@ -90,6 +96,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             OggVersion = oggVersion;
             SourceTechnologies = sourceTechnologies;
             SupportedCapabilities = supportedCapabilities;
+            SupportedCredentialStores = supportedCredentialStores;
             SupportedLicenseTypes = supportedLicenseTypes;
             SupportedTechnologiesUrl = supportedTechnologiesUrl;
             TargetTechnologies = targetTechnologies;

@@ -19,12 +19,74 @@ import (
 //
 // Updates the specified resolver with your new information.
 //
-// Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN's state shows as Available in the OCI Console before updating DNS resolver properties.
+// Resolvers are associated with VCNs and created when a VCN is created. Use the VCN resolver association data source to wait for the association before configuring the resolver.
 // A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove rules from a resolver, update the resolver resource.
 //
 // Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
 //
 // Default view behavior on VCN delete: If the resolver's default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
+//
+// ## Dependency ordering
+//
+// With OCI provider v8.16.0 or later, the
+// `Core.getCnvDnsResolverAssociation`
+// data source waits for the VCN's resolver association to become available. Use its
+// `dnsResolverId` directly for endpoints and resolver configuration. Endpoints
+// must not depend on the resolver configuration resource whose rules reference
+// those endpoints, because that would create a dependency cycle.
+//
+// Reference the forwarding endpoint's `name` in `sourceEndpointName` and the
+// destination listening endpoint's `listeningAddress` in `destinationAddresses`.
+// These references order rule configuration after endpoint creation and rule
+// removal before endpoint deletion. When using modules, expose endpoint names and
+// addresses as outputs and use them to configure rules in the calling module.
+//
+// See the runnable resolver example
+// and the resolver endpoint reference.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dns.NewResolver(ctx, "test_resolver", &dns.ResolverArgs{
+//				ResolverId: pulumi.Any(testVcnDnsResolverAssociation.DnsResolverId),
+//				Scope:      pulumi.String("PRIVATE"),
+//				AttachedViews: dns.ResolverAttachedViewArray{
+//					&dns.ResolverAttachedViewArgs{
+//						ViewId: pulumi.Any(testView.Id),
+//					},
+//				},
+//				DefinedTags:  pulumi.Any(resolverDefinedTags),
+//				DisplayName:  pulumi.Any(resolverDisplayName),
+//				FreeformTags: pulumi.Any(resolverFreeformTags),
+//				Rules: dns.ResolverRuleArray{
+//					&dns.ResolverRuleArgs{
+//						Action:                  pulumi.Any(resolverRulesAction),
+//						DestinationAddresses:    pulumi.Any(resolverRulesDestinationAddresses),
+//						SourceEndpointName:      pulumi.Any(testResolverEndpoint.Name),
+//						ClientAddressConditions: pulumi.Any(resolverRulesClientAddressConditions),
+//						QnameCoverConditions:    pulumi.Any(resolverRulesQnameCoverConditions),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //

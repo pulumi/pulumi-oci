@@ -12,6 +12,24 @@ import * as utilities from "../utilities";
  *
  * Creates a new resolver endpoint in the same compartment as the resolver.
  *
+ * ## Dependency ordering
+ *
+ * With OCI provider v8.16.0 or later, the
+ * `oci.Core.getCnvDnsResolverAssociation`
+ * data source waits for the VCN's resolver association to become available. Use its
+ * `dnsResolverId` directly for endpoints and resolver configuration. Endpoints
+ * must not depend on the resolver configuration resource whose rules reference
+ * those endpoints, because that would create a dependency cycle.
+ *
+ * Reference the forwarding endpoint's `name` in `sourceEndpointName` and the
+ * destination listening endpoint's `listeningAddress` in `destinationAddresses`.
+ * These references order rule configuration after endpoint creation and rule
+ * removal before endpoint deletion. When using modules, expose endpoint names and
+ * addresses as outputs and use them to configure rules in the calling module.
+ *
+ * See the runnable resolver example
+ * and the resolver reference.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -22,7 +40,7 @@ import * as utilities from "../utilities";
  *     isForwarding: resolverEndpointIsForwarding,
  *     isListening: resolverEndpointIsListening,
  *     name: resolverEndpointName,
- *     resolverId: testResolver.id,
+ *     resolverId: testVcnDnsResolverAssociation.dnsResolverId,
  *     subnetId: testSubnet.id,
  *     scope: "PRIVATE",
  *     definedTags: resolverEndpointDefinedTags,

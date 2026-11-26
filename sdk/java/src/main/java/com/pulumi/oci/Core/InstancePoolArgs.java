@@ -6,6 +6,7 @@ package com.pulumi.oci.Core;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.inputs.InstancePoolInstanceMaintenancePolicyArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolOverridePolicyArgs;
@@ -126,6 +127,21 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> instanceHostnameFormatter() {
         return Optional.ofNullable(this.instanceHostnameFormatter);
+    }
+
+    /**
+     * (Updatable) Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    @Import(name="instanceMaintenancePolicy")
+    private @Nullable Output<InstancePoolInstanceMaintenancePolicyArgs> instanceMaintenancePolicy;
+
+    /**
+     * @return (Updatable) Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    public Optional<Output<InstancePoolInstanceMaintenancePolicyArgs>> instanceMaintenancePolicy() {
+        return Optional.ofNullable(this.instanceMaintenancePolicy);
     }
 
     /**
@@ -250,6 +266,7 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
         this.instanceConfigurationId = $.instanceConfigurationId;
         this.instanceDisplayNameFormatter = $.instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = $.instanceHostnameFormatter;
+        this.instanceMaintenancePolicy = $.instanceMaintenancePolicy;
         this.lifecycleManagement = $.lifecycleManagement;
         this.loadBalancers = $.loadBalancers;
         this.overridePolicy = $.overridePolicy;
@@ -421,6 +438,27 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
             return instanceHostnameFormatter(Output.of(instanceHostnameFormatter));
+        }
+
+        /**
+         * @param instanceMaintenancePolicy (Updatable) Optional maintenance policy settings for an instance pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceMaintenancePolicy(@Nullable Output<InstancePoolInstanceMaintenancePolicyArgs> instanceMaintenancePolicy) {
+            $.instanceMaintenancePolicy = instanceMaintenancePolicy;
+            return this;
+        }
+
+        /**
+         * @param instanceMaintenancePolicy (Updatable) Optional maintenance policy settings for an instance pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceMaintenancePolicy(InstancePoolInstanceMaintenancePolicyArgs instanceMaintenancePolicy) {
+            return instanceMaintenancePolicy(Output.of(instanceMaintenancePolicy));
         }
 
         /**

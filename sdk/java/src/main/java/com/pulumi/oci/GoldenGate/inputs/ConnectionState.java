@@ -13,6 +13,7 @@ import com.pulumi.oci.GoldenGate.inputs.ConnectionCatalogArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionIngressIpArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionStorageArgs;
+import com.pulumi.oci.GoldenGate.inputs.ConnectionWarehouseStorageArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -2415,6 +2416,36 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     * 
+     */
+    @Import(name="warehouseName")
+    private @Nullable Output<String> warehouseName;
+
+    /**
+     * @return (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     * 
+     */
+    public Optional<Output<String>> warehouseName() {
+        return Optional.ofNullable(this.warehouseName);
+    }
+
+    /**
+     * (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     * 
+     */
+    @Import(name="warehouseStorage")
+    private @Nullable Output<ConnectionWarehouseStorageArgs> warehouseStorage;
+
+    /**
+     * @return (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     * 
+     */
+    public Optional<Output<ConnectionWarehouseStorageArgs>> warehouseStorage() {
+        return Optional.ofNullable(this.warehouseStorage);
+    }
+
+    /**
      * (Updatable)
      * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
      * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -2579,6 +2610,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.vaultId = $.vaultId;
         this.wallet = $.wallet;
         this.walletSecretId = $.walletSecretId;
+        this.warehouseName = $.warehouseName;
+        this.warehouseStorage = $.warehouseStorage;
         this.workspaceUrl = $.workspaceUrl;
     }
 
@@ -5849,6 +5882,48 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder walletSecretId(String walletSecretId) {
             return walletSecretId(Output.of(walletSecretId));
+        }
+
+        /**
+         * @param warehouseName (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder warehouseName(@Nullable Output<String> warehouseName) {
+            $.warehouseName = warehouseName;
+            return this;
+        }
+
+        /**
+         * @param warehouseName (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder warehouseName(String warehouseName) {
+            return warehouseName(Output.of(warehouseName));
+        }
+
+        /**
+         * @param warehouseStorage (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder warehouseStorage(@Nullable Output<ConnectionWarehouseStorageArgs> warehouseStorage) {
+            $.warehouseStorage = warehouseStorage;
+            return this;
+        }
+
+        /**
+         * @param warehouseStorage (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder warehouseStorage(ConnectionWarehouseStorageArgs warehouseStorage) {
+            return warehouseStorage(Output.of(warehouseStorage));
         }
 
         /**

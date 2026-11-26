@@ -48,6 +48,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? ProjectId;
         /// <summary>
+        /// (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        /// </summary>
+        public readonly string? Properties;
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// </summary>
+        public readonly string? PropertiesSecretId;
+        /// <summary>
         /// (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         /// </summary>
         public readonly string? Region;
@@ -77,9 +85,18 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
         /// * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         /// * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        /// * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
         /// * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         /// </summary>
         public readonly string StorageType;
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        /// </summary>
+        public readonly string? TrustStore;
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+        /// </summary>
+        public readonly string? TrustStoreSecretId;
 
         [OutputConstructor]
         private ConnectionStorage(
@@ -99,6 +116,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string? projectId,
 
+            string? properties,
+
+            string? propertiesSecretId,
+
             string? region,
 
             string? schemeType,
@@ -111,7 +132,11 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string? serviceAccountKeyFileSecretId,
 
-            string storageType)
+            string storageType,
+
+            string? trustStore,
+
+            string? trustStoreSecretId)
         {
             AccessKeyId = accessKeyId;
             AccountKey = accountKey;
@@ -121,6 +146,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Container = container;
             Endpoint = endpoint;
             ProjectId = projectId;
+            Properties = properties;
+            PropertiesSecretId = propertiesSecretId;
             Region = region;
             SchemeType = schemeType;
             SecretAccessKey = secretAccessKey;
@@ -128,6 +155,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ServiceAccountKeyFile = serviceAccountKeyFile;
             ServiceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             StorageType = storageType;
+            TrustStore = trustStore;
+            TrustStoreSecretId = trustStoreSecretId;
         }
     }
 }

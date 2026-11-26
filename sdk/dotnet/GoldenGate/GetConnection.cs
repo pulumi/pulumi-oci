@@ -127,16 +127,16 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetConnectionResult
     {
         /// <summary>
-        /// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        /// The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
         /// </summary>
         public readonly string AccessKeyId;
         public readonly string AccountKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
         /// </summary>
         public readonly string AccountKeySecretId;
         /// <summary>
-        /// Sets the Azure storage account name.
+        /// The Azure Storage account name.
         /// </summary>
         public readonly string AccountName;
         /// <summary>
@@ -421,7 +421,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string RedisClusterId;
         /// <summary>
-        /// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
         /// </summary>
         public readonly string Region;
         public readonly string RestAuthSecretKey;
@@ -448,7 +448,7 @@ namespace Pulumi.Oci.GoldenGate
         public readonly string SasTokenSecretId;
         public readonly string SecretAccessKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
         /// </summary>
         public readonly string SecretAccessKeySecretId;
         /// <summary>
@@ -621,9 +621,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string TrustStorePasswordSecretId;
         /// <summary>
-        /// Secret OCID containing the trust store content.
-        /// * SPARK: Applicable when `SecurityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
-        /// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
         /// </summary>
         public readonly string TrustStoreSecretId;
         /// <summary>
@@ -652,6 +650,14 @@ namespace Pulumi.Oci.GoldenGate
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         /// </summary>
         public readonly string WalletSecretId;
+        /// <summary>
+        /// The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        /// </summary>
+        public readonly string WarehouseName;
+        /// <summary>
+        /// Represents the warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionWarehouseStorageResult> WarehouseStorages;
         /// <summary>
         /// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
         /// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -938,6 +944,10 @@ namespace Pulumi.Oci.GoldenGate
 
             string walletSecretId,
 
+            string warehouseName,
+
+            ImmutableArray<Outputs.GetConnectionWarehouseStorageResult> warehouseStorages,
+
             string workspaceUrl)
         {
             AccessKeyId = accessKeyId;
@@ -1079,6 +1089,8 @@ namespace Pulumi.Oci.GoldenGate
             VaultId = vaultId;
             Wallet = wallet;
             WalletSecretId = walletSecretId;
+            WarehouseName = warehouseName;
+            WarehouseStorages = warehouseStorages;
             WorkspaceUrl = workspaceUrl;
         }
     }

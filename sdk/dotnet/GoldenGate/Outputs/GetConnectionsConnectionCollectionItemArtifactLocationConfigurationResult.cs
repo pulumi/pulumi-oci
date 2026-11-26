@@ -14,7 +14,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetConnectionsConnectionCollectionItemArtifactLocationConfigurationResult
     {
         /// <summary>
-        /// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        /// The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
         /// </summary>
         public readonly string AccessKeyId;
         /// <summary>
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+        /// Name of namespace that serves as a container for all of your buckets
         /// </summary>
         public readonly string Namespace;
         public readonly string ParUrl;
@@ -59,12 +59,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string PublicKeyFingerprint;
         /// <summary>
-        /// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
         /// </summary>
         public readonly string Region;
         public readonly string SecretAccessKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
         /// </summary>
         public readonly string SecretAccessKeySecretId;
         /// <summary>

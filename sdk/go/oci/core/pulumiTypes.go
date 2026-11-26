@@ -29182,6 +29182,301 @@ func (o InstancePoolInstanceLoadBalancerBackendArrayOutput) Index(i pulumi.IntIn
 	}).(InstancePoolInstanceLoadBalancerBackendOutput)
 }
 
+type InstancePoolInstanceMaintenancePolicy struct {
+	// (Updatable) Default launch-before-termination settings for instance pool refreshes.
+	LaunchBeforeTerminating *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating `pulumi:"launchBeforeTerminating"`
+}
+
+// InstancePoolInstanceMaintenancePolicyInput is an input type that accepts InstancePoolInstanceMaintenancePolicyArgs and InstancePoolInstanceMaintenancePolicyOutput values.
+// You can construct a concrete instance of `InstancePoolInstanceMaintenancePolicyInput` via:
+//
+//	InstancePoolInstanceMaintenancePolicyArgs{...}
+type InstancePoolInstanceMaintenancePolicyInput interface {
+	pulumi.Input
+
+	ToInstancePoolInstanceMaintenancePolicyOutput() InstancePoolInstanceMaintenancePolicyOutput
+	ToInstancePoolInstanceMaintenancePolicyOutputWithContext(context.Context) InstancePoolInstanceMaintenancePolicyOutput
+}
+
+type InstancePoolInstanceMaintenancePolicyArgs struct {
+	// (Updatable) Default launch-before-termination settings for instance pool refreshes.
+	LaunchBeforeTerminating InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrInput `pulumi:"launchBeforeTerminating"`
+}
+
+func (InstancePoolInstanceMaintenancePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolInstanceMaintenancePolicy)(nil)).Elem()
+}
+
+func (i InstancePoolInstanceMaintenancePolicyArgs) ToInstancePoolInstanceMaintenancePolicyOutput() InstancePoolInstanceMaintenancePolicyOutput {
+	return i.ToInstancePoolInstanceMaintenancePolicyOutputWithContext(context.Background())
+}
+
+func (i InstancePoolInstanceMaintenancePolicyArgs) ToInstancePoolInstanceMaintenancePolicyOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMaintenancePolicyOutput)
+}
+
+func (i InstancePoolInstanceMaintenancePolicyArgs) ToInstancePoolInstanceMaintenancePolicyPtrOutput() InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return i.ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i InstancePoolInstanceMaintenancePolicyArgs) ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMaintenancePolicyOutput).ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(ctx)
+}
+
+// InstancePoolInstanceMaintenancePolicyPtrInput is an input type that accepts InstancePoolInstanceMaintenancePolicyArgs, InstancePoolInstanceMaintenancePolicyPtr and InstancePoolInstanceMaintenancePolicyPtrOutput values.
+// You can construct a concrete instance of `InstancePoolInstanceMaintenancePolicyPtrInput` via:
+//
+//	        InstancePoolInstanceMaintenancePolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstancePoolInstanceMaintenancePolicyPtrInput interface {
+	pulumi.Input
+
+	ToInstancePoolInstanceMaintenancePolicyPtrOutput() InstancePoolInstanceMaintenancePolicyPtrOutput
+	ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(context.Context) InstancePoolInstanceMaintenancePolicyPtrOutput
+}
+
+type instancePoolInstanceMaintenancePolicyPtrType InstancePoolInstanceMaintenancePolicyArgs
+
+func InstancePoolInstanceMaintenancePolicyPtr(v *InstancePoolInstanceMaintenancePolicyArgs) InstancePoolInstanceMaintenancePolicyPtrInput {
+	return (*instancePoolInstanceMaintenancePolicyPtrType)(v)
+}
+
+func (*instancePoolInstanceMaintenancePolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolInstanceMaintenancePolicy)(nil)).Elem()
+}
+
+func (i *instancePoolInstanceMaintenancePolicyPtrType) ToInstancePoolInstanceMaintenancePolicyPtrOutput() InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return i.ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *instancePoolInstanceMaintenancePolicyPtrType) ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMaintenancePolicyPtrOutput)
+}
+
+type InstancePoolInstanceMaintenancePolicyOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolInstanceMaintenancePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolInstanceMaintenancePolicy)(nil)).Elem()
+}
+
+func (o InstancePoolInstanceMaintenancePolicyOutput) ToInstancePoolInstanceMaintenancePolicyOutput() InstancePoolInstanceMaintenancePolicyOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyOutput) ToInstancePoolInstanceMaintenancePolicyOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyOutput) ToInstancePoolInstanceMaintenancePolicyPtrOutput() InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return o.ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(context.Background())
+}
+
+func (o InstancePoolInstanceMaintenancePolicyOutput) ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstancePoolInstanceMaintenancePolicy) *InstancePoolInstanceMaintenancePolicy {
+		return &v
+	}).(InstancePoolInstanceMaintenancePolicyPtrOutput)
+}
+
+// (Updatable) Default launch-before-termination settings for instance pool refreshes.
+func (o InstancePoolInstanceMaintenancePolicyOutput) LaunchBeforeTerminating() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return o.ApplyT(func(v InstancePoolInstanceMaintenancePolicy) *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating {
+		return v.LaunchBeforeTerminating
+	}).(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput)
+}
+
+type InstancePoolInstanceMaintenancePolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolInstanceMaintenancePolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolInstanceMaintenancePolicy)(nil)).Elem()
+}
+
+func (o InstancePoolInstanceMaintenancePolicyPtrOutput) ToInstancePoolInstanceMaintenancePolicyPtrOutput() InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyPtrOutput) ToInstancePoolInstanceMaintenancePolicyPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyPtrOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyPtrOutput) Elem() InstancePoolInstanceMaintenancePolicyOutput {
+	return o.ApplyT(func(v *InstancePoolInstanceMaintenancePolicy) InstancePoolInstanceMaintenancePolicy {
+		if v != nil {
+			return *v
+		}
+		var ret InstancePoolInstanceMaintenancePolicy
+		return ret
+	}).(InstancePoolInstanceMaintenancePolicyOutput)
+}
+
+// (Updatable) Default launch-before-termination settings for instance pool refreshes.
+func (o InstancePoolInstanceMaintenancePolicyPtrOutput) LaunchBeforeTerminating() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstanceMaintenancePolicy) *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating {
+		if v == nil {
+			return nil
+		}
+		return v.LaunchBeforeTerminating
+	}).(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput)
+}
+
+type InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating struct {
+	// (Updatable) Whether to refresh eligible instances that already use the target instance configuration.
+	IsFullRefresh bool `pulumi:"isFullRefresh"`
+	// (Updatable) The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+	MaxHealthyPercent int `pulumi:"maxHealthyPercent"`
+}
+
+// InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingInput is an input type that accepts InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs and InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput values.
+// You can construct a concrete instance of `InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingInput` via:
+//
+//	InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs{...}
+type InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingInput interface {
+	pulumi.Input
+
+	ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput
+	ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutputWithContext(context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput
+}
+
+type InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs struct {
+	// (Updatable) Whether to refresh eligible instances that already use the target instance configuration.
+	IsFullRefresh pulumi.BoolInput `pulumi:"isFullRefresh"`
+	// (Updatable) The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+	MaxHealthyPercent pulumi.IntInput `pulumi:"maxHealthyPercent"`
+}
+
+func (InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating)(nil)).Elem()
+}
+
+func (i InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput {
+	return i.ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutputWithContext(context.Background())
+}
+
+func (i InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput)
+}
+
+func (i InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return i.ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(context.Background())
+}
+
+func (i InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput).ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(ctx)
+}
+
+// InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrInput is an input type that accepts InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs, InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtr and InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput values.
+// You can construct a concrete instance of `InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrInput` via:
+//
+//	        InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrInput interface {
+	pulumi.Input
+
+	ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput
+	ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput
+}
+
+type instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrType InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs
+
+func InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtr(v *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrInput {
+	return (*instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrType)(v)
+}
+
+func (*instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating)(nil)).Elem()
+}
+
+func (i *instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrType) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return i.ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(context.Background())
+}
+
+func (i *instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrType) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput)
+}
+
+type InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating)(nil)).Elem()
+}
+
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return o.ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(context.Background())
+}
+
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating) *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating {
+		return &v
+	}).(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput)
+}
+
+// (Updatable) Whether to refresh eligible instances that already use the target instance configuration.
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput) IsFullRefresh() pulumi.BoolOutput {
+	return o.ApplyT(func(v InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating) bool { return v.IsFullRefresh }).(pulumi.BoolOutput)
+}
+
+// (Updatable) The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput) MaxHealthyPercent() pulumi.IntOutput {
+	return o.ApplyT(func(v InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating) int { return v.MaxHealthyPercent }).(pulumi.IntOutput)
+}
+
+type InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput struct{ *pulumi.OutputState }
+
+func (InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating)(nil)).Elem()
+}
+
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput) ToInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutputWithContext(ctx context.Context) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput {
+	return o
+}
+
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput) Elem() InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput {
+	return o.ApplyT(func(v *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating) InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating {
+		if v != nil {
+			return *v
+		}
+		var ret InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating
+		return ret
+	}).(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput)
+}
+
+// (Updatable) Whether to refresh eligible instances that already use the target instance configuration.
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput) IsFullRefresh() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsFullRefresh
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+func (o InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput) MaxHealthyPercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.MaxHealthyPercent
+	}).(pulumi.IntPtrOutput)
+}
+
 type InstancePoolLifecycleManagement struct {
 	// (Updatable) The lifecycle actions for the instance pool.
 	LifecycleActions InstancePoolLifecycleManagementLifecycleActions `pulumi:"lifecycleActions"`
@@ -77357,404 +77652,6 @@ func (o GetInstanceConfigurationInstanceDetailBlockVolumeArrayOutput) Index(i pu
 	}).(GetInstanceConfigurationInstanceDetailBlockVolumeOutput)
 }
 
-type GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail struct {
-	// The device name.
-	Device string `pulumi:"device"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Whether the attachment should be created in read-only mode.
-	IsReadOnly bool `pulumi:"isReadOnly"`
-	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-	IsShareable bool `pulumi:"isShareable"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
-	UseChap bool `pulumi:"useChap"`
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs and GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs struct {
-	// The device name.
-	Device pulumi.StringInput `pulumi:"device"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Whether the attachment should be created in read-only mode.
-	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
-	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-	IsShareable pulumi.BoolInput `pulumi:"isShareable"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
-	UseChap pulumi.BoolInput `pulumi:"useChap"`
-}
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray and GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray{ GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray []GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailInput
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput {
-	return o
-}
-
-// The device name.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) Device() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) string { return v.Device }).(pulumi.StringOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Deprecated. Use `isEncryptionInTransitEnabled` instead.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) bool {
-		return v.IsPvEncryptionInTransitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the attachment should be created in read-only mode.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) IsReadOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) bool { return v.IsReadOnly }).(pulumi.BoolOutput)
-}
-
-// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) IsShareable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) bool { return v.IsShareable }).(pulumi.BoolOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// Whether to use CHAP authentication for the volume attachment. Defaults to false.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput) UseChap() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail) bool { return v.UseChap }).(pulumi.BoolOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail struct {
-	// The list of autotune policies enabled for this volume.
-	AutotunePolicies []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy `pulumi:"autotunePolicies"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-	BackupPolicyId string `pulumi:"backupPolicyId"`
-	// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-	BlockVolumeReplicas []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
-	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
-	IsReservationsEnabled bool `pulumi:"isReservationsEnabled"`
-	// The OCID of the Vault service key to assign as the master encryption key for the volume.
-	KmsKeyId string `pulumi:"kmsKeyId"`
-	// The size of the volume in GBs.
-	SizeInGbs     string                                                                      `pulumi:"sizeInGbs"`
-	SourceDetails []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail `pulumi:"sourceDetails"`
-	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb string `pulumi:"vpusPerGb"`
-	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-	XrcKmsKeyId string `pulumi:"xrcKmsKeyId"`
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs struct {
-	// The list of autotune policies enabled for this volume.
-	AutotunePolicies GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayInput `pulumi:"autotunePolicies"`
-	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-	BackupPolicyId pulumi.StringInput `pulumi:"backupPolicyId"`
-	// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-	BlockVolumeReplicas GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayInput `pulumi:"blockVolumeReplicas"`
-	// The OCID of the cluster placement group of the instance.
-	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
-	// The OCID of the compartment containing images to search
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
-	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
-	IsReservationsEnabled pulumi.BoolInput `pulumi:"isReservationsEnabled"`
-	// The OCID of the Vault service key to assign as the master encryption key for the volume.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
-	// The size of the volume in GBs.
-	SizeInGbs     pulumi.StringInput                                                                  `pulumi:"sizeInGbs"`
-	SourceDetails GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayInput `pulumi:"sourceDetails"`
-	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb pulumi.StringInput `pulumi:"vpusPerGb"`
-	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-	XrcKmsKeyId pulumi.StringInput `pulumi:"xrcKmsKeyId"`
-}
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray and GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray{ GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailInput
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput {
-	return o
-}
-
-// The list of autotune policies enabled for this volume.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) AutotunePolicies() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy {
-		return v.AutotunePolicies
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArrayOutput)
-}
-
-// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string {
-		return v.AvailabilityDomain
-	}).(pulumi.StringOutput)
-}
-
-// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) BackupPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string { return v.BackupPolicyId }).(pulumi.StringOutput)
-}
-
-// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) BlockVolumeReplicas() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica {
-		return v.BlockVolumeReplicas
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput)
-}
-
-// The OCID of the cluster placement group of the instance.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) ClusterPlacementGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string {
-		return v.ClusterPlacementGroupId
-	}).(pulumi.StringOutput)
-}
-
-// The OCID of the compartment containing images to search
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) bool { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
-}
-
-// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) IsReservationsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) bool {
-		return v.IsReservationsEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// The OCID of the Vault service key to assign as the master encryption key for the volume.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
-}
-
-// The size of the volume in GBs.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string { return v.SizeInGbs }).(pulumi.StringOutput)
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) SourceDetails() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) []GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail {
-		return v.SourceDetails
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailArrayOutput)
-}
-
-// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) VpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string { return v.VpusPerGb }).(pulumi.StringOutput)
-}
-
-// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput) XrcKmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail) string { return v.XrcKmsKeyId }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyInput)(nil)).Elem(), BootVolumeAutotunePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyArrayInput)(nil)).Elem(), BootVolumeAutotunePolicyArray{})
@@ -78060,6 +77957,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePlatformConfigPtrInput)(nil)).Elem(), InstancePlatformConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolInstanceLoadBalancerBackendInput)(nil)).Elem(), InstancePoolInstanceLoadBalancerBackendArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolInstanceLoadBalancerBackendArrayInput)(nil)).Elem(), InstancePoolInstanceLoadBalancerBackendArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolInstanceMaintenancePolicyInput)(nil)).Elem(), InstancePoolInstanceMaintenancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolInstanceMaintenancePolicyPtrInput)(nil)).Elem(), InstancePoolInstanceMaintenancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingInput)(nil)).Elem(), InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrInput)(nil)).Elem(), InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolLifecycleManagementInput)(nil)).Elem(), InstancePoolLifecycleManagementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolLifecycleManagementPtrInput)(nil)).Elem(), InstancePoolLifecycleManagementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePoolLifecycleManagementLifecycleActionsInput)(nil)).Elem(), InstancePoolLifecycleManagementLifecycleActionsArgs{})
@@ -78750,10 +78651,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArray{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyOutput{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyArrayOutput{})
 	pulumi.RegisterOutputType(BootVolumeBackupRetentionPeriodOutput{})
@@ -79058,6 +78955,10 @@ func init() {
 	pulumi.RegisterOutputType(InstancePlatformConfigPtrOutput{})
 	pulumi.RegisterOutputType(InstancePoolInstanceLoadBalancerBackendOutput{})
 	pulumi.RegisterOutputType(InstancePoolInstanceLoadBalancerBackendArrayOutput{})
+	pulumi.RegisterOutputType(InstancePoolInstanceMaintenancePolicyOutput{})
+	pulumi.RegisterOutputType(InstancePoolInstanceMaintenancePolicyPtrOutput{})
+	pulumi.RegisterOutputType(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingOutput{})
+	pulumi.RegisterOutputType(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingPtrOutput{})
 	pulumi.RegisterOutputType(InstancePoolLifecycleManagementOutput{})
 	pulumi.RegisterOutputType(InstancePoolLifecycleManagementPtrOutput{})
 	pulumi.RegisterOutputType(InstancePoolLifecycleManagementLifecycleActionsOutput{})
@@ -79748,8 +79649,4 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailArrayOutput{})
 }

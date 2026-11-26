@@ -13,6 +13,705 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail struct {
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays                  []int `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled bool  `pulumi:"isCustomActionTimeoutEnabled"`
+	IsMonthlyPatchingEnabled     bool  `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months       []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	PatchingMode string                                                                   `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	SkipRus    []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs{...}
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs struct {
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays                  pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled pulumi.BoolInput     `pulumi:"isCustomActionTimeoutEnabled"`
+	IsMonthlyPatchingEnabled     pulumi.BoolInput     `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months       GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	PatchingMode pulumi.StringInput                                                               `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput    `pulumi:"preference"`
+	SkipRus    pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput)
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs{...} }
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) DaysOfWeeks() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) bool {
+		return v.IsMonthlyPatchingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) int {
+		return v.LeadTimeInWeeks
+	}).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) Months() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth {
+		return v.Months
+	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) string {
+		return v.PatchingMode
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) string { return v.Preference }).(pulumi.StringOutput)
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []bool { return v.SkipRus }).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []int {
+		return v.WeeksOfMonths
+	}).(pulumi.IntArrayOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput) Index(i pulumi.IntInput) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail {
+		return vs[0].([]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail)[vs[1].(int)]
+	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
+		return vs[0].([]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)[vs[1].(int)]
+	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) Index(i pulumi.IntInput) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth {
+		return vs[0].([]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth)[vs[1].(int)]
+	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs{...}
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput)
+}
+
+// GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput` via:
+//
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs{...} }
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput
+	ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return i.ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ToGetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth {
+		return vs[0].([]GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth)[vs[1].(int)]
+	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput)
+}
+
+type GetAutonomousVmClustersFilter struct {
+	// Name of the month of the year.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAutonomousVmClustersFilterInput is an input type that accepts GetAutonomousVmClustersFilterArgs and GetAutonomousVmClustersFilterOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersFilterInput` via:
+//
+//	GetAutonomousVmClustersFilterArgs{...}
+type GetAutonomousVmClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersFilterOutput() GetAutonomousVmClustersFilterOutput
+	ToGetAutonomousVmClustersFilterOutputWithContext(context.Context) GetAutonomousVmClustersFilterOutput
+}
+
+type GetAutonomousVmClustersFilterArgs struct {
+	// Name of the month of the year.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAutonomousVmClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersFilterArgs) ToGetAutonomousVmClustersFilterOutput() GetAutonomousVmClustersFilterOutput {
+	return i.ToGetAutonomousVmClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersFilterArgs) ToGetAutonomousVmClustersFilterOutputWithContext(ctx context.Context) GetAutonomousVmClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersFilterOutput)
+}
+
+// GetAutonomousVmClustersFilterArrayInput is an input type that accepts GetAutonomousVmClustersFilterArray and GetAutonomousVmClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousVmClustersFilterArrayInput` via:
+//
+//	GetAutonomousVmClustersFilterArray{ GetAutonomousVmClustersFilterArgs{...} }
+type GetAutonomousVmClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousVmClustersFilterArrayOutput() GetAutonomousVmClustersFilterArrayOutput
+	ToGetAutonomousVmClustersFilterArrayOutputWithContext(context.Context) GetAutonomousVmClustersFilterArrayOutput
+}
+
+type GetAutonomousVmClustersFilterArray []GetAutonomousVmClustersFilterInput
+
+func (GetAutonomousVmClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetAutonomousVmClustersFilterArray) ToGetAutonomousVmClustersFilterArrayOutput() GetAutonomousVmClustersFilterArrayOutput {
+	return i.ToGetAutonomousVmClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousVmClustersFilterArray) ToGetAutonomousVmClustersFilterArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousVmClustersFilterArrayOutput)
+}
+
+type GetAutonomousVmClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersFilterOutput) ToGetAutonomousVmClustersFilterOutput() GetAutonomousVmClustersFilterOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersFilterOutput) ToGetAutonomousVmClustersFilterOutputWithContext(ctx context.Context) GetAutonomousVmClustersFilterOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetAutonomousVmClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAutonomousVmClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAutonomousVmClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAutonomousVmClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousVmClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetAutonomousVmClustersFilterArrayOutput) ToGetAutonomousVmClustersFilterArrayOutput() GetAutonomousVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersFilterArrayOutput) ToGetAutonomousVmClustersFilterArrayOutputWithContext(ctx context.Context) GetAutonomousVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetAutonomousVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetAutonomousVmClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousVmClustersFilter {
+		return vs[0].([]GetAutonomousVmClustersFilter)[vs[1].(int)]
+	}).(GetAutonomousVmClustersFilterOutput)
+}
+
+type GetBackupDestinationAssociatedDatabase struct {
+	// The display name of the database that is associated with the backup destination.
+	DbName string `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id string `pulumi:"id"`
+}
+
+// GetBackupDestinationAssociatedDatabaseInput is an input type that accepts GetBackupDestinationAssociatedDatabaseArgs and GetBackupDestinationAssociatedDatabaseOutput values.
+// You can construct a concrete instance of `GetBackupDestinationAssociatedDatabaseInput` via:
+//
+//	GetBackupDestinationAssociatedDatabaseArgs{...}
+type GetBackupDestinationAssociatedDatabaseInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationAssociatedDatabaseOutput
+	ToGetBackupDestinationAssociatedDatabaseOutputWithContext(context.Context) GetBackupDestinationAssociatedDatabaseOutput
+}
+
+type GetBackupDestinationAssociatedDatabaseArgs struct {
+	// The display name of the database that is associated with the backup destination.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetBackupDestinationAssociatedDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetBackupDestinationAssociatedDatabaseArgs) ToGetBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationAssociatedDatabaseOutput {
+	return i.ToGetBackupDestinationAssociatedDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationAssociatedDatabaseArgs) ToGetBackupDestinationAssociatedDatabaseOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationAssociatedDatabaseOutput)
+}
+
+// GetBackupDestinationAssociatedDatabaseArrayInput is an input type that accepts GetBackupDestinationAssociatedDatabaseArray and GetBackupDestinationAssociatedDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationAssociatedDatabaseArrayInput` via:
+//
+//	GetBackupDestinationAssociatedDatabaseArray{ GetBackupDestinationAssociatedDatabaseArgs{...} }
+type GetBackupDestinationAssociatedDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationAssociatedDatabaseArrayOutput
+	ToGetBackupDestinationAssociatedDatabaseArrayOutputWithContext(context.Context) GetBackupDestinationAssociatedDatabaseArrayOutput
+}
+
+type GetBackupDestinationAssociatedDatabaseArray []GetBackupDestinationAssociatedDatabaseInput
+
+func (GetBackupDestinationAssociatedDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetBackupDestinationAssociatedDatabaseArray) ToGetBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationAssociatedDatabaseArrayOutput {
+	return i.ToGetBackupDestinationAssociatedDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationAssociatedDatabaseArray) ToGetBackupDestinationAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationAssociatedDatabaseArrayOutput)
+}
+
+type GetBackupDestinationAssociatedDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationAssociatedDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetBackupDestinationAssociatedDatabaseOutput) ToGetBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationAssociatedDatabaseOutput {
+	return o
+}
+
+func (o GetBackupDestinationAssociatedDatabaseOutput) ToGetBackupDestinationAssociatedDatabaseOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedDatabaseOutput {
+	return o
+}
+
+// The display name of the database that is associated with the backup destination.
+func (o GetBackupDestinationAssociatedDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationAssociatedDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+func (o GetBackupDestinationAssociatedDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationAssociatedDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetBackupDestinationAssociatedDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationAssociatedDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetBackupDestinationAssociatedDatabaseArrayOutput) ToGetBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationAssociatedDatabaseArrayOutput) ToGetBackupDestinationAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetBackupDestinationAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationAssociatedDatabaseArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationAssociatedDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationAssociatedDatabase {
+		return vs[0].([]GetBackupDestinationAssociatedDatabase)[vs[1].(int)]
+	}).(GetBackupDestinationAssociatedDatabaseOutput)
+}
+
 type GetBackupDestinationAssociatedLongTermBackup struct {
 	// The user-provided name of the backup destination.
 	DisplayName string `pulumi:"displayName"`
@@ -2037,6 +2736,130 @@ func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) Index(i p
 	}).(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput)
 }
 
+type GetCloudAutonomousVmClusterKeyManagementSystemDetail struct {
+	// If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+	IsExclusive bool `pulumi:"isExclusive"`
+	// The type of key management system used.
+	KeyManagementSystem string `pulumi:"keyManagementSystem"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId string `pulumi:"keyStoreId"`
+	// Thales HSM Port. Default is 9000.
+	ThalesHsmPort int `pulumi:"thalesHsmPort"`
+}
+
+// GetCloudAutonomousVmClusterKeyManagementSystemDetailInput is an input type that accepts GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs and GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterKeyManagementSystemDetailInput` via:
+//
+//	GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs{...}
+type GetCloudAutonomousVmClusterKeyManagementSystemDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterKeyManagementSystemDetailOutput() GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput
+	ToGetCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(context.Context) GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput
+}
+
+type GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs struct {
+	// If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+	IsExclusive pulumi.BoolInput `pulumi:"isExclusive"`
+	// The type of key management system used.
+	KeyManagementSystem pulumi.StringInput `pulumi:"keyManagementSystem"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId pulumi.StringInput `pulumi:"keyStoreId"`
+	// Thales HSM Port. Default is 9000.
+	ThalesHsmPort pulumi.IntInput `pulumi:"thalesHsmPort"`
+}
+
+func (GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailOutput() GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return i.ToGetCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput)
+}
+
+// GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput is an input type that accepts GetCloudAutonomousVmClusterKeyManagementSystemDetailArray and GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterKeyManagementSystemDetailArray{ GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs{...} }
+type GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput() GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput
+	ToGetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput
+}
+
+type GetCloudAutonomousVmClusterKeyManagementSystemDetailArray []GetCloudAutonomousVmClusterKeyManagementSystemDetailInput
+
+func (GetCloudAutonomousVmClusterKeyManagementSystemDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterKeyManagementSystemDetailArray) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput() GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterKeyManagementSystemDetailArray) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailOutput() GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return o
+}
+
+// If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput) IsExclusive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterKeyManagementSystemDetail) bool { return v.IsExclusive }).(pulumi.BoolOutput)
+}
+
+// The type of key management system used.
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput) KeyManagementSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterKeyManagementSystemDetail) string { return v.KeyManagementSystem }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterKeyManagementSystemDetail) string { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
+// Thales HSM Port. Default is 9000.
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ThalesHsmPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterKeyManagementSystemDetail) int { return v.ThalesHsmPort }).(pulumi.IntOutput)
+}
+
+type GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput() GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) ToGetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterKeyManagementSystemDetail {
+		return vs[0].([]GetCloudAutonomousVmClusterKeyManagementSystemDetail)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput)
+}
+
 type GetCloudAutonomousVmClusterMaintenanceWindow struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
@@ -3309,6 +4132,8 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmCluster struct {
 	Id string `pulumi:"id"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster bool `pulumi:"isMtlsEnabledVmCluster"`
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails []GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail `pulumi:"keyManagementSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
@@ -3458,6 +4283,8 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolInput `pulumi:"isMtlsEnabledVmCluster"`
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput `pulumi:"keyManagementSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringInput `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
@@ -3737,6 +4564,13 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) IsMtlsEnable
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) bool { return v.IsMtlsEnabledVmCluster }).(pulumi.BoolOutput)
 }
 
+// Autonomous VM Cluster Key Management System details.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) KeyManagementSystemDetails() GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail {
+		return v.KeyManagementSystemDetails
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) LastMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
@@ -3986,6 +4820,138 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
 		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmCluster)[vs[1].(int)]
 	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail struct {
+	// If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+	IsExclusive bool `pulumi:"isExclusive"`
+	// The type of key management system used.
+	KeyManagementSystem string `pulumi:"keyManagementSystem"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId string `pulumi:"keyStoreId"`
+	// Thales HSM Port. Default is 9000.
+	ThalesHsmPort int `pulumi:"thalesHsmPort"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs struct {
+	// If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+	IsExclusive pulumi.BoolInput `pulumi:"isExclusive"`
+	// The type of key management system used.
+	KeyManagementSystem pulumi.StringInput `pulumi:"keyManagementSystem"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId pulumi.StringInput `pulumi:"keyStoreId"`
+	// Thales HSM Port. Default is 9000.
+	ThalesHsmPort pulumi.IntInput `pulumi:"thalesHsmPort"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return o
+}
+
+// If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput) IsExclusive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail) bool {
+		return v.IsExclusive
+	}).(pulumi.BoolOutput)
+}
+
+// The type of key management system used.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput) KeyManagementSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail) string {
+		return v.KeyManagementSystem
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail) string {
+		return v.KeyStoreId
+	}).(pulumi.StringOutput)
+}
+
+// Thales HSM Port. Default is 9000.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput) ThalesHsmPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail) int {
+		return v.ThalesHsmPort
+	}).(pulumi.IntOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput)
 }
 
 type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow struct {
@@ -49528,6 +50494,218 @@ func (o GetGiVersionsGiVersionArrayOutput) Index(i pulumi.IntInput) GetGiVersion
 	}).(GetGiVersionsGiVersionOutput)
 }
 
+type GetKeyStoreAssociatedAutonomousVmCluster struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoreAssociatedAutonomousVmClusterInput is an input type that accepts GetKeyStoreAssociatedAutonomousVmClusterArgs and GetKeyStoreAssociatedAutonomousVmClusterOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedAutonomousVmClusterInput` via:
+//
+//	GetKeyStoreAssociatedAutonomousVmClusterArgs{...}
+type GetKeyStoreAssociatedAutonomousVmClusterInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedAutonomousVmClusterOutput() GetKeyStoreAssociatedAutonomousVmClusterOutput
+	ToGetKeyStoreAssociatedAutonomousVmClusterOutputWithContext(context.Context) GetKeyStoreAssociatedAutonomousVmClusterOutput
+}
+
+type GetKeyStoreAssociatedAutonomousVmClusterArgs struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoreAssociatedAutonomousVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedAutonomousVmClusterArgs) ToGetKeyStoreAssociatedAutonomousVmClusterOutput() GetKeyStoreAssociatedAutonomousVmClusterOutput {
+	return i.ToGetKeyStoreAssociatedAutonomousVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedAutonomousVmClusterArgs) ToGetKeyStoreAssociatedAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoreAssociatedAutonomousVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedAutonomousVmClusterOutput)
+}
+
+// GetKeyStoreAssociatedAutonomousVmClusterArrayInput is an input type that accepts GetKeyStoreAssociatedAutonomousVmClusterArray and GetKeyStoreAssociatedAutonomousVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedAutonomousVmClusterArrayInput` via:
+//
+//	GetKeyStoreAssociatedAutonomousVmClusterArray{ GetKeyStoreAssociatedAutonomousVmClusterArgs{...} }
+type GetKeyStoreAssociatedAutonomousVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedAutonomousVmClusterArrayOutput() GetKeyStoreAssociatedAutonomousVmClusterArrayOutput
+	ToGetKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(context.Context) GetKeyStoreAssociatedAutonomousVmClusterArrayOutput
+}
+
+type GetKeyStoreAssociatedAutonomousVmClusterArray []GetKeyStoreAssociatedAutonomousVmClusterInput
+
+func (GetKeyStoreAssociatedAutonomousVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedAutonomousVmClusterArray) ToGetKeyStoreAssociatedAutonomousVmClusterArrayOutput() GetKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return i.ToGetKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedAutonomousVmClusterArray) ToGetKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedAutonomousVmClusterArrayOutput)
+}
+
+type GetKeyStoreAssociatedAutonomousVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedAutonomousVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedAutonomousVmClusterOutput) ToGetKeyStoreAssociatedAutonomousVmClusterOutput() GetKeyStoreAssociatedAutonomousVmClusterOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedAutonomousVmClusterOutput) ToGetKeyStoreAssociatedAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoreAssociatedAutonomousVmClusterOutput {
+	return o
+}
+
+// The user-friendly name for the key store. The name does not need to be unique.
+func (o GetKeyStoreAssociatedAutonomousVmClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedAutonomousVmCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoreAssociatedAutonomousVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedAutonomousVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoreAssociatedAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedAutonomousVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedAutonomousVmClusterArrayOutput) ToGetKeyStoreAssociatedAutonomousVmClusterArrayOutput() GetKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedAutonomousVmClusterArrayOutput) ToGetKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) GetKeyStoreAssociatedAutonomousVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoreAssociatedAutonomousVmCluster {
+		return vs[0].([]GetKeyStoreAssociatedAutonomousVmCluster)[vs[1].(int)]
+	}).(GetKeyStoreAssociatedAutonomousVmClusterOutput)
+}
+
+type GetKeyStoreAssociatedCloudAutonomousVmCluster struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoreAssociatedCloudAutonomousVmClusterInput is an input type that accepts GetKeyStoreAssociatedCloudAutonomousVmClusterArgs and GetKeyStoreAssociatedCloudAutonomousVmClusterOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedCloudAutonomousVmClusterInput` via:
+//
+//	GetKeyStoreAssociatedCloudAutonomousVmClusterArgs{...}
+type GetKeyStoreAssociatedCloudAutonomousVmClusterInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedCloudAutonomousVmClusterOutput() GetKeyStoreAssociatedCloudAutonomousVmClusterOutput
+	ToGetKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(context.Context) GetKeyStoreAssociatedCloudAutonomousVmClusterOutput
+}
+
+type GetKeyStoreAssociatedCloudAutonomousVmClusterArgs struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoreAssociatedCloudAutonomousVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedCloudAutonomousVmClusterArgs) ToGetKeyStoreAssociatedCloudAutonomousVmClusterOutput() GetKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return i.ToGetKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedCloudAutonomousVmClusterArgs) ToGetKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedCloudAutonomousVmClusterOutput)
+}
+
+// GetKeyStoreAssociatedCloudAutonomousVmClusterArrayInput is an input type that accepts GetKeyStoreAssociatedCloudAutonomousVmClusterArray and GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedCloudAutonomousVmClusterArrayInput` via:
+//
+//	GetKeyStoreAssociatedCloudAutonomousVmClusterArray{ GetKeyStoreAssociatedCloudAutonomousVmClusterArgs{...} }
+type GetKeyStoreAssociatedCloudAutonomousVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput() GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput
+	ToGetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(context.Context) GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput
+}
+
+type GetKeyStoreAssociatedCloudAutonomousVmClusterArray []GetKeyStoreAssociatedCloudAutonomousVmClusterInput
+
+func (GetKeyStoreAssociatedCloudAutonomousVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedCloudAutonomousVmClusterArray) ToGetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput() GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return i.ToGetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedCloudAutonomousVmClusterArray) ToGetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput)
+}
+
+type GetKeyStoreAssociatedCloudAutonomousVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedCloudAutonomousVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedCloudAutonomousVmClusterOutput) ToGetKeyStoreAssociatedCloudAutonomousVmClusterOutput() GetKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedCloudAutonomousVmClusterOutput) ToGetKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return o
+}
+
+// The user-friendly name for the key store. The name does not need to be unique.
+func (o GetKeyStoreAssociatedCloudAutonomousVmClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedCloudAutonomousVmCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoreAssociatedCloudAutonomousVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedCloudAutonomousVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) ToGetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput() GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) ToGetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) GetKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoreAssociatedCloudAutonomousVmCluster {
+		return vs[0].([]GetKeyStoreAssociatedCloudAutonomousVmCluster)[vs[1].(int)]
+	}).(GetKeyStoreAssociatedCloudAutonomousVmClusterOutput)
+}
+
 type GetKeyStoreAssociatedDatabase struct {
 	// The name of the database that is associated with the key store.
 	DbName string `pulumi:"dbName"`
@@ -49989,6 +51167,10 @@ func (o GetKeyStoresFilterArrayOutput) Index(i pulumi.IntInput) GetKeyStoresFilt
 }
 
 type GetKeyStoresKeyStore struct {
+	// List of Autonomous VM Clusters associated with the key store.
+	AssociatedAutonomousVmClusters []GetKeyStoresKeyStoreAssociatedAutonomousVmCluster `pulumi:"associatedAutonomousVmClusters"`
+	// List of Cloud Autonomous VM Clusters associated with the key store.
+	AssociatedCloudAutonomousVmClusters []GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster `pulumi:"associatedCloudAutonomousVmClusters"`
 	// List of databases associated with the key store.
 	AssociatedDatabases []GetKeyStoresKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
 	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
@@ -50030,6 +51212,10 @@ type GetKeyStoresKeyStoreInput interface {
 }
 
 type GetKeyStoresKeyStoreArgs struct {
+	// List of Autonomous VM Clusters associated with the key store.
+	AssociatedAutonomousVmClusters GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayInput `pulumi:"associatedAutonomousVmClusters"`
+	// List of Cloud Autonomous VM Clusters associated with the key store.
+	AssociatedCloudAutonomousVmClusters GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayInput `pulumi:"associatedCloudAutonomousVmClusters"`
 	// List of databases associated with the key store.
 	AssociatedDatabases GetKeyStoresKeyStoreAssociatedDatabaseArrayInput `pulumi:"associatedDatabases"`
 	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
@@ -50108,6 +51294,20 @@ func (o GetKeyStoresKeyStoreOutput) ToGetKeyStoresKeyStoreOutput() GetKeyStoresK
 
 func (o GetKeyStoresKeyStoreOutput) ToGetKeyStoresKeyStoreOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreOutput {
 	return o
+}
+
+// List of Autonomous VM Clusters associated with the key store.
+func (o GetKeyStoresKeyStoreOutput) AssociatedAutonomousVmClusters() GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) []GetKeyStoresKeyStoreAssociatedAutonomousVmCluster {
+		return v.AssociatedAutonomousVmClusters
+	}).(GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput)
+}
+
+// List of Cloud Autonomous VM Clusters associated with the key store.
+func (o GetKeyStoresKeyStoreOutput) AssociatedCloudAutonomousVmClusters() GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) []GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster {
+		return v.AssociatedCloudAutonomousVmClusters
+	}).(GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput)
 }
 
 // List of databases associated with the key store.
@@ -50199,6 +51399,218 @@ func (o GetKeyStoresKeyStoreArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKe
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStore {
 		return vs[0].([]GetKeyStoresKeyStore)[vs[1].(int)]
 	}).(GetKeyStoresKeyStoreOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedAutonomousVmCluster struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoresKeyStoreAssociatedAutonomousVmClusterInput is an input type that accepts GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs and GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedAutonomousVmClusterInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs{...}
+type GetKeyStoresKeyStoreAssociatedAutonomousVmClusterInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput() GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput
+	ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput() GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput)
+}
+
+// GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayInput is an input type that accepts GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArray and GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArray{ GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs{...} }
+type GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput() GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput
+	ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArray []GetKeyStoresKeyStoreAssociatedAutonomousVmClusterInput
+
+func (GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArray) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput() GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArray) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput() GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput {
+	return o
+}
+
+// The user-friendly name for the key store. The name does not need to be unique.
+func (o GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedAutonomousVmCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedAutonomousVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput() GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput) ToGetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStoreAssociatedAutonomousVmCluster {
+		return vs[0].([]GetKeyStoresKeyStoreAssociatedAutonomousVmCluster)[vs[1].(int)]
+	}).(GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterInput is an input type that accepts GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs and GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs{...}
+type GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput() GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput
+	ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs struct {
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput() GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput)
+}
+
+// GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayInput is an input type that accepts GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArray and GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArray{ GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs{...} }
+type GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput() GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput
+	ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArray []GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterInput
+
+func (GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArray) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput() GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArray) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput() GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return o
+}
+
+// The user-friendly name for the key store. The name does not need to be unique.
+func (o GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput() GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) ToGetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster {
+		return vs[0].([]GetKeyStoresKeyStoreAssociatedCloudAutonomousVmCluster)[vs[1].(int)]
+	}).(GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput)
 }
 
 type GetKeyStoresKeyStoreAssociatedDatabase struct {
@@ -63786,6 +65198,18 @@ func (o GetVmClustersVmClusterUpdateDetailArrayOutput) Index(i pulumi.IntInput) 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersFilterInput)(nil)).Elem(), GetAutonomousVmClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousVmClustersFilterArrayInput)(nil)).Elem(), GetAutonomousVmClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedDatabaseInput)(nil)).Elem(), GetBackupDestinationAssociatedDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedDatabaseArrayInput)(nil)).Elem(), GetBackupDestinationAssociatedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationMountTypeDetailInput)(nil)).Elem(), GetBackupDestinationMountTypeDetailArgs{})
@@ -63812,6 +65236,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterKeyManagementSystemDetailInput)(nil)).Elem(), GetCloudAutonomousVmClusterKeyManagementSystemDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterKeyManagementSystemDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{})
@@ -63832,6 +65258,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{})
@@ -64440,6 +65868,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsFilterArrayInput)(nil)).Elem(), GetGiVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsGiVersionInput)(nil)).Elem(), GetGiVersionsGiVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsGiVersionArrayInput)(nil)).Elem(), GetGiVersionsGiVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedAutonomousVmClusterInput)(nil)).Elem(), GetKeyStoreAssociatedAutonomousVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedAutonomousVmClusterArrayInput)(nil)).Elem(), GetKeyStoreAssociatedAutonomousVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedCloudAutonomousVmClusterInput)(nil)).Elem(), GetKeyStoreAssociatedCloudAutonomousVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedCloudAutonomousVmClusterArrayInput)(nil)).Elem(), GetKeyStoreAssociatedCloudAutonomousVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedDatabaseInput)(nil)).Elem(), GetKeyStoreAssociatedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), GetKeyStoreAssociatedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedLongTermBackupInput)(nil)).Elem(), GetKeyStoreAssociatedLongTermBackupArgs{})
@@ -64450,6 +65882,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresFilterArrayInput)(nil)).Elem(), GetKeyStoresFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreInput)(nil)).Elem(), GetKeyStoresKeyStoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedAutonomousVmClusterInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedLongTermBackupInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedLongTermBackupArgs{})
@@ -64654,6 +66090,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterLiveImageVersionDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterLiveImageVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArray{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetAutonomousVmClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationAssociatedDatabaseOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationAssociatedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationMountTypeDetailOutput{})
@@ -64680,6 +66128,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterKeyManagementSystemDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput{})
@@ -64700,6 +66150,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput{})
@@ -65308,6 +66760,10 @@ func init() {
 	pulumi.RegisterOutputType(GetGiVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetGiVersionsGiVersionOutput{})
 	pulumi.RegisterOutputType(GetGiVersionsGiVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedAutonomousVmClusterOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedAutonomousVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedCloudAutonomousVmClusterOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreAssociatedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreAssociatedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreAssociatedLongTermBackupOutput{})
@@ -65318,6 +66774,10 @@ func init() {
 	pulumi.RegisterOutputType(GetKeyStoresFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedAutonomousVmClusterOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedAutonomousVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedLongTermBackupOutput{})

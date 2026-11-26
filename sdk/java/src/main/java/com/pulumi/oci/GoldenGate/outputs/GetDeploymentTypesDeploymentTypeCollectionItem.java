@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     /**
-     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
      * 
      */
     private String category;
@@ -52,6 +52,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      */
     private List<String> supportedCapabilities;
     /**
+     * @return The list of credential stores supported by the deployment type.
+     * 
+     */
+    private List<String> supportedCredentialStores;
+    /**
      * @return The list of Oracle license models supported by the deployment type.
      * 
      */
@@ -69,7 +74,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
 
     private GetDeploymentTypesDeploymentTypeCollectionItem() {}
     /**
-     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
      * 
      */
     public String category() {
@@ -125,6 +130,13 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         return this.supportedCapabilities;
     }
     /**
+     * @return The list of credential stores supported by the deployment type.
+     * 
+     */
+    public List<String> supportedCredentialStores() {
+        return this.supportedCredentialStores;
+    }
+    /**
      * @return The list of Oracle license models supported by the deployment type.
      * 
      */
@@ -163,6 +175,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         private String oggVersion;
         private List<String> sourceTechnologies;
         private List<String> supportedCapabilities;
+        private List<String> supportedCredentialStores;
         private List<String> supportedLicenseTypes;
         private String supportedTechnologiesUrl;
         private List<String> targetTechnologies;
@@ -177,6 +190,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     	      this.oggVersion = defaults.oggVersion;
     	      this.sourceTechnologies = defaults.sourceTechnologies;
     	      this.supportedCapabilities = defaults.supportedCapabilities;
+    	      this.supportedCredentialStores = defaults.supportedCredentialStores;
     	      this.supportedLicenseTypes = defaults.supportedLicenseTypes;
     	      this.supportedTechnologiesUrl = defaults.supportedTechnologiesUrl;
     	      this.targetTechnologies = defaults.targetTechnologies;
@@ -256,6 +270,17 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             return supportedCapabilities(List.of(supportedCapabilities));
         }
         @CustomType.Setter
+        public Builder supportedCredentialStores(List<String> supportedCredentialStores) {
+            if (supportedCredentialStores == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypesDeploymentTypeCollectionItem", "supportedCredentialStores");
+            }
+            this.supportedCredentialStores = supportedCredentialStores;
+            return this;
+        }
+        public Builder supportedCredentialStores(String... supportedCredentialStores) {
+            return supportedCredentialStores(List.of(supportedCredentialStores));
+        }
+        @CustomType.Setter
         public Builder supportedLicenseTypes(List<String> supportedLicenseTypes) {
             if (supportedLicenseTypes == null) {
               throw new MissingRequiredPropertyException("GetDeploymentTypesDeploymentTypeCollectionItem", "supportedLicenseTypes");
@@ -295,6 +320,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             _resultValue.oggVersion = oggVersion;
             _resultValue.sourceTechnologies = sourceTechnologies;
             _resultValue.supportedCapabilities = supportedCapabilities;
+            _resultValue.supportedCredentialStores = supportedCredentialStores;
             _resultValue.supportedLicenseTypes = supportedLicenseTypes;
             _resultValue.supportedTechnologiesUrl = supportedTechnologiesUrl;
             _resultValue.targetTechnologies = targetTechnologies;

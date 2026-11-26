@@ -77,6 +77,8 @@ type LookupInstancePoolResult struct {
 	InstanceDisplayNameFormatter string `pulumi:"instanceDisplayNameFormatter"`
 	// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter string `pulumi:"instanceHostnameFormatter"`
+	// Optional maintenance policy settings for an instance pool.
+	InstanceMaintenancePolicies []GetInstancePoolInstanceMaintenancePolicy `pulumi:"instanceMaintenancePolicies"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
 	InstancePoolId string `pulumi:"instancePoolId"`
 	// The lifecycle management options for the instance pool.
@@ -174,6 +176,13 @@ func (o LookupInstancePoolResultOutput) InstanceDisplayNameFormatter() pulumi.St
 // A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 func (o LookupInstancePoolResultOutput) InstanceHostnameFormatter() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
+}
+
+// Optional maintenance policy settings for an instance pool.
+func (o LookupInstancePoolResultOutput) InstanceMaintenancePolicies() GetInstancePoolInstanceMaintenancePolicyArrayOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) []GetInstancePoolInstanceMaintenancePolicy {
+		return v.InstanceMaintenancePolicies
+	}).(GetInstancePoolInstanceMaintenancePolicyArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.

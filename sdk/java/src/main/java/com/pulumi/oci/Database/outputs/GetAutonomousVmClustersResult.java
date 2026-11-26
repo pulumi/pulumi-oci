@@ -41,6 +41,7 @@ public final class GetAutonomousVmClustersResult {
      * 
      */
     private String id;
+    private @Nullable String kmsType;
     /**
      * @return The current state of the Autonomous VM cluster.
      * 
@@ -86,6 +87,9 @@ public final class GetAutonomousVmClustersResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> kmsType() {
+        return Optional.ofNullable(this.kmsType);
+    }
     /**
      * @return The current state of the Autonomous VM cluster.
      * 
@@ -109,6 +113,7 @@ public final class GetAutonomousVmClustersResult {
         private @Nullable String exadataInfrastructureId;
         private @Nullable List<GetAutonomousVmClustersFilter> filters;
         private String id;
+        private @Nullable String kmsType;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAutonomousVmClustersResult defaults) {
@@ -119,6 +124,7 @@ public final class GetAutonomousVmClustersResult {
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.kmsType = defaults.kmsType;
     	      this.state = defaults.state;
         }
 
@@ -171,6 +177,12 @@ public final class GetAutonomousVmClustersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder kmsType(@Nullable String kmsType) {
+
+            this.kmsType = kmsType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -184,6 +196,7 @@ public final class GetAutonomousVmClustersResult {
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.kmsType = kmsType;
             _resultValue.state = state;
             return _resultValue;
         }

@@ -139,6 +139,10 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly isMtlsEnabled: boolean;
     /**
+     * Autonomous VM Cluster Key Management System details.
+     */
+    readonly keyManagementSystemDetails: outputs.Database.GetAutonomousVmClusterKeyManagementSystemDetail[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
     readonly lastMaintenanceRunId: string;

@@ -102,6 +102,15 @@ import (
 //					},
 //				},
 //				Catalog: &goldengate.ConnectionCatalogArgs{
+//					CatalogConfig: &goldengate.ConnectionCatalogCatalogConfigArgs{
+//						CatalogConfigType: pulumi.Any(connectionCatalogCatalogConfigCatalogConfigType),
+//						DatabaseId:        pulumi.Any(testDatabase.Id),
+//						DatabaseType:      pulumi.Any(connectionCatalogCatalogConfigDatabaseType),
+//						DeploymentId:      pulumi.Any(testDeployment.Id),
+//						Password:          pulumi.Any(connectionCatalogCatalogConfigPassword),
+//						PasswordSecretId:  pulumi.Any(testSecret.Id),
+//						Username:          pulumi.Any(connectionCatalogCatalogConfigUsername),
+//					},
 //					CatalogType:          pulumi.Any(connectionCatalogCatalogType),
 //					Branch:               pulumi.Any(connectionCatalogBranch),
 //					ClientId:             pulumi.Any(testClient.Id),
@@ -247,6 +256,21 @@ import (
 //				Wallet:                                pulumi.Any(connectionWallet),
 //				WalletSecretId:                        pulumi.Any(testSecret.Id),
 //				WorkspaceUrl:                          pulumi.Any(connectionWorkspaceUrl),
+//				WarehouseName:                         pulumi.Any(connectionWarehouseName),
+//				WarehouseStorage: &goldengate.ConnectionWarehouseStorageArgs{
+//					StorageType:             pulumi.Any(connectionWarehouseStorageStorageType),
+//					AccessKeyId:             pulumi.Any(testKey.Id),
+//					AccountKey:              pulumi.Any(connectionWarehouseStorageAccountKey),
+//					AccountKeySecretId:      pulumi.Any(testSecret.Id),
+//					AccountName:             pulumi.Any(connectionWarehouseStorageAccountName),
+//					EndpointUrl:             pulumi.Any(connectionWarehouseStorageEndpointUrl),
+//					Namespace:               pulumi.Any(connectionWarehouseStorageNamespace),
+//					Region:                  pulumi.Any(connectionWarehouseStorageRegion),
+//					SecretAccessKey:         pulumi.Any(connectionWarehouseStorageSecretAccessKey),
+//					SecretAccessKeySecretId: pulumi.Any(testSecret.Id),
+//					TrustStore:              pulumi.Any(connectionWarehouseStorageTrustStore),
+//					TrustStoreSecretId:      pulumi.Any(testSecret.Id),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -690,6 +714,10 @@ type Connection struct {
 	Wallet pulumi.StringPtrOutput `pulumi:"wallet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 	WalletSecretId pulumi.StringPtrOutput `pulumi:"walletSecretId"`
+	// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+	WarehouseName pulumi.StringOutput `pulumi:"warehouseName"`
+	// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+	WarehouseStorage ConnectionWarehouseStorageOutput `pulumi:"warehouseStorage"`
 	// (Updatable)
 	// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
 	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -775,9 +803,6 @@ func NewConnection(ctx *pulumi.Context,
 	if args.TlsCertificateKeyFilePassword != nil {
 		args.TlsCertificateKeyFilePassword = pulumi.ToSecret(args.TlsCertificateKeyFilePassword).(pulumi.StringPtrInput)
 	}
-	if args.TlsCertificateKeyFilePasswordSecretId != nil {
-		args.TlsCertificateKeyFilePasswordSecretId = pulumi.ToSecret(args.TlsCertificateKeyFilePasswordSecretId).(pulumi.StringPtrInput)
-	}
 	if args.TrustStore != nil {
 		args.TrustStore = pulumi.ToSecret(args.TrustStore).(pulumi.StringPtrInput)
 	}
@@ -807,7 +832,6 @@ func NewConnection(ctx *pulumi.Context,
 		"sslKey",
 		"sslKeyPassword",
 		"tlsCertificateKeyFilePassword",
-		"tlsCertificateKeyFilePasswordSecretId",
 		"trustStore",
 		"trustStorePassword",
 		"wallet",
@@ -1259,6 +1283,10 @@ type connectionState struct {
 	Wallet *string `pulumi:"wallet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 	WalletSecretId *string `pulumi:"walletSecretId"`
+	// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+	WarehouseName *string `pulumi:"warehouseName"`
+	// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+	WarehouseStorage *ConnectionWarehouseStorage `pulumi:"warehouseStorage"`
 	// (Updatable)
 	// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
 	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -1692,6 +1720,10 @@ type ConnectionState struct {
 	Wallet pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 	WalletSecretId pulumi.StringPtrInput
+	// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+	WarehouseName pulumi.StringPtrInput
+	// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+	WarehouseStorage ConnectionWarehouseStoragePtrInput
 	// (Updatable)
 	// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
 	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -2121,6 +2153,10 @@ type connectionArgs struct {
 	Wallet *string `pulumi:"wallet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 	WalletSecretId *string `pulumi:"walletSecretId"`
+	// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+	WarehouseName *string `pulumi:"warehouseName"`
+	// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+	WarehouseStorage *ConnectionWarehouseStorage `pulumi:"warehouseStorage"`
 	// (Updatable)
 	// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
 	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -2541,6 +2577,10 @@ type ConnectionArgs struct {
 	Wallet pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 	WalletSecretId pulumi.StringPtrInput
+	// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+	WarehouseName pulumi.StringPtrInput
+	// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+	WarehouseStorage ConnectionWarehouseStoragePtrInput
 	// (Updatable)
 	// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
 	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -3469,6 +3509,16 @@ func (o ConnectionOutput) Wallet() pulumi.StringPtrOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 func (o ConnectionOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.WalletSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+func (o ConnectionOutput) WarehouseName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.WarehouseName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+func (o ConnectionOutput) WarehouseStorage() ConnectionWarehouseStorageOutput {
+	return o.ApplyT(func(v *Connection) ConnectionWarehouseStorageOutput { return v.WarehouseStorage }).(ConnectionWarehouseStorageOutput)
 }
 
 // (Updatable)

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolInstanceMaintenancePolicy;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolLifecycleManagement;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.GetInstancePoolsInstancePoolOverridePolicy;
@@ -63,6 +64,11 @@ public final class GetInstancePoolsInstancePool {
      * 
      */
     private String instanceHostnameFormatter;
+    /**
+     * @return Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    private List<GetInstancePoolsInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies;
     /**
      * @return The lifecycle management options for the instance pool.
      * 
@@ -172,6 +178,13 @@ public final class GetInstancePoolsInstancePool {
         return this.instanceHostnameFormatter;
     }
     /**
+     * @return Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    public List<GetInstancePoolsInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies() {
+        return this.instanceMaintenancePolicies;
+    }
+    /**
      * @return The lifecycle management options for the instance pool.
      * 
      */
@@ -247,6 +260,7 @@ public final class GetInstancePoolsInstancePool {
         private String instanceConfigurationId;
         private String instanceDisplayNameFormatter;
         private String instanceHostnameFormatter;
+        private List<GetInstancePoolsInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies;
         private List<GetInstancePoolsInstancePoolLifecycleManagement> lifecycleManagements;
         private List<GetInstancePoolsInstancePoolLoadBalancer> loadBalancers;
         private List<GetInstancePoolsInstancePoolOverridePolicy> overridePolicies;
@@ -268,6 +282,7 @@ public final class GetInstancePoolsInstancePool {
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
     	      this.instanceDisplayNameFormatter = defaults.instanceDisplayNameFormatter;
     	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
+    	      this.instanceMaintenancePolicies = defaults.instanceMaintenancePolicies;
     	      this.lifecycleManagements = defaults.lifecycleManagements;
     	      this.loadBalancers = defaults.loadBalancers;
     	      this.overridePolicies = defaults.overridePolicies;
@@ -359,6 +374,17 @@ public final class GetInstancePoolsInstancePool {
             return this;
         }
         @CustomType.Setter
+        public Builder instanceMaintenancePolicies(List<GetInstancePoolsInstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicies) {
+            if (instanceMaintenancePolicies == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePool", "instanceMaintenancePolicies");
+            }
+            this.instanceMaintenancePolicies = instanceMaintenancePolicies;
+            return this;
+        }
+        public Builder instanceMaintenancePolicies(GetInstancePoolsInstancePoolInstanceMaintenancePolicy... instanceMaintenancePolicies) {
+            return instanceMaintenancePolicies(List.of(instanceMaintenancePolicies));
+        }
+        @CustomType.Setter
         public Builder lifecycleManagements(List<GetInstancePoolsInstancePoolLifecycleManagement> lifecycleManagements) {
             if (lifecycleManagements == null) {
               throw new MissingRequiredPropertyException("GetInstancePoolsInstancePool", "lifecycleManagements");
@@ -446,6 +472,7 @@ public final class GetInstancePoolsInstancePool {
             _resultValue.instanceConfigurationId = instanceConfigurationId;
             _resultValue.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
+            _resultValue.instanceMaintenancePolicies = instanceMaintenancePolicies;
             _resultValue.lifecycleManagements = lifecycleManagements;
             _resultValue.loadBalancers = loadBalancers;
             _resultValue.overridePolicies = overridePolicies;

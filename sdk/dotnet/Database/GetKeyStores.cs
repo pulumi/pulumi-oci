@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Database
         ///     var testKeyStores = Oci.Database.GetKeyStores.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         KeyStoreType = keyStoreKeyStoreType,
         ///     });
         /// 
         /// });
@@ -55,6 +56,7 @@ namespace Pulumi.Oci.Database
         ///     var testKeyStores = Oci.Database.GetKeyStores.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         KeyStoreType = keyStoreKeyStoreType,
         ///     });
         /// 
         /// });
@@ -81,6 +83,7 @@ namespace Pulumi.Oci.Database
         ///     var testKeyStores = Oci.Database.GetKeyStores.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         KeyStoreType = keyStoreKeyStoreType,
         ///     });
         /// 
         /// });
@@ -107,6 +110,12 @@ namespace Pulumi.Oci.Database
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only resources that match the key store type given. The match is not case sensitive.
+        /// </summary>
+        [Input("keyStoreType")]
+        public string? KeyStoreType { get; set; }
+
         public GetKeyStoresArgs()
         {
         }
@@ -129,6 +138,12 @@ namespace Pulumi.Oci.Database
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only resources that match the key store type given. The match is not case sensitive.
+        /// </summary>
+        [Input("keyStoreType")]
+        public Input<string>? KeyStoreType { get; set; }
+
         public GetKeyStoresInvokeArgs()
         {
         }
@@ -148,6 +163,7 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? KeyStoreType;
         /// <summary>
         /// The list of key_stores.
         /// </summary>
@@ -161,11 +177,14 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            string? keyStoreType,
+
             ImmutableArray<Outputs.GetKeyStoresKeyStoreResult> keyStores)
         {
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
+            KeyStoreType = keyStoreType;
             KeyStores = keyStores;
         }
     }

@@ -35,7 +35,7 @@ type Deployment struct {
 	BackupSchedule DeploymentBackupScheduleOutput `pulumi:"backupSchedule"`
 	// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit pulumi.IntOutput `pulumi:"byolCpuCoreCountLimit"`
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 	Category pulumi.StringOutput `pulumi:"category"`
 	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
 	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
@@ -205,7 +205,7 @@ type deploymentState struct {
 	BackupSchedule *DeploymentBackupSchedule `pulumi:"backupSchedule"`
 	// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit *int `pulumi:"byolCpuCoreCountLimit"`
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 	Category *string `pulumi:"category"`
 	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
@@ -337,7 +337,7 @@ type DeploymentState struct {
 	BackupSchedule DeploymentBackupSchedulePtrInput
 	// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit pulumi.IntPtrInput
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 	Category pulumi.StringPtrInput
 	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
 	ClusterPlacementGroupId pulumi.StringPtrInput
@@ -739,7 +739,7 @@ func (o DeploymentOutput) ByolCpuCoreCountLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.IntOutput { return v.ByolCpuCoreCountLimit }).(pulumi.IntOutput)
 }
 
-// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+// The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 func (o DeploymentOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
 }

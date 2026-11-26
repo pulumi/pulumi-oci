@@ -74,7 +74,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     declare public readonly byolCpuCoreCountLimit: pulumi.Output<number>;
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
      */
     declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
@@ -464,7 +464,7 @@ export interface DeploymentState {
      */
     byolCpuCoreCountLimit?: pulumi.Input<number | undefined>;
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
      */
     category?: pulumi.Input<string | undefined>;
     /**

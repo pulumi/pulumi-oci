@@ -20,7 +20,24 @@ namespace Pulumi.Oci.Dns
     /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
     /// parameter then the viewId query parameter is required.
     /// 
+    /// ## RRSet identity and records
+    /// 
+    /// An RRSet is the collection of records with the same domain name and record type
+    /// in one zone. The top-level `ZoneNameOrId`, `Domain` and `Rtype` select that
+    /// RRSet. Each `Items` block describes one record in it: repeat the selected domain
+    /// and type, and provide that record's `Rdata` and `Ttl`. Multiple A record values
+    /// therefore belong in multiple `Items` blocks of one resource, rather than separate
+    /// resources managing the same RRSet. Use a consistent TTL for all records in a set.
+    /// 
     /// ## Example Usage
+    /// 
+    /// These examples use a zone resource named `Example` and documentation IP addresses.
+    /// The zone can be created with `oci.Dns.Zone` using `CompartmentId`, `Name` and
+    /// `ZoneType = "PRIMARY"`. See the public RRSet example
+    /// and private RRSet example
+    /// for complete configurations. The public directory also includes other DNS examples.
+    /// 
+    /// ### One A record
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
@@ -30,31 +47,74 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRrset = new Oci.Dns.Rrset("test_rrset", new()
+    ///     var singleRecord = new Oci.Dns.Rrset("single_record", new()
     ///     {
-    ///         Domain = rrsetDomain,
-    ///         Rtype = rrsetRtype,
-    ///         ZoneNameOrId = testZone.Id,
+    ///         ZoneNameOrId = example.Id,
+    ///         Domain = $"www.{example.Name}",
+    ///         Rtype = "A",
     ///         Items = new[]
     ///         {
     ///             new Oci.Dns.Inputs.RrsetItemArgs
     ///             {
-    ///                 Domain = rrsetItemsDomain,
-    ///                 Rdata = rrsetItemsRdata,
-    ///                 Rtype = rrsetItemsRtype,
-    ///                 Ttl = rrsetItemsTtl,
+    ///                 Domain = $"www.{example.Name}",
+    ///                 Rtype = "A",
+    ///                 Rdata = "192.0.2.10",
+    ///                 Ttl = 300,
     ///             },
     ///         },
-    ///         Scope = rrsetScope,
-    ///         ViewId = testView.Id,
     ///     });
     /// 
     /// });
     /// ```
     /// 
+    /// ### Multiple A records in one RRSet
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var multipleRecords = new Oci.Dns.Rrset("multiple_records", new()
+    ///     {
+    ///         ZoneNameOrId = example.Id,
+    ///         Domain = $"api.{example.Name}",
+    ///         Rtype = "A",
+    ///         Items = new[]
+    ///         {
+    ///             new Oci.Dns.Inputs.RrsetItemArgs
+    ///             {
+    ///                 Domain = $"api.{example.Name}",
+    ///                 Rtype = "A",
+    ///                 Rdata = "192.0.2.20",
+    ///                 Ttl = 300,
+    ///             },
+    ///             new Oci.Dns.Inputs.RrsetItemArgs
+    ///             {
+    ///                 Domain = $"api.{example.Name}",
+    ///                 Rtype = "A",
+    ///                 Rdata = "192.0.2.21",
+    ///                 Ttl = 300,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// For private zones, see the private RRSet example.
+    /// When identifying a private zone by name, provide its `ViewId` as well.
+    /// 
     /// ## Behavior
     /// 
-    /// - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+    /// - Creating a resource for an RRSet that already contains records fails with
+    ///   HTTP 409 (Conflict), including when `Items` is omitted. Import an existing
+    ///   RRSet before managing it.
+    /// - Updating an existing resource replaces its record set with the configured
+    ///   `Items`; removing an item removes that record. Keep the desired records explicit
+    ///   in the configuration, rather than using omission of `Items` as a deletion instruction.
     /// 
     /// ## Import
     /// 
@@ -85,7 +145,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable)
-        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
+        /// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.RrsetItem>> Items { get; private set; } = null!;
@@ -182,7 +242,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable)
-        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
+        /// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         /// </summary>
         public InputList<Inputs.RrsetItemArgs> Items
         {
@@ -244,7 +304,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable)
-        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
+        /// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         /// </summary>
         public InputList<Inputs.RrsetItemGetArgs> Items
         {

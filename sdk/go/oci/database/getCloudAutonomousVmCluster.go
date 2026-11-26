@@ -113,6 +113,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	Id string `pulumi:"id"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster bool `pulumi:"isMtlsEnabledVmCluster"`
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails []GetCloudAutonomousVmClusterKeyManagementSystemDetail `pulumi:"keyManagementSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
@@ -363,6 +365,13 @@ func (o LookupCloudAutonomousVmClusterResultOutput) Id() pulumi.StringOutput {
 // Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 func (o LookupCloudAutonomousVmClusterResultOutput) IsMtlsEnabledVmCluster() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) bool { return v.IsMtlsEnabledVmCluster }).(pulumi.BoolOutput)
+}
+
+// Autonomous VM Cluster Key Management System details.
+func (o LookupCloudAutonomousVmClusterResultOutput) KeyManagementSystemDetails() GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []GetCloudAutonomousVmClusterKeyManagementSystemDetail {
+		return v.KeyManagementSystemDetails
+	}).(GetCloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

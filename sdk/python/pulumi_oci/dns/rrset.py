@@ -41,7 +41,7 @@ class RrsetArgs:
                
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable)
-               **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+               The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         """
@@ -122,7 +122,7 @@ class RrsetArgs:
     def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
         (Updatable)
-        **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+        The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         """
         return pulumi.get(self, "items")
 
@@ -174,7 +174,7 @@ class _RrsetState:
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable)
-               **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+               The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
@@ -236,7 +236,7 @@ class _RrsetState:
     def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
         (Updatable)
-        **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+        The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         """
         return pulumi.get(self, "items")
 
@@ -322,29 +322,78 @@ class Rrset(pulumi.CustomResource):
         When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
         parameter then the viewId query parameter is required.
 
+        ## RRSet identity and records
+
+        An RRSet is the collection of records with the same domain name and record type
+        in one zone. The top-level `zone_name_or_id`, `domain` and `rtype` select that
+        RRSet. Each `items` block describes one record in it: repeat the selected domain
+        and type, and provide that record's `rdata` and `ttl`. Multiple A record values
+        therefore belong in multiple `items` blocks of one resource, rather than separate
+        resources managing the same RRSet. Use a consistent TTL for all records in a set.
+
         ## Example Usage
+
+        These examples use a zone resource named `example` and documentation IP addresses.
+        The zone can be created with `Dns.Zone` using `compartment_id`, `name` and
+        `zone_type = "PRIMARY"`. See the public RRSet example
+        and private RRSet example
+        for complete configurations. The public directory also includes other DNS examples.
+
+        ### One A record
 
         ```python
         import pulumi
         import pulumi_oci as oci
 
-        test_rrset = oci.dns.Rrset("test_rrset",
-            domain=rrset_domain,
-            rtype=rrset_rtype,
-            zone_name_or_id=test_zone["id"],
+        single_record = oci.dns.Rrset("single_record",
+            zone_name_or_id=example["id"],
+            domain=f"www.{example['name']}",
+            rtype="A",
             items=[{
-                "domain": rrset_items_domain,
-                "rdata": rrset_items_rdata,
-                "rtype": rrset_items_rtype,
-                "ttl": rrset_items_ttl,
-            }],
-            scope=rrset_scope,
-            view_id=test_view["id"])
+                "domain": f"www.{example['name']}",
+                "rtype": "A",
+                "rdata": "192.0.2.10",
+                "ttl": 300,
+            }])
         ```
+
+        ### Multiple A records in one RRSet
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        multiple_records = oci.dns.Rrset("multiple_records",
+            zone_name_or_id=example["id"],
+            domain=f"api.{example['name']}",
+            rtype="A",
+            items=[
+                {
+                    "domain": f"api.{example['name']}",
+                    "rtype": "A",
+                    "rdata": "192.0.2.20",
+                    "ttl": 300,
+                },
+                {
+                    "domain": f"api.{example['name']}",
+                    "rtype": "A",
+                    "rdata": "192.0.2.21",
+                    "ttl": 300,
+                },
+            ])
+        ```
+
+        For private zones, see the private RRSet example.
+        When identifying a private zone by name, provide its `view_id` as well.
 
         ## Behavior
 
-        - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+        - Creating a resource for an RRSet that already contains records fails with
+          HTTP 409 (Conflict), including when `items` is omitted. Import an existing
+          RRSet before managing it.
+        - Updating an existing resource replaces its record set with the configured
+          `items`; removing an item removes that record. Keep the desired records explicit
+          in the configuration, rather than using omission of `items` as a deletion instruction.
 
         ## Import
 
@@ -364,7 +413,7 @@ class Rrset(pulumi.CustomResource):
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]] items: (Updatable)
-               **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+               The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
@@ -390,29 +439,78 @@ class Rrset(pulumi.CustomResource):
         When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
         parameter then the viewId query parameter is required.
 
+        ## RRSet identity and records
+
+        An RRSet is the collection of records with the same domain name and record type
+        in one zone. The top-level `zone_name_or_id`, `domain` and `rtype` select that
+        RRSet. Each `items` block describes one record in it: repeat the selected domain
+        and type, and provide that record's `rdata` and `ttl`. Multiple A record values
+        therefore belong in multiple `items` blocks of one resource, rather than separate
+        resources managing the same RRSet. Use a consistent TTL for all records in a set.
+
         ## Example Usage
+
+        These examples use a zone resource named `example` and documentation IP addresses.
+        The zone can be created with `Dns.Zone` using `compartment_id`, `name` and
+        `zone_type = "PRIMARY"`. See the public RRSet example
+        and private RRSet example
+        for complete configurations. The public directory also includes other DNS examples.
+
+        ### One A record
 
         ```python
         import pulumi
         import pulumi_oci as oci
 
-        test_rrset = oci.dns.Rrset("test_rrset",
-            domain=rrset_domain,
-            rtype=rrset_rtype,
-            zone_name_or_id=test_zone["id"],
+        single_record = oci.dns.Rrset("single_record",
+            zone_name_or_id=example["id"],
+            domain=f"www.{example['name']}",
+            rtype="A",
             items=[{
-                "domain": rrset_items_domain,
-                "rdata": rrset_items_rdata,
-                "rtype": rrset_items_rtype,
-                "ttl": rrset_items_ttl,
-            }],
-            scope=rrset_scope,
-            view_id=test_view["id"])
+                "domain": f"www.{example['name']}",
+                "rtype": "A",
+                "rdata": "192.0.2.10",
+                "ttl": 300,
+            }])
         ```
+
+        ### Multiple A records in one RRSet
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        multiple_records = oci.dns.Rrset("multiple_records",
+            zone_name_or_id=example["id"],
+            domain=f"api.{example['name']}",
+            rtype="A",
+            items=[
+                {
+                    "domain": f"api.{example['name']}",
+                    "rtype": "A",
+                    "rdata": "192.0.2.20",
+                    "ttl": 300,
+                },
+                {
+                    "domain": f"api.{example['name']}",
+                    "rtype": "A",
+                    "rdata": "192.0.2.21",
+                    "ttl": 300,
+                },
+            ])
+        ```
+
+        For private zones, see the private RRSet example.
+        When identifying a private zone by name, provide its `view_id` as well.
 
         ## Behavior
 
-        - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+        - Creating a resource for an RRSet that already contains records fails with
+          HTTP 409 (Conflict), including when `items` is omitted. Import an existing
+          RRSet before managing it.
+        - Updating an existing resource replaces its record set with the configured
+          `items`; removing an item removes that record. Keep the desired records explicit
+          in the configuration, rather than using omission of `items` as a deletion instruction.
 
         ## Import
 
@@ -498,7 +596,7 @@ class Rrset(pulumi.CustomResource):
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]] items: (Updatable)
-               **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+               The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
@@ -564,7 +662,7 @@ class Rrset(pulumi.CustomResource):
     def items(self) -> pulumi.Output[Sequence['outputs.RrsetItem']]:
         """
         (Updatable)
-        **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+        The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
         """
         return pulumi.get(self, "items")
 

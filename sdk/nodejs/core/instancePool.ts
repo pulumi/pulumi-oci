@@ -60,6 +60,12 @@ import * as utilities from "../utilities";
  *     },
  *     instanceDisplayNameFormatter: instancePoolInstanceDisplayNameFormatter,
  *     instanceHostnameFormatter: instancePoolInstanceHostnameFormatter,
+ *     instanceMaintenancePolicy: {
+ *         launchBeforeTerminating: {
+ *             isFullRefresh: instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingIsFullRefresh,
+ *             maxHealthyPercent: instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingMaxHealthyPercent,
+ *         },
+ *     },
  *     lifecycleManagement: {
  *         lifecycleActions: {
  *             preTermination: {
@@ -189,6 +195,10 @@ export class InstancePool extends pulumi.CustomResource {
      */
     declare public readonly instanceHostnameFormatter: pulumi.Output<string>;
     /**
+     * (Updatable) Optional maintenance policy settings for an instance pool.
+     */
+    declare public readonly instanceMaintenancePolicy: pulumi.Output<outputs.Core.InstancePoolInstanceMaintenancePolicy>;
+    /**
      * (Updatable) The lifecycle management options for the instance pool.
      */
     declare public readonly lifecycleManagement: pulumi.Output<outputs.Core.InstancePoolLifecycleManagement>;
@@ -254,6 +264,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["instanceConfigurationId"] = state?.instanceConfigurationId;
             resourceInputs["instanceDisplayNameFormatter"] = state?.instanceDisplayNameFormatter;
             resourceInputs["instanceHostnameFormatter"] = state?.instanceHostnameFormatter;
+            resourceInputs["instanceMaintenancePolicy"] = state?.instanceMaintenancePolicy;
             resourceInputs["lifecycleManagement"] = state?.lifecycleManagement;
             resourceInputs["loadBalancers"] = state?.loadBalancers;
             resourceInputs["overridePolicy"] = state?.overridePolicy;
@@ -283,6 +294,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["instanceConfigurationId"] = args?.instanceConfigurationId;
             resourceInputs["instanceDisplayNameFormatter"] = args?.instanceDisplayNameFormatter;
             resourceInputs["instanceHostnameFormatter"] = args?.instanceHostnameFormatter;
+            resourceInputs["instanceMaintenancePolicy"] = args?.instanceMaintenancePolicy;
             resourceInputs["lifecycleManagement"] = args?.lifecycleManagement;
             resourceInputs["loadBalancers"] = args?.loadBalancers;
             resourceInputs["overridePolicy"] = args?.overridePolicy;
@@ -339,6 +351,10 @@ export interface InstancePoolState {
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
     instanceHostnameFormatter?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Optional maintenance policy settings for an instance pool.
+     */
+    instanceMaintenancePolicy?: pulumi.Input<inputs.Core.InstancePoolInstanceMaintenancePolicy | undefined>;
     /**
      * (Updatable) The lifecycle management options for the instance pool.
      */
@@ -416,6 +432,10 @@ export interface InstancePoolArgs {
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
     instanceHostnameFormatter?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Optional maintenance policy settings for an instance pool.
+     */
+    instanceMaintenancePolicy?: pulumi.Input<inputs.Core.InstancePoolInstanceMaintenancePolicy | undefined>;
     /**
      * (Updatable) The lifecycle management options for the instance pool.
      */

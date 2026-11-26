@@ -28,7 +28,7 @@ class GetKeyStoresResult:
     """
     A collection of values returned by getKeyStores.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, key_stores=None):
+    def __init__(__self__, compartment_id=None, filters=None, id=None, key_store_type=None, key_stores=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,9 @@ class GetKeyStoresResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if key_store_type and not isinstance(key_store_type, str):
+            raise TypeError("Expected argument 'key_store_type' to be a str")
+        pulumi.set(__self__, "key_store_type", key_store_type)
         if key_stores and not isinstance(key_stores, list):
             raise TypeError("Expected argument 'key_stores' to be a list")
         pulumi.set(__self__, "key_stores", key_stores)
@@ -64,6 +67,11 @@ class GetKeyStoresResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="keyStores")
     def key_stores(self) -> Sequence['outputs.GetKeyStoresKeyStoreResult']:
         """
@@ -81,11 +89,13 @@ class AwaitableGetKeyStoresResult(GetKeyStoresResult):
             compartment_id=self.compartment_id,
             filters=self.filters,
             id=self.id,
+            key_store_type=self.key_store_type,
             key_stores=self.key_stores)
 
 
 def get_key_stores(compartment_id: Optional[_builtins.str] = None,
                    filters: Optional[Sequence[Union['GetKeyStoresFilterArgs', 'GetKeyStoresFilterArgsDict', 'outputs.GetKeyStoresFilterResult']]] = None,
+                   key_store_type: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKeyStoresResult:
     """
     This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
@@ -98,15 +108,18 @@ def get_key_stores(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_stores = oci.database.get_key_stores(compartment_id=compartment_id)
+    test_key_stores = oci.database.get_key_stores(compartment_id=compartment_id,
+        key_store_type=key_store_key_store_type)
     ```
 
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str key_store_type: A filter to return only resources that match the key store type given. The match is not case sensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['keyStoreType'] = key_store_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getKeyStores:getKeyStores', __args__, opts=opts, typ=GetKeyStoresResult).value
 
@@ -114,9 +127,11 @@ def get_key_stores(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        key_store_type=pulumi.get(__ret__, 'key_store_type'),
         key_stores=pulumi.get(__ret__, 'key_stores'))
 def get_key_stores_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetKeyStoresFilterArgs', 'GetKeyStoresFilterArgsDict', 'outputs.GetKeyStoresFilterResult']]]]] = None,
+                          key_store_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyStoresResult]:
     """
     This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
@@ -129,19 +144,23 @@ def get_key_stores_output(compartment_id: pulumi.Input[Optional[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_key_stores = oci.database.get_key_stores(compartment_id=compartment_id)
+    test_key_stores = oci.database.get_key_stores(compartment_id=compartment_id,
+        key_store_type=key_store_key_store_type)
     ```
 
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str key_store_type: A filter to return only resources that match the key store type given. The match is not case sensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['keyStoreType'] = key_store_type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getKeyStores:getKeyStores', __args__, opts=opts, typ=GetKeyStoresResult)
     return __ret__.apply(lambda __response__: GetKeyStoresResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        key_store_type=pulumi.get(__response__, 'key_store_type'),
         key_stores=pulumi.get(__response__, 'key_stores')))

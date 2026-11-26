@@ -34,6 +34,7 @@ import (
 //				AvailabilityDomain:           pulumi.StringRef(cloudAutonomousVmClusterAvailabilityDomain),
 //				CloudExadataInfrastructureId: pulumi.StringRef(testCloudExadataInfrastructure.Id),
 //				DisplayName:                  pulumi.StringRef(cloudAutonomousVmClusterDisplayName),
+//				KmsType:                      pulumi.StringRef(cloudAutonomousVmClusterKmsType),
 //				State:                        pulumi.StringRef(cloudAutonomousVmClusterState),
 //			}, nil)
 //			if err != nil {
@@ -65,6 +66,8 @@ type GetCloudAutonomousVmClustersArgs struct {
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName *string                              `pulumi:"displayName"`
 	Filters     []GetCloudAutonomousVmClustersFilter `pulumi:"filters"`
+	// A filter to return only resources that match the given kms exactly.
+	KmsType *string `pulumi:"kmsType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
 }
@@ -83,7 +86,8 @@ type GetCloudAutonomousVmClustersResult struct {
 	DisplayName *string                              `pulumi:"displayName"`
 	Filters     []GetCloudAutonomousVmClustersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id      string  `pulumi:"id"`
+	KmsType *string `pulumi:"kmsType"`
 	// The current state of the cloud Autonomous VM cluster.
 	State *string `pulumi:"state"`
 }
@@ -104,6 +108,8 @@ type GetCloudAutonomousVmClustersOutputArgs struct {
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringPtrInput                        `pulumi:"displayName"`
 	Filters     GetCloudAutonomousVmClustersFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that match the given kms exactly.
+	KmsType pulumi.StringPtrInput `pulumi:"kmsType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -161,6 +167,10 @@ func (o GetCloudAutonomousVmClustersResultOutput) Filters() GetCloudAutonomousVm
 // The provider-assigned unique ID for this managed resource.
 func (o GetCloudAutonomousVmClustersResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetCloudAutonomousVmClustersResultOutput) KmsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersResult) *string { return v.KmsType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the cloud Autonomous VM cluster.

@@ -6,6 +6,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.inputs.ConnectionCatalogCatalogConfigArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -29,6 +30,21 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> branch() {
         return Optional.ofNullable(this.branch);
+    }
+
+    /**
+     * (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+     * 
+     */
+    @Import(name="catalogConfig")
+    private @Nullable Output<ConnectionCatalogCatalogConfigArgs> catalogConfig;
+
+    /**
+     * @return (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+     * 
+     */
+    public Optional<Output<ConnectionCatalogCatalogConfigArgs>> catalogConfig() {
+        return Optional.ofNullable(this.catalogConfig);
     }
 
     /**
@@ -197,6 +213,7 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
 
     private ConnectionCatalogArgs(ConnectionCatalogArgs $) {
         this.branch = $.branch;
+        this.catalogConfig = $.catalogConfig;
         this.catalogType = $.catalogType;
         this.clientId = $.clientId;
         this.clientSecret = $.clientSecret;
@@ -246,6 +263,27 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder branch(String branch) {
             return branch(Output.of(branch));
+        }
+
+        /**
+         * @param catalogConfig (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder catalogConfig(@Nullable Output<ConnectionCatalogCatalogConfigArgs> catalogConfig) {
+            $.catalogConfig = catalogConfig;
+            return this;
+        }
+
+        /**
+         * @param catalogConfig (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder catalogConfig(ConnectionCatalogCatalogConfigArgs catalogConfig) {
+            return catalogConfig(Output.of(catalogConfig));
         }
 
         /**

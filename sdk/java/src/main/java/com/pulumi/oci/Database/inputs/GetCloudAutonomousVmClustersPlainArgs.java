@@ -85,6 +85,21 @@ public final class GetCloudAutonomousVmClustersPlainArgs extends com.pulumi.reso
     }
 
     /**
+     * A filter to return only resources that match the given kms exactly.
+     * 
+     */
+    @Import(name="kmsType")
+    private @Nullable String kmsType;
+
+    /**
+     * @return A filter to return only resources that match the given kms exactly.
+     * 
+     */
+    public Optional<String> kmsType() {
+        return Optional.ofNullable(this.kmsType);
+    }
+
+    /**
      * A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -107,6 +122,7 @@ public final class GetCloudAutonomousVmClustersPlainArgs extends com.pulumi.reso
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.kmsType = $.kmsType;
         this.state = $.state;
     }
 
@@ -179,6 +195,17 @@ public final class GetCloudAutonomousVmClustersPlainArgs extends com.pulumi.reso
 
         public Builder filters(GetCloudAutonomousVmClustersFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param kmsType A filter to return only resources that match the given kms exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsType(@Nullable String kmsType) {
+            $.kmsType = kmsType;
+            return this;
         }
 
         /**

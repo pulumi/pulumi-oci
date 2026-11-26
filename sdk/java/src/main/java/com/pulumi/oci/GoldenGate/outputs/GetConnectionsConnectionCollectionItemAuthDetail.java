@@ -36,7 +36,7 @@ public final class GetConnectionsConnectionCollectionItemAuthDetail {
      */
     private String keyFingerprint;
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     private String region;
@@ -89,7 +89,7 @@ public final class GetConnectionsConnectionCollectionItemAuthDetail {
         return this.keyFingerprint;
     }
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     public String region() {

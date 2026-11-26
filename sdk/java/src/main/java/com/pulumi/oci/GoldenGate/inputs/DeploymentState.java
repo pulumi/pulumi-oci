@@ -73,14 +73,14 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
      * 
      */
     @Import(name="category")
     private @Nullable Output<String> category;
 
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
      * 
      */
     public Optional<Output<String>> category() {
@@ -1052,7 +1052,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param category The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+         * @param category The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
          * 
          * @return builder
          * 
@@ -1063,7 +1063,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param category The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+         * @param category The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
          * 
          * @return builder
          * 

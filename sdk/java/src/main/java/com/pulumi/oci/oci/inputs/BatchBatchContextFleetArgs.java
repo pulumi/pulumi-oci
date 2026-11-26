@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.inputs.BatchBatchContextFleetReservationArgs;
 import com.pulumi.oci.oci.inputs.BatchBatchContextFleetShapeArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -61,6 +62,21 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
      */
     public Output<String> name() {
         return this.name;
+    }
+
+    /**
+     * Reservation selection for initial provisioning of a fleet.
+     * 
+     */
+    @Import(name="reservation")
+    private @Nullable Output<BatchBatchContextFleetReservationArgs> reservation;
+
+    /**
+     * @return Reservation selection for initial provisioning of a fleet.
+     * 
+     */
+    public Optional<Output<BatchBatchContextFleetReservationArgs>> reservation() {
+        return Optional.ofNullable(this.reservation);
     }
 
     /**
@@ -120,6 +136,7 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
         this.details = $.details;
         this.maxConcurrentTasks = $.maxConcurrentTasks;
         this.name = $.name;
+        this.reservation = $.reservation;
         this.shape = $.shape;
         this.state = $.state;
         this.type = $.type;
@@ -204,6 +221,27 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param reservation Reservation selection for initial provisioning of a fleet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reservation(@Nullable Output<BatchBatchContextFleetReservationArgs> reservation) {
+            $.reservation = reservation;
+            return this;
+        }
+
+        /**
+         * @param reservation Reservation selection for initial provisioning of a fleet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reservation(BatchBatchContextFleetReservationArgs reservation) {
+            return reservation(Output.of(reservation));
         }
 
         /**

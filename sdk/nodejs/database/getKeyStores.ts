@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testKeyStores = oci.database.getKeyStores({
  *     compartmentId: compartmentId,
+ *     keyStoreType: keyStoreKeyStoreType,
  * });
  * ```
  */
@@ -27,6 +28,7 @@ export function getKeyStores(args: GetKeyStoresArgs, opts?: pulumi.InvokeOptions
     return pulumi.runtime.invoke("oci:Database/getKeyStores:getKeyStores", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "keyStoreType": args.keyStoreType,
     }, opts);
 }
 
@@ -39,6 +41,10 @@ export interface GetKeyStoresArgs {
      */
     compartmentId: string;
     filters?: inputs.Database.GetKeyStoresFilter[];
+    /**
+     * A filter to return only resources that match the key store type given. The match is not case sensitive.
+     */
+    keyStoreType?: string;
 }
 
 /**
@@ -54,6 +60,7 @@ export interface GetKeyStoresResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly keyStoreType?: string;
     /**
      * The list of key_stores.
      */
@@ -72,6 +79,7 @@ export interface GetKeyStoresResult {
  *
  * const testKeyStores = oci.database.getKeyStores({
  *     compartmentId: compartmentId,
+ *     keyStoreType: keyStoreKeyStoreType,
  * });
  * ```
  */
@@ -80,6 +88,7 @@ export function getKeyStoresOutput(args: GetKeyStoresOutputArgs, opts?: pulumi.I
     return pulumi.runtime.invokeOutput("oci:Database/getKeyStores:getKeyStores", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "keyStoreType": args.keyStoreType,
     }, opts);
 }
 
@@ -92,4 +101,8 @@ export interface GetKeyStoresOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetKeyStoresFilterArgs>[] | undefined>;
+    /**
+     * A filter to return only resources that match the key store type given. The match is not case sensitive.
+     */
+    keyStoreType?: pulumi.Input<string | undefined>;
 }

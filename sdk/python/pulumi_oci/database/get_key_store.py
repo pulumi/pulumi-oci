@@ -27,7 +27,13 @@ class GetKeyStoreResult:
     """
     A collection of values returned by getKeyStore.
     """
-    def __init__(__self__, associated_databases=None, associated_long_term_backup_count=None, associated_long_term_backups=None, compartment_id=None, confirm_details_trigger=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, type_details=None):
+    def __init__(__self__, associated_autonomous_vm_clusters=None, associated_cloud_autonomous_vm_clusters=None, associated_databases=None, associated_long_term_backup_count=None, associated_long_term_backups=None, compartment_id=None, confirm_details_trigger=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, type_details=None):
+        if associated_autonomous_vm_clusters and not isinstance(associated_autonomous_vm_clusters, list):
+            raise TypeError("Expected argument 'associated_autonomous_vm_clusters' to be a list")
+        pulumi.set(__self__, "associated_autonomous_vm_clusters", associated_autonomous_vm_clusters)
+        if associated_cloud_autonomous_vm_clusters and not isinstance(associated_cloud_autonomous_vm_clusters, list):
+            raise TypeError("Expected argument 'associated_cloud_autonomous_vm_clusters' to be a list")
+        pulumi.set(__self__, "associated_cloud_autonomous_vm_clusters", associated_cloud_autonomous_vm_clusters)
         if associated_databases and not isinstance(associated_databases, list):
             raise TypeError("Expected argument 'associated_databases' to be a list")
         pulumi.set(__self__, "associated_databases", associated_databases)
@@ -73,6 +79,22 @@ class GetKeyStoreResult:
         if type_details and not isinstance(type_details, list):
             raise TypeError("Expected argument 'type_details' to be a list")
         pulumi.set(__self__, "type_details", type_details)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedAutonomousVmClusters")
+    def associated_autonomous_vm_clusters(self) -> Sequence['outputs.GetKeyStoreAssociatedAutonomousVmClusterResult']:
+        """
+        List of Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_autonomous_vm_clusters")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedCloudAutonomousVmClusters")
+    def associated_cloud_autonomous_vm_clusters(self) -> Sequence['outputs.GetKeyStoreAssociatedCloudAutonomousVmClusterResult']:
+        """
+        List of Cloud Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_cloud_autonomous_vm_clusters")
 
     @_builtins.property
     @pulumi.getter(name="associatedDatabases")
@@ -195,6 +217,8 @@ class AwaitableGetKeyStoreResult(GetKeyStoreResult):
         if False:
             yield self
         return GetKeyStoreResult(
+            associated_autonomous_vm_clusters=self.associated_autonomous_vm_clusters,
+            associated_cloud_autonomous_vm_clusters=self.associated_cloud_autonomous_vm_clusters,
             associated_databases=self.associated_databases,
             associated_long_term_backup_count=self.associated_long_term_backup_count,
             associated_long_term_backups=self.associated_long_term_backups,
@@ -237,6 +261,8 @@ def get_key_store(key_store_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getKeyStore:getKeyStore', __args__, opts=opts, typ=GetKeyStoreResult).value
 
     return AwaitableGetKeyStoreResult(
+        associated_autonomous_vm_clusters=pulumi.get(__ret__, 'associated_autonomous_vm_clusters'),
+        associated_cloud_autonomous_vm_clusters=pulumi.get(__ret__, 'associated_cloud_autonomous_vm_clusters'),
         associated_databases=pulumi.get(__ret__, 'associated_databases'),
         associated_long_term_backup_count=pulumi.get(__ret__, 'associated_long_term_backup_count'),
         associated_long_term_backups=pulumi.get(__ret__, 'associated_long_term_backups'),
@@ -276,6 +302,8 @@ def get_key_store_output(key_store_id: pulumi.Input[Optional[_builtins.str]] = N
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getKeyStore:getKeyStore', __args__, opts=opts, typ=GetKeyStoreResult)
     return __ret__.apply(lambda __response__: GetKeyStoreResult(
+        associated_autonomous_vm_clusters=pulumi.get(__response__, 'associated_autonomous_vm_clusters'),
+        associated_cloud_autonomous_vm_clusters=pulumi.get(__response__, 'associated_cloud_autonomous_vm_clusters'),
         associated_databases=pulumi.get(__response__, 'associated_databases'),
         associated_long_term_backup_count=pulumi.get(__response__, 'associated_long_term_backup_count'),
         associated_long_term_backups=pulumi.get(__response__, 'associated_long_term_backups'),

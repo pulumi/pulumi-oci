@@ -34,7 +34,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string KeyFingerprint;
         /// <summary>
-        /// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
         /// </summary>
         public readonly string Region;
         /// <summary>

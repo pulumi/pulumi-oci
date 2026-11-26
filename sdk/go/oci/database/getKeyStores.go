@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetKeyStores(ctx, &database.GetKeyStoresArgs{
 //				CompartmentId: compartmentId,
+//				KeyStoreType:  pulumi.StringRef(keyStoreKeyStoreType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,6 +56,8 @@ type GetKeyStoresArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string               `pulumi:"compartmentId"`
 	Filters       []GetKeyStoresFilter `pulumi:"filters"`
+	// A filter to return only resources that match the key store type given. The match is not case sensitive.
+	KeyStoreType *string `pulumi:"keyStoreType"`
 }
 
 // A collection of values returned by getKeyStores.
@@ -63,7 +66,8 @@ type GetKeyStoresResult struct {
 	CompartmentId string               `pulumi:"compartmentId"`
 	Filters       []GetKeyStoresFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id           string  `pulumi:"id"`
+	KeyStoreType *string `pulumi:"keyStoreType"`
 	// The list of key_stores.
 	KeyStores []GetKeyStoresKeyStore `pulumi:"keyStores"`
 }
@@ -78,6 +82,8 @@ type GetKeyStoresOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput           `pulumi:"compartmentId"`
 	Filters       GetKeyStoresFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that match the key store type given. The match is not case sensitive.
+	KeyStoreType pulumi.StringPtrInput `pulumi:"keyStoreType"`
 }
 
 func (GetKeyStoresOutputArgs) ElementType() reflect.Type {
@@ -111,6 +117,10 @@ func (o GetKeyStoresResultOutput) Filters() GetKeyStoresFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetKeyStoresResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoresResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetKeyStoresResultOutput) KeyStoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKeyStoresResult) *string { return v.KeyStoreType }).(pulumi.StringPtrOutput)
 }
 
 // The list of key_stores.

@@ -45,6 +45,11 @@ namespace Pulumi.Oci.Oci
     ///                     DiskSizeInGbs = batchContextFleetsShapeDiskSizeInGbs,
     ///                 },
     ///                 Type = batchContextFleetsType,
+    ///                 Reservation = new Oci.Oci.Inputs.BatchBatchContextFleetReservationArgs
+    ///                 {
+    ///                     CapacityReservationIds = batchContextFleetsReservationCapacityReservationIds,
+    ///                     Type = batchContextFleetsReservationType,
+    ///                 },
     ///             },
     ///         },
     ///         Network = new Oci.Oci.Inputs.BatchBatchContextNetworkArgs

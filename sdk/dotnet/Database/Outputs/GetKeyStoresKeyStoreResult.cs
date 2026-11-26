@@ -14,6 +14,14 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetKeyStoresKeyStoreResult
     {
         /// <summary>
+        /// List of Autonomous VM Clusters associated with the key store.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedAutonomousVmClusterResult> AssociatedAutonomousVmClusters;
+        /// <summary>
+        /// List of Cloud Autonomous VM Clusters associated with the key store.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterResult> AssociatedCloudAutonomousVmClusters;
+        /// <summary>
         /// List of databases associated with the key store.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult> AssociatedDatabases;
@@ -69,6 +77,10 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetKeyStoresKeyStoreResult(
+            ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedAutonomousVmClusterResult> associatedAutonomousVmClusters,
+
+            ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedCloudAutonomousVmClusterResult> associatedCloudAutonomousVmClusters,
+
             ImmutableArray<Outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult> associatedDatabases,
 
             int associatedLongTermBackupCount,
@@ -97,6 +109,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetKeyStoresKeyStoreTypeDetailResult> typeDetails)
         {
+            AssociatedAutonomousVmClusters = associatedAutonomousVmClusters;
+            AssociatedCloudAutonomousVmClusters = associatedCloudAutonomousVmClusters;
             AssociatedDatabases = associatedDatabases;
             AssociatedLongTermBackupCount = associatedLongTermBackupCount;
             AssociatedLongTermBackups = associatedLongTermBackups;

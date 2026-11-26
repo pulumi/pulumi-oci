@@ -61,6 +61,18 @@ namespace Pulumi.Oci.Database
     public partial class KeyStore : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// List of Autonomous VM Clusters associated with the key store.
+        /// </summary>
+        [Output("associatedAutonomousVmClusters")]
+        public Output<ImmutableArray<Outputs.KeyStoreAssociatedAutonomousVmCluster>> AssociatedAutonomousVmClusters { get; private set; } = null!;
+
+        /// <summary>
+        /// List of Cloud Autonomous VM Clusters associated with the key store.
+        /// </summary>
+        [Output("associatedCloudAutonomousVmClusters")]
+        public Output<ImmutableArray<Outputs.KeyStoreAssociatedCloudAutonomousVmCluster>> AssociatedCloudAutonomousVmClusters { get; private set; } = null!;
+
+        /// <summary>
         /// List of databases associated with the key store.
         /// </summary>
         [Output("associatedDatabases")]
@@ -234,6 +246,30 @@ namespace Pulumi.Oci.Database
 
     public sealed class KeyStoreState : global::Pulumi.ResourceArgs
     {
+        [Input("associatedAutonomousVmClusters")]
+        private InputList<Inputs.KeyStoreAssociatedAutonomousVmClusterGetArgs>? _associatedAutonomousVmClusters;
+
+        /// <summary>
+        /// List of Autonomous VM Clusters associated with the key store.
+        /// </summary>
+        public InputList<Inputs.KeyStoreAssociatedAutonomousVmClusterGetArgs> AssociatedAutonomousVmClusters
+        {
+            get => _associatedAutonomousVmClusters ?? (_associatedAutonomousVmClusters = new InputList<Inputs.KeyStoreAssociatedAutonomousVmClusterGetArgs>());
+            set => _associatedAutonomousVmClusters = value;
+        }
+
+        [Input("associatedCloudAutonomousVmClusters")]
+        private InputList<Inputs.KeyStoreAssociatedCloudAutonomousVmClusterGetArgs>? _associatedCloudAutonomousVmClusters;
+
+        /// <summary>
+        /// List of Cloud Autonomous VM Clusters associated with the key store.
+        /// </summary>
+        public InputList<Inputs.KeyStoreAssociatedCloudAutonomousVmClusterGetArgs> AssociatedCloudAutonomousVmClusters
+        {
+            get => _associatedCloudAutonomousVmClusters ?? (_associatedCloudAutonomousVmClusters = new InputList<Inputs.KeyStoreAssociatedCloudAutonomousVmClusterGetArgs>());
+            set => _associatedCloudAutonomousVmClusters = value;
+        }
+
         [Input("associatedDatabases")]
         private InputList<Inputs.KeyStoreAssociatedDatabaseGetArgs>? _associatedDatabases;
 

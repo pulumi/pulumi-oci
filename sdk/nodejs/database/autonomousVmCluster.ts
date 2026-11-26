@@ -191,6 +191,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public readonly isMtlsEnabled: pulumi.Output<boolean>;
     /**
+     * Autonomous VM Cluster Key Management System details.
+     */
+    declare public /*out*/ readonly keyManagementSystemDetails: pulumi.Output<outputs.Database.AutonomousVmClusterKeyManagementSystemDetail[]>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
     declare public /*out*/ readonly lastMaintenanceRunId: pulumi.Output<string>;
@@ -347,6 +351,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isLocalBackupEnabled"] = state?.isLocalBackupEnabled;
             resourceInputs["isMtlsEnabled"] = state?.isMtlsEnabled;
+            resourceInputs["keyManagementSystemDetails"] = state?.keyManagementSystemDetails;
             resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
             resourceInputs["licenseModel"] = state?.licenseModel;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -424,6 +429,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["exadataStorageInTbsLowestScaledValue"] = undefined /*out*/;
+            resourceInputs["keyManagementSystemDetails"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
@@ -539,6 +545,10 @@ export interface AutonomousVmClusterState {
      * (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      */
     isMtlsEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * Autonomous VM Cluster Key Management System details.
+     */
+    keyManagementSystemDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterKeyManagementSystemDetail>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */

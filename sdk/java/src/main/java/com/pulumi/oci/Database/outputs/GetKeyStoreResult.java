@@ -5,6 +5,8 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetKeyStoreAssociatedAutonomousVmCluster;
+import com.pulumi.oci.Database.outputs.GetKeyStoreAssociatedCloudAutonomousVmCluster;
 import com.pulumi.oci.Database.outputs.GetKeyStoreAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.GetKeyStoreAssociatedLongTermBackup;
 import com.pulumi.oci.Database.outputs.GetKeyStoreTypeDetail;
@@ -16,6 +18,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetKeyStoreResult {
+    /**
+     * @return List of Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    private List<GetKeyStoreAssociatedAutonomousVmCluster> associatedAutonomousVmClusters;
+    /**
+     * @return List of Cloud Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    private List<GetKeyStoreAssociatedCloudAutonomousVmCluster> associatedCloudAutonomousVmClusters;
     /**
      * @return List of databases associated with the key store.
      * 
@@ -85,6 +97,20 @@ public final class GetKeyStoreResult {
     private List<GetKeyStoreTypeDetail> typeDetails;
 
     private GetKeyStoreResult() {}
+    /**
+     * @return List of Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    public List<GetKeyStoreAssociatedAutonomousVmCluster> associatedAutonomousVmClusters() {
+        return this.associatedAutonomousVmClusters;
+    }
+    /**
+     * @return List of Cloud Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    public List<GetKeyStoreAssociatedCloudAutonomousVmCluster> associatedCloudAutonomousVmClusters() {
+        return this.associatedCloudAutonomousVmClusters;
+    }
     /**
      * @return List of databases associated with the key store.
      * 
@@ -192,6 +218,8 @@ public final class GetKeyStoreResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetKeyStoreAssociatedAutonomousVmCluster> associatedAutonomousVmClusters;
+        private List<GetKeyStoreAssociatedCloudAutonomousVmCluster> associatedCloudAutonomousVmClusters;
         private List<GetKeyStoreAssociatedDatabase> associatedDatabases;
         private Integer associatedLongTermBackupCount;
         private List<GetKeyStoreAssociatedLongTermBackup> associatedLongTermBackups;
@@ -210,6 +238,8 @@ public final class GetKeyStoreResult {
         public Builder() {}
         public Builder(GetKeyStoreResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.associatedAutonomousVmClusters = defaults.associatedAutonomousVmClusters;
+    	      this.associatedCloudAutonomousVmClusters = defaults.associatedCloudAutonomousVmClusters;
     	      this.associatedDatabases = defaults.associatedDatabases;
     	      this.associatedLongTermBackupCount = defaults.associatedLongTermBackupCount;
     	      this.associatedLongTermBackups = defaults.associatedLongTermBackups;
@@ -227,6 +257,28 @@ public final class GetKeyStoreResult {
     	      this.typeDetails = defaults.typeDetails;
         }
 
+        @CustomType.Setter
+        public Builder associatedAutonomousVmClusters(List<GetKeyStoreAssociatedAutonomousVmCluster> associatedAutonomousVmClusters) {
+            if (associatedAutonomousVmClusters == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreResult", "associatedAutonomousVmClusters");
+            }
+            this.associatedAutonomousVmClusters = associatedAutonomousVmClusters;
+            return this;
+        }
+        public Builder associatedAutonomousVmClusters(GetKeyStoreAssociatedAutonomousVmCluster... associatedAutonomousVmClusters) {
+            return associatedAutonomousVmClusters(List.of(associatedAutonomousVmClusters));
+        }
+        @CustomType.Setter
+        public Builder associatedCloudAutonomousVmClusters(List<GetKeyStoreAssociatedCloudAutonomousVmCluster> associatedCloudAutonomousVmClusters) {
+            if (associatedCloudAutonomousVmClusters == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreResult", "associatedCloudAutonomousVmClusters");
+            }
+            this.associatedCloudAutonomousVmClusters = associatedCloudAutonomousVmClusters;
+            return this;
+        }
+        public Builder associatedCloudAutonomousVmClusters(GetKeyStoreAssociatedCloudAutonomousVmCluster... associatedCloudAutonomousVmClusters) {
+            return associatedCloudAutonomousVmClusters(List.of(associatedCloudAutonomousVmClusters));
+        }
         @CustomType.Setter
         public Builder associatedDatabases(List<GetKeyStoreAssociatedDatabase> associatedDatabases) {
             if (associatedDatabases == null) {
@@ -358,6 +410,8 @@ public final class GetKeyStoreResult {
         }
         public GetKeyStoreResult build() {
             final var _resultValue = new GetKeyStoreResult();
+            _resultValue.associatedAutonomousVmClusters = associatedAutonomousVmClusters;
+            _resultValue.associatedCloudAutonomousVmClusters = associatedCloudAutonomousVmClusters;
             _resultValue.associatedDatabases = associatedDatabases;
             _resultValue.associatedLongTermBackupCount = associatedLongTermBackupCount;
             _resultValue.associatedLongTermBackups = associatedLongTermBackups;

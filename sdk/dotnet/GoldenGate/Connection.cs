@@ -105,6 +105,16 @@ namespace Pulumi.Oci.GoldenGate
     ///         },
     ///         Catalog = new Oci.GoldenGate.Inputs.ConnectionCatalogArgs
     ///         {
+    ///             CatalogConfig = new Oci.GoldenGate.Inputs.ConnectionCatalogCatalogConfigArgs
+    ///             {
+    ///                 CatalogConfigType = connectionCatalogCatalogConfigCatalogConfigType,
+    ///                 DatabaseId = testDatabase.Id,
+    ///                 DatabaseType = connectionCatalogCatalogConfigDatabaseType,
+    ///                 DeploymentId = testDeployment.Id,
+    ///                 Password = connectionCatalogCatalogConfigPassword,
+    ///                 PasswordSecretId = testSecret.Id,
+    ///                 Username = connectionCatalogCatalogConfigUsername,
+    ///             },
     ///             CatalogType = connectionCatalogCatalogType,
     ///             Branch = connectionCatalogBranch,
     ///             ClientId = testClient.Id,
@@ -255,6 +265,22 @@ namespace Pulumi.Oci.GoldenGate
     ///         Wallet = connectionWallet,
     ///         WalletSecretId = testSecret.Id,
     ///         WorkspaceUrl = connectionWorkspaceUrl,
+    ///         WarehouseName = connectionWarehouseName,
+    ///         WarehouseStorage = new Oci.GoldenGate.Inputs.ConnectionWarehouseStorageArgs
+    ///         {
+    ///             StorageType = connectionWarehouseStorageStorageType,
+    ///             AccessKeyId = testKey.Id,
+    ///             AccountKey = connectionWarehouseStorageAccountKey,
+    ///             AccountKeySecretId = testSecret.Id,
+    ///             AccountName = connectionWarehouseStorageAccountName,
+    ///             EndpointUrl = connectionWarehouseStorageEndpointUrl,
+    ///             Namespace = connectionWarehouseStorageNamespace,
+    ///             Region = connectionWarehouseStorageRegion,
+    ///             SecretAccessKey = connectionWarehouseStorageSecretAccessKey,
+    ///             SecretAccessKeySecretId = testSecret.Id,
+    ///             TrustStore = connectionWarehouseStorageTrustStore,
+    ///             TrustStoreSecretId = testSecret.Id,
+    ///         },
     ///     });
     /// 
     /// });
@@ -1193,6 +1219,18 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> WalletSecretId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        /// </summary>
+        [Output("warehouseName")]
+        public Output<string> WarehouseName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        /// </summary>
+        [Output("warehouseStorage")]
+        public Output<Outputs.ConnectionWarehouseStorage> WarehouseStorage { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable)
         /// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
         /// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -1247,7 +1285,6 @@ namespace Pulumi.Oci.GoldenGate
                     "sslKey",
                     "sslKeyPassword",
                     "tlsCertificateKeyFilePassword",
-                    "tlsCertificateKeyFilePasswordSecretId",
                     "trustStore",
                     "trustStorePassword",
                     "wallet",
@@ -2305,21 +2342,11 @@ namespace Pulumi.Oci.GoldenGate
             }
         }
 
-        [Input("tlsCertificateKeyFilePasswordSecretId")]
-        private Input<string>? _tlsCertificateKeyFilePasswordSecretId;
-
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         /// </summary>
-        public Input<string>? TlsCertificateKeyFilePasswordSecretId
-        {
-            get => _tlsCertificateKeyFilePasswordSecretId;
-            set
-            {
-                var emptySecret = Output.CreateSecret(0);
-                _tlsCertificateKeyFilePasswordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
-            }
-        }
+        [Input("tlsCertificateKeyFilePasswordSecretId")]
+        public Input<string>? TlsCertificateKeyFilePasswordSecretId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
@@ -2447,6 +2474,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("walletSecretId")]
         public Input<string>? WalletSecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        /// </summary>
+        [Input("warehouseName")]
+        public Input<string>? WarehouseName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        /// </summary>
+        [Input("warehouseStorage")]
+        public Input<Inputs.ConnectionWarehouseStorageArgs>? WarehouseStorage { get; set; }
 
         /// <summary>
         /// (Updatable)
@@ -3551,21 +3590,11 @@ namespace Pulumi.Oci.GoldenGate
             }
         }
 
-        [Input("tlsCertificateKeyFilePasswordSecretId")]
-        private Input<string>? _tlsCertificateKeyFilePasswordSecretId;
-
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         /// </summary>
-        public Input<string>? TlsCertificateKeyFilePasswordSecretId
-        {
-            get => _tlsCertificateKeyFilePasswordSecretId;
-            set
-            {
-                var emptySecret = Output.CreateSecret(0);
-                _tlsCertificateKeyFilePasswordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
-            }
-        }
+        [Input("tlsCertificateKeyFilePasswordSecretId")]
+        public Input<string>? TlsCertificateKeyFilePasswordSecretId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
@@ -3693,6 +3722,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("walletSecretId")]
         public Input<string>? WalletSecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        /// </summary>
+        [Input("warehouseName")]
+        public Input<string>? WarehouseName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        /// </summary>
+        [Input("warehouseStorage")]
+        public Input<Inputs.ConnectionWarehouseStorageGetArgs>? WarehouseStorage { get; set; }
 
         /// <summary>
         /// (Updatable)

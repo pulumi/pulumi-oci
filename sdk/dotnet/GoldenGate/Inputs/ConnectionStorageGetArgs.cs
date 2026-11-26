@@ -62,6 +62,28 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
 
+        [Input("properties")]
+        private Input<string>? _properties;
+
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        /// </summary>
+        public Input<string>? Properties
+        {
+            get => _properties;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _properties = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// </summary>
+        [Input("propertiesSecretId")]
+        public Input<string>? PropertiesSecretId { get; set; }
+
         /// <summary>
         /// (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         /// </summary>
@@ -104,10 +126,23 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         /// * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
         /// * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         /// * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        /// * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
         /// * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         /// </summary>
         [Input("storageType", required: true)]
         public Input<string> StorageType { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        /// </summary>
+        [Input("trustStore")]
+        public Input<string>? TrustStore { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+        /// </summary>
+        [Input("trustStoreSecretId")]
+        public Input<string>? TrustStoreSecretId { get; set; }
 
         public ConnectionStorageGetArgs()
         {

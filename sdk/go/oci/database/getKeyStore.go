@@ -58,6 +58,10 @@ type LookupKeyStoreArgs struct {
 
 // A collection of values returned by getKeyStore.
 type LookupKeyStoreResult struct {
+	// List of Autonomous VM Clusters associated with the key store.
+	AssociatedAutonomousVmClusters []GetKeyStoreAssociatedAutonomousVmCluster `pulumi:"associatedAutonomousVmClusters"`
+	// List of Cloud Autonomous VM Clusters associated with the key store.
+	AssociatedCloudAutonomousVmClusters []GetKeyStoreAssociatedCloudAutonomousVmCluster `pulumi:"associatedCloudAutonomousVmClusters"`
 	// List of databases associated with the key store.
 	AssociatedDatabases []GetKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
 	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
@@ -116,6 +120,20 @@ func (o LookupKeyStoreResultOutput) ToLookupKeyStoreResultOutput() LookupKeyStor
 
 func (o LookupKeyStoreResultOutput) ToLookupKeyStoreResultOutputWithContext(ctx context.Context) LookupKeyStoreResultOutput {
 	return o
+}
+
+// List of Autonomous VM Clusters associated with the key store.
+func (o LookupKeyStoreResultOutput) AssociatedAutonomousVmClusters() GetKeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) []GetKeyStoreAssociatedAutonomousVmCluster {
+		return v.AssociatedAutonomousVmClusters
+	}).(GetKeyStoreAssociatedAutonomousVmClusterArrayOutput)
+}
+
+// List of Cloud Autonomous VM Clusters associated with the key store.
+func (o LookupKeyStoreResultOutput) AssociatedCloudAutonomousVmClusters() GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) []GetKeyStoreAssociatedCloudAutonomousVmCluster {
+		return v.AssociatedCloudAutonomousVmClusters
+	}).(GetKeyStoreAssociatedCloudAutonomousVmClusterArrayOutput)
 }
 
 // List of databases associated with the key store.

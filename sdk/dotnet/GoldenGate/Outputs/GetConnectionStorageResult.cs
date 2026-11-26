@@ -14,16 +14,16 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetConnectionStorageResult
     {
         /// <summary>
-        /// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        /// The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
         /// </summary>
         public readonly string AccessKeyId;
         public readonly string AccountKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
         /// </summary>
         public readonly string AccountKeySecretId;
         /// <summary>
-        /// Sets the Azure storage account name.
+        /// The Azure Storage account name.
         /// </summary>
         public readonly string AccountName;
         /// <summary>
@@ -42,8 +42,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The Google Cloud Project where the bucket exists.
         /// </summary>
         public readonly string ProjectId;
+        public readonly string Properties;
         /// <summary>
-        /// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// </summary>
+        public readonly string PropertiesSecretId;
+        /// <summary>
+        /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
         /// </summary>
         public readonly string Region;
         /// <summary>
@@ -52,7 +57,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string SchemeType;
         public readonly string SecretAccessKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
         /// </summary>
         public readonly string SecretAccessKeySecretId;
         public readonly string ServiceAccountKeyFile;
@@ -61,14 +66,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string ServiceAccountKeyFileSecretId;
         /// <summary>
-        /// The storage type used in the Iceberg connection. Supported storage types by catalog type:
-        /// * GLUE: AMAZON_S3.
-        /// * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
-        /// * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
-        /// * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
-        /// * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+        /// The warehouse storage type used in the Oracle AI Data Catalog Storage connection.
         /// </summary>
         public readonly string StorageType;
+        public readonly string TrustStore;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+        /// </summary>
+        public readonly string TrustStoreSecretId;
 
         [OutputConstructor]
         private GetConnectionStorageResult(
@@ -88,6 +93,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string projectId,
 
+            string properties,
+
+            string propertiesSecretId,
+
             string region,
 
             string schemeType,
@@ -100,7 +109,11 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string serviceAccountKeyFileSecretId,
 
-            string storageType)
+            string storageType,
+
+            string trustStore,
+
+            string trustStoreSecretId)
         {
             AccessKeyId = accessKeyId;
             AccountKey = accountKey;
@@ -110,6 +123,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Container = container;
             Endpoint = endpoint;
             ProjectId = projectId;
+            Properties = properties;
+            PropertiesSecretId = propertiesSecretId;
             Region = region;
             SchemeType = schemeType;
             SecretAccessKey = secretAccessKey;
@@ -117,6 +132,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ServiceAccountKeyFile = serviceAccountKeyFile;
             ServiceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             StorageType = storageType;
+            TrustStore = trustStore;
+            TrustStoreSecretId = trustStoreSecretId;
         }
     }
 }

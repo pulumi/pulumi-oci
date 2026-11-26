@@ -47,7 +47,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<int> ByolCpuCoreCountLimit { get; private set; } = null!;
 
         /// <summary>
-        /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        /// The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
         /// </summary>
         [Output("category")]
         public Output<string> Category { get; private set; } = null!;
@@ -699,7 +699,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<int>? ByolCpuCoreCountLimit { get; set; }
 
         /// <summary>
-        /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        /// The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
         /// </summary>
         [Input("category")]
         public Input<string>? Category { get; set; }

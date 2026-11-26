@@ -153,6 +153,8 @@ type CloudAutonomousVmCluster struct {
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolOutput `pulumi:"isMtlsEnabledVmCluster"`
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails CloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput `pulumi:"keyManagementSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
@@ -339,6 +341,8 @@ type cloudAutonomousVmClusterState struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster *bool `pulumi:"isMtlsEnabledVmCluster"`
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails []CloudAutonomousVmClusterKeyManagementSystemDetail `pulumi:"keyManagementSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
@@ -484,6 +488,8 @@ type CloudAutonomousVmClusterState struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolPtrInput
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails CloudAutonomousVmClusterKeyManagementSystemDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
@@ -938,6 +944,13 @@ func (o CloudAutonomousVmClusterOutput) Hostname() pulumi.StringOutput {
 // (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 func (o CloudAutonomousVmClusterOutput) IsMtlsEnabledVmCluster() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.BoolOutput { return v.IsMtlsEnabledVmCluster }).(pulumi.BoolOutput)
+}
+
+// Autonomous VM Cluster Key Management System details.
+func (o CloudAutonomousVmClusterOutput) KeyManagementSystemDetails() CloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) CloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+		return v.KeyManagementSystemDetails
+	}).(CloudAutonomousVmClusterKeyManagementSystemDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

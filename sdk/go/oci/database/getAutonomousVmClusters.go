@@ -33,6 +33,7 @@ import (
 //				CompartmentId:           compartmentId,
 //				DisplayName:             pulumi.StringRef(autonomousVmClusterDisplayName),
 //				ExadataInfrastructureId: pulumi.StringRef(testExadataInfrastructure.Id),
+//				KmsType:                 pulumi.StringRef(autonomousVmClusterKmsType),
 //				State:                   pulumi.StringRef(autonomousVmClusterState),
 //			}, nil)
 //			if err != nil {
@@ -62,6 +63,8 @@ type GetAutonomousVmClustersArgs struct {
 	// If provided, filters the results for the given Exadata Infrastructure.
 	ExadataInfrastructureId *string                         `pulumi:"exadataInfrastructureId"`
 	Filters                 []GetAutonomousVmClustersFilter `pulumi:"filters"`
+	// A filter to return only resources that match the given kms exactly.
+	KmsType *string `pulumi:"kmsType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
 }
@@ -78,7 +81,8 @@ type GetAutonomousVmClustersResult struct {
 	ExadataInfrastructureId *string                         `pulumi:"exadataInfrastructureId"`
 	Filters                 []GetAutonomousVmClustersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id      string  `pulumi:"id"`
+	KmsType *string `pulumi:"kmsType"`
 	// The current state of the Autonomous VM cluster.
 	State *string `pulumi:"state"`
 }
@@ -97,6 +101,8 @@ type GetAutonomousVmClustersOutputArgs struct {
 	// If provided, filters the results for the given Exadata Infrastructure.
 	ExadataInfrastructureId pulumi.StringPtrInput                   `pulumi:"exadataInfrastructureId"`
 	Filters                 GetAutonomousVmClustersFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that match the given kms exactly.
+	KmsType pulumi.StringPtrInput `pulumi:"kmsType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -149,6 +155,10 @@ func (o GetAutonomousVmClustersResultOutput) Filters() GetAutonomousVmClustersFi
 // The provider-assigned unique ID for this managed resource.
 func (o GetAutonomousVmClustersResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAutonomousVmClustersResultOutput) KmsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersResult) *string { return v.KmsType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Autonomous VM cluster.

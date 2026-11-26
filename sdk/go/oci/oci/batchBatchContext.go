@@ -47,6 +47,10 @@ import (
 //							DiskSizeInGbs: pulumi.Any(batchContextFleetsShapeDiskSizeInGbs),
 //						},
 //						Type: pulumi.Any(batchContextFleetsType),
+//						Reservation: &oci.BatchBatchContextFleetReservationArgs{
+//							CapacityReservationIds: pulumi.Any(batchContextFleetsReservationCapacityReservationIds),
+//							Type:                   pulumi.Any(batchContextFleetsReservationType),
+//						},
 //					},
 //				},
 //				Network: &oci.BatchBatchContextNetworkArgs{

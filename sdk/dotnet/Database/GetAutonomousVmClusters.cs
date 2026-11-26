@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousVmClusterDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         KmsType = autonomousVmClusterKmsType,
         ///         State = autonomousVmClusterState,
         ///     });
         /// 
@@ -60,6 +61,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousVmClusterDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         KmsType = autonomousVmClusterKmsType,
         ///         State = autonomousVmClusterState,
         ///     });
         /// 
@@ -89,6 +91,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousVmClusterDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         KmsType = autonomousVmClusterKmsType,
         ///         State = autonomousVmClusterState,
         ///     });
         /// 
@@ -127,6 +130,12 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new List<Inputs.GetAutonomousVmClustersFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only resources that match the given kms exactly.
+        /// </summary>
+        [Input("kmsType")]
+        public string? KmsType { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
@@ -169,6 +178,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// A filter to return only resources that match the given kms exactly.
+        /// </summary>
+        [Input("kmsType")]
+        public Input<string>? KmsType { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         [Input("state")]
@@ -205,6 +220,7 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? KmsType;
         /// <summary>
         /// The current state of the Autonomous VM cluster.
         /// </summary>
@@ -224,6 +240,8 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            string? kmsType,
+
             string? state)
         {
             AutonomousVmClusters = autonomousVmClusters;
@@ -232,6 +250,7 @@ namespace Pulumi.Oci.Database
             ExadataInfrastructureId = exadataInfrastructureId;
             Filters = filters;
             Id = id;
+            KmsType = kmsType;
             State = state;
         }
     }

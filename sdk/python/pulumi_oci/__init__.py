@@ -3151,6 +3151,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/autonomousVmClusterKmsManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousVmClusterKmsManagement:AutonomousVmClusterKmsManagement": "AutonomousVmClusterKmsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/autonomousVmClusterOrdsCertificateManagement",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -3195,6 +3203,14 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster": "CloudAutonomousVmCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/cloudAutonomousVmClusterKmsManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/cloudAutonomousVmClusterKmsManagement:CloudAutonomousVmClusterKmsManagement": "CloudAutonomousVmClusterKmsManagement"
   }
  },
  {
@@ -8347,6 +8363,126 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/difStack:DifStack": "DifStack"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabase",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase": "DistributedDatabaseDistributedAutonomousDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode:DistributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode": "DistributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabasesConfigureSharding",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabasesConfigureSharding:DistributedDatabaseDistributedAutonomousDatabasesConfigureSharding": "DistributedDatabaseDistributedAutonomousDatabasesConfigureSharding"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabasesInsert",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabasesInsert:DistributedDatabaseDistributedAutonomousDatabasesInsert": "DistributedDatabaseDistributedAutonomousDatabasesInsert"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabasesInsertDg",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabasesInsertDg:DistributedDatabaseDistributedAutonomousDatabasesInsertDg": "DistributedDatabaseDistributedAutonomousDatabasesInsertDg"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabasesRemove",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabasesRemove:DistributedDatabaseDistributedAutonomousDatabasesRemove": "DistributedDatabaseDistributedAutonomousDatabasesRemove"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabasesRemoveDg",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabasesRemoveDg:DistributedDatabaseDistributedAutonomousDatabasesRemoveDg": "DistributedDatabaseDistributedAutonomousDatabasesRemoveDg"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabase",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabase:DistributedDatabaseDistributedDatabase": "DistributedDatabaseDistributedDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasePrivateEndpoint",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint": "DistributedDatabaseDistributedDatabasePrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasesAddGdsControlNode",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasesAddGdsControlNode:DistributedDatabaseDistributedDatabasesAddGdsControlNode": "DistributedDatabaseDistributedDatabasesAddGdsControlNode"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasesConfigureSharding",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasesConfigureSharding:DistributedDatabaseDistributedDatabasesConfigureSharding": "DistributedDatabaseDistributedDatabasesConfigureSharding"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasesInsert",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasesInsert:DistributedDatabaseDistributedDatabasesInsert": "DistributedDatabaseDistributedDatabasesInsert"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasesInsertDg",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasesInsertDg:DistributedDatabaseDistributedDatabasesInsertDg": "DistributedDatabaseDistributedDatabasesInsertDg"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasesRemove",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasesRemove:DistributedDatabaseDistributedDatabasesRemove": "DistributedDatabaseDistributedDatabasesRemove"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasesRemoveDg",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasesRemoveDg:DistributedDatabaseDistributedDatabasesRemoveDg": "DistributedDatabaseDistributedDatabasesRemoveDg"
   }
  },
  {

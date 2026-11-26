@@ -642,7 +642,7 @@ class _DeploymentState:
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
-        :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -868,7 +868,7 @@ class _DeploymentState:
     @pulumi.getter
     def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
         """
         return pulumi.get(self, "category")
 
@@ -1851,7 +1851,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict', 'outputs.DeploymentBackupSchedule']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
-        :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -2130,7 +2130,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter
     def category(self) -> pulumi.Output[_builtins.str]:
         """
-        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
         """
         return pulumi.get(self, "category")
 

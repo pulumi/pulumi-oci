@@ -87,14 +87,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.byolCpuCoreCountLimit;
     }
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
      * 
      */
     @Export(name="category", refs={String.class}, tree="[0]")
     private Output<String> category;
 
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into five categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39;, &#39;DATA_VERIFICATION&#39; and &#39;DATA_CATALOG&#39;.
      * 
      */
     public Output<String> category() {

@@ -17,6 +17,24 @@ namespace Pulumi.Oci.Dns
     /// 
     /// Creates a new resolver endpoint in the same compartment as the resolver.
     /// 
+    /// ## Dependency ordering
+    /// 
+    /// With OCI provider v8.16.0 or later, the
+    /// `oci.Core.getCnvDnsResolverAssociation`
+    /// data source waits for the VCN's resolver association to become available. Use its
+    /// `DnsResolverId` directly for endpoints and resolver configuration. Endpoints
+    /// must not depend on the resolver configuration resource whose rules reference
+    /// those endpoints, because that would create a dependency cycle.
+    /// 
+    /// Reference the forwarding endpoint's `Name` in `SourceEndpointName` and the
+    /// destination listening endpoint's `ListeningAddress` in `DestinationAddresses`.
+    /// These references order rule configuration after endpoint creation and rule
+    /// removal before endpoint deletion. When using modules, expose endpoint names and
+    /// addresses as outputs and use them to configure rules in the calling module.
+    /// 
+    /// See the runnable resolver example
+    /// and the resolver reference.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +50,7 @@ namespace Pulumi.Oci.Dns
     ///         IsForwarding = resolverEndpointIsForwarding,
     ///         IsListening = resolverEndpointIsListening,
     ///         Name = resolverEndpointName,
-    ///         ResolverId = testResolver.Id,
+    ///         ResolverId = testVcnDnsResolverAssociation.DnsResolverId,
     ///         SubnetId = testSubnet.Id,
     ///         Scope = "PRIVATE",
     ///         DefinedTags = resolverEndpointDefinedTags,

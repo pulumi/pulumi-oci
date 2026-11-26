@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Reservation selection used for initial fleet provisioning.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBatchBatchContextFleetReservationResult> Reservations;
+        /// <summary>
         /// Shape of the fleet. Describes hardware resources of each node in the fleet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBatchBatchContextFleetShapeResult> Shapes;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string name,
 
+            ImmutableArray<Outputs.GetBatchBatchContextFleetReservationResult> reservations,
+
             ImmutableArray<Outputs.GetBatchBatchContextFleetShapeResult> shapes,
 
             string state,
@@ -55,6 +61,7 @@ namespace Pulumi.Oci.Oci.Outputs
             Details = details;
             MaxConcurrentTasks = maxConcurrentTasks;
             Name = name;
+            Reservations = reservations;
             Shapes = shapes;
             State = state;
             Type = type;

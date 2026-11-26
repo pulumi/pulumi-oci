@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetAutonomousVmClusterKeyManagementSystemDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetAutonomousVmClusterMaintenanceWindowDetail;
 import java.lang.Boolean;
@@ -135,6 +136,11 @@ public final class GetAutonomousVmClusterResult {
      * 
      */
     private Boolean isMtlsEnabled;
+    /**
+     * @return Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    private List<GetAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
@@ -448,6 +454,13 @@ public final class GetAutonomousVmClusterResult {
         return this.isMtlsEnabled;
     }
     /**
+     * @return Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    public List<GetAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails() {
+        return this.keyManagementSystemDetails;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -683,6 +696,7 @@ public final class GetAutonomousVmClusterResult {
         private String id;
         private Boolean isLocalBackupEnabled;
         private Boolean isMtlsEnabled;
+        private List<GetAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails;
         private String lastMaintenanceRunId;
         private String licenseModel;
         private String lifecycleDetails;
@@ -742,6 +756,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.id = defaults.id;
     	      this.isLocalBackupEnabled = defaults.isLocalBackupEnabled;
     	      this.isMtlsEnabled = defaults.isMtlsEnabled;
+    	      this.keyManagementSystemDetails = defaults.keyManagementSystemDetails;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -984,6 +999,17 @@ public final class GetAutonomousVmClusterResult {
             }
             this.isMtlsEnabled = isMtlsEnabled;
             return this;
+        }
+        @CustomType.Setter
+        public Builder keyManagementSystemDetails(List<GetAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails) {
+            if (keyManagementSystemDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResult", "keyManagementSystemDetails");
+            }
+            this.keyManagementSystemDetails = keyManagementSystemDetails;
+            return this;
+        }
+        public Builder keyManagementSystemDetails(GetAutonomousVmClusterKeyManagementSystemDetail... keyManagementSystemDetails) {
+            return keyManagementSystemDetails(List.of(keyManagementSystemDetails));
         }
         @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
@@ -1259,6 +1285,7 @@ public final class GetAutonomousVmClusterResult {
             _resultValue.id = id;
             _resultValue.isLocalBackupEnabled = isLocalBackupEnabled;
             _resultValue.isMtlsEnabled = isMtlsEnabled;
+            _resultValue.keyManagementSystemDetails = keyManagementSystemDetails;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;

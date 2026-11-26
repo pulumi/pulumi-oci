@@ -1,6 +1,6 @@
 module github.com/pulumi/pulumi-oci/provider/v5
 
-go 1.26.10
+go 1.26.11
 
 replace github.com/oracle/terraform-provider-oci => ../upstream
 
@@ -11,7 +11,7 @@ require (
 	github.com/pulumi/pulumi/sdk/v3 v3.274.0
 )
 
-require github.com/oracle/oci-go-sdk/v65 v65.131.0 // indirect
+require github.com/oracle/oci-go-sdk/v65 v65.132.0 // indirect
 
 require (
 	cel.dev/expr v0.25.3 // indirect

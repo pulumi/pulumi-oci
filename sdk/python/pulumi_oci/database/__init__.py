@@ -25,12 +25,14 @@ from .autonomous_database_software_image import *
 from .autonomous_database_wallet import *
 from .autonomous_exadata_infrastructure import *
 from .autonomous_vm_cluster import *
+from .autonomous_vm_cluster_kms_management import *
 from .autonomous_vm_cluster_ords_certificate_management import *
 from .autonomous_vm_cluster_ssl_certificate_management import *
 from .backup import *
 from .backup_cancel_management import *
 from .backup_destination import *
 from .cloud_autonomous_vm_cluster import *
+from .cloud_autonomous_vm_cluster_kms_management import *
 from .cloud_database_management import *
 from .cloud_exadata_infrastructure import *
 from .cloud_exadata_infrastructure_configure_exascale_management import *

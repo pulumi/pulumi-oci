@@ -79,6 +79,36 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DdfsInstance{}
 	case "oci:oci/difStack:DifStack":
 		r = &DifStack{}
+	case "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase":
+		r = &DistributedDatabaseDistributedAutonomousDatabase{}
+	case "oci:oci/distributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode:DistributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode":
+		r = &DistributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode{}
+	case "oci:oci/distributedDatabaseDistributedAutonomousDatabasesConfigureSharding:DistributedDatabaseDistributedAutonomousDatabasesConfigureSharding":
+		r = &DistributedDatabaseDistributedAutonomousDatabasesConfigureSharding{}
+	case "oci:oci/distributedDatabaseDistributedAutonomousDatabasesInsert:DistributedDatabaseDistributedAutonomousDatabasesInsert":
+		r = &DistributedDatabaseDistributedAutonomousDatabasesInsert{}
+	case "oci:oci/distributedDatabaseDistributedAutonomousDatabasesInsertDg:DistributedDatabaseDistributedAutonomousDatabasesInsertDg":
+		r = &DistributedDatabaseDistributedAutonomousDatabasesInsertDg{}
+	case "oci:oci/distributedDatabaseDistributedAutonomousDatabasesRemove:DistributedDatabaseDistributedAutonomousDatabasesRemove":
+		r = &DistributedDatabaseDistributedAutonomousDatabasesRemove{}
+	case "oci:oci/distributedDatabaseDistributedAutonomousDatabasesRemoveDg:DistributedDatabaseDistributedAutonomousDatabasesRemoveDg":
+		r = &DistributedDatabaseDistributedAutonomousDatabasesRemoveDg{}
+	case "oci:oci/distributedDatabaseDistributedDatabase:DistributedDatabaseDistributedDatabase":
+		r = &DistributedDatabaseDistributedDatabase{}
+	case "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint":
+		r = &DistributedDatabaseDistributedDatabasePrivateEndpoint{}
+	case "oci:oci/distributedDatabaseDistributedDatabasesAddGdsControlNode:DistributedDatabaseDistributedDatabasesAddGdsControlNode":
+		r = &DistributedDatabaseDistributedDatabasesAddGdsControlNode{}
+	case "oci:oci/distributedDatabaseDistributedDatabasesConfigureSharding:DistributedDatabaseDistributedDatabasesConfigureSharding":
+		r = &DistributedDatabaseDistributedDatabasesConfigureSharding{}
+	case "oci:oci/distributedDatabaseDistributedDatabasesInsert:DistributedDatabaseDistributedDatabasesInsert":
+		r = &DistributedDatabaseDistributedDatabasesInsert{}
+	case "oci:oci/distributedDatabaseDistributedDatabasesInsertDg:DistributedDatabaseDistributedDatabasesInsertDg":
+		r = &DistributedDatabaseDistributedDatabasesInsertDg{}
+	case "oci:oci/distributedDatabaseDistributedDatabasesRemove:DistributedDatabaseDistributedDatabasesRemove":
+		r = &DistributedDatabaseDistributedDatabasesRemove{}
+	case "oci:oci/distributedDatabaseDistributedDatabasesRemoveDg:DistributedDatabaseDistributedDatabasesRemoveDg":
+		r = &DistributedDatabaseDistributedDatabasesRemoveDg{}
 	case "oci:oci/gdpGdpPipeline:GdpGdpPipeline":
 		r = &GdpGdpPipeline{}
 	case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
@@ -291,6 +321,81 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/difStack",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedAutonomousDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedAutonomousDatabasesAddGdsControlNode",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedAutonomousDatabasesConfigureSharding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedAutonomousDatabasesInsert",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedAutonomousDatabasesInsertDg",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedAutonomousDatabasesRemove",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedAutonomousDatabasesRemoveDg",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabasePrivateEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabasesAddGdsControlNode",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabasesConfigureSharding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabasesInsert",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabasesInsertDg",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabasesRemove",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/distributedDatabaseDistributedDatabasesRemoveDg",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

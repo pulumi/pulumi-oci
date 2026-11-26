@@ -15,7 +15,7 @@ import java.util.Objects;
 public final class GetConnectionsConnectionCollectionItemArtifactLocation {
     private String accountKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
      * 
      */
     private String accountKeySecretId;
@@ -61,7 +61,7 @@ public final class GetConnectionsConnectionCollectionItemArtifactLocation {
         return this.accountKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
      * 
      */
     public String accountKeySecretId() {

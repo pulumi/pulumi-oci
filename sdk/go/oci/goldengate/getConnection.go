@@ -59,13 +59,13 @@ type LookupConnectionArgs struct {
 
 // A collection of values returned by getConnection.
 type LookupConnectionResult struct {
-	// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	// The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey string `pulumi:"accountKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
 	AccountKeySecretId string `pulumi:"accountKeySecretId"`
-	// Sets the Azure storage account name.
+	// The Azure Storage account name.
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []GetConnectionAdditionalAttribute `pulumi:"additionalAttributes"`
@@ -235,7 +235,7 @@ type LookupConnectionResult struct {
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId string `pulumi:"redisClusterId"`
-	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+	// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
 	Region string `pulumi:"region"`
 	// Deprecated: The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
 	RestAuthSecretKey string `pulumi:"restAuthSecretKey"`
@@ -253,7 +253,7 @@ type LookupConnectionResult struct {
 	SasTokenSecretId string `pulumi:"sasTokenSecretId"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
 	SecretAccessKeySecretId string `pulumi:"secretAccessKeySecretId"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
@@ -363,9 +363,7 @@ type LookupConnectionResult struct {
 	// * SPARK: Applicable when `securityProtocol` is TLS and a trust store is provided. Required when `trustStoreSecretId` is provided.
 	// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's trust store.
 	TrustStorePasswordSecretId string `pulumi:"trustStorePasswordSecretId"`
-	// Secret OCID containing the trust store content.
-	// * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
-	// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
 	TrustStoreSecretId string `pulumi:"trustStoreSecretId"`
 	// Trust store format used by the Spark client.
 	TrustStoreType string `pulumi:"trustStoreType"`
@@ -382,6 +380,10 @@ type LookupConnectionResult struct {
 	Wallet string `pulumi:"wallet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 	WalletSecretId string `pulumi:"walletSecretId"`
+	// The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+	WarehouseName string `pulumi:"warehouseName"`
+	// Represents the warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+	WarehouseStorages []GetConnectionWarehouseStorage `pulumi:"warehouseStorages"`
 	// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
 	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
 	WorkspaceUrl string `pulumi:"workspaceUrl"`
@@ -417,7 +419,7 @@ func (o LookupConnectionResultOutput) ToLookupConnectionResultOutputWithContext(
 	return o
 }
 
-// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+// The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
 func (o LookupConnectionResultOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -427,12 +429,12 @@ func (o LookupConnectionResultOutput) AccountKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccountKey }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
 func (o LookupConnectionResultOutput) AccountKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccountKeySecretId }).(pulumi.StringOutput)
 }
 
-// Sets the Azure storage account name.
+// The Azure Storage account name.
 func (o LookupConnectionResultOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccountName }).(pulumi.StringOutput)
 }
@@ -821,7 +823,7 @@ func (o LookupConnectionResultOutput) RedisClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.RedisClusterId }).(pulumi.StringOutput)
 }
 
-// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
 func (o LookupConnectionResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Region }).(pulumi.StringOutput)
 }
@@ -866,7 +868,7 @@ func (o LookupConnectionResultOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
 func (o LookupConnectionResultOutput) SecretAccessKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKeySecretId }).(pulumi.StringOutput)
 }
@@ -1114,9 +1116,7 @@ func (o LookupConnectionResultOutput) TrustStorePasswordSecretId() pulumi.String
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStorePasswordSecretId }).(pulumi.StringOutput)
 }
 
-// Secret OCID containing the trust store content.
-// * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
-// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
 func (o LookupConnectionResultOutput) TrustStoreSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStoreSecretId }).(pulumi.StringOutput)
 }
@@ -1155,6 +1155,16 @@ func (o LookupConnectionResultOutput) Wallet() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 func (o LookupConnectionResultOutput) WalletSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.WalletSecretId }).(pulumi.StringOutput)
+}
+
+// The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+func (o LookupConnectionResultOutput) WarehouseName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.WarehouseName }).(pulumi.StringOutput)
+}
+
+// Represents the warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+func (o LookupConnectionResultOutput) WarehouseStorages() GetConnectionWarehouseStorageArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionWarehouseStorage { return v.WarehouseStorages }).(GetConnectionWarehouseStorageArrayOutput)
 }
 
 // * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.

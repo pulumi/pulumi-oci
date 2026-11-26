@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.outputs.GetKeyStoresKeyStore;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -25,6 +26,7 @@ public final class GetKeyStoresResult {
      * 
      */
     private String id;
+    private @Nullable String keyStoreType;
     /**
      * @return The list of key_stores.
      * 
@@ -49,6 +51,9 @@ public final class GetKeyStoresResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> keyStoreType() {
+        return Optional.ofNullable(this.keyStoreType);
+    }
     /**
      * @return The list of key_stores.
      * 
@@ -69,6 +74,7 @@ public final class GetKeyStoresResult {
         private String compartmentId;
         private @Nullable List<GetKeyStoresFilter> filters;
         private String id;
+        private @Nullable String keyStoreType;
         private List<GetKeyStoresKeyStore> keyStores;
         public Builder() {}
         public Builder(GetKeyStoresResult defaults) {
@@ -76,6 +82,7 @@ public final class GetKeyStoresResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.keyStoreType = defaults.keyStoreType;
     	      this.keyStores = defaults.keyStores;
         }
 
@@ -105,6 +112,12 @@ public final class GetKeyStoresResult {
             return this;
         }
         @CustomType.Setter
+        public Builder keyStoreType(@Nullable String keyStoreType) {
+
+            this.keyStoreType = keyStoreType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder keyStores(List<GetKeyStoresKeyStore> keyStores) {
             if (keyStores == null) {
               throw new MissingRequiredPropertyException("GetKeyStoresResult", "keyStores");
@@ -120,6 +133,7 @@ public final class GetKeyStoresResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.keyStoreType = keyStoreType;
             _resultValue.keyStores = keyStores;
             return _resultValue;
         }

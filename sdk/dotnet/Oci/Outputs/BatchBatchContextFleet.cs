@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Reservation selection for initial provisioning of a fleet.
+        /// </summary>
+        public readonly Outputs.BatchBatchContextFleetReservation? Reservation;
+        /// <summary>
         /// Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
         /// </summary>
         public readonly Outputs.BatchBatchContextFleetShape Shape;
@@ -49,6 +53,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string name,
 
+            Outputs.BatchBatchContextFleetReservation? reservation,
+
             Outputs.BatchBatchContextFleetShape shape,
 
             string? state,
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.Oci.Outputs
             Details = details;
             MaxConcurrentTasks = maxConcurrentTasks;
             Name = name;
+            Reservation = reservation;
             Shape = shape;
             State = state;
             Type = type;

@@ -46,6 +46,7 @@ public final class GetCloudAutonomousVmClustersResult {
      * 
      */
     private String id;
+    private @Nullable String kmsType;
     /**
      * @return The current state of the cloud Autonomous VM cluster.
      * 
@@ -98,6 +99,9 @@ public final class GetCloudAutonomousVmClustersResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> kmsType() {
+        return Optional.ofNullable(this.kmsType);
+    }
     /**
      * @return The current state of the cloud Autonomous VM cluster.
      * 
@@ -122,6 +126,7 @@ public final class GetCloudAutonomousVmClustersResult {
         private @Nullable String displayName;
         private @Nullable List<GetCloudAutonomousVmClustersFilter> filters;
         private String id;
+        private @Nullable String kmsType;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetCloudAutonomousVmClustersResult defaults) {
@@ -133,6 +138,7 @@ public final class GetCloudAutonomousVmClustersResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.kmsType = defaults.kmsType;
     	      this.state = defaults.state;
         }
 
@@ -191,6 +197,12 @@ public final class GetCloudAutonomousVmClustersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder kmsType(@Nullable String kmsType) {
+
+            this.kmsType = kmsType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -205,6 +217,7 @@ public final class GetCloudAutonomousVmClustersResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.kmsType = kmsType;
             _resultValue.state = state;
             return _resultValue;
         }

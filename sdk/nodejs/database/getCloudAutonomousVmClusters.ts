@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: cloudAutonomousVmClusterAvailabilityDomain,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudAutonomousVmClusterDisplayName,
+ *     kmsType: cloudAutonomousVmClusterKmsType,
  *     state: cloudAutonomousVmClusterState,
  * });
  * ```
@@ -34,6 +35,7 @@ export function getCloudAutonomousVmClusters(args: GetCloudAutonomousVmClustersA
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "kmsType": args.kmsType,
         "state": args.state,
     }, opts);
 }
@@ -59,6 +61,10 @@ export interface GetCloudAutonomousVmClustersArgs {
      */
     displayName?: string;
     filters?: inputs.Database.GetCloudAutonomousVmClustersFilter[];
+    /**
+     * A filter to return only resources that match the given kms exactly.
+     */
+    kmsType?: string;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
@@ -94,6 +100,7 @@ export interface GetCloudAutonomousVmClustersResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly kmsType?: string;
     /**
      * The current state of the cloud Autonomous VM cluster.
      */
@@ -115,6 +122,7 @@ export interface GetCloudAutonomousVmClustersResult {
  *     availabilityDomain: cloudAutonomousVmClusterAvailabilityDomain,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudAutonomousVmClusterDisplayName,
+ *     kmsType: cloudAutonomousVmClusterKmsType,
  *     state: cloudAutonomousVmClusterState,
  * });
  * ```
@@ -127,6 +135,7 @@ export function getCloudAutonomousVmClustersOutput(args: GetCloudAutonomousVmClu
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "kmsType": args.kmsType,
         "state": args.state,
     }, opts);
 }
@@ -152,6 +161,10 @@ export interface GetCloudAutonomousVmClustersOutputArgs {
      */
     displayName?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudAutonomousVmClustersFilterArgs>[] | undefined>;
+    /**
+     * A filter to return only resources that match the given kms exactly.
+     */
+    kmsType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */

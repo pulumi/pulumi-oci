@@ -67,6 +67,10 @@ import (
 type KeyStore struct {
 	pulumi.CustomResourceState
 
+	// List of Autonomous VM Clusters associated with the key store.
+	AssociatedAutonomousVmClusters KeyStoreAssociatedAutonomousVmClusterArrayOutput `pulumi:"associatedAutonomousVmClusters"`
+	// List of Cloud Autonomous VM Clusters associated with the key store.
+	AssociatedCloudAutonomousVmClusters KeyStoreAssociatedCloudAutonomousVmClusterArrayOutput `pulumi:"associatedCloudAutonomousVmClusters"`
 	// List of databases associated with the key store.
 	AssociatedDatabases KeyStoreAssociatedDatabaseArrayOutput `pulumi:"associatedDatabases"`
 	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
@@ -133,6 +137,10 @@ func GetKeyStore(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering KeyStore resources.
 type keyStoreState struct {
+	// List of Autonomous VM Clusters associated with the key store.
+	AssociatedAutonomousVmClusters []KeyStoreAssociatedAutonomousVmCluster `pulumi:"associatedAutonomousVmClusters"`
+	// List of Cloud Autonomous VM Clusters associated with the key store.
+	AssociatedCloudAutonomousVmClusters []KeyStoreAssociatedCloudAutonomousVmCluster `pulumi:"associatedCloudAutonomousVmClusters"`
 	// List of databases associated with the key store.
 	AssociatedDatabases []KeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
 	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
@@ -161,6 +169,10 @@ type keyStoreState struct {
 }
 
 type KeyStoreState struct {
+	// List of Autonomous VM Clusters associated with the key store.
+	AssociatedAutonomousVmClusters KeyStoreAssociatedAutonomousVmClusterArrayInput
+	// List of Cloud Autonomous VM Clusters associated with the key store.
+	AssociatedCloudAutonomousVmClusters KeyStoreAssociatedCloudAutonomousVmClusterArrayInput
 	// List of databases associated with the key store.
 	AssociatedDatabases KeyStoreAssociatedDatabaseArrayInput
 	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
@@ -312,6 +324,20 @@ func (o KeyStoreOutput) ToKeyStoreOutput() KeyStoreOutput {
 
 func (o KeyStoreOutput) ToKeyStoreOutputWithContext(ctx context.Context) KeyStoreOutput {
 	return o
+}
+
+// List of Autonomous VM Clusters associated with the key store.
+func (o KeyStoreOutput) AssociatedAutonomousVmClusters() KeyStoreAssociatedAutonomousVmClusterArrayOutput {
+	return o.ApplyT(func(v *KeyStore) KeyStoreAssociatedAutonomousVmClusterArrayOutput {
+		return v.AssociatedAutonomousVmClusters
+	}).(KeyStoreAssociatedAutonomousVmClusterArrayOutput)
+}
+
+// List of Cloud Autonomous VM Clusters associated with the key store.
+func (o KeyStoreOutput) AssociatedCloudAutonomousVmClusters() KeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+	return o.ApplyT(func(v *KeyStore) KeyStoreAssociatedCloudAutonomousVmClusterArrayOutput {
+		return v.AssociatedCloudAutonomousVmClusters
+	}).(KeyStoreAssociatedCloudAutonomousVmClusterArrayOutput)
 }
 
 // List of databases associated with the key store.

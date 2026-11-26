@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.ConnectionCatalogCatalogConfig;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,6 +18,11 @@ public final class ConnectionCatalog {
      * 
      */
     private @Nullable String branch;
+    /**
+     * @return (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+     * 
+     */
+    private @Nullable ConnectionCatalogCatalogConfig catalogConfig;
     /**
      * @return (Updatable) The catalog type.
      * 
@@ -81,6 +87,13 @@ public final class ConnectionCatalog {
      */
     public Optional<String> branch() {
         return Optional.ofNullable(this.branch);
+    }
+    /**
+     * @return (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+     * 
+     */
+    public Optional<ConnectionCatalogCatalogConfig> catalogConfig() {
+        return Optional.ofNullable(this.catalogConfig);
     }
     /**
      * @return (Updatable) The catalog type.
@@ -169,6 +182,7 @@ public final class ConnectionCatalog {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String branch;
+        private @Nullable ConnectionCatalogCatalogConfig catalogConfig;
         private String catalogType;
         private @Nullable String clientId;
         private @Nullable String clientSecret;
@@ -183,6 +197,7 @@ public final class ConnectionCatalog {
         public Builder(ConnectionCatalog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.branch = defaults.branch;
+    	      this.catalogConfig = defaults.catalogConfig;
     	      this.catalogType = defaults.catalogType;
     	      this.clientId = defaults.clientId;
     	      this.clientSecret = defaults.clientSecret;
@@ -199,6 +214,12 @@ public final class ConnectionCatalog {
         public Builder branch(@Nullable String branch) {
 
             this.branch = branch;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder catalogConfig(@Nullable ConnectionCatalogCatalogConfig catalogConfig) {
+
+            this.catalogConfig = catalogConfig;
             return this;
         }
         @CustomType.Setter
@@ -266,6 +287,7 @@ public final class ConnectionCatalog {
         public ConnectionCatalog build() {
             final var _resultValue = new ConnectionCatalog();
             _resultValue.branch = branch;
+            _resultValue.catalogConfig = catalogConfig;
             _resultValue.catalogType = catalogType;
             _resultValue.clientId = clientId;
             _resultValue.clientSecret = clientSecret;

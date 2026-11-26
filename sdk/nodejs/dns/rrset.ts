@@ -17,30 +17,80 @@ import * as utilities from "../utilities";
  * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
  * parameter then the viewId query parameter is required.
  *
+ * ## RRSet identity and records
+ *
+ * An RRSet is the collection of records with the same domain name and record type
+ * in one zone. The top-level `zoneNameOrId`, `domain` and `rtype` select that
+ * RRSet. Each `items` block describes one record in it: repeat the selected domain
+ * and type, and provide that record's `rdata` and `ttl`. Multiple A record values
+ * therefore belong in multiple `items` blocks of one resource, rather than separate
+ * resources managing the same RRSet. Use a consistent TTL for all records in a set.
+ *
  * ## Example Usage
+ *
+ * These examples use a zone resource named `example` and documentation IP addresses.
+ * The zone can be created with `oci.Dns.Zone` using `compartmentId`, `name` and
+ * `zoneType = "PRIMARY"`. See the public RRSet example
+ * and private RRSet example
+ * for complete configurations. The public directory also includes other DNS examples.
+ *
+ * ### One A record
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrset = new oci.dns.Rrset("test_rrset", {
- *     domain: rrsetDomain,
- *     rtype: rrsetRtype,
- *     zoneNameOrId: testZone.id,
+ * const singleRecord = new oci.dns.Rrset("single_record", {
+ *     zoneNameOrId: example.id,
+ *     domain: `www.${example.name}`,
+ *     rtype: "A",
  *     items: [{
- *         domain: rrsetItemsDomain,
- *         rdata: rrsetItemsRdata,
- *         rtype: rrsetItemsRtype,
- *         ttl: rrsetItemsTtl,
+ *         domain: `www.${example.name}`,
+ *         rtype: "A",
+ *         rdata: "192.0.2.10",
+ *         ttl: 300,
  *     }],
- *     scope: rrsetScope,
- *     viewId: testView.id,
  * });
  * ```
  *
+ * ### Multiple A records in one RRSet
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const multipleRecords = new oci.dns.Rrset("multiple_records", {
+ *     zoneNameOrId: example.id,
+ *     domain: `api.${example.name}`,
+ *     rtype: "A",
+ *     items: [
+ *         {
+ *             domain: `api.${example.name}`,
+ *             rtype: "A",
+ *             rdata: "192.0.2.20",
+ *             ttl: 300,
+ *         },
+ *         {
+ *             domain: `api.${example.name}`,
+ *             rtype: "A",
+ *             rdata: "192.0.2.21",
+ *             ttl: 300,
+ *         },
+ *     ],
+ * });
+ * ```
+ *
+ * For private zones, see the private RRSet example.
+ * When identifying a private zone by name, provide its `viewId` as well.
+ *
  * ## Behavior
  *
- * - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+ * - Creating a resource for an RRSet that already contains records fails with
+ *   HTTP 409 (Conflict), including when `items` is omitted. Import an existing
+ *   RRSet before managing it.
+ * - Updating an existing resource replaces its record set with the configured
+ *   `items`; removing an item removes that record. Keep the desired records explicit
+ *   in the configuration, rather than using omission of `items` as a deletion instruction.
  *
  * ## Import
  *
@@ -105,7 +155,7 @@ export class Rrset extends pulumi.CustomResource {
     declare public readonly domain: pulumi.Output<string>;
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
      */
     declare public readonly items: pulumi.Output<outputs.Dns.RrsetItem[]>;
     /**
@@ -192,7 +242,7 @@ export interface RrsetState {
     domain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[] | undefined>;
     /**
@@ -236,7 +286,7 @@ export interface RrsetArgs {
     domain: pulumi.Input<string>;
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[] | undefined>;
     /**

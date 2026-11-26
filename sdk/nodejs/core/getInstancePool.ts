@@ -81,6 +81,10 @@ export interface GetInstancePoolResult {
      */
     readonly instanceHostnameFormatter: string;
     /**
+     * Optional maintenance policy settings for an instance pool.
+     */
+    readonly instanceMaintenancePolicies: outputs.Core.GetInstancePoolInstanceMaintenancePolicy[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      */
     readonly instancePoolId: string;

@@ -59,7 +59,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
      * 
      */
     @Import(name="items")
@@ -67,7 +67,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
      * 
      */
     public Optional<Output<List<RrsetItemArgs>>> items() {
@@ -230,7 +230,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+         * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+         * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+         * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
          * 
          * @return builder
          * 

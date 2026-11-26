@@ -44,6 +44,14 @@ export interface GetKeyStoreArgs {
  */
 export interface GetKeyStoreResult {
     /**
+     * List of Autonomous VM Clusters associated with the key store.
+     */
+    readonly associatedAutonomousVmClusters: outputs.Database.GetKeyStoreAssociatedAutonomousVmCluster[];
+    /**
+     * List of Cloud Autonomous VM Clusters associated with the key store.
+     */
+    readonly associatedCloudAutonomousVmClusters: outputs.Database.GetKeyStoreAssociatedCloudAutonomousVmCluster[];
+    /**
      * List of databases associated with the key store.
      */
     readonly associatedDatabases: outputs.Database.GetKeyStoreAssociatedDatabase[];

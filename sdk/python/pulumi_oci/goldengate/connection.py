@@ -151,6 +151,8 @@ class ConnectionArgs:
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_storage: pulumi.Input[Optional['ConnectionWarehouseStorageArgs']] = None,
                  workspace_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Connection resource.
@@ -388,6 +390,8 @@ class ConnectionArgs:
                This field is applicable only when `doesUseSecretIds` is set to `false`. If `vaultId` is provided, `keyId` must also be provided.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] warehouse_name: (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        :param pulumi.Input['ConnectionWarehouseStorageArgs'] warehouse_storage: (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
         :param pulumi.Input[_builtins.str] workspace_url: (Updatable)
                * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
                * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -720,6 +724,10 @@ class ConnectionArgs:
             pulumi.set(__self__, "wallet", wallet)
         if wallet_secret_id is not None:
             pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        if warehouse_name is not None:
+            pulumi.set(__self__, "warehouse_name", warehouse_name)
+        if warehouse_storage is not None:
+            pulumi.set(__self__, "warehouse_storage", warehouse_storage)
         if workspace_url is not None:
             pulumi.set(__self__, "workspace_url", workspace_url)
 
@@ -2406,6 +2414,30 @@ class ConnectionArgs:
         pulumi.set(self, "wallet_secret_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="warehouseName")
+    def warehouse_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        """
+        return pulumi.get(self, "warehouse_name")
+
+    @warehouse_name.setter
+    def warehouse_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "warehouse_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseStorage")
+    def warehouse_storage(self) -> pulumi.Input[Optional['ConnectionWarehouseStorageArgs']]:
+        """
+        (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        """
+        return pulumi.get(self, "warehouse_storage")
+
+    @warehouse_storage.setter
+    def warehouse_storage(self, value: pulumi.Input[Optional['ConnectionWarehouseStorageArgs']]):
+        pulumi.set(self, "warehouse_storage", value)
+
+    @_builtins.property
     @pulumi.getter(name="workspaceUrl")
     def workspace_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -2563,6 +2595,8 @@ class _ConnectionState:
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_storage: pulumi.Input[Optional['ConnectionWarehouseStorageArgs']] = None,
                  workspace_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
@@ -2807,6 +2841,8 @@ class _ConnectionState:
                This field is applicable only when `doesUseSecretIds` is set to `false`. If `vaultId` is provided, `keyId` must also be provided.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] warehouse_name: (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        :param pulumi.Input['ConnectionWarehouseStorageArgs'] warehouse_storage: (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
         :param pulumi.Input[_builtins.str] workspace_url: (Updatable)
                * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
                * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -3157,6 +3193,10 @@ class _ConnectionState:
             pulumi.set(__self__, "wallet", wallet)
         if wallet_secret_id is not None:
             pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        if warehouse_name is not None:
+            pulumi.set(__self__, "warehouse_name", warehouse_name)
+        if warehouse_storage is not None:
+            pulumi.set(__self__, "warehouse_storage", warehouse_storage)
         if workspace_url is not None:
             pulumi.set(__self__, "workspace_url", workspace_url)
 
@@ -4927,6 +4967,30 @@ class _ConnectionState:
         pulumi.set(self, "wallet_secret_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="warehouseName")
+    def warehouse_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        """
+        return pulumi.get(self, "warehouse_name")
+
+    @warehouse_name.setter
+    def warehouse_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "warehouse_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseStorage")
+    def warehouse_storage(self) -> pulumi.Input[Optional['ConnectionWarehouseStorageArgs']]:
+        """
+        (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        """
+        return pulumi.get(self, "warehouse_storage")
+
+    @warehouse_storage.setter
+    def warehouse_storage(self, value: pulumi.Input[Optional['ConnectionWarehouseStorageArgs']]):
+        pulumi.set(self, "warehouse_storage", value)
+
+    @_builtins.property
     @pulumi.getter(name="workspaceUrl")
     def workspace_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -5080,6 +5144,8 @@ class Connection(pulumi.CustomResource):
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_storage: pulumi.Input[Optional[Union['ConnectionWarehouseStorageArgs', 'ConnectionWarehouseStorageArgsDict', 'outputs.ConnectionWarehouseStorage']]] = None,
                  workspace_url: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -5161,6 +5227,15 @@ class Connection(pulumi.CustomResource):
                 "port": connection_bootstrap_servers_port,
             }],
             catalog={
+                "catalog_config": {
+                    "catalog_config_type": connection_catalog_catalog_config_catalog_config_type,
+                    "database_id": test_database["id"],
+                    "database_type": connection_catalog_catalog_config_database_type,
+                    "deployment_id": test_deployment["id"],
+                    "password": connection_catalog_catalog_config_password,
+                    "password_secret_id": test_secret["id"],
+                    "username": connection_catalog_catalog_config_username,
+                },
                 "catalog_type": connection_catalog_catalog_type,
                 "branch": connection_catalog_branch,
                 "client_id": test_client["id"],
@@ -5303,7 +5378,22 @@ class Connection(pulumi.CustomResource):
             vault_id=test_vault["id"],
             wallet=connection_wallet,
             wallet_secret_id=test_secret["id"],
-            workspace_url=connection_workspace_url)
+            workspace_url=connection_workspace_url,
+            warehouse_name=connection_warehouse_name,
+            warehouse_storage={
+                "storage_type": connection_warehouse_storage_storage_type,
+                "access_key_id": test_key["id"],
+                "account_key": connection_warehouse_storage_account_key,
+                "account_key_secret_id": test_secret["id"],
+                "account_name": connection_warehouse_storage_account_name,
+                "endpoint_url": connection_warehouse_storage_endpoint_url,
+                "namespace": connection_warehouse_storage_namespace,
+                "region": connection_warehouse_storage_region,
+                "secret_access_key": connection_warehouse_storage_secret_access_key,
+                "secret_access_key_secret_id": test_secret["id"],
+                "trust_store": connection_warehouse_storage_trust_store,
+                "trust_store_secret_id": test_secret["id"],
+            })
         ```
 
         ## Import
@@ -5550,6 +5640,8 @@ class Connection(pulumi.CustomResource):
                This field is applicable only when `doesUseSecretIds` is set to `false`. If `vaultId` is provided, `keyId` must also be provided.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] warehouse_name: (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        :param pulumi.Input[Union['ConnectionWarehouseStorageArgs', 'ConnectionWarehouseStorageArgsDict', 'outputs.ConnectionWarehouseStorage']] warehouse_storage: (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
         :param pulumi.Input[_builtins.str] workspace_url: (Updatable)
                * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
                * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -5642,6 +5734,15 @@ class Connection(pulumi.CustomResource):
                 "port": connection_bootstrap_servers_port,
             }],
             catalog={
+                "catalog_config": {
+                    "catalog_config_type": connection_catalog_catalog_config_catalog_config_type,
+                    "database_id": test_database["id"],
+                    "database_type": connection_catalog_catalog_config_database_type,
+                    "deployment_id": test_deployment["id"],
+                    "password": connection_catalog_catalog_config_password,
+                    "password_secret_id": test_secret["id"],
+                    "username": connection_catalog_catalog_config_username,
+                },
                 "catalog_type": connection_catalog_catalog_type,
                 "branch": connection_catalog_branch,
                 "client_id": test_client["id"],
@@ -5784,7 +5885,22 @@ class Connection(pulumi.CustomResource):
             vault_id=test_vault["id"],
             wallet=connection_wallet,
             wallet_secret_id=test_secret["id"],
-            workspace_url=connection_workspace_url)
+            workspace_url=connection_workspace_url,
+            warehouse_name=connection_warehouse_name,
+            warehouse_storage={
+                "storage_type": connection_warehouse_storage_storage_type,
+                "access_key_id": test_key["id"],
+                "account_key": connection_warehouse_storage_account_key,
+                "account_key_secret_id": test_secret["id"],
+                "account_name": connection_warehouse_storage_account_name,
+                "endpoint_url": connection_warehouse_storage_endpoint_url,
+                "namespace": connection_warehouse_storage_namespace,
+                "region": connection_warehouse_storage_region,
+                "secret_access_key": connection_warehouse_storage_secret_access_key,
+                "secret_access_key_secret_id": test_secret["id"],
+                "trust_store": connection_warehouse_storage_trust_store,
+                "trust_store_secret_id": test_secret["id"],
+            })
         ```
 
         ## Import
@@ -5941,6 +6057,8 @@ class Connection(pulumi.CustomResource):
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet: pulumi.Input[Optional[_builtins.str]] = None,
                  wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 warehouse_storage: pulumi.Input[Optional[Union['ConnectionWarehouseStorageArgs', 'ConnectionWarehouseStorageArgsDict', 'outputs.ConnectionWarehouseStorage']]] = None,
                  workspace_url: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -6074,7 +6192,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["tls_ca_file"] = tls_ca_file
             __props__.__dict__["tls_certificate_key_file"] = tls_certificate_key_file
             __props__.__dict__["tls_certificate_key_file_password"] = None if tls_certificate_key_file_password is None else pulumi.Output.secret(tls_certificate_key_file_password)
-            __props__.__dict__["tls_certificate_key_file_password_secret_id"] = None if tls_certificate_key_file_password_secret_id is None else pulumi.Output.secret(tls_certificate_key_file_password_secret_id)
+            __props__.__dict__["tls_certificate_key_file_password_secret_id"] = tls_certificate_key_file_password_secret_id
             __props__.__dict__["tls_certificate_key_file_secret_id"] = tls_certificate_key_file_secret_id
             __props__.__dict__["tls_protocol"] = tls_protocol
             __props__.__dict__["trigger_refresh"] = trigger_refresh
@@ -6089,6 +6207,8 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["wallet"] = None if wallet is None else pulumi.Output.secret(wallet)
             __props__.__dict__["wallet_secret_id"] = wallet_secret_id
+            __props__.__dict__["warehouse_name"] = warehouse_name
+            __props__.__dict__["warehouse_storage"] = warehouse_storage
             __props__.__dict__["workspace_url"] = workspace_url
             __props__.__dict__["ingress_ips"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -6097,7 +6217,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accountKey", "authSecret", "authToken", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "restAuthSecretKey", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "tlsCertificateKeyFilePassword", "tlsCertificateKeyFilePasswordSecretId", "trustStore", "trustStorePassword", "wallet"])
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accountKey", "authSecret", "authToken", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "restAuthSecretKey", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "tlsCertificateKeyFilePassword", "trustStore", "trustStorePassword", "wallet"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Connection, __self__).__init__(
             'oci:GoldenGate/connection:Connection',
@@ -6246,6 +6366,8 @@ class Connection(pulumi.CustomResource):
             vault_id: pulumi.Input[Optional[_builtins.str]] = None,
             wallet: pulumi.Input[Optional[_builtins.str]] = None,
             wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            warehouse_name: pulumi.Input[Optional[_builtins.str]] = None,
+            warehouse_storage: pulumi.Input[Optional[Union['ConnectionWarehouseStorageArgs', 'ConnectionWarehouseStorageArgsDict', 'outputs.ConnectionWarehouseStorage']]] = None,
             workspace_url: pulumi.Input[Optional[_builtins.str]] = None) -> 'Connection':
         """
         Get an existing Connection resource's state with the given name, id, and optional extra
@@ -6494,6 +6616,8 @@ class Connection(pulumi.CustomResource):
                This field is applicable only when `doesUseSecretIds` is set to `false`. If `vaultId` is provided, `keyId` must also be provided.
         :param pulumi.Input[_builtins.str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] wallet_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param pulumi.Input[_builtins.str] warehouse_name: (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        :param pulumi.Input[Union['ConnectionWarehouseStorageArgs', 'ConnectionWarehouseStorageArgsDict', 'outputs.ConnectionWarehouseStorage']] warehouse_storage: (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
         :param pulumi.Input[_builtins.str] workspace_url: (Updatable)
                * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
                * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -6642,6 +6766,8 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["vault_id"] = vault_id
         __props__.__dict__["wallet"] = wallet
         __props__.__dict__["wallet_secret_id"] = wallet_secret_id
+        __props__.__dict__["warehouse_name"] = warehouse_name
+        __props__.__dict__["warehouse_storage"] = warehouse_storage
         __props__.__dict__["workspace_url"] = workspace_url
         return Connection(resource_name, opts=opts, __props__=__props__)
 
@@ -6785,6 +6911,8 @@ class Connection(pulumi.CustomResource):
             vault_id: pulumi.Input[Optional[_builtins.str]] = None,
             wallet: pulumi.Input[Optional[_builtins.str]] = None,
             wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            warehouse_name: pulumi.Input[Optional[_builtins.str]] = None,
+            warehouse_storage: pulumi.Input[Optional[Union['ConnectionWarehouseStorageArgs', 'ConnectionWarehouseStorageArgsDict', 'outputs.ConnectionWarehouseStorage']]] = None,
             workspace_url: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["accessKeyId"] = access_key_id
@@ -6924,6 +7052,8 @@ class Connection(pulumi.CustomResource):
         __props__["vaultId"] = vault_id
         __props__["wallet"] = wallet
         __props__["walletSecretId"] = wallet_secret_id
+        __props__["warehouseName"] = warehouse_name
+        __props__["warehouseStorage"] = warehouse_storage
         __props__["workspaceUrl"] = workspace_url
         return pulumi.runtime.exists_resource(None, 'oci:GoldenGate/connection:Connection', id, __props__, opts or pulumi.ResourceOptions())
 
@@ -8144,6 +8274,22 @@ class Connection(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
         """
         return pulumi.get(self, "wallet_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseName")
+    def warehouse_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+        """
+        return pulumi.get(self, "warehouse_name")
+
+    @_builtins.property
+    @pulumi.getter(name="warehouseStorage")
+    def warehouse_storage(self) -> pulumi.Output['outputs.ConnectionWarehouseStorage']:
+        """
+        (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+        """
+        return pulumi.get(self, "warehouse_storage")
 
     @_builtins.property
     @pulumi.getter(name="workspaceUrl")

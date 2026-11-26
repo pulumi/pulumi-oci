@@ -18756,6 +18756,24 @@ export namespace Core {
         state?: pulumi.Input<string | undefined>;
     }
 
+    export interface InstancePoolInstanceMaintenancePolicy {
+        /**
+         * (Updatable) Default launch-before-termination settings for instance pool refreshes.
+         */
+        launchBeforeTerminating?: pulumi.Input<inputs.Core.InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating | undefined>;
+    }
+
+    export interface InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating {
+        /**
+         * (Updatable) Whether to refresh eligible instances that already use the target instance configuration.
+         */
+        isFullRefresh: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+         */
+        maxHealthyPercent: pulumi.Input<number>;
+    }
+
     export interface InstancePoolLifecycleManagement {
         /**
          * (Updatable) The lifecycle actions for the instance pool.
@@ -33097,6 +33115,25 @@ export namespace Database {
         name?: pulumi.Input<string | undefined>;
     }
 
+    export interface AutonomousVmClusterKeyManagementSystemDetail {
+        /**
+         * If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+         */
+        isExclusive?: pulumi.Input<boolean | undefined>;
+        /**
+         * The type of key management system used.
+         */
+        keyManagementSystem?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * Thales HSM Port. Default is 9000.
+         */
+        thalesHsmPort?: pulumi.Input<number | undefined>;
+    }
+
     export interface AutonomousVmClusterMaintenanceWindow {
         customActionTimeoutInMins?: pulumi.Input<number | undefined>;
         /**
@@ -33267,6 +33304,25 @@ export namespace Database {
          * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
          */
         providerType?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CloudAutonomousVmClusterKeyManagementSystemDetail {
+        /**
+         * If true, ACDs within this Cluster cannot use a different key management system than what is configured in AVM Cluster.
+         */
+        isExclusive?: pulumi.Input<boolean | undefined>;
+        /**
+         * The type of key management system used.
+         */
+        keyManagementSystem?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * Thales HSM Port. Default is 9000.
+         */
+        thalesHsmPort?: pulumi.Input<number | undefined>;
     }
 
     export interface CloudAutonomousVmClusterMaintenanceWindow {
@@ -37778,6 +37834,28 @@ export namespace Database {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface KeyStoreAssociatedAutonomousVmCluster {
+        /**
+         * The user-friendly name for the key store. The name does not need to be unique.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         */
+        id?: pulumi.Input<string | undefined>;
+    }
+
+    export interface KeyStoreAssociatedCloudAutonomousVmCluster {
+        /**
+         * The user-friendly name for the key store. The name does not need to be unique.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         */
+        id?: pulumi.Input<string | undefined>;
     }
 
     export interface KeyStoreAssociatedDatabase {
@@ -54979,6 +55057,10 @@ export namespace GoldenGate {
          */
         branch?: pulumi.Input<string | undefined>;
         /**
+         * (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+         */
+        catalogConfig?: pulumi.Input<inputs.GoldenGate.ConnectionCatalogCatalogConfig | undefined>;
+        /**
          * (Updatable) The catalog type.
          */
         catalogType: pulumi.Input<string>;
@@ -55022,6 +55104,39 @@ export namespace GoldenGate {
          * (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
          */
         uri?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ConnectionCatalogCatalogConfig {
+        /**
+         * (Updatable) The Oracle AI Data Catalog configuration type.
+         */
+        catalogConfigType: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+         */
+        databaseId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The database type where Oracle AI Data Catalog is configured.
+         */
+        databaseType?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         */
+        deploymentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'password' field has been deprecated. Please use 'password_secret_id' instead.
+         */
+        password?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        passwordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
+         */
+        username?: pulumi.Input<string | undefined>;
     }
 
     export interface ConnectionIngressIp {
@@ -55088,6 +55203,14 @@ export namespace GoldenGate {
          */
         projectId?: pulumi.Input<string | undefined>;
         /**
+         * (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+         */
+        properties?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         */
+        propertiesSecretId?: pulumi.Input<string | undefined>;
+        /**
          * (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
          */
         region?: pulumi.Input<string | undefined>;
@@ -55121,9 +55244,73 @@ export namespace GoldenGate {
          * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
          * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
          * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
          * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
          */
         storageType: pulumi.Input<string>;
+        /**
+         * (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
+         */
+        trustStore?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+         */
+        trustStoreSecretId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ConnectionWarehouseStorage {
+        /**
+         * (Updatable) The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
+         */
+        accessKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The Azure Storage account key.
+         */
+        accountKey?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
+         */
+        accountKeySecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The Azure Storage account name.
+         */
+        accountName?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The endpoint URL of the ZFS storage service.
+         */
+        endpointUrl?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Name of namespace that serves as a container for all of your buckets
+         */
+        namespace?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
+         */
+        region?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The secret access key used to access the warehouse storage.
+         */
+        secretAccessKey?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
+         */
+        secretAccessKeySecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The warehouse storage type used in the Oracle AI Data Catalog Storage connection.
+         */
+        storageType: pulumi.Input<string>;
+        /**
+         * (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
+         */
+        trustStore?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+         */
+        trustStoreSecretId?: pulumi.Input<string | undefined>;
     }
 
     export interface DeploymentBackupLock {
@@ -105654,6 +105841,10 @@ export namespace oci {
          */
         name: pulumi.Input<string>;
         /**
+         * Reservation selection for initial provisioning of a fleet.
+         */
+        reservation?: pulumi.Input<inputs.oci.BatchBatchContextFleetReservation | undefined>;
+        /**
          * Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
          */
         shape: pulumi.Input<inputs.oci.BatchBatchContextFleetShape>;
@@ -105666,6 +105857,17 @@ export namespace oci {
         state?: pulumi.Input<string | undefined>;
         /**
          * Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface BatchBatchContextFleetReservation {
+        /**
+         * Compute capacity reservation OCIDs used for initial fleet provisioning.
+         */
+        capacityReservationIds: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Type of reservation. Discriminator for reservation subtypes.
          */
         type: pulumi.Input<string>;
     }
@@ -106957,6 +107159,7874 @@ export namespace oci {
         endpointName?: pulumi.Input<string | undefined>;
     }
 
+    export interface DistributedDatabaseDistributedAutonomousDatabaseAutoResourceManagementConfig {
+        /**
+         * The action that will be taken when autoResourceManagement is triggered.
+         */
+        actionType?: pulumi.Input<string | undefined>;
+        /**
+         * Time period to wait for the database to get stable after autoResourceManagement event.
+         */
+        coolOffPeriodInMinutes?: pulumi.Input<number | undefined>;
+        /**
+         * Flag indicating if autoResourceManagement is enabled or disabled.
+         */
+        isEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Maximum number of move replication unit attempts allowed within the configured period per database.
+         */
+        maxMoveRuAttempts?: pulumi.Input<number | undefined>;
+        /**
+         * Time unit applicable to maxMoveRuAttempts.
+         */
+        maxMoveRuUnit?: pulumi.Input<string | undefined>;
+        /**
+         * Mode of autoResourceManagement execution.
+         */
+        mode?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed autonomous database.
+         */
+        notificationTopicIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The list of stream ids [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that receive shard-related telemetry.
+         */
+        streamIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail {
+        /**
+         * Details required to create data guard replicas for the catalog.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailDataGuardReplica>[] | undefined>;
+        /**
+         * Details required to create a catalog replica.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailDataGuardReplica {
+        /**
+         * Details for creating a distributed autonomous database catalog.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailDataGuardReplicaDatabase>;
+        /**
+         * The name of the catalog replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailDataGuardReplicaDatabase {
+        /**
+         * The admin password for the catalog associated with the distributed autonomous database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the catalog database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the catalog database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protectionMode for the catalog peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailOriginalReplica {
+        /**
+         * Details for creating a distributed autonomous database catalog.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailOriginalReplicaDatabase>;
+        /**
+         * The name of the catalog replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailOriginalReplicaDatabase {
+        /**
+         * The admin password for the catalog associated with the distributed autonomous database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the catalog database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the catalog database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protectionMode for the catalog peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount: pulumi.Input<number>;
+        /**
+         * The details of data guard replica for the shard being created.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of shard space.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Details required to create a composite data guard shard space replica for a Globally distributed autonomous database.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceDataGuardReplica {
+        /**
+         * The details of composite data guard shard space replica databases.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabase>[]>;
+        /**
+         * The name of shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceOriginalReplica {
+        /**
+         * The details of composite data guard shard space replica databases.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabase>[]>;
+        /**
+         * The name of shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeRaftShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount: pulumi.Input<number>;
+        /**
+         * The name of shard space.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * The details of raft clusters associated with the shard space.
+         */
+        raftClusters: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeRaftShardSpaceRaftCluster>[]>;
+        /**
+         * Number of replication units in the shard space.
+         */
+        replicationUnitCount: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeRaftShardSpaceRaftCluster {
+        /**
+         * The details of databases associated with the composite shard space raft cluster.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeRaftShardSpaceRaftClusterDatabase>[]>;
+        /**
+         * The name of raft cluster.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor: pulumi.Input<number>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode: pulumi.Input<string>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeRaftShardSpaceRaftClusterDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCompositeRaftShardSpaceRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCompositeRaftShardSpaceRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseConnectionString {
+        /**
+         * Collection of connection strings.
+         */
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig {
+        /**
+         * Backup destination details.
+         */
+        backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail>[] | undefined>;
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates whether the backup destination is cross-region or local region.
+         */
+        isRemote?: pulumi.Input<boolean | undefined>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion?: pulumi.Input<string | undefined>;
+        /**
+         * Type of the database backup destination.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGdsControlNodeDetail {
+        /**
+         * The name of the availability domain where the Global Database Services Control instance is located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * The Global Database Services Control(GDS CTL) image details.
+         */
+        gdsControlNodeImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGdsControlNodeDetailGdsControlNodeImageDetail>[] | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGdsControlNodeDetailMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * IP address of the Global Database Services Control instance.
+         */
+        privateIp?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Global Database Services Control instance.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGdsControlNodeDetailGdsControlNodeImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * The version associated with the image identified by id.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGdsControlNodeDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetail {
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The Global service manager image details.
+         */
+        gsmImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail>[] | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string.
+         */
+        timeSslCertificateExpires?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * The version associated with the image identified by id.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImage {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * The version associated with the image identified by id.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetail {
+        /**
+         * Details of data guard replicas for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailDataGuardReplica>[] | undefined>;
+        /**
+         * User shard space replica details.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailDataGuardReplica {
+        /**
+         * Globally distributed autonomous database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailOriginalReplica {
+        /**
+         * Globally distributed autonomous database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCatalogDetailOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount?: pulumi.Input<number | undefined>;
+        /**
+         * Details of data guard replicas for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * User shard space replica details.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceOriginalReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeRaftShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The details of raft clusters associated with the shard space.
+         */
+        raftClusters?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeRaftShardSpaceRaftCluster>[] | undefined>;
+        /**
+         * Number of replication units in the shard space.
+         */
+        replicationUnitCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeRaftShardSpaceRaftCluster {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor?: pulumi.Input<number | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode?: pulumi.Input<string | undefined>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabase {
+        /**
+         * Details of data guard replicas for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseDataGuardReplica>[] | undefined>;
+        /**
+         * User shard space replica details.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseDataGuardReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseOriginalReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemRaftCluster {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemRaftClusterDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor?: pulumi.Input<number | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode?: pulumi.Input<string | undefined>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemRaftClusterDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedSystemRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedSystemRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpace {
+        /**
+         * Details of data guard replicas for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * User shard space replica details.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceDataGuardReplica {
+        /**
+         * Globally distributed autonomous database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceOriginalReplica {
+        /**
+         * Globally distributed autonomous database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseObservedUserShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabasePatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabases {
+        /**
+         * The details required to create system data guard replicas.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesDataGuardReplica>[] | undefined>;
+        /**
+         * Details required to create a system data guard replica.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesDataGuardReplica {
+        /**
+         * Details of the databases associated with the system data guard replica.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabase>[]>;
+        /**
+         * The name of the data guard replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesOriginalReplica {
+        /**
+         * Details of the databases associated with the system data guard replica.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesOriginalReplicaDatabase>[]>;
+        /**
+         * The name of the data guard replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesOriginalReplicaDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemRaftCluster {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemRaftClusterDatabase>[]>;
+        /**
+         * The name of raft cluster.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor: pulumi.Input<number>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode: pulumi.Input<string>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemRaftClusterDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseSystemRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseSystemRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseUserShardSpace {
+        /**
+         * Details required to create data guard replicas for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of the user shard space.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Details required to create a user shard space replica.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceDataGuardReplica {
+        /**
+         * Details for creating a distributed autonomous database shard.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceDataGuardReplicaDatabase>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceDataGuardReplicaDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceOriginalReplica {
+        /**
+         * Details for creating a distributed autonomous database shard.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceOriginalReplicaDatabase>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceOriginalReplicaDatabase {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
+         */
+        isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The shard space name for the shard database. Shard space for an existing shard cannot be changed once the shard is created. The shard space name is used when creating new shards. For user-defined sharding, every shard must have a unique shard space name. For system-defined sharding, a shard space name is not required.
+         */
+        shardSpaceName?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed autonomous database type. Use ADBD_EXISTING_CLUSTER for an autonomous database on Dedicated Infrastructure that uses a pre-existing cluster.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+        /**
+         * Status of the distributed autonomous database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseUserShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseVcnNsgId {
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer Virtual Cloud Network.
+         */
+        vcnId: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabasesInsertDgInsertDg {
+        /**
+         * Exactly one standby database placement block. Fields required by the selected source must be supplied.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabasesInsertDgInsertDgDatabase>;
+        /**
+         * Name of the new Data Guard replica. Starts with a letter, contains only letters, digits, and underscores, and is at most 40 characters.
+         */
+        replicaName: pulumi.Input<string>;
+        /**
+         * API selection that must resolve to exactly one original database. For example, select a catalog original database as shown in the example, or use `systemDataGuardDatabases.originalReplica.databases[?name == 'database-a']` for a system Data Guard shard.
+         */
+        selection: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabasesInsertDgInsertDgDatabase {
+        /**
+         * Cloud Autonomous VM cluster OCID for the standby.
+         */
+        cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
+        /**
+         * Data Guard protection mode. Defaults to `MAXIMUM_PERFORMANCE`.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * Placement source. Must be `ADBD_EXISTING_CLUSTER`.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+         *
+         * Each block generates `operation: MERGE` with a JSON-encoded `value` containing `subOperation: INSERTDG` and `dataGuardReplicas: [{name: replica_name, database: ...}]`. The provider maps Terraform field names to API field names.
+         *
+         * Autonomous Data Guard placement does not accept admin credentials, compute sizing, or storage sizing in this block.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabasesInsertInsert {
+        /**
+         * API selection identifying the topology to extend. Supported roots are `catalogDetails`, `userShardSpaces`, `systemRaftClusters`, `compositeRaftShardSpaces`, `systemDataGuardDatabases`, and `compositeDataGuardShardSpaces`; use the root that matches the database sharding and replication methods.
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * Nonempty JSON object using API field names and the create payload shape for the selected topology. Use `jsonencode` to construct the document. JSON and required payload fields are validated before the request. Equivalent JSON formatting does not cause an update. For a new system Raft cluster, include `replicationFactor`, `witnessCount`, and `ruMode`; adding databases to an existing named cluster does not require those new-cluster fields.
+         *
+         * Each block generates `operation: INSERT`. The provider encodes `value` as the JSON string expected by the API.
+         *
+         * The three-item limit counts operation blocks, rather than the number of databases inside a valid payload. Sensitive values remain in Terraform state; protect access to the state backend.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabasesRemoveDgRemoveDg {
+        /**
+         * Name of the Data Guard replica to remove. Starts with a letter, contains only letters, digits, and underscores, and is at most 40 characters.
+         *
+         * Each block generates `operation: MERGE` with a JSON-encoded `value` containing `subOperation: REMOVEDG` and `dataGuardReplica: {name: replica_name}`.
+         */
+        replicaName: pulumi.Input<string>;
+        /**
+         * API selection that must resolve to exactly one original database. For example, select a catalog original database as shown in the example, or use `systemDataGuardDatabases.originalReplica.databases[?name == 'database-a']` for a system Data Guard shard.
+         */
+        selection: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabasesRemoveRemove {
+        /**
+         * API selection identifying the topology members to remove. Use the actual database and topology names returned by the service.
+         *
+         * Each block generates only `operation: REMOVE` and `selection`. No `value` is sent.
+         */
+        selection: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseAutoResourceManagementConfig {
+        /**
+         * The action that will be taken when autoResourceManagement is triggered.
+         */
+        actionType?: pulumi.Input<string | undefined>;
+        /**
+         * Time period to wait for the database to get stable after autoResourceManagement event.
+         */
+        coolOffPeriodInMinutes?: pulumi.Input<number | undefined>;
+        /**
+         * Flag indicating if autoResourceManagement is enabled or disabled.
+         */
+        isEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Maximum number of move replication unit attempts allowed within the configured period per database.
+         */
+        maxMoveRuAttempts?: pulumi.Input<number | undefined>;
+        /**
+         * Time unit applicable to maxMoveRuAttempts.
+         */
+        maxMoveRuUnit?: pulumi.Input<string | undefined>;
+        /**
+         * Mode of autoResourceManagement execution.
+         */
+        mode?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+         */
+        notificationTopicIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The list of stream ids [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that receive shard-related telemetry.
+         */
+        streamIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetail {
+        /**
+         * Details required to create data guard replicas for the catalog.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplica>[] | undefined>;
+        /**
+         * Details required to create a catalog replica.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplica {
+        /**
+         * Details for creating a distributed database catalog.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabase>;
+        /**
+         * The name of the catalog replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabase {
+        /**
+         * The admin password for the catalog associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database catalog will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailDataGuardReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplica {
+        /**
+         * Details for creating a distributed database catalog.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabase>;
+        /**
+         * The name of the catalog replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabase {
+        /**
+         * The admin password for the catalog associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database catalog will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailOriginalReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount: pulumi.Input<number>;
+        /**
+         * The details of data guard replica for the shard being created.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of shard space.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Globally distributed database composite data guard shard space replica creation details.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplica {
+        /**
+         * The details of composite data guard shard space replica databases.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabase>[]>;
+        /**
+         * The name of shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceDataGuardReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplica {
+        /**
+         * The details of composite data guard shard space replica databases.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabase>[]>;
+        /**
+         * The name of shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeDataGuardShardSpaceOriginalReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeRaftShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount: pulumi.Input<number>;
+        /**
+         * The name of shard space.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * The details of raft clusters associated with the shard space.
+         */
+        raftClusters: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftCluster>[]>;
+        /**
+         * Number of replication units in the shard space.
+         */
+        replicationUnitCount: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftCluster {
+        /**
+         * The details of databases associated with the composite shard space raft cluster.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabase>[]>;
+        /**
+         * The name of raft cluster.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor: pulumi.Input<number>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode: pulumi.Input<string>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCompositeRaftShardSpaceRaftClusterDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseConnectionString {
+        /**
+         * Collection of connection strings.
+         */
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseDbBackupConfig {
+        /**
+         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+         */
+        autoBackupWindow?: pulumi.Input<string | undefined>;
+        /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string | undefined>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string | undefined>;
+        /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string | undefined>;
+        /**
+         * Backup destination details.
+         */
+        backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail>[] | undefined>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        canRunImmediateFullBackup?: pulumi.Input<boolean | undefined>;
+        /**
+         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+         */
+        isAutoBackupEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
+         */
+        isRemoteBackupEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates whether the backup destination is cross-region or local region.
+         */
+        isRemote?: pulumi.Input<boolean | undefined>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion?: pulumi.Input<string | undefined>;
+        /**
+         * Type of the database backup destination.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGdsControlNodeDetail {
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * The Global Database Services Control(GDS CTL) image details.
+         */
+        gdsControlNodeImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGdsControlNodeDetailGdsControlNodeImageDetail>[] | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGdsControlNodeDetailMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * IP address of the Global Database Services Control instance.
+         */
+        privateIp?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGdsControlNodeDetailGdsControlNodeImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * The version associated with the image identified by id.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGdsControlNodeDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGsmDetail {
+        /**
+         * The compute count for the Global service manager instance.
+         */
+        computeCount?: pulumi.Input<number | undefined>;
+        /**
+         * The data disk group size to be allocated in GBs for the Global service manager instance.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The Global service manager image details
+         */
+        gsmImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail>[] | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGsmDetailMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * The version associated with the image identified by id.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGsmDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseLatestGsmImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * The version associated with the image identified by id.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetail {
+        /**
+         * The details of data guard replica for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplica>[] | undefined>;
+        /**
+         * Details of  user shard space.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplica {
+        /**
+         * Details of a distributed database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailDataGuardReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplica {
+        /**
+         * Details of a distributed database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCatalogDetailOriginalReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount?: pulumi.Input<number | undefined>;
+        /**
+         * The details of data guard replica for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Details of  user shard space.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceDataGuardReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeDataGuardShardSpaceOriginalReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpace {
+        /**
+         * Count of chunks associated with the shard space.
+         */
+        chunkCount?: pulumi.Input<number | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The details of raft clusters associated with the shard space.
+         */
+        raftClusters?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftCluster>[] | undefined>;
+        /**
+         * Number of replication units in the shard space.
+         */
+        replicationUnitCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftCluster {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor?: pulumi.Input<number | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode?: pulumi.Input<string | undefined>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedCompositeRaftShardSpaceRaftClusterDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabase {
+        /**
+         * The details of data guard replica for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplica>[] | undefined>;
+        /**
+         * Details of  user shard space.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseDataGuardReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplica {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemDataGuardDatabaseOriginalReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemRaftCluster {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor?: pulumi.Input<number | undefined>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode?: pulumi.Input<string | undefined>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedSystemRaftClusterDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpace {
+        /**
+         * The details of data guard replica for the user shard space.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Details of  user shard space.
+         */
+        originalReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplica>[] | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplica {
+        /**
+         * Details of a distributed database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceDataGuardReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplica {
+        /**
+         * Details of a distributed database shard.
+         */
+        databases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabase>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabase {
+        adminPassword?: pulumi.Input<string | undefined>;
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * The Storage Vault for Distributed Database Resource.
+         */
+        dbStorageVaultDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabaseDbStorageVaultDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source?: pulumi.Input<string | undefined>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The Exadata VM cluster for Distributed Database Resource.
+         */
+        vmClusterDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabaseVmClusterDetail>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabaseDbStorageVaultDetail {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseObservedUserShardSpaceOriginalReplicaDatabaseVmClusterDetail {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasePatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasePrivateEndpointPatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasePrivateEndpointVcnNsgId {
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer Virtual Cloud Network.
+         */
+        vcnId: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabases {
+        /**
+         * The details required to create system data guard replicas.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplica>[] | undefined>;
+        /**
+         * Details required to create system data guard replica.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplica {
+        /**
+         * Details of the databases associated with the system data guard replica.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabase>[]>;
+        /**
+         * The name of data guard replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesDataGuardReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplica {
+        /**
+         * Details of the databases associated with the system data guard replica.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabase>[]>;
+        /**
+         * The name of data guard replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemDataGuardDatabasesOriginalReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemRaftCluster {
+        /**
+         * Details of the databases associated with the system raft cluster.
+         */
+        databases: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabase>[]>;
+        /**
+         * The name of raft cluster.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        replicationFactor: pulumi.Input<number>;
+        /**
+         * Replication factor associated with the raft cluster.
+         */
+        ruMode: pulumi.Input<string>;
+        /**
+         * Witnesses RU count associated with the raft cluster.
+         */
+        witnessCount: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseSystemRaftClusterDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpace {
+        /**
+         * The details of data guard replica for the user shard space being created.
+         */
+        dataGuardReplicas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplica>[] | undefined>;
+        /**
+         * The name of user shard space.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Details required to create user shard space replica.
+         */
+        originalReplica: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplica>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplica {
+        /**
+         * Details for creating a distributed database shard.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabase>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceDataGuardReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplica {
+        /**
+         * Details for creating a distributed database shard.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabase>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabase {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in  like yKoY:US-ASHBURN-AD-3.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string | undefined>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabaseMetadata>[] | undefined>;
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * The protection mode used for the Data Guard association.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * The source of the Globally distributed database type. Use XS_EXISTING_CLUSTER for a database on Exascale Infrastructure that uses a pre-existing cluster. Use XS_NEW_CLUSTER for a database on Exascale Infrastructure that requires a new cluster created from scratch. Use XS_NEW_VAULT_AND_CLUSTER for a database on Exascale Infrastructure that requires a new vault and cluster created from scratch. Use XD_EXISTING_CLUSTER for a database on Dedicated Infrastructure that uses a pre-existing cluster. Use EXISTING_DB_HOME for a database on a pre-existing database home.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of distributed database shard.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet. The password must be 9 to 255 characters and contain at least two uppercase letters, two lowercase letters, two numeric characters, and two special characters. The allowed special characters are _, \#, and -.
+         */
+        tdeWalletPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure vault secret. This cannot be used in conjunction with tdeWalletPassword.
+         */
+        tdeWalletPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         */
+        tdeWalletPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The time the shard was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the shard was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+        /**
+         * The transport type used for the Data Guard association.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).  This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabaseVmClusterDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         */
+        dbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseUserShardSpaceOriginalReplicaDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud VM Cluster.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseVcnNsgId {
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) associated with resources in this VCN. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer Virtual Cloud Network.
+         */
+        vcnId: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasesInsertDgInsertDg {
+        /**
+         * Exactly one standby database placement block. Fields required by the selected source must be supplied.
+         */
+        database: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasesInsertDgInsertDgDatabase>;
+        /**
+         * Name of the new Data Guard replica. Starts with a letter, contains only letters, digits, and underscores, and is at most 40 characters.
+         */
+        replicaName: pulumi.Input<string>;
+        /**
+         * API selection that must resolve to exactly one original database. For example, select a catalog original database as shown in the example, or use `systemDataGuardDatabases.originalReplica.databases[?name == 'database-a']` for a system Data Guard shard.
+         */
+        selection: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasesInsertDgInsertDgDatabase {
+        /**
+         * Admin password. Supply exactly one of this field or `adminPasswordSecretId`.
+         */
+        adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * Vault secret OCID for the admin password. Supply exactly one of this field or `adminPassword`.
+         */
+        adminPasswordSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * Secret version from 1 through 60; requires `adminPasswordSecretId`. Omit to use the latest version.
+         */
+        adminPasswordSecretVersionNumber?: pulumi.Input<number | undefined>;
+        /**
+         * The name of the availability domain that the distributed database catalog will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string | undefined>;
+        /**
+         * Database home OCID.
+         */
+        dbHomeId?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasesInsertDgInsertDgDatabaseDbStorageVaultDetails | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the exascale db storage vault.
+         */
+        exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
+        /**
+         * Data Guard protection mode. Defaults to `MAXIMUM_PERFORMANCE`.
+         */
+        protectionMode?: pulumi.Input<string | undefined>;
+        /**
+         * Placement source. One of `XS_EXISTING_CLUSTER`, `XS_NEW_CLUSTER`, `XS_NEW_VAULT_AND_CLUSTER`, `XD_EXISTING_CLUSTER`, or `EXISTING_DB_HOME`.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Data Guard transport type. Defaults to `ASYNC`.
+         */
+        transportType?: pulumi.Input<string | undefined>;
+        /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasesInsertDgInsertDgDatabaseVmClusterDetails | undefined>;
+        /**
+         * VM cluster OCID.
+         *
+         * Each block generates `operation: MERGE` with a JSON-encoded `value` containing `subOperation: INSERTDG` and `dataGuardReplicas: [{name: replica_name, database: ...}]`. The provider maps Terraform field names to API field names.
+         *
+         * For `XS_NEW_CLUSTER`, supply `availabilityDomain`, `exascaleDbStorageVaultId`, and `vmClusterDetails`. For `XS_NEW_VAULT_AND_CLUSTER`, supply `availabilityDomain`, `dbStorageVaultDetails`, and `vmClusterDetails`. Supply exactly one admin password or password secret for every source. Sensitive inputs remain in Terraform state; protect access to the state backend.
+         */
+        vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasesInsertDgInsertDgDatabaseDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number | undefined>;
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         */
+        autoscaleLimitInGbs?: pulumi.Input<number | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         */
+        isAutoscaleEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasesInsertDgInsertDgDatabaseVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for VM Cluster.
+         */
+        compartmentId?: pulumi.Input<string | undefined>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string | undefined>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string | undefined>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string | undefined>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         */
+        subscriptionId?: pulumi.Input<string | undefined>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number | undefined>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasesInsertInsert {
+        /**
+         * API selection identifying the topology to extend. Supported roots are `catalogDetails`, `userShardSpaces`, `systemRaftClusters`, `compositeRaftShardSpaces`, `systemDataGuardDatabases`, and `compositeDataGuardShardSpaces`; use the root that matches the database sharding and replication methods.
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * Nonempty JSON object using API field names and the create payload shape for the selected topology. Use `jsonencode` to construct the document. JSON and required payload fields are validated before the request. Equivalent JSON formatting does not cause an update. For a new system Raft cluster, include `replicationFactor`, `witnessCount`, and `ruMode`; adding databases to an existing named cluster does not require those new-cluster fields.
+         *
+         * Each block generates `operation: INSERT`. The provider encodes `value` as the JSON string expected by the API.
+         *
+         * The three-item limit counts operation blocks, rather than the number of databases inside a valid payload. Sensitive values remain in Terraform state; protect access to the state backend.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasesRemoveDgRemoveDg {
+        /**
+         * Name of the Data Guard replica to remove. Starts with a letter, contains only letters, digits, and underscores, and is at most 40 characters.
+         *
+         * Each block generates `operation: MERGE` with a JSON-encoded `value` containing `subOperation: REMOVEDG` and `dataGuardReplica: {name: replica_name}`.
+         */
+        replicaName: pulumi.Input<string>;
+        /**
+         * API selection that must resolve to exactly one original database. For example, select a catalog original database as shown in the example, or use `systemDataGuardDatabases.originalReplica.databases[?name == 'database-a']` for a system Data Guard shard.
+         */
+        selection: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasesRemoveRemove {
+        /**
+         * API selection identifying the topology members to remove. Use the actual database and topology names returned by the service.
+         *
+         * Each block generates only `operation: REMOVE` and `selection`. No `value` is sent.
+         */
+        selection: pulumi.Input<string>;
+    }
+
     export interface GdpGdpPipelineBucketDetail {
         /**
          * Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
@@ -107457,6 +115527,54 @@ export namespace oci {
     }
 
     export interface GetDifStacksFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDistributedDatabaseDistributedAutonomousDatabasesFilter {
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs {
+        /**
+         * The name of the user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasesFilter {
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasesFilterArgs {
+        /**
+         * The name of user shard space replica.  It must start with a letter and contain only letters, digits, and underscores.  Maximum length is 40 characters.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;

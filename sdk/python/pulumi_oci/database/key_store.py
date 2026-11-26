@@ -119,6 +119,8 @@ class KeyStoreArgs:
 @pulumi.input_type
 class _KeyStoreState:
     def __init__(__self__, *,
+                 associated_autonomous_vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedAutonomousVmClusterArgs']]]] = None,
+                 associated_cloud_autonomous_vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedCloudAutonomousVmClusterArgs']]]] = None,
                  associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]]] = None,
                  associated_long_term_backup_count: pulumi.Input[Optional[_builtins.int]] = None,
                  associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedLongTermBackupArgs']]]] = None,
@@ -135,6 +137,8 @@ class _KeyStoreState:
         """
         Input properties used for looking up and filtering KeyStore resources.
 
+        :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedAutonomousVmClusterArgs']]] associated_autonomous_vm_clusters: List of Autonomous VM Clusters associated with the key store.
+        :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedCloudAutonomousVmClusterArgs']]] associated_cloud_autonomous_vm_clusters: List of Cloud Autonomous VM Clusters associated with the key store.
         :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]] associated_databases: List of databases associated with the key store.
         :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
         :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedLongTermBackupArgs']]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
@@ -148,6 +152,10 @@ class _KeyStoreState:
         :param pulumi.Input[_builtins.str] time_created: The date and time that the key store was created.
         :param pulumi.Input['KeyStoreTypeDetailsArgs'] type_details: (Updatable) Key store type details.
         """
+        if associated_autonomous_vm_clusters is not None:
+            pulumi.set(__self__, "associated_autonomous_vm_clusters", associated_autonomous_vm_clusters)
+        if associated_cloud_autonomous_vm_clusters is not None:
+            pulumi.set(__self__, "associated_cloud_autonomous_vm_clusters", associated_cloud_autonomous_vm_clusters)
         if associated_databases is not None:
             pulumi.set(__self__, "associated_databases", associated_databases)
         if associated_long_term_backup_count is not None:
@@ -174,6 +182,30 @@ class _KeyStoreState:
             pulumi.set(__self__, "time_created", time_created)
         if type_details is not None:
             pulumi.set(__self__, "type_details", type_details)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedAutonomousVmClusters")
+    def associated_autonomous_vm_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedAutonomousVmClusterArgs']]]]:
+        """
+        List of Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_autonomous_vm_clusters")
+
+    @associated_autonomous_vm_clusters.setter
+    def associated_autonomous_vm_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedAutonomousVmClusterArgs']]]]):
+        pulumi.set(self, "associated_autonomous_vm_clusters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="associatedCloudAutonomousVmClusters")
+    def associated_cloud_autonomous_vm_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedCloudAutonomousVmClusterArgs']]]]:
+        """
+        List of Cloud Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_cloud_autonomous_vm_clusters")
+
+    @associated_cloud_autonomous_vm_clusters.setter
+    def associated_cloud_autonomous_vm_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KeyStoreAssociatedCloudAutonomousVmClusterArgs']]]]):
+        pulumi.set(self, "associated_cloud_autonomous_vm_clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="associatedDatabases")
@@ -476,6 +508,8 @@ class KeyStore(pulumi.CustomResource):
             if type_details is None and not opts.urn:
                 raise TypeError("Missing required property 'type_details'")
             __props__.__dict__["type_details"] = type_details
+            __props__.__dict__["associated_autonomous_vm_clusters"] = None
+            __props__.__dict__["associated_cloud_autonomous_vm_clusters"] = None
             __props__.__dict__["associated_databases"] = None
             __props__.__dict__["associated_long_term_backup_count"] = None
             __props__.__dict__["associated_long_term_backups"] = None
@@ -493,6 +527,8 @@ class KeyStore(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            associated_autonomous_vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedAutonomousVmClusterArgs', 'KeyStoreAssociatedAutonomousVmClusterArgsDict', 'outputs.KeyStoreAssociatedAutonomousVmCluster']]]]] = None,
+            associated_cloud_autonomous_vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedCloudAutonomousVmClusterArgs', 'KeyStoreAssociatedCloudAutonomousVmClusterArgsDict', 'outputs.KeyStoreAssociatedCloudAutonomousVmCluster']]]]] = None,
             associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict', 'outputs.KeyStoreAssociatedDatabase']]]]] = None,
             associated_long_term_backup_count: pulumi.Input[Optional[_builtins.int]] = None,
             associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict', 'outputs.KeyStoreAssociatedLongTermBackup']]]]] = None,
@@ -513,6 +549,8 @@ class KeyStore(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedAutonomousVmClusterArgs', 'KeyStoreAssociatedAutonomousVmClusterArgsDict', 'outputs.KeyStoreAssociatedAutonomousVmCluster']]]] associated_autonomous_vm_clusters: List of Autonomous VM Clusters associated with the key store.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedCloudAutonomousVmClusterArgs', 'KeyStoreAssociatedCloudAutonomousVmClusterArgsDict', 'outputs.KeyStoreAssociatedCloudAutonomousVmCluster']]]] associated_cloud_autonomous_vm_clusters: List of Cloud Autonomous VM Clusters associated with the key store.
         :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict', 'outputs.KeyStoreAssociatedDatabase']]]] associated_databases: List of databases associated with the key store.
         :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict', 'outputs.KeyStoreAssociatedLongTermBackup']]]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
@@ -530,6 +568,8 @@ class KeyStore(pulumi.CustomResource):
 
         __props__ = _KeyStoreState.__new__(_KeyStoreState)
 
+        __props__.__dict__["associated_autonomous_vm_clusters"] = associated_autonomous_vm_clusters
+        __props__.__dict__["associated_cloud_autonomous_vm_clusters"] = associated_cloud_autonomous_vm_clusters
         __props__.__dict__["associated_databases"] = associated_databases
         __props__.__dict__["associated_long_term_backup_count"] = associated_long_term_backup_count
         __props__.__dict__["associated_long_term_backups"] = associated_long_term_backups
@@ -548,6 +588,8 @@ class KeyStore(pulumi.CustomResource):
     @staticmethod
     def exists(id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            associated_autonomous_vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedAutonomousVmClusterArgs', 'KeyStoreAssociatedAutonomousVmClusterArgsDict', 'outputs.KeyStoreAssociatedAutonomousVmCluster']]]]] = None,
+            associated_cloud_autonomous_vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedCloudAutonomousVmClusterArgs', 'KeyStoreAssociatedCloudAutonomousVmClusterArgsDict', 'outputs.KeyStoreAssociatedCloudAutonomousVmCluster']]]]] = None,
             associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict', 'outputs.KeyStoreAssociatedDatabase']]]]] = None,
             associated_long_term_backup_count: pulumi.Input[Optional[_builtins.int]] = None,
             associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict', 'outputs.KeyStoreAssociatedLongTermBackup']]]]] = None,
@@ -562,6 +604,8 @@ class KeyStore(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict', 'outputs.KeyStoreTypeDetails']]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
+        __props__["associatedAutonomousVmClusters"] = associated_autonomous_vm_clusters
+        __props__["associatedCloudAutonomousVmClusters"] = associated_cloud_autonomous_vm_clusters
         __props__["associatedDatabases"] = associated_databases
         __props__["associatedLongTermBackupCount"] = associated_long_term_backup_count
         __props__["associatedLongTermBackups"] = associated_long_term_backups
@@ -576,6 +620,22 @@ class KeyStore(pulumi.CustomResource):
         __props__["timeCreated"] = time_created
         __props__["typeDetails"] = type_details
         return pulumi.runtime.exists_resource(None, 'oci:Database/keyStore:KeyStore', id, __props__, opts or pulumi.ResourceOptions())
+
+    @_builtins.property
+    @pulumi.getter(name="associatedAutonomousVmClusters")
+    def associated_autonomous_vm_clusters(self) -> pulumi.Output[Sequence['outputs.KeyStoreAssociatedAutonomousVmCluster']]:
+        """
+        List of Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_autonomous_vm_clusters")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedCloudAutonomousVmClusters")
+    def associated_cloud_autonomous_vm_clusters(self) -> pulumi.Output[Sequence['outputs.KeyStoreAssociatedCloudAutonomousVmCluster']]:
+        """
+        List of Cloud Autonomous VM Clusters associated with the key store.
+        """
+        return pulumi.get(self, "associated_cloud_autonomous_vm_clusters")
 
     @_builtins.property
     @pulumi.getter(name="associatedDatabases")

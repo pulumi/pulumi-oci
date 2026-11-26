@@ -30,6 +30,7 @@ class InstancePoolArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_maintenance_policy: pulumi.Input[Optional['InstancePoolInstanceMaintenancePolicyArgs']] = None,
                  lifecycle_management: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
                  override_policy: pulumi.Input[Optional['InstancePoolOverridePolicyArgs']] = None,
@@ -48,6 +49,7 @@ class InstancePoolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        :param pulumi.Input['InstancePoolInstanceMaintenancePolicyArgs'] instance_maintenance_policy: (Updatable) Optional maintenance policy settings for an instance pool.
         :param pulumi.Input['InstancePoolLifecycleManagementArgs'] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input['InstancePoolOverridePolicyArgs'] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
@@ -76,6 +78,8 @@ class InstancePoolArgs:
             pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
         if instance_hostname_formatter is not None:
             pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
+        if instance_maintenance_policy is not None:
+            pulumi.set(__self__, "instance_maintenance_policy", instance_maintenance_policy)
         if lifecycle_management is not None:
             pulumi.set(__self__, "lifecycle_management", lifecycle_management)
         if load_balancers is not None:
@@ -196,6 +200,18 @@ class InstancePoolArgs:
         pulumi.set(self, "instance_hostname_formatter", value)
 
     @_builtins.property
+    @pulumi.getter(name="instanceMaintenancePolicy")
+    def instance_maintenance_policy(self) -> pulumi.Input[Optional['InstancePoolInstanceMaintenancePolicyArgs']]:
+        """
+        (Updatable) Optional maintenance policy settings for an instance pool.
+        """
+        return pulumi.get(self, "instance_maintenance_policy")
+
+    @instance_maintenance_policy.setter
+    def instance_maintenance_policy(self, value: pulumi.Input[Optional['InstancePoolInstanceMaintenancePolicyArgs']]):
+        pulumi.set(self, "instance_maintenance_policy", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleManagement")
     def lifecycle_management(self) -> pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']]:
         """
@@ -265,6 +281,7 @@ class _InstancePoolState:
                  instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_maintenance_policy: pulumi.Input[Optional['InstancePoolInstanceMaintenancePolicyArgs']] = None,
                  lifecycle_management: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
                  override_policy: pulumi.Input[Optional['InstancePoolOverridePolicyArgs']] = None,
@@ -285,6 +302,7 @@ class _InstancePoolState:
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[_builtins.str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        :param pulumi.Input['InstancePoolInstanceMaintenancePolicyArgs'] instance_maintenance_policy: (Updatable) Optional maintenance policy settings for an instance pool.
         :param pulumi.Input['InstancePoolLifecycleManagementArgs'] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input['InstancePoolOverridePolicyArgs'] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
@@ -323,6 +341,8 @@ class _InstancePoolState:
             pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
         if instance_hostname_formatter is not None:
             pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
+        if instance_maintenance_policy is not None:
+            pulumi.set(__self__, "instance_maintenance_policy", instance_maintenance_policy)
         if lifecycle_management is not None:
             pulumi.set(__self__, "lifecycle_management", lifecycle_management)
         if load_balancers is not None:
@@ -449,6 +469,18 @@ class _InstancePoolState:
         pulumi.set(self, "instance_hostname_formatter", value)
 
     @_builtins.property
+    @pulumi.getter(name="instanceMaintenancePolicy")
+    def instance_maintenance_policy(self) -> pulumi.Input[Optional['InstancePoolInstanceMaintenancePolicyArgs']]:
+        """
+        (Updatable) Optional maintenance policy settings for an instance pool.
+        """
+        return pulumi.get(self, "instance_maintenance_policy")
+
+    @instance_maintenance_policy.setter
+    def instance_maintenance_policy(self, value: pulumi.Input[Optional['InstancePoolInstanceMaintenancePolicyArgs']]):
+        pulumi.set(self, "instance_maintenance_policy", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleManagement")
     def lifecycle_management(self) -> pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']]:
         """
@@ -569,6 +601,7 @@ class InstancePool(pulumi.CustomResource):
                  instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_maintenance_policy: pulumi.Input[Optional[Union['InstancePoolInstanceMaintenancePolicyArgs', 'InstancePoolInstanceMaintenancePolicyArgsDict', 'outputs.InstancePoolInstanceMaintenancePolicy']]] = None,
                  lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
                  override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
@@ -630,6 +663,12 @@ class InstancePool(pulumi.CustomResource):
             },
             instance_display_name_formatter=instance_pool_instance_display_name_formatter,
             instance_hostname_formatter=instance_pool_instance_hostname_formatter,
+            instance_maintenance_policy={
+                "launch_before_terminating": {
+                    "is_full_refresh": instance_pool_instance_maintenance_policy_launch_before_terminating_is_full_refresh,
+                    "max_healthy_percent": instance_pool_instance_maintenance_policy_launch_before_terminating_max_healthy_percent,
+                },
+            },
             lifecycle_management={
                 "lifecycle_actions": {
                     "pre_termination": {
@@ -692,6 +731,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[_builtins.str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        :param pulumi.Input[Union['InstancePoolInstanceMaintenancePolicyArgs', 'InstancePoolInstanceMaintenancePolicyArgsDict', 'outputs.InstancePoolInstanceMaintenancePolicy']] instance_maintenance_policy: (Updatable) Optional maintenance policy settings for an instance pool.
         :param pulumi.Input[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
@@ -770,6 +810,12 @@ class InstancePool(pulumi.CustomResource):
             },
             instance_display_name_formatter=instance_pool_instance_display_name_formatter,
             instance_hostname_formatter=instance_pool_instance_hostname_formatter,
+            instance_maintenance_policy={
+                "launch_before_terminating": {
+                    "is_full_refresh": instance_pool_instance_maintenance_policy_launch_before_terminating_is_full_refresh,
+                    "max_healthy_percent": instance_pool_instance_maintenance_policy_launch_before_terminating_max_healthy_percent,
+                },
+            },
             lifecycle_management={
                 "lifecycle_actions": {
                     "pre_termination": {
@@ -845,6 +891,7 @@ class InstancePool(pulumi.CustomResource):
                  instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_maintenance_policy: pulumi.Input[Optional[Union['InstancePoolInstanceMaintenancePolicyArgs', 'InstancePoolInstanceMaintenancePolicyArgsDict', 'outputs.InstancePoolInstanceMaintenancePolicy']]] = None,
                  lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
                  override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
@@ -871,6 +918,7 @@ class InstancePool(pulumi.CustomResource):
             __props__.__dict__["instance_configuration_id"] = instance_configuration_id
             __props__.__dict__["instance_display_name_formatter"] = instance_display_name_formatter
             __props__.__dict__["instance_hostname_formatter"] = instance_hostname_formatter
+            __props__.__dict__["instance_maintenance_policy"] = instance_maintenance_policy
             __props__.__dict__["lifecycle_management"] = lifecycle_management
             __props__.__dict__["load_balancers"] = load_balancers
             __props__.__dict__["override_policy"] = override_policy
@@ -904,6 +952,7 @@ class InstancePool(pulumi.CustomResource):
             instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
             instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
             instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_maintenance_policy: pulumi.Input[Optional[Union['InstancePoolInstanceMaintenancePolicyArgs', 'InstancePoolInstanceMaintenancePolicyArgsDict', 'outputs.InstancePoolInstanceMaintenancePolicy']]] = None,
             lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
             load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
             override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
@@ -928,6 +977,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[_builtins.str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[_builtins.str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        :param pulumi.Input[Union['InstancePoolInstanceMaintenancePolicyArgs', 'InstancePoolInstanceMaintenancePolicyArgsDict', 'outputs.InstancePoolInstanceMaintenancePolicy']] instance_maintenance_policy: (Updatable) Optional maintenance policy settings for an instance pool.
         :param pulumi.Input[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']] lifecycle_management: (Updatable) The lifecycle management options for the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']] override_policy: (Updatable) Optional pool-level launch override policy for future instance launches.
@@ -961,6 +1011,7 @@ class InstancePool(pulumi.CustomResource):
         __props__.__dict__["instance_configuration_id"] = instance_configuration_id
         __props__.__dict__["instance_display_name_formatter"] = instance_display_name_formatter
         __props__.__dict__["instance_hostname_formatter"] = instance_hostname_formatter
+        __props__.__dict__["instance_maintenance_policy"] = instance_maintenance_policy
         __props__.__dict__["lifecycle_management"] = lifecycle_management
         __props__.__dict__["load_balancers"] = load_balancers
         __props__.__dict__["override_policy"] = override_policy
@@ -983,6 +1034,7 @@ class InstancePool(pulumi.CustomResource):
             instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
             instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
             instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_maintenance_policy: pulumi.Input[Optional[Union['InstancePoolInstanceMaintenancePolicyArgs', 'InstancePoolInstanceMaintenancePolicyArgsDict', 'outputs.InstancePoolInstanceMaintenancePolicy']]] = None,
             lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict', 'outputs.InstancePoolLifecycleManagement']]] = None,
             load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict', 'outputs.InstancePoolLoadBalancer']]]]] = None,
             override_policy: pulumi.Input[Optional[Union['InstancePoolOverridePolicyArgs', 'InstancePoolOverridePolicyArgsDict', 'outputs.InstancePoolOverridePolicy']]] = None,
@@ -1001,6 +1053,7 @@ class InstancePool(pulumi.CustomResource):
         __props__["instanceConfigurationId"] = instance_configuration_id
         __props__["instanceDisplayNameFormatter"] = instance_display_name_formatter
         __props__["instanceHostnameFormatter"] = instance_hostname_formatter
+        __props__["instanceMaintenancePolicy"] = instance_maintenance_policy
         __props__["lifecycleManagement"] = lifecycle_management
         __props__["loadBalancers"] = load_balancers
         __props__["overridePolicy"] = override_policy
@@ -1082,6 +1135,14 @@ class InstancePool(pulumi.CustomResource):
         (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         """
         return pulumi.get(self, "instance_hostname_formatter")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceMaintenancePolicy")
+    def instance_maintenance_policy(self) -> pulumi.Output['outputs.InstancePoolInstanceMaintenancePolicy']:
+        """
+        (Updatable) Optional maintenance policy settings for an instance pool.
+        """
+        return pulumi.get(self, "instance_maintenance_policy")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleManagement")

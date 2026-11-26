@@ -85,6 +85,15 @@ import * as utilities from "../utilities";
  *         port: connectionBootstrapServersPort,
  *     }],
  *     catalog: {
+ *         catalogConfig: {
+ *             catalogConfigType: connectionCatalogCatalogConfigCatalogConfigType,
+ *             databaseId: testDatabase.id,
+ *             databaseType: connectionCatalogCatalogConfigDatabaseType,
+ *             deploymentId: testDeployment.id,
+ *             password: connectionCatalogCatalogConfigPassword,
+ *             passwordSecretId: testSecret.id,
+ *             username: connectionCatalogCatalogConfigUsername,
+ *         },
  *         catalogType: connectionCatalogCatalogType,
  *         branch: connectionCatalogBranch,
  *         clientId: testClient.id,
@@ -228,6 +237,21 @@ import * as utilities from "../utilities";
  *     wallet: connectionWallet,
  *     walletSecretId: testSecret.id,
  *     workspaceUrl: connectionWorkspaceUrl,
+ *     warehouseName: connectionWarehouseName,
+ *     warehouseStorage: {
+ *         storageType: connectionWarehouseStorageStorageType,
+ *         accessKeyId: testKey.id,
+ *         accountKey: connectionWarehouseStorageAccountKey,
+ *         accountKeySecretId: testSecret.id,
+ *         accountName: connectionWarehouseStorageAccountName,
+ *         endpointUrl: connectionWarehouseStorageEndpointUrl,
+ *         namespace: connectionWarehouseStorageNamespace,
+ *         region: connectionWarehouseStorageRegion,
+ *         secretAccessKey: connectionWarehouseStorageSecretAccessKey,
+ *         secretAccessKeySecretId: testSecret.id,
+ *         trustStore: connectionWarehouseStorageTrustStore,
+ *         trustStoreSecretId: testSecret.id,
+ *     },
  * });
  * ```
  *
@@ -972,6 +996,14 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly walletSecretId: pulumi.Output<string | undefined>;
     /**
+     * (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     */
+    declare public readonly warehouseName: pulumi.Output<string>;
+    /**
+     * (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     */
+    declare public readonly warehouseStorage: pulumi.Output<outputs.GoldenGate.ConnectionWarehouseStorage>;
+    /**
      * (Updatable)
      * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
      * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -1131,6 +1163,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["vaultId"] = state?.vaultId;
             resourceInputs["wallet"] = state?.wallet;
             resourceInputs["walletSecretId"] = state?.walletSecretId;
+            resourceInputs["warehouseName"] = state?.warehouseName;
+            resourceInputs["warehouseStorage"] = state?.warehouseStorage;
             resourceInputs["workspaceUrl"] = state?.workspaceUrl;
         } else {
             const args = argsOrState as ConnectionArgs | undefined;
@@ -1261,7 +1295,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["tlsCaFile"] = args?.tlsCaFile;
             resourceInputs["tlsCertificateKeyFile"] = args?.tlsCertificateKeyFile;
             resourceInputs["tlsCertificateKeyFilePassword"] = args?.tlsCertificateKeyFilePassword ? pulumi.secret(args.tlsCertificateKeyFilePassword) : undefined;
-            resourceInputs["tlsCertificateKeyFilePasswordSecretId"] = args?.tlsCertificateKeyFilePasswordSecretId ? pulumi.secret(args.tlsCertificateKeyFilePasswordSecretId) : undefined;
+            resourceInputs["tlsCertificateKeyFilePasswordSecretId"] = args?.tlsCertificateKeyFilePasswordSecretId;
             resourceInputs["tlsCertificateKeyFileSecretId"] = args?.tlsCertificateKeyFileSecretId;
             resourceInputs["tlsProtocol"] = args?.tlsProtocol;
             resourceInputs["triggerRefresh"] = args?.triggerRefresh;
@@ -1276,6 +1310,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["vaultId"] = args?.vaultId;
             resourceInputs["wallet"] = args?.wallet ? pulumi.secret(args.wallet) : undefined;
             resourceInputs["walletSecretId"] = args?.walletSecretId;
+            resourceInputs["warehouseName"] = args?.warehouseName;
+            resourceInputs["warehouseStorage"] = args?.warehouseStorage;
             resourceInputs["workspaceUrl"] = args?.workspaceUrl;
             resourceInputs["ingressIps"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -1286,7 +1322,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["accountKey", "authSecret", "authToken", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "restAuthSecretKey", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "tlsCertificateKeyFilePassword", "tlsCertificateKeyFilePasswordSecretId", "trustStore", "trustStorePassword", "wallet"] };
+        const secretOpts = { additionalSecretOutputs: ["accountKey", "authSecret", "authToken", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "restAuthSecretKey", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "tlsCertificateKeyFilePassword", "trustStore", "trustStorePassword", "wallet"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Connection.__pulumiType, name, resourceInputs, opts);
     }
@@ -1990,6 +2026,14 @@ export interface ConnectionState {
      */
     walletSecretId?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     */
+    warehouseName?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     */
+    warehouseStorage?: pulumi.Input<inputs.GoldenGate.ConnectionWarehouseStorage | undefined>;
+    /**
      * (Updatable)
      * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
      * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -2669,6 +2713,14 @@ export interface ConnectionArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
      */
     walletSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     */
+    warehouseName?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     */
+    warehouseStorage?: pulumi.Input<inputs.GoldenGate.ConnectionWarehouseStorage | undefined>;
     /**
      * (Updatable)
      * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.

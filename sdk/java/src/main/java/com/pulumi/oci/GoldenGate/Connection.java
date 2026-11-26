@@ -17,6 +17,7 @@ import com.pulumi.oci.GoldenGate.outputs.ConnectionCatalog;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionLock;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionStorage;
+import com.pulumi.oci.GoldenGate.outputs.ConnectionWarehouseStorage;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -51,8 +52,10 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionAuthDetailsArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionCatalogArgs;
+ * import com.pulumi.oci.GoldenGate.inputs.ConnectionCatalogCatalogConfigArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionStorageArgs;
+ * import com.pulumi.oci.GoldenGate.inputs.ConnectionWarehouseStorageArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -131,6 +134,15 @@ import javax.annotation.Nullable;
  *                 .port(connectionBootstrapServersPort)
  *                 .build())
  *             .catalog(ConnectionCatalogArgs.builder()
+ *                 .catalogConfig(ConnectionCatalogCatalogConfigArgs.builder()
+ *                     .catalogConfigType(connectionCatalogCatalogConfigCatalogConfigType)
+ *                     .databaseId(testDatabase.get("id"))
+ *                     .databaseType(connectionCatalogCatalogConfigDatabaseType)
+ *                     .deploymentId(testDeployment.get("id"))
+ *                     .password(connectionCatalogCatalogConfigPassword)
+ *                     .passwordSecretId(testSecret.get("id"))
+ *                     .username(connectionCatalogCatalogConfigUsername)
+ *                     .build())
  *                 .catalogType(connectionCatalogCatalogType)
  *                 .branch(connectionCatalogBranch)
  *                 .clientId(testClient.get("id"))
@@ -270,6 +282,21 @@ import javax.annotation.Nullable;
  *             .wallet(connectionWallet)
  *             .walletSecretId(testSecret.get("id"))
  *             .workspaceUrl(connectionWorkspaceUrl)
+ *             .warehouseName(connectionWarehouseName)
+ *             .warehouseStorage(ConnectionWarehouseStorageArgs.builder()
+ *                 .storageType(connectionWarehouseStorageStorageType)
+ *                 .accessKeyId(testKey.get("id"))
+ *                 .accountKey(connectionWarehouseStorageAccountKey)
+ *                 .accountKeySecretId(testSecret.get("id"))
+ *                 .accountName(connectionWarehouseStorageAccountName)
+ *                 .endpointUrl(connectionWarehouseStorageEndpointUrl)
+ *                 .namespace(connectionWarehouseStorageNamespace)
+ *                 .region(connectionWarehouseStorageRegion)
+ *                 .secretAccessKey(connectionWarehouseStorageSecretAccessKey)
+ *                 .secretAccessKeySecretId(testSecret.get("id"))
+ *                 .trustStore(connectionWarehouseStorageTrustStore)
+ *                 .trustStoreSecretId(testSecret.get("id"))
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -2470,6 +2497,34 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.walletSecretId);
     }
     /**
+     * (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     * 
+     */
+    @Export(name="warehouseName", refs={String.class}, tree="[0]")
+    private Output<String> warehouseName;
+
+    /**
+     * @return (Updatable) The name of the warehouse configured in the Oracle AI Data Catalog deployment. This value corresponds to the target bucket or container name.
+     * 
+     */
+    public Output<String> warehouseName() {
+        return this.warehouseName;
+    }
+    /**
+     * (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     * 
+     */
+    @Export(name="warehouseStorage", refs={ConnectionWarehouseStorage.class}, tree="[0]")
+    private Output<ConnectionWarehouseStorage> warehouseStorage;
+
+    /**
+     * @return (Updatable) The information about a new warehouse storage of given type used in an Oracle AI Data Catalog Storage connection.
+     * 
+     */
+    public Output<ConnectionWarehouseStorage> warehouseStorage() {
+        return this.warehouseStorage;
+    }
+    /**
      * (Updatable)
      * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
      * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
@@ -2553,7 +2608,6 @@ public class Connection extends com.pulumi.resources.CustomResource {
                 "sslKey",
                 "sslKeyPassword",
                 "tlsCertificateKeyFilePassword",
-                "tlsCertificateKeyFilePasswordSecretId",
                 "trustStore",
                 "trustStorePassword",
                 "wallet"

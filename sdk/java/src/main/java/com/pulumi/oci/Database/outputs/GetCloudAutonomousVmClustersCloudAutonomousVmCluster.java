@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig;
@@ -153,6 +154,11 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
      * 
      */
     private Boolean isMtlsEnabledVmCluster;
+    /**
+     * @return Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    private List<GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
@@ -540,6 +546,13 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         return this.isMtlsEnabledVmCluster;
     }
     /**
+     * @return Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    public List<GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails() {
+        return this.keyManagementSystemDetails;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
@@ -855,6 +868,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         private String hostname;
         private String id;
         private Boolean isMtlsEnabledVmCluster;
+        private List<GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails;
         private String lastMaintenanceRunId;
         private String lastUpdateHistoryEntryId;
         private String licenseModel;
@@ -927,6 +941,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.isMtlsEnabledVmCluster = defaults.isMtlsEnabledVmCluster;
+    	      this.keyManagementSystemDetails = defaults.keyManagementSystemDetails;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lastUpdateHistoryEntryId = defaults.lastUpdateHistoryEntryId;
     	      this.licenseModel = defaults.licenseModel;
@@ -1189,6 +1204,17 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
             }
             this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
             return this;
+        }
+        @CustomType.Setter
+        public Builder keyManagementSystemDetails(List<GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail> keyManagementSystemDetails) {
+            if (keyManagementSystemDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClustersCloudAutonomousVmCluster", "keyManagementSystemDetails");
+            }
+            this.keyManagementSystemDetails = keyManagementSystemDetails;
+            return this;
+        }
+        public Builder keyManagementSystemDetails(GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetail... keyManagementSystemDetails) {
+            return keyManagementSystemDetails(List.of(keyManagementSystemDetails));
         }
         @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
@@ -1567,6 +1593,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+            _resultValue.keyManagementSystemDetails = keyManagementSystemDetails;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
             _resultValue.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             _resultValue.licenseModel = licenseModel;

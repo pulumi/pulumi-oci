@@ -87,6 +87,14 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         InstanceDisplayNameFormatter = instancePoolInstanceDisplayNameFormatter,
     ///         InstanceHostnameFormatter = instancePoolInstanceHostnameFormatter,
+    ///         InstanceMaintenancePolicy = new Oci.Core.Inputs.InstancePoolInstanceMaintenancePolicyArgs
+    ///         {
+    ///             LaunchBeforeTerminating = new Oci.Core.Inputs.InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs
+    ///             {
+    ///                 IsFullRefresh = instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingIsFullRefresh,
+    ///                 MaxHealthyPercent = instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingMaxHealthyPercent,
+    ///             },
+    ///         },
     ///         LifecycleManagement = new Oci.Core.Inputs.InstancePoolLifecycleManagementArgs
     ///         {
     ///             LifecycleActions = new Oci.Core.Inputs.InstancePoolLifecycleManagementLifecycleActionsArgs
@@ -218,6 +226,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("instanceHostnameFormatter")]
         public Output<string> InstanceHostnameFormatter { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Optional maintenance policy settings for an instance pool.
+        /// </summary>
+        [Output("instanceMaintenancePolicy")]
+        public Output<Outputs.InstancePoolInstanceMaintenancePolicy> InstanceMaintenancePolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The lifecycle management options for the instance pool.
@@ -379,6 +393,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? InstanceHostnameFormatter { get; set; }
 
         /// <summary>
+        /// (Updatable) Optional maintenance policy settings for an instance pool.
+        /// </summary>
+        [Input("instanceMaintenancePolicy")]
+        public Input<Inputs.InstancePoolInstanceMaintenancePolicyArgs>? InstanceMaintenancePolicy { get; set; }
+
+        /// <summary>
         /// (Updatable) The lifecycle management options for the instance pool.
         /// </summary>
         [Input("lifecycleManagement")]
@@ -510,6 +530,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("instanceHostnameFormatter")]
         public Input<string>? InstanceHostnameFormatter { get; set; }
+
+        /// <summary>
+        /// (Updatable) Optional maintenance policy settings for an instance pool.
+        /// </summary>
+        [Input("instanceMaintenancePolicy")]
+        public Input<Inputs.InstancePoolInstanceMaintenancePolicyGetArgs>? InstanceMaintenancePolicy { get; set; }
 
         /// <summary>
         /// (Updatable) The lifecycle management options for the instance pool.

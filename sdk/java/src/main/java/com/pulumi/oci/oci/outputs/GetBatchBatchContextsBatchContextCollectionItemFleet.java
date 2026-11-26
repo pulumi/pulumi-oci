@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetBatchBatchContextsBatchContextCollectionItemFleetReservation;
 import com.pulumi.oci.oci.outputs.GetBatchBatchContextsBatchContextCollectionItemFleetShape;
 import java.lang.Integer;
 import java.lang.String;
@@ -28,6 +29,11 @@ public final class GetBatchBatchContextsBatchContextCollectionItemFleet {
      * 
      */
     private String name;
+    /**
+     * @return Reservation selection used for initial fleet provisioning.
+     * 
+     */
+    private List<GetBatchBatchContextsBatchContextCollectionItemFleetReservation> reservations;
     /**
      * @return Shape of the fleet. Describes hardware resources of each node in the fleet.
      * 
@@ -67,6 +73,13 @@ public final class GetBatchBatchContextsBatchContextCollectionItemFleet {
         return this.name;
     }
     /**
+     * @return Reservation selection used for initial fleet provisioning.
+     * 
+     */
+    public List<GetBatchBatchContextsBatchContextCollectionItemFleetReservation> reservations() {
+        return this.reservations;
+    }
+    /**
      * @return Shape of the fleet. Describes hardware resources of each node in the fleet.
      * 
      */
@@ -100,6 +113,7 @@ public final class GetBatchBatchContextsBatchContextCollectionItemFleet {
         private String details;
         private Integer maxConcurrentTasks;
         private String name;
+        private List<GetBatchBatchContextsBatchContextCollectionItemFleetReservation> reservations;
         private List<GetBatchBatchContextsBatchContextCollectionItemFleetShape> shapes;
         private String state;
         private String type;
@@ -109,6 +123,7 @@ public final class GetBatchBatchContextsBatchContextCollectionItemFleet {
     	      this.details = defaults.details;
     	      this.maxConcurrentTasks = defaults.maxConcurrentTasks;
     	      this.name = defaults.name;
+    	      this.reservations = defaults.reservations;
     	      this.shapes = defaults.shapes;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
@@ -137,6 +152,17 @@ public final class GetBatchBatchContextsBatchContextCollectionItemFleet {
             }
             this.name = name;
             return this;
+        }
+        @CustomType.Setter
+        public Builder reservations(List<GetBatchBatchContextsBatchContextCollectionItemFleetReservation> reservations) {
+            if (reservations == null) {
+              throw new MissingRequiredPropertyException("GetBatchBatchContextsBatchContextCollectionItemFleet", "reservations");
+            }
+            this.reservations = reservations;
+            return this;
+        }
+        public Builder reservations(GetBatchBatchContextsBatchContextCollectionItemFleetReservation... reservations) {
+            return reservations(List.of(reservations));
         }
         @CustomType.Setter
         public Builder shapes(List<GetBatchBatchContextsBatchContextCollectionItemFleetShape> shapes) {
@@ -170,6 +196,7 @@ public final class GetBatchBatchContextsBatchContextCollectionItemFleet {
             _resultValue.details = details;
             _resultValue.maxConcurrentTasks = maxConcurrentTasks;
             _resultValue.name = name;
+            _resultValue.reservations = reservations;
             _resultValue.shapes = shapes;
             _resultValue.state = state;
             _resultValue.type = type;

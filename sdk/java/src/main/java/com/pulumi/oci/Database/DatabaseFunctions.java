@@ -10485,6 +10485,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousVmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.get("id"))
+     *             .kmsType(autonomousVmClusterKmsType)
      *             .state(autonomousVmClusterState)
      *             .build());
      * 
@@ -10530,6 +10531,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousVmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.get("id"))
+     *             .kmsType(autonomousVmClusterKmsType)
      *             .state(autonomousVmClusterState)
      *             .build());
      * 
@@ -10575,6 +10577,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousVmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.get("id"))
+     *             .kmsType(autonomousVmClusterKmsType)
      *             .state(autonomousVmClusterState)
      *             .build());
      * 
@@ -10620,6 +10623,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousVmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.get("id"))
+     *             .kmsType(autonomousVmClusterKmsType)
      *             .state(autonomousVmClusterState)
      *             .build());
      * 
@@ -10665,6 +10669,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousVmClusterDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.get("id"))
+     *             .kmsType(autonomousVmClusterKmsType)
      *             .state(autonomousVmClusterState)
      *             .build());
      * 
@@ -12126,6 +12131,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .kmsType(cloudAutonomousVmClusterKmsType)
      *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
@@ -12172,6 +12178,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .kmsType(cloudAutonomousVmClusterKmsType)
      *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
@@ -12218,6 +12225,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .kmsType(cloudAutonomousVmClusterKmsType)
      *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
@@ -12264,6 +12272,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .kmsType(cloudAutonomousVmClusterKmsType)
      *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
@@ -12310,6 +12319,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
      *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
      *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .kmsType(cloudAutonomousVmClusterKmsType)
      *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
@@ -29494,6 +29504,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .keyStoreType(keyStoreKeyStoreType)
      *             .build());
      * 
      *     }
@@ -29536,6 +29547,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .keyStoreType(keyStoreKeyStoreType)
      *             .build());
      * 
      *     }
@@ -29578,6 +29590,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .keyStoreType(keyStoreKeyStoreType)
      *             .build());
      * 
      *     }
@@ -29620,6 +29633,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .keyStoreType(keyStoreKeyStoreType)
      *             .build());
      * 
      *     }
@@ -29662,6 +29676,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .keyStoreType(keyStoreKeyStoreType)
      *             .build());
      * 
      *     }

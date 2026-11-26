@@ -139,6 +139,8 @@ type AutonomousVmCluster struct {
 	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
 	// (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
 	IsMtlsEnabled pulumi.BoolOutput `pulumi:"isMtlsEnabled"`
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails AutonomousVmClusterKeyManagementSystemDetailArrayOutput `pulumi:"keyManagementSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -290,6 +292,8 @@ type autonomousVmClusterState struct {
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
 	// (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
 	IsMtlsEnabled *bool `pulumi:"isMtlsEnabled"`
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails []AutonomousVmClusterKeyManagementSystemDetail `pulumi:"keyManagementSystemDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -400,6 +404,8 @@ type AutonomousVmClusterState struct {
 	IsLocalBackupEnabled pulumi.BoolPtrInput
 	// (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
 	IsMtlsEnabled pulumi.BoolPtrInput
+	// Autonomous VM Cluster Key Management System details.
+	KeyManagementSystemDetails AutonomousVmClusterKeyManagementSystemDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
@@ -773,6 +779,13 @@ func (o AutonomousVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 // (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
 func (o AutonomousVmClusterOutput) IsMtlsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.BoolOutput { return v.IsMtlsEnabled }).(pulumi.BoolOutput)
+}
+
+// Autonomous VM Cluster Key Management System details.
+func (o AutonomousVmClusterOutput) KeyManagementSystemDetails() AutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) AutonomousVmClusterKeyManagementSystemDetailArrayOutput {
+		return v.KeyManagementSystemDetails
+	}).(AutonomousVmClusterKeyManagementSystemDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

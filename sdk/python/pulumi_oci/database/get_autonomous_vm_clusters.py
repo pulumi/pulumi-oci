@@ -28,7 +28,7 @@ class GetAutonomousVmClustersResult:
     """
     A collection of values returned by getAutonomousVmClusters.
     """
-    def __init__(__self__, autonomous_vm_clusters=None, compartment_id=None, display_name=None, exadata_infrastructure_id=None, filters=None, id=None, state=None):
+    def __init__(__self__, autonomous_vm_clusters=None, compartment_id=None, display_name=None, exadata_infrastructure_id=None, filters=None, id=None, kms_type=None, state=None):
         if autonomous_vm_clusters and not isinstance(autonomous_vm_clusters, list):
             raise TypeError("Expected argument 'autonomous_vm_clusters' to be a list")
         pulumi.set(__self__, "autonomous_vm_clusters", autonomous_vm_clusters)
@@ -47,6 +47,9 @@ class GetAutonomousVmClustersResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if kms_type and not isinstance(kms_type, str):
+            raise TypeError("Expected argument 'kms_type' to be a str")
+        pulumi.set(__self__, "kms_type", kms_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -97,6 +100,11 @@ class GetAutonomousVmClustersResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="kmsType")
+    def kms_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "kms_type")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
@@ -117,6 +125,7 @@ class AwaitableGetAutonomousVmClustersResult(GetAutonomousVmClustersResult):
             exadata_infrastructure_id=self.exadata_infrastructure_id,
             filters=self.filters,
             id=self.id,
+            kms_type=self.kms_type,
             state=self.state)
 
 
@@ -124,6 +133,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
                                exadata_infrastructure_id: Optional[_builtins.str] = None,
                                filters: Optional[Sequence[Union['GetAutonomousVmClustersFilterArgs', 'GetAutonomousVmClustersFilterArgsDict', 'outputs.GetAutonomousVmClustersFilterResult']]] = None,
+                               kms_type: Optional[_builtins.str] = None,
                                state: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVmClustersResult:
     """
@@ -140,6 +150,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[_builtins.str] = None,
     test_autonomous_vm_clusters = oci.database.get_autonomous_vm_clusters(compartment_id=compartment_id,
         display_name=autonomous_vm_cluster_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        kms_type=autonomous_vm_cluster_kms_type,
         state=autonomous_vm_cluster_state)
     ```
 
@@ -147,6 +158,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
+    :param _builtins.str kms_type: A filter to return only resources that match the given kms exactly.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
@@ -154,6 +166,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[_builtins.str] = None,
     __args__['displayName'] = display_name
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['filters'] = filters
+    __args__['kmsType'] = kms_type
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousVmClusters:getAutonomousVmClusters', __args__, opts=opts, typ=GetAutonomousVmClustersResult).value
@@ -165,11 +178,13 @@ def get_autonomous_vm_clusters(compartment_id: Optional[_builtins.str] = None,
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        kms_type=pulumi.get(__ret__, 'kms_type'),
         state=pulumi.get(__ret__, 'state'))
 def get_autonomous_vm_clusters_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       exadata_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousVmClustersFilterArgs', 'GetAutonomousVmClustersFilterArgsDict', 'outputs.GetAutonomousVmClustersFilterResult']]]]] = None,
+                                      kms_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVmClustersResult]:
     """
@@ -186,6 +201,7 @@ def get_autonomous_vm_clusters_output(compartment_id: pulumi.Input[Optional[_bui
     test_autonomous_vm_clusters = oci.database.get_autonomous_vm_clusters(compartment_id=compartment_id,
         display_name=autonomous_vm_cluster_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        kms_type=autonomous_vm_cluster_kms_type,
         state=autonomous_vm_cluster_state)
     ```
 
@@ -193,6 +209,7 @@ def get_autonomous_vm_clusters_output(compartment_id: pulumi.Input[Optional[_bui
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
+    :param _builtins.str kms_type: A filter to return only resources that match the given kms exactly.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
@@ -200,6 +217,7 @@ def get_autonomous_vm_clusters_output(compartment_id: pulumi.Input[Optional[_bui
     __args__['displayName'] = display_name
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['filters'] = filters
+    __args__['kmsType'] = kms_type
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousVmClusters:getAutonomousVmClusters', __args__, opts=opts, typ=GetAutonomousVmClustersResult)
@@ -210,4 +228,5 @@ def get_autonomous_vm_clusters_output(compartment_id: pulumi.Input[Optional[_bui
         exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        kms_type=pulumi.get(__response__, 'kms_type'),
         state=pulumi.get(__response__, 'state')))

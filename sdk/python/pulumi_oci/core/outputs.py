@@ -168,6 +168,8 @@ __all__ = [
     'InstancePlacementConstraintDetails',
     'InstancePlatformConfig',
     'InstancePoolInstanceLoadBalancerBackend',
+    'InstancePoolInstanceMaintenancePolicy',
+    'InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating',
     'InstancePoolLifecycleManagement',
     'InstancePoolLifecycleManagementLifecycleActions',
     'InstancePoolLifecycleManagementLifecycleActionsPreTermination',
@@ -638,6 +640,8 @@ __all__ = [
     'GetInstanceMeasuredBootReportMeasurementPolicyResult',
     'GetInstancePlacementConstraintDetailResult',
     'GetInstancePlatformConfigResult',
+    'GetInstancePoolInstanceMaintenancePolicyResult',
+    'GetInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult',
     'GetInstancePoolInstancesFilterResult',
     'GetInstancePoolInstancesInstanceResult',
     'GetInstancePoolInstancesInstanceLoadBalancerBackendResult',
@@ -659,6 +663,8 @@ __all__ = [
     'GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult',
     'GetInstancePoolsFilterResult',
     'GetInstancePoolsInstancePoolResult',
+    'GetInstancePoolsInstancePoolInstanceMaintenancePolicyResult',
+    'GetInstancePoolsInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult',
     'GetInstancePoolsInstancePoolLifecycleManagementResult',
     'GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionResult',
     'GetInstancePoolsInstancePoolLifecycleManagementLifecycleActionPreTerminationResult',
@@ -13832,6 +13838,90 @@ class InstancePoolInstanceLoadBalancerBackend(dict):
         The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
         """
         return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class InstancePoolInstanceMaintenancePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "launchBeforeTerminating":
+            suggest = "launch_before_terminating"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolInstanceMaintenancePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolInstanceMaintenancePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolInstanceMaintenancePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 launch_before_terminating: Optional['outputs.InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating'] = None):
+        """
+        :param 'InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs' launch_before_terminating: (Updatable) Default launch-before-termination settings for instance pool refreshes.
+        """
+        if launch_before_terminating is not None:
+            pulumi.set(__self__, "launch_before_terminating", launch_before_terminating)
+
+    @_builtins.property
+    @pulumi.getter(name="launchBeforeTerminating")
+    def launch_before_terminating(self) -> Optional['outputs.InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating']:
+        """
+        (Updatable) Default launch-before-termination settings for instance pool refreshes.
+        """
+        return pulumi.get(self, "launch_before_terminating")
+
+
+@pulumi.output_type
+class InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isFullRefresh":
+            suggest = "is_full_refresh"
+        elif key == "maxHealthyPercent":
+            suggest = "max_healthy_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminating.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_full_refresh: _builtins.bool,
+                 max_healthy_percent: _builtins.int):
+        """
+        :param _builtins.bool is_full_refresh: (Updatable) Whether to refresh eligible instances that already use the target instance configuration.
+        :param _builtins.int max_healthy_percent: (Updatable) The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+        """
+        pulumi.set(__self__, "is_full_refresh", is_full_refresh)
+        pulumi.set(__self__, "max_healthy_percent", max_healthy_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="isFullRefresh")
+    def is_full_refresh(self) -> _builtins.bool:
+        """
+        (Updatable) Whether to refresh eligible instances that already use the target instance configuration.
+        """
+        return pulumi.get(self, "is_full_refresh")
+
+    @_builtins.property
+    @pulumi.getter(name="maxHealthyPercent")
+    def max_healthy_percent(self) -> _builtins.int:
+        """
+        (Updatable) The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+        """
+        return pulumi.get(self, "max_healthy_percent")
 
 
 @pulumi.output_type
@@ -43635,6 +43725,53 @@ class GetInstancePlatformConfigResult(dict):
 
 
 @pulumi.output_type
+class GetInstancePoolInstanceMaintenancePolicyResult(dict):
+    def __init__(__self__, *,
+                 launch_before_terminatings: Sequence['outputs.GetInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult']):
+        """
+        :param Sequence['GetInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs'] launch_before_terminatings: Default launch-before-termination settings for instance pool refreshes.
+        """
+        pulumi.set(__self__, "launch_before_terminatings", launch_before_terminatings)
+
+    @_builtins.property
+    @pulumi.getter(name="launchBeforeTerminatings")
+    def launch_before_terminatings(self) -> Sequence['outputs.GetInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult']:
+        """
+        Default launch-before-termination settings for instance pool refreshes.
+        """
+        return pulumi.get(self, "launch_before_terminatings")
+
+
+@pulumi.output_type
+class GetInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult(dict):
+    def __init__(__self__, *,
+                 is_full_refresh: _builtins.bool,
+                 max_healthy_percent: _builtins.int):
+        """
+        :param _builtins.bool is_full_refresh: Whether to refresh eligible instances that already use the target instance configuration.
+        :param _builtins.int max_healthy_percent: The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+        """
+        pulumi.set(__self__, "is_full_refresh", is_full_refresh)
+        pulumi.set(__self__, "max_healthy_percent", max_healthy_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="isFullRefresh")
+    def is_full_refresh(self) -> _builtins.bool:
+        """
+        Whether to refresh eligible instances that already use the target instance configuration.
+        """
+        return pulumi.get(self, "is_full_refresh")
+
+    @_builtins.property
+    @pulumi.getter(name="maxHealthyPercent")
+    def max_healthy_percent(self) -> _builtins.int:
+        """
+        The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+        """
+        return pulumi.get(self, "max_healthy_percent")
+
+
+@pulumi.output_type
 class GetInstancePoolInstancesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -44536,6 +44673,7 @@ class GetInstancePoolsInstancePoolResult(dict):
                  instance_configuration_id: _builtins.str,
                  instance_display_name_formatter: _builtins.str,
                  instance_hostname_formatter: _builtins.str,
+                 instance_maintenance_policies: Sequence['outputs.GetInstancePoolsInstancePoolInstanceMaintenancePolicyResult'],
                  lifecycle_managements: Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementResult'],
                  load_balancers: Sequence['outputs.GetInstancePoolsInstancePoolLoadBalancerResult'],
                  override_policies: Sequence['outputs.GetInstancePoolsInstancePoolOverridePolicyResult'],
@@ -44554,6 +44692,7 @@ class GetInstancePoolsInstancePoolResult(dict):
         :param _builtins.str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param _builtins.str instance_display_name_formatter: A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param _builtins.str instance_hostname_formatter: A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+        :param Sequence['GetInstancePoolsInstancePoolInstanceMaintenancePolicyArgs'] instance_maintenance_policies: Optional maintenance policy settings for an instance pool.
         :param Sequence['GetInstancePoolsInstancePoolLifecycleManagementArgs'] lifecycle_managements: The lifecycle management options for the instance pool.
         :param Sequence['GetInstancePoolsInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
         :param Sequence['GetInstancePoolsInstancePoolOverridePolicyArgs'] override_policies: Optional pool-level launch override policy for future instance launches.
@@ -44573,6 +44712,7 @@ class GetInstancePoolsInstancePoolResult(dict):
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
         pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
+        pulumi.set(__self__, "instance_maintenance_policies", instance_maintenance_policies)
         pulumi.set(__self__, "lifecycle_managements", lifecycle_managements)
         pulumi.set(__self__, "load_balancers", load_balancers)
         pulumi.set(__self__, "override_policies", override_policies)
@@ -44660,6 +44800,14 @@ class GetInstancePoolsInstancePoolResult(dict):
         return pulumi.get(self, "instance_hostname_formatter")
 
     @_builtins.property
+    @pulumi.getter(name="instanceMaintenancePolicies")
+    def instance_maintenance_policies(self) -> Sequence['outputs.GetInstancePoolsInstancePoolInstanceMaintenancePolicyResult']:
+        """
+        Optional maintenance policy settings for an instance pool.
+        """
+        return pulumi.get(self, "instance_maintenance_policies")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleManagements")
     def lifecycle_managements(self) -> Sequence['outputs.GetInstancePoolsInstancePoolLifecycleManagementResult']:
         """
@@ -44722,6 +44870,53 @@ class GetInstancePoolsInstancePoolResult(dict):
         The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolInstanceMaintenancePolicyResult(dict):
+    def __init__(__self__, *,
+                 launch_before_terminatings: Sequence['outputs.GetInstancePoolsInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult']):
+        """
+        :param Sequence['GetInstancePoolsInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs'] launch_before_terminatings: Default launch-before-termination settings for instance pool refreshes.
+        """
+        pulumi.set(__self__, "launch_before_terminatings", launch_before_terminatings)
+
+    @_builtins.property
+    @pulumi.getter(name="launchBeforeTerminatings")
+    def launch_before_terminatings(self) -> Sequence['outputs.GetInstancePoolsInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult']:
+        """
+        Default launch-before-termination settings for instance pool refreshes.
+        """
+        return pulumi.get(self, "launch_before_terminatings")
+
+
+@pulumi.output_type
+class GetInstancePoolsInstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingResult(dict):
+    def __init__(__self__, *,
+                 is_full_refresh: _builtins.bool,
+                 max_healthy_percent: _builtins.int):
+        """
+        :param _builtins.bool is_full_refresh: Whether to refresh eligible instances that already use the target instance configuration.
+        :param _builtins.int max_healthy_percent: The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+        """
+        pulumi.set(__self__, "is_full_refresh", is_full_refresh)
+        pulumi.set(__self__, "max_healthy_percent", max_healthy_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="isFullRefresh")
+    def is_full_refresh(self) -> _builtins.bool:
+        """
+        Whether to refresh eligible instances that already use the target instance configuration.
+        """
+        return pulumi.get(self, "is_full_refresh")
+
+    @_builtins.property
+    @pulumi.getter(name="maxHealthyPercent")
+    def max_healthy_percent(self) -> _builtins.int:
+        """
+        The maximum percentage of instances that can be in the pool during a refresh. The service uses this value to calculate launch-before-terminate surge capacity.
+        """
+        return pulumi.get(self, "max_healthy_percent")
 
 
 @pulumi.output_type

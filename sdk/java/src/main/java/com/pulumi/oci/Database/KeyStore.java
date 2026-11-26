@@ -9,6 +9,8 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.KeyStoreArgs;
 import com.pulumi.oci.Database.inputs.KeyStoreState;
+import com.pulumi.oci.Database.outputs.KeyStoreAssociatedAutonomousVmCluster;
+import com.pulumi.oci.Database.outputs.KeyStoreAssociatedCloudAutonomousVmCluster;
 import com.pulumi.oci.Database.outputs.KeyStoreAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.KeyStoreAssociatedLongTermBackup;
 import com.pulumi.oci.Database.outputs.KeyStoreTypeDetails;
@@ -83,6 +85,34 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/keyStore:KeyStore")
 public class KeyStore extends com.pulumi.resources.CustomResource {
+    /**
+     * List of Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    @Export(name="associatedAutonomousVmClusters", refs={List.class,KeyStoreAssociatedAutonomousVmCluster.class}, tree="[0,1]")
+    private Output<List<KeyStoreAssociatedAutonomousVmCluster>> associatedAutonomousVmClusters;
+
+    /**
+     * @return List of Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    public Output<List<KeyStoreAssociatedAutonomousVmCluster>> associatedAutonomousVmClusters() {
+        return this.associatedAutonomousVmClusters;
+    }
+    /**
+     * List of Cloud Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    @Export(name="associatedCloudAutonomousVmClusters", refs={List.class,KeyStoreAssociatedCloudAutonomousVmCluster.class}, tree="[0,1]")
+    private Output<List<KeyStoreAssociatedCloudAutonomousVmCluster>> associatedCloudAutonomousVmClusters;
+
+    /**
+     * @return List of Cloud Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    public Output<List<KeyStoreAssociatedCloudAutonomousVmCluster>> associatedCloudAutonomousVmClusters() {
+        return this.associatedCloudAutonomousVmClusters;
+    }
     /**
      * List of databases associated with the key store.
      * 

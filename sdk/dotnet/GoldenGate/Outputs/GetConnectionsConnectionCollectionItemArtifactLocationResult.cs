@@ -15,7 +15,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     {
         public readonly string AccountKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
         /// </summary>
         public readonly string AccountKeySecretId;
         /// <summary>

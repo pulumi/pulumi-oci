@@ -31,6 +31,12 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
+        /// Reservation selection for initial provisioning of a fleet.
+        /// </summary>
+        [Input("reservation")]
+        public Input<Inputs.BatchBatchContextFleetReservationArgs>? Reservation { get; set; }
+
+        /// <summary>
         /// Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
         /// </summary>
         [Input("shape", required: true)]

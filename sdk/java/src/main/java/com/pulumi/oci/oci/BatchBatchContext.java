@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.oci.BatchBatchContextArgs;
  * import com.pulumi.oci.oci.inputs.BatchBatchContextFleetArgs;
  * import com.pulumi.oci.oci.inputs.BatchBatchContextFleetShapeArgs;
+ * import com.pulumi.oci.oci.inputs.BatchBatchContextFleetReservationArgs;
  * import com.pulumi.oci.oci.inputs.BatchBatchContextNetworkArgs;
  * import com.pulumi.oci.oci.inputs.BatchBatchContextJobPriorityConfigurationArgs;
  * import com.pulumi.oci.oci.inputs.BatchBatchContextLoggingConfigurationArgs;
@@ -69,6 +70,10 @@ import javax.annotation.Nullable;
  *                     .diskSizeInGbs(batchContextFleetsShapeDiskSizeInGbs)
  *                     .build())
  *                 .type(batchContextFleetsType)
+ *                 .reservation(BatchBatchContextFleetReservationArgs.builder()
+ *                     .capacityReservationIds(batchContextFleetsReservationCapacityReservationIds)
+ *                     .type(batchContextFleetsReservationType)
+ *                     .build())
  *                 .build())
  *             .network(BatchBatchContextNetworkArgs.builder()
  *                 .subnetId(testSubnet.get("id"))

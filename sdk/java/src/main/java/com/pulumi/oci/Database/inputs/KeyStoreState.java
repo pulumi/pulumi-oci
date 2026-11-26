@@ -5,6 +5,8 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.KeyStoreAssociatedAutonomousVmClusterArgs;
+import com.pulumi.oci.Database.inputs.KeyStoreAssociatedCloudAutonomousVmClusterArgs;
 import com.pulumi.oci.Database.inputs.KeyStoreAssociatedDatabaseArgs;
 import com.pulumi.oci.Database.inputs.KeyStoreAssociatedLongTermBackupArgs;
 import com.pulumi.oci.Database.inputs.KeyStoreTypeDetailsArgs;
@@ -20,6 +22,36 @@ import javax.annotation.Nullable;
 public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
 
     public static final KeyStoreState Empty = new KeyStoreState();
+
+    /**
+     * List of Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    @Import(name="associatedAutonomousVmClusters")
+    private @Nullable Output<List<KeyStoreAssociatedAutonomousVmClusterArgs>> associatedAutonomousVmClusters;
+
+    /**
+     * @return List of Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    public Optional<Output<List<KeyStoreAssociatedAutonomousVmClusterArgs>>> associatedAutonomousVmClusters() {
+        return Optional.ofNullable(this.associatedAutonomousVmClusters);
+    }
+
+    /**
+     * List of Cloud Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    @Import(name="associatedCloudAutonomousVmClusters")
+    private @Nullable Output<List<KeyStoreAssociatedCloudAutonomousVmClusterArgs>> associatedCloudAutonomousVmClusters;
+
+    /**
+     * @return List of Cloud Autonomous VM Clusters associated with the key store.
+     * 
+     */
+    public Optional<Output<List<KeyStoreAssociatedCloudAutonomousVmClusterArgs>>> associatedCloudAutonomousVmClusters() {
+        return Optional.ofNullable(this.associatedCloudAutonomousVmClusters);
+    }
 
     /**
      * List of databases associated with the key store.
@@ -211,6 +243,8 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
     private KeyStoreState() {}
 
     private KeyStoreState(KeyStoreState $) {
+        this.associatedAutonomousVmClusters = $.associatedAutonomousVmClusters;
+        this.associatedCloudAutonomousVmClusters = $.associatedCloudAutonomousVmClusters;
         this.associatedDatabases = $.associatedDatabases;
         this.associatedLongTermBackupCount = $.associatedLongTermBackupCount;
         this.associatedLongTermBackups = $.associatedLongTermBackups;
@@ -242,6 +276,68 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(KeyStoreState defaults) {
             $ = new KeyStoreState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param associatedAutonomousVmClusters List of Autonomous VM Clusters associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedAutonomousVmClusters(@Nullable Output<List<KeyStoreAssociatedAutonomousVmClusterArgs>> associatedAutonomousVmClusters) {
+            $.associatedAutonomousVmClusters = associatedAutonomousVmClusters;
+            return this;
+        }
+
+        /**
+         * @param associatedAutonomousVmClusters List of Autonomous VM Clusters associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedAutonomousVmClusters(List<KeyStoreAssociatedAutonomousVmClusterArgs> associatedAutonomousVmClusters) {
+            return associatedAutonomousVmClusters(Output.of(associatedAutonomousVmClusters));
+        }
+
+        /**
+         * @param associatedAutonomousVmClusters List of Autonomous VM Clusters associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedAutonomousVmClusters(KeyStoreAssociatedAutonomousVmClusterArgs... associatedAutonomousVmClusters) {
+            return associatedAutonomousVmClusters(List.of(associatedAutonomousVmClusters));
+        }
+
+        /**
+         * @param associatedCloudAutonomousVmClusters List of Cloud Autonomous VM Clusters associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedCloudAutonomousVmClusters(@Nullable Output<List<KeyStoreAssociatedCloudAutonomousVmClusterArgs>> associatedCloudAutonomousVmClusters) {
+            $.associatedCloudAutonomousVmClusters = associatedCloudAutonomousVmClusters;
+            return this;
+        }
+
+        /**
+         * @param associatedCloudAutonomousVmClusters List of Cloud Autonomous VM Clusters associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedCloudAutonomousVmClusters(List<KeyStoreAssociatedCloudAutonomousVmClusterArgs> associatedCloudAutonomousVmClusters) {
+            return associatedCloudAutonomousVmClusters(Output.of(associatedCloudAutonomousVmClusters));
+        }
+
+        /**
+         * @param associatedCloudAutonomousVmClusters List of Cloud Autonomous VM Clusters associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedCloudAutonomousVmClusters(KeyStoreAssociatedCloudAutonomousVmClusterArgs... associatedCloudAutonomousVmClusters) {
+            return associatedCloudAutonomousVmClusters(List.of(associatedCloudAutonomousVmClusters));
         }
 
         /**

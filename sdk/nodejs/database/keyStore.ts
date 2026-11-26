@@ -85,6 +85,14 @@ export class KeyStore extends pulumi.CustomResource {
     }
 
     /**
+     * List of Autonomous VM Clusters associated with the key store.
+     */
+    declare public /*out*/ readonly associatedAutonomousVmClusters: pulumi.Output<outputs.Database.KeyStoreAssociatedAutonomousVmCluster[]>;
+    /**
+     * List of Cloud Autonomous VM Clusters associated with the key store.
+     */
+    declare public /*out*/ readonly associatedCloudAutonomousVmClusters: pulumi.Output<outputs.Database.KeyStoreAssociatedCloudAutonomousVmCluster[]>;
+    /**
      * List of databases associated with the key store.
      */
     declare public /*out*/ readonly associatedDatabases: pulumi.Output<outputs.Database.KeyStoreAssociatedDatabase[]>;
@@ -147,6 +155,8 @@ export class KeyStore extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyStoreState | undefined;
+            resourceInputs["associatedAutonomousVmClusters"] = state?.associatedAutonomousVmClusters;
+            resourceInputs["associatedCloudAutonomousVmClusters"] = state?.associatedCloudAutonomousVmClusters;
             resourceInputs["associatedDatabases"] = state?.associatedDatabases;
             resourceInputs["associatedLongTermBackupCount"] = state?.associatedLongTermBackupCount;
             resourceInputs["associatedLongTermBackups"] = state?.associatedLongTermBackups;
@@ -177,6 +187,8 @@ export class KeyStore extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["typeDetails"] = args?.typeDetails;
+            resourceInputs["associatedAutonomousVmClusters"] = undefined /*out*/;
+            resourceInputs["associatedCloudAutonomousVmClusters"] = undefined /*out*/;
             resourceInputs["associatedDatabases"] = undefined /*out*/;
             resourceInputs["associatedLongTermBackupCount"] = undefined /*out*/;
             resourceInputs["associatedLongTermBackups"] = undefined /*out*/;
@@ -194,6 +206,14 @@ export class KeyStore extends pulumi.CustomResource {
  * Input properties used for looking up and filtering KeyStore resources.
  */
 export interface KeyStoreState {
+    /**
+     * List of Autonomous VM Clusters associated with the key store.
+     */
+    associatedAutonomousVmClusters?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedAutonomousVmCluster>[] | undefined>;
+    /**
+     * List of Cloud Autonomous VM Clusters associated with the key store.
+     */
+    associatedCloudAutonomousVmClusters?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedCloudAutonomousVmCluster>[] | undefined>;
     /**
      * List of databases associated with the key store.
      */

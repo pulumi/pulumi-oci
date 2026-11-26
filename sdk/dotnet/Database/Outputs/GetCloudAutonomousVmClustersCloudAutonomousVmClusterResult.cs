@@ -122,6 +122,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsMtlsEnabledVmCluster;
         /// <summary>
+        /// Autonomous VM Cluster Key Management System details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailResult> KeyManagementSystemDetails;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         public readonly string LastMaintenanceRunId;
@@ -335,6 +339,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isMtlsEnabledVmCluster,
 
+            ImmutableArray<Outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterKeyManagementSystemDetailResult> keyManagementSystemDetails,
+
             string lastMaintenanceRunId,
 
             string lastUpdateHistoryEntryId,
@@ -446,6 +452,7 @@ namespace Pulumi.Oci.Database.Outputs
             Hostname = hostname;
             Id = id;
             IsMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+            KeyManagementSystemDetails = keyManagementSystemDetails;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             LicenseModel = licenseModel;

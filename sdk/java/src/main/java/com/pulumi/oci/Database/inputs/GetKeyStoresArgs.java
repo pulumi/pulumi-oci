@@ -40,11 +40,27 @@ public final class GetKeyStoresArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A filter to return only resources that match the key store type given. The match is not case sensitive.
+     * 
+     */
+    @Import(name="keyStoreType")
+    private @Nullable Output<String> keyStoreType;
+
+    /**
+     * @return A filter to return only resources that match the key store type given. The match is not case sensitive.
+     * 
+     */
+    public Optional<Output<String>> keyStoreType() {
+        return Optional.ofNullable(this.keyStoreType);
+    }
+
     private GetKeyStoresArgs() {}
 
     private GetKeyStoresArgs(GetKeyStoresArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.keyStoreType = $.keyStoreType;
     }
 
     public static Builder builder() {
@@ -97,6 +113,27 @@ public final class GetKeyStoresArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetKeyStoresFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param keyStoreType A filter to return only resources that match the key store type given. The match is not case sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreType(@Nullable Output<String> keyStoreType) {
+            $.keyStoreType = keyStoreType;
+            return this;
+        }
+
+        /**
+         * @param keyStoreType A filter to return only resources that match the key store type given. The match is not case sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreType(String keyStoreType) {
+            return keyStoreType(Output.of(keyStoreType));
         }
 
         public GetKeyStoresArgs build() {

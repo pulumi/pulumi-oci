@@ -5,7 +5,9 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemCatalogCatalogConfig;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +17,11 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      * 
      */
     private String branch;
+    /**
+     * @return Represents the Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+     * 
+     */
+    private List<GetConnectionsConnectionCollectionItemCatalogCatalogConfig> catalogConfigs;
     /**
      * @return The catalog type.
      * 
@@ -77,6 +84,13 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      */
     public String branch() {
         return this.branch;
+    }
+    /**
+     * @return Represents the Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+     * 
+     */
+    public List<GetConnectionsConnectionCollectionItemCatalogCatalogConfig> catalogConfigs() {
+        return this.catalogConfigs;
     }
     /**
      * @return The catalog type.
@@ -163,6 +177,7 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
     @CustomType.Builder
     public static final class Builder {
         private String branch;
+        private List<GetConnectionsConnectionCollectionItemCatalogCatalogConfig> catalogConfigs;
         private String catalogType;
         private String clientId;
         private String clientSecret;
@@ -177,6 +192,7 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         public Builder(GetConnectionsConnectionCollectionItemCatalog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.branch = defaults.branch;
+    	      this.catalogConfigs = defaults.catalogConfigs;
     	      this.catalogType = defaults.catalogType;
     	      this.clientId = defaults.clientId;
     	      this.clientSecret = defaults.clientSecret;
@@ -196,6 +212,17 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
             }
             this.branch = branch;
             return this;
+        }
+        @CustomType.Setter
+        public Builder catalogConfigs(List<GetConnectionsConnectionCollectionItemCatalogCatalogConfig> catalogConfigs) {
+            if (catalogConfigs == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemCatalog", "catalogConfigs");
+            }
+            this.catalogConfigs = catalogConfigs;
+            return this;
+        }
+        public Builder catalogConfigs(GetConnectionsConnectionCollectionItemCatalogCatalogConfig... catalogConfigs) {
+            return catalogConfigs(List.of(catalogConfigs));
         }
         @CustomType.Setter
         public Builder catalogType(String catalogType) {
@@ -280,6 +307,7 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         public GetConnectionsConnectionCollectionItemCatalog build() {
             final var _resultValue = new GetConnectionsConnectionCollectionItemCatalog();
             _resultValue.branch = branch;
+            _resultValue.catalogConfigs = catalogConfigs;
             _resultValue.catalogType = catalogType;
             _resultValue.clientId = clientId;
             _resultValue.clientSecret = clientSecret;

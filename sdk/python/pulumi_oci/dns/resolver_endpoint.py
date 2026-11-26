@@ -606,6 +606,24 @@ class ResolverEndpoint(pulumi.CustomResource):
 
         Creates a new resolver endpoint in the same compartment as the resolver.
 
+        ## Dependency ordering
+
+        With OCI provider v8.16.0 or later, the
+        `core_get_cnv_dns_resolver_association`
+        data source waits for the VCN's resolver association to become available. Use its
+        `dns_resolver_id` directly for endpoints and resolver configuration. Endpoints
+        must not depend on the resolver configuration resource whose rules reference
+        those endpoints, because that would create a dependency cycle.
+
+        Reference the forwarding endpoint's `name` in `source_endpoint_name` and the
+        destination listening endpoint's `listening_address` in `destination_addresses`.
+        These references order rule configuration after endpoint creation and rule
+        removal before endpoint deletion. When using modules, expose endpoint names and
+        addresses as outputs and use them to configure rules in the calling module.
+
+        See the runnable resolver example
+        and the resolver reference.
+
         ## Example Usage
 
         ```python
@@ -616,7 +634,7 @@ class ResolverEndpoint(pulumi.CustomResource):
             is_forwarding=resolver_endpoint_is_forwarding,
             is_listening=resolver_endpoint_is_listening,
             name=resolver_endpoint_name,
-            resolver_id=test_resolver["id"],
+            resolver_id=test_vcn_dns_resolver_association["dnsResolverId"],
             subnet_id=test_subnet["id"],
             scope="PRIVATE",
             defined_tags=resolver_endpoint_defined_tags,
@@ -672,6 +690,24 @@ class ResolverEndpoint(pulumi.CustomResource):
 
         Creates a new resolver endpoint in the same compartment as the resolver.
 
+        ## Dependency ordering
+
+        With OCI provider v8.16.0 or later, the
+        `core_get_cnv_dns_resolver_association`
+        data source waits for the VCN's resolver association to become available. Use its
+        `dns_resolver_id` directly for endpoints and resolver configuration. Endpoints
+        must not depend on the resolver configuration resource whose rules reference
+        those endpoints, because that would create a dependency cycle.
+
+        Reference the forwarding endpoint's `name` in `source_endpoint_name` and the
+        destination listening endpoint's `listening_address` in `destination_addresses`.
+        These references order rule configuration after endpoint creation and rule
+        removal before endpoint deletion. When using modules, expose endpoint names and
+        addresses as outputs and use them to configure rules in the calling module.
+
+        See the runnable resolver example
+        and the resolver reference.
+
         ## Example Usage
 
         ```python
@@ -682,7 +718,7 @@ class ResolverEndpoint(pulumi.CustomResource):
             is_forwarding=resolver_endpoint_is_forwarding,
             is_listening=resolver_endpoint_is_listening,
             name=resolver_endpoint_name,
-            resolver_id=test_resolver["id"],
+            resolver_id=test_vcn_dns_resolver_association["dnsResolverId"],
             subnet_id=test_subnet["id"],
             scope="PRIVATE",
             defined_tags=resolver_endpoint_defined_tags,

@@ -58,6 +58,16 @@ public final class ConnectionStorage {
      */
     private @Nullable String projectId;
     /**
+     * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     */
+    private @Nullable String properties;
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
+    private @Nullable String propertiesSecretId;
+    /**
      * @return (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
      * 
      */
@@ -99,10 +109,24 @@ public final class ConnectionStorage {
      * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
      * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
      * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
      * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
      * 
      */
     private String storageType;
+    /**
+     * @return (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated
+    private @Nullable String trustStore;
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    private @Nullable String trustStoreSecretId;
 
     private ConnectionStorage() {}
     /**
@@ -167,6 +191,20 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.projectId);
     }
     /**
+     * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     */
+    public Optional<String> properties() {
+        return Optional.ofNullable(this.properties);
+    }
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
+    public Optional<String> propertiesSecretId() {
+        return Optional.ofNullable(this.propertiesSecretId);
+    }
+    /**
      * @return (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
      * 
      */
@@ -220,11 +258,29 @@ public final class ConnectionStorage {
      * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
      * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
      * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
      * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
      * 
      */
     public String storageType() {
         return this.storageType;
+    }
+    /**
+     * @return (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated
+    public Optional<String> trustStore() {
+        return Optional.ofNullable(this.trustStore);
+    }
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    public Optional<String> trustStoreSecretId() {
+        return Optional.ofNullable(this.trustStoreSecretId);
     }
 
     public static Builder builder() {
@@ -244,6 +300,8 @@ public final class ConnectionStorage {
         private @Nullable String container;
         private @Nullable String endpoint;
         private @Nullable String projectId;
+        private @Nullable String properties;
+        private @Nullable String propertiesSecretId;
         private @Nullable String region;
         private @Nullable String schemeType;
         private @Nullable String secretAccessKey;
@@ -251,6 +309,8 @@ public final class ConnectionStorage {
         private @Nullable String serviceAccountKeyFile;
         private @Nullable String serviceAccountKeyFileSecretId;
         private String storageType;
+        private @Nullable String trustStore;
+        private @Nullable String trustStoreSecretId;
         public Builder() {}
         public Builder(ConnectionStorage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -262,6 +322,8 @@ public final class ConnectionStorage {
     	      this.container = defaults.container;
     	      this.endpoint = defaults.endpoint;
     	      this.projectId = defaults.projectId;
+    	      this.properties = defaults.properties;
+    	      this.propertiesSecretId = defaults.propertiesSecretId;
     	      this.region = defaults.region;
     	      this.schemeType = defaults.schemeType;
     	      this.secretAccessKey = defaults.secretAccessKey;
@@ -269,6 +331,8 @@ public final class ConnectionStorage {
     	      this.serviceAccountKeyFile = defaults.serviceAccountKeyFile;
     	      this.serviceAccountKeyFileSecretId = defaults.serviceAccountKeyFileSecretId;
     	      this.storageType = defaults.storageType;
+    	      this.trustStore = defaults.trustStore;
+    	      this.trustStoreSecretId = defaults.trustStoreSecretId;
         }
 
         @CustomType.Setter
@@ -320,6 +384,18 @@ public final class ConnectionStorage {
             return this;
         }
         @CustomType.Setter
+        public Builder properties(@Nullable String properties) {
+
+            this.properties = properties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder propertiesSecretId(@Nullable String propertiesSecretId) {
+
+            this.propertiesSecretId = propertiesSecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder region(@Nullable String region) {
 
             this.region = region;
@@ -363,6 +439,18 @@ public final class ConnectionStorage {
             this.storageType = storageType;
             return this;
         }
+        @CustomType.Setter
+        public Builder trustStore(@Nullable String trustStore) {
+
+            this.trustStore = trustStore;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder trustStoreSecretId(@Nullable String trustStoreSecretId) {
+
+            this.trustStoreSecretId = trustStoreSecretId;
+            return this;
+        }
         public ConnectionStorage build() {
             final var _resultValue = new ConnectionStorage();
             _resultValue.accessKeyId = accessKeyId;
@@ -373,6 +461,8 @@ public final class ConnectionStorage {
             _resultValue.container = container;
             _resultValue.endpoint = endpoint;
             _resultValue.projectId = projectId;
+            _resultValue.properties = properties;
+            _resultValue.propertiesSecretId = propertiesSecretId;
             _resultValue.region = region;
             _resultValue.schemeType = schemeType;
             _resultValue.secretAccessKey = secretAccessKey;
@@ -380,6 +470,8 @@ public final class ConnectionStorage {
             _resultValue.serviceAccountKeyFile = serviceAccountKeyFile;
             _resultValue.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             _resultValue.storageType = storageType;
+            _resultValue.trustStore = trustStore;
+            _resultValue.trustStoreSecretId = trustStoreSecretId;
             return _resultValue;
         }
     }

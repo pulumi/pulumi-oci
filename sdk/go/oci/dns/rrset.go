@@ -22,7 +22,24 @@ import (
 // When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
 // parameter then the viewId query parameter is required.
 //
+// ## RRSet identity and records
+//
+// An RRSet is the collection of records with the same domain name and record type
+// in one zone. The top-level `zoneNameOrId`, `domain` and `rtype` select that
+// RRSet. Each `items` block describes one record in it: repeat the selected domain
+// and type, and provide that record's `rdata` and `ttl`. Multiple A record values
+// therefore belong in multiple `items` blocks of one resource, rather than separate
+// resources managing the same RRSet. Use a consistent TTL for all records in a set.
+//
 // ## Example Usage
+//
+// These examples use a zone resource named `example` and documentation IP addresses.
+// The zone can be created with `Dns.Zone` using `compartmentId`, `name` and
+// `zoneType = "PRIMARY"`. See the public RRSet example
+// and private RRSet example
+// for complete configurations. The public directory also includes other DNS examples.
+//
+// ### One A record
 //
 // ```go
 // package main
@@ -36,20 +53,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dns.NewRrset(ctx, "test_rrset", &dns.RrsetArgs{
-//				Domain:       pulumi.Any(rrsetDomain),
-//				Rtype:        pulumi.Any(rrsetRtype),
-//				ZoneNameOrId: pulumi.Any(testZone.Id),
+//			_, err := dns.NewRrset(ctx, "single_record", &dns.RrsetArgs{
+//				ZoneNameOrId: pulumi.Any(example.Id),
+//				Domain:       pulumi.Sprintf("www.%v", example.Name),
+//				Rtype:        pulumi.String("A"),
 //				Items: dns.RrsetItemArray{
 //					&dns.RrsetItemArgs{
-//						Domain: pulumi.Any(rrsetItemsDomain),
-//						Rdata:  pulumi.Any(rrsetItemsRdata),
-//						Rtype:  pulumi.Any(rrsetItemsRtype),
-//						Ttl:    pulumi.Any(rrsetItemsTtl),
+//						Domain: pulumi.Sprintf("www.%v", example.Name),
+//						Rtype:  pulumi.String("A"),
+//						Rdata:  pulumi.String("192.0.2.10"),
+//						Ttl:    pulumi.Int(300),
 //					},
 //				},
-//				Scope:  pulumi.Any(rrsetScope),
-//				ViewId: pulumi.Any(testView.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -60,9 +75,59 @@ import (
 //
 // ```
 //
+// ### Multiple A records in one RRSet
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dns.NewRrset(ctx, "multiple_records", &dns.RrsetArgs{
+//				ZoneNameOrId: pulumi.Any(example.Id),
+//				Domain:       pulumi.Sprintf("api.%v", example.Name),
+//				Rtype:        pulumi.String("A"),
+//				Items: dns.RrsetItemArray{
+//					&dns.RrsetItemArgs{
+//						Domain: pulumi.Sprintf("api.%v", example.Name),
+//						Rtype:  pulumi.String("A"),
+//						Rdata:  pulumi.String("192.0.2.20"),
+//						Ttl:    pulumi.Int(300),
+//					},
+//					&dns.RrsetItemArgs{
+//						Domain: pulumi.Sprintf("api.%v", example.Name),
+//						Rtype:  pulumi.String("A"),
+//						Rdata:  pulumi.String("192.0.2.21"),
+//						Ttl:    pulumi.Int(300),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// For private zones, see the private RRSet example.
+// When identifying a private zone by name, provide its `viewId` as well.
+//
 // ## Behavior
 //
-// - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+//   - Creating a resource for an RRSet that already contains records fails with
+//     HTTP 409 (Conflict), including when `items` is omitted. Import an existing
+//     RRSet before managing it.
+//   - Updating an existing resource replaces its record set with the configured
+//     `items`; removing an item removes that record. Keep the desired records explicit
+//     in the configuration, rather than using omission of `items` as a deletion instruction.
 //
 // ## Import
 //
@@ -85,7 +150,7 @@ type Rrset struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+	// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
 	Items RrsetItemArrayOutput `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringOutput `pulumi:"rtype"`
@@ -150,7 +215,7 @@ type rrsetState struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain *string `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+	// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
 	Items []RrsetItem `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype *string `pulumi:"rtype"`
@@ -177,7 +242,7 @@ type RrsetState struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringPtrInput
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+	// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
 	Items RrsetItemArrayInput
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringPtrInput
@@ -214,7 +279,7 @@ type rrsetArgs struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain string `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+	// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
 	Items []RrsetItem `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype string `pulumi:"rtype"`
@@ -242,7 +307,7 @@ type RrsetArgs struct {
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringInput
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+	// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
 	Items RrsetItemArrayInput
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringInput
@@ -361,7 +426,7 @@ func (o RrsetOutput) Domain() pulumi.StringOutput {
 }
 
 // (Updatable)
-// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+// The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
 func (o RrsetOutput) Items() RrsetItemArrayOutput {
 	return o.ApplyT(func(v *Rrset) RrsetItemArrayOutput { return v.Items }).(RrsetItemArrayOutput)
 }

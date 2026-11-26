@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionStorage {
     /**
-     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * @return The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
      * 
      */
     private String accessKeyId;
@@ -22,12 +22,12 @@ public final class GetConnectionStorage {
     @Deprecated
     private String accountKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
      * 
      */
     private String accountKeySecretId;
     /**
-     * @return Sets the Azure storage account name.
+     * @return The Azure Storage account name.
      * 
      */
     private String accountName;
@@ -51,8 +51,14 @@ public final class GetConnectionStorage {
      * 
      */
     private String projectId;
+    private String properties;
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
+    private String propertiesSecretId;
+    /**
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     private String region;
@@ -68,7 +74,7 @@ public final class GetConnectionStorage {
     @Deprecated
     private String secretAccessKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
      * 
      */
     private String secretAccessKeySecretId;
@@ -84,19 +90,25 @@ public final class GetConnectionStorage {
      */
     private String serviceAccountKeyFileSecretId;
     /**
-     * @return The storage type used in the Iceberg connection. Supported storage types by catalog type:
-     * * GLUE: AMAZON_S3.
-     * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
-     * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
-     * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
-     * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+     * @return The warehouse storage type used in the Oracle AI Data Catalog Storage connection.
      * 
      */
     private String storageType;
+    /**
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated
+    private String trustStore;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    private String trustStoreSecretId;
 
     private GetConnectionStorage() {}
     /**
-     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * @return The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
      * 
      */
     public String accessKeyId() {
@@ -111,14 +123,14 @@ public final class GetConnectionStorage {
         return this.accountKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
      * 
      */
     public String accountKeySecretId() {
         return this.accountKeySecretId;
     }
     /**
-     * @return Sets the Azure storage account name.
+     * @return The Azure Storage account name.
      * 
      */
     public String accountName() {
@@ -152,8 +164,18 @@ public final class GetConnectionStorage {
     public String projectId() {
         return this.projectId;
     }
+    public String properties() {
+        return this.properties;
+    }
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
+    public String propertiesSecretId() {
+        return this.propertiesSecretId;
+    }
+    /**
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     public String region() {
@@ -175,7 +197,7 @@ public final class GetConnectionStorage {
         return this.secretAccessKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
      * 
      */
     public String secretAccessKeySecretId() {
@@ -197,16 +219,26 @@ public final class GetConnectionStorage {
         return this.serviceAccountKeyFileSecretId;
     }
     /**
-     * @return The storage type used in the Iceberg connection. Supported storage types by catalog type:
-     * * GLUE: AMAZON_S3.
-     * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
-     * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
-     * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
-     * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+     * @return The warehouse storage type used in the Oracle AI Data Catalog Storage connection.
      * 
      */
     public String storageType() {
         return this.storageType;
+    }
+    /**
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated
+    public String trustStore() {
+        return this.trustStore;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * 
+     */
+    public String trustStoreSecretId() {
+        return this.trustStoreSecretId;
     }
 
     public static Builder builder() {
@@ -226,6 +258,8 @@ public final class GetConnectionStorage {
         private String container;
         private String endpoint;
         private String projectId;
+        private String properties;
+        private String propertiesSecretId;
         private String region;
         private String schemeType;
         private String secretAccessKey;
@@ -233,6 +267,8 @@ public final class GetConnectionStorage {
         private String serviceAccountKeyFile;
         private String serviceAccountKeyFileSecretId;
         private String storageType;
+        private String trustStore;
+        private String trustStoreSecretId;
         public Builder() {}
         public Builder(GetConnectionStorage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -244,6 +280,8 @@ public final class GetConnectionStorage {
     	      this.container = defaults.container;
     	      this.endpoint = defaults.endpoint;
     	      this.projectId = defaults.projectId;
+    	      this.properties = defaults.properties;
+    	      this.propertiesSecretId = defaults.propertiesSecretId;
     	      this.region = defaults.region;
     	      this.schemeType = defaults.schemeType;
     	      this.secretAccessKey = defaults.secretAccessKey;
@@ -251,6 +289,8 @@ public final class GetConnectionStorage {
     	      this.serviceAccountKeyFile = defaults.serviceAccountKeyFile;
     	      this.serviceAccountKeyFileSecretId = defaults.serviceAccountKeyFileSecretId;
     	      this.storageType = defaults.storageType;
+    	      this.trustStore = defaults.trustStore;
+    	      this.trustStoreSecretId = defaults.trustStoreSecretId;
         }
 
         @CustomType.Setter
@@ -318,6 +358,22 @@ public final class GetConnectionStorage {
             return this;
         }
         @CustomType.Setter
+        public Builder properties(String properties) {
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetConnectionStorage", "properties");
+            }
+            this.properties = properties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder propertiesSecretId(String propertiesSecretId) {
+            if (propertiesSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionStorage", "propertiesSecretId");
+            }
+            this.propertiesSecretId = propertiesSecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder region(String region) {
             if (region == null) {
               throw new MissingRequiredPropertyException("GetConnectionStorage", "region");
@@ -373,6 +429,22 @@ public final class GetConnectionStorage {
             this.storageType = storageType;
             return this;
         }
+        @CustomType.Setter
+        public Builder trustStore(String trustStore) {
+            if (trustStore == null) {
+              throw new MissingRequiredPropertyException("GetConnectionStorage", "trustStore");
+            }
+            this.trustStore = trustStore;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            if (trustStoreSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionStorage", "trustStoreSecretId");
+            }
+            this.trustStoreSecretId = trustStoreSecretId;
+            return this;
+        }
         public GetConnectionStorage build() {
             final var _resultValue = new GetConnectionStorage();
             _resultValue.accessKeyId = accessKeyId;
@@ -383,6 +455,8 @@ public final class GetConnectionStorage {
             _resultValue.container = container;
             _resultValue.endpoint = endpoint;
             _resultValue.projectId = projectId;
+            _resultValue.properties = properties;
+            _resultValue.propertiesSecretId = propertiesSecretId;
             _resultValue.region = region;
             _resultValue.schemeType = schemeType;
             _resultValue.secretAccessKey = secretAccessKey;
@@ -390,6 +464,8 @@ public final class GetConnectionStorage {
             _resultValue.serviceAccountKeyFile = serviceAccountKeyFile;
             _resultValue.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             _resultValue.storageType = storageType;
+            _resultValue.trustStore = trustStore;
+            _resultValue.trustStoreSecretId = trustStoreSecretId;
             return _resultValue;
         }
     }

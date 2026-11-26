@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionArtifactLocationConfiguration {
     /**
-     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * @return The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
      * 
      */
     private String accessKeyId;
@@ -31,7 +31,7 @@ public final class GetConnectionArtifactLocationConfiguration {
      */
     private String bucket;
     /**
-     * @return The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: &#34;mynamespace&#34;
+     * @return Name of namespace that serves as a container for all of your buckets
      * 
      */
     private String namespace;
@@ -80,7 +80,7 @@ public final class GetConnectionArtifactLocationConfiguration {
      */
     private String publicKeyFingerprint;
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     private String region;
@@ -91,7 +91,7 @@ public final class GetConnectionArtifactLocationConfiguration {
     @Deprecated
     private String secretAccessKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
      * 
      */
     private String secretAccessKeySecretId;
@@ -109,7 +109,7 @@ public final class GetConnectionArtifactLocationConfiguration {
 
     private GetConnectionArtifactLocationConfiguration() {}
     /**
-     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * @return The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
      * 
      */
     public String accessKeyId() {
@@ -135,7 +135,7 @@ public final class GetConnectionArtifactLocationConfiguration {
         return this.bucket;
     }
     /**
-     * @return The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: &#34;mynamespace&#34;
+     * @return Name of namespace that serves as a container for all of your buckets
      * 
      */
     public String namespace() {
@@ -202,7 +202,7 @@ public final class GetConnectionArtifactLocationConfiguration {
         return this.publicKeyFingerprint;
     }
     /**
-     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
+     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
      * 
      */
     public String region() {
@@ -217,7 +217,7 @@ public final class GetConnectionArtifactLocationConfiguration {
         return this.secretAccessKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
      * 
      */
     public String secretAccessKeySecretId() {

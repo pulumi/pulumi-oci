@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.AutonomousVmClusterKeyManagementSystemDetailArgs;
 import com.pulumi.oci.Database.inputs.AutonomousVmClusterMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.AutonomousVmClusterMaintenanceWindowDetailArgs;
 import java.lang.Boolean;
@@ -348,6 +349,21 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Boolean>> isMtlsEnabled() {
         return Optional.ofNullable(this.isMtlsEnabled);
+    }
+
+    /**
+     * Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    @Import(name="keyManagementSystemDetails")
+    private @Nullable Output<List<AutonomousVmClusterKeyManagementSystemDetailArgs>> keyManagementSystemDetails;
+
+    /**
+     * @return Autonomous VM Cluster Key Management System details.
+     * 
+     */
+    public Optional<Output<List<AutonomousVmClusterKeyManagementSystemDetailArgs>>> keyManagementSystemDetails() {
+        return Optional.ofNullable(this.keyManagementSystemDetails);
     }
 
     /**
@@ -821,6 +837,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.freeformTags = $.freeformTags;
         this.isLocalBackupEnabled = $.isLocalBackupEnabled;
         this.isMtlsEnabled = $.isMtlsEnabled;
+        this.keyManagementSystemDetails = $.keyManagementSystemDetails;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -1335,6 +1352,37 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder isMtlsEnabled(Boolean isMtlsEnabled) {
             return isMtlsEnabled(Output.of(isMtlsEnabled));
+        }
+
+        /**
+         * @param keyManagementSystemDetails Autonomous VM Cluster Key Management System details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyManagementSystemDetails(@Nullable Output<List<AutonomousVmClusterKeyManagementSystemDetailArgs>> keyManagementSystemDetails) {
+            $.keyManagementSystemDetails = keyManagementSystemDetails;
+            return this;
+        }
+
+        /**
+         * @param keyManagementSystemDetails Autonomous VM Cluster Key Management System details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyManagementSystemDetails(List<AutonomousVmClusterKeyManagementSystemDetailArgs> keyManagementSystemDetails) {
+            return keyManagementSystemDetails(Output.of(keyManagementSystemDetails));
+        }
+
+        /**
+         * @param keyManagementSystemDetails Autonomous VM Cluster Key Management System details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyManagementSystemDetails(AutonomousVmClusterKeyManagementSystemDetailArgs... keyManagementSystemDetails) {
+            return keyManagementSystemDetails(List.of(keyManagementSystemDetails));
         }
 
         /**

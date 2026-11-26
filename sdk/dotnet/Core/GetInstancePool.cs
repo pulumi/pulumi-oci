@@ -161,6 +161,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string InstanceHostnameFormatter;
         /// <summary>
+        /// Optional maintenance policy settings for an instance pool.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstancePoolInstanceMaintenancePolicyResult> InstanceMaintenancePolicies;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         /// </summary>
         public readonly string InstancePoolId;
@@ -219,6 +223,8 @@ namespace Pulumi.Oci.Core
 
             string instanceHostnameFormatter,
 
+            ImmutableArray<Outputs.GetInstancePoolInstanceMaintenancePolicyResult> instanceMaintenancePolicies,
+
             string instancePoolId,
 
             ImmutableArray<Outputs.GetInstancePoolLifecycleManagementResult> lifecycleManagements,
@@ -247,6 +253,7 @@ namespace Pulumi.Oci.Core
             InstanceConfigurationId = instanceConfigurationId;
             InstanceDisplayNameFormatter = instanceDisplayNameFormatter;
             InstanceHostnameFormatter = instanceHostnameFormatter;
+            InstanceMaintenancePolicies = instanceMaintenancePolicies;
             InstancePoolId = instancePoolId;
             LifecycleManagements = lifecycleManagements;
             LoadBalancers = loadBalancers;

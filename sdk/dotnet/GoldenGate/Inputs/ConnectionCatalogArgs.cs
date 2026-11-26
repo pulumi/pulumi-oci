@@ -19,6 +19,12 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? Branch { get; set; }
 
         /// <summary>
+        /// (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+        /// </summary>
+        [Input("catalogConfig")]
+        public Input<Inputs.ConnectionCatalogCatalogConfigArgs>? CatalogConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) The catalog type.
         /// </summary>
         [Input("catalogType", required: true)]

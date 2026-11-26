@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.InstancePoolArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolState;
+import com.pulumi.oci.Core.outputs.InstancePoolInstanceMaintenancePolicy;
 import com.pulumi.oci.Core.outputs.InstancePoolLifecycleManagement;
 import com.pulumi.oci.Core.outputs.InstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.InstancePoolOverridePolicy;
@@ -51,6 +52,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolInstanceMaintenancePolicyArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementLifecycleActionsArgs;
  * import com.pulumi.oci.Core.inputs.InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs;
@@ -105,6 +108,12 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .instanceDisplayNameFormatter(instancePoolInstanceDisplayNameFormatter)
  *             .instanceHostnameFormatter(instancePoolInstanceHostnameFormatter)
+ *             .instanceMaintenancePolicy(InstancePoolInstanceMaintenancePolicyArgs.builder()
+ *                 .launchBeforeTerminating(InstancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingArgs.builder()
+ *                     .isFullRefresh(instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingIsFullRefresh)
+ *                     .maxHealthyPercent(instancePoolInstanceMaintenancePolicyLaunchBeforeTerminatingMaxHealthyPercent)
+ *                     .build())
+ *                 .build())
  *             .lifecycleManagement(InstancePoolLifecycleManagementArgs.builder()
  *                 .lifecycleActions(InstancePoolLifecycleManagementLifecycleActionsArgs.builder()
  *                     .preTermination(InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs.builder()
@@ -290,6 +299,20 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      */
     public Output<String> instanceHostnameFormatter() {
         return this.instanceHostnameFormatter;
+    }
+    /**
+     * (Updatable) Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    @Export(name="instanceMaintenancePolicy", refs={InstancePoolInstanceMaintenancePolicy.class}, tree="[0]")
+    private Output<InstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicy;
+
+    /**
+     * @return (Updatable) Optional maintenance policy settings for an instance pool.
+     * 
+     */
+    public Output<InstancePoolInstanceMaintenancePolicy> instanceMaintenancePolicy() {
+        return this.instanceMaintenancePolicy;
     }
     /**
      * (Updatable) The lifecycle management options for the instance pool.

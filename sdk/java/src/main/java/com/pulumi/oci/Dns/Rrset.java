@@ -27,7 +27,24 @@ import javax.annotation.Nullable;
  * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
  * parameter then the viewId query parameter is required.
  * 
+ * ## RRSet identity and records
+ * 
+ * An RRSet is the collection of records with the same domain name and record type
+ * in one zone. The top-level `zoneNameOrId`, `domain` and `rtype` select that
+ * RRSet. Each `items` block describes one record in it: repeat the selected domain
+ * and type, and provide that record&#39;s `rdata` and `ttl`. Multiple A record values
+ * therefore belong in multiple `items` blocks of one resource, rather than separate
+ * resources managing the same RRSet. Use a consistent TTL for all records in a set.
+ * 
  * ## Example Usage
+ * 
+ * These examples use a zone resource named `example` and documentation IP addresses.
+ * The zone can be created with `oci.Dns.Zone` using `compartmentId`, `name` and
+ * `zoneType = &#34;PRIMARY&#34;`. See the public RRSet example
+ * and private RRSet example
+ * for complete configurations. The public directory also includes other DNS examples.
+ * 
+ * ### One A record
  * 
  * <pre>
  * {@code
@@ -52,18 +69,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRrset = new Rrset("testRrset", RrsetArgs.builder()
- *             .domain(rrsetDomain)
- *             .rtype(rrsetRtype)
- *             .zoneNameOrId(testZone.get("id"))
+ *         var singleRecord = new Rrset("singleRecord", RrsetArgs.builder()
+ *             .zoneNameOrId(example.get("id"))
+ *             .domain(String.format("www.%s", example.get("name")))
+ *             .rtype("A")
  *             .items(RrsetItemArgs.builder()
- *                 .domain(rrsetItemsDomain)
- *                 .rdata(rrsetItemsRdata)
- *                 .rtype(rrsetItemsRtype)
- *                 .ttl(rrsetItemsTtl)
+ *                 .domain(String.format("www.%s", example.get("name")))
+ *                 .rtype("A")
+ *                 .rdata("192.0.2.10")
+ *                 .ttl(300)
  *                 .build())
- *             .scope(rrsetScope)
- *             .viewId(testView.get("id"))
  *             .build());
  * 
  *     }
@@ -71,9 +86,66 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  * 
+ * ### Multiple A records in one RRSet
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.Rrset;
+ * import com.pulumi.oci.Dns.RrsetArgs;
+ * import com.pulumi.oci.Dns.inputs.RrsetItemArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var multipleRecords = new Rrset("multipleRecords", RrsetArgs.builder()
+ *             .zoneNameOrId(example.get("id"))
+ *             .domain(String.format("api.%s", example.get("name")))
+ *             .rtype("A")
+ *             .items(            
+ *                 RrsetItemArgs.builder()
+ *                     .domain(String.format("api.%s", example.get("name")))
+ *                     .rtype("A")
+ *                     .rdata("192.0.2.20")
+ *                     .ttl(300)
+ *                     .build(),
+ *                 RrsetItemArgs.builder()
+ *                     .domain(String.format("api.%s", example.get("name")))
+ *                     .rtype("A")
+ *                     .rdata("192.0.2.21")
+ *                     .ttl(300)
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * For private zones, see the private RRSet example.
+ * When identifying a private zone by name, provide its `viewId` as well.
+ * 
  * ## Behavior
  * 
- * - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+ * - Creating a resource for an RRSet that already contains records fails with
+ *   HTTP 409 (Conflict), including when `items` is omitted. Import an existing
+ *   RRSet before managing it.
+ * - Updating an existing resource replaces its record set with the configured
+ *   `items`; removing an item removes that record. Keep the desired records explicit
+ *   in the configuration, rather than using omission of `items` as a deletion instruction.
  * 
  * ## Import
  * 
@@ -125,7 +197,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
      * 
      */
     @Export(name="items", refs={List.class,RrsetItem.class}, tree="[0,1]")
@@ -133,7 +205,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * The records to manage in this RRSet. Each item must use the top-level domain and record type. See Behavior above.
      * 
      */
     public Output<List<RrsetItem>> items() {

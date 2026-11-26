@@ -27,12 +27,16 @@ __all__ = [
     'ConnectionBootstrapServerArgsDict',
     'ConnectionCatalogArgs',
     'ConnectionCatalogArgsDict',
+    'ConnectionCatalogCatalogConfigArgs',
+    'ConnectionCatalogCatalogConfigArgsDict',
     'ConnectionIngressIpArgs',
     'ConnectionIngressIpArgsDict',
     'ConnectionLockArgs',
     'ConnectionLockArgsDict',
     'ConnectionStorageArgs',
     'ConnectionStorageArgsDict',
+    'ConnectionWarehouseStorageArgs',
+    'ConnectionWarehouseStorageArgsDict',
     'DeploymentBackupLockArgs',
     'DeploymentBackupLockArgsDict',
     'DeploymentBackupScheduleArgs',
@@ -998,6 +1002,10 @@ class ConnectionCatalogArgsDict(TypedDict):
     """
     (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
     """
+    catalog_config: NotRequired[pulumi.Input[Optional['ConnectionCatalogCatalogConfigArgsDict']]]
+    """
+    (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+    """
     client_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OAuth client ID used for authentication.
@@ -1040,6 +1048,7 @@ class ConnectionCatalogArgs:
     def __init__(__self__, *,
                  catalog_type: pulumi.Input[_builtins.str],
                  branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 catalog_config: pulumi.Input[Optional['ConnectionCatalogCatalogConfigArgs']] = None,
                  client_id: pulumi.Input[Optional[_builtins.str]] = None,
                  client_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1052,6 +1061,7 @@ class ConnectionCatalogArgs:
         """
         :param pulumi.Input[_builtins.str] catalog_type: (Updatable) The catalog type.
         :param pulumi.Input[_builtins.str] branch: (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+        :param pulumi.Input['ConnectionCatalogCatalogConfigArgs'] catalog_config: (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
         :param pulumi.Input[_builtins.str] client_id: (Updatable) The OAuth client ID used for authentication.
         :param pulumi.Input[_builtins.str] client_secret: (Updatable) Client secret required to connect to Polaris.
         :param pulumi.Input[_builtins.str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
@@ -1065,6 +1075,8 @@ class ConnectionCatalogArgs:
         pulumi.set(__self__, "catalog_type", catalog_type)
         if branch is not None:
             pulumi.set(__self__, "branch", branch)
+        if catalog_config is not None:
+            pulumi.set(__self__, "catalog_config", catalog_config)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
         if client_secret is not None:
@@ -1113,6 +1125,18 @@ class ConnectionCatalogArgs:
     @branch.setter
     def branch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "branch", value)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogConfig")
+    def catalog_config(self) -> pulumi.Input[Optional['ConnectionCatalogCatalogConfigArgs']]:
+        """
+        (Updatable) The information about a new Oracle AI Data Catalog configuration of given type used in an Iceberg connection.
+        """
+        return pulumi.get(self, "catalog_config")
+
+    @catalog_config.setter
+    def catalog_config(self, value: pulumi.Input[Optional['ConnectionCatalogCatalogConfigArgs']]):
+        pulumi.set(self, "catalog_config", value)
 
     @_builtins.property
     @pulumi.getter(name="clientId")
@@ -1223,6 +1247,158 @@ class ConnectionCatalogArgs:
     @uri.setter
     def uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uri", value)
+
+
+class ConnectionCatalogCatalogConfigArgsDict(TypedDict):
+    catalog_config_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Oracle AI Data Catalog configuration type.
+    """
+    database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+    """
+    database_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The database type where Oracle AI Data Catalog is configured.
+    """
+    deployment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+    """
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+    """
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+    """
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
+    """
+
+@pulumi.input_type
+class ConnectionCatalogCatalogConfigArgs:
+    def __init__(__self__, *,
+                 catalog_config_type: pulumi.Input[_builtins.str],
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] catalog_config_type: (Updatable) The Oracle AI Data Catalog configuration type.
+        :param pulumi.Input[_builtins.str] database_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        :param pulumi.Input[_builtins.str] database_type: (Updatable) The database type where Oracle AI Data Catalog is configured.
+        :param pulumi.Input[_builtins.str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[_builtins.str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param pulumi.Input[_builtins.str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+        :param pulumi.Input[_builtins.str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
+        """
+        pulumi.set(__self__, "catalog_config_type", catalog_config_type)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if deployment_id is not None:
+            pulumi.set(__self__, "deployment_id", deployment_id)
+        if password is not None:
+            warnings.warn("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""password is deprecated: The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogConfigType")
+    def catalog_config_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The Oracle AI Data Catalog configuration type.
+        """
+        return pulumi.get(self, "catalog_config_type")
+
+    @catalog_config_type.setter
+    def catalog_config_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "catalog_config_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        """
+        return pulumi.get(self, "database_id")
+
+    @database_id.setter
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The database type where Oracle AI Data Catalog is configured.
+        """
+        return pulumi.get(self, "database_type")
+
+    @database_type.setter
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "database_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @deployment_id.setter
+    def deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deployment_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "username", value)
 
 
 class ConnectionIngressIpArgsDict(TypedDict):
@@ -1350,6 +1526,7 @@ class ConnectionStorageArgsDict(TypedDict):
     * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
     * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
     * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+    * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
     * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
     """
     access_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
@@ -1386,6 +1563,14 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     (Updatable) The Google Cloud Project where the bucket exists.
     """
+    properties: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+    """
+    properties_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+    """
     region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
@@ -1410,6 +1595,14 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
     """
+    trust_store: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+    """
+    trust_store_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+    """
 
 @pulumi.input_type
 class ConnectionStorageArgs:
@@ -1423,18 +1616,23 @@ class ConnectionStorageArgs:
                  container: pulumi.Input[Optional[_builtins.str]] = None,
                  endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  scheme_type: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  service_account_key_file: pulumi.Input[Optional[_builtins.str]] = None,
-                 service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] storage_type: (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
                * GLUE: AMAZON_S3.
                * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
                * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
                * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+               * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
                * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         :param pulumi.Input[_builtins.str] access_key_id: (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
                
@@ -1446,12 +1644,16 @@ class ConnectionStorageArgs:
         :param pulumi.Input[_builtins.str] container: (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
         :param pulumi.Input[_builtins.str] endpoint: (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         :param pulumi.Input[_builtins.str] project_id: (Updatable) The Google Cloud Project where the bucket exists.
+        :param pulumi.Input[_builtins.str] properties: (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        :param pulumi.Input[_builtins.str] properties_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[_builtins.str] region: (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param pulumi.Input[_builtins.str] scheme_type: (Updatable) The scheme of the storage.
         :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+        :param pulumi.Input[_builtins.str] trust_store: (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param pulumi.Input[_builtins.str] trust_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
         """
         pulumi.set(__self__, "storage_type", storage_type)
         if access_key_id is not None:
@@ -1473,6 +1675,10 @@ class ConnectionStorageArgs:
             pulumi.set(__self__, "endpoint", endpoint)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+        if properties_secret_id is not None:
+            pulumi.set(__self__, "properties_secret_id", properties_secret_id)
         if region is not None:
             pulumi.set(__self__, "region", region)
         if scheme_type is not None:
@@ -1491,6 +1697,13 @@ class ConnectionStorageArgs:
             pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         if service_account_key_file_secret_id is not None:
             pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
+        if trust_store is not None:
+            warnings.warn("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""trust_store is deprecated: The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
+        if trust_store is not None:
+            pulumi.set(__self__, "trust_store", trust_store)
+        if trust_store_secret_id is not None:
+            pulumi.set(__self__, "trust_store_secret_id", trust_store_secret_id)
 
     @_builtins.property
     @pulumi.getter(name="storageType")
@@ -1501,6 +1714,7 @@ class ConnectionStorageArgs:
         * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
         * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
         * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         """
         return pulumi.get(self, "storage_type")
@@ -1610,6 +1824,30 @@ class ConnectionStorageArgs:
 
     @_builtins.property
     @pulumi.getter
+    def properties(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        """
+        return pulumi.get(self, "properties")
+
+    @properties.setter
+    def properties(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="propertiesSecretId")
+    def properties_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
+        return pulumi.get(self, "properties_secret_id")
+
+    @properties_secret_id.setter
+    def properties_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "properties_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter
     def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
@@ -1681,6 +1919,283 @@ class ConnectionStorageArgs:
     @service_account_key_file_secret_id.setter
     def service_account_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key_file_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustStore")
+    @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
+    def trust_store(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "trust_store")
+
+    @trust_store.setter
+    def trust_store(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "trust_store", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustStoreSecretId")
+    def trust_store_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+        """
+        return pulumi.get(self, "trust_store_secret_id")
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "trust_store_secret_id", value)
+
+
+class ConnectionWarehouseStorageArgsDict(TypedDict):
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The warehouse storage type used in the Oracle AI Data Catalog Storage connection.
+    """
+    access_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
+    """
+    account_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Azure Storage account key.
+    """
+    account_key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
+    """
+    account_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Azure Storage account name.
+    """
+    endpoint_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The endpoint URL of the ZFS storage service.
+    """
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Name of namespace that serves as a container for all of your buckets
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
+    """
+    secret_access_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The secret access key used to access the warehouse storage.
+    """
+    secret_access_key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
+    """
+    trust_store: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+    """
+    trust_store_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+    """
+
+@pulumi.input_type
+class ConnectionWarehouseStorageArgs:
+    def __init__(__self__, *,
+                 storage_type: pulumi.Input[_builtins.str],
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 trust_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] storage_type: (Updatable) The warehouse storage type used in the Oracle AI Data Catalog Storage connection.
+        :param pulumi.Input[_builtins.str] access_key_id: (Updatable) The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
+        :param pulumi.Input[_builtins.str] account_key: (Updatable) The Azure Storage account key.
+        :param pulumi.Input[_builtins.str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
+        :param pulumi.Input[_builtins.str] account_name: (Updatable) The Azure Storage account name.
+        :param pulumi.Input[_builtins.str] endpoint_url: (Updatable) The endpoint URL of the ZFS storage service.
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) Name of namespace that serves as a container for all of your buckets
+        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
+        :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) The secret access key used to access the warehouse storage.
+        :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
+        :param pulumi.Input[_builtins.str] trust_store: (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param pulumi.Input[_builtins.str] trust_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+        """
+        pulumi.set(__self__, "storage_type", storage_type)
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
+        if account_key_secret_id is not None:
+            pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if endpoint_url is not None:
+            pulumi.set(__self__, "endpoint_url", endpoint_url)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if secret_access_key_secret_id is not None:
+            pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        if trust_store is not None:
+            warnings.warn("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""trust_store is deprecated: The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
+        if trust_store is not None:
+            pulumi.set(__self__, "trust_store", trust_store)
+        if trust_store_secret_id is not None:
+            pulumi.set(__self__, "trust_store_secret_id", trust_store_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The warehouse storage type used in the Oracle AI Data Catalog Storage connection.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "storage_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The access key ID used to access the Oracle Cloud Infrastructure Object Storage bucket.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @access_key_id.setter
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "access_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Azure Storage account key.
+        """
+        return pulumi.get(self, "account_key")
+
+    @account_key.setter
+    def account_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "account_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Azure Storage account key.
+        """
+        return pulumi.get(self, "account_key_secret_id")
+
+    @account_key_secret_id.setter
+    def account_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "account_key_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Azure Storage account name.
+        """
+        return pulumi.get(self, "account_name")
+
+    @account_name.setter
+    def account_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "account_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointUrl")
+    def endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The endpoint URL of the ZFS storage service.
+        """
+        return pulumi.get(self, "endpoint_url")
+
+    @endpoint_url.setter
+    def endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "endpoint_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the current region.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The secret access key used to access the warehouse storage.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @secret_access_key.setter
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_access_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Oracle Cloud Infrastructure Object Storage secret access key.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
+
+    @secret_access_key_secret_id.setter
+    def secret_access_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_access_key_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustStore")
+    @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
+    def trust_store(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The base64 encoded content of the ZFS storage TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "trust_store")
+
+    @trust_store.setter
+    def trust_store(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "trust_store", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustStoreSecretId")
+    def trust_store_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the ZFS storage trust store. Note: When provided, 'trustStore' field must not be provided.
+        """
+        return pulumi.get(self, "trust_store_secret_id")
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "trust_store_secret_id", value)
 
 
 class DeploymentBackupLockArgsDict(TypedDict):

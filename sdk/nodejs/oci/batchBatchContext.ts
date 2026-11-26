@@ -33,6 +33,10 @@ import * as utilities from "../utilities";
  *             diskSizeInGbs: batchContextFleetsShapeDiskSizeInGbs,
  *         },
  *         type: batchContextFleetsType,
+ *         reservation: {
+ *             capacityReservationIds: batchContextFleetsReservationCapacityReservationIds,
+ *             type: batchContextFleetsReservationType,
+ *         },
  *     }],
  *     network: {
  *         subnetId: testSubnet.id,

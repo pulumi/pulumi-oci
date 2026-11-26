@@ -59,6 +59,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutonomousExadataInfrastructure{}
 	case "oci:Database/autonomousVmCluster:AutonomousVmCluster":
 		r = &AutonomousVmCluster{}
+	case "oci:Database/autonomousVmClusterKmsManagement:AutonomousVmClusterKmsManagement":
+		r = &AutonomousVmClusterKmsManagement{}
 	case "oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement":
 		r = &AutonomousVmClusterOrdsCertificateManagement{}
 	case "oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement":
@@ -71,6 +73,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BackupDestination{}
 	case "oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster":
 		r = &CloudAutonomousVmCluster{}
+	case "oci:Database/cloudAutonomousVmClusterKmsManagement:CloudAutonomousVmClusterKmsManagement":
+		r = &CloudAutonomousVmClusterKmsManagement{}
 	case "oci:Database/cloudDatabaseManagement:CloudDatabaseManagement":
 		r = &CloudDatabaseManagement{}
 	case "oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure":
@@ -297,6 +301,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Database/autonomousVmClusterKmsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Database/autonomousVmClusterOrdsCertificateManagement",
 		&module{version},
 	)
@@ -323,6 +332,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/cloudAutonomousVmCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/cloudAutonomousVmClusterKmsManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

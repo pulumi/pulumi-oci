@@ -27,7 +27,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, distribution_algorithm=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, sga_percentage=None, state=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, distribution_algorithm=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, key_management_system_details=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, sga_percentage=None, state=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -106,6 +106,9 @@ class GetAutonomousVmClusterResult:
         if is_mtls_enabled and not isinstance(is_mtls_enabled, bool):
             raise TypeError("Expected argument 'is_mtls_enabled' to be a bool")
         pulumi.set(__self__, "is_mtls_enabled", is_mtls_enabled)
+        if key_management_system_details and not isinstance(key_management_system_details, list):
+            raise TypeError("Expected argument 'key_management_system_details' to be a list")
+        pulumi.set(__self__, "key_management_system_details", key_management_system_details)
         if last_maintenance_run_id and not isinstance(last_maintenance_run_id, str):
             raise TypeError("Expected argument 'last_maintenance_run_id' to be a str")
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
@@ -397,6 +400,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "is_mtls_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="keyManagementSystemDetails")
+    def key_management_system_details(self) -> Sequence['outputs.GetAutonomousVmClusterKeyManagementSystemDetailResult']:
+        """
+        Autonomous VM Cluster Key Management System details.
+        """
+        return pulumi.get(self, "key_management_system_details")
+
+    @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> _builtins.str:
         """
@@ -662,6 +673,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             id=self.id,
             is_local_backup_enabled=self.is_local_backup_enabled,
             is_mtls_enabled=self.is_mtls_enabled,
+            key_management_system_details=self.key_management_system_details,
             last_maintenance_run_id=self.last_maintenance_run_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
@@ -745,6 +757,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[_builtins.str] 
         id=pulumi.get(__ret__, 'id'),
         is_local_backup_enabled=pulumi.get(__ret__, 'is_local_backup_enabled'),
         is_mtls_enabled=pulumi.get(__ret__, 'is_mtls_enabled'),
+        key_management_system_details=pulumi.get(__ret__, 'key_management_system_details'),
         last_maintenance_run_id=pulumi.get(__ret__, 'last_maintenance_run_id'),
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -825,6 +838,7 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: pulumi.Input[Opti
         id=pulumi.get(__response__, 'id'),
         is_local_backup_enabled=pulumi.get(__response__, 'is_local_backup_enabled'),
         is_mtls_enabled=pulumi.get(__response__, 'is_mtls_enabled'),
+        key_management_system_details=pulumi.get(__response__, 'key_management_system_details'),
         last_maintenance_run_id=pulumi.get(__response__, 'last_maintenance_run_id'),
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
